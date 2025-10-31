@@ -370,10 +370,43 @@ GdUnit4 is **not** included in the repository. To run tests locally:
 
 Tests run automatically in CI when you push changes or create a pull request.
 
-**Local Testing** (requires GdUnit4 plugin installed):
+**Local Testing via Godot Editor** (requires GdUnit4 plugin installed):
 - Open the project in Godot Editor
 - Open the GdUnit4 inspector from the bottom panel
 - Click "Run All Tests" or run individual test suites
+
+**Local Testing via Command Line** (requires GdUnit4 plugin installed):
+
+1. Set the GODOT_BIN environment variable:
+   ```bash
+   # macOS
+   export GODOT_BIN=/Applications/Godot.app/Contents/MacOS/Godot
+   
+   # Linux
+   export GODOT_BIN=/usr/local/bin/godot
+   
+   # Windows
+   setx GODOT_BIN D:\path\to\Godot.exe
+   ```
+
+2. Make the runtest script executable (Unix-like systems):
+   ```bash
+   chmod +x ./addons/gdUnit4/runtest.sh
+   ```
+
+3. Run all tests:
+   ```bash
+   # Unix/Linux/macOS
+   ./addons/gdUnit4/runtest.sh -a res://test/
+   
+   # Windows
+   .\addons\gdUnit4\runtest.cmd -a res://test/
+   ```
+
+4. Run specific test suite:
+   ```bash
+   ./addons/gdUnit4/runtest.sh -a res://test/CharacterStatsTest.gd
+   ```
 
 **Test Structure**:
 ```
