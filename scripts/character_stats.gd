@@ -28,8 +28,10 @@ var character_name: String = "Nameless Hero"
 var health: int = 100
 var morale: int = 100
 
+
 func _ready():
 	update_skills_from_attributes()
+
 
 func update_skills_from_attributes():
 	"""Update skill values based on primary attributes"""
@@ -42,6 +44,7 @@ func update_skills_from_attributes():
 	pain_threshold = physique + 1
 	shivers = psyche + motorics
 
+
 func perform_skill_check(skill_name: String, difficulty: int) -> Dictionary:
 	"""
 	Perform a skill check similar to Disco Elysium
@@ -51,7 +54,7 @@ func perform_skill_check(skill_name: String, difficulty: int) -> Dictionary:
 	var roll = randi() % 6 + randi() % 6 + 2  # 2d6 roll (2-12)
 	var total = skill_value + roll
 	var success = total >= difficulty
-	
+
 	var result = {
 		"skill": skill_name,
 		"skill_value": skill_value,
@@ -61,26 +64,41 @@ func perform_skill_check(skill_name: String, difficulty: int) -> Dictionary:
 		"success": success,
 		"margin": total - difficulty
 	}
-	
+
 	skill_check_performed.emit(skill_name, success, roll, difficulty)
 	return result
+
 
 func get_skill_value(skill_name: String) -> int:
 	"""Get the current value of a skill"""
 	match skill_name.to_lower():
-		"logic": return logic
-		"rhetoric": return rhetoric
-		"empathy": return empathy
-		"authority": return authority
-		"perception": return perception
-		"endurance": return endurance
-		"pain_threshold": return pain_threshold
-		"shivers": return shivers
-		"intellect": return intellect
-		"psyche": return psyche
-		"physique": return physique
-		"motorics": return motorics
-		_: return 1
+		"logic":
+			return logic
+		"rhetoric":
+			return rhetoric
+		"empathy":
+			return empathy
+		"authority":
+			return authority
+		"perception":
+			return perception
+		"endurance":
+			return endurance
+		"pain_threshold":
+			return pain_threshold
+		"shivers":
+			return shivers
+		"intellect":
+			return intellect
+		"psyche":
+			return psyche
+		"physique":
+			return physique
+		"motorics":
+			return motorics
+		_:
+			return 1
+
 
 func modify_attribute(attribute: String, amount: int):
 	"""Modify a primary attribute and update dependent skills"""
@@ -97,16 +115,19 @@ func modify_attribute(attribute: String, amount: int):
 		"motorics":
 			motorics = max(1, motorics + amount)
 			stat_changed.emit("motorics", motorics)
-	
+
 	update_skills_from_attributes()
+
 
 func modify_health(amount: int):
 	"""Modify health value"""
 	health = clamp(health + amount, 0, 100)
 
+
 func modify_morale(amount: int):
 	"""Modify morale value"""
 	morale = clamp(morale + amount, 0, 100)
+
 
 func get_stats_summary() -> String:
 	"""Return a formatted string of all character stats"""
