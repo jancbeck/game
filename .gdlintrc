@@ -1,0 +1,35 @@
+# GDLint configuration
+# https://github.com/Scony/godot-gdscript-toolkit
+
+# Disable specific checks if needed
+disable: []
+
+# Line length (Godot convention is 100)
+max-line-length: 100
+
+# File formatting
+max-file-lines: 1000
+
+# Function length
+max-function-lines: 50
+
+# Public method name patterns
+function-name: "^[a-z_][a-z0-9_]*$"
+
+# Private method name patterns
+private-method-name: "^_[a-z_][a-z0-9_]*$"
+
+# Class name patterns  
+class-name: "^[A-Z][a-zA-Z0-9]*$"
+
+# Constant name patterns
+const-name: "^[A-Z][A-Z0-9_]*$"
+
+# Signal name patterns
+signal-name: "^[a-z_][a-z0-9_]*$"
+
+# Enum name patterns
+enum-name: "^[A-Z][a-zA-Z0-9]*$"
+
+# Variable name patterns
+var-name: "^[a-z_][a-z0-9_]*$"

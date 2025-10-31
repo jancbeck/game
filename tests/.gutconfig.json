@@ -1,0 +1,22 @@
+{
+  "dirs": [
+    "res://tests/unit",
+    "res://tests/integration",
+    "res://tests/e2e"
+  ],
+  "include_subdirs": true,
+  "log_level": 1,
+  "should_exit": true,
+  "should_maximize": false,
+  "compact_mode": false,
+  "hide_orphans": true,
+  "ignore_pause": true,
+  "inner_class": "",
+  "log_name": "gut_log.txt",
+  "opacity": 100,
+  "prefix": "test_",
+  "selected": "",
+  "suffix": ".gd",
+  "tests": [],
+  "unit_test_name": ""
+}

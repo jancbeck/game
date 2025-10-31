@@ -14,3 +14,27 @@ export_credentials.cfg
 .mono/
 data_*/
 mono_crash.*.json
+
+# Test artifacts
+tests/gut_log.txt
+tests/*.log
+
+# Python tools
+__pycache__/
+*.py[cod]
+*$py.class
+.Python
+venv/
+ENV/
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Build artifacts
+*.zip
+*.tar.gz
