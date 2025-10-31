@@ -143,6 +143,36 @@ Content and assets to be added:
 - Modular system architecture for easy expansion
 - Signal-based communication between systems
 
+## Development & Testing
+
+This project has comprehensive testing and validation infrastructure:
+
+- **Linting**: GDScript linting with gdlint
+- **Testing**: Unit, integration, and E2E tests using GUT framework
+- **CI/CD**: Automated checks on pull requests via GitHub Actions
+- **Build Validation**: Ensures project compiles correctly
+
+### Quick Start for Developers
+
+```bash
+# Install development tools
+make install-tools
+
+# Run linter
+make lint
+
+# Format code
+make format
+
+# Run all tests
+make test
+
+# Run all checks (lint + build + test)
+make check
+```
+
+For detailed information, see [TESTING.md](TESTING.md).
+
 ## Testing the Demo
 
 1. Start the game - you'll see the player (blue) and NPCs (orange)

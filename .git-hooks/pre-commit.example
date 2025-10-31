@@ -1,0 +1,43 @@
+#!/bin/bash
+
+# Example pre-commit hook for Gothic Chronicles: The Aftermath
+# Copy this to .git/hooks/pre-commit and make it executable to enable
+#
+# cp .git-hooks/pre-commit.example .git/hooks/pre-commit
+# chmod +x .git/hooks/pre-commit
+
+set -e
+
+echo "Running pre-commit checks..."
+echo "=============================="
+
+# Run linter on staged GDScript files
+STAGED_GD_FILES=$(git diff --cached --name-only --diff-filter=ACM | grep '\.gd$' || true)
+
+if [ -n "$STAGED_GD_FILES" ]; then
+    echo ""
+    echo "Linting GDScript files..."
+    
+    if ! command -v gdlint &> /dev/null; then
+        echo "Warning: gdlint not found. Install with: pip install gdtoolkit"
+        echo "Skipping linting..."
+    else
+        for file in $STAGED_GD_FILES; do
+            echo "  Checking $file..."
+            gdlint "$file" || {
+                echo ""
+                echo "Linting failed! Fix errors or run 'gdformat $file' to auto-fix."
+                echo "To commit anyway, use: git commit --no-verify"
+                exit 1
+            }
+        done
+        echo "  ✓ All files pass linting"
+    fi
+else
+    echo "No GDScript files to check"
+fi
+
+echo ""
+echo "=============================="
+echo "✓ Pre-commit checks passed!"
+echo ""

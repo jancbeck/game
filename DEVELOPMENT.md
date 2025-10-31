@@ -276,6 +276,31 @@ get_node("../UI/Panel").update()
 
 ## Testing
 
+This project has a comprehensive testing infrastructure with automated unit, integration, and E2E tests.
+
+**For complete testing documentation, see [TESTING.md](TESTING.md)**
+
+### Quick Testing Commands
+
+```bash
+# Run all tests
+make test
+
+# Run specific test suites
+make test-unit         # Unit tests only
+make test-integration  # Integration tests only
+make test-e2e         # E2E tests only
+
+# Run linter
+make lint
+
+# Format code
+make format
+
+# Run all checks
+make check
+```
+
 ### Manual Testing Checklist
 - [ ] Player movement in all directions
 - [ ] NPC interaction triggers correctly
@@ -291,6 +316,15 @@ get_node("../UI/Panel").update()
 - Opening UI panels while in dialogue
 - Skill checks at minimum/maximum values
 - Full thought cabinet (3/3 slots)
+
+### Automated Test Coverage
+
+The automated test suite covers:
+- **Unit Tests**: CharacterStats, DialogueSystem, ThoughtCabinet
+- **Integration Tests**: Player interactions, dialogue with stats
+- **E2E Tests**: Complete game flow scenarios
+
+Run `make test` to execute all automated tests.
 
 ## Expansion Ideas
 
