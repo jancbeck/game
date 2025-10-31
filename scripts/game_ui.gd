@@ -2,6 +2,10 @@ extends CanvasLayer
 
 ## Main game UI controller
 
+var current_dialogue_system: DialogueSystem = null
+var player_stats: CharacterStats = null
+var player_thoughts: ThoughtCabinet = null
+
 @onready var dialogue_panel = $DialoguePanel
 @onready var dialogue_text = $DialoguePanel/VBox/DialogueText
 @onready var dialogue_speaker = $DialoguePanel/VBox/Speaker
@@ -14,10 +18,6 @@ extends CanvasLayer
 @onready var skill_check_notification = $SkillCheckNotification
 @onready var health_bar = $StatusBars/HealthBar
 @onready var morale_bar = $StatusBars/MoraleBar
-
-var current_dialogue_system: DialogueSystem = null
-var player_stats: CharacterStats = null
-var player_thoughts: ThoughtCabinet = null
 
 
 func _ready():

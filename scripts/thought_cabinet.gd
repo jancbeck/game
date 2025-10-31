@@ -1,5 +1,5 @@
-extends Node
 class_name ThoughtCabinet
+extends Node
 
 ## Thought Cabinet system inspired by Disco Elysium
 ## Players can internalize thoughts that provide bonuses/penalties

@@ -1,5 +1,5 @@
-extends Node
 class_name CharacterStats
+extends Node
 
 ## Character statistics system inspired by Disco Elysium
 ## Attributes affect skill checks and dialogue options
@@ -71,33 +71,25 @@ func perform_skill_check(skill_name: String, difficulty: int) -> Dictionary:
 
 func get_skill_value(skill_name: String) -> int:
 	"""Get the current value of a skill"""
-	match skill_name.to_lower():
-		"logic":
-			return logic
-		"rhetoric":
-			return rhetoric
-		"empathy":
-			return empathy
-		"authority":
-			return authority
-		"perception":
-			return perception
-		"endurance":
-			return endurance
-		"pain_threshold":
-			return pain_threshold
-		"shivers":
-			return shivers
-		"intellect":
-			return intellect
-		"psyche":
-			return psyche
-		"physique":
-			return physique
-		"motorics":
-			return motorics
-		_:
-			return 1
+	var skill_map = {
+		"logic": logic,
+		"rhetoric": rhetoric,
+		"empathy": empathy,
+		"authority": authority,
+		"perception": perception,
+		"endurance": endurance,
+		"pain_threshold": pain_threshold,
+		"shivers": shivers,
+		"intellect": intellect,
+		"psyche": psyche,
+		"physique": physique,
+		"motorics": motorics
+	}
+
+	var key = skill_name.to_lower()
+	if key in skill_map:
+		return skill_map[key]
+	return 1
 
 
 func modify_attribute(attribute: String, amount: int):
