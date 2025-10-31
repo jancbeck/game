@@ -86,16 +86,13 @@ func setup_example_dialogue():
 	aftermath.add_option(DialogueOption.new("I should investigate.", "end"))
 	dialogue["aftermath"] = aftermath
 
-	var details = (
-		DialogueNode
-		. new(
-			"details",
-			"Old Miner",
-			(
-				"Strange lights, whispers in the dark. "
-				+ "Some say it's Beliar's curse, others say it's just fear. "
-				+ "But I know what I saw..."
-			)
+	var details = DialogueNode.new(
+		"details",
+		"Old Miner",
+		(
+			"Strange lights, whispers in the dark. "
+			+ "Some say it's Beliar's curse, others say it's just fear. "
+			+ "But I know what I saw..."
 		)
 	)
 	details.add_option(

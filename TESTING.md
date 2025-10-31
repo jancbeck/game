@@ -71,21 +71,21 @@ Linting checks your code for style issues, potential bugs, and adherence to best
 ### Run Linter
 
 ```bash
-# Check all scripts
+# Check all scripts (recommended)
 make lint
 
-# Or manually
-gdlint scripts/*.gd
+# Or manually using Python module
+python -m gdtoolkit.linter scripts/*.gd
 ```
 
 ### Auto-Format Code
 
 ```bash
-# Format all scripts automatically
+# Format all scripts automatically (recommended)
 make format
 
-# Or manually
-gdformat scripts/*.gd
+# Or manually using Python module
+python -m gdtoolkit.formatter scripts/*.gd
 ```
 
 ### Linting Rules

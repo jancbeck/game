@@ -18,15 +18,15 @@ if [ -n "$STAGED_GD_FILES" ]; then
     echo ""
     echo "Linting GDScript files..."
     
-    if ! command -v gdlint &> /dev/null; then
-        echo "Warning: gdlint not found. Install with: pip install gdtoolkit"
+    if ! python -m gdtoolkit.linter --version &> /dev/null; then
+        echo "Warning: gdtoolkit not found. Install with: pip install gdtoolkit"
         echo "Skipping linting..."
     else
         for file in $STAGED_GD_FILES; do
             echo "  Checking $file..."
-            gdlint "$file" || {
+            python -m gdtoolkit.linter "$file" || {
                 echo ""
-                echo "Linting failed! Fix errors or run 'gdformat $file' to auto-fix."
+                echo "Linting failed! Fix errors or run 'python -m gdtoolkit.formatter $file' to auto-fix."
                 echo "To commit anyway, use: git commit --no-verify"
                 exit 1
             }
