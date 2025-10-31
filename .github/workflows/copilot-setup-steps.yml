@@ -34,4 +34,4 @@ jobs:
           python-version: "3.x"
 
       - name: Install GDScript Toolkit
-        run: pip3 install "gdtoolkit==4.*"
+        run: pip3 install "gdtoolkit>=4.0,<5.0"
