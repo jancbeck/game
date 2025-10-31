@@ -351,6 +351,21 @@ When designing new systems, keep these DE principles:
 
 This project uses [GdUnit4](https://mikeschulze.github.io/gdUnit4/) for automated testing.
 
+### Installing GdUnit4 for Local Development
+
+GdUnit4 is **not** included in the repository. To run tests locally:
+
+1. **Via Godot Asset Library** (recommended):
+   - Open the project in Godot Editor (4.5 or later)
+   - Go to AssetLib tab
+   - Search for "GdUnit4"
+   - Download and install the addon
+
+2. **Manual Installation**:
+   - Download [GdUnit4](https://github.com/MikeSchulze/gdUnit4/releases) v6.0.1 or later
+   - Extract to `addons/gdUnit4/` in your project
+   - The `addons/` directory is gitignored
+
 ### Running Tests
 
 Tests run automatically in CI when you push changes or create a pull request.
