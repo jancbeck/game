@@ -23,9 +23,13 @@ jobs:
       - name: Install gdtoolkit
         run: |
           pip install gdtoolkit==4.2.2
+          echo "✓ gdtoolkit installed"
+          which gdlint
+          gdlint --version
 
       - name: Run gdlint
         run: |
+          cd $GITHUB_WORKSPACE
           gdlint scripts/*.gd
 
   validate-build:

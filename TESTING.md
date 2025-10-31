@@ -14,7 +14,14 @@ This document explains how to use the testing, linting, and validation infrastru
 
 ## Quick Start
 
-### Install Development Tools
+### For Coding Agents
+
+The development environment is automatically set up via the `copilot-setup-steps` workflow. This includes:
+- Python 3.12 with gdtoolkit
+- Godot 4.2.2
+- Mandatory pre-commit hook for automatic linting
+
+### Install Development Tools (Manual)
 
 ```bash
 make install-tools
@@ -23,6 +30,8 @@ make install-tools
 This installs:
 - `gdlint` - GDScript linter
 - `gdformat` - GDScript code formatter
+
+**Note**: The pre-commit hook is mandatory and automatically installed by the setup workflow.
 
 ### Run All Checks
 

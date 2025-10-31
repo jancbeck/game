@@ -1,0 +1,81 @@
+name: "Copilot Setup Steps"
+
+# Automatically run the setup steps when they are changed to allow for easy validation, and
+# allow manual testing through the repository's "Actions" tab
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - .github/workflows/copilot-setup-steps.yml
+  pull_request:
+    paths:
+      - .github/workflows/copilot-setup-steps.yml
+
+jobs:
+  # The job MUST be called `copilot-setup-steps` or it will not be picked up by Copilot.
+  copilot-setup-steps:
+    runs-on: ubuntu-latest
+
+    # Set the permissions to the lowest permissions possible needed for your steps.
+    # Copilot will be given its own token for its operations.
+    permissions:
+      # Clone the repository to install dependencies and setup environment
+      contents: read
+
+    # You can define any steps you want, and they will run before the agent starts.
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install gdtoolkit (linting and formatting)
+        run: |
+          pip install gdtoolkit==4.2.2
+          echo "✓ Installed gdtoolkit for linting and formatting"
+
+      - name: Download and setup Godot
+        run: |
+          wget -q https://github.com/godotengine/godot/releases/download/4.2.2-stable/Godot_v4.2.2-stable_linux.x86_64.zip
+          unzip -q Godot_v4.2.2-stable_linux.x86_64.zip
+          chmod +x Godot_v4.2.2-stable_linux.x86_64
+          sudo mv Godot_v4.2.2-stable_linux.x86_64 /usr/local/bin/godot
+          echo "✓ Installed Godot 4.2.2"
+
+      - name: Setup mandatory pre-commit hook
+        run: |
+          # Install the pre-commit hook to enforce linting before commits
+          mkdir -p .git/hooks
+          cp .git-hooks/pre-commit.example .git/hooks/pre-commit
+          chmod +x .git/hooks/pre-commit
+          echo "✓ Pre-commit hook installed (mandatory)"
+
+      - name: Verify setup
+        run: |
+          echo "=== Verifying setup ==="
+          echo ""
+          echo "Python version:"
+          python --version
+          echo ""
+          echo "gdlint version:"
+          gdlint --version
+          echo ""
+          echo "Godot version:"
+          godot --version --headless
+          echo ""
+          echo "Pre-commit hook:"
+          ls -la .git/hooks/pre-commit
+          echo ""
+          echo "✓ All tools ready for coding agent"
+
+      - name: Run initial validation
+        run: |
+          echo "=== Running validation checks ==="
+          make lint
+          echo ""
+          godot --headless --path . --check-only --quit
+          echo ""
+          echo "✓ Initial validation passed"

@@ -28,9 +28,11 @@ make install-tools
 pip install gdtoolkit==4.2.2
 ```
 
-### Optional: Pre-commit Hook
+### Pre-commit Hook (Mandatory for Coding Agents)
 
-Set up automatic linting before commits:
+For coding agents, the pre-commit hook is automatically installed via the `copilot-setup-steps` workflow. This ensures all commits are linted before being pushed.
+
+For manual setup:
 
 ```bash
 cp .git-hooks/pre-commit.example .git/hooks/pre-commit
