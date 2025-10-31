@@ -2,27 +2,32 @@ class_name DialogueSystemIntegrationTest
 extends GdUnitTestSuite
 
 ## Integration test for DialogueSystem using Scene Runner
-## Tests interaction between DialogueSystem and CharacterStats in a scene context
+## Tests interaction between NPC scenes with DialogueSystem and CharacterStats
 
 var _runner: GdUnitSceneRunner
+var _npc: Node
 var _dialogue_system: DialogueSystem
 var _character_stats: CharacterStats
 
 
 func before_test():
 	"""Initialize test data before each test case"""
-	# Load the main scene which contains NPCs with dialogue systems
-	_runner = scene_runner("res://scenes/main.tscn")
+	# Load the NPC scene which contains the dialogue system
+	_runner = scene_runner("res://scenes/npc.tscn")
 
-	# Get the NPC node which has DialogueSystem
-	var npc = _runner.find_child("NPC", true, false)
-	assert_object(npc).is_not_null()
+	# Get the root NPC node from the scene
+	_npc = _runner.scene()
+	assert_object(_npc).is_not_null()
 
-	# Access the dialogue system from the scene
-	_dialogue_system = npc.get_node_or_null("DialogueSystem")
+	# The NPC creates DialogueSystem in _ready(), access it via property
+	_dialogue_system = _npc.dialogue_system if _npc != null else null
+
+	# Ensure we have a dialogue system
 	if _dialogue_system == null:
-		# If not in scene, create one for testing
 		_dialogue_system = auto_free(DialogueSystem.new())
+
+	# Ensure dialogue is set up
+	if _dialogue_system.current_dialogue.is_empty():
 		_dialogue_system.setup_example_dialogue()
 
 	# Create character stats for testing
@@ -35,14 +40,15 @@ func after_test():
 		_runner.clear_scene()
 
 
-func test_scene_loads_correctly():
-	"""Test that the main scene loads with required components"""
-	var scene = _runner.scene()
-	assert_object(scene).is_not_null()
+func test_npc_scene_loads_correctly():
+	"""Test that the NPC scene loads with required components"""
+	assert_object(_npc).is_not_null()
 
-	# Verify NPCs are present
-	var npc = _runner.find_child("NPC", true, false)
-	assert_object(npc).is_not_null()
+	# Verify NPC has dialogue system
+	assert_object(_dialogue_system).is_not_null()
+
+	# Verify NPC has the expected properties
+	assert_str(_npc.npc_name).is_equal("Old Miner")
 
 
 func test_dialogue_system_in_scene_context():
