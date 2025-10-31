@@ -34,12 +34,12 @@ install-tools:
 
 lint:
 	@echo "Running GDScript linter..."
-	@python -m gdtoolkit.linter scripts/*.gd
+	@python3 -m gdtoolkit.linter scripts/*.gd
 	@echo "✓ Linting complete"
 
 format:
 	@echo "Formatting GDScript files..."
-	@python -m gdtoolkit.formatter scripts/*.gd
+	@python3 -m gdtoolkit.formatter scripts/*.gd
 	@echo "✓ Formatting complete"
 
 test:

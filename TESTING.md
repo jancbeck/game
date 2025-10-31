@@ -75,7 +75,7 @@ Linting checks your code for style issues, potential bugs, and adherence to best
 make lint
 
 # Or manually using Python module
-python -m gdtoolkit.linter scripts/*.gd
+python3 -m gdtoolkit.linter scripts/*.gd
 ```
 
 ### Auto-Format Code
@@ -85,7 +85,7 @@ python -m gdtoolkit.linter scripts/*.gd
 make format
 
 # Or manually using Python module
-python -m gdtoolkit.formatter scripts/*.gd
+python3 -m gdtoolkit.formatter scripts/*.gd
 ```
 
 ### Linting Rules
