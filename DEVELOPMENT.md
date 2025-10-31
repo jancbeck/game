@@ -347,11 +347,71 @@ When designing new systems, keep these DE principles:
 - GDScript Reference: https://docs.godotengine.org/en/stable/tutorials/scripting/gdscript/
 - Godot Community: https://godotengine.org/community
 
+## Testing
+
+This project uses [GdUnit4](https://mikeschulze.github.io/gdUnit4/) for automated testing.
+
+### Running Tests
+
+Tests run automatically in CI when you push changes or create a pull request.
+
+**Local Testing** (requires GdUnit4 plugin installed):
+- Open the project in Godot Editor
+- Open the GdUnit4 inspector from the bottom panel
+- Click "Run All Tests" or run individual test suites
+
+**Test Structure**:
+```
+test/
+├── CharacterStatsTest.gd          # Unit tests for CharacterStats
+└── DialogueSystemIntegrationTest.gd  # Integration tests for DialogueSystem
+```
+
+### Writing Tests
+
+**Unit Tests** - Test individual components in isolation:
+```gdscript
+class_name MyFeatureTest
+extends GdUnitTestSuite
+
+var _my_feature: MyFeature
+
+func before_test():
+    """Initialize before each test"""
+    _my_feature = auto_free(MyFeature.new())
+
+func test_my_functionality():
+    """Test that my feature works correctly"""
+    assert_int(_my_feature.calculate(2, 3)).is_equal(5)
+```
+
+**Integration Tests** - Test how components work together:
+```gdscript
+func test_character_dialogue_integration():
+    """Test dialogue system with character stats"""
+    var stats = auto_free(CharacterStats.new())
+    var dialogue = auto_free(DialogueSystem.new())
+    
+    # Test interaction between systems
+    dialogue.start_dialogue("start", stats)
+    assert_bool(dialogue.select_option(0)).is_true()
+```
+
+### Best Practices
+
+- Use `auto_free()` to automatically clean up test objects
+- One assertion concept per test (but multiple assert calls are fine)
+- Test both success and failure cases
+- Name tests descriptively: `test_what_when_then`
+- Use the `before()` and `before_test()` hooks for setup
+- Follow the [GdUnit4 documentation](https://mikeschulze.github.io/gdUnit4/) for advanced features
+
 ## Contributing
 
 When adding new features:
 1. Follow the existing code style
 2. Add comments for complex logic
-3. Test thoroughly
-4. Update documentation (this file, README, or GAMEPLAY)
-5. Keep changes modular and reversible
+3. Write tests for new functionality
+4. Test thoroughly (both manual and automated)
+5. Update documentation (this file, README, or GAMEPLAY)
+6. Keep changes modular and reversible
