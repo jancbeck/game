@@ -110,26 +110,23 @@ func modify_morale(amount: int):
 
 func get_stats_summary() -> String:
 	"""Return a formatted string of all character stats"""
-	return """
-	=== CHARACTER STATS ===
-	Name: %s
-	Health: %d/100
-	Morale: %d/100
-	
-	PRIMARY ATTRIBUTES:
-	Intellect: %d
-	Psyche: %d
-	Physique: %d
-	Motorics: %d
-	
-	SKILLS:
-	Logic: %d
-	Rhetoric: %d
-	Empathy: %d
-	Authority: %d
-	Perception: %d
-	Endurance: %d
-	Pain Threshold: %d
-	Shivers: %d
-	""" % [character_name, health, morale, intellect, psyche, physique, motorics,
-		   logic, rhetoric, empathy, authority, perception, endurance, pain_threshold, shivers]
+	var summary = ""
+	summary += "=== CHARACTER STATS ===\n"
+	summary += "Name: %s\n" % character_name
+	summary += "Health: %d/100\n" % health
+	summary += "Morale: %d/100\n\n" % morale
+	summary += "PRIMARY ATTRIBUTES:\n"
+	summary += "Intellect: %d\n" % intellect
+	summary += "Psyche: %d\n" % psyche
+	summary += "Physique: %d\n" % physique
+	summary += "Motorics: %d\n\n" % motorics
+	summary += "SKILLS:\n"
+	summary += "Logic: %d\n" % logic
+	summary += "Rhetoric: %d\n" % rhetoric
+	summary += "Empathy: %d\n" % empathy
+	summary += "Authority: %d\n" % authority
+	summary += "Perception: %d\n" % perception
+	summary += "Endurance: %d\n" % endurance
+	summary += "Pain Threshold: %d\n" % pain_threshold
+	summary += "Shivers: %d\n" % shivers
+	return summary

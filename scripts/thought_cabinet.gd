@@ -7,6 +7,8 @@ class_name ThoughtCabinet
 signal thought_added(thought: Thought)
 signal thought_internalized(thought: Thought)
 signal thought_removed(thought: Thought)
+signal thought_cabinet_full()
+signal thought_not_found(thought_id: String)
 
 class Thought:
 	var id: String
@@ -70,7 +72,7 @@ func add_available_thought(thought: Thought):
 func internalize_thought(thought_id: String) -> bool:
 	"""Start internalizing a thought"""
 	if active_thoughts.size() >= max_active_thoughts:
-		print("Thought cabinet is full!")
+		thought_cabinet_full.emit()
 		return false
 	
 	var thought = get_thought_by_id(thought_id)
@@ -80,6 +82,8 @@ func internalize_thought(thought_id: String) -> bool:
 		available_thoughts.erase(thought)
 		thought_internalized.emit(thought)
 		return true
+	
+	thought_not_found.emit(thought_id)
 	return false
 
 func remove_thought(thought_id: String) -> bool:
