@@ -1,4 +1,4 @@
-name: GDScript Static Checks
+name: Continuous Integration
 
 on:
   push:
@@ -8,6 +8,7 @@ on:
 
 env:
   GODOT_VERSION: "4.5.1"
+  GODOT_BIN: /usr/local/bin/godot
 
 jobs:
   static-checks:
@@ -27,8 +28,6 @@ jobs:
     needs: static-checks
     permissions:
       contents: read
-    env:
-      GODOT_BIN: /tmp/godot-bin
     steps:
       - uses: actions/checkout@v5
         with:
@@ -44,14 +43,13 @@ jobs:
       - name: Download Godot (if needed)
         if: steps.godot-cache.outputs.cache-hit != 'true'
         run: |
-          mkdir -p "$GODOT_BIN"
           curl -L "https://github.com/godotengine/godot/releases/download/${GODOT_VERSION}-stable/Godot_v${GODOT_VERSION}-stable_linux.x86_64.zip" -o godot.zip
-          unzip -q godot.zip -d "$GODOT_BIN"
-          chmod +x $GODOT_BIN/*
+          unzip -q godot.zip
+          sudo mv Godot_v${GODOT_VERSION}-stable_linux.x86_64 "$GODOT_BIN"
+          sudo chmod +x "$GODOT_BIN"
 
       - name: Type Check Scripts
-        run: |
-          $GODOT_BIN/Godot_v$GODOT_VERSION-stable_linux.x86_64 --headless --quit --editor --path .
+        run: godot --headless --quit --editor --path .
 
   unit-tests:
     name: "Unit Tests"
@@ -82,8 +80,6 @@ jobs:
     needs: unit-tests
     permissions:
       contents: read
-    env:
-      GODOT_BIN: /tmp/godot-bin
     steps:
       - uses: actions/checkout@v5
         with:
@@ -99,13 +95,10 @@ jobs:
       - name: Download Godot (if needed)
         if: steps.godot-cache.outputs.cache-hit != 'true'
         run: |
-          mkdir -p "$GODOT_BIN"
           curl -L "https://github.com/godotengine/godot/releases/download/${GODOT_VERSION}-stable/Godot_v${GODOT_VERSION}-stable_linux.x86_64.zip" -o godot.zip
-          unzip -q godot.zip -d "$GODOT_BIN"
-          chmod +x $GODOT_BIN/*
-
-      - name: Add Godot to PATH
-        run: echo "$GODOT_BIN" >> $GITHUB_PATH
+          unzip -q godot.zip
+          sudo mv Godot_v${GODOT_VERSION}-stable_linux.x86_64 "$GODOT_BIN"
+          sudo chmod +x "$GODOT_BIN"
 
       - name: Cache export templates
         id: templates-cache
@@ -123,10 +116,9 @@ jobs:
           mv templates/* ~/.local/share/godot/export_templates/$GODOT_VERSION.stable/
 
       - name: Run export smoke test
-        continue-on-error: true
         run: |
           mkdir -p build
-          "$GODOT_BIN/Godot_v$GODOT_VERSION-stable_linux.x86_64" --headless --export-release "Linux/X11" build/app.x86_64
+          godot --headless --export-release "Linux/X11" build/app.x86_64
 
       - name: Verify build artifact
         run: |
