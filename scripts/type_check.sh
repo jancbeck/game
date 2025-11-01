@@ -7,9 +7,12 @@ set -e
 # Find Godot binary
 if [ -n "$GODOT_BIN" ]; then
     # GODOT_BIN is explicitly set, validate it exists as file or command
-    if [ -f "$GODOT_BIN" ] || command -v "$GODOT_BIN" &> /dev/null; then
-        # Valid - either a file path or command in PATH
-        :
+    if [ -f "$GODOT_BIN" ]; then
+        # Valid file path
+        echo "Using Godot binary: $GODOT_BIN"
+    elif command -v "$GODOT_BIN" &> /dev/null; then
+        # Valid command in PATH
+        echo "Using Godot binary: $GODOT_BIN"
     else
         echo "Error: GODOT_BIN is set to '$GODOT_BIN' but it doesn't exist or is not executable."
         exit 1
@@ -17,6 +20,7 @@ if [ -n "$GODOT_BIN" ]; then
 elif command -v godot &> /dev/null; then
     # godot is in PATH
     GODOT_BIN="godot"
+    echo "Using Godot binary: $GODOT_BIN"
 else
     echo "Error: Godot binary not found."
     echo "Please set GODOT_BIN environment variable or install Godot in PATH."
@@ -24,7 +28,6 @@ else
     exit 1
 fi
 
-echo "Using Godot binary: $GODOT_BIN"
 echo "Running type check..."
 
 # Run Godot in headless mode to parse scripts
