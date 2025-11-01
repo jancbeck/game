@@ -49,11 +49,20 @@ jobs:
       - name: Install pre-commit hooks
         run: pre-commit install
 
-      - name: Setup Godot
-        uses: ./.github/actions/setup-godot
+      - name: Cache Godot editor
+        id: godot-cache
+        uses: actions/cache@v4
         with:
-          godot-version: "4.5.1"
-          godot-bin: /usr/local/bin/godot
+          path: /usr/local/bin/godot
+          key: godot-4.5.1
+
+      - name: Download Godot (if needed)
+        if: steps.godot-cache.outputs.cache-hit != 'true'
+        run: |
+          curl -L "https://github.com/godotengine/godot/releases/download/4.5.1-stable/Godot_v4.5.1-stable_linux.x86_64.zip" -o godot.zip
+          unzip -q godot.zip
+          sudo mv Godot_v4.5.1-stable_linux.x86_64 /usr/local/bin/godot
+          sudo chmod +x /usr/local/bin/godot
 
       - name: Download and Install GdUnit4
         run: |
