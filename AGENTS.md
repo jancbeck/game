@@ -359,19 +359,12 @@ When designing new systems, keep these DE principles:
 ### Testing
 
 ```bash
-export GODOT_BIN=/tmp/Godot_v4.5.1-stable_linux.x86_64
-$GODOT_BIN --path . -e --headless --quit-after 2000  # Imports project, exit 0 = success
+godot --path . -e --headless --quit-after 2000  # Imports project, exit 0 = success
 
 # Run tests using gdUnit4 command-line tool (works without plugin enabled in project settings)
 # Use -a res://test to run all tests in the test directory
-$GODOT_BIN --headless -s res://addons/gdUnit4/bin/GdUnitCmdTool.gd --ignoreHeadlessMode -a res://test
-
-# Alternative: Use the runtest.sh wrapper script
-chmod +x ./addons/gdUnit4/runtest.sh
-./addons/gdUnit4/runtest.sh -a res://test
+godot --headless -s res://addons/gdUnit4/bin/GdUnitCmdTool.gd --ignoreHeadlessMode -a res://test
 ```
-
-## Project Structure
 
 ## Critical Rules
 
@@ -383,3 +376,4 @@ chmod +x ./addons/gdUnit4/runtest.sh
 6. **Tests**: Use `auto_free()` in GdUnit4 tests. Unit tests in CharacterStatsTest.gd, integration in DialogueSystemIntegrationTest.gd.
 7. **LFS assets**: New assets must match `.gitattributes` patterns. Update workflows if needed.
 8. **Documentation**: DEVELOPMENT.md (APIs), README.md (user guide), GAMEPLAY.md (mechanics).
+9. commit uid files to git
