@@ -12,7 +12,7 @@ repos:
         require_serial: true
         types: [gdscript]
         exclude: ^addons/
-        stages: [commit, push]
+        stages: [pre-commit, pre-push]
       - id: gdformat
         name: gdformat
         description: "gdformat - formatter for GDScript"
@@ -22,7 +22,7 @@ repos:
         require_serial: true
         types: [gdscript]
         exclude: ^addons/
-        stages: [commit, push]
+        stages: [pre-commit, pre-push]
   # Type checking with Godot
   - repo: local
     hooks:
@@ -32,4 +32,4 @@ repos:
         entry: scripts/type_check.sh
         language: system
         pass_filenames: false
-        stages: [push]
+        stages: [pre-push]
