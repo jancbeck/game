@@ -11,10 +11,11 @@ on:
     paths:
       - .github/workflows/copilot-setup-steps.yml
 
-env:
-  GODOT_VERSION: "4.5.1"
-  GODOT_BIN: /usr/local/bin/godot
-  GDUNIT4_VERSION: "6.0.1"
+# We can't set environment variables in copilot-setup-steps.yml at all so inling instead...
+# env:
+#   GODOT_VERSION: "4.5.1"
+#   GODOT_BIN: /usr/local/bin/godot
+#   GDUNIT4_VERSION: "6.0.1"
 
 jobs:
   # The job MUST be called `copilot-setup-steps` or it will not be picked up by Copilot.
@@ -52,31 +53,31 @@ jobs:
         id: godot-cache
         uses: actions/cache@v4
         with:
-          path: ${{ env.GODOT_BIN }}
-          key: godot-${{ env.GODOT_VERSION }}
+          path: /usr/local/bin/godot
+          key: godot-4.5.1
 
       - name: Download Godot (if needed)
         if: steps.godot-cache.outputs.cache-hit != 'true'
         run: |
-          curl -L "https://github.com/godotengine/godot/releases/download/${GODOT_VERSION}-stable/Godot_v${GODOT_VERSION}-stable_linux.x86_64.zip" -o godot.zip
+          curl -L "https://github.com/godotengine/godot/releases/download/4.5.1-stable/Godot_v4.5.1-stable_linux.x86_64.zip" -o godot.zip
           unzip -q godot.zip
-          sudo mv Godot_v${GODOT_VERSION}-stable_linux.x86_64 "$GODOT_BIN"
-          sudo chmod +x "$GODOT_BIN"
+          sudo mv Godot_v4.5.1-stable_linux.x86_64 /usr/local/bin/godot
+          sudo chmod +x /usr/local/bin/godot
 
       - name: Download and Install GdUnit4
         run: |
           mkdir -p addons
           cd addons
-          wget -q "https://github.com/MikeSchulze/gdUnit4/archive/refs/tags/v${GDUNIT4_VERSION}.zip"
-          unzip -q "v${GDUNIT4_VERSION}.zip"
-          mv "gdUnit4-${GDUNIT4_VERSION}/addons/gdUnit4" .
-          rm -rf "gdUnit4-${GDUNIT4_VERSION}" "v${GDUNIT4_VERSION}.zip"
+          wget -q "https://github.com/MikeSchulze/gdUnit4/archive/refs/tags/v6.0.1.zip"
+          unzip -q "v6.0.1.zip"
+          mv "gdUnit4-6.0.1/addons/gdUnit4" .
+          rm -rf "gdUnit4-6.0.1" "v6.0.1.zip"
 
       - name: Verify Setup
         run: |
           echo "Godot installed:"
-          ls -la $GODOT_BIN
+          ls -la /usr/local/bin/godot
           echo "Godot version:"
-          $GODOT_BIN --version --headless
+          /usr/local/bin/godot --version --headless
           echo "GdUnit4 installed:"
           ls -la addons/gdUnit4/plugin.cfg
