@@ -21,3 +21,11 @@ repos:
         require_serial: true
         types: [gdscript]
         exclude: ^addons/
+  - repo: local
+    hooks:
+      - id: godot-type-check
+        name: Godot Type Check
+        entry: bash -c '${GODOT_BIN}/Godot_v${GODOT_VERSION}-stable_linux.x86_64 --headless --quit --editor --path .'
+        language: system
+        pass_filenames: false
+        files: \.(gd|tscn|tres)$

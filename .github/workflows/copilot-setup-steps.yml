@@ -22,6 +22,11 @@ jobs:
       # If you want to clone the repository as part of your setup steps, for example to install dependencies, you'll need the `contents: read` permission. If you don't clone the repository in your setup steps, Copilot will do this for you automatically after the steps complete.
       contents: read
 
+    env:
+      GODOT_VERSION: "4.5.1"
+      GODOT_BIN: /tmp/godot-bin
+      GDUNIT4_VERSION: "6.0.1"
+
     # You can define any steps you want, and they will run before the agent starts.
     # If you do not check out your code, Copilot will do this for you.
     steps:
@@ -41,22 +46,32 @@ jobs:
       - name: Install pre-commit hooks
         run: pre-commit install
 
-      - name: Download and Install Godot 4.5.1
-        run: |
-          cd /tmp
-          wget -q https://github.com/godotengine/godot/releases/download/4.5.1-stable/Godot_v4.5.1-stable_linux.x86_64.zip
-          unzip -q Godot_v4.5.1-stable_linux.x86_64.zip
-          chmod +x Godot_v4.5.1-stable_linux.x86_64
-          echo "GODOT_BIN=/tmp/Godot_v4.5.1-stable_linux.x86_64" >> $GITHUB_ENV
+      - name: Cache Godot editor
+        id: godot-cache
+        uses: actions/cache@v4
+        with:
+          path: ${{ env.GODOT_BIN }}
+          key: godot-${{ env.GODOT_VERSION }}
 
-      - name: Download and Install GdUnit4 v6.0.1
+      - name: Download Godot (if needed)
+        if: steps.godot-cache.outputs.cache-hit != 'true'
+        run: |
+          mkdir -p "$GODOT_BIN"
+          curl -L "https://github.com/godotengine/godot/releases/download/${GODOT_VERSION}-stable/Godot_v${GODOT_VERSION}-stable_linux.x86_64.zip" -o godot.zip
+          unzip -q godot.zip -d "$GODOT_BIN"
+          chmod +x $GODOT_BIN/*
+
+      - name: Add Godot to PATH
+        run: echo "$GODOT_BIN" >> $GITHUB_PATH
+
+      - name: Download and Install GdUnit4
         run: |
           mkdir -p addons
           cd addons
-          wget -q https://github.com/MikeSchulze/gdUnit4/archive/refs/tags/v6.0.1.zip
-          unzip -q v6.0.1.zip
-          mv gdUnit4-6.0.1/addons/gdUnit4 .
-          rm -rf gdUnit4-6.0.1 v6.0.1.zip
+          wget -q "https://github.com/MikeSchulze/gdUnit4/archive/refs/tags/v${GDUNIT4_VERSION}.zip"
+          unzip -q "v${GDUNIT4_VERSION}.zip"
+          mv "gdUnit4-${GDUNIT4_VERSION}/addons/gdUnit4" .
+          rm -rf "gdUnit4-${GDUNIT4_VERSION}" "v${GDUNIT4_VERSION}.zip"
 
       - name: Verify Setup
         run: |
