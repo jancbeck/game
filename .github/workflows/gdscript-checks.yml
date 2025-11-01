@@ -40,3 +40,66 @@ jobs:
           res://test/
         timeout: 5
         report-name: test_report.xml
+
+  export-smoke-test:
+    name: 'Export Smoke Test'
+    runs-on: ubuntu-latest
+    needs: unit-tests
+    permissions:
+      contents: read
+    env:
+      GODOT_VERSION: '4.5.1'
+      GODOT_BIN: /tmp/godot-bin
+      GODOT_DL: https://github.com/godotengine/godot/releases/download/4.5.1-stable/Godot_v4.5.1-stable_linux.x86_64.zip
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          lfs: true
+
+      - name: Cache Godot editor
+        id: godot-cache
+        uses: actions/cache@v4
+        with:
+          path: ${{ env.GODOT_BIN }}
+          key: godot-${{ env.GODOT_VERSION }}
+
+      - name: Download Godot (if needed)
+        if: steps.godot-cache.outputs.cache-hit != 'true'
+        run: |
+          mkdir -p "$GODOT_BIN"
+          curl -L "$GODOT_DL" -o godot.zip
+          unzip -q godot.zip -d "$GODOT_BIN"
+          chmod +x $GODOT_BIN/*
+
+      - name: Add Godot to PATH
+        run: echo "$GODOT_BIN" >> $GITHUB_PATH
+
+      - name: Cache export templates
+        id: templates-cache
+        uses: actions/cache@v4
+        with:
+          path: ~/.local/share/godot/export_templates/${{ env.GODOT_VERSION }}.stable
+          key: godot-templates-${{ env.GODOT_VERSION }}
+
+      - name: Download and install export templates
+        if: steps.templates-cache.outputs.cache-hit != 'true'
+        run: |
+          mkdir -p ~/.local/share/godot/export_templates/$GODOT_VERSION.stable
+          curl -L "https://github.com/godotengine/godot/releases/download/${GODOT_VERSION}-stable/Godot_v${GODOT_VERSION}-stable_export_templates.tpz" -o templates.tpz
+          unzip -q templates.tpz
+          mv templates/* ~/.local/share/godot/export_templates/$GODOT_VERSION.stable/
+
+      - name: Run export smoke test
+        continue-on-error: true
+        run: |
+          mkdir -p build
+          "$GODOT_BIN/Godot_v4.5.1-stable_linux.x86_64" --headless --export-release "Linux/X11" build/app.x86_64
+
+      - name: Verify build artifact
+        run: |
+          if [ ! -f "build/app.x86_64" ]; then
+            echo "Error: Export failed - build/app.x86_64 not found"
+            exit 1
+          fi
+          echo "Export successful - build artifact created"
+          ls -lh build/
