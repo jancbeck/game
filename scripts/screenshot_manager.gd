@@ -58,8 +58,8 @@ func take_screenshot(custom_name: String = "") -> String:
 	var filename := _generate_filename(custom_name)
 	var filepath := screenshots_folder + "/" + filename
 
-	# Save the image
-	var error := image.save_png(filepath)
+	# Save the image (with res:// prefix for Godot file system)
+	var error := image.save_png("res://" + filepath)
 	if error != OK:
 		push_error("Failed to save screenshot: " + str(error))
 		return ""
@@ -98,6 +98,6 @@ func _generate_filename(custom_name: String = "") -> String:
 ## Takes a screenshot after waiting for the specified number of frames.
 ## Useful for allowing the scene to fully render before capturing.
 func take_screenshot_delayed(frames: int = 1, custom_name: String = "") -> String:
-	for i in range(frames):
+	for _i in range(frames):
 		await get_tree().process_frame
 	return take_screenshot(custom_name)
