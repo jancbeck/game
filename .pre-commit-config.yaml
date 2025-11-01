@@ -29,7 +29,7 @@ repos:
       - id: godot-type-check
         name: Godot Type Check
         description: "Type check GDScript files using Godot editor"
-        entry: ./scripts/type_check.sh
+        entry: bash ./scripts/type_check.sh
         language: system
         pass_filenames: false
         stages: [pre-push]
