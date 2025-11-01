@@ -74,6 +74,8 @@ jobs:
 
       - name: Verify Setup
         run: |
+          echo "Godot installed:"
+          ls -la $GODOT_BIN
           echo "Godot version:"
           $GODOT_BIN --version --headless
           echo "GdUnit4 installed:"
