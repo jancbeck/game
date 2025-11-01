@@ -36,8 +36,7 @@ func before_test():
 
 func after_test():
 	"""Clean up scene runner after each test"""
-	if _runner:
-		_runner.clear_scene()
+	# Scene runner automatically cleans up when freed
 
 
 func test_npc_scene_loads_correctly():
@@ -223,16 +222,15 @@ func test_character_stats_signal_integration():
 	if _dialogue_system.current_dialogue.is_empty():
 		_dialogue_system.setup_example_dialogue()
 
-	var signal_received = false
-	var signal_skill = ""
-	var signal_success = false
+	# Use a dictionary to capture signal data from lambda
+	var signal_data = {"received": false, "skill": "", "success": false}
 
 	# Connect to skill check signal
 	_character_stats.skill_check_performed.connect(
 		func(skill_name: String, result: bool, _roll: int, _target: int):
-			signal_received = true
-			signal_skill = skill_name
-			signal_success = result
+			signal_data["received"] = true
+			signal_data["skill"] = skill_name
+			signal_data["success"] = result
 	)
 
 	# Perform a dialogue with skill check
@@ -243,8 +241,8 @@ func test_character_stats_signal_integration():
 	_dialogue_system.select_option(1)  # Rhetoric check
 
 	# Signal should have been emitted
-	assert_bool(signal_received).is_true()
-	assert_str(signal_skill).is_equal("rhetoric")
+	assert_bool(signal_data["received"]).is_true()
+	assert_str(signal_data["skill"]).is_equal("rhetoric")
 
 
 func test_dialogue_node_structure():

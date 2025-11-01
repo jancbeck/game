@@ -29,6 +29,11 @@ var health: int = 100
 var morale: int = 100
 
 
+func _init():
+	"""Initialize skills from attributes"""
+	update_skills_from_attributes()
+
+
 func _ready():
 	update_skills_from_attributes()
 
