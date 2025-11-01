@@ -23,9 +23,15 @@ repos:
         exclude: ^addons/
   - repo: local
     hooks:
+      - id: godot-import-check
+        name: Godot Import Check (generate .uid files)
+        entry: .github/scripts/check-godot-imports.sh
+        language: system
+        pass_filenames: false
+        always_run: true
       - id: godot-type-check
         name: Godot Type Check
-        entry: bash -c '${GODOT_BIN:-/usr/local/bin/godot} --headless --quit --editor --path .'
+        entry: bash -c 'godot --headless --quit --editor --path .'
         language: system
         pass_filenames: false
         files: \.(gd|tscn|tres)$
