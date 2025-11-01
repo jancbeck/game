@@ -25,6 +25,6 @@ echo "Using Godot binary: $GODOT_BIN"
 echo "Running type check..."
 
 # Run Godot in headless mode to parse scripts
-$GODOT_BIN --headless --quit --editor --path .
+"$GODOT_BIN" --headless --quit --editor --path .
 
 echo "Type check completed successfully!"

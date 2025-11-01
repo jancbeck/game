@@ -389,7 +389,7 @@ chmod +x ./addons/gdUnit4/runtest.sh
 ## Critical Rules
 
 1. **Linting is mandatory**: `gdformat --check scripts/` and `gdlint scripts/` must pass before commit.
-2. **Type checking is mandatory**: `godot --headless --quit --editor` must pass (validates syntax and types). Run via `./scripts/type_check.sh` or let CI/pre-push hook handle it.
+2. **Type checking is mandatory**: `godot --headless --quit --editor --path .` must pass (validates syntax and types). Run via `./scripts/type_check.sh` or let CI/pre-push hook handle it.
 3. **Run manual tests**
 4. **Typed GDScript**: Use type annotations (`var name: String`, `func foo() -> int`).
 5. **Signal-based**: Use Godot signals for component communication. No tight coupling.
