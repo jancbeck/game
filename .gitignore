@@ -16,3 +16,4 @@ data_*/
 mono_crash.*.json
 # GdUnit4 addon (installed via CI or locally)
 addons/gdUnit4/
+reports
