@@ -38,3 +38,36 @@ jobs:
 
       - name: Install pre-commit hooks
         run: pre-commit install
+      
+      - name: Download and Install Godot 4.5.1
+        run: |
+          cd /tmp
+          wget -q https://github.com/godotengine/godot/releases/download/4.5.1-stable/Godot_v4.5.1-stable_linux.x86_64.zip
+          unzip -q Godot_v4.5.1-stable_linux.x86_64.zip
+          chmod +x Godot_v4.5.1-stable_linux.x86_64
+          echo "GODOT_BIN=/tmp/Godot_v4.5.1-stable_linux.x86_64" >> $GITHUB_ENV
+      
+      - name: Download and Install GdUnit4 v6.0.1
+        run: |
+          mkdir -p addons
+          cd addons
+          wget -q https://github.com/MikeSchulze/gdUnit4/archive/refs/tags/v6.0.1.zip
+          unzip -q v6.0.1.zip
+          mv gdUnit4-6.0.1/addons/gdUnit4 .
+          rm -rf gdUnit4-6.0.1 v6.0.1.zip
+      
+      - name: Enable GdUnit4 Plugin in project.godot
+        run: |
+          if ! grep -q "\[editor_plugins\]" project.godot; then
+            echo "" >> project.godot
+            echo "[editor_plugins]" >> project.godot
+            echo "" >> project.godot
+            echo 'enabled=PackedStringArray("res://addons/gdUnit4/plugin.cfg")' >> project.godot
+          fi
+      
+      - name: Verify Setup
+        run: |
+          echo "Godot version:"
+          $GODOT_BIN --version --headless
+          echo "GdUnit4 installed:"
+          ls -la addons/gdUnit4/plugin.cfg
