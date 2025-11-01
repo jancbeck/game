@@ -375,7 +375,7 @@ godot --headless -s res://addons/gdUnit4/bin/GdUnitCmdTool.gd --ignoreHeadlessMo
 - **Godot 4.5 syntax**: `.emit()` for signals, typed syntax, Forward+ renderer. Read upgrade guide https://docs.godotengine.org/en/4.4/tutorials/migrating/upgrading_to_godot_4.4.html
 - **Tests**: Use `auto_free()` in GdUnit4 tests. Unit tests in CharacterStatsTest.gd, integration in DialogueSystemIntegrationTest.gd.
 - **LFS assets**: New assets must match `.gitattributes` patterns. Update workflows if needed.
-- **Documentation**: DEVELOPMENT.md (APIs), README.md (user guide), GAMEPLAY.md (mechanics).
 - Generate uid files via `godot --path . -e --headless --quit-after 2000` and commit uid files to git
 - Use context7 to fetch most up-to-date documentation of godot
 - Do not disable linting rules
+- Keep AGENTS.md up-to-date
