@@ -363,6 +363,7 @@ export GODOT_BIN=/tmp/Godot_v4.5.1-stable_linux.x86_64
 $GODOT_BIN --path . -e --headless --quit-after 2000  # Imports project, exit 0 = success
 
 # Run tests using gdUnit4 command-line tool (works without plugin enabled in project settings)
+# Use -a res://test to run all tests in the test directory
 $GODOT_BIN --headless -s res://addons/gdUnit4/bin/GdUnitCmdTool.gd --ignoreHeadlessMode -a res://test
 
 # Alternative: Use the runtest.sh wrapper script
