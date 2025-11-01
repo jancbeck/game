@@ -87,9 +87,10 @@ jobs:
           mv templates/* ~/.local/share/godot/export_templates/$GODOT_VERSION.stable/
 
       - name: Run export smoke test
+        continue-on-error: true
         run: |
           mkdir -p build
-          Godot_v4.5.1-stable_linux.x86_64 --headless --export-release "Linux/X11" build/app.x86_64 || true
+          "$GODOT_BIN/Godot_v4.5.1-stable_linux.x86_64" --headless --export-release "Linux/X11" build/app.x86_64
 
       - name: Verify build artifact
         run: |
