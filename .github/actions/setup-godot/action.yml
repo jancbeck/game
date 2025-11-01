@@ -1,0 +1,29 @@
+name: "Setup Godot"
+description: "Download and cache Godot engine"
+inputs:
+  godot-version:
+    description: "Godot version to install"
+    required: true
+    default: "4.5.1"
+  godot-bin:
+    description: "Path where Godot binary will be installed"
+    required: true
+    default: "/usr/local/bin/godot"
+runs:
+  using: "composite"
+  steps:
+    - name: Cache Godot editor
+      id: godot-cache
+      uses: actions/cache@v4
+      with:
+        path: ${{ inputs.godot-bin }}
+        key: godot-${{ inputs.godot-version }}
+
+    - name: Download Godot (if needed)
+      if: steps.godot-cache.outputs.cache-hit != 'true'
+      shell: bash
+      run: |
+        curl -L "https://github.com/godotengine/godot/releases/download/${{ inputs.godot-version }}-stable/Godot_v${{ inputs.godot-version }}-stable_linux.x86_64.zip" -o godot.zip
+        unzip -q godot.zip
+        sudo mv Godot_v${{ inputs.godot-version }}-stable_linux.x86_64 "${{ inputs.godot-bin }}"
+        sudo chmod +x "${{ inputs.godot-bin }}"

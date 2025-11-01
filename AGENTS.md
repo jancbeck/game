@@ -376,4 +376,4 @@ godot --headless -s res://addons/gdUnit4/bin/GdUnitCmdTool.gd --ignoreHeadlessMo
 6. **Tests**: Use `auto_free()` in GdUnit4 tests. Unit tests in CharacterStatsTest.gd, integration in DialogueSystemIntegrationTest.gd.
 7. **LFS assets**: New assets must match `.gitattributes` patterns. Update workflows if needed.
 8. **Documentation**: DEVELOPMENT.md (APIs), README.md (user guide), GAMEPLAY.md (mechanics).
-9. commit uid files to git
+9. Generate uid files via `godot --path . -e --headless --quit-after 2000` and commit uid files to git
