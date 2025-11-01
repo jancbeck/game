@@ -356,6 +356,25 @@ When designing new systems, keep these DE principles:
 
 ## Build and Validation
 
+### Type Checking
+
+Type checking validates GDScript syntax and type annotations by loading the project in Godot editor headless mode:
+
+```bash
+# Set Godot binary path
+export GODOT_BIN=/path/to/Godot_v4.5.1-stable_linux.x86_64
+
+# Run type check (parses all scripts, fails on syntax errors)
+$GODOT_BIN --headless --quit --editor --path .
+
+# Or use the helper script
+./scripts/type_check.sh
+```
+
+Type checking runs automatically:
+- In CI after lint/format checks (see `.github/workflows/gdscript-checks.yml`)
+- On `git push` via pre-commit hook (if Godot is installed locally)
+
 ### Testing
 
 ```bash
@@ -370,10 +389,11 @@ chmod +x ./addons/gdUnit4/runtest.sh
 ## Critical Rules
 
 1. **Linting is mandatory**: `gdformat --check scripts/` and `gdlint scripts/` must pass before commit.
-2. **Run manual tests**
-3. **Typed GDScript**: Use type annotations (`var name: String`, `func foo() -> int`).
-4. **Signal-based**: Use Godot signals for component communication. No tight coupling.
-5. **Godot 4.5 syntax**: `.emit()` for signals, typed syntax, Forward+ renderer.
-6. **Tests**: Use `auto_free()` in GdUnit4 tests. Unit tests in CharacterStatsTest.gd, integration in DialogueSystemIntegrationTest.gd.
-7. **LFS assets**: New assets must match `.gitattributes` patterns. Update workflows if needed.
-8. **Documentation**: DEVELOPMENT.md (APIs), README.md (user guide), GAMEPLAY.md (mechanics).
+2. **Type checking is mandatory**: `godot --headless --quit --editor` must pass (validates syntax and types). Run via `./scripts/type_check.sh` or let CI/pre-push hook handle it.
+3. **Run manual tests**
+4. **Typed GDScript**: Use type annotations (`var name: String`, `func foo() -> int`).
+5. **Signal-based**: Use Godot signals for component communication. No tight coupling.
+6. **Godot 4.5 syntax**: `.emit()` for signals, typed syntax, Forward+ renderer.
+7. **Tests**: Use `auto_free()` in GdUnit4 tests. Unit tests in CharacterStatsTest.gd, integration in DialogueSystemIntegrationTest.gd.
+8. **LFS assets**: New assets must match `.gitattributes` patterns. Update workflows if needed.
+9. **Documentation**: DEVELOPMENT.md (APIs), README.md (user guide), GAMEPLAY.md (mechanics).
