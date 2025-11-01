@@ -1,8 +1,10 @@
-# Development Guide
+# Copilot Instructions for Gothic Chronicles: The Aftermath
 
-## Project Architecture
+## Repository Overview
 
-This game is built with a modular architecture to make it easy to expand and modify.
+Post-Gothic 2 RPG with Disco Elysium mechanics. Godot 4.5.1 project with GDScript.
+
+**Tech:** Godot 4.5.1 (Forward+), GDScript (typed), GdUnit4 v6.0.1, GDScript Toolkit 4.x, Git LFS for assets.
 
 ### Core Systems
 
@@ -11,12 +13,14 @@ This game is built with a modular architecture to make it easy to expand and mod
 **Purpose**: Manages character attributes, skills, and performs skill checks.
 
 **Key Features**:
+
 - 4 primary attributes (Intellect, Psyche, Physique, Motorics)
 - 8 derived skills
 - 2d6 skill check system
 - Signal-based communication for stat changes
 
 **API**:
+
 ```gdscript
 # Perform a skill check
 var result = stats.perform_skill_check("rhetoric", 8)
@@ -34,11 +38,13 @@ var logic_value = stats.get_skill_value("logic")
 **Purpose**: Manages thoughts that can be internalized for stat bonuses/penalties.
 
 **Key Features**:
+
 - Dynamic thought system with effects
 - Limited active thought slots (3 by default)
 - Easy to add new thoughts
 
 **API**:
+
 ```gdscript
 # Create a new thought
 var thought = ThoughtCabinet.Thought.new(
@@ -62,12 +68,14 @@ var effects = thought_cabinet.get_total_effects()
 **Purpose**: Handles branching dialogue with integrated skill checks.
 
 **Key Features**:
+
 - Node-based dialogue tree
 - Skill check integration
 - Success/fail branches
 - Signal emissions for UI updates
 
 **API**:
+
 ```gdscript
 # Create dialogue nodes
 var node = DialogueSystem.DialogueNode.new("node_id", "Speaker", "Text")
@@ -91,11 +99,13 @@ dialogue_system.select_option(0)  # Select first option
 **Purpose**: Handles player movement, input, and interaction.
 
 **Key Features**:
+
 - WASD/Arrow key movement
 - Interaction system
 - References to stats and thought cabinet
 
 **Extension Points**:
+
 - Add sprint mechanic
 - Add inventory system
 - Add combat system
@@ -105,11 +115,13 @@ dialogue_system.select_option(0)  # Select first option
 **Purpose**: Manages NPC behavior and interactions.
 
 **Key Features**:
+
 - Area-based interaction detection
 - Dialogue integration
 - Configurable per-NPC
 
 **Extension Points**:
+
 - Add AI behavior
 - Add patrol routes
 - Add day/night routines
@@ -119,6 +131,7 @@ dialogue_system.select_option(0)  # Select first option
 **Purpose**: Manages all UI elements and player feedback.
 
 **Key Features**:
+
 - Dialogue display
 - Character sheet
 - Thought cabinet display
@@ -126,6 +139,7 @@ dialogue_system.select_option(0)  # Select first option
 - Status bars
 
 **Extension Points**:
+
 - Add quest log
 - Add inventory UI
 - Add map
@@ -135,16 +149,19 @@ dialogue_system.select_option(0)  # Select first option
 ### Adding a New Skill
 
 1. In `character_stats.gd`, add the skill variable:
+
 ```gdscript
 var new_skill: int = 2
 ```
 
 2. Update the `update_skills_from_attributes()` function:
+
 ```gdscript
 new_skill = attribute1 + attribute2
 ```
 
 3. Add the skill to `get_skill_value()`:
+
 ```gdscript
 "new_skill": return new_skill
 ```
@@ -154,6 +171,7 @@ new_skill = attribute1 + attribute2
 ### Adding a New Thought
 
 In `thought_cabinet.gd`'s `_ready()` function:
+
 ```gdscript
 add_available_thought(Thought.new(
     "unique_id",
@@ -171,6 +189,7 @@ add_available_thought(Thought.new(
 ### Creating New Dialogue
 
 1. In your NPC or dialogue manager script:
+
 ```gdscript
 var dialogue = {}
 
@@ -219,10 +238,6 @@ dialogue["end"] = end
 ```
 game/
 ├── project.godot              # Godot project config
-├── icon.svg                   # Project icon
-├── README.md                  # User guide
-├── GAMEPLAY.md                # Gameplay documentation
-├── DEVELOPMENT.md             # This file
 ├── scenes/                    # All scene files (.tscn)
 │   ├── main.tscn             # Main game scene
 │   ├── player.tscn           # Player prefab
@@ -235,30 +250,29 @@ game/
 │   ├── dialogue_system.gd
 │   ├── thought_cabinet.gd
 │   └── game_ui.gd
-├── assets/                    # Game assets
-│   ├── sprites/              # Character and object sprites
-│   ├── tiles/                # Tileset images
-│   ├── audio/                # Sound effects and music
-│   └── fonts/                # Custom fonts
 └── .godot/                   # Godot generated files (ignored)
 ```
 
 ## Best Practices
 
 ### Script Organization
+
 - One class per file
 - Use `class_name` for globally accessible classes
 - Document public APIs with comments
 - Use signals for loose coupling
 
 ### Scene Organization
+
 - Keep scenes modular and reusable
 - Use instancing for repeated elements
 - Export variables for easy configuration
 - Use groups for batch operations
 
 ### Signal-Based Communication
+
 Instead of direct references:
+
 ```gdscript
 # Good: Signal-based
 signal player_action()
@@ -269,6 +283,7 @@ get_node("../UI/Panel").update()
 ```
 
 ### Performance Tips
+
 - Use `@onready` for node references that won't change
 - Cache frequently accessed nodes
 - Use object pooling for projectiles/effects
@@ -276,8 +291,8 @@ get_node("../UI/Panel").update()
 
 ## Testing
 
-### Manual Testing Checklist
-- [ ] Player movement in all directions
+### Common scenarios to test
+
 - [ ] NPC interaction triggers correctly
 - [ ] Dialogue displays properly
 - [ ] Skill checks calculate correctly
@@ -287,6 +302,7 @@ get_node("../UI/Panel").update()
 - [ ] Status bars update in real-time
 
 ### Edge Cases to Test
+
 - Multiple rapid interactions
 - Opening UI panels while in dialogue
 - Skill checks at minimum/maximum values
@@ -295,6 +311,7 @@ get_node("../UI/Panel").update()
 ## Expansion Ideas
 
 ### Short-term
+
 - [ ] Add more dialogue trees
 - [ ] Create additional NPCs with unique personalities
 - [ ] Add more thoughts related to Gothic lore
@@ -302,6 +319,7 @@ get_node("../UI/Panel").update()
 - [ ] Add simple quest tracking
 
 ### Medium-term
+
 - [ ] Replace placeholder graphics with sprites
 - [ ] Add ambient sound and music
 - [ ] Implement save/load system
@@ -309,6 +327,7 @@ get_node("../UI/Panel").update()
 - [ ] Add character customization
 
 ### Long-term
+
 - [ ] Full narrative campaign
 - [ ] Combat system (if desired)
 - [ ] Advanced AI for NPCs
@@ -318,6 +337,7 @@ get_node("../UI/Panel").update()
 ## Gothic 2 Lore Integration
 
 When adding content, consider these Gothic 2 elements:
+
 - **Locations**: Khorinis, Valley of Mines, Monastery, City
 - **Factions**: Militia, Fire Mages, Water Mages, Mercenaries, Farmers
 - **Key NPCs**: Xardas, Milten, Diego, Lester, Gorn
@@ -327,139 +347,33 @@ When adding content, consider these Gothic 2 elements:
 ## Disco Elysium Mechanics Integration
 
 When designing new systems, keep these DE principles:
+
 - Skills as characters (they "speak" through internal dialogue)
 - Failure is interesting (failed checks open new paths)
 - Everything has a cost (thoughts give bonuses BUT also penalties)
 - Psychology matters (mental stats as important as physical)
 - World building through dialogue (not just exposition)
 
-## Godot 4 Specific Notes
+## Build and Validation
 
-- This project uses Godot 4.2+ features
-- Uses the new typed GDScript syntax
-- Forward+ rendering method
-- Signals use new `.emit()` syntax
-- Scene instancing uses `@export` and `PackedScene`
+### Testing
 
-## Getting Help
-
-- Godot Documentation: https://docs.godotengine.org/
-- GDScript Reference: https://docs.godotengine.org/en/stable/tutorials/scripting/gdscript/
-- Godot Community: https://godotengine.org/community
-
-## Testing
-
-This project uses [GdUnit4](https://mikeschulze.github.io/gdUnit4/) for automated testing.
-
-### Installing GdUnit4 for Local Development
-
-GdUnit4 is **not** included in the repository. To run tests locally:
-
-1. **Via Godot Asset Library** (recommended):
-   - Open the project in Godot Editor (4.5 or later)
-   - Go to AssetLib tab
-   - Search for "GdUnit4"
-   - Download and install the addon
-
-2. **Manual Installation**:
-   - Download [GdUnit4](https://github.com/MikeSchulze/gdUnit4/releases) v6.0.1 or later
-   - Extract to `addons/gdUnit4/` in your project
-   - The `addons/` directory is gitignored
-
-### Running Tests
-
-Tests run automatically in CI when you push changes or create a pull request.
-
-**Local Testing via Godot Editor** (requires GdUnit4 plugin installed):
-- Open the project in Godot Editor
-- Open the GdUnit4 inspector from the bottom panel
-- Click "Run All Tests" or run individual test suites
-
-**Local Testing via Command Line** (requires GdUnit4 plugin installed):
-
-1. Set the GODOT_BIN environment variable:
-   ```bash
-   # macOS
-   export GODOT_BIN=/Applications/Godot.app/Contents/MacOS/Godot
-   
-   # Linux
-   export GODOT_BIN=/usr/local/bin/godot
-   
-   # Windows
-   setx GODOT_BIN D:\path\to\Godot.exe
-   ```
-
-2. Make the runtest script executable (Unix-like systems):
-   ```bash
-   chmod +x ./addons/gdUnit4/runtest.sh
-   ```
-
-3. Run all tests:
-   ```bash
-   # Unix/Linux/macOS
-   ./addons/gdUnit4/runtest.sh -a res://test/
-   
-   # Windows
-   .\addons\gdUnit4\runtest.cmd -a res://test/
-   ```
-
-4. Run specific test suite:
-   ```bash
-   ./addons/gdUnit4/runtest.sh -a res://test/CharacterStatsTest.gd
-   ```
-
-**Test Structure**:
-```
-test/
-├── CharacterStatsTest.gd          # Unit tests for CharacterStats
-└── DialogueSystemIntegrationTest.gd  # Integration tests for DialogueSystem
+```bash
+export GODOT_BIN=/tmp/Godot_v4.5.1-stable_linux.x86_64
+$GODOT_BIN --path . -e --headless --quit-after 2000  # Imports project, exit 0 = success
+chmod +x ./addons/gdUnit4/runtest.sh
+./addons/gdUnit4/runtest.s -a . # run all tests
 ```
 
-### Writing Tests
+## Project Structure
 
-**Unit Tests** - Test individual components in isolation:
-```gdscript
-class_name MyFeatureTest
-extends GdUnitTestSuite
+## Critical Rules
 
-var _my_feature: MyFeature
-
-func before_test():
-    """Initialize before each test"""
-    _my_feature = auto_free(MyFeature.new())
-
-func test_my_functionality():
-    """Test that my feature works correctly"""
-    assert_int(_my_feature.calculate(2, 3)).is_equal(5)
-```
-
-**Integration Tests** - Test how components work together:
-```gdscript
-func test_character_dialogue_integration():
-    """Test dialogue system with character stats"""
-    var stats = auto_free(CharacterStats.new())
-    var dialogue = auto_free(DialogueSystem.new())
-    
-    # Test interaction between systems
-    dialogue.start_dialogue("start", stats)
-    assert_bool(dialogue.select_option(0)).is_true()
-```
-
-### Best Practices
-
-- Use `auto_free()` to automatically clean up test objects
-- One assertion concept per test (but multiple assert calls are fine)
-- Test both success and failure cases
-- Name tests descriptively: `test_what_when_then`
-- Use the `before()` and `before_test()` hooks for setup
-- Follow the [GdUnit4 documentation](https://mikeschulze.github.io/gdUnit4/) for advanced features
-
-## Contributing
-
-When adding new features:
-1. Follow the existing code style
-2. Add comments for complex logic
-3. Write tests for new functionality
-4. Test thoroughly (both manual and automated)
-5. Update documentation (this file, README, or GAMEPLAY)
-6. Keep changes modular and reversible
+1. **Linting is mandatory**: `gdformat --check scripts/` and `gdlint scripts/` must pass before commit.
+2. **Run manual tests**
+3. **Typed GDScript**: Use type annotations (`var name: String`, `func foo() -> int`).
+4. **Signal-based**: Use Godot signals for component communication. No tight coupling.
+5. **Godot 4.5 syntax**: `.emit()` for signals, typed syntax, Forward+ renderer.
+6. **Tests**: Use `auto_free()` in GdUnit4 tests. Unit tests in CharacterStatsTest.gd, integration in DialogueSystemIntegrationTest.gd.
+7. **LFS assets**: New assets must match `.gitattributes` patterns. Update workflows if needed.
+8. **Documentation**: DEVELOPMENT.md (APIs), README.md (user guide), GAMEPLAY.md (mechanics).
