@@ -20,4 +20,4 @@ addons/gdUnit4/
 reports
 
 # Build artifacts
-build/
+build/godot.zip
