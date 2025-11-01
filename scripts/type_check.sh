@@ -5,21 +5,20 @@
 set -e
 
 # Find Godot binary
-GODOT_BIN="${GODOT_BIN:-godot}"
-
-# Check if GODOT_BIN is set to a specific path
-if [ ! -f "$GODOT_BIN" ]; then
-    # Try common locations
-    if command -v godot &> /dev/null; then
-        GODOT_BIN="godot"
-    elif [ -f "/tmp/Godot_v4.5.1-stable_linux.x86_64" ]; then
-        GODOT_BIN="/tmp/Godot_v4.5.1-stable_linux.x86_64"
-    else
-        echo "Error: Godot binary not found."
-        echo "Please set GODOT_BIN environment variable or install Godot."
-        echo "Example: export GODOT_BIN=/path/to/Godot_v4.5.1-stable_linux.x86_64"
+if [ -n "$GODOT_BIN" ]; then
+    # GODOT_BIN is explicitly set, use it directly
+    if [ ! -f "$GODOT_BIN" ] && ! command -v "$GODOT_BIN" &> /dev/null; then
+        echo "Error: GODOT_BIN is set to '$GODOT_BIN' but it doesn't exist or is not executable."
         exit 1
     fi
+elif command -v godot &> /dev/null; then
+    # godot is in PATH
+    GODOT_BIN="godot"
+else
+    echo "Error: Godot binary not found."
+    echo "Please set GODOT_BIN environment variable or install Godot in PATH."
+    echo "Example: export GODOT_BIN=/path/to/Godot_v4.5.1-stable_linux.x86_64"
+    exit 1
 fi
 
 echo "Using Godot binary: $GODOT_BIN"
