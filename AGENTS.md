@@ -368,13 +368,14 @@ godot --headless -s res://addons/gdUnit4/bin/GdUnitCmdTool.gd --ignoreHeadlessMo
 
 ## Critical Rules
 
-1. **Linting is mandatory**: `gdformat --check scripts/` and `gdlint scripts/` must pass before commit.
-2. **Run manual tests**
-3. **Typed GDScript**: Use type annotations (`var name: String`, `func foo() -> int`).
-4. **Signal-based**: Use Godot signals for component communication. No tight coupling.
-5. **Godot 4.5 syntax**: `.emit()` for signals, typed syntax, Forward+ renderer. Read upgrade guide https://docs.godotengine.org/en/4.4/tutorials/migrating/upgrading_to_godot_4.4.html
-6. **Tests**: Use `auto_free()` in GdUnit4 tests. Unit tests in CharacterStatsTest.gd, integration in DialogueSystemIntegrationTest.gd.
-7. **LFS assets**: New assets must match `.gitattributes` patterns. Update workflows if needed.
-8. **Documentation**: DEVELOPMENT.md (APIs), README.md (user guide), GAMEPLAY.md (mechanics).
-9. Generate uid files via `godot --path . -e --headless --quit-after 2000` and commit uid files to git
-10. Use context7 to fetch most up-to-date documentation of godot
+- **Linting is mandatory**: `gdformat --check scripts/` and `gdlint scripts/` must pass before commit.
+- **Run manual tests**
+- **Typed GDScript**: Use type annotations (`var name: String`, `func foo() -> int`).
+- **Signal-based**: Use Godot signals for component communication. No tight coupling.
+- **Godot 4.5 syntax**: `.emit()` for signals, typed syntax, Forward+ renderer. Read upgrade guide https://docs.godotengine.org/en/4.4/tutorials/migrating/upgrading_to_godot_4.4.html
+- **Tests**: Use `auto_free()` in GdUnit4 tests. Unit tests in CharacterStatsTest.gd, integration in DialogueSystemIntegrationTest.gd.
+- **LFS assets**: New assets must match `.gitattributes` patterns. Update workflows if needed.
+- **Documentation**: DEVELOPMENT.md (APIs), README.md (user guide), GAMEPLAY.md (mechanics).
+- Generate uid files via `godot --path . -e --headless --quit-after 2000` and commit uid files to git
+- Use context7 to fetch most up-to-date documentation of godot
+- Do not disable linting rules
