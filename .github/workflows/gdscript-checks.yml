@@ -29,6 +29,9 @@ jobs:
     - uses: actions/checkout@v5
       with:
         lfs: true
+    # Using gdUnit4-action for convenience - it handles Godot installation and report generation
+    # Alternative: Direct command works without plugin enabled in project settings
+    # See AGENTS.md for manual command-line testing
     - name: GdUnit4 - Test Runner Action
       uses: MikeSchulze/gdUnit4-action@v1.2.2
       with:
