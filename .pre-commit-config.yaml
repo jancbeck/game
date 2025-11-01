@@ -25,7 +25,7 @@ repos:
     hooks:
       - id: godot-type-check
         name: Godot Type Check
-        entry: bash -c '${GODOT_BIN}/Godot_v${GODOT_VERSION}-stable_linux.x86_64 --headless --quit --editor --path .'
+        entry: bash -c '${GODOT_BIN:-/usr/local/bin/godot} --headless --quit --editor --path .'
         language: system
         pass_filenames: false
         files: \.(gd|tscn|tres)$
