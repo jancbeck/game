@@ -27,3 +27,4 @@ runs:
         unzip -q godot.zip
         sudo mv Godot_v${{ inputs.godot-version }}-stable_linux.x86_64 "${{ inputs.godot-bin }}"
         sudo chmod +x "${{ inputs.godot-bin }}"
+        rm godot.zip
