@@ -21,3 +21,6 @@ reports
 
 # Build artifacts
 build/
+
+# Screenshots (for development/testing feedback)
+screenshots/
