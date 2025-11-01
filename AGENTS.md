@@ -371,6 +371,15 @@ chmod +x ./addons/gdUnit4/runtest.sh
 ./addons/gdUnit4/runtest.sh -a res://test
 ```
 
+### Type Checking
+
+Type checking validates GDScript syntax and type annotations by loading the project in Godot editor headless mode:
+
+```bash
+# Run type check (parses all scripts, fails on syntax errors)
+$GODOT_BIN --headless --quit --editor --path .
+```
+
 ## Project Structure
 
 ## Critical Rules
