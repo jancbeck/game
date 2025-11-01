@@ -6,8 +6,11 @@ set -e
 
 # Find Godot binary
 if [ -n "$GODOT_BIN" ]; then
-    # GODOT_BIN is explicitly set, use it directly
-    if [ ! -f "$GODOT_BIN" ] && ! command -v "$GODOT_BIN" &> /dev/null; then
+    # GODOT_BIN is explicitly set, validate it exists as file or command
+    if [ -f "$GODOT_BIN" ] || command -v "$GODOT_BIN" &> /dev/null; then
+        # Valid - either a file path or command in PATH
+        :
+    else
         echo "Error: GODOT_BIN is set to '$GODOT_BIN' but it doesn't exist or is not executable."
         exit 1
     fi
