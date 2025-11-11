@@ -1,381 +1,175 @@
-# Copilot Instructions for Gothic Chronicles: The Aftermath
+# Copilot Instructions for Hades Zero
 
 ## Repository Overview
 
-Post-Gothic 2 RPG with Disco Elysium mechanics. Godot 4.5.1 project with GDScript.
+Hades-inspired twin-stick shooter prototype. Godot 4.5.1 project with GDScript.
 
-**Tech:** Godot 4.5.1 (Forward+), GDScript (typed), GdUnit4 v6.0.1, GDScript Toolkit 4.x, Git LFS for assets.
+**Tech:** Godot 4.5.1 (Forward+), GDScript (typed), GDScript Toolkit 4.x, Git LFS for assets.
 
-### Core Systems
-
-#### 1. Character Stats System (`scripts/character_stats.gd`)
-
-**Purpose**: Manages character attributes, skills, and performs skill checks.
-
-**Key Features**:
-
-- 4 primary attributes (Intellect, Psyche, Physique, Motorics)
-- 8 derived skills
-- 2d6 skill check system
-- Signal-based communication for stat changes
-
-**API**:
-
-```gdscript
-# Perform a skill check
-var result = stats.perform_skill_check("rhetoric", 8)
-# Returns: { skill, skill_value, roll, total, difficulty, success, margin }
-
-# Modify attributes
-stats.modify_attribute("intellect", 1)  # +1 to intellect
-
-# Get skill values
-var logic_value = stats.get_skill_value("logic")
-```
-
-#### 2. Thought Cabinet System (`scripts/thought_cabinet.gd`)
-
-**Purpose**: Manages thoughts that can be internalized for stat bonuses/penalties.
-
-**Key Features**:
-
-- Dynamic thought system with effects
-- Limited active thought slots (3 by default)
-- Easy to add new thoughts
-
-**API**:
-
-```gdscript
-# Create a new thought
-var thought = ThoughtCabinet.Thought.new(
-    "thought_id",
-    "Thought Title",
-    "Description of the thought",
-    5.0,  # Time to internalize (seconds)
-    {"skill_name": modifier}  # Effects
-)
-
-# Add and internalize
-thought_cabinet.add_available_thought(thought)
-thought_cabinet.internalize_thought("thought_id")
-
-# Get total effects from all thoughts
-var effects = thought_cabinet.get_total_effects()
-```
-
-#### 3. Dialogue System (`scripts/dialogue_system.gd`)
-
-**Purpose**: Handles branching dialogue with integrated skill checks.
-
-**Key Features**:
-
-- Node-based dialogue tree
-- Skill check integration
-- Success/fail branches
-- Signal emissions for UI updates
-
-**API**:
-
-```gdscript
-# Create dialogue nodes
-var node = DialogueSystem.DialogueNode.new("node_id", "Speaker", "Text")
-
-# Add options
-var option = DialogueSystem.DialogueOption.new(
-    "Option text",
-    "next_node_id",
-    "skill_name",  # Optional: for skill checks
-    difficulty     # Optional: skill check difficulty
-)
-node.add_option(option)
-
-# Start and progress dialogue
-dialogue_system.start_dialogue("start", character_stats)
-dialogue_system.select_option(0)  # Select first option
-```
-
-#### 4. Player Controller (`scripts/player.gd`)
-
-**Purpose**: Handles player movement, input, and interaction.
-
-**Key Features**:
-
-- WASD/Arrow key movement
-- Interaction system
-- References to stats and thought cabinet
-
-**Extension Points**:
-
-- Add sprint mechanic
-- Add inventory system
-- Add combat system
-
-#### 5. NPC System (`scripts/npc.gd`)
-
-**Purpose**: Manages NPC behavior and interactions.
-
-**Key Features**:
-
-- Area-based interaction detection
-- Dialogue integration
-- Configurable per-NPC
-
-**Extension Points**:
-
-- Add AI behavior
-- Add patrol routes
-- Add day/night routines
-
-#### 6. UI System (`scripts/game_ui.gd`)
-
-**Purpose**: Manages all UI elements and player feedback.
-
-**Key Features**:
-
-- Dialogue display
-- Character sheet
-- Thought cabinet display
-- Skill check notifications
-- Status bars
-
-**Extension Points**:
-
-- Add quest log
-- Add inventory UI
-- Add map
-
-## Adding New Content
-
-### Adding a New Skill
-
-1. In `character_stats.gd`, add the skill variable:
-
-```gdscript
-var new_skill: int = 2
-```
-
-2. Update the `update_skills_from_attributes()` function:
-
-```gdscript
-new_skill = attribute1 + attribute2
-```
-
-3. Add the skill to `get_skill_value()`:
-
-```gdscript
-"new_skill": return new_skill
-```
-
-4. Update `get_stats_summary()` to display it.
-
-### Adding a New Thought
-
-In `thought_cabinet.gd`'s `_ready()` function:
-
-```gdscript
-add_available_thought(Thought.new(
-    "unique_id",
-    "Thought Title",
-    "Detailed description of the thought and its implications.",
-    10.0,  # Time to internalize
-    {
-        "skill_name": modifier_value,
-        "health": -10,
-        "morale": 5
-    }
-))
-```
-
-### Creating New Dialogue
-
-1. In your NPC or dialogue manager script:
-
-```gdscript
-var dialogue = {}
-
-# Create start node
-var start = DialogueNode.new("start", "NPC Name", "Opening dialogue")
-start.add_option(DialogueOption.new("Response 1", "node2"))
-start.add_option(DialogueOption.new("[Skill] Special option", "node3", "skill_name", 7))
-dialogue["start"] = start
-
-# Create follow-up nodes
-var node2 = DialogueNode.new("node2", "NPC Name", "Response to option 1")
-node2.add_option(DialogueOption.new("Continue", "end"))
-dialogue["node2"] = node2
-
-# Create skill check success/fail branches
-var node3_success = DialogueNode.new("node3_success", "NPC Name", "Success response")
-var node3_fail = DialogueNode.new("node3_fail", "NPC Name", "Failure response")
-dialogue["node3_success"] = node3_success
-dialogue["node3_fail"] = node3_fail
-
-# Create end node
-var end = DialogueNode.new("end", "NPC Name", "Goodbye")
-dialogue["end"] = end
-```
-
-2. The system automatically looks for `[nodeid]_success` and `[nodeid]_fail` branches for skill checks.
-
-### Adding a New NPC
-
-1. Duplicate `scenes/npc.tscn`
-2. Modify the `npc_name` export variable
-3. Create custom dialogue in the NPC's script or link to a shared dialogue system
-4. Place in the scene
-
-### Adding a New Scene/Location
-
-1. Create a new scene in `scenes/`
-2. Add environment elements (use ColorRect for now, replace with sprites later)
-3. Add Player instance
-4. Add NPCs
-5. Add UI instance
-6. Update navigation/transitions as needed
-
-## File Organization
+## Project Structure
 
 ```
 game/
-├── project.godot              # Godot project config
-├── scenes/                    # All scene files (.tscn)
-│   ├── main.tscn             # Main game scene
-│   ├── player.tscn           # Player prefab
-│   ├── npc.tscn              # NPC prefab
-│   └── game_ui.tscn          # UI overlay
-├── scripts/                   # All GDScript files (.gd)
-│   ├── player.gd
-│   ├── npc.gd
-│   ├── character_stats.gd
-│   ├── dialogue_system.gd
-│   ├── thought_cabinet.gd
-│   └── game_ui.gd
-└── .godot/                   # Godot generated files (ignored)
+├── project.godot       # 1280x720, canvas_items stretch, bg_color=#3F4944
+├── art/                # 1024x1024, 500x500, or custom PNGs
+│   ├── room_base.png   # 1024x1024 background
+│   ├── room_bottom.png # 1024x105 foreground overlay
+│   ├── player_8dir.png # 1024x1024, 3x3 grid
+│   ├── enemy_blob.png  # 1024x1024
+│   ├── boon.png        # 169x241 upgrade pickup
+│   └── impact_small.png # 500x500, 3x2 grid
+├── scenes/
+│   ├── main.tscn       # Root, contains Room
+│   ├── Room.tscn       # Background, walls, spawns, exit
+│   ├── Player.tscn     # With HitFlash timer
+│   ├── Enemy.tscn      # With HitFlash, ContactDamageCD timers
+│   ├── Bullet.tscn
+│   ├── Impact.tscn
+│   ├── Boon.tscn
+│   ├── HUD.tscn        # Health bar, enemy count, fire rate
+│   └── SceneTransition.tscn  # Fade overlay
+├── scripts/
+│   ├── Utils.gd        # Autoload: y-sorting
+│   ├── PlayerState.gd  # Autoload: persistent upgrades
+│   ├── SceneTransition.gd  # Autoload: fade transitions
+│   ├── Room.gd
+│   ├── Player.gd
+│   ├── Enemy.gd
+│   ├── Bullet.gd
+│   ├── Impact.gd
+│   ├── Boon.gd
+│   └── HUD.gd
+└── test/
+    ├── BulletTest.gd           # 3 tests: damage, speed, instantiation
+    ├── EnemyTest.gd            # 4 tests: hp, speed, damage, group
+    ├── BoonTest.gd             # 3 tests: multiplier, instantiation, calculation
+    ├── PlayerTest.gd           # 4 tests: max_hp, initial hp, take_damage, group
+    ├── PlayerStateTest.gd      # 4 tests: default, apply_boon, is_max, reset
+    └── RoomIntegrationTest.gd  # 4 tests: player spawn, 6 enemies, playable_area, exit
 ```
 
-## Best Practices
+## Core Systems
 
-### Script Organization
+### Room System (`Room.gd`)
 
-- One class per file
-- Use `class_name` for globally accessible classes
-- Document public APIs with comments
-- Use signals for loose coupling
+- Scales 1024x1024 background to fit 720p viewport (min scale ~0.703)
+- Centers background with letterboxing on dark green-gray (#3F4944)
+- Generates wall collisions with 112px margin (scaled), 256px exit gap at bottom
+- room_bottom.png overlay at z-index 1000 for depth effect
+- Spawns 6 enemies at 5 positions (corners + center-top)
+- Exit trigger always active, fades to new room (keeps PlayerState)
+- Spawns boon at center after clearing enemies (once per room, if not max fire rate)
 
-### Scene Organization
+**Key vars:** `playable_area` (Rect2), `bg_scale` (float ~0.703), `boon_spawned` (bool)
 
-- Keep scenes modular and reusable
-- Use instancing for repeated elements
-- Export variables for easy configuration
-- Use groups for batch operations
+### Player System (`Player.gd`)
 
-### Signal-Based Communication
+- Twin-stick: WASD movement (250 speed), mouse aiming
+- 3x3 sprite grid (1024x1024): Top=NE/N/NW, Mid=E/empty/W, Bot=SE/S/SW
+- Scales sprite to 128px height
+- 10px mouse deadzone to prevent flicker
+- Fires bullets toward mouse (default 0.18s cooldown, persistent via PlayerState)
+- 100 max HP, red flash on damage (0.1s), death at hp<=0
+- Death resets PlayerState and fades to new room
+- Y-sorting via Utils singleton
 
-Instead of direct references:
+**Sprite mapping:** Sector→Index: E=3, NE=0, N=1, NW=2, W=5, SW=8, S=7, SE=6
 
-```gdscript
-# Good: Signal-based
-signal player_action()
-player_action.emit()
+### Enemy System (`Enemy.gd`)
 
-# Avoid: Direct coupling
-get_node("../UI/Panel").update()
-```
+- Patrol mode: 75 speed, wanders 100px radius from spawn
+- Aggro mode: 150 speed, chases player, triggered by proximity (200px) or damage
+- Once aggroed, always chases (no de-aggro)
+- 40 HP, spawns impact on damage, red flash (0.1s)
+- Contact damage: 10 HP to player, 1s cooldown
+- Stuck detection: respawns at spawn if <5px movement in 1.5s
+- Scales from 1024x1024 to 64px, Y-sorting
 
-### Performance Tips
+### Bullet System (`Bullet.gd`)
 
-- Use `@onready` for node references that won't change
-- Cache frequently accessed nodes
-- Use object pooling for projectiles/effects
-- Profile before optimizing
+- Procedural yellow circle (16x16, scaled from generated image)
+- 900 speed, 20 damage, 1.2s lifetime
+- Collision mask=6 (walls + enemies)
+- Spawns Impact on hit, destroys on hit or timeout
 
-## Testing
+### Impact Effect (`Impact.gd`)
 
-### Common scenarios to test
+- 3x2 animated sprite sheet (500x500 source)
+- Scaled to 80px for visibility
+- 0.04s per frame, auto-destroys after animation
 
-- [ ] NPC interaction triggers correctly
-- [ ] Dialogue displays properly
-- [ ] Skill checks calculate correctly
-- [ ] Character sheet shows accurate data
-- [ ] Thought cabinet displays thoughts
-- [ ] UI responds to keyboard input
-- [ ] Status bars update in real-time
+### Boon System (`Boon.gd`)
 
-### Edge Cases to Test
+- Pickup reduces fire_cooldown by 35% (multiplier 0.65, min 0.05s)
+- Updates PlayerState.fire_cooldown and current player instance
+- Spawns at room center after clearing enemies (once per room)
+- Scaled from 169x241 to 48px height
 
-- Multiple rapid interactions
-- Opening UI panels while in dialogue
-- Skill checks at minimum/maximum values
-- Full thought cabinet (3/3 slots)
+### PlayerState Autoload (`PlayerState.gd`)
 
-## Expansion Ideas
+- Persistent singleton for upgrades across room transitions
+- `fire_cooldown`: starts 0.18s, min 0.05s
+- `apply_boon()`: multiply cooldown by 0.65
+- `is_max_fire_rate()`: check if at minimum
+- `reset()`: restore defaults on death
 
-### Short-term
+### SceneTransition Autoload (`SceneTransition.gd`)
 
-- [ ] Add more dialogue trees
-- [ ] Create additional NPCs with unique personalities
-- [ ] Add more thoughts related to Gothic lore
-- [ ] Implement basic inventory system
-- [ ] Add simple quest tracking
+- Fade-to-black overlay at layer 100
+- `fade_to_black_and_reload(duration)`: 0.8s fade out, 0.5s hold, reload, 0.8s fade in
+- Cubic easing, waits for scene initialization before fade-in
+- Called on player death and room exit
 
-### Medium-term
+## Asset Specifications
 
-- [ ] Replace placeholder graphics with sprites
-- [ ] Add ambient sound and music
-- [ ] Implement save/load system
-- [ ] Create multiple locations/scenes
-- [ ] Add character customization
+All art is 1024x1024, 500x500, or custom sizes. Scripts scale down:
 
-### Long-term
+- Player sprite: 128px height
+- Enemy: 64px
+- Boon: 48px height (from 169x241 source)
+- Impact: 80px
+- Room: Scaled to fit 720px height (~0.703x)
+- Room bottom overlay: Matches room scale, z-index 1000
 
-- [ ] Full narrative campaign
-- [ ] Combat system (if desired)
-- [ ] Advanced AI for NPCs
-- [ ] Dynamic world events
-- [ ] Multiple endings based on choices
+## Collision Layers
 
-## Gothic 2 Lore Integration
+- Layer 1: Player, Boon detection
+- Layer 2: Walls
+- Layer 4: Enemies
+- Player mask: 3 (1+2: boons + walls)
+- Enemy mask: 7 (1+2+4: player + walls + enemies)
+- Bullet mask: 6 (2+4: walls + enemies)
 
-When adding content, consider these Gothic 2 elements:
+## Input Map
 
-- **Locations**: Khorinis, Valley of Mines, Monastery, City
-- **Factions**: Militia, Fire Mages, Water Mages, Mercenaries, Farmers
-- **Key NPCs**: Xardas, Milten, Diego, Lester, Gorn
-- **Lore**: Three Gods (Innos, Beliar, Adanos), Magic, Ore
-- **Post-game themes**: Rebuilding, trauma, peace after war
+- `move_up/down/left/right`: WASD + arrows
+- `shoot`: Left mouse button
 
-## Disco Elysium Mechanics Integration
-
-When designing new systems, keep these DE principles:
-
-- Skills as characters (they "speak" through internal dialogue)
-- Failure is interesting (failed checks open new paths)
-- Everything has a cost (thoughts give bonuses BUT also penalties)
-- Psychology matters (mental stats as important as physical)
-- World building through dialogue (not just exposition)
-
-## Build and Validation
-
-### Testing
+## Build & Validation
 
 ```bash
-godot --path . -e --headless --quit-after 2000  # Imports project, exit 0 = success
+# Format & lint
+source .venv/bin/activate
+gdformat scripts/ && gdlint scripts/
 
-# Run tests using gdUnit4 command-line tool (works without plugin enabled in project settings)
-# Use -a res://test to run all tests in the test directory
-godot --headless -s res://addons/gdUnit4/bin/GdUnitCmdTool.gd --ignoreHeadlessMode -a res://test
+# Import & generate UIDs
+/Applications/Godot.app/Contents/MacOS/Godot --path . -e --headless --quit-after 2000
+
+# Run tests using gdUnit4 (smoke tests for fast iteration)
+/Applications/Godot.app/Contents/MacOS/Godot --headless -s res://addons/gdUnit4/bin/GdUnitCmdTool.gd --ignoreHeadlessMode -a res://test
 ```
 
 ## Critical Rules
 
-- **Linting is mandatory**: `gdformat --check scripts/` and `gdlint scripts/` must pass before commit.
-- **Run manual tests**
-- **Typed GDScript**: Use type annotations (`var name: String`, `func foo() -> int`).
-- **Signal-based**: Use Godot signals for component communication. No tight coupling.
-- **Godot 4.5 syntax**: `.emit()` for signals, typed syntax, Forward+ renderer. Read upgrade guide https://docs.godotengine.org/en/4.4/tutorials/migrating/upgrading_to_godot_4.4.html
-- **Tests**: Use `auto_free()` in GdUnit4 tests. Unit tests in CharacterStatsTest.gd, integration in DialogueSystemIntegrationTest.gd.
-- **LFS assets**: New assets must match `.gitattributes` patterns. Update workflows if needed.
-- Generate uid files via `godot --path . -e --headless --quit-after 2000` and commit uid files to git
-- Use context7 to fetch most up-to-date documentation of godot
-- Do not disable linting rules
-- Keep AGENTS.md up-to-date
+- **Typed GDScript mandatory**: Explicit types for all vars to avoid inference errors
+- **Linting must pass**: `gdformat` and `gdlint` before commits
+- **Scaling**: All assets need explicit scaling, adjust coordinates by `bg_scale`
+- **Y-sorting**: Call `Utils.ysort_by_y(self)` in `_physics_process` for depth
+- **Godot 4.5 syntax**: `.emit()` for signals, typed annotations
+- **Signal-based communication**: Avoid tight coupling
+- **Generate UIDs**: Always run headless import after creating scenes/scripts
+- **Persistent state**: Use PlayerState autoload for cross-room data
+- **Transitions**: Use SceneTransition.fade_to_black_and_reload() for scene changes
+- **Comments**: Explain "why" and complex logic, not self-explanatory "what"
+- **Tests**: Keep smoke tests short and focused on core values/behavior
+- **Keep AGENTS.md updated** with system changes
