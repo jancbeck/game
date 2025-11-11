@@ -83,6 +83,16 @@ func _shoot() -> void:
 	b.global_position = global_position + aim * 32.0
 	b.dir = aim
 
+	# Play random shooting sound effect
+	var sfx_choice := randi() % 3
+	match sfx_choice:
+		0:
+			$"ShootSFX1".play()
+		1:
+			$"ShootSFX2".play()
+		2:
+			$"ShootSFX3".play()
+
 
 func _on_FireCD_timeout() -> void:
 	can_fire = true
