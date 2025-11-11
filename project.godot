@@ -10,8 +10,8 @@ config_version=5
 
 [application]
 
-config/name="Gothic Chronicles: The Aftermath"
-config/description="A post-Gothic 2 RPG with Disco Elysium inspired mechanics"
+config/name="Hades Zero"
+config/description="A Hades-inspired prototype"
 run/main_scene="res://scenes/main.tscn"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
