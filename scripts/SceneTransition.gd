@@ -66,14 +66,22 @@ func fade_to_black_on_death(duration: float = 0.8) -> void:
 		return
 	is_transitioning = true
 
-	# Change layer to be below player so player stays visible
-	var original_layer := layer
-	layer = 50  # Below player but above everything else
-
 	$"ColorRect".visible = true
 
 	# Freeze player and enemies during transition
 	_freeze_gameplay()
+
+	# Move player to a higher canvas layer so it stays visible
+	var player := get_tree().get_first_node_in_group("player")
+	var player_original_parent: Node = null
+	var player_canvas_layer: CanvasLayer = null
+	
+	if player:
+		player_original_parent = player.get_parent()
+		player_canvas_layer = CanvasLayer.new()
+		player_canvas_layer.layer = 101  # Above the fade overlay at layer 100
+		get_tree().current_scene.add_child(player_canvas_layer)
+		player.reparent(player_canvas_layer)
 
 	# Fade out to black (everything except player)
 	var tween := create_tween()
@@ -85,8 +93,6 @@ func fade_to_black_on_death(duration: float = 0.8) -> void:
 	# Hold on black screen before reloading
 	await get_tree().create_timer(0.5).timeout
 
-	# Restore original layer and unpause before reloading
-	layer = original_layer
 	get_tree().reload_current_scene()
 
 	# Wait for scene to fully initialize before fading back in

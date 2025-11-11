@@ -24,7 +24,7 @@ game/
 │   ├── music_room_entered_loop.wav # 1:20 calm music
 │   └── music_enemies_aggro_loop.wav # 1:20 combat music
 ├── scenes/
-│   ├── main.tscn       # Root, contains Room
+│   ├── main.tscn       # Root, contains Room + Camera2D
 │   ├── Room.tscn       # Background, walls, spawns, exit
 │   ├── Player.tscn     # With HitFlash timer
 │   ├── Enemy.tscn      # With HitFlash, ContactDamageCD timers
@@ -32,12 +32,16 @@ game/
 │   ├── Impact.tscn
 │   ├── Boon.tscn
 │   ├── HUD.tscn        # Health bar, enemy count, fire rate
-│   └── SceneTransition.tscn  # Fade overlay
+│   ├── SceneTransition.tscn  # Fade overlay
+│   ├── BulletParticles.tscn  # Yellow impact particles
+│   └── ExplosionParticles.tscn  # Red/orange explosion particles
 ├── scripts/
 │   ├── Utils.gd        # Autoload: y-sorting
 │   ├── PlayerState.gd  # Autoload: persistent upgrades
 │   ├── SceneTransition.gd  # Autoload: fade transitions
 │   ├── MusicManager.gd # Autoload: crossfading music system
+│   ├── ScreenShake.gd  # Autoload: trauma-based camera shake
+│   ├── GameCamera.gd   # Camera group membership
 │   ├── Room.gd
 │   ├── Player.gd
 │   ├── Enemy.gd
@@ -78,6 +82,8 @@ game/
 - 100 max HP, red flash on damage (0.1s), death at hp<=0
 - Death resets PlayerState and fades to new room
 - Y-sorting via Utils singleton
+- Shooting: Screen shake (0.15 trauma), random SFX variant (1-3)
+- Damage: Screen shake (0.5 trauma), red flash
 
 **Sprite mapping:** Sector→Index: E=3, NE=0, N=1, NW=2, W=5, SW=8, S=7, SE=6
 
@@ -90,13 +96,14 @@ game/
 - Contact damage: 10 HP to player, 1s cooldown
 - Stuck detection: respawns at spawn if <5px movement in 1.5s
 - Scales from 1024x1024 to 64px, Y-sorting
+- Death: Screen shake (0.3 trauma), explosion particles, 0.05s hit-stop
 
 ### Bullet System (`Bullet.gd`)
 
 - Procedural yellow circle (16x16, scaled from generated image)
 - 900 speed, 20 damage, 1.2s lifetime
 - Collision mask=6 (walls + enemies)
-- Spawns Impact on hit, destroys on hit or timeout
+- Spawns Impact + BulletParticles (yellow, 8 particles) on hit, destroys on hit or timeout
 
 ### Impact Effect (`Impact.gd`)
 
@@ -123,6 +130,7 @@ game/
 
 - Fade-to-black overlay at layer 100
 - `fade_to_black_and_reload(duration)`: 0.8s fade out, 0.5s hold, reload, 0.8s fade in
+- `fade_to_black_on_death(duration)`: Reparents player to layer 101 to keep visible during fade
 - Cubic easing, waits for scene initialization before fade-in
 - Called on player death and room exit
 
@@ -135,6 +143,36 @@ game/
 - `trigger_calm()`: 2s crossfade back to calm music (not currently used)
 - Tracks are 1:20 long and loop continuously
 - Syncs playback position during crossfade for seamless transition
+
+### ScreenShake Autoload (`ScreenShake.gd`)
+
+- Trauma-based camera shake system for visceral combat feedback
+- `add_trauma(amount)`: Add 0-1 trauma to trigger shake (clamped)
+- Trauma decays at 1.5/s, shake intensity = trauma²
+- Max offset: 75px, max rotation: 0.15 radians
+- Finds camera via "camera" group membership
+- Processes during pause for hit-stop compatibility
+- Different trauma amounts: shoot (0.2), player damage (0.5), enemy death (0.4)
+
+### Visual Feedback Systems
+
+**Screen Shake:**
+
+- Player shooting: 0.2 trauma (subtle feedback)
+- Player taking damage: 0.5 trauma (strong warning)
+- Enemy death: 0.4 trauma (satisfying impact)
+
+**Hit-Stop:**
+
+- 0.05s game pause when enemy is hit by bullet for chunky impact feel
+- Timer processes during pause to ensure hit-stop works correctly
+- Camera and ScreenShake process during pause for continuous feedback
+
+**Particle Systems:**
+
+- BulletParticles: Yellow, 8 particles, 0.3s lifetime, spawns on bullet impact
+- ExplosionParticles: Red/orange, 20 particles, 0.5s lifetime, gravity, spawns on enemy death
+- Auto-cleanup after particle lifetime to prevent memory leaks
 
 ## Asset Specifications
 

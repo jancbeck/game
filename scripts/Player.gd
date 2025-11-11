@@ -83,6 +83,9 @@ func _shoot() -> void:
 	b.global_position = global_position + aim * 32.0
 	b.dir = aim
 
+	# Light screen shake for shooting
+	ScreenShake.add_trauma(0.2)
+
 	# Play random shooting sound effect
 	var sfx_choice := randi() % 3
 	match sfx_choice:
@@ -102,6 +105,9 @@ func take_damage(amount: int) -> void:
 	hp -= amount
 	hp = max(hp, 0)
 
+	# Strong screen shake for player damage
+	ScreenShake.add_trauma(0.5)
+
 	# Red flash for damage feedback
 	$"Sprite".modulate = Color(0.6, 0.1, 0.1, 1.0)
 	$"HitFlash".start()
@@ -115,9 +121,6 @@ func _on_hit_flash_timeout() -> void:
 
 
 func _die() -> void:
-	# Set high z-index so player stays visible during death fade
-	z_index = 100
-
 	# Stop music immediately on death
 	MusicManager.stop_all()
 

@@ -54,3 +54,14 @@ func _spawn_impact() -> void:
 	var fx := scene.instantiate() as Sprite2D
 	get_tree().current_scene.add_child(fx)
 	fx.global_position = global_position
+
+	# Spawn bullet hit particles
+	var particle_scene := load("res://scenes/BulletParticles.tscn") as PackedScene
+	if particle_scene:
+		var particles := particle_scene.instantiate() as GPUParticles2D
+		get_tree().current_scene.add_child(particles)
+		particles.global_position = global_position
+		particles.emitting = true
+		# Auto-cleanup after particles finish
+		await get_tree().create_timer(particles.lifetime).timeout
+		particles.queue_free()

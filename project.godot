@@ -22,6 +22,7 @@ Utils="*res://scripts/Utils.gd"
 PlayerState="*res://scripts/PlayerState.gd"
 SceneTransition="*res://scenes/SceneTransition.tscn"
 MusicManager="*res://scripts/MusicManager.gd"
+ScreenShake="*res://scripts/ScreenShake.gd"
 
 [display]
 

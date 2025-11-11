@@ -103,6 +103,11 @@ func take_damage(amount: int) -> void:
 	$"Sprite".modulate = Color(0.6, 0.1, 0.1, 1.0)
 	$"HitFlash".start()
 
+	# Brief hit-stop when enemy is hit
+	get_tree().paused = true
+	await get_tree().create_timer(0.05, true, false, true).timeout
+	get_tree().paused = false
+
 	_spawn_impact()
 	if hp <= 0:
 		_die()
@@ -124,5 +129,18 @@ func _spawn_impact() -> void:
 
 
 func _die() -> void:
+	# Strong screen shake for enemy death
+	ScreenShake.add_trauma(0.4)
+
+	# Spawn explosion particles
+	var particle_scene := load("res://scenes/ExplosionParticles.tscn") as PackedScene
+	if particle_scene:
+		var particles := particle_scene.instantiate() as GPUParticles2D
+		get_tree().current_scene.add_child(particles)
+		particles.global_position = global_position
+		particles.emitting = true
+		# Ensure particles process during pause
+		particles.process_mode = Node.PROCESS_MODE_ALWAYS
+
 	remove_from_group("enemies")
 	queue_free()
