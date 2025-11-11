@@ -4,7 +4,7 @@ extends Node2D
 @export var player_scene: PackedScene = preload("res://scenes/Player.tscn")
 @export var boon_scene: PackedScene = preload("res://scenes/Boon.tscn")
 
-@export var enemy_count: int = 6
+@export var enemy_count: int = 3
 
 var player: Node2D
 var playable_area: Rect2
@@ -81,23 +81,16 @@ func _ready() -> void:
 	$"Exit".monitoring = true
 	$"Exit".body_entered.connect(_on_exit_body_entered)
 
-	# Generate enemy spawn points if not manually placed
+	# Generate enemy spawn points if not manually placed (top half only)
 	var spawn_offset := 128 * bg_scale
 	if $"Spawns".get_child_count() == 0:
+		var center_y := inner.get_center().y
 		var pts := [
 			Vector2(inner.position.x + spawn_offset, inner.position.y + spawn_offset),
 			Vector2(
 				inner.position.x + inner.size.x - spawn_offset, inner.position.y + spawn_offset
 			),
-			Vector2(
-				inner.position.x + spawn_offset, inner.position.y + inner.size.y - spawn_offset
-			),
-			Vector2(
-				inner.position.x + inner.size.x - spawn_offset,
-				inner.position.y + inner.size.y - spawn_offset
-			),
-			inner.get_center() + Vector2(0, -160 * bg_scale),
-			inner.get_center() + Vector2(-160 * bg_scale, 0),
+			Vector2(inner.get_center().x, center_y - 80 * bg_scale),
 		]
 		for p in pts:
 			var mk := Marker2D.new()
@@ -121,6 +114,9 @@ func _ready() -> void:
 
 	$"WaveCheck".timeout.connect(_on_wave_check)
 
+	# Start room music
+	MusicManager.start_room_music()
+
 
 func _add_rect(parent: Node, r: Rect2) -> void:
 	var cs := CollisionShape2D.new()
@@ -134,6 +130,10 @@ func _add_rect(parent: Node, r: Rect2) -> void:
 func _on_wave_check() -> void:
 	if not get_tree().get_nodes_in_group("enemies").is_empty():
 		return
+
+	# Fade back to calm music when all enemies are dead
+	MusicManager.trigger_calm()
+
 	# Only spawn boon once per room and only if not at max upgrade
 	if not boon_spawned and not PlayerState.is_max_fire_rate():
 		_spawn_boon()

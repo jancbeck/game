@@ -17,7 +17,12 @@ game/
 │   ├── player_8dir.png # 1024x1024, 3x3 grid
 │   ├── enemy_blob.png  # 1024x1024
 │   ├── boon.png        # 169x241 upgrade pickup
-│   └── impact_small.png # 500x500, 3x2 grid
+│   ├── impact_small.png # 500x500, 3x2 grid
+│   ├── sfx_shoot_01.wav # Shooting sound variant 1
+│   ├── sfx_shoot_02.wav # Shooting sound variant 2
+│   ├── sfx_shoot_03.wav # Shooting sound variant 3
+│   ├── music_room_entered_loop.wav # 1:20 calm music
+│   └── music_enemies_aggro_loop.wav # 1:20 combat music
 ├── scenes/
 │   ├── main.tscn       # Root, contains Room
 │   ├── Room.tscn       # Background, walls, spawns, exit
@@ -32,6 +37,7 @@ game/
 │   ├── Utils.gd        # Autoload: y-sorting
 │   ├── PlayerState.gd  # Autoload: persistent upgrades
 │   ├── SceneTransition.gd  # Autoload: fade transitions
+│   ├── MusicManager.gd # Autoload: crossfading music system
 │   ├── Room.gd
 │   ├── Player.gd
 │   ├── Enemy.gd
@@ -45,7 +51,7 @@ game/
     ├── BoonTest.gd             # 3 tests: multiplier, instantiation, calculation
     ├── PlayerTest.gd           # 4 tests: max_hp, initial hp, take_damage, group
     ├── PlayerStateTest.gd      # 4 tests: default, apply_boon, is_max, reset
-    └── RoomIntegrationTest.gd  # 4 tests: player spawn, 6 enemies, playable_area, exit
+    └── RoomIntegrationTest.gd  # 4 tests: player spawn, 3 enemies, playable_area, exit
 ```
 
 ## Core Systems
@@ -56,7 +62,7 @@ game/
 - Centers background with letterboxing on dark green-gray (#3F4944)
 - Generates wall collisions with 112px margin (scaled), 256px exit gap at bottom
 - room_bottom.png overlay at z-index 1000 for depth effect
-- Spawns 6 enemies at 5 positions (corners + center-top)
+- Spawns 3 enemies in top half of room to avoid immediate aggro
 - Exit trigger always active, fades to new room (keeps PlayerState)
 - Spawns boon at center after clearing enemies (once per room, if not max fire rate)
 
@@ -119,6 +125,16 @@ game/
 - `fade_to_black_and_reload(duration)`: 0.8s fade out, 0.5s hold, reload, 0.8s fade in
 - Cubic easing, waits for scene initialization before fade-in
 - Called on player death and room exit
+
+### MusicManager Autoload (`MusicManager.gd`)
+
+- Manages seamless crossfading between room and aggro music tracks
+- Both tracks play simultaneously, volume controlled for smooth transitions
+- `start_room_music()`: Start calm music at beginning of room
+- `trigger_aggro()`: 2s crossfade to combat music, synced to current playback position
+- `trigger_calm()`: 2s crossfade back to calm music (not currently used)
+- Tracks are 1:20 long and loop continuously
+- Syncs playback position during crossfade for seamless transition
 
 ## Asset Specifications
 

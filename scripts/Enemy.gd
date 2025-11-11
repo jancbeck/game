@@ -49,7 +49,9 @@ func _physics_process(delta: float) -> void:
 
 		if is_aggroed or dist_to_player < aggro_range:
 			# Once aggroed, always chase at full speed
-			is_aggroed = true
+			if not is_aggroed:
+				is_aggroed = true
+				MusicManager.trigger_aggro()
 			var v := (player.global_position - global_position).normalized() * speed
 			velocity = v
 			stuck_timer = 0.0
@@ -93,7 +95,9 @@ func _pick_new_patrol_target() -> void:
 
 func take_damage(amount: int) -> void:
 	hp -= amount
-	is_aggroed = true  # Aggro on hit
+	if not is_aggroed:
+		is_aggroed = true
+		MusicManager.trigger_aggro()
 
 	# Red flash for damage feedback
 	$"Sprite".modulate = Color(0.6, 0.1, 0.1, 1.0)

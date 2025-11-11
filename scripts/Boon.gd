@@ -19,6 +19,9 @@ func _ready() -> void:
 
 func _on_body_entered(body: Node) -> void:
 	if body.is_in_group("player"):
+		# Play pickup sound
+		$"PickupSFX".play()
+
 		# Apply upgrade to persistent state
 		PlayerState.apply_boon()
 
@@ -28,4 +31,9 @@ func _on_body_entered(body: Node) -> void:
 			var timer := body.get_node("FireCD") as Timer
 			if timer:
 				timer.wait_time = body.fire_cooldown
+
+		# Hide sprite and disable collision, wait for sound to finish
+		$"Sprite".visible = false
+		$"CollisionShape2D".set_deferred("disabled", true)
+		await $"PickupSFX".finished
 		queue_free()

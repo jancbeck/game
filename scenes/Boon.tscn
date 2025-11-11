@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://d2h3wk8yqxfda"]
+[gd_scene load_steps=4 format=3 uid="uid://d2h3wk8yqxfda"]
 
 [ext_resource type="Script" path="res://scripts/Boon.gd" id="1_boon"]
+[ext_resource type="AudioStream" uid="uid://ctjxsljmle4rx" path="res://art/sfx_boon_pickup.mp3" id="2_sfx"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_boon"]
 radius = 18.0
@@ -14,3 +15,6 @@ script = ExtResource("1_boon")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_boon")
+
+[node name="PickupSFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_sfx")

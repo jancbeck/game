@@ -18,12 +18,11 @@ func test_room_spawns_enemies() -> void:
 	var room_scene: PackedScene = load("res://scenes/Room.tscn")
 	var room: Node2D = auto_free(room_scene.instantiate())
 	add_child(room)
-	
-	await get_tree().process_frame
-	
-	var enemies := get_tree().get_nodes_in_group("enemies")
-	assert_int(enemies.size()).is_equal(6)
 
+	await get_tree().process_frame
+
+	var enemies := get_tree().get_nodes_in_group("enemies")
+	assert_int(enemies.size()).is_equal(3)
 
 # Integration test: Verify Room has playable area defined
 func test_room_has_playable_area() -> void:
