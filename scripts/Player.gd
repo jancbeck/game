@@ -115,6 +115,12 @@ func _on_hit_flash_timeout() -> void:
 
 
 func _die() -> void:
+	# Set high z-index so player stays visible during death fade
+	z_index = 100
+
+	# Stop music immediately on death
+	MusicManager.stop_all()
+
 	# Reset all boons and reload room
 	PlayerState.reset()
-	SceneTransition.fade_to_black_and_reload(0.8)
+	SceneTransition.fade_to_black_on_death(0.8)

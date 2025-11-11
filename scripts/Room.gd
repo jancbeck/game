@@ -114,8 +114,9 @@ func _ready() -> void:
 
 	$"WaveCheck".timeout.connect(_on_wave_check)
 
-	# Start room music
-	MusicManager.start_room_music()
+	# Start room music (first load or if music not playing)
+	if not MusicManager.room_music.playing:
+		MusicManager.start_room_music()
 
 
 func _add_rect(parent: Node, r: Rect2) -> void:
