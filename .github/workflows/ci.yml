@@ -19,8 +19,8 @@ jobs:
     steps:
       - uses: actions/checkout@v5
       - uses: Scony/godot-gdscript-toolkit@master
-      - run: gdformat --check scripts/
-      - run: gdlint scripts/
+      - run: gdformat --check src/
+      - run: gdlint src/
 
   import-check:
     name: "Import Check (.uid files)"

@@ -12,17 +12,17 @@ config_version=5
 
 config/name="Hades Zero"
 config/description="A Hades-inspired prototype"
-run/main_scene="res://core/main.tscn"
+run/main_scene="res://src/core/main.tscn"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
 
 [autoload]
 
-Utils="*res://core/Utils.gd"
-PlayerState="*res://actors/player/PlayerState.gd"
-SceneTransition="*res://core/SceneTransition.tscn"
-MusicManager="*res://core/MusicManager.gd"
-ScreenShake="*res://vfx/ScreenShake.gd"
+Utils="*res://src/core/Utils.gd"
+PlayerState="*res://src/actors/player/PlayerState.gd"
+SceneTransition="*res://src/core/SceneTransition.tscn"
+MusicManager="*res://src/core/MusicManager.gd"
+ScreenShake="*res://src/vfx/ScreenShake.gd"
 
 [display]
 
