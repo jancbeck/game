@@ -57,13 +57,13 @@ game/
 │   │   ├── MusicManager.gd         # Autoload: crossfading music system
 │   │   ├── SceneTransition.tscn
 │   │   └── SceneTransition.gd      # Autoload: fade transitions
-│   └── tests/
-│       ├── BulletTest.gd           # 3 tests: damage, speed, instantiation
-│       ├── EnemyTest.gd            # 4 tests: hp, speed, damage, group
-│       ├── BoonTest.gd             # 3 tests: multiplier, instantiation, calculation
-│       ├── PlayerTest.gd           # 4 tests: max_hp, initial hp, take_damage, group
-│       ├── PlayerStateTest.gd      # 4 tests: default, apply_boon, is_max, reset
-│       └── RoomIntegrationTest.gd  # 4 tests: player spawn, 3 enemies, playable_area, exit
+├── tests/
+│   ├── BulletTest.gd           # 3 tests: damage, speed, instantiation
+│   ├── EnemyTest.gd            # 4 tests: hp, speed, damage, group
+│   ├── BoonTest.gd             # 3 tests: multiplier, instantiation, calculation
+│   ├── PlayerTest.gd           # 4 tests: max_hp, initial hp, take_damage, group
+│   ├── PlayerStateTest.gd      # 4 tests: default, apply_boon, is_max, reset
+│   └── RoomIntegrationTest.gd  # 4 tests: player spawn, 3 enemies, playable_area, exit
 └── addons/
     └── gdUnit4/
 ```
