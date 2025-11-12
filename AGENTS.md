@@ -11,51 +11,60 @@ Hades-inspired twin-stick shooter prototype. Godot 4.5.1 project with GDScript.
 ```
 game/
 ├── project.godot       # 1280x720, canvas_items stretch, bg_color=#3F4944
-├── art/                # 1024x1024, 500x500, or custom PNGs
-│   ├── room_base.png   # 1024x1024 background
-│   ├── room_bottom.png # 1024x105 foreground overlay
-│   ├── player_8dir.png # 1024x1024, 3x3 grid
-│   ├── enemy_blob.png  # 1024x1024
-│   ├── boon.png        # 169x241 upgrade pickup
-│   ├── impact_small.png # 500x500, 3x2 grid
-│   ├── sfx_shoot_01.wav # Shooting sound variant 1
-│   ├── sfx_shoot_02.wav # Shooting sound variant 2
-│   ├── sfx_shoot_03.wav # Shooting sound variant 3
-│   ├── music_room_entered_loop.wav # 1:20 calm music
-│   └── music_enemies_aggro_loop.wav # 1:20 combat music
-├── scenes/
-│   ├── main.tscn       # Root, contains Room + Camera2D
-│   ├── Room.tscn       # Background, walls, spawns, exit
-│   ├── Player.tscn     # With HitFlash timer
-│   ├── Enemy.tscn      # With HitFlash, ContactDamageCD timers
-│   ├── Bullet.tscn
+├── actors/
+│   ├── player/
+│   │   ├── Player.tscn
+│   │   ├── Player.gd
+│   │   ├── PlayerState.gd      # Autoload: persistent upgrades
+│   │   ├── player_8dir.png     # 1024x1024, 3x3 grid
+│   │   └── sfx_shoot_01-03.wav # Shooting sound variants
+│   └── enemy/
+│       ├── Enemy.tscn
+│       ├── Enemy.gd
+│       └── enemy_blob.png      # 1024x1024
+├── items/
+│   ├── boon/
+│   │   ├── Boon.tscn
+│   │   ├── Boon.gd
+│   │   ├── boon.png            # 169x241 upgrade pickup
+│   │   └── sfx_boon_pickup.mp3
+│   └── bullet/
+│       ├── Bullet.tscn
+│       ├── Bullet.gd
+│       └── BulletParticles.tscn # Yellow impact particles
+├── world/
+│   └── room/
+│       ├── Room.tscn
+│       ├── Room.gd
+│       ├── room_base.png       # 1024x1024 background
+│       ├── room_bottom.png     # 1024x105 foreground overlay
+│       ├── music_room_entered_loop.wav  # 1:20 calm music
+│       └── music_enemies_aggro_loop.wav # 1:20 combat music
+├── vfx/
 │   ├── Impact.tscn
-│   ├── Boon.tscn
-│   ├── HUD.tscn        # Health bar, enemy count, fire rate
-│   ├── SceneTransition.tscn  # Fade overlay
-│   ├── BulletParticles.tscn  # Yellow impact particles
-│   └── ExplosionParticles.tscn  # Red/orange explosion particles
-├── scripts/
-│   ├── Utils.gd        # Autoload: y-sorting
-│   ├── PlayerState.gd  # Autoload: persistent upgrades
-│   ├── SceneTransition.gd  # Autoload: fade transitions
-│   ├── MusicManager.gd # Autoload: crossfading music system
-│   ├── ScreenShake.gd  # Autoload: trauma-based camera shake
-│   ├── GameCamera.gd   # Camera group membership
-│   ├── Room.gd
-│   ├── Player.gd
-│   ├── Enemy.gd
-│   ├── Bullet.gd
 │   ├── Impact.gd
-│   ├── Boon.gd
-│   └── HUD.gd
-└── test/
-    ├── BulletTest.gd           # 3 tests: damage, speed, instantiation
-    ├── EnemyTest.gd            # 4 tests: hp, speed, damage, group
-    ├── BoonTest.gd             # 3 tests: multiplier, instantiation, calculation
-    ├── PlayerTest.gd           # 4 tests: max_hp, initial hp, take_damage, group
-    ├── PlayerStateTest.gd      # 4 tests: default, apply_boon, is_max, reset
-    └── RoomIntegrationTest.gd  # 4 tests: player spawn, 3 enemies, playable_area, exit
+│   ├── ExplosionParticles.tscn # Red/orange explosion particles
+│   ├── impact_small.png        # 500x500, 3x2 grid
+│   └── ScreenShake.gd          # Autoload: trauma-based camera shake
+├── ui/
+│   ├── HUD.tscn
+│   └── HUD.gd                  # Health bar, enemy count, fire rate
+├── core/
+│   ├── main.tscn               # Root scene with Camera2D
+│   ├── Utils.gd                # Autoload: y-sorting
+│   ├── GameCamera.gd           # Camera group membership
+│   ├── MusicManager.gd         # Autoload: crossfading music system
+│   ├── SceneTransition.tscn
+│   └── SceneTransition.gd      # Autoload: fade transitions
+├── tests/
+│   ├── BulletTest.gd           # 3 tests: damage, speed, instantiation
+│   ├── EnemyTest.gd            # 4 tests: hp, speed, damage, group
+│   ├── BoonTest.gd             # 3 tests: multiplier, instantiation, calculation
+│   ├── PlayerTest.gd           # 4 tests: max_hp, initial hp, take_damage, group
+│   ├── PlayerStateTest.gd      # 4 tests: default, apply_boon, is_max, reset
+│   └── RoomIntegrationTest.gd  # 4 tests: player spawn, 3 enemies, playable_area, exit
+└── addons/
+    └── gdUnit4/
 ```
 
 ## Core Systems
@@ -152,13 +161,13 @@ game/
 - Max offset: 75px, max rotation: 0.15 radians
 - Finds camera via "camera" group membership
 - Processes during pause for hit-stop compatibility
-- Different trauma amounts: shoot (0.2), player damage (0.5), enemy death (0.4)
+- Different trauma amounts: shoot (0.08), player damage (0.5), enemy death (0.4)
 
 ### Visual Feedback Systems
 
 **Screen Shake:**
 
-- Player shooting: 0.2 trauma (subtle feedback)
+- Player shooting: 0.08 trauma (very light, prevents spam accumulation)
 - Player taking damage: 0.5 trauma (strong warning)
 - Enemy death: 0.4 trauma (satisfying impact)
 

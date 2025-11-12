@@ -1,0 +1,29 @@
+[gd_scene load_steps=3 format=3 uid="uid://c9h3wk8yqxfda"]
+
+[ext_resource type="Script" path="res://actors/enemy/Enemy.gd" id="1_enemy"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_enemy"]
+radius = 14.0
+height = 24.0
+
+[node name="Enemy" type="CharacterBody2D"]
+collision_layer = 4
+collision_mask = 7
+script = ExtResource("1_enemy")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_enemy")
+
+[node name="Think" type="Timer" parent="."]
+wait_time = 0.1
+autostart = true
+
+[node name="HitFlash" type="Timer" parent="."]
+wait_time = 0.1
+one_shot = true
+
+[node name="ContactDamageCD" type="Timer" parent="."]
+wait_time = 1.0
+one_shot = true
