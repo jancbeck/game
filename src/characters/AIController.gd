@@ -18,20 +18,22 @@ var target: Node3D = null
 
 
 func _ready() -> void:
+	# Wait one frame to ensure Fighter's _ready() has completed
+	await get_tree().process_frame
+
 	# When attached to Fighter instance in scene, this node's parent IS the fighter
 	fighter = get_parent()
 
-	# Verify it's a CharacterBody3D with the fighter group
-	if not fighter or not (fighter is CharacterBody3D) or not fighter.is_in_group("fighters"):
+	# Verify it's a CharacterBody3D
+	if not fighter or not (fighter is CharacterBody3D):
 		push_error("AIController must be child of Fighter CharacterBody3D node")
-		queue_free()
 		return
 
 	fighter.is_ai_controlled = true
 
 
 func _physics_process(delta: float) -> void:
-	if not target:
+	if not fighter or not target:
 		_find_target()
 		return
 

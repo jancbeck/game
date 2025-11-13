@@ -26,14 +26,12 @@ func _ready() -> void:
 	add_to_group("fighters")
 	hp = max_hp
 
-	# TODO: Fix animation track paths for skeleton
-	# AnimationTree disabled until skeleton paths are fixed
+	# Initialize AnimationTree
 	if animation_tree:
-		animation_tree.active = false
-		# animation_tree.active = true
-		# await get_tree().process_frame
-		# if animation_state:
-		# 	animation_state.travel("idle_standing")
+		animation_tree.active = true
+		await get_tree().process_frame
+		if animation_state:
+			animation_state.travel("idle_standing")
 
 
 func _physics_process(delta: float) -> void:
@@ -119,20 +117,17 @@ func _perform_attack(attack_anim: String, damage: int) -> void:
 	_set_animation_state("idle_standing")
 
 
-func _set_animation_state(_state_name: String) -> void:
-	# AnimationTree disabled - skeleton track paths need fixing
-	return
-	# TODO: Re-enable once animation tracks are fixed
-	# if not animation_state:
-	# 	print("WARNING: animation_state is null")
-	# 	return
-	# if not animation_tree:
-	# 	print("WARNING: animation_tree is null")
-	# 	return
-	# if not animation_tree.active:
-	# 	print("WARNING: animation_tree not active")
-	# 	return
-	# animation_state.travel(state_name)
+func _set_animation_state(state_name: String) -> void:
+	if not animation_state:
+		print("WARNING: animation_state is null")
+		return
+	if not animation_tree:
+		print("WARNING: animation_tree is null")
+		return
+	if not animation_tree.active:
+		print("WARNING: animation_tree not active")
+		return
+	animation_state.travel(state_name)
 
 
 func take_damage(amount: int) -> void:

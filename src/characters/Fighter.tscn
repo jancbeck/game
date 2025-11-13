@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://dpb84lvjvd7rj"]
 
 [ext_resource type="Script" path="res://src/characters/Fighter.gd" id="1_fighter_script"]
-[ext_resource type="PackedScene" uid="uid://djwrvfxfdv2ww" path="res://src/characters/vegan.glb" id="2_vegan_model"]
+[ext_resource type="PackedScene" uid="uid://djwrvfxfdv2ww" path="res://src/characters/vegan3.fbx" id="2_vegan_model"]
 [ext_resource type="AnimationLibrary" uid="uid://cqadlrnyy8u25" path="res://src/animations/Brute-library.res" id="3_brute_anims"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_1"]
@@ -57,7 +57,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 shape = SubResource("CapsuleShape3D_1")
 
 [node name="VeganModel" parent="." instance=ExtResource("2_vegan_model")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+transform = Transform3D(100, 0, 0, 0, 100, 0, 0, 0, 100, 0, 1, 0)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="VeganModel"]
 libraries = {
@@ -68,7 +68,6 @@ libraries = {
 tree_root = SubResource("AnimationNodeStateMachine_1")
 anim_player = NodePath("../VeganModel/AnimationPlayer")
 active = true
-parameters/playback = null
 
 [node name="Hitbox" type="Area3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0.8)
