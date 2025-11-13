@@ -1,0 +1,83 @@
+[gd_scene load_steps=12 format=3 uid="uid://cw7xfyq0wuq8w"]
+
+[ext_resource type="Texture2D" uid="uid://c7lu82tpyjchn" path="res://src/images/bg.png" id="1_bg_texture"]
+[ext_resource type="Script" path="res://src/core/Main.gd" id="1_main_script"]
+[ext_resource type="PackedScene" uid="uid://dpb84lvjvd7rj" path="res://src/characters/Fighter.tscn" id="2_fighter"]
+[ext_resource type="Script" uid="uid://dkbyv3enln8xc" path="res://src/characters/AIController.gd" id="3_ai_controller"]
+[ext_resource type="AnimationLibrary" uid="uid://bxasdyj8bsop6" path="res://src/animations/Brute-library.res" id="4_w61mg"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_1"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_1"]
+sky_material = SubResource("ProceduralSkyMaterial_1")
+
+[sub_resource type="Environment" id="Environment_1"]
+background_mode = 2
+sky = SubResource("Sky_1")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_1"]
+size = Vector2(20, 20)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1"]
+albedo_color = Color(0.3, 0.3, 0.3, 1)
+metallic = 0.2
+roughness = 0.8
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1"]
+size = Vector3(20, 0.2, 20)
+
+[node name="Main" type="Node3D"]
+script = ExtResource("1_main_script")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.72, -0.286)
+fov = 50.0
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, -0.75, 0.433013, 5, 10, 5)
+shadow_enabled = true
+directional_shadow_mode = 1
+directional_shadow_max_distance = 50.0
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_1")
+
+[node name="Background" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1.0000001, 0, 0, 0, 1.0000001, 0, 5, -10)
+alpha_cut = 1
+texture = ExtResource("1_bg_texture")
+
+[node name="Ground" type="StaticBody3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Ground"]
+mesh = SubResource("PlaneMesh_1")
+surface_material_override/0 = SubResource("StandardMaterial3D_1")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ground"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.1, 0)
+shape = SubResource("BoxShape3D_1")
+
+[node name="FighterSpawn1" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, -8.354)
+
+[node name="FighterSpawn2" type="Marker3D" parent="."]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 3, 0, -8.354)
+
+[node name="Player" parent="." instance=ExtResource("2_fighter")]
+transform = Transform3D(-4.3711385e-08, 0, 0.99999994, 0, 1, 0, -0.99999994, 0, -4.3711385e-08, -3, 0, -8.353566)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Player"]
+libraries = {
+&"Brute-library": ExtResource("4_w61mg")
+}
+
+[node name="AIFighter" parent="." instance=ExtResource("2_fighter")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 3, 0, -8.354)
+is_ai_controlled = true
+
+[node name="AIController" type="Node" parent="AIFighter"]
+script = ExtResource("3_ai_controller")
