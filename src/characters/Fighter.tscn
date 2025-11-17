@@ -1,0 +1,76 @@
+[gd_scene load_steps=8 format=3 uid="uid://dpb84lvjvd7rj"]
+
+[ext_resource type="Script" path="res://src/characters/Fighter.gd" id="1_fighter_script"]
+[ext_resource type="PackedScene" uid="uid://djwrvfxfdv2ww" path="res://src/characters/vegan3.fbx" id="2_vegan_model"]
+[ext_resource type="AnimationLibrary" uid="uid://cqadlrnyy8u25" path="res://src/animations/Brute-library.res" id="3_brute_anims"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_1"]
+radius = 0.5
+height = 2.0
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_idle"]
+animation = &"idle_standing"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_walk"]
+animation = &"walk_forward"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_attack"]
+animation = &"attack_combo"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_block"]
+animation = &"block_idle"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_react"]
+animation = &"react_gut"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_kick"]
+animation = &"kick1"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="Transition_1"]
+advance_mode = 2
+advance_condition = &""
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="Transition_2"]
+advance_mode = 2
+advance_condition = &""
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_1"]
+states/idle_standing/node = SubResource("AnimationNodeAnimation_idle")
+states/idle_standing/position = Vector2(400, 100)
+states/walk_forward/node = SubResource("AnimationNodeAnimation_walk")
+states/walk_forward/position = Vector2(600, 100)
+states/attack_combo/node = SubResource("AnimationNodeAnimation_attack")
+states/attack_combo/position = Vector2(400, 200)
+states/block_idle/node = SubResource("AnimationNodeAnimation_block")
+states/block_idle/position = Vector2(600, 200)
+states/react_gut/node = SubResource("AnimationNodeAnimation_react")
+states/react_gut/position = Vector2(500, 300)
+states/kick1/node = SubResource("AnimationNodeAnimation_kick")
+states/kick1/position = Vector2(300, 200)
+transitions = ["Start", "idle_standing", SubResource("Transition_1"), "idle_standing", "walk_forward", SubResource("Transition_2")]
+
+[node name="Fighter" type="CharacterBody3D"]
+script = ExtResource("1_fighter_script")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("CapsuleShape3D_1")
+
+[node name="VeganModel" parent="." instance=ExtResource("2_vegan_model")]
+transform = Transform3D(100, 0, 0, 0, 100, 0, 0, 0, 100, 0, 1, 0)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="VeganModel"]
+libraries = {
+"": ExtResource("3_brute_anims")
+}
+
+[node name="AnimationTree" type="AnimationTree" parent="."]
+tree_root = SubResource("AnimationNodeStateMachine_1")
+anim_player = NodePath("../VeganModel/AnimationPlayer")
+active = true
+
+[node name="Hitbox" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0.8)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Hitbox"]
+shape = SubResource("CapsuleShape3D_1")
