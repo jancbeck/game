@@ -47,6 +47,10 @@ func _unhandled_input(event: InputEvent) -> void:
 			var loaded_state = SaveSystem.load_state()
 			if not loaded_state.is_empty():
 				_state = loaded_state
+				# Reload current scene to ensure nodes (like QuestTriggers) match the new state
+				# e.g. Triggers that were deleted in the save should not be present, 
+				# or Triggers that exist in the save but were deleted in the current session reappear.
+				get_tree().reload_current_scene()
 				state_changed.emit(_state.duplicate(true))
 			get_viewport().set_input_as_handled()
 
@@ -66,5 +70,9 @@ func dispatch(reducer: Callable) -> void:
 		push_error("Reducer returned invalid state type")
 		return
 
-	_state = new_state
-	state_changed.emit(_state.duplicate(true))
+	# Check for changes before updating and emitting
+	# Note: Deep comparison can be expensive for very large states, 
+	# but essential to prevent spam for things that run every frame like movement.
+	if new_state.hash() != _state.hash():
+		_state = new_state
+		state_changed.emit(_state.duplicate(true))

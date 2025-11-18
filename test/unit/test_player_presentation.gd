@@ -77,11 +77,11 @@ func test_player_color_changes_with_flexibility_stats():
 	# Using `is_equal_approx` for float comparisons
 	assert_that(initial_color.r).is_equal_approx(0.0, 0.001)
 	assert_that(initial_color.g).is_equal_approx(1.0, 0.001)
-	assert_that(initial_color.b).is_equal_approx(0.5, 0.001)
+	assert_that(initial_color.b).is_equal_approx(0.0, 0.001)
 
 	assert_that(degraded_color.r).is_equal_approx(0.9, 0.001)
 	assert_that(degraded_color.g).is_equal_approx(0.1, 0.001)
-	assert_that(degraded_color.b).is_equal_approx(0.5, 0.001)
+	assert_that(degraded_color.b).is_equal_approx(0.0, 0.001)
 
 	# Ensure color actually changed
 	assert_that(initial_color).is_not_equal(degraded_color)

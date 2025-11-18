@@ -2,6 +2,8 @@ extends Area3D
 
 @export var quest_id: String = ""
 @export var interaction_prompt: String = "Press 'E' to interact"
+## If set, immediately completes the quest with this approach upon interaction (for testing).
+@export var debug_auto_complete_approach: String = ""
 
 var player_in_range: bool = false
 var game_state = GameState
@@ -10,6 +12,13 @@ var game_state = GameState
 func _ready():
 	if quest_id.is_empty():
 		push_warning("QuestTrigger: quest_id not set for %s" % name)
+	
+	# Check if quest is already active or completed in state, and remove trigger if so.
+	# This ensures triggers don't reappear after loading a save where they were finished.
+	if game_state.state.has("quests") and game_state.state["quests"].has(quest_id):
+		var status = game_state.state["quests"][quest_id]["status"]
+		if status != "available":
+			queue_free()
 
 
 func _on_body_entered(body: Node3D):
@@ -40,10 +49,12 @@ func _input(event: InputEvent):
 
 			# Start the quest
 			game_state.dispatch(func(state): return QuestSystem.start_quest(state, quest_id))
-			# For now, immediately complete it with a default approach for testing
-			# In a real game, this would trigger dialogue or a more complex sequence
-			game_state.dispatch(
-				func(state): return QuestSystem.complete_quest(state, quest_id, "violent")
-			)
-			# Prevent multiple interactions
-			queue_free()
+			
+			if not debug_auto_complete_approach.is_empty():
+				game_state.dispatch(
+					func(state): return QuestSystem.complete_quest(state, quest_id, debug_auto_complete_approach)
+				)
+				# Prevent multiple interactions only if completed
+				queue_free()
+			else:
+				print("Quest started. No auto-complete approach set.")

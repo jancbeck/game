@@ -21,6 +21,7 @@ func before_test():
 
 	_quest_trigger_instance = QuestTriggerScene.instantiate()
 	_quest_trigger_instance.quest_id = "test_quest"
+	_quest_trigger_instance.debug_auto_complete_approach = "violent"
 	_quest_trigger_instance.game_state = _game_state_mock # Inject mock
 	add_child(_quest_trigger_instance)
 

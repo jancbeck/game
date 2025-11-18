@@ -1,14 +1,14 @@
 ---
 id: rescue_prisoner
 act: 2
-prerequisites:
-  - completed: join_rebels
+prerequisites: [{"completed": "join_rebels"}]
 approaches:
   violent:
     requires:
       violence_thoughts: 3
     degrades:
-      flexibility_charisma: -2
+      flexibility_charisma: -3
+      flexibility_cunning: -5
     rewards:
         convictions:
             violence_thoughts: 2

@@ -7,13 +7,13 @@ approaches:
   diplomatic:
     label: "Offer your services"
     requires: {}
-    degrades: {}
+    degrades:
+      flexibility_charisma: -5
+      flexibility_empathy: -2
     rewards:
-      memory_flags:
-        - joined_rebels
+      memory_flags: ["joined_rebels"]
 outcomes:
-  all:
-    - advance_to: rescue_prisoner
+  all: [{"advance_to": "rescue_prisoner"}]
 ---
 
 # Join the Rebels
