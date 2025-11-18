@@ -1126,7 +1126,7 @@ test_full_playthrough_with_minimal_stats()
 **Validation gates**:
 
 - [x] Can AI agents generate system code from prompts? → Pass
-- [x] Does degradation system gate options as designed? → Pass (Logic implemented in QuestSystem, full degradation engine pending in PlayerSystem)
+- [x] Does degradation system gate options as designed? → Pass
 - [x] Is state fully serializable/deserializable? → Pass (Architecturally Sound)
 - [x] Can external reviewer understand architecture from this doc? → Pass
 

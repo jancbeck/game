@@ -37,27 +37,22 @@ static func complete_quest(state: Dictionary, quest_id: String, approach: String
 	if approach_data.has("degrades"):
 		for stat in approach_data["degrades"]:
 			var stat_name = stat.replace("flexibility_", "")
-			if new_state["player"]["flexibility"].has(stat_name):
-				new_state["player"]["flexibility"][stat_name] += approach_data["degrades"][stat]
-				new_state["player"]["flexibility"][stat_name] = clampi(
-					new_state["player"]["flexibility"][stat_name], 0, 10
-				)
-			else:
-				push_warning("Attempted to degrade non-existent " + "flexibility stat: " + stat)
+			var amount = approach_data["degrades"][stat]
+			new_state = PlayerSystem.modify_flexibility(new_state, stat_name, amount)
 
 	# Apply conviction rewards
 	if approach_data.has("rewards") and approach_data["rewards"].has("convictions"):
 		for conviction in approach_data["rewards"]["convictions"]:
-			if new_state["player"]["convictions"].has(conviction):
-				new_state["player"]["convictions"][conviction] += approach_data["rewards"]["convictions"][conviction]
-			else:
-				push_warning("Attempted to reward non-existent conviction stat: " + conviction)
+			var amount = approach_data["rewards"]["convictions"][conviction]
+			new_state = PlayerSystem.modify_conviction(new_state, conviction, amount)
 
 	# Set memory flags
 	if approach_data.has("rewards") and approach_data["rewards"].has("memory_flags"):
 		for flag in approach_data["rewards"]["memory_flags"]:
 			# Assuming flags are in format "npc_id_flag_name"
-			var parts = flag.split("_", false, 1)
+			# We use rsplit to allow npc_id to contain underscores.
+			# The LAST part is the flag name.
+			var parts = flag.rsplit("_", true, 1)
 			if parts.size() == 2:
 				var npc_id = parts[0]
 				var flag_name = parts[1]
