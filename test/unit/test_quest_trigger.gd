@@ -21,7 +21,16 @@ func before_test():
 
 	_quest_trigger_instance = QuestTriggerScene.instantiate()
 	_quest_trigger_instance.quest_id = "test_quest"
+	_quest_trigger_instance.game_state = _game_state_mock # Inject mock
 	add_child(_quest_trigger_instance)
+
+	# Setup InputMap
+	if not InputMap.has_action("interact"):
+		InputMap.add_action("interact")
+	
+	var key = InputEventKey.new()
+	key.keycode = KEY_E
+	InputMap.action_add_event("interact", key)
 
 
 func after_test():
@@ -29,6 +38,10 @@ func after_test():
 		_quest_trigger_instance.queue_free()
 	if _game_state_mock:
 		_game_state_mock.free()
+	DataLoader.clear_test_data()
+	
+	if InputMap.has_action("interact"):
+		InputMap.erase_action("interact")
 
 
 func test_quest_trigger_starts_and_completes_quest_on_interact():
@@ -37,12 +50,9 @@ func test_quest_trigger_starts_and_completes_quest_on_interact():
 	_quest_trigger_instance.player_in_range = true
 
 	# Mock DataLoader.get_quest to return valid data for completion
-	GdUnit4.replace_class_method(
-		DataLoader,
-		"get_quest",
-		func(quest_id):
-			return {
-				"id": quest_id,
+	DataLoader.set_test_data("test_quest",
+			{
+				"id": "test_quest",
 				"approaches":
 				{
 					"violent":
@@ -70,7 +80,7 @@ func test_quest_trigger_starts_and_completes_quest_on_interact():
 	)
 
 	# Clean up mock
-	GdUnit4.restore_class_method(DataLoader, "get_quest")
+	DataLoader.clear_test_data()
 
 
 func test_quest_trigger_does_not_fire_if_player_not_in_range():
@@ -94,12 +104,9 @@ func test_quest_trigger_removes_itself_after_interaction():
 	_quest_trigger_instance.player_in_range = true
 
 	# Mock DataLoader.get_quest
-	GdUnit4.replace_class_method(
-		DataLoader,
-		"get_quest",
-		func(quest_id):
-			return {
-				"id": quest_id,
+	DataLoader.set_test_data("test_quest",
+			{
+				"id": "test_quest",
 				"approaches":
 				{
 					"violent":
@@ -123,4 +130,4 @@ func test_quest_trigger_removes_itself_after_interaction():
 	assert_that(_quest_trigger_instance.is_queued_for_deletion()).is_true()
 
 	# Clean up mock
-	GdUnit4.restore_class_method(DataLoader, "get_quest")
+	DataLoader.clear_test_data()

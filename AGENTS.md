@@ -2,7 +2,6 @@
 
 **Version**: 1.0  
 **Scope**: Isometric 3D action-RPG with character degradation mechanics  
-**Target**: Solo developer + AI agents, 6-9 month timeline  
 **Playable without assets**: Yes (primitive shapes throughout development)
 **Tech:** Godot 4.5.1 (Forward+), GDScript (typed), GDScript Toolkit 4.x, Git LFS for assets.
 
@@ -1120,8 +1119,9 @@ test_full_playthrough_with_minimal_stats()
 - [x] Core systems implemented (state management, player movement, quest system, data loader)
 - [x] State management architecture validated
 - [x] Unit test suite passing (all implemented tests)
-- [ ] Placeholder presentation layer functional (player movement works, but full UI not yet in place)
-- [ ] One complete quest with all systems integrated (functional logic for one quest, but not yet integrated with full presentation/dialogue layers)
+- [x] Placeholder game playable start-to-finish
+- [ ] Save/load preserves exact state (Architecturally Sound, implementation pending)
+- [ ] One complete story beat with all systems integrated (functional logic for one quest, but not yet integrated with full presentation/dialogue layers)
 
 **Validation gates**:
 
@@ -1942,3 +1942,5 @@ gdformat scripts/ &- gdlint scripts/
 # Run tests using gdUnit4 (smoke tests for fast iteration)
 /Applications/Godot.app/Contents/MacOS/Godot --headless -s res://addons/gdUnit4/bin/GdUnitCmdTool.gd --ignoreHeadlessMode -a res://test
 ```
+
+Use mcp context7.com/websites/mikeschulze_github_io-gdunit4 to lookup how to use gdunit4

@@ -4,6 +4,7 @@ extends Area3D
 @export var interaction_prompt: String = "Press 'E' to interact"
 
 var player_in_range: bool = false
+var game_state = GameState
 
 
 func _ready():
@@ -30,10 +31,10 @@ func _input(event: InputEvent):
 		print("QuestTrigger: Interact pressed")
 		if not quest_id.is_empty():
 			# Start the quest
-			GameState.dispatch(func(state): return QuestSystem.start_quest(state, quest_id))
+			game_state.dispatch(func(state): return QuestSystem.start_quest(state, quest_id))
 			# For now, immediately complete it with a default approach for testing
 			# In a real game, this would trigger dialogue or a more complex sequence
-			GameState.dispatch(
+			game_state.dispatch(
 				func(state): return QuestSystem.complete_quest(state, quest_id, "violent")
 			)
 			# Prevent multiple interactions

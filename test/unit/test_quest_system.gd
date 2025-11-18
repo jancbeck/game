@@ -28,12 +28,9 @@ func before_test():
 
 	# Mock DataLoader.get_quest to return valid data for testing QuestSystem
 
-	GdUnit4.replace_class_method(
-		DataLoader,
-		"get_quest",
-		func(quest_id):
-			return {
-				"id": quest_id,
+	DataLoader.set_test_data("rescue_prisoner",
+			{
+				"id": "rescue_prisoner",
 				"approaches":
 				{
 					"violent":
@@ -67,7 +64,7 @@ func before_test():
 
 func after_test():
 	_game_state.free()
-	GdUnit4.restore_class_method(DataLoader, "get_quest")
+	DataLoader.clear_test_data()
 
 
 func test_start_quest_sets_status_to_active():

@@ -1,12 +1,13 @@
 extends CharacterBody3D
 
 @onready var mesh: MeshInstance3D = $"MeshInstance3D"
+var game_state = GameState
 
 
 func _ready():
-	GameState.state_changed.connect(_on_state_changed)
+	game_state.state_changed.connect(_on_state_changed)
 	# Initialize with current state
-	call_deferred("_on_state_changed", GameState.state)
+	call_deferred("_on_state_changed", game_state.state)
 
 
 func _on_state_changed(state: Dictionary):
@@ -39,4 +40,4 @@ func _physics_process(delta):
 		var direction = Vector3(input_dir.x, 0, input_dir.y)
 
 		# Use a lambda to bind arguments if needed, or just call the static function inside the lambda
-		GameState.dispatch(func(s): return PlayerSystem.move(s, direction, delta))
+		game_state.dispatch(func(s): return PlayerSystem.move(s, direction, delta))

@@ -17,11 +17,13 @@ func before_test():
 
 	# Manually create a mock PlayerPresentation instance and its dependencies
 	_player_presentation_mock = PlayerPresentation.new()
-	add_child(_player_presentation_mock)  # Add to scene tree
+	_player_presentation_mock.game_state = _game_state # Inject mock
 
 	_mesh_instance = MeshInstance3D.new()
-	_mesh_instance.name = "MeshInstance3D"  # Set the name for @onready
-	_player_presentation_mock.add_child(_mesh_instance)  # Add mesh as child of player_presentation_mock
+	_mesh_instance.name = "MeshInstance3D"  # Set the name for @onready (matches $MeshInstance3D)
+	_player_presentation_mock.add_child(_mesh_instance)  # Add mesh as child BEFORE adding parent to tree
+
+	add_child(_player_presentation_mock)  # Add to scene tree, triggering _ready
 
 	_capsule_mesh = CapsuleMesh.new()  # Create a basic mesh
 	_material = StandardMaterial3D.new()  # Create a default material
@@ -30,7 +32,7 @@ func before_test():
 	_mesh_instance.set_surface_override_material(0, _material)  # Set the override material
 
 	# Allow _ready() to fully process, which includes `call_deferred` for _on_state_changed
-	await get_tree().process_frame()
+	await get_tree().process_frame
 
 
 func after_test():
@@ -52,7 +54,7 @@ func test_player_color_changes_with_flexibility_stats():
 	_game_state.dispatch(func(s): return initial_flex_state)
 
 	# Allow time for deferred calls and _on_state_changed to process
-	await get_tree().process_frame()
+	await get_tree().process_frame
 
 	var initial_material = (
 		player_presentation.mesh.get_surface_override_material(0) as StandardMaterial3D
@@ -65,8 +67,7 @@ func test_player_color_changes_with_flexibility_stats():
 	_game_state.dispatch(func(s): return degraded_flex_state)
 
 	# Allow time for deferred calls and _on_state_changed to process
-	await get_tree().process_frame()
-
+	await get_tree().process_frame
 	var degraded_material = (
 		player_presentation.mesh.get_surface_override_material(0) as StandardMaterial3D
 	)
@@ -74,13 +75,13 @@ func test_player_color_changes_with_flexibility_stats():
 
 	# Assert
 	# Using `is_equal_approx` for float comparisons
-	assert_that(initial_color.r).is_equal_approx(0.0)
-	assert_that(initial_color.g).is_equal_approx(1.0)
-	assert_that(initial_color.b).is_equal_approx(0.5)
+	assert_that(initial_color.r).is_equal_approx(0.0, 0.001)
+	assert_that(initial_color.g).is_equal_approx(1.0, 0.001)
+	assert_that(initial_color.b).is_equal_approx(0.5, 0.001)
 
-	assert_that(degraded_color.r).is_equal_approx(0.9)  # 1.0 - (1/10)
-	assert_that(degraded_color.g).is_equal_approx(0.1)  # 1/10
-	assert_that(degraded_color.b).is_equal_approx(0.5)
+	assert_that(degraded_color.r).is_equal_approx(0.9, 0.001)
+	assert_that(degraded_color.g).is_equal_approx(0.1, 0.001)
+	assert_that(degraded_color.b).is_equal_approx(0.5, 0.001)
 
 	# Ensure color actually changed
-	assert_that(initial_color).is_not_equal_approx(degraded_color)
+	assert_that(initial_color).is_not_equal(degraded_color)
