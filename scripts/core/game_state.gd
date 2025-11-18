@@ -25,7 +25,11 @@ func _initialize_state() -> void:
 			"equipment": {"weapon": "", "armor": ""}
 		},
 		"world": {"current_location": "", "act": 1, "npc_states": {}, "location_flags": {}},
-		"quests": {},
+		"quests":
+		{
+			"rescue_prisoner":
+			{"status": "available", "approach_taken": "", "objectives_completed": []}
+		},
 		"dialogue_vars": {},
 		"combat": {"active": false, "enemies": [], "available_abilities": []},
 		"meta": {"playtime_seconds": 0, "save_version": "1.0", "current_scene": ""}

@@ -1,0 +1,26 @@
+[gd_scene load_steps=6 format=3 uid="uid://questtrigger"]
+
+[ext_resource type="Script" path="res://scripts/core/quest_trigger.gd" id="1_script"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1"]
+size = Vector3(2, 2, 2)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_debug"]
+transparency = 1
+albedo_color = Color(1, 0.8, 0, 0.3)
+
+[sub_resource type="BoxMesh" id="BoxMesh_debug"]
+material = SubResource("StandardMaterial3D_debug")
+size = Vector3(2, 2, 2)
+
+[node name="QuestTrigger" type="Area3D"]
+script = ExtResource("1_script")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_1")
+
+[node name="DebugMesh" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_debug")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

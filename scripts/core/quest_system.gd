@@ -3,6 +3,26 @@ class_name QuestSystem
 extends RefCounted
 
 
+## Starts a quest, marking its status as 'active'.
+## Returns new state with quest marked active.
+##
+## Example:
+##   var new_state = QuestSystem.start_quest(state, "rescue_prisoner")
+static func start_quest(state: Dictionary, quest_id: String) -> Dictionary:
+	var new_state = state.duplicate(true)
+
+	if not new_state["quests"].has(quest_id):
+		push_error("Quest not found in state: " + quest_id)
+		return state
+
+	if new_state["quests"][quest_id]["status"] != "available":
+		push_error("Quest is not available to start: " + quest_id)
+		return state
+
+	new_state["quests"][quest_id]["status"] = "active"
+	return new_state
+
+
 ## Completes a quest using specified approach.
 ## Returns new state with quest marked complete, stats degraded,
 ## and consequences applied.

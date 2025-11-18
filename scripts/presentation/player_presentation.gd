@@ -1,15 +1,33 @@
 extends CharacterBody3D
 
+@onready var mesh: MeshInstance3D = $"MeshInstance3D"
+
 
 func _ready():
 	GameState.state_changed.connect(_on_state_changed)
 	# Initialize with current state
-	_on_state_changed(GameState.state)
+	call_deferred("_on_state_changed", GameState.state)
 
 
 func _on_state_changed(state: Dictionary):
 	# Update presentation from state
 	global_position = state["player"]["position"]
+
+	# Visual feedback for degradation (color shift)
+	if mesh:
+		var flexibility_stats = state["player"]["flexibility"]
+		var avg_flexibility = (
+			(flexibility_stats.charisma + flexibility_stats.cunning + flexibility_stats.empathy)
+			/ 3.0
+		)
+
+		var material: StandardMaterial3D = (
+			mesh.get_surface_override_material(0) as StandardMaterial3D
+		)
+		if material:
+			material.albedo_color = Color(
+				1.0 - (avg_flexibility / 10.0), avg_flexibility / 10.0, 0.5  # More red as flexibility decreases  # Less green
+			)
 
 
 func _physics_process(delta):

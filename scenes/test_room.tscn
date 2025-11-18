@@ -1,8 +1,12 @@
-[gd_scene load_steps=3 format=3 uid="uid://testroom"]
+[gd_scene load_steps=6 format=3 uid="uid://testroom"]
 
 [ext_resource type="Script" path="res://scripts/presentation/player_presentation.gd" id="1_player"]
+[ext_resource type="PackedScene" path="uid://debugoverlay" id="2_debug_overlay"]
+[ext_resource type="PackedScene" path="uid://questtrigger" id="3_quest_trigger"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_1"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_player"]
 
 [node name="TestRoom" type="Node3D"]
 
@@ -14,3 +18,12 @@ script = ExtResource("1_player")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Player"]
 mesh = SubResource("CapsuleMesh_1")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Player"]
+shape = SubResource("CapsuleShape3D_player")
+
+[node name="DebugOverlay" parent="." instance=ExtResource("2_debug_overlay")]
+
+[node name="QuestTrigger" parent="." instance=ExtResource("3_quest_trigger")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -5)
+quest_id = "rescue_prisoner"
