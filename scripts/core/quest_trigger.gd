@@ -14,9 +14,13 @@ func _ready():
 
 func _on_body_entered(body: Node3D):
 	if body.name == "Player":  # Assuming player node is named "Player"
-		print("QuestTrigger: Player entered range")
 		player_in_range = true
-		# TODO: Show interaction_prompt in UI
+		var can_start = QuestSystem.check_prerequisites(game_state.state, quest_id)
+		if can_start:
+			print("QuestTrigger: Player entered range (Ready)")
+			# TODO: Show interaction_prompt in UI
+		else:
+			print("QuestTrigger: Player entered range (Locked)")
 
 
 func _on_body_exited(body: Node3D):
@@ -30,6 +34,10 @@ func _input(event: InputEvent):
 	if player_in_range and event.is_action_pressed("interact"):
 		print("QuestTrigger: Interact pressed")
 		if not quest_id.is_empty():
+			if not QuestSystem.check_prerequisites(game_state.state, quest_id):
+				print("QuestTrigger: Locked - Prerequisites not met")
+				return
+
 			# Start the quest
 			game_state.dispatch(func(state): return QuestSystem.start_quest(state, quest_id))
 			# For now, immediately complete it with a default approach for testing

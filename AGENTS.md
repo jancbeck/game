@@ -1944,3 +1944,4 @@ gdformat scripts/ &- gdlint scripts/
 ```
 
 Use mcp context7.com/websites/mikeschulze_github_io-gdunit4 to lookup how to use gdunit4
+NEVER use GUT. ALWAYS use gdUnit4.

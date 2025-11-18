@@ -27,7 +27,7 @@ func _initialize_state() -> void:
 		"world": {"current_location": "", "act": 1, "npc_states": {}, "location_flags": {}},
 		"quests":
 		{
-			"rescue_prisoner":
+			"join_rebels":
 			{"status": "available", "approach_taken": "", "objectives_completed": []}
 		},
 		"dialogue_vars": {},
@@ -36,6 +36,19 @@ func _initialize_state() -> void:
 	}
 	# Emit initial state
 	call_deferred("emit_signal", "state_changed", _state.duplicate(true))
+
+
+func _unhandled_input(event: InputEvent) -> void:
+	if event is InputEventKey and event.pressed:
+		if event.keycode == KEY_F5:
+			SaveSystem.save_state(_state)
+			get_viewport().set_input_as_handled()
+		elif event.keycode == KEY_F9:
+			var loaded_state = SaveSystem.load_state()
+			if not loaded_state.is_empty():
+				_state = loaded_state
+				state_changed.emit(_state.duplicate(true))
+			get_viewport().set_input_as_handled()
 
 
 func reset() -> void:

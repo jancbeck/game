@@ -23,6 +23,25 @@ static func start_quest(state: Dictionary, quest_id: String) -> Dictionary:
 	return new_state
 
 
+static func check_prerequisites(state: Dictionary, quest_id: String) -> bool:
+	var quest_data = DataLoader.get_quest(quest_id)
+	if not quest_data.has("prerequisites"):
+		return true
+
+	for req in quest_data["prerequisites"]:
+		if req is Dictionary:
+			if req.has("completed"):
+				var req_id = req["completed"]
+				# Check if quest exists and is completed
+				if (
+					not state["quests"].has(req_id)
+					or state["quests"][req_id]["status"] != "completed"
+				):
+					return false
+			# Can add other checks (npc_alive, etc) here
+	return true
+
+
 ## Completes a quest using specified approach.
 ## Returns new state with quest marked complete, stats degraded,
 ## and consequences applied.

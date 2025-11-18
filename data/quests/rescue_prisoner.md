@@ -1,7 +1,8 @@
 ---
 id: rescue_prisoner
 act: 2
-prerequisites: ["joined_rebels"]
+prerequisites:
+  - completed: join_rebels
 approaches:
   violent:
     requires:
