@@ -1,0 +1,62 @@
+{
+  "id": "investigate_ruins",
+  "act": 1,
+  "location": "ancient_ruins",
+  "prerequisites": [
+    {
+      "completed": "rescue_prisoner"
+    }
+  ],
+  "approaches": {
+    "analyze": {
+      "label": "Decipher the warnings",
+      "requires": {
+        "flexibility_cunning": 3
+      },
+      "degrades": {
+        "flexibility_empathy": -2
+      },
+      "rewards": {
+        "memory_flags": [
+          "knows_corruption_origin"
+        ]
+      }
+    },
+    "force": {
+      "label": "Smash the sealed door",
+      "requires": {
+        "violence_thoughts": 5
+      },
+      "degrades": {
+        "flexibility_cunning": -3
+      },
+      "rewards": {
+        "memory_flags": [
+          "ruins_damaged"
+        ]
+      }
+    },
+    "ritual": {
+      "label": "Offer blood to the seal",
+      "requires": {
+        "flexibility_empathy": 4
+      },
+      "degrades": {
+        "flexibility_charisma": -4
+      },
+      "rewards": {
+        "memory_flags": [
+          "marked_by_corruption"
+        ]
+      }
+    }
+  },
+  "outcomes": {
+    "all": [
+      {
+        "advance_to": "secure_camp_defenses"
+      }
+    ]
+  },
+  "summary": "Elira sent you to the ruins. A sealed door blocks the way, pulsing with dark energy. You must find a way inside."
+}

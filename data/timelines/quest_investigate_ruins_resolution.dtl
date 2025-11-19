@@ -1,0 +1,18 @@
+[style name="style_thought"]
+You stand before the sealed door. The air hums with a sickness that vibrates in your teeth.
+The warnings are clear. To enter is to invite the Void.
+- [Analyze] Decipher the warnings. | [if GameStateActions.get_flexibility("cunning") >= 3]
+	You trace the ancient glyphs. They speak of a hunger that cannot be sated.
+	To understand it is to let it in. You feel your empathy withering as the cold logic of the Void takes hold.
+	do GameStateActions.complete_quest("investigate_ruins", "analyze")
+- [Force] Smash the door. | [if GameStateActions.get_conviction("violence_thoughts") >= 5]
+	You channel your rage into a single blow. The stone cracks, but so does something inside you.
+	The violence feeds the seal, and it shatters.
+	do GameStateActions.complete_quest("investigate_ruins", "force")
+- [Ritual] Offer blood. | [if GameStateActions.get_flexibility("empathy") >= 4]
+	You slice your palm. The stone drinks greedily.
+	The pain is exquisite. The door opens, welcoming its kin.
+	do GameStateActions.complete_quest("investigate_ruins", "ritual")
+- Leave.
+	You cannot turn back now. The story demands an ending.
+	jump quest_investigate_ruins_resolution

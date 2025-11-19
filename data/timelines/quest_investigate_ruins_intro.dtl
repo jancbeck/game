@@ -1,0 +1,16 @@
+join rebel_leader center
+rebel_leader: You've returned. Good. The prisoner is safe?
+- Yes. It is done.
+	rebel_leader: Efficient. I like that.
+- It was messy, but they are free.
+	rebel_leader: Freedom is rarely clean.
+rebel_leader: But we have no time to celebrate. The scouts report a disturbance at the Old Ruins.
+rebel_leader: A pulse of energy. Dark. Corrupting. It feels... familiar.
+rebel_leader: I need you to investigate. If the King's sorcerers have found a way to tap into the Void, we are all doomed.
+- I will go at once.
+	rebel_leader: Be careful. That place changes people.
+- What should I look for?
+	rebel_leader: Anything that feels wrong. You will know it when you see it.
+- I am tired of your errands.
+	rebel_leader: And I am tired of this war. Go. We all make sacrifices.
+do GameStateActions.start_quest("investigate_ruins")

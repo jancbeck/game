@@ -3,8 +3,7 @@ extends Area3D
 @export var quest_id: String = ""
 @export var interaction_prompt: String = "Press 'E' to interact"
 @export var timeline_id: String = ""  ## Dialogic timeline to start on interaction
-## If set, immediately completes the quest with this approach upon interaction (for testing).
-@export var debug_auto_complete_approach: String = ""
+
 
 var player_in_range: bool = false
 var game_state = GameState
@@ -76,15 +75,4 @@ func _input(event: InputEvent):
 				return
 			
 			game_state.dispatch(func(state): return QuestSystem.start_quest(state, quest_id))
-			
-			if not debug_auto_complete_approach.is_empty():
-				game_state.dispatch(
-					func(state): return QuestSystem.complete_quest(state, quest_id, debug_auto_complete_approach)
-				)
-				# Note: Thoughts are now handled via Dialogic timelines (e.g., quest_a_intro.dtl)
-				# The old ThoughtSystem.present_thought path is deprecated
-				
-				# Prevent multiple interactions only if completed
-				queue_free()
-			else:
-				print("Quest started. No auto-complete approach set.")
+			print("Quest started via legacy fallback.")

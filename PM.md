@@ -287,19 +287,20 @@ The PM should keep this section current after major changes or review sessions.
 
 Example format:
 
-- **Current Phase**: 1 – Foundation  
-- **Approx. Progress**: 90% of Phase 1  
+- **Current Phase**: 2 – Story Skeleton
+- **Approx. Progress**: 10% of Phase 2
 - **Core tech status**:
   - GameState reducers: ✅ basic systems (player, quest)
-  - Dialogic integration: ✅ quest A/B + thought flow
+  - Dialogic integration: ✅ quest A/B/C + thought flow
   - Save/load: ✅ GameState + Dialogic full state
   - Quest data: ✅ JSON-based, DataLoader in use
 - **Key working flows**:
-  - Quest A → Thought → Quest A complete → Quest B unlock: ✅
+  - Quest A → B → C chain: ✅
   - Save/load around these flows: ✅ basic tests, manual check required for edge cases
 - **Known gaps for current phase**:
-  - [ ] Additional tests around edge cases (e.g., mid-dialogue saves, error handling)
-  - [ ] Any tech debt from migrations to clean up
+  - [ ] Automated tests for Quest C chain
+  - [ ] Act transition logic (Act 1 -> 2)
+  - [ ] Combat primitives for Quest D
 
 The PM updates this section based on coding agents’ reports and the human’s feedback.
 
@@ -358,7 +359,7 @@ The PM tracks milestones as checklists. These are not dates; they are **states**
   - [x] Quest prerequisites
   - [x] GameStateActions behaviour
   - [x] Dialogic save/load round-trip
-- [ ] Phase 1 retrospective notes written in docs
+- [x] Phase 1 retrospective notes written in docs
 
 ### Phase 2 Milestones – Core Loop Expansion (examples)
 
@@ -450,9 +451,10 @@ At the bottom of this file, the PM can maintain a short list of concrete next st
 
 **Next Steps (as of last update)**
 
-1. [ ] Add an additional quest chain C that branches from B’s outcome.
-2. [ ] Strengthen tests around mid-dialogue save/load edge cases.
-3. [ ] Document quest JSON schema details in `CONTENT.md`.
+1. [ ] Implement Quest D (`secure_camp_defenses`) content.
+2. [ ] Add automated integration tests for Quest A -> B -> C chain.
+3. [ ] Implement Act transition logic (Act 1 -> 2) in GameState.
+4. [ ] Prototype combat primitives for Quest D (if needed).
 
 The PM updates this list after each review or major change.
 
@@ -462,8 +464,8 @@ The PM updates this list after each review or major change.
 
 The PM should always update these fields when doing a project-wide review.
 
-- **Last Updated**: 2025-11-19  
-- **Current Phase**: 1 – Foundation  
-- **Next Review Trigger**: When remaining Phase 1 milestones are checked off
+- **Last Updated**: 2025-11-19
+- **Current Phase**: 2 – Story Skeleton
+- **Next Review Trigger**: Completion of Quest D and integration tests
 
 (Adjust these dates and labels as the project evolves.)

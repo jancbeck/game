@@ -32,12 +32,4 @@ static func can_start_quest(quest_id: String) -> bool:
 	return QuestSystem.can_start_quest(GameState.state, quest_id)
 
 
-## Clears the active_thought meta flag
-## Used when transitioning from JSON-based ThoughtSystem to Dialogic timelines
-static func clear_active_thought() -> void:
-	GameState.dispatch(func(state):
-		var new_state = state.duplicate(true)
-		if new_state.has("meta") and typeof(new_state["meta"]) == TYPE_DICTIONARY:
-			new_state["meta"]["active_thought"] = ""
-		return new_state
-	)
+

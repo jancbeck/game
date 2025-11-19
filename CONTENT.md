@@ -469,3 +469,28 @@ Follow the given field guidelines once item content becomes active work.
 *   Let NPC reactions reflect:
 *   Player’s past actions (memory flags)
 *   Player’s perceived reputation/faction alignment
+
+---
+
+## X. Story Outline (Act 1-3)
+
+**Act 1: The Descent (Introduction to Degradation)**
+1.  **Quest A: `join_rebels`** (Implemented) - Player chooses a faction (Rebels) out of necessity.
+2.  **Quest B: `rescue_prisoner`** (Implemented) - First moral compromise; violence vs stealth.
+3.  **Quest C: `investigate_ruins`** (Next) - Discovery of the Corruption; first major sacrifice (health/sanity).
+4.  **Quest D: `secure_camp_defenses`** - The camp is attacked; player must choose who to save (pragmatism vs heroism).
+5.  **Quest E: `confront_the_traitor`** - A friend betrays the camp; justice vs mercy vs utility.
+
+**Act 2: The Funnel (Narrowing Options)**
+6.  **Quest F: `seek_the_oracle`** - Journey to a dangerous location; requires high conviction to survive.
+7.  **Quest G: `retrieve_cursed_artifact`** - The only weapon that can help; holding it degrades you constantly.
+8.  **Quest H: `betray_faction_trust`** - A necessary evil to gain power; alienates early allies.
+9.  **Quest I: `the_great_sacrifice`** - A ritual requiring a permanent stat loss (e.g., permanently -10 Max Health or -5 Charisma).
+10. **Quest J: `defend_the_breach`** - A siege scenario; your previous choices determine who shows up to help.
+
+**Act 3: The Consequence (You Are What You Made)**
+11. **Quest K: `assault_the_spire`** - The final push; options are heavily gated by previous degradation.
+12. **Quest L: `face_the_shadow`** - Confronting the antagonist who is a mirror of your degradation.
+13. **Quest M: `the_final_choice`** - Determine the fate of the world based on your dominant Conviction.
+14. **Epilogue** - Narrative summary of your character's final state.
+

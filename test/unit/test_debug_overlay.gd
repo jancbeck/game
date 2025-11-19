@@ -4,14 +4,21 @@ extends GdUnitTestSuite
 const DebugOverlayScene = preload("res://scenes/ui/debug_overlay.tscn")
 const GameStateScript = preload("res://scripts/core/game_state.gd")
 
-var _game_state_mock: GameStateScript
 var _debug_overlay_instance: CanvasLayer
 var _mock_state: Dictionary
+var _original_global_state: Dictionary
 
 
 func before_test():
-	_game_state_mock = GameStateScript.new()
-	_game_state_mock._initialize_state()
+	# Save global state to restore later
+	_original_global_state = GameState.state.duplicate(true)
+	
+	# Reset global state to a known clean state for testing
+	GameState._initialize_state()
+	# Ensure specific values expected by tests
+	GameState._state["player"]["flexibility"] = {"charisma": 10, "cunning": 10, "empathy": 10}
+	GameState._state["player"]["convictions"] = {"violence_thoughts": 0, "deceptive_acts": 0, "compassionate_acts": 0}
+	
 	_debug_overlay_instance = DebugOverlayScene.instantiate()
 	add_child(_debug_overlay_instance)
 
@@ -27,8 +34,9 @@ func before_test():
 func after_test():
 	if _debug_overlay_instance:
 		_debug_overlay_instance.queue_free()
-	if _game_state_mock:
-		_game_state_mock.free()
+	
+	# Restore global state
+	GameState._state = _original_global_state
 
 
 func test_debug_overlay_updates_label_on_state_change():
@@ -51,19 +59,14 @@ func test_debug_overlay_updates_label_on_state_change():
 
 
 func test_debug_overlay_initial_state_update():
-	# Arrange: GameState.state is initially set by _initialize_state
-	_game_state_mock._state["player"]["flexibility"] = {
-		"charisma": 10, "cunning": 10, "empathy": 10
-	}
-	_game_state_mock._state["player"]["convictions"] = {
-		"violence_thoughts": 0, "deceptive_acts": 0, "compassionate_acts": 0
-	}
-
+	# Arrange
+	# State is already set in before_test, and DebugOverlay should have read it in _ready
+	
 	var expected_flexibility_str = JSON.stringify(
-		_game_state_mock._state["player"]["flexibility"], "\t", true
+		GameState._state["player"]["flexibility"], "\t", true
 	)
 	var expected_convictions_str = JSON.stringify(
-		_game_state_mock._state["player"]["convictions"], "\t", true
+		GameState._state["player"]["convictions"], "\t", true
 	)
 	var expected_text = (
 		"Flexibility:\n"
@@ -71,15 +74,6 @@ func test_debug_overlay_initial_state_update():
 		+ "\n\nConvictions:\n"
 		+ expected_convictions_str
 	)
-
-	# Act: The _ready() function (called automatically by the test runner) connects and calls _on_state_changed immediately.
-	# We need to ensure that the GameState's initial state is set BEFORE _debug_overlay_instance is instantiated.
-	# Since _debug_overlay_instance is instantiated in before_test(), we can't set _game_state_mock._state here
-	# without it being too late for _ready().
-	# Therefore, we will simulate the _ready() call, but only connect if not already connected
-
-	# _ready() is called automatically by the test runner when the scene is instantiated in before_test().
-	# The initial state is already set by _game_state_mock._initialize_state() in before_test(), and _ready() connects to it.
 
 	# Assert
 	assert_that(_debug_overlay_instance.get_node("RichTextLabel").text).is_equal(expected_text)

@@ -35,7 +35,7 @@
   },
   "outcomes": {
     "all": [
-      {"advance_to": "report_to_rebel_leader"},
+      {"advance_to": "investigate_ruins"},
       {"unlock_location": "rebel_hideout_innere"}
     ]
   }
