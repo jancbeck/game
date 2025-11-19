@@ -57,10 +57,11 @@ GameState.state: Dictionary = {
 
     "dialogue_vars": Dictionary[String, Variant],
 
-    "meta": {
+    "meta": { # Renamed 'thoughts' to 'meta' and integrated pending_thought_id
         "playtime_seconds": int,
         "save_version": String,
-        "current_scene": String
+        "current_scene": String,
+        "active_thought": String # "" if none pending
     }
 }
 ```
@@ -157,7 +158,36 @@ static func complete_quest(
     # MUST return new Dictionary
 ```
 
+### ThoughtSystem
 
+```gdscript
+# Location: scripts/core/thought_system.gd
+class_name ThoughtSystem
+extends RefCounted
+
+static func present_thought(
+    state: Dictionary,
+    thought_id: String
+) -> Dictionary
+    # Sets state["meta"]["active_thought"] = thought_id
+    # Triggers UI to show thought dialog
+    # MUST return new Dictionary
+
+static func choose_thought(
+    state: Dictionary,
+    option_index: int
+) -> Dictionary
+    # Loads thought data from pending_thought_id via DataLoader.get_thought
+    # Applies conviction changes from option
+    # Clears active_thought_id by setting to null
+    # MUST use PlayerSystem.modify_conviction for changes
+    # MUST return new Dictionary
+
+static func get_thought_for_trigger(trigger_string: String) -> String
+    # Helper to find a thought ID that matches a specific trigger string.
+    # Returns empty string if no match found.
+    # Uses hardcoded known thoughts for now.
+```
 
 ### DataLoader (Singleton Autoload)
 
@@ -175,7 +205,9 @@ static func get_quest(quest_id: String) -> Dictionary
     # Returns quest data from data/quests/*.md or {} if not found
     # Parses YAML frontmatter
 
-
+static func get_thought(thought_id: String) -> Dictionary
+    # Returns thought data from data/thoughts/*.json or {} if not found
+    # Parses JSON
 ```
 
 ### SaveSystem
@@ -380,6 +412,12 @@ func _input(event: InputEvent) -> void:
                 GameState.dispatch(
                     func(state): return QuestSystem.complete_quest(state, quest_id, debug_auto_complete_approach)
                 )
+                # Check for thought trigger after quest completion
+                var trigger_string = "quest_complete:%s:%s" % [quest_id, debug_auto_complete_approach]
+                var thought_id = ThoughtSystem.get_thought_for_trigger(trigger_string)
+                if not thought_id.is_empty():
+                    GameState.dispatch(func(state): return ThoughtSystem.present_thought(state, thought_id))
+
                 queue_free() # Prevent multiple interactions only if completed
             else:
                 print("Quest started. No auto-complete approach set.")
@@ -640,7 +678,8 @@ state["quests"][quest_id]["status"]  # "available", "active", "completed"
 # NPC memory
 state["world"]["npc_states"][npc_id]["memory_flags"]  # Array[String]
 
-
+# Pending thought
+state["meta"]["active_thought"]  # String or ""
 ```
 
 ### Common System Calls
@@ -657,6 +696,10 @@ PlayerSystem.modify_conviction(state, "violence_thoughts", 3)
 QuestSystem.check_prerequisites(state, quest_id)  # bool
 QuestSystem.start_quest(state, quest_id)
 QuestSystem.complete_quest(state, quest_id, "approach") # Example
+
+# Thought operations
+ThoughtSystem.present_thought(state, "thought_id") # Example
+ThoughtSystem.choose_thought(state, 0) # Example
 
 # Save/Load
 SaveSystem.save_state(state)

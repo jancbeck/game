@@ -282,7 +282,210 @@ of his... indiscretions. He'll look the other way, but now he owns part of you.
 
 ---
 
-## II. Dialogue Format (Future - Phase 3)
+## II. Thought Format
+
+### File Location
+
+`data/thoughts/[thought_id].json`
+
+### Format Structure
+
+```json
+{
+  "id": "thought_identifier",
+  "trigger": "quest_complete:quest_id:approach",
+  "prompt": "Internal monologue text that sets up the choice",
+  "options": [
+    {
+      "text": "First thought option that player can choose",
+      "convictions": {
+        "violence_thoughts": 2,
+        "compassionate_acts": -1
+      }
+    },
+    {
+      "text": "Second thought option",
+      "convictions": {
+        "violence_thoughts": 1
+      }
+    },
+    {
+      "text": "Third thought option",
+      "convictions": {
+        "compassionate_acts": 1,
+        "violence_thoughts": -1
+      }
+    }
+  ]
+}
+```
+
+---
+
+### Field Specifications
+
+**id** (string, required):
+
+- Unique identifier for thought
+- Format: lowercase_with_underscores
+- Example: `after_violent_quest`, `before_betrayal`
+
+**trigger** (string, required):
+
+- When thought should appear
+- Format: `event_type:event_id:optional_detail`
+- Event types:
+  - `quest_complete:quest_id:approach` - After specific quest/approach
+  - `act_start:1` - At beginning of act
+  - `story_beat:beat_name` - At specific story moment
+
+**prompt** (string, required):
+
+- Internal monologue text
+- 50-200 characters
+- First person, present tense
+- Sets up the choice without biasing
+
+**options** (array, required):
+
+- 2-4 options recommended
+- Each option has:
+  - `text`: What player thinks (100-200 chars)
+  - `convictions`: Dictionary of conviction changes
+
+---
+
+### Content Guidelines
+
+**Prompt text**:
+
+- Present as question or observation
+- No "correct" framing
+- Ambiguous moral stance
+- Player's voice, not narrator
+
+**Good prompts**:
+
+```
+"That was necessary. Wasn't it?"
+"I'm becoming something. But what?"
+"The blood on my hands—does it wash off?"
+```
+
+**Bad prompts**:
+
+```
+"You just did a bad thing. How do you feel?"
+"Choose whether you're good or evil."
+"This choice will affect your stats."
+```
+
+**Option text**:
+
+- Each option is a complete thought
+- Distinct philosophical positions
+- None obviously "correct"
+- Varying lengths okay (50-200 chars)
+
+**Good options**:
+
+```
+"He deserved it. The world is better without him."
+"I did what I had to. I don't enjoy this."
+"There had to be another way. I'm becoming something I hate."
+```
+
+**Bad options**:
+
+```
+"I'm evil now."
+"I feel bad."
+"Violence is sometimes necessary."
+```
+
+---
+
+### Conviction Changes
+
+**Amounts**:
+
+- Small shift: ±1
+- Medium shift: ±2 to ±3
+- Large shift: ±4 to ±5
+
+**Direction**:
+
+- Positive values increase conviction
+- Negative values decrease conviction
+- Zero is valid (no change to that conviction)
+
+**Balance**:
+
+- Most options should affect 1-2 convictions
+- Avoid options that only increase (no tradeoff)
+- Consider opposing convictions (violence vs compassion)
+
+**Good balance**:
+
+```json
+{
+  "text": "He deserved it.",
+  "convictions": {
+    "violence_thoughts": 3,
+    "compassionate_acts": -2
+  }
+}
+```
+
+**Bad balance**:
+
+```json
+{
+  "text": "I'm a good person.",
+  "convictions": {
+    "compassionate_acts": 5
+  }
+}
+```
+
+---
+
+### Example Complete Thought
+
+```json
+{
+  "id": "after_rescue_violent",
+  "trigger": "quest_complete:rescue_prisoner:violent",
+  "prompt": "The guards are dead. Your ally is free. But the blood won't wash off your sword.",
+  "options": [
+    {
+      "text": "They chose to stand in my way. Their deaths are on them, not me.",
+      "convictions": {
+        "violence_thoughts": 3,
+        "compassionate_acts": -2
+      }
+    },
+    {
+      "text": "I did what I had to. The alternative was worse. I think.",
+      "convictions": {
+        "violence_thoughts": 1,
+        "compassionate_acts": -1
+      }
+    },
+    {
+      "text": "There had to be another way. I'm losing myself to this.",
+      "convictions": {
+        "compassionate_acts": 2,
+        "violence_thoughts": -1
+      }
+    }
+  ]
+}
+```
+
+---
+
+## III. Dialogue Format (Future - Phase 3)
 
 ### File Location
 
