@@ -158,37 +158,6 @@ static func complete_quest(
     # MUST return new Dictionary
 ```
 
-### ThoughtSystem
-
-```gdscript
-# Location: scripts/core/thought_system.gd
-class_name ThoughtSystem
-extends RefCounted
-
-static func present_thought(
-    state: Dictionary,
-    thought_id: String
-) -> Dictionary
-    # Sets state["meta"]["active_thought"] = thought_id
-    # Triggers UI to show thought dialog
-    # MUST return new Dictionary
-
-static func choose_thought(
-    state: Dictionary,
-    option_index: int
-) -> Dictionary
-    # Loads thought data from pending_thought_id via DataLoader.get_thought
-    # Applies conviction changes from option
-    # Clears active_thought_id by setting to null
-    # MUST use PlayerSystem.modify_conviction for changes
-    # MUST return new Dictionary
-
-static func get_thought_for_trigger(trigger_string: String) -> String
-    # Helper to find a thought ID that matches a specific trigger string.
-    # Returns empty string if no match found.
-    # Uses hardcoded known thoughts for now.
-```
-
 ### DataLoader (Singleton Autoload)
 
 ```gdscript
@@ -423,6 +392,54 @@ func _input(event: InputEvent) -> void:
                 print("Quest started. No auto-complete approach set.")
 ```
 
+### Pattern: DialogSystem (Dialogic 2 Integration)
+
+**Location**: scripts/ui/dialog_system.gd (autoload)
+
+**Purpose**: Bridge between Dialogic timelines and GameState
+
+**Timeline Signal Format**:
+- `start_quest:quest_id` - Starts quest via GameStateActions
+- `complete_quest:quest_id:approach` - Completes with approach
+- `modify_conviction:name:delta` - Changes conviction
+- `modify_flexibility:name:delta` - Changes flexibility stat
+
+**Timeline Creation**:
+- Use Dialogic 2 editor (Plugins → Dialogic)
+- Save to: `data/timelines/[timeline_id].dtl`
+- Use signal events to trigger game state changes
+- NEVER modify GameState directly from timelines
+
+**Example Timeline Structure**:
+```
+[Character: join] rebel_leader
+  "Welcome to the cause."
+[Choice]
+  - "I'm ready to fight." [signal: modify_conviction:violence_thoughts:2]
+  - "I want to help, but peacefully." [signal: modify_conviction:compassionate_acts:2]
+[Signal: start_quest:join_rebels]
+```
+
+**Conviction Gating in Timelines**:
+Use Dialogic conditions:
+```
+[If: {GameStateActions.get_conviction("violence_thoughts")} >= 5]
+  [Character: rebel_leader] "You have the look of a fighter."
+[Else]
+  [Character: rebel_leader] "You seem... soft."
+```
+
+**MUST**:
+- All state changes via signal events
+- Timeline IDs match quest IDs
+- Use GameStateActions API only
+- Test timeline in Dialogic editor before integrating
+
+**MUST NOT**:
+- Directly call GameState.dispatch from timelines
+- Store game logic in timeline variables
+- Bypass GameStateActions API
+
 ## V. Test Requirements
 
 ### Every System Function MUST Have Tests
@@ -495,74 +512,6 @@ func test_modify_flexibility_clamps_to_minimum():
 func test_modify_flexibility_invalid_stat_name():
     # Returns unchanged state
 ```
-
-## VI. Data Format Specifications
-
-### Quest Format (data/quests/\*.md)
-
-```markdown
----
-id: quest_identifier
-act: 1
-prerequisites: [{ "completed": "other_quest_id" }] # Updated to inline dict in array
-approaches:
-  approach_name:
-    label: "Display text for UI"
-    requires:
-      flexibility_charisma: 5
-      violence_thoughts: 3
-    degrades:
-      flexibility_charisma: -2
-      flexibility_empathy: -1
-    rewards:
-      convictions:
-        violence_thoughts: 2
-      memory_flags: ["npc_id_flag_name"] # Updated to inline array
-outcomes:
-  all: [{ "advance_to": "next_quest_id" }, { "unlock_location": "location_id" }] # Updated to inline array of dicts
----
-
-# Quest Title
-
-Quest description in markdown.
-
-## Approach Name
-
-Approach description.
-```
-
-**Parsing notes**:
-
-- YAML frontmatter parsed by DataLoader
-- Markdown body for UI display only
-- Memory flags format: `npc_id_flag_name` (uses rsplit("\_", true, 1))
-- Prerequisites check both quest completion and NPC alive status
-
-### Thought Format (data/thoughts/\*.json)
-
-```json
-{
-  "id": "thought_identifier",
-  "trigger": "quest_complete:quest_id:approach",
-  "prompt": "Internal monologue text",
-  "options": [
-    {
-      "text": "Player's thought choice",
-      "convictions": {
-        "violence_thoughts": 2,
-        "compassionate_acts": -1
-      }
-    }
-  ]
-}
-```
-
-**Usage**:
-
-- Loaded by ThoughtSystem.get_thought_data() (indirectly via DataLoader.get_thought)
-- Trigger format: "quest_complete:quest_id:approach"
-- Convictions can be positive or negative
-- Player must choose one option (no dismiss)
 
 ## VII. Common Patterns
 
