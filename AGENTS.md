@@ -1,9 +1,9 @@
-# AGENTS.md
-
 # Implementation Reference for AI Agents
 
-**Scope**: Isometric 3D action-RPG with character degradation mechanics  
+**Scope**: Isometric 3D action-RPG with character degradation mechanics
+
 **Playable without assets**: Yes (primitive shapes throughout development)
+
 **Tech:** Godot 4.5.1 (Forward+), GDScript (typed), GDScript Toolkit 4.x, Git LFS for assets.
 
 ## I. State Schema (Source of Truth)
@@ -711,6 +711,9 @@ SaveSystem.load_state()  # Returns Dictionary
 **End of AGENTS.md**
 
 This document contains everything needed to generate code.
+
 If you need rationale or philosophy, see ARCHITECTURE.md.
+
 If you need timeline or milestones, see PROJECT.md.
+
 If you need content formats, see CONTENT_SPEC.md.
