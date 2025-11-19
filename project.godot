@@ -18,12 +18,17 @@ config/icon="res://icon.svg"
 [autoload]
 
 GameState="*res://scripts/core/game_state.gd"
+GameStateActions="*res://scripts/core/game_state_actions.gd"
+DialogSystem="*res://scripts/ui/dialog_system.gd"
 Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 
 [dialogic]
 
 directories/dch_directory={}
-directories/dtl_directory={}
+directories/dtl_directory={
+"join_rebels": "res://data/timelines/join_rebels.dtl",
+"rescue_prisoner": "res://data/timelines/rescue_prisoner.dtl"
+}
 layout/style_directory={}
 
 [display]

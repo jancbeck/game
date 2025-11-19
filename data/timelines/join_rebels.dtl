@@ -1,0 +1,13 @@
+Words are stronger than steel. Or are they just quieter?
+- Violence is a failure of imagination.
+	[signal arg="modify_conviction:compassionate_acts:2"]
+	[signal arg="modify_conviction:violence_thoughts:-1"]
+- It worked this time. Next time might require a blade.
+	[signal arg="modify_conviction:violence_thoughts:1"]
+- I manipulated them perfectly.
+	[signal arg="modify_conviction:deceptive_acts:2"]
+You found the camp. Now you must convince them you are useful.
+- Offer your services
+	[signal arg="start_quest:join_rebels"]
+	[wait time="0.5"]
+	[signal arg="complete_quest:join_rebels:diplomatic"]

@@ -42,6 +42,12 @@ static func check_prerequisites(state: Dictionary, quest_id: String) -> bool:
 	return true
 
 
+## Alias for check_prerequisites with clearer naming.
+## Returns true if quest can be started based on prerequisites.
+static func can_start_quest(state: Dictionary, quest_id: String) -> bool:
+	return check_prerequisites(state, quest_id)
+
+
 ## Completes a quest using specified approach.
 ## Returns new state with quest marked complete, stats degraded,
 ## and consequences applied.

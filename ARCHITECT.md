@@ -229,24 +229,46 @@ Problems:
 
 **Data-driven approach**:
 
-```markdown
-# data/quests/rescue_prisoner.md
+```json
+# data/quests/rescue_prisoner.json
 
----
-
-## id: rescue_prisoner
-
-# Rescue the Prisoner
-
-Save the rebel from the dungeon.
+{
+    "id": "rescue_prisoner",
+    "act": 2,
+    "prerequisites": [{"completed": "join_rebels"}], 
+    "approaches": {
+      "violent": {
+        "requires": {
+          "violence_thoughts": 3
+        },
+        "degrades": {
+          "flexibility_charisma": -3,
+          "flexibility_cunning": -5
+        },
+        "rewards": {
+          "convictions": {
+            "violence_thoughts": 2
+          },
+          "memory_flags": ["guard_captain_hostile", "reputation_brutal"]
+        }
+      },
+      ...
+    },
+    "outcomes": {
+      "all": [
+        {"advance_to": "report_to_rebel_leader"},
+        {"unlock_location": "rebel_hideout_innere"}
+      ]
+    } 
+}
 ```
 
 Benefits:
 
 - Typo = edit text file, reload
-- Writers edit Markdown/YAML
-- Localization = translate .md files
-- Modding = drop in new .md files
+- Writers edit JSON
+- Localization = translate .json files
+- Modding = drop in new .json files
 
 **Philosophy**: Code is infrastructure, content is payload.
 
@@ -290,49 +312,76 @@ Result: Gameplay validated before asset investment
 
 ### How Patterns Compose
 
-**Quest completion triggers entire pipeline**:
+**Quest completion triggers entire pipeline (Dialogic-first path)**:
 
-```
-1. Player triggers QuestTrigger (Pattern 6: primitives)
-2. UI shows approach options (Pattern 4: variants)
-3. Player chooses approach
-4. QuestSystem.complete_quest dispatches (Pattern 1: immutable state)
-5. DataLoader loads quest .md (Pattern 5: content separation)
-6. Stats degrade (Pattern 2: degradation)
-7. Thought scene triggers (Pattern 3: thoughts→character)
-8. Player chooses thought
-9. Conviction counter increments (Pattern 3: hidden)
-10. Future options gate based on convictions (Pattern 2: funnel)
-```
+1.  Player triggers QuestTrigger (Pattern 6: primitives)
+2.  QuestTrigger starts Dialogic timeline via DialogSystem (Pattern: Dialogic integration)
+3.  Dialogic shows approach options (Pattern 4: variants)
+4.  Player chooses approach
+5.  Dialogic emits signal → DialogSystem parses → calls GameStateActions.complete_quest
+6.  GameState.dispatch → QuestSystem.complete_quest (Pattern 1: immutable state)
+7.  QuestSystem loads quest JSON via DataLoader (Pattern 5: content separation)
+8.  QuestSystem applies degrades/rewards via PlayerSystem/world reducers (Pattern 2: degradation)
+9.  GameState emits state_changed signal
+10. Quest completion may trigger a thought timeline (Pattern 3: thoughts→character)
+11. Thought Dialogic timeline runs; options call GameStateActions.modify_conviction / modify_flexibility
+12. Convictions/flexibility update; future options gate based on these stats (Pattern 2: funnel)
 
-**Every pattern serves the core mechanic**: Choices accumulate invisibly into character transformation.
+**Every pattern serves the core mechanic**: Dialogic handles how choices are presented; reducers + JSON data define what those choices mean for the character.
 
 ---
 
 ### Data Flow Diagram
 
-```
-Input Layer:
+**Input Layer**:
   Player presses 'E' on QuestTrigger
     ↓
-Logic Layer:
-  QuestTrigger dispatches to GameState
-    ↓
-  GameState calls QuestSystem.complete_quest
-    ↓
-  QuestSystem loads data via DataLoader
-    ↓
-  QuestSystem modifies state via PlayerSystem
-    ↓
-  GameState emits state_changed signal
-    ↓
-Presentation Layer:
-  UI updates from state
-  Player color changes from state
-  Debug overlay shows stats
-```
+  QuestTrigger:
+    - If timeline_id set → DialogSystem.start_timeline(timeline_id)
+    - Else → direct QuestSystem.start_quest (fallback)
 
-**Key insight**: Logic layer never touches presentation layer. Unidirectional flow only.
+**Dialogue / Flow Layer (Dialogic)**:
+  Dialogic timeline runs (quest or thought)
+    ↓
+  Player chooses option
+    ↓
+  Dialogic emits signal_event string (e.g. "complete_quest:join_rebels:diplomatic")
+    ↓
+  DialogSystem parses signal and calls GameStateActions.*
+
+**Logic Layer**:
+  GameStateActions:
+    - start_quest(...)
+    - complete_quest(..., approach)
+    - modify_conviction(...)
+    - modify_flexibility(...)
+    - can_start_quest(...)
+    ↓
+  GameState.dispatch(reducer)
+    ↓
+  QuestSystem / PlayerSystem:
+    - QuestSystem loads quest JSON via DataLoader.get_quest(...)
+    - Apply prerequisites, degrades, rewards, outcomes
+    - Update convictions / flexibility / world flags
+    ↓
+  GameState updates internal _state
+    ↓
+  GameState emits state_changed(new_state)
+
+**Presentation Layer**:
+  UI listens to state_changed:
+    - Updates HUD / quest log / debug overlay
+    - Color/appearance updates from state
+  DialogSystem:
+    - Starts/stops Dialogic timelines based on meta in state
+
+**Key insights**:
+
+Dialogic + DialogSystem form a front-end flow layer that never mutates state directly; they only call GameStateActions.
+
+The logic layer (GameState + systems + DataLoader + JSON) remains the single source of truth.
+
+Presentation (UI, visuals, Dialogic widgets) only reacts to state_changed; it never drives mechanics except via the sanctioned GameStateActions API.
 
 ---
 
@@ -431,6 +480,33 @@ Presentation Layer:
 - But: Less common, harder to explain
 
 **Decision**: Pause mechanic allows tactical play with primitive graphics. Real-time keeps energy up between story beats.
+
+### Why Dialogic 2?
+
+**Considered alternatives**:
+
+- Yarn Spinner: Great authoring model, but no native Godot integration and extra tooling layer
+- Custom dialogue system: Full control, but expensive to build, debug, and extend (choices, conditions, save/load, UI)
+- “Inline” GDScript dialogue: Fast to hack, but mixes content with code and kills data-driven design
+
+**Dialogic advantages**:
+
+- Native Godot addon: No external runtime; works with scenes, signals, and Godot’s lifecycle
+- Visual timeline editor: Writers (or AI agents) can iterate dialogue flow without touching game logic
+- Clear separation of concerns:
+    - Dialogic = presentation + flow
+    - GameState/QuestSystem = mechanics and truth
+- Signal-based integration: Text events and custom signals map cleanly to GameStateActions API
+- Data-driven but inspectable: Timelines are assets that can be browsed, versioned, and diffed in Git
+- Plugin maintained by community: We avoid reinventing choices, conditions, portraits, localization scaffolding
+
+**Dialogic 2 specific features used**:
+
+- Timelines as conversation units (quests, thoughts, NPC talks)
+- Signal events (signal_event) to trigger start_quest, complete_quest, modify_conviction, etc. via DialogSystem
+- Conditional branching to gate options based on GameStateActions.can_start_quest and similar checks
+- Dialogic.get_full_state() / Dialogic.load_full_state() for mid-dialogue save/load integration in GameState.snapshot_for_save / restore_from_save
+- Simple text-based timeline format (.dtl-style) that AI agents can read and generate alongside our JSON quest data
 
 ---
 
@@ -550,29 +626,6 @@ Presentation Layer:
 - New core stats (breaks entire degradation system)
 - Multiplayer (architecture not designed for it)
 - Procedural generation (content is handcrafted)
-
----
-
-### Modding Philosophy
-
-**If we enable modding**:
-
-- Data files are open (quests, dialogues)
-- Code is obfuscated (systems are closed)
-- Rationale: Content mods = yes, cheat mods = no
-
-**Mod types we'd support**:
-
-- Total conversions (replace all quests/dialogues)
-- Side quest packs (add to existing game)
-- Difficulty mods (adjust stat degradation rates)
-- Translation mods (localize content)
-
-**Mod types we wouldn't support**:
-
-- Code mods (binary GDScript prevents this)
-- Multiplayer mods (architecture incompatible)
-- Save editors (could break validation)
 
 ---
 

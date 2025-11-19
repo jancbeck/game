@@ -1,0 +1,11 @@
+if {GameStateActions.can_start_quest("rescue_prisoner")}:
+	The local rebel leader has a man on the inside, but he's been caught.
+	[signal arg="start_quest:rescue_prisoner"]
+	- Fight your way through the front gate
+		You charge through the entrance, scattering the guards. The prisoner is free, but you've made enemies.
+		[signal arg="complete_quest:rescue_prisoner:violent"]
+	- Sneak in through the sewers
+		You slip through the shadows, bypassing the guards entirely. The prisoner escapes without anyone noticing.
+		[signal arg="complete_quest:rescue_prisoner:stealthy"]
+else:
+	You must complete your mission with the rebels first.
