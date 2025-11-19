@@ -40,6 +40,30 @@ static func get_quest(quest_id: String) -> Dictionary:
 	return _parse_frontmatter(content)
 
 
+static func get_thought(thought_id: String) -> Dictionary:
+	if _test_data.has(thought_id):
+		return _test_data[thought_id]
+
+	var path = "res://data/thoughts/" + thought_id + ".json"
+	if not FileAccess.file_exists(path):
+		push_warning("Thought file not found: " + path)
+		return {}
+
+	var file = FileAccess.open(path, FileAccess.READ)
+	if not file:
+		push_error("Failed to open file: " + path)
+		return {}
+
+	var content = file.get_as_text()
+	var json = JSON.parse_string(content)
+	
+	if typeof(json) != TYPE_DICTIONARY:
+		push_error("Invalid JSON in thought file: " + path)
+		return {}
+		
+	return json
+
+
 static func _parse_frontmatter(content: String) -> Dictionary:
 	var lines = content.split("\n")
 	var yaml_lines: Array[String] = []

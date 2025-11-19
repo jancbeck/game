@@ -3,10 +3,12 @@
 [ext_resource type="Script" path="res://scripts/presentation/player_presentation.gd" id="1_player"]
 [ext_resource type="PackedScene" path="uid://debugoverlay" id="2_debug_overlay"]
 [ext_resource type="PackedScene" path="uid://questtrigger" id="3_quest_trigger"]
+[ext_resource type="PackedScene" path="uid://thoughtdialog" id="4_thought_dialog"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_1"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_player"]
+
 
 [node name="TestRoom" type="Node3D"]
 
@@ -23,6 +25,8 @@ mesh = SubResource("CapsuleMesh_1")
 shape = SubResource("CapsuleShape3D_player")
 
 [node name="DebugOverlay" parent="." instance=ExtResource("2_debug_overlay")]
+[node name="ThoughtDialog" parent="." instance=ExtResource("4_thought_dialog")]
+visible = false
 
 [node name="Trigger_JoinRebels" parent="." instance=ExtResource("3_quest_trigger")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -5)
