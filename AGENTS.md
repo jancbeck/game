@@ -178,23 +178,7 @@ static func get_quest(quest_id: String) -> Dictionary
 
 ```
 
-### SaveSystem
 
-```gdscript
-# Location: scripts/core/save_system.gd
-class_name SaveSystem
-extends RefCounted
-
-const SAVE_PATH = "user://save.dat" # Updated to .dat
-
-static func save_state(state: Dictionary) -> void # Renamed from save_game, no slot
-    # Serializes state to user://save.dat using var_to_str
-    # No return value, prints success/error
-
-static func load_state() -> Dictionary # Renamed from load_game, no slot
-    # Deserializes from user://save.dat using str_to_var
-    # Returns state Dictionary or {} if file not found
-```
 
 ## III. Architectural Rules (MUST/MUST NOT)
 
@@ -658,9 +642,7 @@ QuestSystem.check_prerequisites(state, quest_id)  # bool
 QuestSystem.start_quest(state, quest_id)
 QuestSystem.complete_quest(state, quest_id, "approach") # Example
 
-# Save/Load
-SaveSystem.save_state(state)
-SaveSystem.load_state()  # Returns Dictionary
+
 ```
 
 ---

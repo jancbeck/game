@@ -19,7 +19,6 @@
 - ✅ Core systems (GameState, PlayerSystem, QuestSystem)
 - ✅ Data pipeline (DataLoader, YAML/JSON parsing)
 - ✅ Quest chain with prerequisites
-- ✅ Save/load system
 - ✅ Visual degradation (color shifting)
 - ✅ Debug UI
 - ✅ 26 unit/integration tests passing
@@ -44,7 +43,6 @@
 
 - [x] Immutable state architecture validated
 - [x] Quest system with approach-based resolution
-- [x] Save/load preserving exact state
 - [x] Visual degradation feedback (color change)
 - [ ] Approach selection UI (instead of auto-complete)
 - [ ] 3-5 complete quests with thought scenes
@@ -262,8 +260,6 @@
 
 - State management: 8 hours
 - Quest system: 10 hours
-- Thought system: 5 hours
-- Save/load: 3 hours
 - Testing: 4-9 hours
 
 **Story Content** (Phase 2): 20-30 hours
