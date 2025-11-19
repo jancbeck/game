@@ -54,11 +54,6 @@ func _input(event: InputEvent):
 				game_state.dispatch(
 					func(state): return QuestSystem.complete_quest(state, quest_id, debug_auto_complete_approach)
 				)
-				# Check for thought trigger
-				var trigger_string = "quest_complete:%s:%s" % [quest_id, debug_auto_complete_approach]
-				var thought_id = ThoughtSystem.get_thought_for_trigger(trigger_string)
-				if not thought_id.is_empty():
-					game_state.dispatch(func(state): return ThoughtSystem.present_thought(state, thought_id))
 				
 				# Prevent multiple interactions only if completed
 				queue_free()

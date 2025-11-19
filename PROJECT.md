@@ -16,19 +16,17 @@
 
 ### Completed
 
-- ✅ Core systems (GameState, PlayerSystem, QuestSystem, ThoughtSystem)
+- ✅ Core systems (GameState, PlayerSystem, QuestSystem)
 - ✅ Data pipeline (DataLoader, YAML/JSON parsing)
 - ✅ Quest chain with prerequisites
 - ✅ Save/load system
 - ✅ Visual degradation (color shifting)
 - ✅ Debug UI
-- ✅ Internal monologue system
 - ✅ 26 unit/integration tests passing
 
 ### In Progress
 
 - ⏳ Approach selection UI (currently auto-complete)
-- ⏳ Second thought scene (only one example exists)
 
 ### Blocked
 
@@ -47,8 +45,6 @@
 - [x] Immutable state architecture validated
 - [x] Quest system with approach-based resolution
 - [x] Save/load preserving exact state
-- [x] Internal monologue system
-- [x] Debug UI showing stats
 - [x] Visual degradation feedback (color change)
 - [ ] Approach selection UI (instead of auto-complete)
 - [ ] 3-5 complete quests with thought scenes
