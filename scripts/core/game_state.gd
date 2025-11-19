@@ -38,6 +38,21 @@ func _initialize_state() -> void:
 	call_deferred("emit_signal", "state_changed", _state.duplicate(true))
 
 
+func _unhandled_input(event: InputEvent) -> void:
+	if event is InputEventKey and event.pressed:
+		if event.keycode == KEY_F5:
+			SaveSystem.save_state(_state)
+			get_viewport().set_input_as_handled()
+		elif event.keycode == KEY_F9:
+			var loaded_state = SaveSystem.load_state()
+			if not loaded_state.is_empty():
+				_state = loaded_state
+				# Reload current scene to ensure nodes (like QuestTriggers) match the new state
+				# e.g. Triggers that were deleted in the save should not be present, 
+				# or Triggers that exist in the save but were deleted in the current session reappear.
+				get_tree().reload_current_scene()
+				state_changed.emit(_state.duplicate(true))
+			get_viewport().set_input_as_handled()
 
 
 func reset() -> void:
