@@ -18,5 +18,6 @@
   },
   "outcomes": {
     "all": [{"advance_to": "rescue_prisoner"}]
-  }
+  },
+  "summary": "You found the rebel camp hidden in the forest. To earn their trust, you must convince them you are useful to their cause."
 }

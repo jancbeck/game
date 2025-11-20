@@ -121,6 +121,37 @@ Example: `data/quests/join_rebels.json`
     -   1–3 sentences describing the situation and dilemma
     -   No explicit mention of numeric stats or mechanics
 
+### Memory Flag Naming
+
+**Current Implementation** (as of Phase 1):
+
+Memory flags follow the format: `npc_id_flag_name`
+
+-   The system splits by the **last underscore** to separate NPC ID from flag name
+-   Example: `guard_captain_hostile` → NPC: `guard_captain`, Flag: `hostile`
+-   The NPC must exist in `state["world"]["npc_states"]` or a warning is logged
+-   Flags are stored in: `state["world"]["npc_states"][npc_id]["memory_flags"]`
+
+**Examples**:
+```json
+"memory_flags": ["guard_captain_hostile", "guard_captain_unaware"]
+```
+
+**Current Limitations**:
+-   ❌ World-level flags (e.g., `reputation_brutal`) are **not supported** in Phase 1
+-   ❌ Flags without an NPC prefix will generate warnings
+-   ⚠️  The quest will still complete, but the flag won't be stored
+
+**Future Enhancement** (Phase 2+):
+-   World-level reputation system may be added
+-   Consider using a `world_` prefix for global flags (e.g., `world_reputation_brutal`)
+-   Or add `state["world"]["global_flags"]` array
+
+**Best Practice for Phase 1**:
+-   Always prefix with an NPC ID that exists in the game
+-   If targeting player reputation, consider: `player_reputation_brutal`
+-   Or create a virtual "world" NPC to hold global flags
+
 ---
 
 ## II. Thought Content (Dialogic)

@@ -15,7 +15,7 @@
         "convictions": {
           "violence_thoughts": 2
         },
-        "memory_flags": ["guard_captain_hostile", "reputation_brutal"]
+        "memory_flags": ["guard_captain_hostile", "player_reputation_brutal"]
       }
     },
     "stealthy": {
@@ -38,5 +38,6 @@
       {"advance_to": "investigate_ruins"},
       {"unlock_location": "rebel_hideout_innere"}
     ]
-  }
+  },
+  "summary": "A rebel is held in the King's dungeon, awaiting execution. Elira tasks you with freeing them before dawn. The guards are vigilant."
 }

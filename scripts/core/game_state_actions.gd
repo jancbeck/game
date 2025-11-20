@@ -32,4 +32,16 @@ static func can_start_quest(quest_id: String) -> bool:
 	return QuestSystem.can_start_quest(GameState.state, quest_id)
 
 
+## Gets the current value of a flexibility stat
+## Returns the stat value or 0 if not found
+static func get_flexibility(stat_name: String) -> int:
+	return GameState.state["player"]["flexibility"].get(stat_name, 0)
+
+
+## Gets the current value of a conviction stat
+## Returns the stat value or 0 if not found
+static func get_conviction(conviction_name: String) -> int:
+	return GameState.state["player"]["convictions"].get(conviction_name, 0)
+
+
 

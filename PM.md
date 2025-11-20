@@ -285,24 +285,37 @@ Key deliverables:
 
 The PM should keep this section current after major changes or review sessions.
 
-Example format:
+**Last Updated**: 2025-11-20
 
 - **Current Phase**: 2 – Story Skeleton
-- **Approx. Progress**: 10% of Phase 2
+- **Approx. Progress**: ~20% of Phase 2 (3 of ~15 main quests implemented)
 - **Core tech status**:
-  - GameState reducers: ✅ basic systems (player, quest)
-  - Dialogic integration: ✅ quest A/B/C + thought flow
-  - Save/load: ✅ GameState + Dialogic full state
-  - Quest data: ✅ JSON-based, DataLoader in use
+  - GameState reducers: ✅ Complete (Player, Quest, Game State, Save/Load)
+  - Dialogic integration: ✅ Full integration (DialogSystem, GameStateActions, timelines)
+  - Save/load: ✅ GameState + Dialogic full state with F5/F9 hotkeys
+  - Quest data: ✅ JSON-based with DataLoader
+  - Test framework: ✅ GdUnit4 with comprehensive test coverage
+- **Implemented Content**:
+  - Quests: ✅ `join_rebels` (Act 1), `rescue_prisoner` (Act 2), `investigate_ruins` (Act 1)
+  - Dialogic timelines: ✅ 4 timelines (quest intros, resolutions, thoughts)
+  - Quest mechanics: ✅ Prerequisites, approaches, degradation, memory flags, convictions
 - **Key working flows**:
-  - Quest A → B → C chain: ✅
-  - Save/load around these flows: ✅ basic tests, manual check required for edge cases
+  - Quest chain (join_rebels → rescue_prisoner → investigate_ruins): ✅
+  - Thought system via Dialogic: ✅
+  - Conviction/flexibility gating in timelines: ✅
+  - Save/load mid-quest: ✅ Dialogic state preserved
+  - Quest triggers with timeline integration: ✅
 - **Known gaps for current phase**:
-  - [ ] Automated tests for Quest C chain
-  - [ ] Act transition logic (Act 1 -> 2)
-  - [ ] Combat primitives for Quest D
+  - [ ] Quests 4-15 for full story skeleton
+  - [ ] Act transition logic formalized
+  - [ ] Combat system (Phase 4 priority)
+  - [ ] NPC character data and initialization
+  - [ ] Additional thought timelines (currently 1 implemented)
+  - [ ] World-level memory flags (Phase 2 enhancement)
 
-The PM updates this section based on coding agents’ reports and the human’s feedback.
+**Phase 1 Milestone Status**: ✅ **COMPLETE** (All Phase 1 milestones achieved)
+
+The PM updates this section based on coding agents' reports and the human's feedback.
 
 ---
 
@@ -451,10 +464,12 @@ At the bottom of this file, the PM can maintain a short list of concrete next st
 
 **Next Steps (as of last update)**
 
-1. [ ] Implement Quest D (`secure_camp_defenses`) content.
-2. [ ] Add automated integration tests for Quest A -> B -> C chain.
-3. [ ] Implement Act transition logic (Act 1 -> 2) in GameState.
-4. [ ] Prototype combat primitives for Quest D (if needed).
+1. [ ] Implement Quest D (`secure_camp_defenses`) - Next in Act 1 story chain
+2. [ ] Implement Quest E (`confront_the_traitor`) - Completes Act 1
+3. [ ] Initialize NPC character data (guard_captain, player for memory flags)
+4. [ ] Add more thought timelines (target: 10-15 total for Phase 2)
+5. [ ] Document and test quest chain integration (join_rebels → rescue_prisoner → investigate_ruins)
+6. [ ] Implement Act transition logic when Act 1 is complete
 
 The PM updates this list after each review or major change.
 
@@ -464,8 +479,9 @@ The PM updates this list after each review or major change.
 
 The PM should always update these fields when doing a project-wide review.
 
-- **Last Updated**: 2025-11-19
-- **Current Phase**: 2 – Story Skeleton
-- **Next Review Trigger**: Completion of Quest D and integration tests
+- **Last Updated**: 2025-11-20
+- **Current Phase**: 2 – Story Skeleton (Phase 1 Complete ✅)
+- **Phase 2 Progress**: ~20% (3 of ~15 quests)
+- **Next Review Trigger**: Completion of Act 1 (Quests D & E) and NPC initialization
 
 (Adjust these dates and labels as the project evolves.)

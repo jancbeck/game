@@ -57,11 +57,23 @@ GameState.state: Dictionary = {
 
     "dialogue_vars": Dictionary[String, Variant],
 
-    "meta": { # Renamed 'thoughts' to 'meta' and integrated pending_thought_id
+    "combat": {
+        "active": bool,
+        "enemies": Array,
+        "available_abilities": Array
+    },
+
+    "meta": {
         "playtime_seconds": int,
         "save_version": String,
         "current_scene": String,
-        "active_thought": String # "" if none pending
+        "active_dialog_timeline": String,  # Current active Dialogic timeline ID
+        "active_thought": String  # Legacy field, use active_dialog_timeline instead
+    },
+
+    "dialogic": {
+        "vars": Dictionary,  # Dialogic variables
+        "engine_state": Dictionary  # Full Dialogic engine state for save/load
     }
 }
 ```
@@ -171,11 +183,7 @@ static func set_test_data(id: String, data: Dictionary) -> void # For testing
 static func clear_test_data() -> void # For testing
 
 static func get_quest(quest_id: String) -> Dictionary
-    # Returns quest data from data/quests/*.md or {} if not found
-    # Parses YAML frontmatter
-
-static func get_thought(thought_id: String) -> Dictionary
-    # Returns thought data from data/thoughts/*.json or {} if not found
+    # Returns quest data from data/quests/*.json or {} if not found
     # Parses JSON
 ```
 
@@ -331,29 +339,47 @@ func _input(event: InputEvent) -> void:
 
 ### Pattern: Quest Trigger
 
+**Location**: scripts/core/quest_trigger.gd
+
+**Purpose**: Area3D node that triggers quest interactions and Dialogic timelines
+
 ```gdscript
 # Template: scripts/core/quest_trigger.gd
 extends Area3D
 
 @export var quest_id: String = ""
 @export var interaction_prompt: String = "Press 'E' to interact"
-@export var debug_auto_complete_approach: String = "" # Added export for debug
+@export var timeline_id: String = ""  ## Dialogic timeline to start on interaction
 
 var player_in_range: bool = false
 var game_state = GameState
 
 
-func _ready() -> void:
+func _ready():
     if quest_id.is_empty():
         push_warning("QuestTrigger: quest_id not set for %s" % name)
 
-    # Check if quest is already active or completed in state, and remove trigger if so.
+    # Check initial state and remove if quest is already active/completed
+    _check_and_remove_if_completed()
+
+    # Listen for state changes to remove trigger when quest is completed
+    if game_state.state_changed.connect(_on_state_changed) != OK:
+        push_warning("QuestTrigger: Failed to connect to state_changed signal")
+
+
+func _on_state_changed(_new_state: Dictionary) -> void:
+    _check_and_remove_if_completed()
+
+
+func _check_and_remove_if_completed() -> void:
+    # Remove trigger if quest is already active or completed
     if game_state.state.has("quests") and game_state.state["quests"].has(quest_id):
         var status = game_state.state["quests"][quest_id]["status"]
         if status != "available":
             queue_free()
 
-func _on_body_entered(body: Node3D) -> void:
+
+func _on_body_entered(body: Node3D):
     if body.name == "Player":
         player_in_range = true
         var can_start = QuestSystem.check_prerequisites(game_state.state, quest_id)
@@ -363,33 +389,47 @@ func _on_body_entered(body: Node3D) -> void:
         else:
             print("QuestTrigger: Player entered range (Locked)")
 
-func _on_body_exited(body: Node3D) -> void:
+
+func _on_body_exited(body: Node3D):
     if body.name == "Player":
+        print("QuestTrigger: Player exited range")
         player_in_range = false
         # TODO: Hide interaction_prompt in UI
 
-func _input(event: InputEvent) -> void:
+
+func _input(event: InputEvent):
     if player_in_range and event.is_action_pressed("interact"):
+        print("QuestTrigger: Interact pressed")
         if not quest_id.is_empty():
+            # Preferred: Start Dialogic timeline if configured
+            # The timeline handles quest start/completion via signals
+            if not timeline_id.is_empty():
+                print("QuestTrigger: Starting Dialogic timeline '%s'" % timeline_id)
+                var dialog_system = get_node_or_null("/root/DialogSystem")
+                if dialog_system and dialog_system.has_method("start_timeline"):
+                    dialog_system.start_timeline(timeline_id)
+                else:
+                    push_error("DialogSystem not found. Add it as autoload.")
+                return
+
+            # Fallback: Direct quest start (deprecated, use timeline_id instead)
             if not QuestSystem.check_prerequisites(game_state.state, quest_id):
                 print("QuestTrigger: Locked - Prerequisites not met")
                 return
 
-            GameState.dispatch(func(state): return QuestSystem.start_quest(state, quest_id))
+            game_state.dispatch(func(state): return QuestSystem.start_quest(state, quest_id))
+            print("Quest started via legacy fallback.")
+```
 
-            if not debug_auto_complete_approach.is_empty():
-                GameState.dispatch(
-                    func(state): return QuestSystem.complete_quest(state, quest_id, debug_auto_complete_approach)
-                )
-                # Check for thought trigger after quest completion
-                var trigger_string = "quest_complete:%s:%s" % [quest_id, debug_auto_complete_approach]
-                var thought_id = ThoughtSystem.get_thought_for_trigger(trigger_string)
-                if not thought_id.is_empty():
-                    GameState.dispatch(func(state): return ThoughtSystem.present_thought(state, thought_id))
+**Usage**:
+1. **Preferred**: Set both `quest_id` and `timeline_id`. The timeline handles all quest logic via signals.
+2. **Legacy**: Set only `quest_id` for direct quest start (no dialogue, deprecated).
 
-                queue_free() # Prevent multiple interactions only if completed
-            else:
-                print("Quest started. No auto-complete approach set.")
+**Timeline signals** (see Pattern: Thoughts):
+- `start_quest:quest_id`
+- `complete_quest:quest_id:approach`
+- `modify_conviction:name:amount`
+- `modify_flexibility:name:amount`
 ```
 
 ### Pattern: DialogSystem (Dialogic 2 Integration)
@@ -410,24 +450,38 @@ func _input(event: InputEvent) -> void:
 - Use signal events to trigger game state changes
 - NEVER modify GameState directly from timelines
 
-**Example Timeline Structure**:
+**Example Timeline Structure** (actual Dialogic 2 .dtl syntax):
 ```
-[Character: join] rebel_leader
-  "Welcome to the cause."
-[Choice]
-  - "I'm ready to fight." [signal: modify_conviction:violence_thoughts:2]
-  - "I want to help, but peacefully." [signal: modify_conviction:compassionate_acts:2]
-[Signal: start_quest:join_rebels]
+You found the camp. Now you must convince them you are useful.
+- Offer your services
+	[signal arg="start_quest:join_rebels"]
+	[wait time="0.5"]
+	[signal arg="complete_quest:join_rebels:diplomatic"]
+- I need more time to think.
+	You can't delay this decision forever.
 ```
 
-**Conviction Gating in Timelines**:
-Use Dialogic conditions:
+**Conviction Gating in Timelines** (actual Dialogic 2 .dtl syntax):
 ```
-[If: {GameStateActions.get_conviction("violence_thoughts")} >= 5]
-  [Character: rebel_leader] "You have the look of a fighter."
-[Else]
-  [Character: rebel_leader] "You seem... soft."
+You stand before the sealed door. The air hums with dark energy.
+- [Analyze] Decipher the warnings. | [if GameStateActions.get_flexibility("cunning") >= 3]
+	You trace the ancient glyphs. Cold logic takes hold.
+	do GameStateActions.complete_quest("investigate_ruins", "analyze")
+- [Force] Smash the door. | [if GameStateActions.get_conviction("violence_thoughts") >= 5]
+	You channel your rage into a single blow. The stone cracks.
+	do GameStateActions.complete_quest("investigate_ruins", "force")
+- Leave.
+	You cannot turn back now. The story demands an ending.
+	jump quest_investigate_ruins_resolution
 ```
+
+**Key Dialogic 2 Syntax**:
+- **Emit signals**: `[signal arg="command:param1:param2"]`
+- **Execute code**: `do GameStateActions.method_name(params)`
+- **Conditional choices**: `- Choice text | [if condition]`
+- **Wait**: `[wait time="seconds"]`
+- **Jump to timeline**: `jump timeline_id`
+- **Comments**: Lines without special markers are dialogue text
 
 **MUST**:
 - All state changes via signal events
@@ -439,6 +493,52 @@ Use Dialogic conditions:
 - Directly call GameState.dispatch from timelines
 - Store game logic in timeline variables
 - Bypass GameStateActions API
+
+### Pattern: Thoughts (Dialogic Timelines)
+
+**Implementation**: Thoughts are implemented as Dialogic timelines, not as a separate system.
+
+**Naming Convention**:
+- Thought timelines: `thought_[context]` (e.g., `thought_before_join_rebels`)
+- Quest intro timelines: `quest_[quest_id]_intro`
+- Quest resolution timelines: `quest_[quest_id]_resolution`
+
+**Thought Timeline Structure**:
+Thoughts present internal monologue choices that affect convictions and flexibility.
+
+**Example** (from `join_rebels.dtl`):
+```
+Words are stronger than steel. Or are they just quieter?
+- Violence is a failure of imagination.
+	[signal arg="modify_conviction:compassionate_acts:2"]
+	[signal arg="modify_conviction:violence_thoughts:-1"]
+- It worked this time. Next time might require a blade.
+	[signal arg="modify_conviction:violence_thoughts:1"]
+- I manipulated them perfectly.
+	[signal arg="modify_conviction:deceptive_acts:2"]
+```
+
+**Triggering Thoughts**:
+- Thoughts are triggered by starting the appropriate Dialogic timeline via `DialogSystem.start_timeline(timeline_id)`
+- The `active_thought` field in `state["meta"]` tracks if a thought timeline is active (managed by DialogSystem)
+- QuestTriggers can specify a `timeline_id` to start before quest logic
+
+**Pattern**:
+1. Player encounters QuestTrigger
+2. QuestTrigger starts thought timeline (if configured)
+3. Player makes choices that modify convictions/flexibility
+4. Timeline completes and triggers quest start/completion
+5. Quest logic applies approach-based degradation
+
+**MUST**:
+- Use `[signal arg="..."]` format for state changes
+- Choices should represent distinct philosophical positions
+- Each option affects convictions or flexibility (2-5 point changes)
+
+**MUST NOT**:
+- Create a separate ThoughtSystem (use Dialogic timelines)
+- Hardcode thought content in GDScript
+- Store thought data in JSON (use .dtl files)
 
 ## V. Test Requirements
 
@@ -627,8 +727,15 @@ state["quests"][quest_id]["status"]  # "available", "active", "completed"
 # NPC memory
 state["world"]["npc_states"][npc_id]["memory_flags"]  # Array[String]
 
-# Pending thought
-state["meta"]["active_thought"]  # String or ""
+# Combat
+state["combat"]["active"]  # bool
+state["combat"]["enemies"]  # Array
+state["combat"]["available_abilities"]  # Array
+
+# Dialogic
+state["meta"]["active_dialog_timeline"]  # Current timeline ID or ""
+state["dialogic"]["vars"]  # Dialogic variables
+state["dialogic"]["engine_state"]  # Full Dialogic state (for save/load)
 ```
 
 ### Common System Calls
@@ -637,18 +744,25 @@ state["meta"]["active_thought"]  # String or ""
 # Move player
 PlayerSystem.move(state, direction, delta)
 
-# Modify stats
+# Modify stats (from systems)
 PlayerSystem.modify_flexibility(state, "charisma", -2)
 PlayerSystem.modify_conviction(state, "violence_thoughts", 3)
+
+# Get stats (for conditions in Dialogic)
+GameStateActions.get_flexibility("charisma")  # Returns int
+GameStateActions.get_conviction("violence_thoughts")  # Returns int
 
 # Quest operations
 QuestSystem.check_prerequisites(state, quest_id)  # bool
 QuestSystem.start_quest(state, quest_id)
 QuestSystem.complete_quest(state, quest_id, "approach") # Example
 
-# Thought operations
-ThoughtSystem.present_thought(state, "thought_id") # Example
-ThoughtSystem.choose_thought(state, 0) # Example
+# GameStateActions (for Dialogic timelines)
+GameStateActions.start_quest(quest_id)
+GameStateActions.complete_quest(quest_id, approach)
+GameStateActions.modify_conviction(conviction_name, amount)
+GameStateActions.modify_flexibility(stat_name, amount)
+GameStateActions.can_start_quest(quest_id)  # Returns bool
 
 # Save/Load
 SaveSystem.save_state(state)
