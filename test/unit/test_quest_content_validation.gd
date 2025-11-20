@@ -9,10 +9,10 @@ var _initial_state = {
 		"join_rebels": {"status": "available", "approach_taken": "", "objectives_completed": []}
 	},
 	"player": {
-		"flexibility": {"charisma": 10, "cunning": 10, "empathy": 10}, 
+		"flexibility": {"charisma": 10, "cunning": 10, "empathy": 10},
 		"convictions": {}
 	},
-	"world": {"npc_states": {}, "location_flags": {}}
+	"world": {"npc_states": {}, "location_flags": {}, "memory_flags": []}
 }
 
 func before_test():

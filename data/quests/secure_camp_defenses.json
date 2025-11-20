@@ -1,0 +1,96 @@
+{
+  "id": "secure_camp_defenses",
+  "act": 1,
+  "location": "rebel_camp",
+  "prerequisites": [
+    {
+      "completed": "investigate_ruins"
+    }
+  ],
+  "approaches": {
+    "brutal": {
+      "label": "Set lethal traps and arm for bloody counterattack",
+      "requires": {
+        "violence_thoughts": 4
+      },
+      "degrades": {
+        "flexibility_charisma": -7,
+        "flexibility_empathy": -3
+      },
+      "rewards": {
+        "convictions": {
+          "violence_thoughts": 3
+        },
+        "memory_flags": [
+          "rebels_respect_brutality",
+          "rebels_fear_brutality"
+        ]
+      }
+    },
+    "tactical": {
+      "label": "Fortify chokepoints and coordinate disciplined defense",
+      "requires": {
+        "flexibility_cunning": 6
+      },
+      "degrades": {
+        "flexibility_cunning": -6,
+        "flexibility_empathy": -4
+      },
+      "rewards": {
+        "convictions": {
+          "duty_above_all": 2
+        },
+        "memory_flags": [
+          "rebels_trust_tactical_mind",
+          "player_coldly_efficient"
+        ]
+      }
+    },
+    "diplomatic": {
+      "label": "Send desperate envoy to nearby village for aid",
+      "requires": {
+        "flexibility_charisma": 5
+      },
+      "degrades": {
+        "flexibility_charisma": -6,
+        "flexibility_cunning": -2
+      },
+      "rewards": {
+        "convictions": {
+          "compassionate_acts": 1,
+          "question_authority": 1
+        },
+        "memory_flags": [
+          "village_owes_rebels",
+          "rebels_shown_weakness"
+        ]
+      }
+    },
+    "desperate": {
+      "label": "Minimal defenses—hope they don't find us",
+      "requires": {},
+      "degrades": {
+        "flexibility_charisma": -3,
+        "flexibility_cunning": -3,
+        "flexibility_empathy": -2
+      },
+      "rewards": {
+        "convictions": {
+          "question_authority": 2
+        },
+        "memory_flags": [
+          "rebels_doubt_leader",
+          "player_paralyzed_by_pressure"
+        ]
+      }
+    }
+  },
+  "outcomes": {
+    "all": [
+      {
+        "advance_to": "battle_for_camp"
+      }
+    ]
+  },
+  "summary": "The ruins revealed your location. King's forces approach. The camp panics. You must choose how to defend against the coming storm."
+}

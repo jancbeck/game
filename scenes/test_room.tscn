@@ -29,10 +29,18 @@ shape = SubResource("CapsuleShape3D_player")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -5)
 quest_id = "join_rebels"
 timeline_id = "thought_join_rebels"
-debug_auto_complete_approach = "diplomatic"
 
 [node name="Trigger_RescuePrisoner" parent="." instance=ExtResource("3_quest_trigger")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, -5)
 quest_id = "rescue_prisoner"
 timeline_id = "quest_rescue_prisoner_intro"
-debug_auto_complete_approach = "violent"
+
+[node name="Trigger_InvestigateRuins" parent="." instance=ExtResource("3_quest_trigger")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, -5)
+quest_id = "investigate_ruins"
+timeline_id = "quest_investigate_ruins_intro"
+
+[node name="Trigger_SecureCampDefenses" parent="." instance=ExtResource("3_quest_trigger")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, -5)
+quest_id = "secure_camp_defenses"
+timeline_id = ""

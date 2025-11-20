@@ -40,13 +40,14 @@ func test_get_quest_returns_data_from_file():
 
 	# Assert
 	# Check specific fields to avoid test fragility with full dict matching if parser adds extra fields
+	# Note: JSON parser returns floats for all numbers, so we use int() conversion
 	assert_that(quest_data["id"]).is_equal(expected_data["id"])
-	assert_that(quest_data["act"]).is_equal(expected_data["act"])
-	assert_that(quest_data["approaches"]["violent"]["requires"]).is_equal(
-		expected_data["approaches"]["violent"]["requires"]
+	assert_that(int(quest_data["act"])).is_equal(expected_data["act"])
+	assert_that(int(quest_data["approaches"]["violent"]["requires"]["violence_thoughts"])).is_equal(
+		expected_data["approaches"]["violent"]["requires"]["violence_thoughts"]
 	)
-	assert_that(quest_data["approaches"]["stealthy"]["degrades"]).is_equal(
-		expected_data["approaches"]["stealthy"]["degrades"]
+	assert_that(int(quest_data["approaches"]["stealthy"]["degrades"]["flexibility_cunning"])).is_equal(
+		expected_data["approaches"]["stealthy"]["degrades"]["flexibility_cunning"]
 	)
 	assert_that(quest_data["outcomes"]["all"]).is_equal(expected_data["outcomes"]["all"])
 

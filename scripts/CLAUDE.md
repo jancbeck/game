@@ -436,14 +436,17 @@ func _input(event: InputEvent):
 ```
 
 **Usage**:
+
 1. **Preferred**: Set both `quest_id` and `timeline_id`. The timeline handles all quest logic via signals.
 2. **Legacy**: Set only `quest_id` for direct quest start (no dialogue, deprecated).
 
 **Timeline signals** (see Pattern: Thoughts):
+
 - `start_quest:quest_id`
 - `complete_quest:quest_id:approach`
 - `modify_conviction:name:amount`
 - `modify_flexibility:name:amount`
+
 ```
 
 ### Pattern: DialogSystem (Dialogic 2 Integration)
@@ -466,27 +469,33 @@ func _input(event: InputEvent):
 
 **Example Timeline Structure** (actual Dialogic 2 .dtl syntax):
 ```
+
 You found the camp. Now you must convince them you are useful.
+
 - Offer your services
-	[signal arg="start_quest:join_rebels"]
-	[wait time="0.5"]
-	[signal arg="complete_quest:join_rebels:diplomatic"]
+  [signal arg="start_quest:join_rebels"]
+  [wait time="0.5"]
+  [signal arg="complete_quest:join_rebels:diplomatic"]
 - I need more time to think.
-	You can't delay this decision forever.
+  You can't delay this decision forever.
+
 ```
 
 **Conviction Gating in Timelines** (actual Dialogic 2 .dtl syntax):
 ```
+
 You stand before the sealed door. The air hums with dark energy.
+
 - [Analyze] Decipher the warnings. | [if GameStateActions.get_flexibility("cunning") >= 3]
-	You trace the ancient glyphs. Cold logic takes hold.
-	do GameStateActions.complete_quest("investigate_ruins", "analyze")
+  You trace the ancient glyphs. Cold logic takes hold.
+  do GameStateActions.complete_quest("investigate_ruins", "analyze")
 - [Force] Smash the door. | [if GameStateActions.get_conviction("violence_thoughts") >= 5]
-	You channel your rage into a single blow. The stone cracks.
-	do GameStateActions.complete_quest("investigate_ruins", "force")
+  You channel your rage into a single blow. The stone cracks.
+  do GameStateActions.complete_quest("investigate_ruins", "force")
 - Leave.
-	You cannot turn back now. The story demands an ending.
-	jump quest_investigate_ruins_resolution
+  You cannot turn back now. The story demands an ending.
+  jump quest_investigate_ruins_resolution
+
 ```
 
 **Key Dialogic 2 Syntax**:
@@ -522,15 +531,18 @@ Thoughts present internal monologue choices that affect convictions and flexibil
 
 **Example** (from `join_rebels.dtl`):
 ```
+
 Words are stronger than steel. Or are they just quieter?
+
 - Violence is a failure of imagination.
-	[signal arg="modify_conviction:compassionate_acts:2"]
-	[signal arg="modify_conviction:violence_thoughts:-1"]
+  [signal arg="modify_conviction:compassionate_acts:2"]
+  [signal arg="modify_conviction:violence_thoughts:-1"]
 - It worked this time. Next time might require a blade.
-	[signal arg="modify_conviction:violence_thoughts:1"]
+  [signal arg="modify_conviction:violence_thoughts:1"]
 - I manipulated them perfectly.
-	[signal arg="modify_conviction:deceptive_acts:2"]
-```
+  [signal arg="modify_conviction:deceptive_acts:2"]
+
+````
 
 **Triggering Thoughts**:
 - Thoughts are triggered by starting the appropriate Dialogic timeline via `DialogSystem.start_timeline(timeline_id)`
@@ -594,7 +606,7 @@ func test_immutability() -> void:
 
     assert_that(initial_state).is_equal(copy_before)
     assert_that(result).is_not_same(initial_state)
-```
+````
 
 ### Required Test Cases Per System
 
@@ -752,6 +764,32 @@ state["dialogic"]["vars"]  # Dialogic variables
 state["dialogic"]["engine_state"]  # Full Dialogic state (for save/load)
 ```
 
+## Architecture Quick Reference
+
+### Immutable State Pattern (NEVER VIOLATE)
+
+```gdscript
+# ALWAYS
+state = state.duplicate(true)
+state = GameState.dispatch(func(s): return SystemName.action(s, params))
+
+# NEVER
+state["player"]["health"] = 50  # Direct mutation
+player.health = 50  # State outside GameState
+```
+
+### System Rules
+
+**All systems must**:
+
+- Extend `RefCounted` (not Node)
+- Use `static func` only
+- Type all parameters/returns
+- Return new state via `.duplicate(true)`
+- Never reference scene tree
+
+**State location**: `GameState.state` Dictionary is the ONLY source of truth
+
 ### Common System Calls
 
 ```gdscript
@@ -782,15 +820,3 @@ GameStateActions.can_start_quest(quest_id)  # Returns bool
 SaveSystem.save_state(state)
 SaveSystem.load_state()  # Returns Dictionary
 ```
-
----
-
-**End of AGENTS.md**
-
-This document contains everything needed to generate code.
-
-If you need rationale or philosophy, see ARCHITECTURE.md.
-
-If you need timeline or milestones, see PROJECT.md.
-
-If you need content formats, see CONTENT_SPEC.md.

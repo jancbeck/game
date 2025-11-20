@@ -94,23 +94,8 @@ static func complete_quest(state: Dictionary, quest_id: String, approach: String
 	# Set memory flags
 	if approach_data.has("rewards") and approach_data["rewards"].has("memory_flags"):
 		for flag in approach_data["rewards"]["memory_flags"]:
-			# Assuming flags are in format "npc_id_flag_name"
-			# We use rsplit to allow npc_id to contain underscores.
-			# The LAST part is the flag name.
-			var parts = flag.rsplit("_", true, 1)
-			if parts.size() == 2:
-				var npc_id = parts[0]
-				var flag_name = parts[1]
-
-				if new_state["world"]["npc_states"].has(npc_id):
-					if not new_state["world"]["npc_states"][npc_id]["memory_flags"].has(flag_name):
-						new_state["world"]["npc_states"][npc_id]["memory_flags"].append(flag_name)
-				else:
-					push_warning("Attempted to set memory flag for non-existent NPC: " + npc_id)
-			else:
-				push_warning(
-					"Memory flag format incorrect: " + flag + ". Expected 'npc_id_flag_name'."
-				)
+			if not new_state["world"]["memory_flags"].has(flag):
+				new_state["world"]["memory_flags"].append(flag)
 
 	# Mark quest complete
 	new_state["quests"][quest_id]["status"] = "completed"

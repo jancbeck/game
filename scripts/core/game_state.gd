@@ -26,7 +26,7 @@ func _initialize_state() -> void:
 			"inventory": [],
 			"equipment": {"weapon": "", "armor": ""}
 		},
-		"world": {"current_location": "", "act": 1, "npc_states": {}, "location_flags": {}},
+		"world": {"current_location": "", "act": 1, "npc_states": {}, "location_flags": {}, "memory_flags": []},
 		"quests":
 		{
 			"join_rebels":
