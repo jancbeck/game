@@ -1,6 +1,8 @@
-## CURRENT STATUS
+# PROJECT STATUS
 
-Only project manager keeps this file up-to-date.
+Only project manager keeps this file up-to-date. Remove outdated information and keep it actionable. Prune info from previous sprints.
+
+## CURRENT STATUS
 
 **Phase**: 2 - Story Skeleton
 **Sprint**: Completed - Resolution Timeline Feature
@@ -21,13 +23,34 @@ Only project manager keeps this file up-to-date.
 
 ### Known Issues
 
-- None blocking
+**Architecture & Tests**: NONE blocking
+
+**Content Gaps**:
+- secure_camp_defenses: missing intro/resolution timelines
+- rescue_prisoner: missing resolution timeline
+- join_rebels: has thought timeline but no intro/resolution quests
+- report_to_rebel_leader: ORPHANED (empty outcomes, no follow-up)
+
+**Integration Issues**:
+- secure_camp_defenses trigger in test_room has empty timeline_id
+- No Act 2 content structure started (0/5 quests)
+- No Act 3 content structure started (0/4 quests)
 
 ### Next Sprint Priority
 
-**Option 1**: Continue Act 1 (battle_for_camp climax quest)
-**Option 2**: Content pass (add missing timelines/dialogues)
-**Option 3**: Act 2 setup (new story arc)
+**Phase 2 Completion Blocker**: Need 10 more quests + 10-15 thought timelines
+
+**Recommended Next Sprint**:
+1. **WRITER**: Fill critical timeline gaps (join_rebels intro, rescue_prisoner resolution, secure_camp_defenses intro/resolution)
+2. **WRITER**: Fix orphaned quest (give report_to_rebel_leader outcomes or remove)
+3. **WRITER**: Create Act 1 climax quest (battle_for_camp) with full JSON + timelines
+4. **CODER**: Update test_room trigger for secure_camp_defenses with timeline_id
+5. **ARCHITECT**: Add end-to-end quest chain integration tests
+
+**Alternative Options**:
+- **Option A** (Conservative): Content pass first - complete all missing timelines, then new quests
+- **Option B** (Aggressive): New quests first - create Act 1 climax + Act 2 foundation
+- **Option C** (Balanced): Parallel - WRITER creates new quests while CODER fixes integration gaps
 
 ### Deliverables Completed
 

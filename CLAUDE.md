@@ -43,6 +43,8 @@ Branch: main
 - [ ] Tests: [not written|written|passing]
 - [ ] Integration: [not tested|tested|verified]
 
+Maintain the current project status in @PROJECT_STATUS.md
+
 ### Completed This Sprint
 
 - [List what was actually delivered]
