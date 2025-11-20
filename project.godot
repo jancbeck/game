@@ -26,10 +26,10 @@ Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 
 directories/dch_directory={}
 directories/dtl_directory={
-"join_rebels": "res://data/timelines/join_rebels.dtl",
 "quest_investigate_ruins_intro": "res://data/timelines/quest_investigate_ruins_intro.dtl",
 "quest_investigate_ruins_resolution": "res://data/timelines/quest_investigate_ruins_resolution.dtl",
-"rescue_prisoner": "res://data/timelines/rescue_prisoner.dtl"
+"quest_rescue_prisoner_intro": "res://data/timelines/quest_rescue_prisoner_intro.dtl",
+"thought_join_rebels": "res://data/timelines/thought_join_rebels.dtl"
 }
 layout/style_directory={}
 

@@ -1,6 +1,6 @@
 {
   "id": "rescue_prisoner",
-  "act": 2,
+  "act": 1,
   "prerequisites": [{"completed": "join_rebels"}],
   "approaches": {
     "violent": {
@@ -15,7 +15,7 @@
         "convictions": {
           "violence_thoughts": 2
         },
-        "memory_flags": ["guard_captain_hostile", "player_reputation_brutal"]
+        "memory_flags": ["guard_captain_hostile", "rebel_leader_knows_brutal"]
       }
     },
     "stealthy": {

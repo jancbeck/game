@@ -18,7 +18,7 @@
       },
       "rewards": {
         "memory_flags": [
-          "knows_corruption_origin"
+          "player_knows_corruption_origin"
         ]
       }
     },
@@ -32,7 +32,7 @@
       },
       "rewards": {
         "memory_flags": [
-          "ruins_damaged"
+          "rebel_leader_knows_ruins_damaged"
         ]
       }
     },
@@ -46,7 +46,7 @@
       },
       "rewards": {
         "memory_flags": [
-          "marked_by_corruption"
+          "player_marked_by_corruption"
         ]
       }
     }

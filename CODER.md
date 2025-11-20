@@ -24,9 +24,9 @@ GameState.state: Dictionary = {
         },
 
         "convictions": {
-            "violence_thoughts": int,      # Range: 0-100, starts 0
-            "deceptive_acts": int,         # Range: 0-100, starts 0
-            "compassionate_acts": int      # Range: 0-100, starts 0
+            "violence_thoughts": int,      # Range: 0+, starts 0 (no max)
+            "deceptive_acts": int,         # Range: 0+, starts 0 (no max)
+            "compassionate_acts": int      # Range: 0+, starts 0 (no max)
         },
 
         "inventory": Array[String],  # Item IDs
@@ -80,20 +80,34 @@ GameState.state: Dictionary = {
 
 ## II. System Signatures (Function Contracts)
 
-### GameState (Singleton Autoload)
+### GameState (Node Autoload)
 
 ```gdscript
 # Location: scripts/core/game_state.gd
+# Note: Extends Node, autoloaded in project.godot
 
 signal state_changed(new_state: Dictionary)
 
-var state: Dictionary  # Use schema from Section I
+var state: Dictionary  # Property getter - returns _state.duplicate(true)
+var _state: Dictionary  # Internal state storage
 
 func dispatch(reducer: Callable) -> void
-    # Calls reducer with current state
-    # If returns new Dictionary, updates state and emits signal
+    # Calls reducer with current _state
+    # If returns new Dictionary, updates _state and emits signal
     # Checks for state change using hash() before emitting
     # MUST verify reducer didn't mutate state in-place
+
+func reset() -> void
+    # Resets state to initial values by calling _initialize_state()
+
+func snapshot_for_save() -> Dictionary
+    # Returns deep copy of state with Dialogic.get_full_state() included
+    # Use this instead of accessing state directly when saving
+
+func restore_from_save(saved_state: Dictionary) -> void
+    # Restores state from save file
+    # Calls Dialogic.load_full_state() to restore dialogue state
+    # Emits state_changed signal
 ```
 
 ### PlayerSystem
@@ -128,7 +142,7 @@ static func modify_conviction(
     amount: int
 ) -> Dictionary
     # Updates state["player"]["convictions"][conviction]
-    # Clamps result to [0, 100] (min 0, max implicitly unlimited for positive changes)
+    # Clamps result to minimum of 0 (no maximum - convictions can grow indefinitely)
     # MUST return new Dictionary
 ```
 

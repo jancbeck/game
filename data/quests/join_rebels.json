@@ -12,7 +12,7 @@
         "flexibility_empathy": -2
       },
       "rewards": {
-        "memory_flags": ["joined_rebels"]
+        "memory_flags": ["rebel_leader_trusts_player"]
       }
     }
   },

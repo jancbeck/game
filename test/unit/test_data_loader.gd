@@ -6,18 +6,18 @@ func test_get_quest_returns_data_from_file():
 	# Arrange
 	var expected_data = {
 		"id": "rescue_prisoner",
-		"act": 2,
-		"prerequisites": ["joined_rebels"],
+		"act": 1,
+		"prerequisites": [{"completed": "join_rebels"}],
 		"approaches":
 		{
 			"violent":
 			{
 				"requires": {"violence_thoughts": 3},
-				"degrades": {"flexibility_charisma": -2},
+				"degrades": {"flexibility_charisma": -3, "flexibility_cunning": -5},
 				"rewards":
 				{
 					"convictions": {"violence_thoughts": 2},
-					"memory_flags": ["guard_captain_hostile", "reputation_brutal"]
+					"memory_flags": ["guard_captain_hostile", "rebel_leader_knows_brutal"]
 				}
 			},
 			"stealthy":
@@ -31,7 +31,7 @@ func test_get_quest_returns_data_from_file():
 		"outcomes":
 		{
 			"all":
-			[{"advance_to": "report_to_rebel_leader"}, {"unlock_location": "rebel_hideout_innere"}]
+			[{"advance_to": "investigate_ruins"}, {"unlock_location": "rebel_hideout_innere"}]
 		}
 	}
 

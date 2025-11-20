@@ -2,8 +2,10 @@
 
 This document defines how the **Project Manager agent** should steer and track the project.
 
-The PM does not write code or content and does not define low-level architecture.  
+The PM does not write code or content and does not define low-level architecture.
+
 The PM’s job is to:
+
 - Maintain a clear picture of **where the project is now**
 - Keep **scope and priorities** under control
 - Turn the human’s wishes into **well-scoped tasks** for other agents
@@ -13,15 +15,17 @@ The PM’s job is to:
 
 ## 1. Project Snapshot
 
-**Project**: Gothic- and Disco Elysium-inspired narrative RPG with degradation mechanics  
-**Target**: 6–9 month development timeline  
+**Project**: Gothic- and Disco Elysium-inspired narrative RPG with degradation mechanics
+
 **Team (AI roles)**:
+
 - **Project Manager (PM)** – this agent, coordinating work and status
 - **Architect** – owns technical architecture and constraints
 - **Coding Agent** – implements code and tests according to plans
 - **Content Author** – creates/modifies quests, Dialogic timelines, and narrative text
 
 **High-level vision**:
+
 - ~7–9 hours of playtime
 - Isometric action / narrative RPG
 - Character **convictions** and **flexibility** stats that degrade and shift over time
@@ -51,6 +55,7 @@ You:
 - Keep high-level documents up to date by assigning doc tasks to coding/content agents
 
 You do **not**:
+
 - Change code
 - Redesign architecture
 - Decide data formats alone
@@ -95,6 +100,7 @@ The PM should always know which phase the project is in and what belongs to that
 **Goal**: Solid technical base and a working prototype of the core loop.
 
 Key deliverables:
+
 - Immutable `GameState` with reducer-based systems (Player, Quest, etc.)
 - Dialogic integration:
   - `DialogSystem` bridge
@@ -108,7 +114,7 @@ Key deliverables:
   - Thought-before-quest pattern
 - Basic automated tests (quest logic, GameStateActions, save/load)
 
-### Phase 2: Story Skeleton 
+### Phase 2: Story Skeleton
 
 **Goal**: Full story playable start-to-finish with primitives
 
@@ -296,7 +302,7 @@ The PM should keep this section current after major changes or review sessions.
   - Quest data: ✅ JSON-based with DataLoader
   - Test framework: ✅ GdUnit4 with comprehensive test coverage
 - **Implemented Content**:
-  - Quests: ✅ `join_rebels` (Act 1), `rescue_prisoner` (Act 2), `investigate_ruins` (Act 1)
+  - Quests: ✅ `join_rebels` (Act 1), `rescue_prisoner` (Act 1), `investigate_ruins` (Act 1)
   - Dialogic timelines: ✅ 4 timelines (quest intros, resolutions, thoughts)
   - Quest mechanics: ✅ Prerequisites, approaches, degradation, memory flags, convictions
 - **Key working flows**:
@@ -345,12 +351,17 @@ The PM must protect scope.
 When the user asks for something new:
 
 1. Classify:
+
    - Does it fit into the existing scope?
    - Is it Phase 1/2/3/4 work?
-2. If it fits:
+
+1. If it fits:
+
    - Place it in the appropriate phase backlog.
    - Write a clear task plan for coding/content agents.
-3. If it does not fit:
+
+1. If it does not fit:
+
    - Note it in a **“Future / Parking Lot”** section.
    - Do not schedule implementation unless the user explicitly reprioritises the project.
 
@@ -422,15 +433,20 @@ The PM’s most important operational job is to turn **high-level user intent** 
 When the user asks for something:
 
 1. Determine **type**:
+
    - Feature (code + content)
    - Content-only (quests, dialogue)
    - Refactor / cleanup
    - Tests / robustness
-2. Determine **phase**:
-   - Does this belong in the current phase?  
+
+1. Determine **phase**:
+
+   - Does this belong in the current phase?
      - If yes, schedule now.
      - If no, park or schedule for later phase.
-3. Draft a **plan** for the relevant agent(s). Each plan should include:
+
+1. Draft a **plan** for the relevant agent(s). Each plan should include:
+
    - Context:
      - What part of the game this touches (quests, thoughts, save/load, etc.)
      - Any relevant constraints (e.g. don’t break Quest A→B flow)
@@ -446,12 +462,14 @@ When the user asks for something:
      - “This flow still works…”
      - “These tests pass…”
 
-4. Send the plan as a prompt to:
+1. Send the plan as a prompt to:
+
    - **Architect** (for structural / design changes)
    - **Coding Agent** (for implementation)
    - **Content Author** (for quests/dialogue)
 
-5. After the agent returns a report:
+1. After the agent returns a report:
+
    - Verify the report against the plan.
    - Update:
      - **Current Status**

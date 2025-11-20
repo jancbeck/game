@@ -114,6 +114,7 @@ Example: `data/quests/join_rebels.json`
     ```
     -   **all** (array): Effects that always apply when the quest completes. Current patterns:
         -   `{ "advance_to": "other_quest_id" }` – unlock next quest in chain
+        -   `{ "unlock_location": "location_id" }` – unlock a location by setting location flag to true
         -   Do not add new outcome types without Architect approval
 
 -   **summary** (string, required)
