@@ -11,6 +11,6 @@ rebel_leader: I need someone expendable to extract him. Someone without ties to 
 - What if I refuse?
 	rebel_leader: Then you leave. Now. And you do not come back.
 rebel_leader: The dungeon is beneath the garrison. Guards patrol every hour. Be smart about this.
-- [Accept the mission]
+- Accept the mission
 	[signal arg="complete_quest:join_rebels:diplomatic"]
 	rebel_leader: Go. Time is short.

@@ -34,11 +34,14 @@ if GameStateActions.has_memory_flag("rebels_doubt_leader"):
 	- You asked me to decide.
 		rebel_leader: I did. And you chose nothing. Perhaps that says more than any action could.
 	rebel_leader: The camp is intact. But broken. We will see if we can rebuild what was lost.
-- [Accept the outcome (brutal)] <= if GameStateActions.has_memory_flag("rebels_respect_brutality")
+- Accept the outcome (brutal) | [if GameStateActions.has_memory_flag("rebels_respect_brutality")]
 	[signal arg="complete_quest:secure_camp_defenses:brutal"]
-- [Accept the outcome (tactical)] <= if GameStateActions.has_memory_flag("rebels_trust_tactical_mind")
+- Accept the outcome (tactical) | [if GameStateActions.has_memory_flag("rebels_trust_tactical_mind")]
 	[signal arg="complete_quest:secure_camp_defenses:tactical"]
-- [Accept the outcome (diplomatic)] <= if GameStateActions.has_memory_flag("village_owes_rebels")
+- Accept the outcome (diplomatic) | [if GameStateActions.has_memory_flag("village_owes_rebels")]
 	[signal arg="complete_quest:secure_camp_defenses:diplomatic"]
-- [Accept the outcome (desperate)] <= if GameStateActions.has_memory_flag("rebels_doubt_leader")
+- Accept the outcome (desperate) | [if GameStateActions.has_memory_flag("rebels_doubt_leader")]
+	[signal arg="complete_quest:secure_camp_defenses:desperate"]
+- Accept the outcome
+	The camp endures. For now, that is enough.
 	[signal arg="complete_quest:secure_camp_defenses:desperate"]

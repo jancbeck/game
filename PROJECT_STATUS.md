@@ -5,59 +5,47 @@ Only project manager keeps this file up-to-date. Remove outdated information and
 ## CURRENT STATUS
 
 **Phase**: 2 - Story Skeleton
-**Sprint**: 7 Complete - Timeline Integration (BLOCKED)
+**Sprint**: 8 Complete - Bug Bash (PARTIAL)
 
 ### Progress Metrics
 
-- **Quests**: 4/15 (removed 1 orphaned quest)
-- **Tests**: 43/43 passing
-- **Timelines**: 9 total (5 created this sprint)
-- **Integration**: ❌ BLOCKED by Dialogic syntax bugs
-
-### CRITICAL BLOCKER
-
-**Dialogic syntax bugs render literal code in UI**
-
-Affected files:
-- rescue_prisoner_resolution.dtl
-- secure_camp_defenses_resolution.dtl
-- join_rebels_resolution.dtl
-
-Pattern: Choices display signal/if statements instead of clean text
-
-**Next action**: ARCHITECT must use context7 MCP to fetch official Dialogic 2 syntax docs before attempting fixes
+- **Quests**: 4/15
+- **Tests**: 48/48 passing (+5 new tests)
+- **Timelines**: 9 total
+- **Integration**: 🟡 Partially fixed (critical bugs remain)
 
 ### Quest Integration Status
 
-| Quest ID              | JSON | Timelines      | Trigger | Status                    |
-| --------------------- | ---- | -------------- | ------- | ------------------------- |
-| join_rebels           | ✅   | ✅ (3)         | ✅      | Syntax bug in resolution  |
-| rescue_prisoner       | ✅   | ✅ (2)         | ✅      | Syntax bug in resolution  |
-| investigate_ruins     | ✅   | ✅ (2)         | ✅      | Working                   |
-| secure_camp_defenses  | ✅   | ✅ (2)         | ✅      | Syntax bug in resolution  |
-| battle_for_camp       | ❌   | ❌             | ❌      | Act 1 climax not started  |
+| Quest ID              | JSON | Timelines      | Trigger | Status                              |
+| --------------------- | ---- | -------------- | ------- | ----------------------------------- |
+| join_rebels           | ✅   | ✅ (3)         | ✅      | Working                             |
+| rescue_prisoner       | ✅   | ✅ (2)         | ✅      | Immersion break (fallback choice)   |
+| investigate_ruins     | ✅   | ✅ (2)         | ✅      | Working                             |
+| secure_camp_defenses  | ✅   | ✅ (2)         | ✅      | Syntax bug in intro, fallback issue |
+| battle_for_camp       | ❌   | ❌             | ❌      | Act 1 climax not started            |
 
-**Legend**: Numbers in () = timeline count (intro/resolution/thought)
+### Known Issues (Next Sprint)
+
+1. **Memory flag flow unclear** - Need ARCHITECT investigation (where/when flags set)
+2. **Immersion-breaking fallbacks** - "Continue" choices need narrative replacements (WRITER)
+3. **Syntax bug in secure_camp_defenses_intro.dtl** - Needs syntax fix (CODER)
+4. **Task tool API errors** - Blocking agent spawning (MCP requires new session)
 
 ### Next Sprint Priority
 
-**MUST FIX FIRST**: Dialogic syntax bugs (blocks all quest testing)
+1. Fix remaining Dialogic syntax bugs
+2. ARCHITECT: Trace memory flag flow (use context7 MCP in fresh session)
+3. WRITER: Replace generic fallback choices with narrative-appropriate desperate options
+4. Full quest chain playthrough testing
 
-**After bug fix**:
-1. User test full quest chain in-game
-2. Fix any integration issues found
-3. Create battle_for_camp (Act 1 climax)
+## Last Sprint Post Mortem (Sprint 8 - 2025-11-21)
 
-## Last Sprint Post Mortem (2025-11-21)
+**Delivered**: Fixed Dialogic choice syntax (7 timelines), fixed has_memory_flag() bug, 5 new tests
+**Failed**: Generic fallback choices break immersion, memory flag flow still unclear
+**Root cause**: PM violated protocol (did investigation instead of delegating), Task tool API failures blocked ARCHITECT
+**Waste**: ~40% (PM doing ARCHITECT work, CODER added bandaid vs proper fix)
 
-**Delivered**: 5 timelines, orphaned quest removed, lint fixed, hybrid syntax docs
-**Failed**: Dialogic syntax bugs (3 failed fix attempts)
-**Root cause**: PM blocked ARCHITECT from using context7 MCP (misunderstood instruction)
-**Waste**: 62% (format thrashing + unverified fixes)
-
-**Grades**: PM (D), CODER (C+), ARCHITECT (D-), WRITER (A)
-
-**Key lesson**: "Verify APIs via context7 MCP" = instruction to use it, not prohibition
+**Key lesson**: When Task tool fails, escalate to user immediately instead of working around protocol
 
 ## Project Phases
 

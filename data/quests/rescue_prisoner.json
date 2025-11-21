@@ -31,6 +31,21 @@
         },
         "memory_flags": ["guard_captain_unaware"]
       }
+    },
+    "desperate": {
+      "requires": {},
+      "degrades": {
+        "flexibility_charisma": -4,
+        "flexibility_cunning": -2,
+        "flexibility_empathy": -2
+      },
+      "rewards": {
+        "convictions": {
+          "violence_thoughts": 1,
+          "deceptive_acts": 1
+        },
+        "memory_flags": []
+      }
     }
   },
   "outcomes": {

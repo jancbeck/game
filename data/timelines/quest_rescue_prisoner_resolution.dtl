@@ -16,7 +16,10 @@ if GameStateActions.has_memory_flag("guard_captain_unaware"):
 		rebel_leader: Luck is what the prepared call their skill.
 	rebel_leader: You have proven yourself useful. I will remember that.
 rebel_leader: You have earned your place here. But do not get comfortable.
-- [Accept the praise] <= if GameStateActions.has_memory_flag("rebel_leader_knows_brutal")
+- Accept the praise | [if GameStateActions.has_memory_flag("rebel_leader_knows_brutal")]
 	[signal arg="complete_quest:rescue_prisoner:violent"]
-- [Acknowledge the success] <= if GameStateActions.has_memory_flag("guard_captain_unaware")
+- Acknowledge the success | [if GameStateActions.has_memory_flag("guard_captain_unaware")]
 	[signal arg="complete_quest:rescue_prisoner:stealthy"]
+- Continue
+	You have done what you set out to do.
+	[signal arg="complete_quest:rescue_prisoner:desperate"]

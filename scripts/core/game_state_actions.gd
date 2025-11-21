@@ -44,13 +44,21 @@ static func get_conviction(conviction_name: String) -> int:
 	return GameState.state["player"]["convictions"].get(conviction_name, 0)
 
 
-## Checks if a memory flag exists in any NPC's memory_flags array
+## Checks if a memory flag exists in world-level flags or NPC-specific flags
 ## Returns true if found, false otherwise
 static func has_memory_flag(flag_name: String) -> bool:
-	var npc_states = GameState.state.get("world", {}).get("npc_states", {})
+	var world = GameState.state.get("world", {})
+
+	# Check world-level memory flags first
+	if world.get("memory_flags", []).has(flag_name):
+		return true
+
+	# Check NPC-specific flags for backward compatibility
+	var npc_states = world.get("npc_states", {})
 	for npc_id in npc_states:
 		if npc_states[npc_id].get("memory_flags", []).has(flag_name):
 			return true
+
 	return false
 
 
