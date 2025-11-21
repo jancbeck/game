@@ -26,22 +26,27 @@ func _initialize_state() -> void:
 			"inventory": [],
 			"equipment": {"weapon": "", "armor": ""}
 		},
-		"world": {"current_location": "", "act": 1, "npc_states": {}, "location_flags": {}, "memory_flags": []},
-		"quests":
+		"world":
 		{
-			"join_rebels":
-			{"status": "available", "approach_taken": "", "objectives_completed": []}
+			"current_location": "",
+			"act": 1,
+			"npc_states": {},
+			"location_flags": {},
+			"memory_flags": []
 		},
+		"quests":
+		{"join_rebels": {"status": "available", "approach_taken": "", "objectives_completed": []}},
 		"dialogue_vars": {},
 		"combat": {"active": false, "enemies": [], "available_abilities": []},
-		"meta": {
-		"playtime_seconds": 0,
-		"save_version": "1.0",
-		"current_scene": "",
-		"active_dialog_timeline": "",
-		"active_thought": ""
-	},
-	"dialogic": {"vars": {}, "engine_state": {}}
+		"meta":
+		{
+			"playtime_seconds": 0,
+			"save_version": "1.0",
+			"current_scene": "",
+			"active_dialog_timeline": "",
+			"active_thought": ""
+		},
+		"dialogic": {"vars": {}, "engine_state": {}}
 	}
 	# Emit initial state
 	call_deferred("emit_signal", "state_changed", _state.duplicate(true))
@@ -92,7 +97,10 @@ func restore_from_save(saved_state: Dictionary) -> void:
 	if _state.has("dialogic") and typeof(_state["dialogic"]) == TYPE_DICTIONARY:
 		var dialogic_data = _state["dialogic"]
 
-		if dialogic_data.has("engine_state") and typeof(dialogic_data["engine_state"]) == TYPE_DICTIONARY:
+		if (
+			dialogic_data.has("engine_state")
+			and typeof(dialogic_data["engine_state"]) == TYPE_DICTIONARY
+		):
 			if Dialogic and Dialogic.has_method("load_full_state"):
 				Dialogic.load_full_state(dialogic_data["engine_state"])
 

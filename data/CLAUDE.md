@@ -77,6 +77,7 @@
 [signal arg="complete_quest:join_rebels:diplomatic"]
 [signal arg="modify_conviction:violence_thoughts:2"]
 [signal arg="modify_flexibility:charisma:-3"]
+[signal arg="set_memory_flag:rebels_respect_brutality"]
 ```
 
 **Use `do GameStateActions.*` for queries** (read-only checks):

@@ -10,12 +10,16 @@ rebel_leader: We have hours. Maybe less.
 	rebel_leader: Blame me after we survive. If we survive.
 rebel_leader: We need defenses. Now. And I need you to decide how we prepare.
 rebel_leader: I am too close to this. I cannot think clearly. You choose.
-- [Set lethal traps and arm for counterattack] <= if GameStateActions.get_conviction("violence_thoughts") >= 4
+- [Set lethal traps and arm for counterattack] | [if GameStateActions.get_conviction("violence_thoughts") >= 4]
 	rebel_leader: Blood, then. So be it.
-- [Fortify chokepoints and coordinate defense] <= if GameStateActions.get_flexibility("cunning") >= 6
+	[signal arg="set_memory_flag:rebels_respect_brutality"]
+- [Fortify chokepoints and coordinate defense] | [if GameStateActions.get_flexibility("cunning") >= 6]
 	rebel_leader: Tactical. I hope your mind is as sharp as you think.
-- [Send envoy to nearby village for aid] <= if GameStateActions.get_flexibility("charisma") >= 5
+	[signal arg="set_memory_flag:rebels_trust_tactical_mind"]
+- [Send envoy to nearby village for aid] | [if GameStateActions.get_flexibility("charisma") >= 5]
 	rebel_leader: Diplomacy? Now? This had better work.
-- [Minimal defenses—hope they miss us] <=
+	[signal arg="set_memory_flag:village_owes_rebels"]
+- [Minimal defenses—hope they miss us]
 	rebel_leader: You are paralyzed. I can see it. Fine. We do nothing and pray.
+	[signal arg="set_memory_flag:rebels_doubt_leader"]
 [signal arg="start_quest:secure_camp_defenses"]

@@ -26,12 +26,13 @@ func start_timeline(timeline_id: String) -> void:
 	_current_timeline_id = timeline_id
 
 	# Update GameState to reflect active timeline
-	GameState.dispatch(func(state):
-		var new_state = state.duplicate(true)
-		if not new_state.has("meta"):
-			new_state["meta"] = {}
-		new_state["meta"]["active_dialog_timeline"] = timeline_id
-		return new_state
+	GameState.dispatch(
+		func(state):
+			var new_state = state.duplicate(true)
+			if not new_state.has("meta"):
+				new_state["meta"] = {}
+			new_state["meta"]["active_dialog_timeline"] = timeline_id
+			return new_state
 	)
 
 	# Start the timeline via Dialogic API
@@ -47,11 +48,12 @@ func _on_timeline_ended() -> void:
 	_current_timeline_id = ""
 
 	# Clear active timeline from GameState
-	GameState.dispatch(func(state):
-		var new_state = state.duplicate(true)
-		if new_state.has("meta") and typeof(new_state["meta"]) == TYPE_DICTIONARY:
-			new_state["meta"]["active_dialog_timeline"] = ""
-		return new_state
+	GameState.dispatch(
+		func(state):
+			var new_state = state.duplicate(true)
+			if new_state.has("meta") and typeof(new_state["meta"]) == TYPE_DICTIONARY:
+				new_state["meta"]["active_dialog_timeline"] = ""
+			return new_state
 	)
 
 	print("DialogSystem: Timeline '%s' ended" % ended_id)
@@ -103,6 +105,12 @@ func _on_dialogic_signal(argument: String) -> void:
 				GameStateActions.modify_flexibility(stat_name, amount)
 			else:
 				push_error("DialogSystem: 'modify_flexibility' requires stat_name and amount")
+
+		"set_memory_flag":
+			if parts.size() >= 2:
+				GameStateActions.set_memory_flag(parts[1])
+			else:
+				push_error("DialogSystem: 'set_memory_flag' requires flag_name")
 
 		_:
 			push_warning("DialogSystem: Unknown signal command '%s'" % command)

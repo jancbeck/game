@@ -5,47 +5,43 @@ Only project manager keeps this file up-to-date. Remove outdated information and
 ## CURRENT STATUS
 
 **Phase**: 2 - Story Skeleton
-**Sprint**: 8 Complete - Bug Bash (PARTIAL)
+**Sprint**: 9 Complete - Bug Fixes
 
 ### Progress Metrics
 
 - **Quests**: 4/15
-- **Tests**: 48/48 passing (+5 new tests)
+- **Tests**: 48/48 passing
 - **Timelines**: 9 total
-- **Integration**: 🟡 Partially fixed (critical bugs remain)
+- **Integration**: ✅ All critical bugs fixed
 
 ### Quest Integration Status
 
 | Quest ID              | JSON | Timelines      | Trigger | Status                              |
 | --------------------- | ---- | -------------- | ------- | ----------------------------------- |
 | join_rebels           | ✅   | ✅ (3)         | ✅      | Working                             |
-| rescue_prisoner       | ✅   | ✅ (2)         | ✅      | Immersion break (fallback choice)   |
+| rescue_prisoner       | ✅   | ✅ (2)         | ✅      | Working (fallback improved)         |
 | investigate_ruins     | ✅   | ✅ (2)         | ✅      | Working                             |
-| secure_camp_defenses  | ✅   | ✅ (2)         | ✅      | Syntax bug in intro, fallback issue |
+| secure_camp_defenses  | ✅   | ✅ (2)         | ✅      | Working (syntax fixed)              |
 | battle_for_camp       | ❌   | ❌             | ❌      | Act 1 climax not started            |
-
-### Known Issues (Next Sprint)
-
-1. **Memory flag flow unclear** - Need ARCHITECT investigation (where/when flags set)
-2. **Immersion-breaking fallbacks** - "Continue" choices need narrative replacements (WRITER)
-3. **Syntax bug in secure_camp_defenses_intro.dtl** - Needs syntax fix (CODER)
-4. **Task tool API errors** - Blocking agent spawning (MCP requires new session)
 
 ### Next Sprint Priority
 
-1. Fix remaining Dialogic syntax bugs
-2. ARCHITECT: Trace memory flag flow (use context7 MCP in fresh session)
-3. WRITER: Replace generic fallback choices with narrative-appropriate desperate options
-4. Full quest chain playthrough testing
+1. battle_for_camp quest (Act 1 climax)
+2. Full quest chain playthrough validation
+3. Address any issues found in playtesting
 
-## Last Sprint Post Mortem (Sprint 8 - 2025-11-21)
+## Last Sprint Post Mortem (Sprint 9 - 2025-11-21)
 
-**Delivered**: Fixed Dialogic choice syntax (7 timelines), fixed has_memory_flag() bug, 5 new tests
-**Failed**: Generic fallback choices break immersion, memory flag flow still unclear
-**Root cause**: PM violated protocol (did investigation instead of delegating), Task tool API failures blocked ARCHITECT
-**Waste**: ~40% (PM doing ARCHITECT work, CODER added bandaid vs proper fix)
+**Delivered**:
+- Fixed Dialogic syntax bug in secure_camp_defenses_intro.dtl (replaced `<=` with `|`)
+- Implemented set_memory_flag signal handler + GameStateActions method
+- Memory flags now set in intro timelines, checked in resolutions
+- Replaced immersion-breaking fallback choices with gothic narrative alternatives
+- All tests pass (48/48)
 
-**Key lesson**: When Task tool fails, escalate to user immediately instead of working around protocol
+**Architectural Decision**: Set flags in intro timelines via signals rather than checking quest approach in resolutions. Simpler, no new code, flags useful for future NPC reactivity.
+
+**Outcome**: All 4 quests technically functional. Memory flag flow documented and working.
 
 ## Project Phases
 

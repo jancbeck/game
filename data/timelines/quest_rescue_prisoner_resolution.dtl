@@ -20,6 +20,6 @@ rebel_leader: You have earned your place here. But do not get comfortable.
 	[signal arg="complete_quest:rescue_prisoner:violent"]
 - Acknowledge the success | [if GameStateActions.has_memory_flag("guard_captain_unaware")]
 	[signal arg="complete_quest:rescue_prisoner:stealthy"]
-- Continue
+- The prisoner is free. That is enough.
 	You have done what you set out to do.
 	[signal arg="complete_quest:rescue_prisoner:desperate"]

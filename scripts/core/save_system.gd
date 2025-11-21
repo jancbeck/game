@@ -6,6 +6,7 @@ extends RefCounted
 
 const SAVE_PATH = "user://save.dat"
 
+
 ## Saves the current state to disk.
 static func save_state(state: Dictionary) -> void:
 	var file = FileAccess.open(SAVE_PATH, FileAccess.WRITE)
@@ -15,6 +16,7 @@ static func save_state(state: Dictionary) -> void:
 		print("Game saved to " + SAVE_PATH)
 	else:
 		push_error("Failed to save game to " + SAVE_PATH)
+
 
 ## Loads the state from disk. returns empty Dictionary if failed.
 static func load_state() -> Dictionary:

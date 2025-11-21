@@ -7,11 +7,14 @@ extends RefCounted
 
 static var _test_data: Dictionary = {}
 
+
 static func set_test_data(id: String, data: Dictionary) -> void:
 	_test_data[id] = data
 
+
 static func clear_test_data() -> void:
 	_test_data.clear()
+
 
 static func get_quest(quest_id: String) -> Dictionary:
 	if _test_data.has(quest_id):

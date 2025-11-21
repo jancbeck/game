@@ -18,12 +18,16 @@ static func complete_quest(quest_id: String, approach: String = "") -> void:
 
 ## Modifies a conviction stat by dispatching to PlayerSystem.modify_conviction
 static func modify_conviction(conviction_name: String, amount: int) -> void:
-	GameState.dispatch(func(state): return PlayerSystem.modify_conviction(state, conviction_name, amount))
+	GameState.dispatch(
+		func(state): return PlayerSystem.modify_conviction(state, conviction_name, amount)
+	)
 
 
 ## Modifies a flexibility stat by dispatching to PlayerSystem.modify_flexibility
 static func modify_flexibility(stat_name: String, amount: int) -> void:
-	GameState.dispatch(func(state): return PlayerSystem.modify_flexibility(state, stat_name, amount))
+	GameState.dispatch(
+		func(state): return PlayerSystem.modify_flexibility(state, stat_name, amount)
+	)
 
 
 ## Checks if a quest can be started based on prerequisites
@@ -62,4 +66,22 @@ static func has_memory_flag(flag_name: String) -> bool:
 	return false
 
 
+## Sets a memory flag at world level
+## Used by timelines to mark player choices/actions for later reference
+static func set_memory_flag(flag_name: String) -> void:
+	GameState.dispatch(
+		func(state):
+			var new_state = state.duplicate(true)
 
+			# Ensure world and memory_flags exist
+			if not new_state.has("world"):
+				new_state["world"] = {}
+			if not new_state["world"].has("memory_flags"):
+				new_state["world"]["memory_flags"] = []
+
+			# Add flag if not already present
+			if not new_state["world"]["memory_flags"].has(flag_name):
+				new_state["world"]["memory_flags"].append(flag_name)
+
+			return new_state
+	)

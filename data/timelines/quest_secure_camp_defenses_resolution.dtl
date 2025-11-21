@@ -42,6 +42,6 @@ if GameStateActions.has_memory_flag("rebels_doubt_leader"):
 	[signal arg="complete_quest:secure_camp_defenses:diplomatic"]
 - Accept the outcome (desperate) | [if GameStateActions.has_memory_flag("rebels_doubt_leader")]
 	[signal arg="complete_quest:secure_camp_defenses:desperate"]
-- Accept the outcome
+- You did what had to be done.
 	The camp endures. For now, that is enough.
 	[signal arg="complete_quest:secure_camp_defenses:desperate"]
