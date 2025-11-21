@@ -1,8 +1,8 @@
 extends Node
 
-const SaveSystem = preload("res://scripts/core/save_system.gd")
-
 signal state_changed(new_state: Dictionary)
+
+const SaveSystem = preload("res://scripts/core/save_system.gd")
 
 var state: Dictionary:
 	get:
@@ -69,16 +69,16 @@ func reset() -> void:
 ## This should be used instead of accessing `state` directly when saving.
 func snapshot_for_save() -> Dictionary:
 	var s = state  # Get deep copy via property getter
-	
+
 	# Ensure dialogic subtree exists for save compatibility
 	if not s.has("dialogic") or typeof(s["dialogic"]) != TYPE_DICTIONARY:
 		s["dialogic"] = {}
-	
+
 	# Snapshot Dialogic's full state (variables, timeline position, history, etc.)
 	if Dialogic:
 		var dialogic_state: Dictionary = Dialogic.get_full_state()
 		s["dialogic"]["engine_state"] = dialogic_state
-	
+
 	return s
 
 
@@ -87,15 +87,15 @@ func snapshot_for_save() -> Dictionary:
 func restore_from_save(saved_state: Dictionary) -> void:
 	# Replace internal state
 	_state = saved_state.duplicate(true)
-	
+
 	# Restore Dialogic full state if present
 	if _state.has("dialogic") and typeof(_state["dialogic"]) == TYPE_DICTIONARY:
 		var dialogic_data = _state["dialogic"]
-		
+
 		if dialogic_data.has("engine_state") and typeof(dialogic_data["engine_state"]) == TYPE_DICTIONARY:
 			if Dialogic and Dialogic.has_method("load_full_state"):
 				Dialogic.load_full_state(dialogic_data["engine_state"])
-	
+
 	# Emit state change
 	state_changed.emit(_state.duplicate(true))
 
@@ -112,7 +112,7 @@ func dispatch(reducer: Callable) -> void:
 		return
 
 	# Check for changes before updating and emitting
-	# Note: Deep comparison can be expensive for very large states, 
+	# Note: Deep comparison can be expensive for very large states,
 	# but essential to prevent spam for things that run every frame like movement.
 	if new_state.hash() != _state.hash():
 		_state = new_state

@@ -43,4 +43,4 @@ timeline_id = "quest_investigate_ruins_intro"
 [node name="Trigger_SecureCampDefenses" parent="." instance=ExtResource("3_quest_trigger")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, -5)
 quest_id = "secure_camp_defenses"
-timeline_id = ""
+timeline_id = "quest_secure_camp_defenses_intro"

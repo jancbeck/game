@@ -455,11 +455,29 @@ func _input(event: InputEvent):
 
 **Purpose**: Bridge between Dialogic timelines and GameState
 
-**Timeline Signal Format**:
-- `start_quest:quest_id` - Starts quest via GameStateActions
-- `complete_quest:quest_id:approach` - Completes with approach
-- `modify_conviction:name:delta` - Changes conviction
-- `modify_flexibility:name:delta` - Changes flexibility stat
+**Hybrid Timeline Syntax**: Use signals for mutations, `do` for queries
+
+**When to Use Signals** (state mutations):
+```
+[signal arg="start_quest:quest_id"]
+[signal arg="complete_quest:quest_id:approach"]
+[signal arg="modify_conviction:name:delta"]
+[signal arg="modify_flexibility:name:delta"]
+```
+
+**When to Use `do`** (read-only queries):
+```
+do GameStateActions.get_flexibility("cunning")
+do GameStateActions.get_conviction("violence_thoughts")
+do GameStateActions.can_start_quest("quest_id")
+do GameStateActions.has_memory_flag("npc_id", "flag_name")
+```
+
+**Why This Matters**:
+- **Signals**: Parsed by DialogSystem, dispatched through GameState.dispatch, maintain immutable state flow
+- **`do`**: Direct method calls for conditions/display, safe because GameStateActions getters never mutate state
+- **Debugging**: Clear separation - signals in DialogSystem logs, queries invisible
+- **Architecture**: Signals enforce the reducer pattern; queries enable reactive content without breaking immutability
 
 **Timeline Creation**:
 - Use Dialogic 2 editor (Plugins → Dialogic)
@@ -481,17 +499,17 @@ You found the camp. Now you must convince them you are useful.
 
 ```
 
-**Conviction Gating in Timelines** (actual Dialogic 2 .dtl syntax):
+**Conviction Gating in Timelines** (hybrid syntax):
 ```
 
 You stand before the sealed door. The air hums with dark energy.
 
 - [Analyze] Decipher the warnings. | [if GameStateActions.get_flexibility("cunning") >= 3]
   You trace the ancient glyphs. Cold logic takes hold.
-  do GameStateActions.complete_quest("investigate_ruins", "analyze")
+  [signal arg="complete_quest:investigate_ruins:analyze"]
 - [Force] Smash the door. | [if GameStateActions.get_conviction("violence_thoughts") >= 5]
   You channel your rage into a single blow. The stone cracks.
-  do GameStateActions.complete_quest("investigate_ruins", "force")
+  [signal arg="complete_quest:investigate_ruins:force"]
 - Leave.
   You cannot turn back now. The story demands an ending.
   jump quest_investigate_ruins_resolution
@@ -499,23 +517,24 @@ You stand before the sealed door. The air hums with dark energy.
 ```
 
 **Key Dialogic 2 Syntax**:
-- **Emit signals**: `[signal arg="command:param1:param2"]`
-- **Execute code**: `do GameStateActions.method_name(params)`
+- **Emit signals**: `[signal arg="command:param1:param2"]` - For state mutations
+- **Execute code**: `do GameStateActions.method_name(params)` - For read-only queries
 - **Conditional choices**: `- Choice text | [if condition]`
 - **Wait**: `[wait time="seconds"]`
 - **Jump to timeline**: `jump timeline_id`
 - **Comments**: Lines without special markers are dialogue text
 
 **MUST**:
-- All state changes via signal events
+- State mutations via signals only (start_quest, complete_quest, modify_*)
+- Read-only queries via `do GameStateActions.*` (get_*, can_*, has_*)
 - Timeline IDs match quest IDs
-- Use GameStateActions API only
 - Test timeline in Dialogic editor before integrating
 
 **MUST NOT**:
 - Directly call GameState.dispatch from timelines
 - Store game logic in timeline variables
-- Bypass GameStateActions API
+- Use `do` for state mutations (breaks debugging/logging)
+- Use signals for queries (unnecessary coupling)
 
 ### Pattern: Thoughts (Dialogic Timelines)
 

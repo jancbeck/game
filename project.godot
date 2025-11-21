@@ -28,7 +28,12 @@ directories/dch_directory={}
 directories/dtl_directory={
 "quest_investigate_ruins_intro": "res://data/timelines/quest_investigate_ruins_intro.dtl",
 "quest_investigate_ruins_resolution": "res://data/timelines/quest_investigate_ruins_resolution.dtl",
+"quest_join_rebels_intro": "res://data/timelines/quest_join_rebels_intro.dtl",
+"quest_join_rebels_resolution": "res://data/timelines/quest_join_rebels_resolution.dtl",
 "quest_rescue_prisoner_intro": "res://data/timelines/quest_rescue_prisoner_intro.dtl",
+"quest_rescue_prisoner_resolution": "res://data/timelines/quest_rescue_prisoner_resolution.dtl",
+"quest_secure_camp_defenses_intro": "res://data/timelines/quest_secure_camp_defenses_intro.dtl",
+"quest_secure_camp_defenses_resolution": "res://data/timelines/quest_secure_camp_defenses_resolution.dtl",
 "thought_join_rebels": "res://data/timelines/thought_join_rebels.dtl"
 }
 layout/style_directory={}

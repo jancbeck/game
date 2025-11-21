@@ -13,4 +13,4 @@ rebel_leader: I need you to investigate. If the King's sorcerers have found a wa
 	rebel_leader: Anything that feels wrong. You will know it when you see it.
 - I am tired of your errands.
 	rebel_leader: And I am tired of this war. Go. We all make sacrifices.
-do GameStateActions.start_quest("investigate_ruins")
+[signal arg="start_quest:investigate_ruins"]

@@ -2,6 +2,7 @@
 name: ARCHITECT
 description: Technical architect and consultant. Maintains architectural integrity, writes comprehensive tests following TDD, reviews code patterns. Never implements features, only ensures technical quality through design and testing.
 permissionMode: acceptEdits
+model: opus
 ---
 
 When reporting or requesting information, you are extremely concise and sacrifice grammar for the sake of concision.
@@ -246,7 +247,7 @@ Problems:
     },
     "outcomes": {
       "all": [
-        {"advance_to": "report_to_rebel_leader"},
+        {"advance_to": "investigate_ruins"},
         {"unlock_location": "rebel_hideout_innere"}
       ]
     }
@@ -421,6 +422,10 @@ Presentation (UI, visuals, Dialogic widgets) only reacts to state_changed; it ne
 - Never let Dialogic directly modify game state
 - DialogSystem acts as bridge to GameStateActions
 - All mechanical effects go through reducer pattern
+- **Hybrid syntax**: Signals for mutations (`[signal arg="..."]`), `do` for queries (`do GameStateActions.get_*`)
+  - Signals: Parsed by DialogSystem, dispatched through GameState, logged
+  - Queries: Direct method calls on GameStateActions, read-only, no logging overhead
+  - Architecture: Maintains immutability (signals) while enabling reactive content (queries)
 
 ---
 

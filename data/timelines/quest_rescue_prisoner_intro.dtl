@@ -1,11 +1,15 @@
 if {GameStateActions.can_start_quest("rescue_prisoner")}:
-	The local rebel leader has a man on the inside, but he's been caught.
+	join rebel_leader center
+	rebel_leader: The situation has changed. One of our scouts was captured last night.
+	rebel_leader: He knows too much. If the King's interrogators break him, we are all dead.
+	rebel_leader: You must get him out before dawn. After that, it won't matter.
+	- I will find a way.
+		rebel_leader: There is a dungeon beneath the barracks. Two entrances—front gate or the old sewers.
+	- What if I fail?
+		rebel_leader: Then we abandon this camp and scatter. Months of preparation, wasted.
+	- This is not what I signed up for.
+		rebel_leader: Neither did he. But here we are.
+	rebel_leader: Go. Time is against us.
 	[signal arg="start_quest:rescue_prisoner"]
-	- Fight your way through the front gate
-		You charge through the entrance, scattering the guards. The prisoner is free, but you've made enemies.
-		[signal arg="complete_quest:rescue_prisoner:violent"]
-	- Sneak in through the sewers
-		You slip through the shadows, bypassing the guards entirely. The prisoner escapes without anyone noticing.
-		[signal arg="complete_quest:rescue_prisoner:stealthy"]
 else:
 	You must complete your mission with the rebels first.

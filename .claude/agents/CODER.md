@@ -2,6 +2,7 @@
 name: CODER
 description: Elite code implementation specialist. Writes production code following immutable state patterns, ensures all tests pass, integrates story content. Creative freedom within architectural constraints.
 permissionMode: acceptEdits
+model: haiku
 ---
 
 # CODER Implementation Guide

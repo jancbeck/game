@@ -68,32 +68,65 @@
 - NPCs: `npc_[name]_[topic]`
 - Thoughts: `thought_[context]_[variant]`
 
-### Signal Emission (How Dialogic Affects GameState)
+### Hybrid Timeline Syntax
 
-Dialogic timelines emit signals that DialogSystem parses:
+**Use `[signal arg="..."]` for state mutations** (changes to game state):
 
 ```
-start_quest:join_rebels
-complete_quest:join_rebels:diplomatic
-modify_conviction:violence_thoughts:2
-modify_flexibility:charisma:-3
+[signal arg="start_quest:join_rebels"]
+[signal arg="complete_quest:join_rebels:diplomatic"]
+[signal arg="modify_conviction:violence_thoughts:2"]
+[signal arg="modify_flexibility:charisma:-3"]
 ```
+
+**Use `do GameStateActions.*` for queries** (read-only checks):
+
+```
+do GameStateActions.can_start_quest("quest_id")
+do GameStateActions.get_flexibility("charisma")
+do GameStateActions.get_conviction("violence_thoughts")
+do GameStateActions.has_memory_flag("npc_id", "flag_name")
+```
+
+**Why This Matters**:
+
+- **Signals**: Logged by DialogSystem, maintain clean architecture flow
+- **`do` statements**: Direct method calls for conditions, safe because they never mutate state
+- **Debugging**: Signals appear in logs, queries are silent
+- **Content creation**: Use signals when changing the world, use `do` when checking the world
 
 **Rules**:
 
 - Quest/approach IDs must exist in JSON
 - Stat names must match GameState keys exactly
 - No new signal types without PM approval
+- Always have at least one ungated option (desperate choice)
 
-### Gating Choices
+### Gating Choices (Examples)
 
-Use provided condition functions:
+**Flexibility check**:
+```
+- [Diplomatic] Negotiate | [if GameStateActions.get_flexibility("charisma") >= 5]
+  [signal arg="complete_quest:rescue_prisoner:diplomatic"]
+```
 
-- `GameStateActions.can_start_quest("quest_id")`
-- `GameStateActions.get_flexibility("charisma") >= 5`
-- `GameStateActions.get_conviction("violence_thoughts") > 3`
+**Conviction check**:
+```
+- [Violent] Attack | [if GameStateActions.get_conviction("violence_thoughts") >= 3]
+  [signal arg="complete_quest:rescue_prisoner:violent"]
+```
 
-Always have at least one ungated option (desperate choice).
+**Quest prerequisite**:
+```
+- Ask about the ruins | [if GameStateActions.can_start_quest("investigate_ruins")]
+  [signal arg="start_quest:investigate_ruins"]
+```
+
+**Memory flag check**:
+```
+- Remind them of your promise | [if GameStateActions.has_memory_flag("rebel_leader", "trusts_player")]
+  They remember. Trust is currency here.
+```
 
 ## Existing Stats Reference
 

@@ -1,0 +1,13 @@
+join rebel_leader center
+rebel_leader: So. Another lost soul stumbles into our camp.
+rebel_leader: The guards nearly put an arrow through your skull. You are either brave, foolish, or desperate.
+rebel_leader: I am Elira. This is my burden to carry—these people, this war.
+- I want to join your cause.
+	rebel_leader: Everyone *wants* things. What can you *do*?
+- I have nowhere else to go.
+	rebel_leader: Honesty. Rare. The desperate make the best soldiers—they have nothing left to lose.
+- I was curious.
+	rebel_leader: Curiosity is expensive. It costs lives. Yours, if you are careless.
+rebel_leader: If you wish to stay, you must prove useful. We do not carry dead weight.
+rebel_leader: Help us. Then we will see if you belong here.
+[signal arg="start_quest:join_rebels"]

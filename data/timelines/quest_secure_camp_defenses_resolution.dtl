@@ -1,0 +1,44 @@
+join rebel_leader center
+if GameStateActions.has_memory_flag("rebels_respect_brutality"):
+	rebel_leader: The traps worked. The bodies are still burning.
+	rebel_leader: Some of our people are calling you a monster. Others are calling you a savior.
+	rebel_leader: I do not care what they call you. You kept us alive.
+	- It was the only way.
+		rebel_leader: Keep telling yourself that. Maybe you will believe it.
+	- Would you have done differently?
+		rebel_leader: No. That is what frightens me.
+	rebel_leader: The camp is secure. For now. But they will come back. They always do.
+if GameStateActions.has_memory_flag("rebels_trust_tactical_mind"):
+	rebel_leader: Your plan held. Every chokepoint, every fallback—textbook perfect.
+	rebel_leader: Cold. Efficient. Minimal losses. You think like a general.
+	- Someone had to.
+		rebel_leader: Yes. And it cost you something, did it not? I can see it in your eyes.
+	- I did what was necessary.
+		rebel_leader: Necessary. That word again. We use it to excuse so much.
+	rebel_leader: The camp is secure. You have proven your worth.
+if GameStateActions.has_memory_flag("village_owes_rebels"):
+	rebel_leader: The villagers came. Untrained. Terrified. But they came.
+	rebel_leader: We held because of them. Because you convinced them to help.
+	rebel_leader: Some of them died. They did not sign up for this war.
+	- They made their choice.
+		rebel_leader: Did they? Or did you make it for them?
+	- We needed them.
+		rebel_leader: And now their families will hate us. Every casualty is a future enemy.
+	rebel_leader: But we are alive. That is what matters. For now.
+if GameStateActions.has_memory_flag("rebels_doubt_leader"):
+	rebel_leader: We hid. Like cowards. And somehow, they missed us.
+	rebel_leader: Luck. Blind, stupid luck. Nothing more.
+	rebel_leader: The others are whispering. They do not trust me anymore. Or you.
+	- We survived. That is enough.
+		rebel_leader: Is it? For how long?
+	- You asked me to decide.
+		rebel_leader: I did. And you chose nothing. Perhaps that says more than any action could.
+	rebel_leader: The camp is intact. But broken. We will see if we can rebuild what was lost.
+- [Accept the outcome (brutal)] <= if GameStateActions.has_memory_flag("rebels_respect_brutality")
+	[signal arg="complete_quest:secure_camp_defenses:brutal"]
+- [Accept the outcome (tactical)] <= if GameStateActions.has_memory_flag("rebels_trust_tactical_mind")
+	[signal arg="complete_quest:secure_camp_defenses:tactical"]
+- [Accept the outcome (diplomatic)] <= if GameStateActions.has_memory_flag("village_owes_rebels")
+	[signal arg="complete_quest:secure_camp_defenses:diplomatic"]
+- [Accept the outcome (desperate)] <= if GameStateActions.has_memory_flag("rebels_doubt_leader")
+	[signal arg="complete_quest:secure_camp_defenses:desperate"]

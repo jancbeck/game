@@ -1,0 +1,21 @@
+join rebel_leader center
+rebel_leader: They found us. The King's forces. They are coming.
+rebel_leader: The ruins—you stirred something there. They tracked the disturbance back to us.
+rebel_leader: We have hours. Maybe less.
+- How many are coming?
+	rebel_leader: Too many. A full company. Armored. Disciplined.
+- Can we evacuate?
+	rebel_leader: Where? Into the forest? They will hunt us down like animals.
+- This is your fault.
+	rebel_leader: Blame me after we survive. If we survive.
+rebel_leader: We need defenses. Now. And I need you to decide how we prepare.
+rebel_leader: I am too close to this. I cannot think clearly. You choose.
+- [Set lethal traps and arm for counterattack] <= if GameStateActions.get_conviction("violence_thoughts") >= 4
+	rebel_leader: Blood, then. So be it.
+- [Fortify chokepoints and coordinate defense] <= if GameStateActions.get_flexibility("cunning") >= 6
+	rebel_leader: Tactical. I hope your mind is as sharp as you think.
+- [Send envoy to nearby village for aid] <= if GameStateActions.get_flexibility("charisma") >= 5
+	rebel_leader: Diplomacy? Now? This had better work.
+- [Minimal defenses—hope they miss us] <=
+	rebel_leader: You are paralyzed. I can see it. Fine. We do nothing and pray.
+[signal arg="start_quest:secure_camp_defenses"]

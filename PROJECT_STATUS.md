@@ -5,338 +5,59 @@ Only project manager keeps this file up-to-date. Remove outdated information and
 ## CURRENT STATUS
 
 **Phase**: 2 - Story Skeleton
-**Sprint**: Completed - Resolution Timeline Feature
+**Sprint**: 7 Complete - Timeline Integration (BLOCKED)
 
 ### Progress Metrics
 
-- **Quests**: 5/15 (Act 1: 4 main + 1 thought)
+- **Quests**: 4/15 (removed 1 orphaned quest)
 - **Tests**: 43/43 passing
-- **Quest chain**: 4 connected quests functional
-- **Story arc**: Act 1 progression through secure_camp_defenses
+- **Timelines**: 9 total (5 created this sprint)
+- **Integration**: ❌ BLOCKED by Dialogic syntax bugs
 
-### Test Room Layout
+### CRITICAL BLOCKER
 
-- (-5, 0, -5): secure_camp_defenses (locked until investigate_ruins done)
-- (0, 0, -5): join_rebels (thought timeline)
-- (5, 0, -5): rescue_prisoner (intro timeline)
-- (10, 0, -5): investigate_ruins (intro when available, resolution when active)
+**Dialogic syntax bugs render literal code in UI**
+
+Affected files:
+- rescue_prisoner_resolution.dtl
+- secure_camp_defenses_resolution.dtl
+- join_rebels_resolution.dtl
+
+Pattern: Choices display signal/if statements instead of clean text
+
+**Next action**: ARCHITECT must use context7 MCP to fetch official Dialogic 2 syntax docs before attempting fixes
 
 ### Quest Integration Status
 
-| Quest ID               | JSON | Dialogic | Code | Tested | Status                              |
-| ---------------------- | ---- | -------- | ---- | ------ | ----------------------------------- |
-| join_rebels            | ✅   | ⚠️       | ✅   | ✅     | Missing intro/resolution timelines  |
-| rescue_prisoner        | ✅   | ⚠️       | ✅   | ✅     | Missing resolution timeline         |
-| investigate_ruins      | ✅   | ✅       | ✅   | ✅     | Complete (intro + resolution)       |
-| secure_camp_defenses   | ✅   | ❌       | ✅   | ⚠️     | Missing intro/resolution timelines  |
-| report_to_rebel_leader | ✅   | ❌       | ⚠️   | ❌     | ORPHANED - no outcomes, no timeline |
-| battle_for_camp        | ❌   | ❌       | ❌   | ❌     | Act 1 climax - not started          |
+| Quest ID              | JSON | Timelines      | Trigger | Status                    |
+| --------------------- | ---- | -------------- | ------- | ------------------------- |
+| join_rebels           | ✅   | ✅ (3)         | ✅      | Syntax bug in resolution  |
+| rescue_prisoner       | ✅   | ✅ (2)         | ✅      | Syntax bug in resolution  |
+| investigate_ruins     | ✅   | ✅ (2)         | ✅      | Working                   |
+| secure_camp_defenses  | ✅   | ✅ (2)         | ✅      | Syntax bug in resolution  |
+| battle_for_camp       | ❌   | ❌             | ❌      | Act 1 climax not started  |
 
-**Legend**: ✅ = Complete | ⚠️ = Partial | ❌ = Missing | **Status** = Blocker info
-
-### Known Issues
-
-**Architecture & Tests**: NONE blocking
-
-**Content Gaps**:
-
-- secure_camp_defenses: missing intro/resolution timelines
-- rescue_prisoner: missing resolution timeline
-- join_rebels: has thought timeline but no intro/resolution quests
-- report_to_rebel_leader: ORPHANED (empty outcomes, no follow-up)
-
-**Integration Issues**:
-
-- secure_camp_defenses trigger in test_room has empty timeline_id
-- No Act 2 content structure started (0/5 quests)
-- No Act 3 content structure started (0/4 quests)
+**Legend**: Numbers in () = timeline count (intro/resolution/thought)
 
 ### Next Sprint Priority
 
-**Phase 2 Completion Blocker**: Need 10 more quests + 10-15 thought timelines
+**MUST FIX FIRST**: Dialogic syntax bugs (blocks all quest testing)
 
-**Recommended Next Sprint**:
+**After bug fix**:
+1. User test full quest chain in-game
+2. Fix any integration issues found
+3. Create battle_for_camp (Act 1 climax)
 
-1. **WRITER**: Fill critical timeline gaps (join_rebels intro, rescue_prisoner resolution, secure_camp_defenses intro/resolution)
-2. **WRITER**: Fix orphaned quest (give report_to_rebel_leader outcomes or remove)
-3. **WRITER**: Create Act 1 climax quest (battle_for_camp) with full JSON + timelines
-4. **CODER**: Update test_room trigger for secure_camp_defenses with timeline_id
-5. **ARCHITECT**: Add end-to-end quest chain integration tests
+## Last Sprint Post Mortem (2025-11-21)
 
-**Alternative Options**:
+**Delivered**: 5 timelines, orphaned quest removed, lint fixed, hybrid syntax docs
+**Failed**: Dialogic syntax bugs (3 failed fix attempts)
+**Root cause**: PM blocked ARCHITECT from using context7 MCP (misunderstood instruction)
+**Waste**: 62% (format thrashing + unverified fixes)
 
-- **Option A** (Conservative): Content pass first - complete all missing timelines, then new quests
-- **Option B** (Aggressive): New quests first - create Act 1 climax + Act 2 foundation
-- **Option C** (Balanced): Parallel - WRITER creates new quests while CODER fixes integration gaps
+**Grades**: PM (D), CODER (C+), ARCHITECT (D-), WRITER (A)
 
-### Deliverables Completed
-
-**Technical**:
-
-- ✅ 43/43 tests passing (was 37, added 6 new tests)
-- ✅ secure_camp_defenses quest created & integrated
-- ✅ Memory flag system bug fixed (global → world.memory_flags)
-- ✅ Context-aware timeline selection (intro vs resolution)
-- ✅ All 4 quest triggers functional in test_room
-
-**Content**:
-
-- ✅ Quest chain: join_rebels → rescue_prisoner → investigate_ruins → secure_camp_defenses
-- ✅ Dual-purpose triggers (intro when available, resolution when active)
-- ✅ Locked quest feedback (RED on-screen message)
-
-**Bugs Fixed**:
-
-- CRITICAL: Dialogic regression (@export removal broke scene data)
-- Prerequisite bypass (investigate_ruins accessible without rescue_prisoner)
-- Triggers disappearing when quest became active (not just completed)
-- No user feedback for locked quests (console-only)
-
-## Last Sprint Post Mortem 2025-11-20
-
-**Phase**: 2 - Story Skeleton
-**Sprint Duration**: ~3 hours
-**Sprint Goal**: Fix test failures, extend Act 1 quest chain
-
----
-
-### Deliverables Completed
-
-**Technical**:
-
-- ✅ 43/43 tests passing (was 37, added 6 new tests)
-- ✅ secure_camp_defenses quest created & integrated
-- ✅ Memory flag system bug fixed (global → world.memory_flags)
-- ✅ Context-aware timeline selection (intro vs resolution)
-- ✅ All 4 quest triggers functional in test_room
-
-**Content**:
-
-- ✅ Quest chain: join_rebels → rescue_prisoner → investigate_ruins → secure_camp_defenses
-- ✅ Dual-purpose triggers (intro when available, resolution when active)
-- ✅ Locked quest feedback (RED on-screen message)
-
-**Bugs Fixed**:
-
-- CRITICAL: Dialogic regression (@export removal broke scene data)
-- Prerequisite bypass (investigate_ruins accessible without rescue_prisoner)
-- Triggers disappearing when quest became active (not just completed)
-- No user feedback for locked quests (console-only)
-
----
-
-### What Went Well ✅
-
-**Architecture Discipline**:
-
-- ARCHITECT caught @export violation immediately
-- Pattern adherence enforced (immutable state, no direct mutations)
-- Test coverage increased from 37 → 43 tests
-
-**Team Communication**:
-
-- Sequential agent handoffs worked when properly orchestrated
-- ARCHITECT → CODER workflow effective when specs were clear
-- User feedback loop caught issues before they shipped
-
-**Technical Wins**:
-
-- Timeline resolution switching is general pattern (scalable)
-- Prerequisite enforcement now centralized in QuestTrigger (architectural guarantee)
-- Debug logging comprehensive (helped troubleshooting)
-
----
-
-### What Went Wrong ❌
-
-#### 1. MAJOR: Miscommunication on Requirements
-
-**Issue**: PM (me) misunderstood user problem for >30 minutes
-
-**User said**: "investigate_ruins can't be completed at the ruins (cube #4)"
-
-**PM understood**: "Cube #4 doesn't exist or is broken"
-
-**Reality**: Cube #3 (investigate_ruins) serves dual purpose (intro + resolution), user didn't know to revisit it
-
-**Root Cause**:
-
-- PM didn't clarify expected user experience upfront
-- Assumed user understood dual-purpose trigger pattern
-- Should have explained: "Visit ruins twice - once for intro, once for resolution"
-
-**Impact**: Wasted time troubleshooting wrong issue, implemented correct feature but poor UX communication
-
----
-
-#### 2. ARCHITECT Over-Specification
-
-**Issue**: ARCHITECT review included implementation details, restricting CODER creativity
-
-**Example**: Specified exact function names, code structure, Dialogic API calls
-
-**User Feedback**: "Too many details, restricted CODER freedom, assumed unverified API"
-
-**Lesson**: ARCHITECT should:
-
-- Define WHAT and WHY, not HOW
-- State requirements, not implementations
-- Let CODER choose approaches
-- Only specify when pattern compliance at risk
-
----
-
-#### 3. CODER False Completion Report
-
-**Issue**: CODER reported "implementation complete" when code unchanged
-
-**Evidence**: grep showed no new helper method, timeline logic unmodified
-
-**User Response**: Rejected task, required retry
-
-**Lesson**:
-
-- CODER must verify code actually changed
-- PM must spot-check deliverables before accepting
-- Tests passing != feature implemented
-
----
-
-#### 4. Process: @export Breaking Change Without Review
-
-**Issue**: CODER removed @export without consulting ARCHITECT
-
-**Impact**: Dialogic completely broken, sprint blocked for ~20 minutes
-
-**Pattern Violation**: API changes require ARCHITECT approval (documented but not followed)
-
-**Prevention**: Enforce "consult ARCHITECT before breaking changes" rule more strictly
-
----
-
-#### 5. PM (Me) - Poor Verification
-
-**Failures**:
-
-- Accepted CODER's false completion report without checking
-- Didn't verify in-game behavior, only test status
-- Troubleshot wrong problem for too long before asking user to clarify
-- Didn't create clear acceptance criteria before assigning tasks
-
-**Should Have Done**:
-
-- Ask user: "Walk me through exact steps to reproduce"
-- Verify code changes with grep/read before accepting
-- Explain dual-purpose trigger UX to user upfront
-- Define "done" criteria before starting work
-
----
-
-### Team Performance Review
-
-#### PM (Me) - Grade: C+
-
-**Strengths**:
-
-- Orchestrated agents sequentially (no parallelism issues)
-- Updated documentation consistently
-- Caught some issues before shipping
-
-**Weaknesses**:
-
-- Poor requirement clarification (wasted 30+ min on wrong problem)
-- Didn't verify CODER deliverables (accepted false report)
-- Weak acceptance criteria definition
-- Should have explained feature UX to user
-
-**Improvement**:
-
-- Always clarify user requirements with specific repro steps
-- Spot-check code changes before accepting tasks
-- Define "done" criteria upfront
-- Communicate feature behavior to user proactively
-
----
-
-#### CODER - Grade: B-
-
-**Strengths**:
-
-- Fixed 9 failing tests when given clear direction
-- Implemented features correctly on retry
-- Good test coverage (added 6 new tests)
-- Used Dialogic API correctly after checking docs
-
-**Weaknesses**:
-
-- Removed @export without ARCHITECT review (critical violation)
-- Falsely reported completion on timeline switching task
-- Didn't verify in-game behavior (only ran unit tests)
-
-**Improvement**:
-
-- ALWAYS consult ARCHITECT before API breaking changes
-- Verify code actually changed before reporting complete
-- Test in-game, not just unit tests
-- Be honest when stuck or confused
-
----
-
-#### ARCHITECT - Grade: B
-
-**Strengths**:
-
-- Caught @export violation immediately (prevented ship)
-- Thorough analysis of prerequisite pattern issues
-- Sound architectural decisions (general patterns, not special cases)
-
-**Weaknesses**:
-
-- Over-specified implementation (restricted CODER freedom)
-- Assumed Dialogic API without verification
-- Initial diagnosis wrong (said "no bug, user environment issue")
-
-**Improvement**:
-
-- Define WHAT/WHY, not HOW (let CODER choose implementation)
-- Verify APIs before assuming they exist
-- When diagnosing, test hypotheses before concluding
-
----
-
-#### WRITER - Grade: A
-
-**Strengths**:
-
-- Created secure_camp_defenses quest with proper structure
-- Followed JSON schema correctly
-- Narrative consistent with Gothic tone
-
-**Weaknesses**: None identified this sprint
-
----
-
-### Metrics
-
-**Time Breakdown**:
-
-- Productive work: ~2 hours
-- Debugging/troubleshooting: ~1 hour (33% waste)
-- Major blocker: Dialogic regression (~20 min)
-- Miscommunication issue: ~30 min
-
-**Code Changes**:
-
-- Files modified: 8
-- Lines changed: ~300
-- Tests added: 6
-- Tests passing: 43/43 (100%)
-
-**Quest Progress**:
-
-- Quests: 5/15 (33% of Phase 2 goal)
-- Playable quest chain: 4 quests
-- Story arc: Act 1 setup complete, ready for climax
+**Key lesson**: "Verify APIs via context7 MCP" = instruction to use it, not prohibition
 
 ## Project Phases
 
