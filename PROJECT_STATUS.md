@@ -21,6 +21,19 @@ Only project manager keeps this file up-to-date. Remove outdated information and
 - (5, 0, -5): rescue_prisoner (intro timeline)
 - (10, 0, -5): investigate_ruins (intro when available, resolution when active)
 
+### Quest Integration Status
+
+| Quest ID               | JSON | Dialogic | Code | Tested | Status                              |
+| ---------------------- | ---- | -------- | ---- | ------ | ----------------------------------- |
+| join_rebels            | ✅   | ⚠️       | ✅   | ✅     | Missing intro/resolution timelines  |
+| rescue_prisoner        | ✅   | ⚠️       | ✅   | ✅     | Missing resolution timeline         |
+| investigate_ruins      | ✅   | ✅       | ✅   | ✅     | Complete (intro + resolution)       |
+| secure_camp_defenses   | ✅   | ❌       | ✅   | ⚠️     | Missing intro/resolution timelines  |
+| report_to_rebel_leader | ✅   | ❌       | ⚠️   | ❌     | ORPHANED - no outcomes, no timeline |
+| battle_for_camp        | ❌   | ❌       | ❌   | ❌     | Act 1 climax - not started          |
+
+**Legend**: ✅ = Complete | ⚠️ = Partial | ❌ = Missing | **Status** = Blocker info
+
 ### Known Issues
 
 **Architecture & Tests**: NONE blocking
