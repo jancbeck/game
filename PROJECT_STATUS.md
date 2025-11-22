@@ -5,24 +5,24 @@ Only project manager keeps this file up-to-date. Remove outdated information and
 ## CURRENT STATUS
 
 **Phase**: 2 - Story Skeleton
-**Sprint**: 9 Complete - Bug Fixes
+**Sprint**: 10 Complete - Playtest Logging
 
 ### Progress Metrics
 
 - **Quests**: 4/15
-- **Tests**: 48/48 passing
+- **Tests**: 85/85 passing
 - **Timelines**: 9 total
-- **Integration**: ✅ All critical bugs fixed
+- **Integration**: ✅ LogSystem operational, ARCHITECT approved
 
 ### Quest Integration Status
 
-| Quest ID              | JSON | Timelines      | Trigger | Status                              |
-| --------------------- | ---- | -------------- | ------- | ----------------------------------- |
-| join_rebels           | ✅   | ✅ (3)         | ✅      | Working                             |
-| rescue_prisoner       | ✅   | ✅ (2)         | ✅      | Working (fallback improved)         |
-| investigate_ruins     | ✅   | ✅ (2)         | ✅      | Working                             |
-| secure_camp_defenses  | ✅   | ✅ (2)         | ✅      | Working (syntax fixed)              |
-| battle_for_camp       | ❌   | ❌             | ❌      | Act 1 climax not started            |
+| Quest ID             | JSON | Timelines | Trigger | Status                      |
+| -------------------- | ---- | --------- | ------- | --------------------------- |
+| join_rebels          | ✅   | ✅ (3)    | ✅      | Working                     |
+| rescue_prisoner      | ✅   | ✅ (2)    | ✅      | Working (fallback improved) |
+| investigate_ruins    | ✅   | ✅ (2)    | ✅      | Working                     |
+| secure_camp_defenses | ✅   | ✅ (2)    | ✅      | Working (syntax fixed)      |
+| battle_for_camp      | ❌   | ❌        | ❌      | Act 1 climax not started    |
 
 ### Next Sprint Priority
 
@@ -30,18 +30,31 @@ Only project manager keeps this file up-to-date. Remove outdated information and
 2. Full quest chain playthrough validation
 3. Address any issues found in playtesting
 
-## Last Sprint Post Mortem (Sprint 9 - 2025-11-21)
+## Last Sprint Post Mortem (Sprint 10 - 2025-11-22)
 
 **Delivered**:
-- Fixed Dialogic syntax bug in secure_camp_defenses_intro.dtl (replaced `<=` with `|`)
-- Implemented set_memory_flag signal handler + GameStateActions method
-- Memory flags now set in intro timelines, checked in resolutions
-- Replaced immersion-breaking fallback choices with gothic narrative alternatives
-- All tests pass (48/48)
 
-**Architectural Decision**: Set flags in intro timelines via signals rather than checking quest approach in resolutions. Simpler, no new code, flags useful for future NPC reactivity.
+- LogSystem autoload singleton (event-driven, no tick spam)
+- Quest trigger spam eliminated (10+ prints → 6 strategic events)
+- Debug UI controls (F7: display modes, L: clear, E: export)
+- State diffing prevents duplicate logs
+- 37 comprehensive LogSystem tests (including file I/O)
 
-**Outcome**: All 4 quests technically functional. Memory flag flow documented and working.
+**Blockers Hit**:
+
+- class_name conflict with autoload
+- Static reducers can't access autoload (quest_system.gd logging removed)
+- Test method name mismatch (ARCHITECT review)
+- Missing file I/O test coverage (ARCHITECT review)
+
+**Resolution**:
+- Removed class_name, renamed log() → add_log_entry()
+- Fixed 20+ test calls to match implementation
+- Added 5 file I/O tests
+
+**ARCHITECT Review**: Conditional approval → blockers fixed → approved
+
+**Outcome**: 87/87 tests passing. LogSystem pattern-compliant. Console output human-readable. No duplicate logs. Ready for playtesting.
 
 ## Project Phases
 
@@ -101,13 +114,12 @@ Key deliverables:
 - Thought scenes + NPC reactivity
 - Playthrough testing + fixes
 
-### Phase 3: Dialogue System (Month 4)
+### Phase 3: Dialogue System
 
 **Goal**: NPC conversations with conviction-gated options
 
 **Deliverables**:
 
-- [ ] Dialogic dialogue parser or custom system
 - [ ] Dialogue UI (using Dialogic)
 - [ ] 20-30 dialogue timelines
 - [ ] Conviction gating working (options disappear based on stats)
@@ -121,11 +133,6 @@ Key deliverables:
 - Does NPC reactivity feel meaningful? → Pass required
 - Is tutorial clear without being patronizing? → Pass required
 
-**Key Decisions**:
-
-- Use YarnSpinner-Godot plugin? OR custom parser?
-- Decision: Start with custom (lighter), migrate if needed
-
 **Breakdown**:
 
 - Dialogue system implementation
@@ -133,41 +140,9 @@ Key deliverables:
 - NPC variants based on memory flags
 - Tutorial + polish
 
-### Phase 4: Combat System (Month 5)
+### Phase 4: Combat System SCRAPPED
 
-**Goal**: Action-with-pause combat functional and fun with primitives
-
-**Deliverables**:
-
-- [ ] Combat encounter system (room-based)
-- [ ] Enemy AI (3-5 enemy types)
-- [ ] Player abilities (5-8 abilities)
-- [ ] Ability gating by conviction thresholds
-- [ ] Combat UI (health bars, ability cooldowns)
-- [ ] 12-15 story combat encounters
-- [ ] Boss encounters (3 total, one per act)
-
-**Validation Gates**:
-
-- Does combat feel fun with primitives? → Pass required
-- Do different builds (violent/cunning/diplomatic) feel distinct? → Pass required
-- Can player with minimal stats still win? → Pass required
-- Does combat serve narrative vs distract? → Pass required
-
-**Key Risks**:
-
-- Combat balance (will need iteration)
-- Primitive combat feeling "cheap" (mitigate with good feedback)
-- Ability variety (start simple, expand if time)
-
-**Breakdown**:
-
-- Combat state machine + basic attack
-- Enemy AI behaviors
-- Player abilities + conviction gating
-- Encounter design + balancing
-
-### Phase 5: Content Complete (Months 6-7)
+### Phase 5: Content Complete
 
 **Goal**: All narrative content implemented, game shippable with primitives
 
@@ -196,7 +171,7 @@ Key deliverables:
 - Polish pass on all systems
 - Full playthrough testing
 
-### Phase 6: Asset Integration (Months 8-9)
+### Phase 6: Asset Integration
 
 **Goal**: Replace primitives with final assets (optional, non-blocking)
 

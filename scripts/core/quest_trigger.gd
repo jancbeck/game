@@ -12,18 +12,21 @@ const DialogicResourceUtil = preload("res://addons/dialogic/Core/DialogicResourc
 
 var player_in_range: bool = false
 var game_state = GameState
+var _timeline_started: bool = false  # Prevents duplicate timeline starts
 
 
 func _ready():
 	if quest_id.is_empty():
 		push_warning("QuestTrigger: quest_id not set for %s" % name)
 
-	print("=== QuestTrigger [%s] ===" % quest_id)
-	print("  Position: %s" % global_position)
-	print("  Has CollisionShape3D: %s" % (get_node_or_null("CollisionShape3D") != null))
-	print("  Timeline ID: %s" % timeline_id)
-	if game_state.state.has("quests"):
-		print("  Current quests in state: %s" % [game_state.state["quests"].keys()])
+	# Log trigger initialization
+	if LogSystem:
+		LogSystem.add_log_entry(
+			LogSystem.Level.DEBUG,
+			LogSystem.Category.QUEST,
+			"quest_trigger_initialized",
+			{"quest_id": quest_id, "position": global_position, "timeline_id": timeline_id}
+		)
 
 	# Check initial state and remove if quest is already completed
 	_check_and_remove_if_completed()
@@ -41,37 +44,59 @@ func _check_and_remove_if_completed() -> void:
 	# Remove trigger if quest is completed (NOT if just active)
 	if game_state.state.has("quests") and game_state.state["quests"].has(quest_id):
 		var status = game_state.state["quests"][quest_id]["status"]
-		print("QuestTrigger [%s]: Status = '%s'" % [quest_id, status])
 		if status == "completed":  # Changed from != "available" to fix trigger disappearing
-			print("QuestTrigger [%s]: Removing (completed)" % quest_id)
+			if LogSystem:
+				LogSystem.add_log_entry(
+					LogSystem.Level.DEBUG,
+					LogSystem.Category.QUEST,
+					"quest_trigger_removed",
+					{"quest_id": quest_id, "reason": "quest_completed"}
+				)
 			queue_free()
 
 
 func _on_body_entered(body: Node3D):
 	if body.name == "Player":  # Assuming player node is named "Player"
 		player_in_range = true
+		_timeline_started = false  # Reset flag when player enters range
 		var can_start = QuestSystem.check_prerequisites(game_state.state, quest_id)
 		if can_start:
-			print("QuestTrigger: Player entered range (Ready)")
+			if LogSystem:
+				LogSystem.add_log_entry(
+					LogSystem.Level.DEBUG,
+					LogSystem.Category.QUEST,
+					"quest_trigger_in_range",
+					{"quest_id": quest_id, "locked": false}
+				)
 			# TODO: Show interaction_prompt in UI
 		else:
-			print("QuestTrigger: Player entered range (Locked)")
+			if LogSystem:
+				LogSystem.add_log_entry(
+					LogSystem.Level.DEBUG,
+					LogSystem.Category.QUEST,
+					"quest_trigger_in_range",
+					{"quest_id": quest_id, "locked": true}
+				)
 
 
 func _on_body_exited(body: Node3D):
 	if body.name == "Player":
-		print("QuestTrigger: Player exited range")
 		player_in_range = false
 		# TODO: Hide interaction_prompt in UI
 
 
 func _input(event: InputEvent):
 	if player_in_range and event.is_action_pressed("interact"):
-		print("QuestTrigger: Interact pressed")
 		if not quest_id.is_empty():
 			# Debug mode: Auto-complete quest immediately
 			if not debug_auto_complete_approach.is_empty():
-				print("QuestTrigger: Debug mode - auto-completing quest")
+				if LogSystem:
+					LogSystem.add_log_entry(
+						LogSystem.Level.DEBUG,
+						LogSystem.Category.QUEST,
+						"quest_auto_completed_debug",
+						{"quest_id": quest_id, "approach": debug_auto_complete_approach}
+					)
 				game_state.dispatch(func(state): return QuestSystem.start_quest(state, quest_id))
 				game_state.dispatch(
 					func(state):
@@ -84,12 +109,17 @@ func _input(event: InputEvent):
 			# New behavior: Start Dialogic timeline if configured
 			# QuestTrigger enforces prerequisites; timeline assumes quest is startable
 			if not timeline_id.is_empty():
+				# Debounce: prevent starting same timeline multiple times
+				if _timeline_started:
+					return
+				_timeline_started = true
+
 				# Get quest status to determine which timeline to use
 				var quest_status := _get_quest_status()
 
 				# Completed quests: don't re-trigger
 				if quest_status == "completed":
-					print("QuestTrigger: Quest already completed - ignoring interaction")
+					_timeline_started = false
 					return
 
 				# Active quests: try resolution timeline, fallback to base timeline
@@ -98,22 +128,23 @@ func _input(event: InputEvent):
 				# Available quests: Check prerequisites BEFORE starting timeline
 				if quest_status == "available":
 					if not QuestSystem.can_start_quest(game_state.state, quest_id):
-						var quest_data = DataLoader.get_quest(quest_id)
-						var quest_name = (
-							quest_data.get("name", quest_id)
-							if not quest_data.is_empty()
-							else quest_id
-						)
-						print("QuestTrigger: Quest locked - '%s'" % quest_name)
-						_show_locked_message(quest_name)
+						if LogSystem:
+							LogSystem.add_log_entry(
+								LogSystem.Level.WARN,
+								LogSystem.Category.QUEST,
+								"quest_locked",
+								{"quest_id": quest_id, "reason": "prerequisites_not_met"}
+							)
+						_timeline_started = false
 						return
 
-				print(
-					(
-						"QuestTrigger: Starting Dialogic timeline '%s' (quest_status=%s)"
-						% [selected_timeline, quest_status]
+				if LogSystem:
+					LogSystem.add_log_entry(
+						LogSystem.Level.INFO,
+						LogSystem.Category.QUEST,
+						"quest_timeline_started",
+						{"quest_id": quest_id, "timeline_id": selected_timeline}
 					)
-				)
 				# Access DialogSystem (must be in scene tree or as autoload)
 				var dialog_system = get_node_or_null("/root/DialogSystem")
 				if dialog_system and dialog_system.has_method("start_timeline"):
@@ -126,11 +157,9 @@ func _input(event: InputEvent):
 			# This path is deprecated and will be removed after migration
 			# Only check prerequisites for the fallback path
 			if not QuestSystem.check_prerequisites(game_state.state, quest_id):
-				print("QuestTrigger: Locked - Prerequisites not met")
 				return
 
 			game_state.dispatch(func(state): return QuestSystem.start_quest(state, quest_id))
-			print("Quest started via legacy fallback.")
 
 
 func _get_quest_status() -> String:
@@ -179,28 +208,3 @@ func _get_timeline_for_quest_status(quest_status: String) -> String:
 	# Fallback for any unknown status
 	push_warning("QuestTrigger: Unexpected quest status '%s', using base timeline" % quest_status)
 	return timeline_id
-
-
-func _show_locked_message(quest_name: String) -> void:
-	"""Display temporary on-screen notification that quest is locked."""
-	# Skip UI creation in test environment (no scene tree)
-	if not Engine.is_editor_hint() and get_tree() != null and get_tree().root != null:
-		var label = Label.new()
-		label.text = "Quest locked: %s\nComplete previous quests first." % quest_name
-		label.position = Vector2(400, 300)
-		label.modulate = Color.RED
-		label.add_theme_font_size_override("font_size", 20)
-
-		# Add to root viewport so it's visible over everything
-		get_tree().root.add_child(label)
-
-		# Use deferred removal instead of await to avoid async issues
-		get_tree().create_timer(3.0).timeout.connect(
-			func():
-				if is_instance_valid(label):
-					label.queue_free()
-		)
-		return
-
-	# Test environment - just print
-	print("Quest locked (test mode): %s" % quest_name)

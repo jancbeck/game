@@ -21,6 +21,7 @@ GameState="*res://scripts/core/game_state.gd"
 GameStateActions="*res://scripts/core/game_state_actions.gd"
 DialogSystem="*res://scripts/ui/dialog_system.gd"
 Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
+LogSystem="*res://scripts/core/log_system.gd"
 
 [dialogic]
 

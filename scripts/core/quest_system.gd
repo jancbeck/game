@@ -20,6 +20,7 @@ static func start_quest(state: Dictionary, quest_id: String) -> Dictionary:
 		return state
 
 	new_state["quests"][quest_id]["status"] = "active"
+
 	return new_state
 
 
