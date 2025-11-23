@@ -25,8 +25,14 @@ LogSystem="*res://scripts/core/log_system.gd"
 
 [dialogic]
 
-directories/dch_directory={}
+directories/dch_directory={
+"guard_captain": "res://data/characters/guard_captain.dch",
+"imprisoned_rebel": "res://data/characters/imprisoned_rebel.dch",
+"rebel_leader": "res://data/characters/rebel_leader.dch"
+}
 directories/dtl_directory={
+"npc_guard_captain_greeting": "res://data/timelines/npc_guard_captain_greeting.dtl",
+"npc_rebel_leader_greeting": "res://data/timelines/npc_rebel_leader_greeting.dtl",
 "quest_investigate_ruins_intro": "res://data/timelines/quest_investigate_ruins_intro.dtl",
 "quest_investigate_ruins_resolution": "res://data/timelines/quest_investigate_ruins_resolution.dtl",
 "quest_join_rebels_intro": "res://data/timelines/quest_join_rebels_intro.dtl",

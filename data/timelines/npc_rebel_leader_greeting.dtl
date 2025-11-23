@@ -1,0 +1,8 @@
+join rebel_leader center
+rebel_leader: Another wanderer. State your business.
+- I'm just looking around.
+	rebel_leader: Keep your nose out of rebel affairs.
+- I want to help the rebellion.
+	rebel_leader (suspicious): Words are cheap. Prove yourself first.
+	rebel_leader: Find me when you're ready to commit.
+leave rebel_leader

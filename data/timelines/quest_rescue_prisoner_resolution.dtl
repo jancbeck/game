@@ -1,19 +1,19 @@
 join rebel_leader center
 if GameStateActions.has_memory_flag("rebel_leader_knows_brutal"):
-	rebel_leader: You left a trail of corpses. The entire garrison knows we were there.
-	rebel_leader: Subtlety was an option. You chose blood instead.
+	rebel_leader (angry): You left a trail of corpses. The entire garrison knows we were there.
+	rebel_leader (angry): Subtlety was an option. You chose blood instead.
 	- It was necessary.
-		rebel_leader: Necessary. That is what we all say when we want to feel better about the violence.
+		rebel_leader (suspicious): Necessary. That is what we all say when we want to feel better about the violence.
 	- They would have killed me.
-		rebel_leader: And now their reinforcements will kill us. Well done.
+		rebel_leader (angry): And now their reinforcements will kill us. Well done.
 	rebel_leader: But the prisoner is free. That is what matters. For now.
 if GameStateActions.has_memory_flag("guard_captain_unaware"):
 	rebel_leader: The prisoner is here. And the guards do not even know they are gone.
-	rebel_leader: Clean. Efficient. I am impressed.
+	rebel_leader (happy): Clean. Efficient. I am impressed.
 	- It was not easy.
 		rebel_leader: Nothing worth doing ever is.
 	- I was lucky.
-		rebel_leader: Luck is what the prepared call their skill.
+		rebel_leader (happy): Luck is what the prepared call their skill.
 	rebel_leader: You have proven yourself useful. I will remember that.
 rebel_leader: You have earned your place here. But do not get comfortable.
 - Accept the praise | [if GameStateActions.has_memory_flag("rebel_leader_knows_brutal")]
@@ -23,3 +23,4 @@ rebel_leader: You have earned your place here. But do not get comfortable.
 - The prisoner is free. That is enough.
 	You have done what you set out to do.
 	[signal arg="complete_quest:rescue_prisoner:desperate"]
+leave rebel_leader

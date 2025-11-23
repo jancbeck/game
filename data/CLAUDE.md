@@ -62,6 +62,49 @@
 
 ## Dialogic Integration
 
+### Creating Dialogic Characters
+
+**Characters are code-generated** - This project does not use Dialogic Editor.
+
+#### Format:
+`.dch` files use `var_to_str()` serialization (GDScript dictionary format).
+
+#### Required Fields:
+```gdscript
+{
+    "@subpath": NodePath(""),
+    "@path": "res://addons/dialogic/Resources/character.gd",
+    "custom_info": {"npc_id": "character_id"},
+    "default_portrait": "",
+    "description": "",
+    "display_name": "Character Name",
+    "mirror": false,
+    "nicknames": [],
+    "offset": Vector2(0, 0),
+    "portraits": {},
+    "resource_local_to_scene": false,
+    "resource_name": "",
+    "resource_path": "res://data/characters/character_id.dch",
+    "scale": 1.0,
+    "color": Color(r, g, b, 1),
+    "_translation_id": ""
+}
+```
+
+#### Creation Method:
+Use Dialogic's ResourceSaver:
+```gdscript
+var character = DialogicCharacter.new()
+character.display_name = "Name"
+character.color = Color(r, g, b)
+character.custom_info = {"npc_id": "npc_id"}
+ResourceSaver.save(character, "res://data/characters/name.dch")
+```
+
+#### Common Errors:
+- "dict_to_inst() error" → Wrong format, regenerate using DialogicCharacter.new()
+- Character not found → Check spelling in timeline matches character resource filename
+
 ### Timeline Naming Convention
 
 - Quests: `quest_[id]_intro`, `quest_[id]_resolution`

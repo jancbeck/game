@@ -1,13 +1,19 @@
-Words are stronger than steel. Or are they just quieter?
+join rebel_leader center
+rebel_leader (suspicious): Words are stronger than steel. Or are they just quieter?
 - Violence is a failure of imagination.
+	rebel_leader: The camp remembers restraint. Rare in these times.
 	[signal arg="modify_conviction:compassionate_acts:2"]
 	[signal arg="modify_conviction:violence_thoughts:-1"]
 - It worked this time. Next time might require a blade.
+	rebel_leader (angry): Violence is a seed. Once planted, it grows.
 	[signal arg="modify_conviction:violence_thoughts:1"]
 - I manipulated them perfectly.
+	rebel_leader (suspicious): Clever words can be sharper than any blade.
 	[signal arg="modify_conviction:deceptive_acts:2"]
-You found the camp. Now you must convince them you are useful.
+rebel_leader: You found the camp. Now you must convince them you are useful.
 - Offer your services
+	rebel_leader: Very well. Prove yourself.
 	[signal arg="start_quest:join_rebels"]
 	[wait time="0.5"]
 	[signal arg="complete_quest:join_rebels:diplomatic"]
+leave rebel_leader

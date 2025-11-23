@@ -1,0 +1,8 @@
+join guard_captain center
+guard_captain: Halt! This area is restricted.
+- I'm not causing trouble.
+	guard_captain (angry): That's what they all say. Move along.
+- I have business here.
+	guard_captain (suspicious): Without proper clearance? I think not.
+	guard_captain: Return with authorization or face arrest.
+leave guard_captain

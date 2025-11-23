@@ -2,15 +2,16 @@ join rebel_leader center
 rebel_leader: You came back. That is more than most manage.
 rebel_leader: Very well. You have earned a place here. For now.
 rebel_leader: But idle hands serve no one. I have a task for you already.
-rebel_leader: One of ours is locked in the King's dungeon. They will hang him at dawn.
+rebel_leader (angry): One of ours is locked in the King's dungeon. They will hang him at dawn.
 rebel_leader: I need someone expendable to extract him. Someone without ties to the camp.
 - I will get them out.
 	rebel_leader: Good. Do not fail. We cannot afford losses.
 - This sounds like a suicide mission.
-	rebel_leader: It is. But you wanted to join us, did you not?
+	rebel_leader (suspicious): It is. But you wanted to join us, did you not?
 - What if I refuse?
-	rebel_leader: Then you leave. Now. And you do not come back.
+	rebel_leader (angry): Then you leave. Now. And you do not come back.
 rebel_leader: The dungeon is beneath the garrison. Guards patrol every hour. Be smart about this.
 - Accept the mission
 	[signal arg="complete_quest:join_rebels:diplomatic"]
 	rebel_leader: Go. Time is short.
+leave rebel_leader

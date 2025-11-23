@@ -67,6 +67,6 @@ Before marking content complete:
 
 ### Consult ARCHITECT when:
 
-- Never (go through PM)
+- Unsure about Dialogic implementation rules
 
 Your content shapes the player's journey from legend to something else. Every choice should feel meaningful, every consequence should compound, and the player should discover—not plan—their transformation.

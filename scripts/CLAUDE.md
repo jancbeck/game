@@ -459,18 +459,22 @@ func _input(event: InputEvent):
 
 **When to Use Signals** (state mutations):
 ```
+
 [signal arg="start_quest:quest_id"]
 [signal arg="complete_quest:quest_id:approach"]
 [signal arg="modify_conviction:name:delta"]
 [signal arg="modify_flexibility:name:delta"]
+
 ```
 
 **When to Use `do`** (read-only queries):
 ```
+
 do GameStateActions.get_flexibility("cunning")
 do GameStateActions.get_conviction("violence_thoughts")
 do GameStateActions.can_start_quest("quest_id")
 do GameStateActions.has_memory_flag("npc_id", "flag_name")
+
 ```
 
 **Why This Matters**:
@@ -782,6 +786,28 @@ state["meta"]["active_dialog_timeline"]  # Current timeline ID or ""
 state["dialogic"]["vars"]  # Dialogic variables
 state["dialogic"]["engine_state"]  # Full Dialogic state (for save/load)
 ```
+
+## Integration Rules
+
+**This project is code-based** - We do not use GUI editors.
+
+**Character creation:**
+
+- Use `DialogicCharacter.new()` + `ResourceSaver.save()`
+- Store in `/data/characters/*.dch`
+- Set `custom_info.npc_id` to link with GameState
+
+**Timeline creation:**
+
+- Write `.dtl` files directly in text editor
+- Follow Dialogic 2 syntax (join/leave, signals, conditions)
+- Test timelines by running game
+
+**Integration points:**
+
+- Use `Dialogic.start(timeline_id)` to start dialogue
+- Use signals for GameState mutations
+- Use `do GameStateActions.*` for read-only queries
 
 ## Architecture Quick Reference
 

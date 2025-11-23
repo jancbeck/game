@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://testroom"]
+[gd_scene load_steps=7 format=3 uid="uid://testroom"]
 
 [ext_resource type="Script" path="res://scripts/presentation/player_presentation.gd" id="1_player"]
 [ext_resource type="PackedScene" path="uid://debugoverlay" id="2_debug_overlay"]
 [ext_resource type="PackedScene" path="uid://questtrigger" id="3_quest_trigger"]
+[ext_resource type="PackedScene" uid="uid://c5k8m9n2p3q4r" path="res://scenes/entities/npc_entity.tscn" id="4_npc_entity"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_1"]
 
@@ -44,3 +45,11 @@ timeline_id = "quest_investigate_ruins_intro"
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, -5)
 quest_id = "secure_camp_defenses"
 timeline_id = "quest_secure_camp_defenses_intro"
+
+[node name="NPC_RebelLeader" parent="." instance=ExtResource("4_npc_entity")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 0)
+npc_id = "rebel_leader"
+
+[node name="NPC_GuardCaptain" parent="." instance=ExtResource("4_npc_entity")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5)
+npc_id = "guard_captain"

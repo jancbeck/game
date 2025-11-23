@@ -1,0 +1,17 @@
+{
+"@path": "res://addons/dialogic/Resources/character.gd",
+"@subpath": NodePath(""),
+&"_translation_id": "",
+&"color": Color(0.502, 0.502, 0.502, 1),
+&"custom_info": {
+"npc_id": "imprisoned_rebel"
+},
+&"default_portrait": "",
+&"description": "",
+&"display_name": "Imprisoned Rebel",
+&"mirror": false,
+&"nicknames": [],
+&"offset": Vector2(0, 0),
+&"portraits": {},
+&"scale": 1.0
+}
