@@ -1,0 +1,33 @@
+{
+  "id": "talk_to_guard",
+  "act": 1,
+  "location": "town_square",
+  "prerequisites": [],
+  "approaches": {
+    "diplomatic": {
+      "label": "Greet respectfully",
+      "requires": {},
+      "degrades": {
+        "flexibility_charisma": -1
+      },
+      "rewards": {
+        "convictions": {
+          "duty_above_all": 1
+        },
+        "memory_flags": ["guard_captain_respects_player"]
+      }
+    },
+    "casual": {
+      "label": "Casual greeting",
+      "requires": {},
+      "degrades": {},
+      "rewards": {
+        "memory_flags": ["guard_captain_met_player"]
+      }
+    }
+  },
+  "outcomes": {
+    "all": []
+  },
+  "summary": "Captain Varen stands watch at the town square. A simple conversation to learn the basics."
+}

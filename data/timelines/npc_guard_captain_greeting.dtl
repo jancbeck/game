@@ -1,8 +1,17 @@
 join guard_captain center
 guard_captain: Halt! This area is restricted.
-- I'm not causing trouble.
-	guard_captain (angry): That's what they all say. Move along.
-- I have business here.
-	guard_captain (suspicious): Without proper clearance? I think not.
-	guard_captain: Return with authorization or face arrest.
+guard_captain: State your business, stranger.
+- I'm not causing trouble. Just passing through.
+	guard_captain (neutral): That's what they all say. But I appreciate the respect.
+	guard_captain: Captain Varen, garrison commander. And you are?
+	- [Diplomatic] Greet him respectfully
+		guard_captain: A person of courtesy. Rare in these times.
+		guard_captain: You may pass. And should you ever need assistance, the garrison stands ready.
+		[signal arg="start_quest:talk_to_guard"]
+		[signal arg="complete_quest:talk_to_guard:diplomatic"]
+	- [Casual] Exchange pleasantries
+		guard_captain: Fair enough. A casual word from a cautious stranger.
+		guard_captain: You may go. Safe travels.
+		[signal arg="start_quest:talk_to_guard"]
+		[signal arg="complete_quest:talk_to_guard:casual"]
 leave guard_captain

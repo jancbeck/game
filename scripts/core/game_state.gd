@@ -22,7 +22,7 @@ func _initialize_state() -> void:
 			"health": 100,
 			"max_health": 100,
 			"flexibility": {"charisma": 10, "cunning": 10, "empathy": 10},
-			"convictions": {"violence_thoughts": 0, "deceptive_acts": 0, "compassionate_acts": 0},
+			"convictions": {"violence_thoughts": 0, "deceptive_acts": 0, "compassionate_acts": 0, "duty_above_all": 0},
 			"inventory": [],
 			"equipment": {"weapon": "", "armor": ""}
 		},
@@ -35,7 +35,10 @@ func _initialize_state() -> void:
 			"memory_flags": []
 		},
 		"quests":
-		{"join_rebels": {"status": "available", "approach_taken": "", "objectives_completed": []}},
+		{
+			"talk_to_guard": {"status": "available", "approach_taken": "", "objectives_completed": []},
+			"join_rebels": {"status": "available", "approach_taken": "", "objectives_completed": []}
+		},
 		"dialogue_vars": {},
 		"combat": {"active": false, "enemies": [], "available_abilities": []},
 		"meta":

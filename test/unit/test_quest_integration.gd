@@ -120,3 +120,87 @@ func test_quest_chain_join_to_secure_camp():
 	assert_that(state["world"]["memory_flags"]).contains("player_coldly_efficient")
 
 	# Note: battle_for_camp quest not yet created, so outcomes won't advance further
+
+func test_talk_to_guard_quest_diplomatic_approach():
+	# Test talk_to_guard quest with diplomatic approach
+	# This is a simple single-stage quest with no prerequisites
+	DataLoaderScript.clear_test_data()
+
+	var state = _initial_state.duplicate(true)
+	state["player"]["flexibility"] = {"charisma": 10, "cunning": 10, "empathy": 10}
+	state["player"]["convictions"] = {
+		"violence_thoughts": 0,
+		"deceptive_acts": 0,
+		"compassionate_acts": 0,
+		"duty_above_all": 0,
+		"question_authority": 0
+	}
+	state["quests"]["talk_to_guard"] = {
+		"status": "available",
+		"approach_taken": "",
+		"objectives_completed": []
+	}
+	state["world"]["memory_flags"] = []
+
+	# 1. Start quest
+	state = QuestSystemScript.start_quest(state, "talk_to_guard")
+	assert_that(state["quests"]["talk_to_guard"]["status"]).is_equal("active")
+
+	# 2. Complete with diplomatic approach
+	var initial_charisma = state["player"]["flexibility"]["charisma"]
+	state = QuestSystemScript.complete_quest(state, "talk_to_guard", "diplomatic")
+
+	# Verify quest completion
+	assert_that(state["quests"]["talk_to_guard"]["status"]).is_equal("completed")
+	assert_that(state["quests"]["talk_to_guard"]["approach_taken"]).is_equal("diplomatic")
+
+	# Verify degradation applied (diplomatic degrades charisma -1)
+	assert_that(state["player"]["flexibility"]["charisma"]).is_equal(initial_charisma - 1)
+
+	# Verify conviction reward (duty_above_all +1)
+	assert_that(state["player"]["convictions"]["duty_above_all"]).is_equal(1)
+
+	# Verify memory flag set
+	assert_that(state["world"]["memory_flags"]).contains("guard_captain_respects_player")
+
+func test_talk_to_guard_quest_casual_approach():
+	# Test talk_to_guard quest with casual approach
+	DataLoaderScript.clear_test_data()
+
+	var state = _initial_state.duplicate(true)
+	state["player"]["flexibility"] = {"charisma": 10, "cunning": 10, "empathy": 10}
+	state["player"]["convictions"] = {
+		"violence_thoughts": 0,
+		"deceptive_acts": 0,
+		"compassionate_acts": 0,
+		"duty_above_all": 0,
+		"question_authority": 0
+	}
+	state["quests"]["talk_to_guard"] = {
+		"status": "available",
+		"approach_taken": "",
+		"objectives_completed": []
+	}
+	state["world"]["memory_flags"] = []
+
+	# 1. Start quest
+	state = QuestSystemScript.start_quest(state, "talk_to_guard")
+	assert_that(state["quests"]["talk_to_guard"]["status"]).is_equal("active")
+
+	# 2. Complete with casual approach
+	var initial_charisma = state["player"]["flexibility"]["charisma"]
+	var initial_duty = state["player"]["convictions"]["duty_above_all"]
+	state = QuestSystemScript.complete_quest(state, "talk_to_guard", "casual")
+
+	# Verify quest completion
+	assert_that(state["quests"]["talk_to_guard"]["status"]).is_equal("completed")
+	assert_that(state["quests"]["talk_to_guard"]["approach_taken"]).is_equal("casual")
+
+	# Verify NO degradation (casual has no degradation)
+	assert_that(state["player"]["flexibility"]["charisma"]).is_equal(initial_charisma)
+
+	# Verify NO conviction reward (casual has no conviction rewards)
+	assert_that(state["player"]["convictions"]["duty_above_all"]).is_equal(initial_duty)
+
+	# Verify memory flag set
+	assert_that(state["world"]["memory_flags"]).contains("guard_captain_met_player")

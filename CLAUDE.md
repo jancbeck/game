@@ -57,7 +57,7 @@ Branch: main
 - [ ] Tests: [not written|written|passing]
 - [ ] Integration: [not tested|tested|verified]
 
-Maintain the current project status in @PROJECT_STATUS.md. Follow the instructions in that file!
+Maintain the current project status in @PROJECT_STATUS.md Follow the instructions in that file!
 
 ### Completed This Sprint
 
@@ -304,7 +304,7 @@ Before reporting sprint complete:
 - `/scripts/` - Game code (CODER domain)
 - `/scenes/` - Game scenes (CODER domain)
 - `/tests/` - Test files (ARCHITECT oversees, CODER maintains)
-- `/docs/` - Documentation (YOU maintain status)
+- `PROJECT_STATUS.md` - Documentation (YOU maintain status)
 
 ### Agent Capabilities
 
