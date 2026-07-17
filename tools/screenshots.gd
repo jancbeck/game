@@ -48,8 +48,15 @@ func _run() -> void:
 	for i in 10:
 		await process_frame
 	await _snap("05_prison_dialogue")
+	painted._on_dialogue_ended()
+	# Occlusion proof: stand in the pocket behind the gallows platform —
+	# the character must be partially hidden by the painted foreground.
+	painted.player.position = painted.px_to_world(Vector2(1100, 560))
+	for i in 5:
+		await process_frame
+	await _snap("06_occlusion")
 	print("Screenshots written: %d" % shots)
-	quit(0 if shots == 5 else 1)
+	quit(0 if shots == 6 else 1)
 
 
 func _snap(shot_name: String) -> void:

@@ -9,9 +9,15 @@ signal option_chosen(option_index: int)
 @onready var options_box: VBoxContainer = %OptionsBox
 @onready var portrait_rect: TextureRect = %PortraitRect
 
+var _click_player: AudioStreamPlayer
+
 
 func _ready() -> void:
 	hide()
+	_click_player = AudioStreamPlayer.new()
+	if ResourceLoader.exists("res://art/audio/ui_click.wav"):
+		_click_player.stream = load("res://art/audio/ui_click.wav")
+	add_child(_click_player)
 
 
 func show_node(
@@ -30,7 +36,11 @@ func show_node(
 		button.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 		if option["available"]:
 			var idx: int = option["index"]
-			button.pressed.connect(func() -> void: option_chosen.emit(idx))
+			button.pressed.connect(
+				func() -> void:
+					_click_player.play()
+					option_chosen.emit(idx)
+			)
 		else:
 			button.disabled = true
 			button.text += "  [locked]"

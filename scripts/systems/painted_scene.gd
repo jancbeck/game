@@ -33,6 +33,10 @@ var backdrop_size := Vector2(1536, 1024)
 @onready var dialogue_ui: Control = $UI/DialogueUI
 @onready var hud: Control = $UI/Hud
 
+var _fires: Array[OmniLight3D] = []
+var _flicker_time := 0.0
+var _voice_player: AudioStreamPlayer
+
 
 func _ready() -> void:
 	manifest = Db.get_scene(scene_id)
@@ -44,6 +48,8 @@ func _ready() -> void:
 	_build_lights()
 	_build_player()
 	_build_npcs()
+	_build_occluders()
+	_build_audio()
 	dialogue_ui.option_chosen.connect(_on_option_chosen)
 	Store.state_changed.connect(func(_s: Dictionary) -> void: hud.refresh())
 	hud.refresh()
@@ -107,6 +113,14 @@ func _build_lights() -> void:
 		light.light_energy = float(light_data.get("energy", 4.0))
 		light.omni_range = float(light_data.get("range", 8.0))
 		add_child(light)
+		if light_data.get("fire", false):
+			_fires.append(light)
+			light.add_child(_make_fire_particles())
+			var crackle := AudioStreamPlayer3D.new()
+			crackle.stream = _looped_wav("res://art/audio/fire_crackle.wav")
+			crackle.unit_size = 6.0
+			crackle.autoplay = true
+			light.add_child(crackle)
 
 
 func _build_player() -> void:
@@ -140,6 +154,121 @@ func _make_character(palette: Dictionary) -> CharacterRig:
 	return rig
 
 
+## Foreground occlusion — the "depth map" of this pipeline, authorable as
+## text: each occluder is a polygon of backdrop pixels (a prop painted in
+## the foreground) plus an anchor where it meets the ground. We cut that
+## region out of the painting (alpha-masked by the polygon) and mount it
+## as a camera-facing quad at the anchor's TRUE 3D depth. Characters
+## walking behind the anchor line are then genuinely occluded by the
+## depth buffer — same effect as Disco Elysium's height maps, built from
+## polygons instead of a painted depth pass.
+func _build_occluders() -> void:
+	var source: Image = (load(manifest["backdrop"]) as Texture2D).get_image()
+	source.convert(Image.FORMAT_RGBA8)
+	for occluder: Dictionary in manifest.get("occluders", []):
+		var polygon := PackedVector2Array()
+		for point: Array in occluder["polygon"]:
+			polygon.append(Vector2(point[0], point[1]))
+		var bounds := Rect2i(polygon[0].x, polygon[0].y, 1, 1)
+		for point in polygon:
+			bounds = bounds.expand(Vector2i(point))
+		var cut := source.get_region(bounds)
+		for y in cut.get_height():
+			for x in cut.get_width():
+				var px := Vector2(bounds.position.x + x, bounds.position.y + y)
+				if not Geometry2D.is_point_in_polygon(px, polygon):
+					var pixel := cut.get_pixel(x, y)
+					pixel.a = 0.0
+					cut.set_pixel(x, y, pixel)
+		var anchor_arr: Array = occluder["anchor"]
+		var anchor_px := Vector2(anchor_arr[0], anchor_arr[1])
+		var anchor_world := px_to_world(anchor_px)
+		var wpp := _world_per_backdrop_px(anchor_world)
+		var quad := MeshInstance3D.new()
+		var mesh := QuadMesh.new()
+		mesh.size = Vector2(bounds.size.x * wpp, bounds.size.y * wpp)
+		var material := StandardMaterial3D.new()
+		material.albedo_texture = ImageTexture.create_from_image(cut)
+		material.shading_mode = BaseMaterial3D.SHADING_MODE_UNSHADED
+		material.transparency = BaseMaterial3D.TRANSPARENCY_ALPHA_SCISSOR
+		mesh.material = material
+		quad.mesh = mesh
+		quad.position = (
+			anchor_world
+			+ Vector3(
+				(bounds.get_center().x - anchor_px.x) * wpp,
+				(anchor_px.y - bounds.get_center().y) * wpp,
+				0
+			)
+		)
+		quad.basis = camera.global_transform.basis
+		add_child(quad)
+
+
+## World-units per backdrop pixel at a given world point's camera depth.
+func _world_per_backdrop_px(at: Vector3) -> float:
+	var depth: float = absf((camera.global_transform.affine_inverse() * at).z)
+	var frustum_height := 2.0 * depth * tan(deg_to_rad(camera.fov / 2.0))
+	return frustum_height / backdrop_size.y
+
+
+func _make_fire_particles() -> GPUParticles3D:
+	var particles := GPUParticles3D.new()
+	var process := ParticleProcessMaterial.new()
+	process.direction = Vector3(0, 1, 0)
+	process.initial_velocity_min = 0.6
+	process.initial_velocity_max = 1.4
+	process.gravity = Vector3(0, 0.9, 0)
+	process.scale_min = 0.04
+	process.scale_max = 0.14
+	process.emission_shape = ParticleProcessMaterial.EMISSION_SHAPE_SPHERE
+	process.emission_sphere_radius = 0.18
+	process.color_ramp = _fire_gradient()
+	particles.process_material = process
+	particles.amount = 28
+	particles.lifetime = 0.9
+	var mesh := QuadMesh.new()
+	mesh.size = Vector2(0.12, 0.12)
+	var material := StandardMaterial3D.new()
+	material.shading_mode = BaseMaterial3D.SHADING_MODE_UNSHADED
+	material.transparency = BaseMaterial3D.TRANSPARENCY_ALPHA
+	material.vertex_color_use_as_albedo = true
+	material.billboard_mode = BaseMaterial3D.BILLBOARD_PARTICLES
+	mesh.material = material
+	particles.draw_pass_1 = mesh
+	particles.position.y = -0.6
+	return particles
+
+
+func _fire_gradient() -> GradientTexture1D:
+	var gradient := Gradient.new()
+	gradient.set_color(0, Color(1.0, 0.85, 0.4, 0.9))
+	gradient.set_color(1, Color(0.9, 0.25, 0.05, 0.0))
+	var texture := GradientTexture1D.new()
+	texture.gradient = gradient
+	return texture
+
+
+func _build_audio() -> void:
+	var ambience_path: String = manifest.get("ambience", "")
+	if not ambience_path.is_empty():
+		var ambience := AudioStreamPlayer.new()
+		ambience.stream = _looped_wav(ambience_path)
+		ambience.volume_db = -8.0
+		ambience.autoplay = true
+		add_child(ambience)
+	_voice_player = AudioStreamPlayer.new()
+	add_child(_voice_player)
+
+
+static func _looped_wav(path: String) -> AudioStreamWAV:
+	var stream: AudioStreamWAV = load(path)
+	if stream:
+		stream.loop_mode = AudioStreamWAV.LOOP_FORWARD
+		stream.loop_end = stream.data.size() / 2
+	return stream
+
+
 ## Map a backdrop pixel to the point on the ground plane (y=0) that the
 ## fixed camera sees at that screen position. This is the whole trick:
 ## the painting IS the screen, so pixel coords define world positions.
@@ -166,6 +295,17 @@ func _process(delta: float) -> void:
 	for npc in npcs:
 		npc["rig"].animate(delta, 0.0)
 	_update_nearby_npc()
+	_flicker_time += delta
+	for i in _fires.size():
+		var base := 6.0
+		_fires[i].light_energy = (
+			base
+			* (
+				1.0
+				+ 0.18 * sin(_flicker_time * 9.0 + i * 2.1)
+				+ 0.1 * sin(_flicker_time * 23.0 + i)
+			)
+		)
 
 
 func _move_player(delta: float) -> void:
@@ -237,6 +377,12 @@ func _show_current_node(npc: Dictionary) -> void:
 	var portrait_path: String = npc["data"].get("portrait", "")
 	if not portrait_path.is_empty():
 		portrait = load(portrait_path)
+	var voice_path: String = node.get("voice", "")
+	if not voice_path.is_empty() and ResourceLoader.exists(voice_path):
+		_voice_player.stream = load(voice_path)
+		_voice_player.play()
+	elif _voice_player.playing:
+		_voice_player.stop()
 	dialogue_ui.show_node(
 		speaker, node.get("text", ""), runner.visible_options(Store.get_state()), portrait
 	)

@@ -1,31 +1,185 @@
 {
   "id": "prison_yard",
   "backdrop": "res://art/scenes/prison_yard.png",
-  "spawn": [700, 560],
+  "spawn": [
+    700,
+    560
+  ],
   "walk_polygon": [
-    [450, 430],
-    [940, 400],
-    [980, 630],
-    [1000, 920],
-    [640, 950],
-    [450, 790]
+    [
+      450,
+      430
+    ],
+    [
+      940,
+      400
+    ],
+    [
+      1150,
+      520
+    ],
+    [
+      1150,
+      600
+    ],
+    [
+      980,
+      630
+    ],
+    [
+      1000,
+      920
+    ],
+    [
+      640,
+      950
+    ],
+    [
+      450,
+      790
+    ]
   ],
-  "camera": {"pitch": -42, "yaw": 0, "fov": 32, "distance": 26},
+  "camera": {
+    "pitch": -42,
+    "yaw": 0,
+    "fov": 32,
+    "distance": 26
+  },
   "lights": [
-    {"px": [200, 530], "height": 1.2, "color": "#ff9c50", "energy": 6.0, "range": 10.0},
-    {"px": [460, 270], "height": 2.6, "color": "#ffab55", "energy": 4.0, "range": 8.0},
-    {"px": [815, 190], "height": 2.6, "color": "#ffab55", "energy": 4.0, "range": 8.0}
+    {
+      "px": [
+        200,
+        530
+      ],
+      "height": 1.2,
+      "color": "#ff9c50",
+      "energy": 6.0,
+      "range": 10.0,
+      "fire": true
+    },
+    {
+      "px": [
+        460,
+        270
+      ],
+      "height": 2.6,
+      "color": "#ffab55",
+      "energy": 4.0,
+      "range": 8.0,
+      "fire": true
+    },
+    {
+      "px": [
+        815,
+        190
+      ],
+      "height": 2.6,
+      "color": "#ffab55",
+      "energy": 4.0,
+      "range": 8.0,
+      "fire": true
+    }
   ],
-  "player": {"palette": {"body": "#6a6258", "head": "#c8a284"}},
+  "player": {
+    "palette": {
+      "body": "#6a6258",
+      "head": "#c8a284"
+    }
+  },
   "npcs": [
     {
       "id": "jailer",
       "name": "Jailer Ordo",
-      "pos": [520, 600],
-      "palette": {"body": "#8a4f2d", "head": "#b98a6a"},
+      "pos": [
+        520,
+        600
+      ],
+      "palette": {
+        "body": "#8a4f2d",
+        "head": "#b98a6a"
+      },
       "dialogue": "royal_jailer",
       "portrait": "res://art/sprites/jailer.png",
       "interact_radius": 160
+    }
+  ],
+  "ambience": "res://art/audio/wind_ambience.wav",
+  "occluders": [
+    {
+      "polygon": [
+        [
+          1005,
+          150
+        ],
+        [
+          1450,
+          140
+        ],
+        [
+          1470,
+          620
+        ],
+        [
+          1330,
+          640
+        ],
+        [
+          1010,
+          630
+        ]
+      ],
+      "anchor": [
+        1230,
+        630
+      ]
+    },
+    {
+      "polygon": [
+        [
+          1020,
+          660
+        ],
+        [
+          1470,
+          650
+        ],
+        [
+          1470,
+          905
+        ],
+        [
+          1030,
+          910
+        ]
+      ],
+      "anchor": [
+        1240,
+        905
+      ]
+    },
+    {
+      "polygon": [
+        [
+          150,
+          345
+        ],
+        [
+          430,
+          350
+        ],
+        [
+          435,
+          595
+        ],
+        [
+          155,
+          600
+        ]
+      ],
+      "anchor": [
+        290,
+        595
+      ]
     }
   ]
 }
