@@ -57,6 +57,41 @@ jobs:
       - name: Run smoke test
         run: godot --headless -s tools/smoke_test.gd
 
+  screenshots:
+    name: "Render screenshots"
+    runs-on: ubuntu-latest
+    needs: static-checks
+    timeout-minutes: 10
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install Godot
+        run: |
+          curl -sSL -o godot.zip "https://github.com/godotengine/godot/releases/download/${GODOT_VERSION}-stable/Godot_v${GODOT_VERSION}-stable_linux.x86_64.zip"
+          unzip -q godot.zip
+          sudo mv "Godot_v${GODOT_VERSION}-stable_linux.x86_64" /usr/local/bin/godot
+      - name: Import project
+        run: godot --headless --import || true
+      - name: Render screenshots (Xvfb + llvmpipe)
+        run: xvfb-run -a godot --rendering-driver opengl3 -s tools/screenshots.gd
+      - uses: actions/upload-artifact@v4
+        with:
+          name: screenshots
+          path: screenshots/*.png
+      - name: Publish to ci-screenshots branch
+        if: github.event_name == 'pull_request'
+        run: |
+          cd screenshots
+          git init -q -b ci-screenshots
+          git config user.name "ci-screenshots"
+          git config user.email "ci@users.noreply.github.com"
+          git add ./*.png
+          git commit -qm "Screenshots for ${GITHUB_SHA}"
+          git push -f "https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" ci-screenshots
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
   unit-tests:
     name: "gdUnit4 tests"
     runs-on: ubuntu-latest
