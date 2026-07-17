@@ -1,0 +1,98 @@
+{
+  "id": "prisoner",
+  "nodes": {
+    "start": {
+      "speaker": "Chained Prisoner",
+      "text": "You walk like someone who still counts days. I'm Essek. I mapped the barrier for the Overseer — every pylon, every weak seam. Then I understood what it's for, and now I'm 'surplus'. Get me loose and the map in my head is yours.",
+      "options": [
+        {
+          "text": "[Might] Grip the chain where it meets the post and tear it free.",
+          "requires": {"quest_active": ["free_the_prisoner"], "attributes": {"might": 2}},
+          "show_locked": true,
+          "effects": [
+            {"type": "apply_approach", "attribute": "might"},
+            {"type": "complete_quest", "quest": "free_the_prisoner", "approach": "might"},
+            {"type": "set_flag", "flag": "essek_freed"},
+            {"type": "set_flag", "flag": "knows_barrier_secret"},
+            {"type": "start_quest", "quest": "confront_overseer"},
+            {"type": "journal", "text": "The post came out of the ground before the chain gave. Essek told you what the barrier drinks. You wish he hadn't."}
+          ],
+          "next": "freed"
+        },
+        {
+          "text": "[Guile] The lock is Crown-issue. You've opened worse with a rib bone.",
+          "requires": {"quest_active": ["free_the_prisoner"], "attributes": {"guile": 2}},
+          "show_locked": true,
+          "effects": [
+            {"type": "apply_approach", "attribute": "guile"},
+            {"type": "complete_quest", "quest": "free_the_prisoner", "approach": "guile"},
+            {"type": "set_flag", "flag": "essek_freed"},
+            {"type": "set_flag", "flag": "knows_barrier_secret"},
+            {"type": "start_quest", "quest": "confront_overseer"},
+            {"type": "journal", "text": "The lock opened like it was embarrassed. Essek whispered the barrier's secret while the guards changed shifts."}
+          ],
+          "next": "freed"
+        },
+        {
+          "text": "[Lore] The chain is rune-bound. Runes can be read backwards.",
+          "requires": {"quest_active": ["free_the_prisoner"], "attributes": {"lore": 2}},
+          "show_locked": true,
+          "effects": [
+            {"type": "apply_approach", "attribute": "lore"},
+            {"type": "complete_quest", "quest": "free_the_prisoner", "approach": "lore"},
+            {"type": "set_flag", "flag": "essek_freed"},
+            {"type": "set_flag", "flag": "knows_barrier_secret"},
+            {"type": "start_quest", "quest": "confront_overseer"},
+            {"type": "journal", "text": "You unwrote the binding rune syllable by syllable. Essek watched you the way men watch fire."}
+          ],
+          "next": "freed"
+        },
+        {
+          "text": "[Heart] Tell me what the barrier is for, Essek. Freedom or not — people should know.",
+          "requires": {"quest_active": ["free_the_prisoner"], "attributes": {"heart": 2}},
+          "show_locked": true,
+          "effects": [
+            {"type": "apply_approach", "attribute": "heart"},
+            {"type": "complete_quest", "quest": "free_the_prisoner", "approach": "heart"},
+            {"type": "set_flag", "flag": "knows_barrier_secret"},
+            {"type": "set_flag", "flag": "essek_confessed"},
+            {"type": "start_quest", "quest": "confront_overseer"},
+            {"type": "journal", "text": "Essek told you everything and asked for nothing. He stayed in his chains. 'Judgement should hear it from a free man's witness,' he said."}
+          ],
+          "next": "confessed"
+        },
+        {
+          "text": "Why should I believe a man in chains?",
+          "effects": [],
+          "next": "why_believe"
+        },
+        {
+          "text": "[Leave him]",
+          "effects": [],
+          "next": ""
+        }
+      ]
+    },
+    "why_believe": {
+      "speaker": "Chained Prisoner",
+      "text": "Because chains are the one place in the Vale where lying stops paying. The barrier isn't a wall, friend. It's a mouth. Ask yourself why the ore shipments leave lighter than the ledgers say.",
+      "options": [
+        {"text": "Go on.", "effects": [], "next": "start"}
+      ]
+    },
+    "freed": {
+      "speaker": "Essek",
+      "text": "The barrier is fed, not fueled. Every soul the Crown tips over the line keeps it burning. The Overseer isn't warden of a prison — he's keeper of a larder. Go ask him yourself. I'll be a rumor by morning.",
+      "options": [
+        {"text": "[Let him vanish into the dark]", "effects": [], "next": ""}
+      ]
+    },
+    "confessed": {
+      "speaker": "Essek",
+      "text": "The barrier is fed, not fueled. Every soul the Crown sends keeps it burning — the Overseer keeps the tally. Tell them at my judgement. Say it loud enough and even the Vale has to hear it.",
+      "options": [
+        {"text": "[Leave him to his vigil]", "effects": [], "next": ""}
+      ]
+    }
+  }
+}

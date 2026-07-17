@@ -1,63 +1,49 @@
 extends GdUnitTestSuite
+## Save/load round-trips through JSON, including int normalization.
 
-const SaveSystemScript = preload("res://scripts/core/save_system.gd")
-const GameStateScript = preload("res://scripts/core/game_state.gd")
-
-var _temp_state = {
-	"player": {"health": 50, "position": Vector3(10, 5, 2)},
-	"world": {"act": 2}
-}
-
-func after_each():
-	# Clean up save file
-	if FileAccess.file_exists(SaveSystem.SAVE_PATH):
-		DirAccess.remove_absolute(SaveSystem.SAVE_PATH)
-
-func test_save_and_load():
-	# Act
-	SaveSystem.save_state(_temp_state)
-	var loaded = SaveSystem.load_state()
-	
-	# Assert
-	assert_that(loaded["player"]["health"]).is_equal(50)
-	assert_that(loaded["world"]["act"]).is_equal(2)
-	# Vector3 should be preserved exactly as Vector3 type, not String
-	assert_that(loaded["player"]["position"]).is_equal(Vector3(10, 5, 2))
-	assert_that(typeof(loaded["player"]["position"])).is_equal(TYPE_VECTOR3)
-
-func test_load_non_existent_returns_empty():
-	if FileAccess.file_exists(SaveSystem.SAVE_PATH):
-		DirAccess.remove_absolute(SaveSystemScript.SAVE_PATH)
-		
-	var loaded = SaveSystemScript.load_state()
-	assert_that(loaded).is_empty()
+const StoreScript := preload("res://scripts/core/store.gd")
+const TEST_PATH := "user://test_save.json"
 
 
-func test_save_and_load_preserves_dialogic_state():
-	# Arrange
-	var game_state = GameStateScript.new()
-	game_state._initialize_state()
-	
-	# Capture initial Dialogic state
-	# var original_dialogic_state = Dialogic.get_full_state()
-	
-	# Act
-	# 1. Get snapshot via GameState (which should include Dialogic state)
-	var snapshot = game_state.snapshot_for_save()
-	
-	# 2. Save to disk via SaveSystem
-	SaveSystem.save_state(snapshot)
-	
-	# 3. Load from disk via SaveSystem
-	var loaded_data = SaveSystem.load_state()
-	
-	# 4. Restore via GameState
-	# Note: Skipping actual restoration call as it crashes Dialogic in test env
-	# game_state.restore_from_save(loaded_data)
-	
-	# Assert
-	# We check if the loaded data matches the snapshot's dialogic section
-	assert_that(loaded_data).contains_keys("dialogic")
-	assert_that(loaded_data["dialogic"]).is_equal(snapshot["dialogic"])
-	
-	game_state.free()
+func after_test() -> void:
+	if FileAccess.file_exists(TEST_PATH):
+		DirAccess.remove_absolute(TEST_PATH)
+
+
+func test_round_trip_preserves_state() -> void:
+	var state := StoreScript.initial_state()
+	state = Reducers.apply_approach(state, "guile")
+	state = Reducers.start_quest(state, "q1")
+	state = Reducers.complete_quest(state, "q0", "guile")
+	state = Reducers.set_flag(state, "gate_opened")
+	assert_bool(SaveSystem.save_game(state, TEST_PATH)).is_true()
+	var loaded := SaveSystem.load_game(TEST_PATH)
+	assert_bool(loaded.is_empty()).is_false()
+	assert_int(Reducers.attribute_score(loaded, "guile")).is_equal(2)
+	assert_int(loaded["player"]["attributes"]["might"]["flexibility"]).is_equal(8)
+	assert_bool(Reducers.quest_active(loaded, "q1")).is_true()
+	assert_str(loaded["quests"]["completed"]["q0"]).is_equal("guile")
+	assert_bool(Reducers.has_flag(loaded, "gate_opened")).is_true()
+	# JSON floats must come back as ints so score comparisons behave.
+	assert_bool(loaded["player"]["attributes"]["guile"]["score"] is int).is_true()
+
+
+func test_loaded_state_passes_store_validation() -> void:
+	SaveSystem.save_game(StoreScript.initial_state(), TEST_PATH)
+	var store: Node = auto_free(StoreScript.new())
+	store.reset()
+	assert_bool(store.restore(SaveSystem.load_game(TEST_PATH))).is_true()
+
+
+func test_missing_and_corrupt_files() -> void:
+	assert_bool(SaveSystem.load_game("user://does_not_exist.json").is_empty()).is_true()
+	var file := FileAccess.open(TEST_PATH, FileAccess.WRITE)
+	file.store_string("{not json")
+	file.close()
+	assert_bool(SaveSystem.load_game(TEST_PATH).is_empty()).is_true()
+
+
+func test_store_rejects_malformed_state() -> void:
+	var store: Node = auto_free(StoreScript.new())
+	store.reset()
+	assert_bool(store.restore({"garbage": true})).is_false()
