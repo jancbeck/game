@@ -6,7 +6,7 @@ extends Node3D
 @export var follow_speed := 6.0
 @export var yaw_degrees := 45.0
 @export var pitch_degrees := -50.0
-@export var distance := 16.0
+@export var distance := 12.0
 
 var _target: Node3D
 

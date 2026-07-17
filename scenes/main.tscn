@@ -21,14 +21,14 @@ background_mode = 2
 sky = SubResource("sky")
 ambient_light_source = 3
 ambient_light_color = Color(0.25, 0.28, 0.4, 1)
-ambient_light_energy = 0.35
+ambient_light_energy = 1.1
 tonemap_mode = 3
 fog_enabled = true
 fog_light_color = Color(0.09, 0.09, 0.13, 1)
-fog_density = 0.025
+fog_density = 0.01
 
 [sub_resource type="StandardMaterial3D" id="mat_ground"]
-albedo_color = Color(0.16, 0.15, 0.14, 1)
+albedo_color = Color(0.26, 0.24, 0.22, 1)
 roughness = 1.0
 
 [sub_resource type="StandardMaterial3D" id="mat_wall"]
@@ -80,7 +80,7 @@ environment = SubResource("env")
 [node name="Moonlight" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.707107, -0.5, 0.5, 0, 0.707107, 0.707107, -0.707107, -0.5, 0.5, 0, 20, 0)
 light_color = Color(0.6, 0.7, 1, 1)
-light_energy = 0.4
+light_energy = 0.9
 shadow_enabled = true
 
 [node name="Ground" type="StaticBody3D" parent="."]
@@ -115,8 +115,8 @@ surface_material_override/0 = SubResource("mat_torch")
 [node name="Light" type="OmniLight3D" parent="Torch1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.8, 0)
 light_color = Color(1, 0.6, 0.25, 1)
-light_energy = 3.0
-omni_range = 9.0
+light_energy = 7.0
+omni_range = 14.0
 shadow_enabled = true
 
 [node name="Torch2" type="Node3D" parent="."]
@@ -130,8 +130,8 @@ surface_material_override/0 = SubResource("mat_torch")
 [node name="Light" type="OmniLight3D" parent="Torch2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.8, 0)
 light_color = Color(1, 0.6, 0.25, 1)
-light_energy = 3.0
-omni_range = 9.0
+light_energy = 7.0
+omni_range = 14.0
 shadow_enabled = true
 
 [node name="Torch3" type="Node3D" parent="."]
@@ -145,8 +145,8 @@ surface_material_override/0 = SubResource("mat_torch")
 [node name="Light" type="OmniLight3D" parent="Torch3"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.8, 0)
 light_color = Color(1, 0.6, 0.25, 1)
-light_energy = 3.0
-omni_range = 9.0
+light_energy = 7.0
+omni_range = 14.0
 shadow_enabled = true
 
 [node name="Player" type="CharacterBody3D" parent="."]
