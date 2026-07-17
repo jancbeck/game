@@ -10,16 +10,22 @@
     [640, 950],
     [450, 790]
   ],
-  "player": {"sprite": "res://art/sprites/convict.png", "scale": 0.16},
+  "camera": {"pitch": -42, "yaw": 0, "fov": 32, "distance": 26},
+  "lights": [
+    {"px": [200, 530], "height": 1.2, "color": "#ff9c50", "energy": 6.0, "range": 10.0},
+    {"px": [460, 270], "height": 2.6, "color": "#ffab55", "energy": 4.0, "range": 8.0},
+    {"px": [815, 190], "height": 2.6, "color": "#ffab55", "energy": 4.0, "range": 8.0}
+  ],
+  "player": {"palette": {"body": "#6a6258", "head": "#c8a284"}},
   "npcs": [
     {
       "id": "jailer",
       "name": "Jailer Ordo",
-      "pos": [500, 590],
-      "sprite": "res://art/sprites/jailer.png",
-      "scale": 0.17,
+      "pos": [520, 600],
+      "palette": {"body": "#8a4f2d", "head": "#b98a6a"},
       "dialogue": "royal_jailer",
-      "interact_radius": 150
+      "portrait": "res://art/sprites/jailer.png",
+      "interact_radius": 160
     }
   ]
 }

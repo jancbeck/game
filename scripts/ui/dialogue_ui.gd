@@ -7,15 +7,20 @@ signal option_chosen(option_index: int)
 @onready var speaker_label: Label = %SpeakerLabel
 @onready var text_label: RichTextLabel = %TextLabel
 @onready var options_box: VBoxContainer = %OptionsBox
+@onready var portrait_rect: TextureRect = %PortraitRect
 
 
 func _ready() -> void:
 	hide()
 
 
-func show_node(speaker: String, text: String, options: Array[Dictionary]) -> void:
+func show_node(
+	speaker: String, text: String, options: Array[Dictionary], portrait: Texture2D = null
+) -> void:
 	speaker_label.text = speaker
 	text_label.text = text
+	portrait_rect.texture = portrait
+	portrait_rect.visible = portrait != null
 	for child in options_box.get_children():
 		child.queue_free()
 	for option in options:

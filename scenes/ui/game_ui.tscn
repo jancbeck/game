@@ -29,22 +29,35 @@ theme_override_constants/margin_top = 16
 theme_override_constants/margin_right = 24
 theme_override_constants/margin_bottom = 16
 
-[node name="VBox" type="VBoxContainer" parent="DialogueUI/Panel/Margin"]
+[node name="HBox" type="HBoxContainer" parent="DialogueUI/Panel/Margin"]
 layout_mode = 2
+theme_override_constants/separation = 20
 
-[node name="SpeakerLabel" type="Label" parent="DialogueUI/Panel/Margin/VBox"]
+[node name="PortraitRect" type="TextureRect" parent="DialogueUI/Panel/Margin/HBox"]
+unique_name_in_owner = true
+layout_mode = 2
+custom_minimum_size = Vector2(150, 0)
+expand_mode = 1
+stretch_mode = 5
+visible = false
+
+[node name="VBox" type="VBoxContainer" parent="DialogueUI/Panel/Margin/HBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="SpeakerLabel" type="Label" parent="DialogueUI/Panel/Margin/HBox/VBox"]
 unique_name_in_owner = true
 layout_mode = 2
 theme_override_font_sizes/font_size = 22
 
-[node name="TextLabel" type="RichTextLabel" parent="DialogueUI/Panel/Margin/VBox"]
+[node name="TextLabel" type="RichTextLabel" parent="DialogueUI/Panel/Margin/HBox/VBox"]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 3
 bbcode_enabled = true
 fit_content = true
 
-[node name="OptionsBox" type="VBoxContainer" parent="DialogueUI/Panel/Margin/VBox"]
+[node name="OptionsBox" type="VBoxContainer" parent="DialogueUI/Panel/Margin/HBox/VBox"]
 unique_name_in_owner = true
 layout_mode = 2
 
