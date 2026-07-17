@@ -10,6 +10,12 @@ var shots := 0
 
 
 func _initialize() -> void:
+	# Failsafe so a script error can't hang CI until the job timeout.
+	create_timer(120.0).timeout.connect(
+		func() -> void:
+			printerr("screenshots timed out")
+			quit(1)
+	)
 	call_deferred("_run")
 
 

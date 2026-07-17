@@ -18,6 +18,13 @@ func _check(ok: bool, label: String) -> void:
 
 
 func _initialize() -> void:
+	# Failsafe: if _run aborts on a script error mid-way, the main loop
+	# keeps spinning and would hang CI forever. This timer fires anyway.
+	create_timer(90.0).timeout.connect(
+		func() -> void:
+			printerr("  FAIL: smoke test timed out (script error or hang)")
+			quit(1)
+	)
 	# Defer so autoloads (Db, Store) are in the tree before we start.
 	call_deferred("_run")
 
