@@ -36,11 +36,36 @@ The story asks what you do once you know the price of safety.
 
 ## Visual approach
 
-Gray-box on purpose: procedural capsule characters with code-driven idle
-sway and walk bob; atmosphere from fog, cold moonlight, warm torch pools,
-and the fixed 45°/−50° isometric camera. No skeletal animation, no
-imported models, no rig retargeting — the exact pipeline that killed the
-previous prototype is out of scope by design.
+Two coexisting modes, one constant: **characters are always procedural 3D**
+— no skeletal animation, no imported models, no rig retargeting (the exact
+pipeline that killed the previous prototype).
+
+- **Gray-box** (`scenes/main.tscn`): procedural capsule characters, fog,
+  cold moonlight, warm torch pools, fixed isometric camera. The original
+  bootstrap; still boots and is tested.
+- **Painted** (`scenes/painted/*.tscn`): the Disco Elysium direction — a 2D
+  painted backdrop (generated art) with the same procedural characters,
+  now full limbed `CharacterRig` actors, walking on it under lights placed
+  where the painting's fires are. This is where new story content goes.
+
+The mechanics layer is identical across both; only presentation differs.
+See `docs/PIPELINE.md` for the how and why.
+
+## Two settings currently coexist
+
+Be aware when adding content: the repo holds the start of a second story.
+
+- **Ashen Vale** (original) — the penal-colony/barrier arc above, fully built
+  in `data/quests` + `data/dialogues` (Rurik, Marda, Essek, the Overseer).
+- **The Myrtana retcon** (new, painted) — a *Gothic 3 retelling* that the
+  painted `prison_yard` scene opens: the nameless hero arrives from Khorinis,
+  is disbelieved and thrown in the royal prison (stats stripped to zero), and
+  the intended arc is prison break → join the Highland rebels → retake towns
+  → reach the capital to warn the King → the orc fleet arrives at the harbor.
+  Only the first scene (Jailer Ordo) exists. The hardening mechanic and all
+  systems are shared; it is a presentation + content branch, not a fork.
+
+Decide which setting a new scene belongs to before authoring it.
 
 ## Deliberate non-goals
 

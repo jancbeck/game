@@ -30,8 +30,27 @@ flexibility of the others; hardened attributes lock dialogue options forever.
 - `scripts/systems/dialogue_runner.gd` — runs one dialogue graph; applies
   option effects through the store. UI-free, fully unit-tested.
 - `scripts/main.gd` — glue: world ↔ runner ↔ UI ↔ store.
-- Characters are procedural primitives (no skeletal animation, no rigs,
-  no imported models). Mood comes from lighting/fog, not asset fidelity.
+- `scripts/systems/painted_scene.gd` + `scripts/world/character_rig.gd` —
+  the Disco Elysium-style presentation: a 2D painted backdrop with
+  real-time, code-animated 3D characters walking on it. Scenes are data
+  (`data/scenes/*.json`); assets live in `art/`.
+- **Presentation is dual.** `scenes/main.tscn` is the original gray-box 3D
+  world (procedural capsules, fog, torch pools); `scenes/painted/*.tscn` is
+  the painted-backdrop direction new content should use. Both share the same
+  store/reducers/dialogue runner. Characters everywhere are procedural — no
+  skeletal rigs, no imported models, no retargeting (the pipeline that
+  killed the previous prototype). See `docs/PIPELINE.md`.
+
+## Pipeline knowledge (not inferable from code)
+
+- `docs/PIPELINE.md` — why painted-backdrop + 3D actors, the pixel↔ground
+  trick, occluder cards, and the known limitations (wall-fire placement,
+  no music/SFX).
+- `docs/CI.md` — the screenshot review loop and environment traps (proxy
+  blocks, the Node2D/Node3D hang, SceneTree failsafe timers).
+- Skills: `generate-assets` (backdrops/sprites/portraits/voice via OpenAI,
+  with the empirical API findings) and `add-painted-scene` (the
+  calibration-by-screenshot authoring workflow).
 
 ## Content format (data/)
 
