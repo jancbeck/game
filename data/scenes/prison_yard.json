@@ -1,0 +1,25 @@
+{
+  "id": "prison_yard",
+  "backdrop": "res://art/scenes/prison_yard.png",
+  "spawn": [700, 560],
+  "walk_polygon": [
+    [450, 430],
+    [940, 400],
+    [980, 630],
+    [1000, 920],
+    [640, 950],
+    [450, 790]
+  ],
+  "player": {"sprite": "res://art/sprites/convict.png", "scale": 0.16},
+  "npcs": [
+    {
+      "id": "jailer",
+      "name": "Jailer Ordo",
+      "pos": [500, 590],
+      "sprite": "res://art/sprites/jailer.png",
+      "scale": 0.17,
+      "dialogue": "royal_jailer",
+      "interact_radius": 150
+    }
+  ]
+}

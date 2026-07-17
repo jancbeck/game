@@ -35,8 +35,21 @@ func _run() -> void:
 	for i in 10:
 		await process_frame
 	await _snap("03_dialogue")
+
+	# The painted scene (Disco Elysium-style pipeline).
+	main.queue_free()
+	await process_frame
+	var painted: Node = (load("res://scenes/painted/prison_yard.tscn") as PackedScene).instantiate()
+	root.add_child(painted)
+	for i in 30:
+		await process_frame
+	await _snap("04_prison_yard")
+	painted.start_dialogue(painted.npcs[0])
+	for i in 10:
+		await process_frame
+	await _snap("05_prison_dialogue")
 	print("Screenshots written: %d" % shots)
-	quit(0 if shots == 3 else 1)
+	quit(0 if shots == 5 else 1)
 
 
 func _snap(shot_name: String) -> void:

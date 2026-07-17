@@ -1,11 +1,10 @@
-[gd_scene load_steps=20 format=3 uid="uid://main000000001"]
+[gd_scene load_steps=19 format=3 uid="uid://main000000001"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_main"]
 [ext_resource type="Script" path="res://scripts/world/player.gd" id="2_player"]
 [ext_resource type="Script" path="res://scripts/world/camera_rig.gd" id="3_camrig"]
 [ext_resource type="PackedScene" path="res://scenes/npc.tscn" id="4_npc"]
-[ext_resource type="Script" path="res://scripts/ui/dialogue_ui.gd" id="5_dlgui"]
-[ext_resource type="Script" path="res://scripts/ui/hud.gd" id="6_hud"]
+[ext_resource type="PackedScene" path="res://scenes/ui/game_ui.tscn" id="5_gameui"]
 
 [sub_resource type="ProceduralSkyMaterial" id="sky_mat"]
 sky_top_color = Color(0.03, 0.04, 0.08, 1)
@@ -200,104 +199,4 @@ npc_name = "The Overseer"
 dialogue_id = "overseer"
 sway_seed = 5.7
 
-[node name="UI" type="CanvasLayer" parent="."]
-
-[node name="DialogueUI" type="Control" parent="UI"]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-script = ExtResource("5_dlgui")
-
-[node name="Panel" type="PanelContainer" parent="UI/DialogueUI"]
-layout_mode = 1
-anchors_preset = 12
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = -280.0
-grow_horizontal = 2
-grow_vertical = 0
-
-[node name="Margin" type="MarginContainer" parent="UI/DialogueUI/Panel"]
-layout_mode = 2
-theme_override_constants/margin_left = 24
-theme_override_constants/margin_top = 16
-theme_override_constants/margin_right = 24
-theme_override_constants/margin_bottom = 16
-
-[node name="VBox" type="VBoxContainer" parent="UI/DialogueUI/Panel/Margin"]
-layout_mode = 2
-
-[node name="SpeakerLabel" type="Label" parent="UI/DialogueUI/Panel/Margin/VBox"]
-unique_name_in_owner = true
-layout_mode = 2
-theme_override_font_sizes/font_size = 22
-
-[node name="TextLabel" type="RichTextLabel" parent="UI/DialogueUI/Panel/Margin/VBox"]
-unique_name_in_owner = true
-layout_mode = 2
-size_flags_vertical = 3
-bbcode_enabled = true
-fit_content = true
-
-[node name="OptionsBox" type="VBoxContainer" parent="UI/DialogueUI/Panel/Margin/VBox"]
-unique_name_in_owner = true
-layout_mode = 2
-
-[node name="Hud" type="Control" parent="UI"]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-mouse_filter = 2
-script = ExtResource("6_hud")
-
-[node name="StatsLabel" type="RichTextLabel" parent="UI/Hud"]
-unique_name_in_owner = true
-layout_mode = 1
-offset_left = 16.0
-offset_top = 16.0
-offset_right = 280.0
-offset_bottom = 160.0
-bbcode_enabled = true
-mouse_filter = 2
-
-[node name="QuestLabel" type="Label" parent="UI/Hud"]
-unique_name_in_owner = true
-layout_mode = 1
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -420.0
-offset_top = 16.0
-offset_right = -16.0
-offset_bottom = 48.0
-horizontal_alignment = 2
-
-[node name="PromptLabel" type="Label" parent="UI/Hud"]
-unique_name_in_owner = true
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -200.0
-offset_top = -60.0
-offset_right = 200.0
-offset_bottom = -28.0
-horizontal_alignment = 1
-theme_override_font_sizes/font_size = 20
-
-[node name="MessageLabel" type="Label" parent="UI/Hud"]
-unique_name_in_owner = true
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -150.0
-offset_top = 60.0
-offset_right = 150.0
-offset_bottom = 92.0
-horizontal_alignment = 1
+[node name="UI" parent="." instance=ExtResource("5_gameui")]

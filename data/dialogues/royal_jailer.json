@@ -1,0 +1,72 @@
+{
+  "id": "royal_jailer",
+  "nodes": {
+    "start": {
+      "speaker": "Jailer Ordo",
+      "text": "Off the boat from Khorinis and straight into my yard. You know what the last man who claimed to carry 'urgent news for the King' got? A shorter rope than he asked for. So. The nameless prisoner speaks — or hangs at dawn with the other liars.",
+      "options": [
+        {
+          "text": "Grab the bars between you. Bend them. Slowly. While holding his gaze.",
+          "requires": {"not_flags": ["ordo_heard_warning"]},
+          "effects": [
+            {"type": "apply_approach", "attribute": "might"},
+            {"type": "set_flag", "flag": "ordo_heard_warning"},
+            {"type": "set_flag", "flag": "ordo_intimidated"},
+            {"type": "journal", "text": "The iron groaned. Ordo went pale and listened to every word about the orc fleet."}
+          ],
+          "next": "warning"
+        },
+        {
+          "text": "Mention that you counted the keys on his ring. And which one is missing.",
+          "requires": {"not_flags": ["ordo_heard_warning"]},
+          "effects": [
+            {"type": "apply_approach", "attribute": "guile"},
+            {"type": "set_flag", "flag": "ordo_heard_warning"},
+            {"type": "set_flag", "flag": "ordo_compromised"},
+            {"type": "journal", "text": "A jailer who loses a key doesn't report it. He makes arrangements. Ordo is now an arrangement."}
+          ],
+          "next": "warning"
+        },
+        {
+          "text": "Describe the orc war-banners you saw at sea — clan by clan, in the old tongue.",
+          "requires": {"not_flags": ["ordo_heard_warning"]},
+          "effects": [
+            {"type": "apply_approach", "attribute": "lore"},
+            {"type": "set_flag", "flag": "ordo_heard_warning"},
+            {"type": "journal", "text": "No escaped convict knows the banner-speech of the clans. Ordo stopped smiling halfway through the second name."}
+          ],
+          "next": "warning"
+        },
+        {
+          "text": "Ask him how many men he's hanged who told the truth.",
+          "requires": {"not_flags": ["ordo_heard_warning"]},
+          "effects": [
+            {"type": "apply_approach", "attribute": "heart"},
+            {"type": "set_flag", "flag": "ordo_heard_warning"},
+            {"type": "set_flag", "flag": "ordo_conscience_struck"},
+            {"type": "journal", "text": "Ordo didn't answer. But he stopped reaching for the rope, and that was an answer."}
+          ],
+          "next": "warning"
+        },
+        {
+          "text": "[Say nothing and study the yard]",
+          "effects": [],
+          "next": ""
+        }
+      ]
+    },
+    "warning": {
+      "speaker": "Jailer Ordo",
+      "text": "...An orc fleet. Off the coast. If you're lying, you hang. If you're not — gods — then this prison is the safest place in Myrtana and I'm not fool enough to say that twice. The rebels in the Highlands pay for news like yours. I never said that. Now get back to your cell before the watch changes.",
+      "options": [
+        {
+          "text": "[Return to the shadows of the yard]",
+          "effects": [
+            {"type": "journal", "text": "The rebels in the Highlands. A jailer's slip, or a jailer's mercy. Either way: a way out."}
+          ],
+          "next": ""
+        }
+      ]
+    }
+  }
+}

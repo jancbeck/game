@@ -70,6 +70,25 @@ func _run() -> void:
 	)
 	DirAccess.remove_absolute(save_path)
 
+	# Painted scene: boot the Disco Elysium-style pipeline end to end.
+	main.queue_free()
+	await process_frame
+	store.reset()
+	var painted_packed: PackedScene = load("res://scenes/painted/prison_yard.tscn")
+	_check(painted_packed != null, "prison_yard.tscn loads")
+	var painted: Node = painted_packed.instantiate()
+	root.add_child(painted)
+	await process_frame
+	await process_frame
+	_check(painted.player != null, "painted scene built player from manifest")
+	_check(painted.npcs.size() == 1, "painted scene placed NPCs")
+	painted.start_dialogue(painted.npcs[0])
+	_check(painted.runner != null, "painted scene dialogue started")
+	_choose_containing(painted, "counted the keys")
+	_check("ordo_compromised" in store.get_state()["flags"], "painted scene effect applied")
+	_choose_containing(painted, "shadows of the yard")
+	_check(painted.runner == null, "painted scene dialogue ended")
+
 	# Let a few frames run so _process/_physics_process code paths execute.
 	for i in 10:
 		await process_frame

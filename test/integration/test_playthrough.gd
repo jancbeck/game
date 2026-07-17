@@ -108,6 +108,23 @@ func test_overseer_stonewalls_without_the_secret() -> void:
 		assert_bool("barrier eats" in str(option["text"]) and option["available"]).is_false()
 
 
+func test_prison_yard_jailer_scene() -> void:
+	# The painted-scene demo content: every approach reaches the warning,
+	# repeat conversations offer no second approach, and the scene
+	# manifest wires to this dialogue.
+	_talk("royal_jailer", ["counted the keys", "shadows of the yard"])
+	var state: Dictionary = store.get_state()
+	assert_bool(Reducers.has_flag(state, "ordo_heard_warning")).is_true()
+	assert_bool(Reducers.has_flag(state, "ordo_compromised")).is_true()
+	assert_int(Reducers.attribute_score(state, "guile")).is_equal(2)
+	var runner := DialogueRunner.new(dialogues["royal_jailer"])
+	runner.start()
+	for option in runner.visible_options(store.get_state()):
+		assert_bool("[Say nothing" in str(option["text"])).is_true()
+	var scene: Dictionary = DbScript._load_dir("res://data/scenes")["prison_yard"]
+	assert_str(str(scene["npcs"][0]["dialogue"])).is_equal("royal_jailer")
+
+
 func test_save_load_mid_story_preserves_progress() -> void:
 	_talk("gatekeeper", ["brandy", "[Enter the camp]"])
 	var path := "user://test_mid_save.json"
