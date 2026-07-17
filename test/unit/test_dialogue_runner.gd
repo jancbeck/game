@@ -82,12 +82,12 @@ func test_dialogue_ends_on_empty_next() -> void:
 
 
 func test_store_dispatch_ignores_bad_reducer_result() -> void:
-	var before := store.get_state()
+	var before: Dictionary = store.get_state()
 	store.dispatch(func(_s: Dictionary) -> Variant: return null)
 	assert_bool(store.get_state().hash() == before.hash()).is_true()
 
 
 func test_store_state_is_a_copy() -> void:
-	var leaked := store.get_state()
+	var leaked: Dictionary = store.get_state()
 	leaked["flags"].append("tampered")
 	assert_bool(Reducers.has_flag(store.get_state(), "tampered")).is_false()
