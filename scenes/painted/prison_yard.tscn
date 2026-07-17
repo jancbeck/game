@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://paintedpy0001"]
+
+[ext_resource type="Script" path="res://scripts/systems/painted_scene.gd" id="1_scene"]
+[ext_resource type="PackedScene" path="res://scenes/ui/game_ui.tscn" id="2_gameui"]
+
+[node name="PrisonYard" type="Node3D"]
+script = ExtResource("1_scene")
+scene_id = "prison_yard"
+
+[node name="UI" parent="." instance=ExtResource("2_gameui")]

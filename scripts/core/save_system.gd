@@ -1,41 +1,38 @@
 class_name SaveSystem
 extends RefCounted
+## Save/load: the store state IS the save file. Nothing else is persisted.
 
-## Handles serialization and deserialization of the game state.
-## Stores data in user://save.dat (Variant format).
-
-const SAVE_PATH = "user://save.dat"
+const SAVE_PATH := "user://save.json"
 
 
-## Saves the current state to disk.
-static func save_state(state: Dictionary) -> void:
-	var file = FileAccess.open(SAVE_PATH, FileAccess.WRITE)
-	if file:
-		# Use var_to_str to handle Godot types like Vector3 correctly
-		file.store_string(var_to_str(state))
-		print("Game saved to " + SAVE_PATH)
-	else:
-		push_error("Failed to save game to " + SAVE_PATH)
+static func save_game(state: Dictionary, path: String = SAVE_PATH) -> bool:
+	var file := FileAccess.open(path, FileAccess.WRITE)
+	if file == null:
+		push_error("Cannot open save file for writing: %s" % path)
+		return false
+	file.store_string(JSON.stringify(state, "\t"))
+	file.close()
+	return true
 
 
-## Loads the state from disk. returns empty Dictionary if failed.
-static func load_state() -> Dictionary:
-	if not FileAccess.file_exists(SAVE_PATH):
-		push_warning("No save file found at " + SAVE_PATH)
+static func load_game(path: String = SAVE_PATH) -> Dictionary:
+	if not FileAccess.file_exists(path):
 		return {}
-
-	var file = FileAccess.open(SAVE_PATH, FileAccess.READ)
-	if not file:
-		push_error("Failed to open save file " + SAVE_PATH)
+	var text := FileAccess.get_file_as_string(path)
+	var parsed: Variant = JSON.parse_string(text)
+	if not parsed is Dictionary:
+		push_error("Corrupt save file: %s" % path)
 		return {}
+	return _normalize(parsed)
 
-	var content = file.get_as_text()
-	# Use str_to_var to restore Godot types
-	var data = str_to_var(content)
 
-	if typeof(data) != TYPE_DICTIONARY:
-		push_error("Save file corrupted or invalid format")
-		return {}
-
-	print("Game loaded from " + SAVE_PATH)
-	return data
+## JSON round-trips lose int-ness (everything becomes float); fix the
+## fields game logic compares as ints so ==/>= behave predictably.
+static func _normalize(state: Dictionary) -> Dictionary:
+	var attributes: Dictionary = state.get("player", {}).get("attributes", {})
+	for attr_id: String in attributes:
+		attributes[attr_id]["score"] = int(attributes[attr_id]["score"])
+		attributes[attr_id]["flexibility"] = int(attributes[attr_id]["flexibility"])
+	if state.has("version"):
+		state["version"] = int(state["version"])
+	return state

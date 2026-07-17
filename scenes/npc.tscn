@@ -1,0 +1,61 @@
+[gd_scene load_steps=8 format=3 uid="uid://npc0000000001"]
+
+[ext_resource type="Script" path="res://scripts/world/npc.gd" id="1_npc"]
+
+[sub_resource type="StandardMaterial3D" id="mat_body"]
+albedo_color = Color(0.45, 0.38, 0.32, 1)
+roughness = 0.9
+
+[sub_resource type="StandardMaterial3D" id="mat_head"]
+albedo_color = Color(0.75, 0.6, 0.5, 1)
+roughness = 0.8
+
+[sub_resource type="CapsuleMesh" id="mesh_body"]
+radius = 0.35
+height = 1.4
+
+[sub_resource type="SphereMesh" id="mesh_head"]
+radius = 0.22
+height = 0.44
+
+[sub_resource type="CylinderShape3D" id="shape_area"]
+height = 2.0
+radius = 1.8
+
+[sub_resource type="CapsuleShape3D" id="shape_solid"]
+radius = 0.35
+height = 1.4
+
+[node name="Npc" type="Node3D" groups=["npcs"]]
+script = ExtResource("1_npc")
+
+[node name="Body" type="Node3D" parent="."]
+
+[node name="Torso" type="MeshInstance3D" parent="Body"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7, 0)
+mesh = SubResource("mesh_body")
+surface_material_override/0 = SubResource("mat_body")
+
+[node name="Head" type="MeshInstance3D" parent="Body"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.6, 0)
+mesh = SubResource("mesh_head")
+surface_material_override/0 = SubResource("mat_head")
+
+[node name="NameLabel" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.1, 0)
+billboard = 1
+text = "Stranger"
+font_size = 48
+outline_size = 12
+
+[node name="Solid" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Solid"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7, 0)
+shape = SubResource("shape_solid")
+
+[node name="InteractionArea" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="InteractionArea"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("shape_area")

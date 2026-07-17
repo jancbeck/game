@@ -1,0 +1,195 @@
+{
+  "id": "camp_leader",
+  "nodes": {
+    "start": {
+      "speaker": "Marda, Camp Leader",
+      "text": "New blood. The Vale takes everyone the same and keeps them different. Rule here is simple: you're worth what you can do. So — what are you worth?",
+      "options": [
+        {
+          "text": "I broke the east shaft's jammed lift cage with my hands. Ore's moving again.",
+          "requires": {
+            "quest_active": [
+              "earn_your_place"
+            ],
+            "attributes": {
+              "might": 1
+            }
+          },
+          "show_locked": true,
+          "effects": [
+            {
+              "type": "apply_approach",
+              "attribute": "might"
+            },
+            {
+              "type": "complete_quest",
+              "quest": "earn_your_place",
+              "approach": "might"
+            },
+            {
+              "type": "set_flag",
+              "flag": "camp_member"
+            },
+            {
+              "type": "start_quest",
+              "quest": "free_the_prisoner"
+            },
+            {
+              "type": "journal",
+              "text": "Marda watched you bend the lift cage back into true. You eat with the diggers now."
+            }
+          ],
+          "next": "accepted"
+        },
+        {
+          "text": "Your quartermaster skims a tenth of every ration crate. I can prove it — or keep proving useful.",
+          "requires": {
+            "quest_active": [
+              "earn_your_place"
+            ],
+            "attributes": {
+              "guile": 1
+            }
+          },
+          "show_locked": true,
+          "effects": [
+            {
+              "type": "apply_approach",
+              "attribute": "guile"
+            },
+            {
+              "type": "complete_quest",
+              "quest": "earn_your_place",
+              "approach": "guile"
+            },
+            {
+              "type": "set_flag",
+              "flag": "camp_member"
+            },
+            {
+              "type": "set_flag",
+              "flag": "knows_quartermaster_secret"
+            },
+            {
+              "type": "start_quest",
+              "quest": "free_the_prisoner"
+            },
+            {
+              "type": "journal",
+              "text": "Marda didn't thank you for the tip about the quartermaster. She promoted you instead."
+            }
+          ],
+          "next": "accepted"
+        },
+        {
+          "text": "Your smelter burns wrong. Blue flame means the flux is contaminated — I can fix the mix.",
+          "requires": {
+            "quest_active": [
+              "earn_your_place"
+            ],
+            "attributes": {
+              "lore": 1
+            }
+          },
+          "show_locked": true,
+          "effects": [
+            {
+              "type": "apply_approach",
+              "attribute": "lore"
+            },
+            {
+              "type": "complete_quest",
+              "quest": "earn_your_place",
+              "approach": "lore"
+            },
+            {
+              "type": "set_flag",
+              "flag": "camp_member"
+            },
+            {
+              "type": "start_quest",
+              "quest": "free_the_prisoner"
+            },
+            {
+              "type": "journal",
+              "text": "The smelter runs clean for the first time in a season. Marda called you 'scholar' and it wasn't quite mockery."
+            }
+          ],
+          "next": "accepted"
+        },
+        {
+          "text": "The diggers haven't sung since the cave-in. I sat with them last night. They'll work tomorrow.",
+          "requires": {
+            "quest_active": [
+              "earn_your_place"
+            ],
+            "attributes": {
+              "heart": 1
+            }
+          },
+          "show_locked": true,
+          "effects": [
+            {
+              "type": "apply_approach",
+              "attribute": "heart"
+            },
+            {
+              "type": "complete_quest",
+              "quest": "earn_your_place",
+              "approach": "heart"
+            },
+            {
+              "type": "set_flag",
+              "flag": "camp_member"
+            },
+            {
+              "type": "set_flag",
+              "flag": "diggers_trust_you"
+            },
+            {
+              "type": "start_quest",
+              "quest": "free_the_prisoner"
+            },
+            {
+              "type": "journal",
+              "text": "Marda says morale isn't her department. She also stopped posting a guard on your tent."
+            }
+          ],
+          "next": "accepted"
+        },
+        {
+          "text": "What happens to people who aren't worth anything?",
+          "effects": [],
+          "next": "worth_nothing"
+        },
+        {
+          "text": "[Leave]",
+          "effects": [],
+          "next": ""
+        }
+      ]
+    },
+    "worth_nothing": {
+      "speaker": "Marda, Camp Leader",
+      "text": "They dig anyway. Just deeper, and for less. Ask the chained man by the east posts — the Overseer judged him surplus. Prove yourself before someone does your arithmetic for you. Come back when you've done something the camp can chew on.",
+      "options": [
+        {
+          "text": "Understood.",
+          "effects": [],
+          "next": "start"
+        }
+      ]
+    },
+    "accepted": {
+      "speaker": "Marda, Camp Leader",
+      "text": "Good. You're camp now — which means the Overseer knows your name by sundown. One more thing: the chained man. His judgement comes tomorrow. What you do about that is your own ledger.",
+      "options": [
+        {
+          "text": "I'll look into it.",
+          "effects": [],
+          "next": ""
+        }
+      ]
+    }
+  }
+}

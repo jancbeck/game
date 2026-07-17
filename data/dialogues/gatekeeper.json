@@ -1,0 +1,111 @@
+{
+  "id": "gatekeeper",
+  "nodes": {
+    "start": {
+      "speaker": "Rurik the Gatekeeper",
+      "text": "Another one the barrier spat through. You're in the Ashen Vale now, convict. The gate behind me leads to the camp — and it stays shut until I say otherwise.",
+      "options": [
+        {
+          "text": "Open it, or I open you.",
+          "requires": {"quest_not_completed": ["enter_the_vale"]},
+          "effects": [
+            {"type": "start_quest", "quest": "enter_the_vale"},
+            {"type": "apply_approach", "attribute": "might"},
+            {"type": "complete_quest", "quest": "enter_the_vale", "approach": "might"},
+            {"type": "set_flag", "flag": "gate_opened"},
+            {"type": "set_flag", "flag": "rurik_bullied"},
+            {"type": "start_quest", "quest": "earn_your_place"},
+            {"type": "journal", "text": "You threatened Rurik. He opened the gate. He will remember."}
+          ],
+          "next": "opened_might"
+        },
+        {
+          "text": "You look thirsty. I know where the last shipment's brandy went missing.",
+          "requires": {"quest_not_completed": ["enter_the_vale"]},
+          "effects": [
+            {"type": "start_quest", "quest": "enter_the_vale"},
+            {"type": "apply_approach", "attribute": "guile"},
+            {"type": "complete_quest", "quest": "enter_the_vale", "approach": "guile"},
+            {"type": "set_flag", "flag": "gate_opened"},
+            {"type": "set_flag", "flag": "rurik_owes_you"},
+            {"type": "start_quest", "quest": "earn_your_place"},
+            {"type": "journal", "text": "You bought Rurik with a lie about brandy. Hope he never checks."}
+          ],
+          "next": "opened_guile"
+        },
+        {
+          "text": "The Vale Charter, third seal: no warden may hold a soul between barrier and camp past sundown.",
+          "requires": {"quest_not_completed": ["enter_the_vale"]},
+          "effects": [
+            {"type": "start_quest", "quest": "enter_the_vale"},
+            {"type": "apply_approach", "attribute": "lore"},
+            {"type": "complete_quest", "quest": "enter_the_vale", "approach": "lore"},
+            {"type": "set_flag", "flag": "gate_opened"},
+            {"type": "start_quest", "quest": "earn_your_place"},
+            {"type": "journal", "text": "You quoted a charter that may or may not exist. Rurik blinked first."}
+          ],
+          "next": "opened_lore"
+        },
+        {
+          "text": "How long have they kept you out here alone, Rurik?",
+          "requires": {"quest_not_completed": ["enter_the_vale"]},
+          "effects": [
+            {"type": "start_quest", "quest": "enter_the_vale"},
+            {"type": "apply_approach", "attribute": "heart"},
+            {"type": "complete_quest", "quest": "enter_the_vale", "approach": "heart"},
+            {"type": "set_flag", "flag": "gate_opened"},
+            {"type": "set_flag", "flag": "rurik_confided"},
+            {"type": "start_quest", "quest": "earn_your_place"},
+            {"type": "journal", "text": "Rurik talked for an hour about the daughter he left outside the barrier. Then he opened the gate."}
+          ],
+          "next": "opened_heart"
+        },
+        {
+          "text": "What is this place?",
+          "effects": [],
+          "next": "about_vale"
+        },
+        {
+          "text": "[Leave]",
+          "effects": [],
+          "next": ""
+        }
+      ]
+    },
+    "about_vale": {
+      "speaker": "Rurik the Gatekeeper",
+      "text": "A mining colony with a magic fence, is what. The Crown tips its condemned over the barrier and the Vale keeps them. The ore goes out. Nothing else does. Marda runs the camp; the Overseer runs Marda. That's the whole civics lesson.",
+      "options": [
+        {"text": "Back to the point.", "effects": [], "next": "start"}
+      ]
+    },
+    "opened_might": {
+      "speaker": "Rurik the Gatekeeper",
+      "text": "Easy. Easy! It's open. Walk through and see how far shoving gets you with the Overseer.",
+      "options": [
+        {"text": "[Enter the camp]", "effects": [], "next": ""}
+      ]
+    },
+    "opened_guile": {
+      "speaker": "Rurik the Gatekeeper",
+      "text": "Missing brandy, eh. You and I are going to get along — or one of us will. In you go.",
+      "options": [
+        {"text": "[Enter the camp]", "effects": [], "next": ""}
+      ]
+    },
+    "opened_lore": {
+      "speaker": "Rurik the Gatekeeper",
+      "text": "...Third seal. Aye. Of course. In you go, lawyer. The Vale eats clever ones slower, they say. More chewing.",
+      "options": [
+        {"text": "[Enter the camp]", "effects": [], "next": ""}
+      ]
+    },
+    "opened_heart": {
+      "speaker": "Rurik the Gatekeeper",
+      "text": "Eleven years. You're the first to ask. Go on through before I remember what I'm for.",
+      "options": [
+        {"text": "[Enter the camp]", "effects": [], "next": ""}
+      ]
+    }
+  }
+}

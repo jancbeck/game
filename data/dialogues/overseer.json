@@ -1,0 +1,121 @@
+{
+  "id": "overseer",
+  "nodes": {
+    "start": {
+      "speaker": "The Overseer",
+      "text": "The new arithmetic. I know what you did at the gate, in the camp, and by the east posts. The Vale reports everything to me eventually. Say what you came to say.",
+      "options": [
+        {
+          "text": "I know what the barrier eats.",
+          "requires": {"quest_active": ["confront_overseer"], "flags": ["knows_barrier_secret"]},
+          "effects": [],
+          "next": "confrontation"
+        },
+        {
+          "text": "Just taking your measure.",
+          "effects": [],
+          "next": "measure"
+        },
+        {
+          "text": "[Leave]",
+          "effects": [],
+          "next": ""
+        }
+      ]
+    },
+    "measure": {
+      "speaker": "The Overseer",
+      "text": "Everyone does, once. Then the Vale takes theirs. Come back when you have something worth the candle — or when the chained man's tongue loosens yours.",
+      "options": [
+        {"text": "[Step back]", "effects": [], "next": "start"}
+      ]
+    },
+    "confrontation": {
+      "speaker": "The Overseer",
+      "text": "So Essek talked. Yes — the barrier is fed. Nine hundred souls keep forty thousand safe from what sleeps under this valley. I keep the tally so no one else has to. Now you know the price of the wall. What will you do about it — with what you've made of yourself?",
+      "options": [
+        {
+          "text": "[Might 3] Walk past him and shatter the tally-pylon with your bare hands.",
+          "requires": {"attributes": {"might": 3}, "not_hardened": ["might"]},
+          "show_locked": true,
+          "effects": [
+            {"type": "apply_approach", "attribute": "might"},
+            {"type": "complete_quest", "quest": "confront_overseer", "approach": "might"},
+            {"type": "set_flag", "flag": "ending_shattered"},
+            {"type": "journal", "text": "The pylon cracked like river ice. Whatever sleeps below is waking, and every soul in the Vale is finally free to face it. You chose the honest catastrophe."}
+          ],
+          "next": "ending_shattered"
+        },
+        {
+          "text": "[Guile 3] The tally has errors. You know, because you put them there. Propose a quiet partnership.",
+          "requires": {"attributes": {"guile": 3}, "not_hardened": ["guile"]},
+          "show_locked": true,
+          "effects": [
+            {"type": "apply_approach", "attribute": "guile"},
+            {"type": "complete_quest", "quest": "confront_overseer", "approach": "guile"},
+            {"type": "set_flag", "flag": "ending_partnership"},
+            {"type": "journal", "text": "The Overseer keeps the wall. You keep the Overseer. Nobody outside this room will ever know who runs the Vale now."}
+          ],
+          "next": "ending_partnership"
+        },
+        {
+          "text": "[Lore 3] The feeding rite is a translation error. The old rune means 'witness', not 'consume'. Show him.",
+          "requires": {"attributes": {"lore": 3}, "not_hardened": ["lore"]},
+          "show_locked": true,
+          "effects": [
+            {"type": "apply_approach", "attribute": "lore"},
+            {"type": "complete_quest", "quest": "confront_overseer", "approach": "lore"},
+            {"type": "set_flag", "flag": "ending_rewritten"},
+            {"type": "journal", "text": "Four centuries of feeding, from one mistranslated rune. The barrier only ever needed to be watched. The Overseer sat down in the ash and wept."}
+          ],
+          "next": "ending_rewritten"
+        },
+        {
+          "text": "[Heart 3] The nine hundred deserve to choose. Call the camp together and tell them everything.",
+          "requires": {"attributes": {"heart": 3}, "not_hardened": ["heart"]},
+          "show_locked": true,
+          "effects": [
+            {"type": "apply_approach", "attribute": "heart"},
+            {"type": "complete_quest", "quest": "confront_overseer", "approach": "heart"},
+            {"type": "set_flag", "flag": "ending_chosen"},
+            {"type": "journal", "text": "You told the camp the truth under the barrier's glow. Some raged. Some volunteered. All of them chose. The Vale is still a cage — but its people are no longer cattle."}
+          ],
+          "next": "ending_chosen"
+        },
+        {
+          "text": "I... need to think about this.",
+          "effects": [],
+          "next": ""
+        }
+      ]
+    },
+    "ending_shattered": {
+      "speaker": "The Overseer",
+      "text": "Then it's done. Four hundred years of arithmetic, spent in a fistfall. Run if you like. It won't matter, and that's the freest any of us has ever been.",
+      "options": [
+        {"text": "[THE END — The Honest Catastrophe]", "effects": [], "next": ""}
+      ]
+    },
+    "ending_partnership": {
+      "speaker": "The Overseer",
+      "text": "You'd have made a fine Crown auditor. Very well — partner. The wall stands, the tally lies, and the Vale sleeps another century. Wash your hands on the way out.",
+      "options": [
+        {"text": "[THE END — The Quiet Ledger]", "effects": [], "next": ""}
+      ]
+    },
+    "ending_rewritten": {
+      "speaker": "The Overseer",
+      "text": "'Witness.' All this time. All those names in my tally, and it only wanted... someone to watch. Take the keeper's seat, scholar. I have four centuries of apologies to begin.",
+      "options": [
+        {"text": "[THE END — The Corrected Rune]", "effects": [], "next": ""}
+      ]
+    },
+    "ending_chosen": {
+      "speaker": "The Overseer",
+      "text": "Nine hundred voices instead of one tally. It will be slower. Crueller, some years. But it will be theirs. I find I can live with being unnecessary.",
+      "options": [
+        {"text": "[THE END — The Vale That Chose]", "effects": [], "next": ""}
+      ]
+    }
+  }
+}
