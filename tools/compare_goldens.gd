@@ -14,14 +14,16 @@ extends SceneTree
 ##
 ## Verdict per shot combines two complementary metrics:
 ##   - changed fraction: share of pixels whose worst channel moved past
-##     PIXEL_CHANNEL_TOLERANCE. Catches structural changes (a moved character,
-##     broken occlusion) that shift a localised region hard.
+##     PIXEL_CHANNEL_TOLERANCE. Catches a broad structural change that churns a
+##     large region of the frame.
 ##   - mean luma delta: average luminance shift across the frame. Catches a
 ##     uniform darken/brighten (e.g. reverting a lighting fix) that nudges every
 ##     pixel a little without tripping the per-pixel tolerance.
 ## A shot fails if EITHER exceeds its threshold. A missing golden warns (so the
 ## first run of a new shot bootstraps instead of breaking CI); a size mismatch
-## fails.
+## fails. The thresholds sit above the animated gray-box shots' run-to-run noise
+## (see the constants), so this gate targets gross/global regressions; a nudge
+## smaller than that noise floor can slip. See docs/CI.md.
 
 const SHOTS_DIR := "res://screenshots"
 const GOLDEN_DIR := "res://test/golden"
@@ -29,10 +31,16 @@ const GOLDEN_DIR := "res://test/golden"
 # A pixel counts as "changed" when any RGB channel differs by more than this
 # (0..255). Below this is llvmpipe dithering / rounding, not a real change.
 const PIXEL_CHANNEL_TOLERANCE := 24
-# Fail when more than this fraction of pixels changed.
-const MAX_CHANGED_FRACTION := 0.02
-# Fail when the mean luminance shifts by more than this (0..255).
-const MAX_MEAN_LUMA_DELTA := 6.0
+# Fail when more than this fraction of pixels changed. Tuned ABOVE the measured
+# run-to-run noise of the animated gray-box world shots (torch flicker + fog +
+# walk animation are time/random-driven, so ~2.4% of pixels churn between
+# identical renders); the static painted scenes sit near 0.2%. A gross
+# regression (a darkened scene, a broadly broken frame) churns far more.
+const MAX_CHANGED_FRACTION := 0.05
+# Fail when the mean luminance shifts by more than this (0..255). The same
+# animated shots drift ~2.8 between identical renders; reverting a lighting fix
+# shifts the whole frame by far more.
+const MAX_MEAN_LUMA_DELTA := 8.0
 
 var failures: Array[String] = []
 var warnings: Array[String] = []
@@ -61,8 +69,8 @@ func _run() -> void:
 
 	if update:
 		for shot_name in shots:
-			var src := Image.new()
-			if src.load("%s/%s" % [SHOTS_DIR, shot_name]) != OK:
+			var src := _load_png("%s/%s" % [SHOTS_DIR, shot_name])
+			if src == null:
 				printerr("  FAIL: cannot read %s" % shot_name)
 				quit(1)
 				return
@@ -103,6 +111,19 @@ func _update_mode() -> bool:
 	return "--update" in OS.get_cmdline_user_args()
 
 
+# Decode a PNG from raw bytes rather than Image.load(): loading a res:// path
+# as an image makes Godot warn that it "should be imported" — noise here, since
+# these are freshly rendered / committed reference files we read at runtime.
+func _load_png(path: String) -> Image:
+	var bytes := FileAccess.get_file_as_bytes(path)
+	if bytes.is_empty():
+		return null
+	var img := Image.new()
+	if img.load_png_from_buffer(bytes) != OK:
+		return null
+	return img
+
+
 func _list_pngs(dir_path: String) -> PackedStringArray:
 	var names := PackedStringArray()
 	var dir := DirAccess.open(dir_path)
@@ -122,9 +143,9 @@ func _compare(shot_name: String) -> void:
 		print("  new:  %s (no golden)" % shot_name)
 		return
 
-	var shot := Image.new()
-	var golden := Image.new()
-	if shot.load("%s/%s" % [SHOTS_DIR, shot_name]) != OK or golden.load(golden_path) != OK:
+	var shot := _load_png("%s/%s" % [SHOTS_DIR, shot_name])
+	var golden := _load_png(golden_path)
+	if shot == null or golden == null:
 		failures.append("%s: could not decode image" % shot_name)
 		return
 

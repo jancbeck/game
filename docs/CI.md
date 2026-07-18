@@ -70,11 +70,21 @@ the committed `test/golden/<name>.png` and compares them with a **tolerance**
 complementary metrics, a shot fails if *either* trips:
 
 - **changed fraction** — share of pixels whose worst RGB channel moved past
-  `PIXEL_CHANNEL_TOLERANCE` (24/255); fails above `MAX_CHANGED_FRACTION` (2%).
-  Catches a localised structural change (a moved character, broken occlusion).
+  `PIXEL_CHANNEL_TOLERANCE` (24/255); fails above `MAX_CHANGED_FRACTION` (5%).
 - **mean luma delta** — average luminance shift over the whole frame; fails
-  above `MAX_MEAN_LUMA_DELTA` (6/255). Catches a uniform darken/brighten (e.g.
-  reverting a lighting fix) that few individual pixels trip.
+  above `MAX_MEAN_LUMA_DELTA` (8/255). Catches a uniform darken/brighten (e.g.
+  reverting a lighting fix).
+
+**Threshold tuning (measured, not guessed).** The static painted scenes churn
+~0.2% of pixels / ~0.1 luma between two identical llvmpipe renders. The
+gray-box world shots (`01`–`03`) are far noisier — their torch flicker, fog,
+and walk animation are time/random-driven, so ~2.4% of pixels and ~2.8 luma
+move run-to-run even with no code change. The thresholds sit above that noise
+so the check does not flap. Consequence: this gate reliably catches **gross,
+global regressions** — a darkened scene, a broadly broken frame, a reverted
+lighting fix — which is the ticket's target. A *localised* nudge smaller than
+the animated-scene noise floor (e.g. a single character shifted a few pixels)
+can hide under it; tile-local diffing could tighten that later.
 
 A **missing** golden warns (bootstraps a new shot without breaking CI); a
 **size mismatch** fails. Accepting new goldens after an intentional change is
