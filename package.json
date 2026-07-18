@@ -2,8 +2,7 @@
   "name": "ashen-vale-tools",
   "version": "0.0.0",
   "private": true,
-  "type": "module",
-  "description": "Browser-based authoring tools for Ashen Vale, tested headlessly via Playwright. Not part of the Godot game build.",
+  "description": "Browser-based authoring tools for Ashen Vale, tested headlessly via Playwright. Not part of the Godot game build. NOTE: deliberately no \"type\": \"module\" — the tools are .mjs (ESM by extension), and setting it here would make Node treat checked-out GitHub Actions' bundled .js as ESM and break them.",
   "scripts": {
     "test:tools": "node tools/test_tools.mjs",
     "grid": "node tools/gridshot.mjs"
