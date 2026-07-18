@@ -21,26 +21,33 @@ extends SceneTree
 ##     pixel a little without tripping the per-pixel tolerance.
 ## A shot fails if EITHER exceeds its threshold. A missing golden warns (so the
 ## first run of a new shot bootstraps instead of breaking CI); a size mismatch
-## fails. The thresholds sit above the animated gray-box shots' run-to-run noise
-## (see the constants), so this gate targets gross/global regressions; a nudge
-## smaller than that noise floor can slip. See docs/CI.md.
+## fails. Inherently irreproducible shots (see NONGATING) are reported but never
+## gate. The gated shots are deterministic, so the thresholds are tight enough
+## to catch real regressions in them. See docs/CI.md.
 
 const SHOTS_DIR := "res://screenshots"
 const GOLDEN_DIR := "res://test/golden"
 
+# Shots excluded from the pass/fail gate because they are inherently
+# irreproducible: they capture the gray-box world's character MID-WALK, and the
+# stride phase at capture depends on frame timing, so limbs land in different
+# positions each run (02_walking measured 2.4% then 6.3% changed between two
+# identical-code runs). They are still rendered, published, and reported here as
+# info — just non-gating. The gray-box world's lighting is still guarded by the
+# settled 01_world shot; the painted-pipeline shots (the point of this check)
+# are deterministic and fully gated.
+const NONGATING := ["02_walking.png", "03_dialogue.png"]
+
 # A pixel counts as "changed" when any RGB channel differs by more than this
 # (0..255). Below this is llvmpipe dithering / rounding, not a real change.
 const PIXEL_CHANNEL_TOLERANCE := 24
-# Fail when more than this fraction of pixels changed. Tuned ABOVE the measured
-# run-to-run noise of the animated gray-box world shots (torch flicker + fog +
-# walk animation are time/random-driven, so ~2.4% of pixels churn between
-# identical renders); the static painted scenes sit near 0.2%. A gross
-# regression (a darkened scene, a broadly broken frame) churns far more.
-const MAX_CHANGED_FRACTION := 0.05
-# Fail when the mean luminance shifts by more than this (0..255). The same
-# animated shots drift ~2.8 between identical renders; reverting a lighting fix
-# shifts the whole frame by far more.
-const MAX_MEAN_LUMA_DELTA := 8.0
+# Fail when more than this fraction of pixels changed. The gated shots (painted
+# scenes, settled world, journal) all sit at/under 0.6% between identical
+# renders, so 2% leaves margin while still catching a broad structural change.
+const MAX_CHANGED_FRACTION := 0.02
+# Fail when the mean luminance shifts by more than this (0..255). Gated shots
+# drift at most ~1.2; reverting a lighting fix shifts the frame by far more.
+const MAX_MEAN_LUMA_DELTA := 4.0
 
 var failures: Array[String] = []
 var warnings: Array[String] = []
@@ -167,6 +174,16 @@ func _compare(shot_name: String) -> void:
 	var metrics := _metrics(shot, golden)
 	var changed: float = metrics[0]
 	var luma: float = metrics[1]
+
+	if shot_name in NONGATING:
+		print(
+			(
+				"  info  %s  changed=%.2f%%  luma=%.2f  (animated, non-gating)"
+				% [shot_name, changed * 100.0, luma]
+			)
+		)
+		return
+
 	var bad := changed > MAX_CHANGED_FRACTION or luma > MAX_MEAN_LUMA_DELTA
 	var line := (
 		"  %s  %s  changed=%.2f%% (max %.2f%%)  luma=%.2f (max %.2f)"

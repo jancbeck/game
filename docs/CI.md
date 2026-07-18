@@ -70,21 +70,24 @@ the committed `test/golden/<name>.png` and compares them with a **tolerance**
 complementary metrics, a shot fails if *either* trips:
 
 - **changed fraction** — share of pixels whose worst RGB channel moved past
-  `PIXEL_CHANNEL_TOLERANCE` (24/255); fails above `MAX_CHANGED_FRACTION` (5%).
+  `PIXEL_CHANNEL_TOLERANCE` (24/255); fails above `MAX_CHANGED_FRACTION` (2%).
 - **mean luma delta** — average luminance shift over the whole frame; fails
-  above `MAX_MEAN_LUMA_DELTA` (8/255). Catches a uniform darken/brighten (e.g.
+  above `MAX_MEAN_LUMA_DELTA` (4/255). Catches a uniform darken/brighten (e.g.
   reverting a lighting fix).
 
-**Threshold tuning (measured, not guessed).** The static painted scenes churn
-~0.2% of pixels / ~0.1 luma between two identical llvmpipe renders. The
-gray-box world shots (`01`–`03`) are far noisier — their torch flicker, fog,
-and walk animation are time/random-driven, so ~2.4% of pixels and ~2.8 luma
-move run-to-run even with no code change. The thresholds sit above that noise
-so the check does not flap. Consequence: this gate reliably catches **gross,
-global regressions** — a darkened scene, a broadly broken frame, a reverted
-lighting fix — which is the ticket's target. A *localised* nudge smaller than
-the animated-scene noise floor (e.g. a single character shifted a few pixels)
-can hide under it; tile-local diffing could tighten that later.
+**Non-gating shots (measured, not guessed).** Most shots are deterministic
+between two identical llvmpipe renders — the painted scenes churn ~0.2% of
+pixels / ~0.1 luma, the settled `01_world` establishing shot ~0.01%, the
+journal ~0.6%. But `02_walking` and `03_dialogue` capture the gray-box world's
+character **mid-walk**: the stride phase at capture depends on frame timing, so
+limbs land differently each run (`02_walking` measured 2.4% then 6.3% changed
+between two identical-code runs — unbounded, not tunable). Those two are in the
+tool's `NONGATING` list: still rendered, published, and reported as `info`, but
+never fail CI. The gray-box world's lighting is still guarded by the
+deterministic `01_world` shot, and the painted-pipeline shots (the reason this
+check exists) are fully gated. Because every *gated* shot is deterministic, the
+thresholds are tight (2% / 4) rather than padded to swallow animation noise, so
+a real regression in a painted scene actually trips them.
 
 A **missing** golden warns (bootstraps a new shot without breaking CI); a
 **size mismatch** fails. Accepting new goldens after an intentional change is
