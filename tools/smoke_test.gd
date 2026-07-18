@@ -65,6 +65,21 @@ func _run() -> void:
 	_check(main.runner == null, "dialogue ended cleanly")
 	_check(main.player.input_enabled, "player input restored")
 
+	# Narrative HUD: open the journal and confirm it renders both the quest
+	# log (completed + newly-active quests) and the recorded journal entry.
+	main.toggle_journal()
+	await process_frame
+	_check(main.journal.is_open(), "journal opens in main scene")
+	_check(not main.player.input_enabled, "player input paused while journal open")
+	var quest_text: String = main.journal.quest_label.text
+	_check(quest_text.find("Enter the Vale") != -1, "quest log lists the completed quest")
+	_check(quest_text.find("Earn Your Place") != -1, "quest log lists the active quest")
+	_check(main.journal.journal_label.text.find("brandy") != -1, "journal lists recorded entry")
+	main.toggle_journal()
+	await process_frame
+	_check(not main.journal.is_open(), "journal closes in main scene")
+	_check(main.player.input_enabled, "player input restored after journal closes")
+
 	# Save, wipe, load — through the same systems the F5/F9 keys use.
 	var save_path := "user://smoke_save.json"
 	_check(SaveSystem.save_game(store.get_state(), save_path), "save written")
@@ -95,6 +110,21 @@ func _run() -> void:
 	_check("ordo_compromised" in store.get_state()["flags"], "painted scene effect applied")
 	_choose_containing(painted, "shadows of the yard")
 	_check(painted.runner == null, "painted scene dialogue ended")
+
+	# Narrative HUD: the journal recorded entries during the conversation;
+	# open the panel and assert they are shown (they accumulate invisibly
+	# until this UI renders them).
+	_check(not painted.journal.is_open(), "journal starts closed")
+	painted.toggle_journal()
+	await process_frame
+	_check(painted.journal.is_open(), "journal opens via toggle")
+	_check(not painted.input_enabled, "world input paused while journal open")
+	var journal_text: String = painted.journal.journal_label.text
+	_check(journal_text.find("Ordo") != -1, "journal panel shows recorded entries")
+	painted.toggle_journal()
+	await process_frame
+	_check(not painted.journal.is_open(), "journal closes via toggle")
+	_check(painted.input_enabled, "world input restored after closing journal")
 
 	# Let a few frames run so _process/_physics_process code paths execute.
 	for i in 10:

@@ -8,6 +8,7 @@ var nearby_npc: Npc = null
 @onready var player: Player = $Player
 @onready var dialogue_ui: Control = $UI/DialogueUI
 @onready var hud: Control = $UI/Hud
+@onready var journal: Control = $UI/JournalPanel
 
 
 func _ready() -> void:
@@ -20,6 +21,13 @@ func _ready() -> void:
 
 
 func _unhandled_input(event: InputEvent) -> void:
+	# The journal can be opened whenever no dialogue is running, and closed
+	# while open; it pauses world input like dialogue does.
+	if event.is_action_pressed("toggle_journal") and runner == null:
+		toggle_journal()
+		return
+	if journal.is_open():
+		return
 	if event.is_action_pressed("interact") and runner == null and nearby_npc != null:
 		start_dialogue(nearby_npc)
 	elif event.is_action_pressed("save_game"):
@@ -31,6 +39,11 @@ func _unhandled_input(event: InputEvent) -> void:
 			hud.flash_message("No save found")
 		elif Store.restore(loaded):
 			hud.flash_message("Game loaded")
+
+
+func toggle_journal() -> void:
+	journal.toggle()
+	player.input_enabled = not journal.is_open()
 
 
 func start_dialogue(npc: Npc) -> void:

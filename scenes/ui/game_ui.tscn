@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://gameui0000001"]
+[gd_scene load_steps=4 format=3 uid="uid://gameui0000001"]
 
 [ext_resource type="Script" path="res://scripts/ui/dialogue_ui.gd" id="1_dlgui"]
 [ext_resource type="Script" path="res://scripts/ui/hud.gd" id="2_hud"]
+[ext_resource type="Script" path="res://scripts/ui/journal_panel.gd" id="3_journal"]
 
 [node name="UI" type="CanvasLayer"]
 
@@ -117,3 +118,87 @@ offset_top = 60.0
 offset_right = 150.0
 offset_bottom = 92.0
 horizontal_alignment = 1
+
+[node name="JournalPanel" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource("3_journal")
+
+[node name="Dim" type="ColorRect" parent="JournalPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color(0, 0, 0, 0.6)
+
+[node name="Panel" type="PanelContainer" parent="JournalPanel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -360.0
+offset_top = -300.0
+offset_right = 360.0
+offset_bottom = 300.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Margin" type="MarginContainer" parent="JournalPanel/Panel"]
+layout_mode = 2
+theme_override_constants/margin_left = 28
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 28
+theme_override_constants/margin_bottom = 20
+
+[node name="VBox" type="VBoxContainer" parent="JournalPanel/Panel/Margin"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="TitleLabel" type="Label" parent="JournalPanel/Panel/Margin/VBox"]
+layout_mode = 2
+text = "Journal"
+theme_override_font_sizes/font_size = 28
+
+[node name="QuestHeader" type="Label" parent="JournalPanel/Panel/Margin/VBox"]
+layout_mode = 2
+text = "Quests"
+theme_override_colors/font_color = Color(0.72, 0.66, 0.5, 1)
+theme_override_font_sizes/font_size = 18
+
+[node name="QuestLogLabel" type="RichTextLabel" parent="JournalPanel/Panel/Margin/VBox"]
+unique_name_in_owner = true
+layout_mode = 2
+bbcode_enabled = true
+fit_content = true
+
+[node name="Sep" type="HSeparator" parent="JournalPanel/Panel/Margin/VBox"]
+layout_mode = 2
+
+[node name="JournalHeader" type="Label" parent="JournalPanel/Panel/Margin/VBox"]
+layout_mode = 2
+text = "Log"
+theme_override_colors/font_color = Color(0.72, 0.66, 0.5, 1)
+theme_override_font_sizes/font_size = 18
+
+[node name="Scroll" type="ScrollContainer" parent="JournalPanel/Panel/Margin/VBox"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="JournalLabel" type="RichTextLabel" parent="JournalPanel/Panel/Margin/VBox/Scroll"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+bbcode_enabled = true
+fit_content = true
+
+[node name="HintLabel" type="Label" parent="JournalPanel/Panel/Margin/VBox"]
+layout_mode = 2
+text = "[J] Close"
+theme_override_colors/font_color = Color(0.55, 0.5, 0.42, 1)
+theme_override_font_sizes/font_size = 14
+horizontal_alignment = 2
