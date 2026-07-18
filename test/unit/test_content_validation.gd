@@ -5,6 +5,7 @@ extends GdUnitTestSuite
 
 const DbScript := preload("res://scripts/core/db.gd")
 const KNOWN_EFFECTS := ["start_quest", "complete_quest", "set_flag", "apply_approach", "journal"]
+const KNOWN_CUTSCENE_STEPS := ["wait", "line", "walk", "flag", "effects"]
 const KNOWN_REQUIRES := [
 	"attributes",
 	"not_hardened",
@@ -188,6 +189,68 @@ func test_scene_exits_resolve_to_real_scenes() -> void:
 			_assert_requires_valid(
 				scene_exit.get("requires", {}), "%s exit %s" % [scene_id, scene_exit.get("id", "?")]
 			)
+
+
+func test_cutscenes_reference_real_scenes_and_valid_steps() -> void:
+	var cutscenes: Dictionary = DbScript._load_dir("res://data/cutscenes")
+	var scenes: Dictionary = DbScript._load_dir("res://data/scenes")
+	assert_int(cutscenes.size()).is_greater_equal(1)
+	for cutscene_id: String in cutscenes:
+		var cutscene: Dictionary = cutscenes[cutscene_id]
+		var scene_id: String = cutscene.get("scene", "")
+		(
+			assert_bool(scenes.has(scene_id))
+			. override_failure_message(
+				"cutscene '%s' -> unknown scene '%s'" % [cutscene_id, scene_id]
+			)
+			. is_true()
+		)
+		var actor_ids := {"player": true}
+		for npc: Dictionary in scenes.get(scene_id, {}).get("npcs", []):
+			actor_ids[str(npc.get("id", ""))] = true
+		for step: Dictionary in cutscene.get("timeline", []):
+			var where := "cutscene %s" % cutscene_id
+			var type: String = step.get("type", "")
+			(
+				assert_array(KNOWN_CUTSCENE_STEPS)
+				. override_failure_message("%s: unknown step type '%s'" % [where, type])
+				. contains([type])
+			)
+			if type == "walk":
+				(
+					assert_bool(actor_ids.has(str(step.get("actor", ""))))
+					. override_failure_message(
+						"%s: walk actor '%s' not in scene" % [where, step.get("actor")]
+					)
+					. is_true()
+				)
+				assert_int((step.get("to", []) as Array).size()).is_greater_equal(2)
+			if type == "flag":
+				assert_bool(str(step.get("flag", "")).is_empty()).is_false()
+			if type == "effects":
+				for effect: Dictionary in step.get("effects", []):
+					_assert_effect_valid(effect, where)
+
+
+## Shared check for a single effect dict (used by cutscene effect steps):
+## the type is known and any referenced quest/attribute exists.
+func _assert_effect_valid(effect: Dictionary, where: String) -> void:
+	var type: String = effect.get("type", "")
+	(
+		assert_array(KNOWN_EFFECTS)
+		. override_failure_message("%s: unknown effect '%s'" % [where, type])
+		. contains([type])
+	)
+	if type in ["start_quest", "complete_quest"]:
+		(
+			assert_bool(quests.has(effect.get("quest", "")))
+			. override_failure_message("%s: unknown quest '%s'" % [where, effect.get("quest")])
+			. is_true()
+		)
+	if type == "apply_approach":
+		assert_array(ATTRIBUTES).override_failure_message("%s: unknown attribute" % where).contains(
+			[effect.get("attribute", "")]
+		)
 
 
 ## Shared check for a requires-block (used by dialogue options, scene exits,

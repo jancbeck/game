@@ -66,6 +66,15 @@ flexibility of the others; hardened attributes lock dialogue options forever.
   `requires` reuses the dialogue `requires` schema. Travel is data-driven:
   when an exit's requirements are met, the scene offers it and
   `painted_scene.travel_to` swaps in the destination — no per-scene glue.
+- `data/cutscenes/*.json`: scripted set-pieces (schema in
+  `scripts/systems/cutscene_runner.gd`) — `{id, scene, timeline: [...]}`.
+  Steps: `wait` (seconds), `line` (speaker/text/portrait/seconds narration),
+  `walk` (`actor` = `"player"` or an NPC id, `to`/`face` in backdrop pixels),
+  `flag`, and `effects` (reuses the dialogue `effects` schema). The runner
+  applies store steps through `dispatch`; `painted_scene.play_cutscene`
+  performs the visual steps. Recognised step types are enumerated in
+  `test/unit/test_content_validation.gd` — extend the runner, the validator,
+  and the docs together or CI fails.
 - `data/chapters.json`: the ordered act state machine —
   `{id, acts: [{id, title, summary, scene, requires}]}`. `Reducers.current_act`
   is the furthest act whose `requires` is met, scanning from act 1 and

@@ -104,6 +104,17 @@ func _run() -> void:
 	await process_frame
 	_check(painted.player != null, "painted scene built player from manifest")
 	_check(painted.npcs.size() == 1, "painted scene placed NPCs")
+
+	# Cutscene / set-piece: the scripted escort timeline plays with no player
+	# input, walking actors and applying its store effects entirely from data.
+	var jailer_start: Vector3 = painted.npcs[0]["rig"].position
+	await painted.play_cutscene("escort_departure")
+	_check("escort_departed" in store.get_state()["flags"], "cutscene applied its flag step")
+	_check(
+		painted.npcs[0]["rig"].position.distance_to(jailer_start) > 0.1, "cutscene walked an actor"
+	)
+	_check(painted.input_enabled, "player input restored after cutscene")
+
 	painted.start_dialogue(painted.npcs[0])
 	_check(painted.runner != null, "painted scene dialogue started")
 	_choose_containing(painted, "counted the keys")

@@ -71,8 +71,17 @@ func _run() -> void:
 	for i in 5:
 		await process_frame
 	await _snap("06_occlusion")
+
+	# Cutscene set-piece: kick off the scripted escort and capture it mid-play —
+	# a narration line on screen, actors repositioned by the timeline, no HUD
+	# prompt (player input is suspended). Not awaited: the coroutine resumes on
+	# process frames while we let it run into a walk, then snap.
+	painted.play_cutscene("escort_departure")
+	for i in 70:
+		await process_frame
+	await _snap("08_cutscene")
 	print("Screenshots written: %d" % shots)
-	quit(0 if shots == 7 else 1)
+	quit(0 if shots == 8 else 1)
 
 
 ## Pick the first available dialogue option whose text contains `substring`.

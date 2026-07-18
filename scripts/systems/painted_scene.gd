@@ -42,6 +42,7 @@ var _fires: Array[OmniLight3D] = []
 var _flicker_time := 0.0
 var _voice_player: AudioStreamPlayer
 var _fade: ColorRect
+var _cutscene_active := false
 
 
 func _ready() -> void:
@@ -317,10 +318,17 @@ func world_to_px(world: Vector3) -> Vector2:
 func _process(delta: float) -> void:
 	if player == null:
 		return
-	_move_player(delta)
-	for npc in npcs:
-		npc["rig"].animate(delta, 0.0)
-	_update_nearby_npc()
+	# A running cutscene drives its own actors; suspend player control and the
+	# idle-animation of NPCs so the timeline's movement is not fought each frame.
+	if not _cutscene_active:
+		_move_player(delta)
+		for npc in npcs:
+			npc["rig"].animate(delta, 0.0)
+		_update_nearby_npc()
+	_flicker_fires(delta)
+
+
+func _flicker_fires(delta: float) -> void:
 	_flicker_time += delta
 	for i in _fires.size():
 		var base := 6.0
@@ -481,3 +489,95 @@ func _on_dialogue_ended() -> void:
 	input_enabled = true
 	# The conversation may have unlocked the way onward.
 	_refresh_prompt()
+
+
+## Play a scripted set-piece: an ordered timeline (data/cutscenes/<id>.json)
+## that walks actors, shows narration lines, and applies store effects with no
+## player input. This is the ONLY glue — the CutsceneRunner sequences and
+## applies store effects; here we perform the visual steps. Awaits until the
+## timeline finishes, then restores player control.
+func play_cutscene(cutscene_id: String) -> void:
+	var data := Db.get_cutscene(cutscene_id)
+	if data.is_empty():
+		push_error("PaintedScene: no cutscene '%s'" % cutscene_id)
+		return
+	var cut := CutsceneRunner.new(data)
+	_cutscene_active = true
+	input_enabled = false
+	nearby_npc = {}
+	hud.hide_prompt()
+	cut.start()
+	while cut.is_running():
+		var step: Dictionary = cut.current_step()
+		if not cut.apply(step, Store):
+			await _perform_cutscene_step(step)
+		cut.advance()
+	dialogue_ui.hide()
+	_cutscene_active = false
+	input_enabled = true
+	_refresh_prompt()
+
+
+## Perform one visual (non-store) cutscene step and return when it is done.
+func _perform_cutscene_step(step: Dictionary) -> void:
+	match str(step.get("type", "")):
+		"wait":
+			await _wait_seconds(float(step.get("seconds", 1.0)))
+		"walk":
+			await _walk_actor(step)
+		"line":
+			await _show_cutscene_line(step)
+
+
+## The rig a cutscene step addresses: "player" or an NPC id from this scene.
+func _actor(actor_id: String) -> CharacterRig:
+	if actor_id == "player":
+		return player
+	for npc in npcs:
+		if str(npc["data"].get("id", "")) == actor_id:
+			return npc["rig"]
+	return null
+
+
+## Walk an actor to a backdrop-pixel target, animating the procedural rig.
+## Bounded by a wall-clock guard so a bad target can never hang the timeline.
+func _walk_actor(step: Dictionary) -> void:
+	var actor := _actor(str(step.get("actor", "player")))
+	var to: Array = step.get("to", [])
+	if actor == null or to.size() < 2:
+		return
+	var target := px_to_world(Vector2(to[0], to[1]))
+	var speed := float(step.get("speed", SPEED))
+	var guard := 0.0
+	while actor.position.distance_to(target) > 0.08 and guard < 10.0:
+		var delta := get_process_delta_time()
+		guard += delta
+		var direction := target - actor.position
+		direction.y = 0.0
+		actor.position = actor.position.move_toward(target, speed * delta)
+		actor.face_direction(direction, delta)
+		actor.animate(delta, 1.0)
+		await get_tree().process_frame
+	actor.position = target
+	var face: Array = step.get("face", [])
+	if face.size() >= 2:
+		actor.face_direction(px_to_world(Vector2(face[0], face[1])) - actor.position, 1.0, 1.0)
+
+
+## Show a narration/scripted line (no options) and hold it for `seconds`.
+func _show_cutscene_line(step: Dictionary) -> void:
+	var portrait: Texture2D = null
+	var portrait_path := str(step.get("portrait", ""))
+	if not portrait_path.is_empty() and ResourceLoader.exists(portrait_path):
+		portrait = load(portrait_path)
+	var no_options: Array[Dictionary] = []
+	dialogue_ui.show_node(
+		str(step.get("speaker", "")), str(step.get("text", "")), no_options, portrait
+	)
+	await _wait_seconds(float(step.get("seconds", 2.0)))
+
+
+func _wait_seconds(seconds: float) -> void:
+	if seconds <= 0.0:
+		return
+	await get_tree().create_timer(seconds).timeout
