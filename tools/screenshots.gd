@@ -84,8 +84,44 @@ func _run() -> void:
 	for i in 70:
 		await process_frame
 	await _snap("08_cutscene")
+
+	# Convict model sheet: the rigged Blender player model staged alone,
+	# each clip frozen at a fixed timestamp via freeze_clip — fully
+	# deterministic, so these frames gate like the other painted shots.
+	painted.queue_free()
+	await process_frame
+	var stage := Node3D.new()
+	root.add_child(stage)
+	var rig := ConvictRig.new()
+	stage.add_child(rig)
+	var cam := Camera3D.new()
+	cam.position = Vector3(0.9, 1.35, -2.4)
+	stage.add_child(cam)
+	cam.look_at(Vector3(0, 0.95, 0), Vector3.UP)
+	cam.make_current()
+	# Warm key / cool rim, echoing the yard's firelight.
+	var key := OmniLight3D.new()
+	key.position = Vector3(-1.6, 2.4, -1.6)
+	key.light_color = Color(1.0, 0.66, 0.42)
+	key.light_energy = 3.0
+	key.omni_range = 8.0
+	stage.add_child(key)
+	var rim := OmniLight3D.new()
+	rim.position = Vector3(1.6, 2.0, 1.8)
+	rim.light_color = Color(0.4, 0.5, 0.8)
+	rim.light_energy = 2.0
+	rim.omni_range = 8.0
+	stage.add_child(rim)
+	for i in 10:
+		await process_frame
+	rig.freeze_clip("idle", 1.2)
+	await _snap("09_convict_idle")
+	rig.freeze_clip("walk", 5.0 / 30.0)  # mid-stride (authored at 30 fps)
+	await _snap("10_convict_walk")
+	rig.freeze_clip("talk", 0.5)  # bound hands lifted
+	await _snap("11_convict_talk")
 	print("Screenshots written: %d" % shots)
-	quit(0 if shots == 8 else 1)
+	quit(0 if shots == 11 else 1)
 
 
 ## Pick the first available dialogue option whose text contains `substring`.

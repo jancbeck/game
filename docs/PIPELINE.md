@@ -77,6 +77,38 @@ Resolved (kept as breadcrumbs so they aren't reopened):
   silhouette with an idle weight-shift and a lean-in gesture during dialogue;
   a manifest `"build"` scalar varies height/bulk per character.
 
+## The player model: a real rig, one script
+
+The player is the convict from `art/sprites/convict.png` — a genuine
+skeletal rig (`art/models/convict.glb`: 15 bones, puppet-style rigid
+skinning, baked 30 fps `idle`/`walk`/`talk` clips), not a procedural
+capsule. This does not reopen the postmortem's #6 ("AI models + third-party
+animation libraries = rig mismatch hell"): `tools/build_convict.py` authors
+mesh, armature, AND animations in a single Blender run, so there is nothing
+to mismatch. The rule that stands is **no third-party rigs or animation
+libraries**; one self-contained generator script is the loophole, and it is
+the only one.
+
+- Rebuild locally (Blender is not in CI; the .glb is a committed artifact):
+  `blender -b -P tools/build_convict.py` — also writes pose renders to
+  `reports/convict/` for eyeballing before you commit.
+- The cloth/rag textures (`art/models/convict_cloth.png`, `convict_rag.png`)
+  are one-off `tools/genart.py` edits-endpoint generations with the sprite
+  as style reference, committed like all art. The rag strip is authored
+  full-frame (solid at v=1, tatter tips at v=0) and alpha-blended onto the
+  hem cone — that is where the silhouette's raggedness comes from.
+- `scripts/world/convict_rig.gd` (`ConvictRig extends CharacterRig`) wraps
+  the GLB and maps the familiar interface onto the AnimationPlayer:
+  `animate(delta, speed)` crossfades idle/walk/talk, `set_speaking` picks
+  the talk loop, `face_direction` is inherited (the model faces +Z in glTF,
+  so the wrapper spins it π to agree with the -Z facing math). `build`
+  scales the whole model; palettes are a no-op — the convict's colors are
+  baked from the sprite. NPCs stay procedural `CharacterRig`s.
+- CI proof: the smoke test asserts the player is a ConvictRig with all
+  three clips and walks/talks/idles on command; `test/unit/test_convict_rig.gd`
+  covers the state machine; `tools/screenshots.gd` frames 09–11 are a
+  deterministic model sheet (clips frozen at fixed timestamps).
+
 ## Two visual modes coexist
 
 `scenes/main.tscn` is the original gray-box 3D world (capsule characters,

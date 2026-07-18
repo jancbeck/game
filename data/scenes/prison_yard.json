@@ -82,12 +82,6 @@
       "fire": true
     }
   ],
-  "player": {
-    "palette": {
-      "body": "#6a6258",
-      "head": "#c8a284"
-    }
-  },
   "npcs": [
     {
       "id": "jailer",
