@@ -79,7 +79,8 @@ func _run() -> void:
 func _choose(main: Node, substring: String) -> void:
 	if main.runner == null:
 		return
-	var options: Array[Dictionary] = main.runner.visible_options(Store.get_state())
+	var store: Node = root.get_node("/root/Store")
+	var options: Array[Dictionary] = main.runner.visible_options(store.get_state())
 	for option in options:
 		if option["available"] and substring in str(option["text"]):
 			main._on_option_chosen(option["index"])
