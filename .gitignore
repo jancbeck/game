@@ -21,3 +21,10 @@ reports
 
 # Build artifacts
 build/
+
+# Node (authoring-tool test harness only; see package.json)
+node_modules/
+# Generated grid overlays from tools/gridshot.mjs
+*_grid.png
+# npm lockfile not tracked; CI resolves the single exact-pinned dev dep
+package-lock.json

@@ -15,13 +15,19 @@ that loads it. The manifest field schema lives in the `painted_scene.gd`
 header comment — read it there, don't reproduce it. This skill is the
 *workflow and the judgment calls*.
 
-> **Pixel-picking helper.** Every backdrop-pixel coordinate below (walk
+> **Pixel-picking helpers.** Every backdrop-pixel coordinate below (walk
 > polygon, light `px`, occluder polygons + anchors, `spawn`, NPC `pos`) can be
-> read without an external editor: open `tools/manifest_picker.html` in a
-> browser, load the backdrop PNG, and click to collect points. It draws a
-> labelled grid + a live overlay and emits a paste-ready manifest fragment.
+> read without an external editor:
+> - **Human:** open `tools/manifest_picker.html` in a browser, load the
+>   backdrop PNG, and click to collect points — it draws a labelled grid + a
+>   live overlay and emits a paste-ready manifest fragment.
+> - **Headless / agent:** run `node tools/gridshot.mjs art/scenes/<id>.png` to
+>   write `<id>_grid.png`, a copy of the backdrop with a labelled 100px
+>   coordinate grid burned in; read that image to lift exact pixel coords.
+>
 > You still make the judgment calls (which floor is walkable, where a prop
-> meets the ground); the helper just spares you the coordinate arithmetic.
+> meets the ground); the helpers just spare you the coordinate arithmetic.
+> Both are covered by `npm run test:tools` (Playwright) in CI.
 
 ## Order of operations
 
