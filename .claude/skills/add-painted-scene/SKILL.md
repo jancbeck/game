@@ -37,10 +37,13 @@ header comment — read it there, don't reproduce it. This skill is the
    (open the PNG, read pixel positions of the floor corners). Keep it inside
    the painted ground; exclude walls and props the player shouldn't stand on.
 6. **Lights on the painted fires** — one manifest light per visible flame,
-   `px` at the flame, `fire: true` for embers + flicker. CAVEAT: `px` is
-   projected onto the *ground* plane, so this is only correct for
-   ground-level fires (braziers). Wall-mounted torches land wrong — a known
-   limitation (docs/PIPELINE.md); don't burn time fighting it.
+   `px` at the flame, `fire: true` for embers + flicker. `px` is projected
+   onto the *ground* plane, correct for ground-level fires (braziers) with an
+   optional `height` lift. For a flame painted ABOVE the ground (wall torch,
+   hanging lantern), add `"wall": true` + `"wall_height"` — the flame pixel is
+   then read on a horizontal plane at that height so the light sits at the
+   painted flame, not far up the wall. Tune `wall_height` by screenshot
+   (start ~3.5). For a fully manual placement, use `"world": [x, y, z]`.
 7. **Occluders** (optional) — for foreground props the player can walk
    behind. Each is a polygon of backdrop pixels around the prop plus an
    `anchor` pixel where the prop meets the ground. Pick the anchor at the

@@ -65,9 +65,13 @@ func _run() -> void:
 		await process_frame
 	await _snap("05_prison_dialogue")
 	painted._on_dialogue_ended()
-	# Occlusion proof: stand in the pocket behind the gallows platform —
-	# the character must be partially hidden by the painted foreground.
-	painted.player.position = painted.px_to_world(Vector2(1100, 560))
+	# Occlusion proof: stand the character behind the LOW foreground prop
+	# (the occluder whose card covers the bottom-right of the frame) so it is
+	# cut at the waist — legs hidden by the prop, torso and head clear above
+	# its top edge (backdrop y~655). The feet px is tuned so the card bisects
+	# the ~115px-tall rig; a fully-hidden pose would prove nothing.
+	painted.player.position = painted.px_to_world(Vector2(1240, 712))
+	painted.player.rotation.y = 0.0
 	for i in 5:
 		await process_frame
 	await _snap("06_occlusion")

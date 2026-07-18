@@ -7,6 +7,9 @@ extends Node3D
 
 var body_color := Color(0.35, 0.4, 0.5)
 var head_color := Color(0.78, 0.62, 0.5)
+## Per-character silhouette scalar (from the manifest): 1.0 is the baseline,
+## >1 taller/burlier, <1 slighter. Set before the node enters the tree.
+var build := 1.0
 
 var _root: Node3D
 var _torso: MeshInstance3D
@@ -17,6 +20,7 @@ var _leg_l: Node3D
 var _leg_r: Node3D
 var _phase := 0.0
 var _idle_time := 0.0
+var _speaking := false
 
 
 func _ready() -> void:
@@ -33,16 +37,21 @@ func _build() -> void:
 	head_mat.albedo_color = head_color
 	head_mat.roughness = 0.8
 
-	_torso = _capsule(0.22, 0.75, body_mat)
-	_torso.position.y = 1.05
+	# Proportions: taller than wide with a modestly-sized head (a stubby,
+	# big-headed silhouette reads as gray-box). `build` scales height directly
+	# and bulk more gently, so variety stays believable.
+	var tall := build
+	var bulk := 1.0 + (build - 1.0) * 0.6
+	_torso = _capsule(0.2 * bulk, 0.82 * tall, body_mat)
+	_torso.position.y = 1.18 * tall
 	_root.add_child(_torso)
-	_head = _capsule(0.13, 0.3, head_mat)
-	_head.position.y = 1.62
+	_head = _capsule(0.115 * bulk, 0.26 * tall, head_mat)
+	_head.position.y = 1.74 * tall
 	_root.add_child(_head)
-	_arm_l = _limb(0.07, 0.62, body_mat, Vector3(-0.3, 1.4, 0))
-	_arm_r = _limb(0.07, 0.62, body_mat, Vector3(0.3, 1.4, 0))
-	_leg_l = _limb(0.09, 0.75, body_mat, Vector3(-0.13, 0.78, 0))
-	_leg_r = _limb(0.09, 0.75, body_mat, Vector3(0.13, 0.78, 0))
+	_arm_l = _limb(0.06 * bulk, 0.66 * tall, body_mat, Vector3(-0.28 * bulk, 1.5 * tall, 0))
+	_arm_r = _limb(0.06 * bulk, 0.66 * tall, body_mat, Vector3(0.28 * bulk, 1.5 * tall, 0))
+	_leg_l = _limb(0.085 * bulk, 0.86 * tall, body_mat, Vector3(-0.12 * bulk, 0.9 * tall, 0))
+	_leg_r = _limb(0.085 * bulk, 0.86 * tall, body_mat, Vector3(0.12 * bulk, 0.9 * tall, 0))
 	# Soft contact-shadow blob so characters sit ON the painting.
 	var blob := MeshInstance3D.new()
 	var blob_mesh := PlaneMesh.new()
@@ -98,18 +107,47 @@ func animate(delta: float, speed: float) -> void:
 		_leg_r.rotation.x = swing
 		_root.position.y = absf(sin(_phase)) * 0.05
 		_root.rotation.x = 0.06 * speed
+		_root.rotation.z = lerp_angle(_root.rotation.z, 0.0, delta * 10.0)
 	else:
 		_phase = 0.0
 		var settle := 10.0 * delta
-		_arm_l.rotation.x = lerpf(_arm_l.rotation.x, sin(_idle_time * 1.3) * 0.04, settle)
-		_arm_r.rotation.x = lerpf(_arm_r.rotation.x, -sin(_idle_time * 1.3) * 0.04, settle)
-		_leg_l.rotation.x = lerpf(_leg_l.rotation.x, 0.0, settle)
-		_leg_r.rotation.x = lerpf(_leg_r.rotation.x, 0.0, settle)
-		_root.position.y = lerpf(_root.position.y, 0.0, settle)
-		_root.rotation.x = lerpf(_root.rotation.x, 0.0, settle)
-		# Breathing + subtle head life.
+		if _speaking:
+			_animate_speaking(settle)
+		else:
+			_animate_idle(settle)
+		# Breathing keeps the figure alive in either idle mode.
 		_torso.scale.y = 1.0 + sin(_idle_time * 2.1) * 0.012
-		_head.rotation.y = sin(_idle_time * 0.5) * 0.2
+
+
+func _animate_idle(settle: float) -> void:
+	_arm_l.rotation.x = lerpf(_arm_l.rotation.x, sin(_idle_time * 1.3) * 0.04, settle)
+	_arm_r.rotation.x = lerpf(_arm_r.rotation.x, -sin(_idle_time * 1.3) * 0.04, settle)
+	_leg_l.rotation.x = lerpf(_leg_l.rotation.x, 0.0, settle)
+	_leg_r.rotation.x = lerpf(_leg_r.rotation.x, 0.0, settle)
+	_root.position.y = lerpf(_root.position.y, 0.0, settle)
+	_root.rotation.x = lerpf(_root.rotation.x, 0.0, settle)
+	# A slow weight shift from foot to foot — a subtle sway, not a march.
+	_root.rotation.z = lerpf(_root.rotation.z, sin(_idle_time * 0.9) * 0.035, settle)
+	_head.rotation.y = sin(_idle_time * 0.5) * 0.2
+
+
+## Leaning-in conversation pose: the torso tips forward, the right hand lifts
+## and makes small gestures, and the sway settles square.
+func _animate_speaking(settle: float) -> void:
+	var gesture := sin(_idle_time * 3.1)
+	_root.rotation.x = lerpf(_root.rotation.x, 0.09, settle)
+	_root.rotation.z = lerpf(_root.rotation.z, 0.0, settle)
+	_root.position.y = lerpf(_root.position.y, 0.0, settle)
+	_arm_r.rotation.x = lerpf(_arm_r.rotation.x, -0.55 - gesture * 0.22, settle)
+	_arm_l.rotation.x = lerpf(_arm_l.rotation.x, 0.12, settle)
+	_leg_l.rotation.x = lerpf(_leg_l.rotation.x, 0.0, settle)
+	_leg_r.rotation.x = lerpf(_leg_r.rotation.x, 0.0, settle)
+	_head.rotation.y = lerpf(_head.rotation.y, gesture * 0.06, settle)
+
+
+## Toggle the leaning-in gesture pose used during dialogue.
+func set_speaking(on: bool) -> void:
+	_speaking = on
 
 
 ## Turn (smoothly) to face a world-space direction on the ground plane.

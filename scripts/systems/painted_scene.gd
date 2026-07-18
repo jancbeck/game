@@ -10,11 +10,17 @@ extends Node3D
 ##   "id", "backdrop", "spawn": [px, py],
 ##   "walk_polygon": [[px, py], ...],           (backdrop pixel coords)
 ##   "camera": {"pitch", "yaw", "fov", "distance"},
-##   "lights": [{"px": [x, y], "height", "color", "energy", "range"}],
-##   "player": {"palette": {"body": "#rrggbb", "head": "#rrggbb"}},
-##   "npcs": [{"id", "name", "pos": [px, py], "palette": {...},
+##   "lights": [{"px": [x, y], "color", "energy", "range", "fire",
+##               # placement — pick one:
+##               "height",                    (ground fire: lift above ground)
+##               "wall": true, "wall_height", (wall torch: read flame at height)
+##               "world": [x, y, z]}],        (explicit 3D position)
+##   "player": {"palette": {"body": "#rrggbb", "head": "#rrggbb"}, "build"},
+##   "npcs": [{"id", "name", "pos": [px, py], "palette": {...}, "build",
 ##             "dialogue", "portrait", "interact_radius"}]     (px radius)
 ## }
+## "build" (default 1.0) scales a character's height/bulk for silhouette
+## variety — e.g. 1.1 reads as burlier, 0.9 as slighter.
 
 const SPEED := 2.6
 ## The reusable director loaded when travelling: same script + UI, its
@@ -133,9 +139,7 @@ func _build_lights() -> void:
 	for light_data: Dictionary in manifest.get("lights", []):
 		var light := OmniLight3D.new()
 		var px: Array = light_data["px"]
-		light.position = (
-			px_to_world(Vector2(px[0], px[1])) + Vector3(0, float(light_data.get("height", 2.0)), 0)
-		)
+		light.position = _light_position(light_data, Vector2(px[0], px[1]))
 		light.light_color = Color(str(light_data.get("color", "#ffb060")))
 		light.light_energy = float(light_data.get("energy", 4.0))
 		light.omni_range = float(light_data.get("range", 8.0))
@@ -150,8 +154,26 @@ func _build_lights() -> void:
 			light.add_child(crackle)
 
 
+## Where a manifest light sits in 3D. Ground fires (braziers) are
+## ground-projected with a small vertical lift, as before. Wall-mounted fires
+## carry an authored height hint so they land AT the painted flame instead of
+## being ground-projected far up the wall: "world":[x,y,z] for a fully explicit
+## position, or "wall":true + "wall_height" to unproject the flame pixel onto a
+## horizontal plane at that height (see docs/PIPELINE.md).
+func _light_position(light_data: Dictionary, px: Vector2) -> Vector3:
+	if light_data.has("world"):
+		var w: Array = light_data["world"]
+		return Vector3(w[0], w[1], w[2])
+	if light_data.get("wall", false):
+		return px_to_world_at_height(px, float(light_data.get("wall_height", 3.0)))
+	return px_to_world(px) + Vector3(0, float(light_data.get("height", 2.0)), 0)
+
+
 func _build_player() -> void:
-	player = _make_character(manifest.get("player", {}).get("palette", {}))
+	player = _make_character(
+		manifest.get("player", {}).get("palette", {}),
+		float(manifest.get("player", {}).get("build", 1.0))
+	)
 	player.name = "Player"
 	var spawn: Array = manifest["spawn"]
 	player.position = px_to_world(Vector2(spawn[0], spawn[1]))
@@ -159,7 +181,7 @@ func _build_player() -> void:
 
 func _build_npcs() -> void:
 	for npc_data: Dictionary in manifest.get("npcs", []):
-		var rig := _make_character(npc_data.get("palette", {}))
+		var rig := _make_character(npc_data.get("palette", {}), float(npc_data.get("build", 1.0)))
 		rig.name = "Npc_%s" % npc_data["id"]
 		var pos: Array = npc_data["pos"]
 		rig.position = px_to_world(Vector2(pos[0], pos[1]))
@@ -173,10 +195,11 @@ func _build_npcs() -> void:
 		npcs.append({"data": npc_data, "rig": rig})
 
 
-func _make_character(palette: Dictionary) -> CharacterRig:
+func _make_character(palette: Dictionary, build: float = 1.0) -> CharacterRig:
 	var rig := CharacterRig.new()
 	rig.body_color = Color(str(palette.get("body", "#59636f")))
 	rig.head_color = Color(str(palette.get("head", "#c8a284")))
+	rig.build = build
 	add_child(rig)
 	return rig
 
@@ -300,13 +323,22 @@ static func _looped_wav(path: String) -> AudioStreamWAV:
 ## fixed camera sees at that screen position. This is the whole trick:
 ## the painting IS the screen, so pixel coords define world positions.
 func px_to_world(px: Vector2) -> Vector3:
+	return px_to_world_at_height(px, 0.0)
+
+
+## Unproject a backdrop pixel onto the horizontal plane at world height
+## `plane_y`. `plane_y = 0` is the ground plane — the default mapping the whole
+## illusion rests on. A positive height is how wall-mounted lights are placed
+## AT the painted flame (the flame pixel, read on a plane at flame height)
+## rather than ground-projected far up the wall.
+func px_to_world_at_height(px: Vector2, plane_y: float) -> Vector3:
 	var viewport_size: Vector2 = get_viewport().get_visible_rect().size
 	var screen := px * (viewport_size / backdrop_size)
 	var origin := camera.project_ray_origin(screen)
 	var normal := camera.project_ray_normal(screen)
 	if absf(normal.y) < 0.0001:
 		return Vector3.ZERO
-	var t := -origin.y / normal.y
+	var t := (plane_y - origin.y) / normal.y
 	return origin + normal * t
 
 
@@ -450,6 +482,9 @@ func start_dialogue(npc: Dictionary) -> void:
 	var rig: CharacterRig = npc["rig"]
 	rig.face_direction(player.position - rig.position, 1.0, 1.0)
 	player.face_direction(rig.position - player.position, 1.0, 1.0)
+	# Both parties lean into the conversation (a gesture pose, not a rig).
+	rig.set_speaking(true)
+	player.set_speaking(true)
 	runner = DialogueRunner.new(data)
 	runner.ended.connect(_on_dialogue_ended)
 	runner.start()
@@ -487,6 +522,9 @@ func _on_dialogue_ended() -> void:
 	runner = null
 	dialogue_ui.hide()
 	input_enabled = true
+	player.set_speaking(false)
+	for npc in npcs:
+		npc["rig"].set_speaking(false)
 	# The conversation may have unlocked the way onward.
 	_refresh_prompt()
 

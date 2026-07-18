@@ -105,6 +105,21 @@ func _run() -> void:
 	_check(painted.player != null, "painted scene built player from manifest")
 	_check(painted.npcs.size() == 1, "painted scene placed NPCs")
 
+	# Pipeline fixes: the NPC rig picks up its manifest build scalar, and the
+	# wall-mounted torches are placed high (at the painted flame) rather than
+	# ground-projected — a ground brazier stays low.
+	_check(painted.npcs[0]["rig"].build > 1.0, "npc rig built with manifest build scalar")
+	var wall_lights := 0
+	var ground_lights := 0
+	for child in painted.get_children():
+		if child is OmniLight3D:
+			if child.position.y > 2.5:
+				wall_lights += 1
+			else:
+				ground_lights += 1
+	_check(wall_lights >= 2, "wall torches placed above the ground (%d)" % wall_lights)
+	_check(ground_lights >= 1, "ground brazier stays low (%d)" % ground_lights)
+
 	# Cutscene / set-piece: the scripted escort timeline plays with no player
 	# input, walking actors and applying its store effects entirely from data.
 	var jailer_start: Vector3 = painted.npcs[0]["rig"].position
