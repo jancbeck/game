@@ -1,0 +1,56 @@
+{
+  "id": "escort_departure",
+  "scene": "prison_yard",
+  "timeline": [
+    {
+      "type": "wait",
+      "seconds": 0.4
+    },
+    {
+      "type": "line",
+      "speaker": "Jailer Ordo",
+      "text": "Walk with me. Eyes down, mouth shut — the count's not for another hour.",
+      "portrait": "res://art/sprites/jailer.png",
+      "seconds": 1.6
+    },
+    {
+      "type": "walk",
+      "actor": "jailer",
+      "to": [
+        900,
+        440
+      ],
+      "face": [
+        1150,
+        520
+      ]
+    },
+    {
+      "type": "walk",
+      "actor": "player",
+      "to": [
+        830,
+        480
+      ]
+    },
+    {
+      "type": "flag",
+      "flag": "escort_departed"
+    },
+    {
+      "type": "effects",
+      "effects": [
+        {
+          "type": "journal",
+          "text": "Ordo walked you to the yard's edge, then melted back into the dark."
+        }
+      ]
+    },
+    {
+      "type": "line",
+      "speaker": "",
+      "text": "The gate stands open. For the first time, no one is watching it.",
+      "seconds": 1.6
+    }
+  ]
+}

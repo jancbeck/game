@@ -5,6 +5,7 @@ extends Node
 var dialogues: Dictionary = {}
 var quests: Dictionary = {}
 var scenes: Dictionary = {}
+var cutscenes: Dictionary = {}
 var chapters: Dictionary = {}
 
 
@@ -16,6 +17,7 @@ func load_all() -> void:
 	dialogues = _load_dir("res://data/dialogues")
 	quests = _load_dir("res://data/quests")
 	scenes = _load_dir("res://data/scenes")
+	cutscenes = _load_dir("res://data/cutscenes")
 	chapters = _load_chapters("res://data/chapters.json")
 
 
@@ -38,6 +40,13 @@ func get_scene(id: String) -> Dictionary:
 		push_error("Unknown scene: %s" % id)
 		return {}
 	return scenes[id]
+
+
+func get_cutscene(id: String) -> Dictionary:
+	if not cutscenes.has(id):
+		push_error("Unknown cutscene: %s" % id)
+		return {}
+	return cutscenes[id]
 
 
 func get_dialogue(id: String) -> Dictionary:

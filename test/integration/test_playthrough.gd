@@ -171,6 +171,27 @@ func test_two_scene_transition_prison_to_highlands() -> void:
 	assert_str(act["scene"]).is_equal("highland_camp")
 
 
+func test_demo_cutscene_plays_through_and_applies_its_effects() -> void:
+	# The set-piece layer at the logic level: the shipped escort cutscene runs
+	# its whole timeline, applying its store steps (flag + journal) in order,
+	# with the visual steps (wait/walk/line) left untouched here.
+	var cutscene: Dictionary = DbScript._load_dir("res://data/cutscenes")["escort_departure"]
+	var scenes: Dictionary = DbScript._load_dir("res://data/scenes")
+	assert_bool(scenes.has(cutscene["scene"])).is_true()
+	var cut := CutsceneRunner.new(cutscene)
+	cut.start()
+	var visual := 0
+	while cut.is_running():
+		var step: Dictionary = cut.current_step()
+		if not cut.apply(step, store):
+			visual += 1
+		cut.advance()
+	assert_int(visual).is_greater(0)  # it is a real set-piece, not just effects
+	var state: Dictionary = store.get_state()
+	assert_bool(Reducers.has_flag(state, "escort_departed")).is_true()
+	assert_str(str(Reducers.journal_log(state)[0])).contains("yard's edge")
+
+
 func test_save_load_mid_story_preserves_progress() -> void:
 	_talk("gatekeeper", ["brandy", "[Enter the camp]"])
 	var path := "user://test_mid_save.json"
