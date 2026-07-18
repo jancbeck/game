@@ -1,0 +1,79 @@
+{
+  "id": "highland_camp",
+  "backdrop": "res://art/scenes/prison_yard.png",
+  "placeholder_backdrop": true,
+  "spawn": [
+    700,
+    560
+  ],
+  "walk_polygon": [
+    [
+      450,
+      430
+    ],
+    [
+      940,
+      400
+    ],
+    [
+      1150,
+      520
+    ],
+    [
+      1150,
+      600
+    ],
+    [
+      980,
+      630
+    ],
+    [
+      1000,
+      920
+    ],
+    [
+      640,
+      950
+    ],
+    [
+      450,
+      790
+    ]
+  ],
+  "camera": {
+    "pitch": -42,
+    "yaw": 0,
+    "fov": 32,
+    "distance": 26
+  },
+  "lights": [
+    {
+      "px": [
+        200,
+        530
+      ],
+      "height": 1.2,
+      "color": "#ff9c50",
+      "energy": 6.0,
+      "range": 10.0,
+      "fire": true
+    }
+  ],
+  "player": {
+    "palette": {
+      "body": "#4d5a3a",
+      "head": "#c8a284"
+    }
+  },
+  "npcs": [],
+  "ambience": "res://art/audio/wind_ambience.wav",
+  "exits": [
+    {
+      "id": "back_to_prison",
+      "to": "prison_yard",
+      "label": "Back toward the prison yard",
+      "transition": "fade",
+      "requires": {}
+    }
+  ]
+}

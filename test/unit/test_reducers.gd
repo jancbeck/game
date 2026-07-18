@@ -137,3 +137,53 @@ func test_quest_log_lists_active_then_completed_with_approach() -> void:
 func test_quest_log_and_journal_log_empty_on_fresh_state() -> void:
 	assert_array(Reducers.quest_log(state)).is_empty()
 	assert_array(Reducers.journal_log(state)).is_empty()
+
+
+func test_current_act_advances_linearly_with_flags() -> void:
+	var chapters := {
+		"acts":
+		[
+			{"id": "a1", "scene": "s1", "requires": {}},
+			{"id": "a2", "scene": "s2", "requires": {"flags": ["gate"]}},
+		]
+	}
+	assert_str(Reducers.current_act(state, chapters)["id"]).is_equal("a1")
+	assert_int(Reducers.current_act_index(state, chapters)).is_equal(0)
+	state = Reducers.set_flag(state, "gate")
+	assert_str(Reducers.current_act(state, chapters)["id"]).is_equal("a2")
+	assert_int(Reducers.current_act_index(state, chapters)).is_equal(1)
+
+
+func test_current_act_is_empty_when_first_act_is_locked() -> void:
+	var chapters := {"acts": [{"id": "a1", "scene": "s1", "requires": {"flags": ["never"]}}]}
+	assert_bool(Reducers.current_act(state, chapters).is_empty()).is_true()
+	assert_int(Reducers.current_act_index(state, chapters)).is_equal(-1)
+
+
+func test_current_act_does_not_skip_a_locked_middle_act() -> void:
+	# a3 has no requires, but a2 is locked, so a linear machine stops at a1.
+	var chapters := {
+		"acts":
+		[
+			{"id": "a1", "scene": "s1", "requires": {}},
+			{"id": "a2", "scene": "s2", "requires": {"flags": ["mid"]}},
+			{"id": "a3", "scene": "s3", "requires": {}},
+		]
+	}
+	assert_str(Reducers.current_act(state, chapters)["id"]).is_equal("a1")
+	assert_int(Reducers.current_act_index(state, chapters)).is_equal(0)
+
+
+func test_available_exits_filters_by_requires() -> void:
+	var scene := {
+		"exits":
+		[
+			{"id": "open", "to": "s2", "requires": {}},
+			{"id": "locked", "to": "s3", "requires": {"flags": ["key"]}},
+		]
+	}
+	var open: Array = Reducers.available_exits(state, scene)
+	assert_int(open.size()).is_equal(1)
+	assert_str(open[0]["id"]).is_equal("open")
+	state = Reducers.set_flag(state, "key")
+	assert_int(Reducers.available_exits(state, scene).size()).is_equal(2)

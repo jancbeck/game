@@ -60,6 +60,17 @@ flexibility of the others; hardened attributes lock dialogue options forever.
   `effects` / `next` / `show_locked`. Valid effect types and requires keys
   are enumerated in `test/unit/test_content_validation.gd` — extend the
   reducers, the validator, and the docs together or CI fails.
+- `data/scenes/*.json`: painted-scene manifests (schema in
+  `scripts/systems/painted_scene.gd`). Optional `exits`: `[{id, to,
+  label, transition, requires}]` — `to` is the destination scene id,
+  `requires` reuses the dialogue `requires` schema. Travel is data-driven:
+  when an exit's requirements are met, the scene offers it and
+  `painted_scene.travel_to` swaps in the destination — no per-scene glue.
+- `data/chapters.json`: the ordered act state machine —
+  `{id, acts: [{id, title, summary, scene, requires}]}`. `Reducers.current_act`
+  is the furthest act whose `requires` is met, scanning from act 1 and
+  stopping at the first locked act (linear progression). The validator
+  checks every `act.scene` and every `exit.to` resolves to a real manifest.
 
 ## Verification workflow
 

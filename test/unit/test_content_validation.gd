@@ -147,3 +147,59 @@ func test_quests_have_title_and_summary() -> void:
 			. override_failure_message("Quest '%s' missing title/summary" % quest_id)
 			. is_true()
 		)
+
+
+func test_chapters_reference_real_scenes_and_valid_requires() -> void:
+	var chapters: Dictionary = DbScript._load_chapters("res://data/chapters.json")
+	var scenes: Dictionary = DbScript._load_dir("res://data/scenes")
+	(
+		assert_bool(chapters.has("acts"))
+		. override_failure_message("chapters.json has no acts")
+		. is_true()
+	)
+	assert_int((chapters["acts"] as Array).size()).is_greater_equal(2)
+	for act: Dictionary in chapters["acts"]:
+		for field: String in ["id", "title", "scene"]:
+			(
+				assert_bool(act.has(field))
+				. override_failure_message("act missing '%s'" % field)
+				. is_true()
+			)
+		(
+			assert_bool(scenes.has(act["scene"]))
+			. override_failure_message(
+				"act '%s' -> unknown scene '%s'" % [act.get("id"), act.get("scene")]
+			)
+			. is_true()
+		)
+		_assert_requires_valid(act.get("requires", {}), "act %s" % act.get("id"))
+
+
+func test_scene_exits_resolve_to_real_scenes() -> void:
+	var scenes: Dictionary = DbScript._load_dir("res://data/scenes")
+	for scene_id: String in scenes:
+		for scene_exit: Dictionary in scenes[scene_id].get("exits", []):
+			var to: String = scene_exit.get("to", "")
+			(
+				assert_bool(scenes.has(to))
+				. override_failure_message("scene '%s' exit -> unknown scene '%s'" % [scene_id, to])
+				. is_true()
+			)
+			_assert_requires_valid(
+				scene_exit.get("requires", {}), "%s exit %s" % [scene_id, scene_exit.get("id", "?")]
+			)
+
+
+## Shared check for a requires-block (used by dialogue options, scene exits,
+## and chapter acts alike): every key is known and every attribute is real.
+func _assert_requires_valid(requires: Dictionary, where: String) -> void:
+	for key: String in requires:
+		(
+			assert_array(KNOWN_REQUIRES)
+			. override_failure_message("%s: unknown requires key '%s'" % [where, key])
+			. contains([key])
+		)
+	for attr: String in requires.get("attributes", {}):
+		assert_array(ATTRIBUTES).contains([attr])
+	for attr: String in requires.get("not_hardened", []):
+		assert_array(ATTRIBUTES).contains([attr])

@@ -146,6 +146,31 @@ func test_prison_yard_jailer_scene() -> void:
 	assert_str(str(scene["npcs"][0]["dialogue"])).is_equal("royal_jailer")
 
 
+func test_two_scene_transition_prison_to_highlands() -> void:
+	# The progression layer, end to end at the logic level: the prison scene
+	# starts locked-in (act 1, no open exit); completing the jailer
+	# conversation unlocks a data-defined exit to the next scene and advances
+	# the act state machine — no hardcoded per-scene glue.
+	var scenes: Dictionary = DbScript._load_dir("res://data/scenes")
+	var chapters: Dictionary = DbScript._load_chapters("res://data/chapters.json")
+	var prison: Dictionary = scenes["prison_yard"]
+	assert_str(Reducers.current_act(store.get_state(), chapters)["id"]).is_equal("act1_prison")
+	assert_array(Reducers.available_exits(store.get_state(), prison)).is_empty()
+
+	_talk("royal_jailer", ["counted the keys", "shadows of the yard"])
+	var state: Dictionary = store.get_state()
+	assert_bool(Reducers.has_flag(state, "ordo_heard_warning")).is_true()
+
+	var exits: Array = Reducers.available_exits(state, prison)
+	assert_int(exits.size()).is_equal(1)
+	assert_str(exits[0]["to"]).is_equal("highland_camp")
+	assert_bool(scenes.has(exits[0]["to"])).is_true()
+
+	var act: Dictionary = Reducers.current_act(state, chapters)
+	assert_str(act["id"]).is_equal("act2_highlands")
+	assert_str(act["scene"]).is_equal("highland_camp")
+
+
 func test_save_load_mid_story_preserves_progress() -> void:
 	_talk("gatekeeper", ["brandy", "[Enter the camp]"])
 	var path := "user://test_mid_save.json"
