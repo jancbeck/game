@@ -1,0 +1,23 @@
+{
+  "id": "chapters",
+  "acts": [
+    {
+      "id": "act1_prison",
+      "title": "The Royal Prison",
+      "summary": "Off the boat from Khorinis and into Ordo's yard. Talk your way past the jailer before the watch changes.",
+      "scene": "prison_yard",
+      "requires": {}
+    },
+    {
+      "id": "act2_highlands",
+      "title": "The Highland Camp",
+      "summary": "Ordo let a way out slip. The rebels in the Highlands pay for news like yours.",
+      "scene": "highland_camp",
+      "requires": {
+        "flags": [
+          "ordo_heard_warning"
+        ]
+      }
+    }
+  ]
+}

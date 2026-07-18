@@ -126,6 +126,29 @@ func _run() -> void:
 	_check(not painted.journal.is_open(), "journal closes via toggle")
 	_check(painted.input_enabled, "world input restored after closing journal")
 
+	# Data-driven scene-to-scene travel: the jailer conversation set
+	# ordo_heard_warning, which opens the prison manifest's exit. Follow it
+	# and confirm the next scene builds itself entirely from data.
+	var scene_exit: Dictionary = painted.available_exit()
+	_check(not scene_exit.is_empty(), "prison exit unlocked after conversation")
+	_check(scene_exit.get("to", "") == "highland_camp", "exit points at next scene via data")
+	var highland: Node = painted.travel_to(scene_exit)
+	await process_frame
+	await process_frame
+	_check(
+		highland != null and highland.scene_id == "highland_camp",
+		"travelled to highland_camp scene"
+	)
+	_check(highland.player != null, "next scene built its player from the manifest")
+	_check(
+		highland.manifest.get("id", "") == "highland_camp", "next scene loaded the right manifest"
+	)
+	_check(
+		not highland.available_exit().is_empty(), "highland offers a return exit (bidirectional)"
+	)
+	highland.queue_free()
+	await process_frame
+
 	# Let a few frames run so _process/_physics_process code paths execute.
 	for i in 10:
 		await process_frame

@@ -119,6 +119,42 @@ static func quest_log(state: Dictionary) -> Array:
 	return rows
 
 
+## Chapter/act progression. `chapters` is the loaded data/chapters.json
+## ({"acts": [{id, title, scene, requires}, ...]}). The current act is the
+## furthest act, scanning from the top, whose requires-block is satisfied —
+## stopping at the first locked act. Progression is linear: you can't unlock
+## act 3 while act 2 is still locked. Returns {} when nothing is unlocked.
+static func current_act(state: Dictionary, chapters: Dictionary) -> Dictionary:
+	var current: Dictionary = {}
+	for act: Dictionary in chapters.get("acts", []):
+		if not requirements_met(state, act.get("requires", {})):
+			break
+		current = act
+	return current
+
+
+## Index of the current act within the ordered list, or -1 if none unlocked.
+static func current_act_index(state: Dictionary, chapters: Dictionary) -> int:
+	var index := -1
+	var acts: Array = chapters.get("acts", [])
+	for i in acts.size():
+		if not requirements_met(state, acts[i].get("requires", {})):
+			break
+		index = i
+	return index
+
+
+## The exits from a scene manifest that are currently traversable — i.e.
+## whose requires-block is satisfied. Each exit is {id, to, label,
+## transition, requires}; `to` is the destination scene id.
+static func available_exits(state: Dictionary, scene: Dictionary) -> Array:
+	var open: Array = []
+	for scene_exit: Dictionary in scene.get("exits", []):
+		if requirements_met(state, scene_exit.get("requires", {})):
+			open.append(scene_exit)
+	return open
+
+
 ## Evaluate a dialogue option's "requires" block against state.
 ## Supported keys:
 ##   attributes: {attr_id: min_score}

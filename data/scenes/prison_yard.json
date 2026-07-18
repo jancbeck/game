@@ -104,6 +104,19 @@
     }
   ],
   "ambience": "res://art/audio/wind_ambience.wav",
+  "exits": [
+    {
+      "id": "to_highlands",
+      "to": "highland_camp",
+      "label": "Slip out toward the Highlands",
+      "transition": "fade",
+      "requires": {
+        "flags": [
+          "ordo_heard_warning"
+        ]
+      }
+    }
+  ],
   "occluders": [
     {
       "polygon": [

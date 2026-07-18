@@ -17,6 +17,10 @@ extends Node3D
 ## }
 
 const SPEED := 2.6
+## The reusable director loaded when travelling: same script + UI, its
+## scene_id set at runtime to the exit's destination.
+const WORLD_TSCN := "res://scenes/painted/painted_world.tscn"
+const FADE_TIME := 0.35
 
 @export var scene_id: String = ""
 
@@ -37,6 +41,7 @@ var backdrop_size := Vector2(1536, 1024)
 var _fires: Array[OmniLight3D] = []
 var _flicker_time := 0.0
 var _voice_player: AudioStreamPlayer
+var _fade: ColorRect
 
 
 func _ready() -> void:
@@ -51,9 +56,29 @@ func _ready() -> void:
 	_build_npcs()
 	_build_occluders()
 	_build_audio()
+	_build_fade()
 	dialogue_ui.option_chosen.connect(_on_option_chosen)
-	Store.state_changed.connect(func(_s: Dictionary) -> void: hud.refresh())
+	Store.state_changed.connect(_on_state_changed)
 	hud.refresh()
+
+
+func _on_state_changed(_state: Dictionary) -> void:
+	hud.refresh()
+	# Completing the jailer conversation can open an exit; keep the prompt live.
+	_refresh_prompt()
+
+
+## A full-screen black overlay on the UI layer that fades from opaque to
+## clear on scene entry — the "transition" that travel arrives through.
+func _build_fade() -> void:
+	_fade = ColorRect.new()
+	_fade.color = Color(0, 0, 0, 1)
+	_fade.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	_fade.set_anchors_preset(Control.PRESET_FULL_RECT)
+	var ui := get_node("UI")
+	ui.add_child(_fade)
+	var tween := create_tween()
+	tween.tween_property(_fade, "color:a", 0.0, FADE_TIME)
 
 
 ## The painting is an unshaded quad glued to the camera's far plane,
@@ -337,10 +362,46 @@ func _update_nearby_npc() -> void:
 			closest_dist = dist
 	if closest != nearby_npc:
 		nearby_npc = closest
-		if nearby_npc.is_empty():
-			hud.hide_prompt()
-		else:
-			hud.show_prompt("[E] Talk to %s" % nearby_npc["data"].get("name", "?"))
+		_refresh_prompt()
+
+
+## Decide what the interaction prompt shows: a nearby NPC to talk to takes
+## priority; otherwise, if this scene has a currently-open exit, offer to
+## travel; otherwise nothing.
+func _refresh_prompt() -> void:
+	if not nearby_npc.is_empty():
+		hud.show_prompt("[E] Talk to %s" % nearby_npc["data"].get("name", "?"))
+		return
+	var scene_exit := available_exit()
+	if scene_exit.is_empty():
+		hud.hide_prompt()
+	else:
+		hud.show_prompt("[E] %s" % scene_exit.get("label", "Travel"))
+
+
+## The first exit out of this scene whose requirements are currently met,
+## or {} if the way onward is still locked. Data-driven: exits and their
+## unlock conditions live in the scene manifest, evaluated by the reducer.
+func available_exit() -> Dictionary:
+	var exits: Array = Reducers.available_exits(Store.get_state(), manifest)
+	return exits[0] if not exits.is_empty() else {}
+
+
+## Travel to an exit's destination scene. Rebuilds the reusable painted-world
+## director for the target scene id and swaps it in for this one — no
+## hardcoded per-scene glue; the destination comes entirely from the exit.
+func travel_to(scene_exit: Dictionary) -> Node:
+	var target: String = scene_exit.get("to", "")
+	if target.is_empty() or not Db.scenes.has(target):
+		push_error("PaintedScene: exit to unknown scene '%s'" % target)
+		return null
+	var next: Node = (load(WORLD_TSCN) as PackedScene).instantiate()
+	next.scene_id = target
+	var tree := get_tree()
+	tree.root.add_child(next)
+	tree.current_scene = next
+	queue_free()
+	return next
 
 
 func _unhandled_input(event: InputEvent) -> void:
@@ -351,8 +412,13 @@ func _unhandled_input(event: InputEvent) -> void:
 		return
 	if journal.is_open():
 		return
-	if event.is_action_pressed("interact") and runner == null and not nearby_npc.is_empty():
-		start_dialogue(nearby_npc)
+	if event.is_action_pressed("interact") and runner == null:
+		if not nearby_npc.is_empty():
+			start_dialogue(nearby_npc)
+		else:
+			var scene_exit := available_exit()
+			if not scene_exit.is_empty():
+				travel_to(scene_exit)
 	elif event.is_action_pressed("save_game"):
 		SaveSystem.save_game(Store.get_state())
 		hud.flash_message("Game saved")
@@ -413,3 +479,5 @@ func _on_dialogue_ended() -> void:
 	runner = null
 	dialogue_ui.hide()
 	input_enabled = true
+	# The conversation may have unlocked the way onward.
+	_refresh_prompt()
