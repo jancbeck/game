@@ -103,6 +103,10 @@ func current_clip() -> String:
 func freeze_clip(clip: String, time: float) -> void:
 	if _anim == null:
 		return
-	_play(clip)
-	_anim.pause()
+	_current = clip
+	_anim.play(clip, 0.0)
 	_anim.seek(time, true)
+	# seek() defers the pose to the next process frame, and a paused player
+	# never gets one — advance(0) applies it immediately, pause() keeps it.
+	_anim.advance(0.0)
+	_anim.pause()

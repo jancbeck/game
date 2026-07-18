@@ -47,7 +47,9 @@ func test_freeze_clip_holds_an_exact_pose() -> void:
 
 
 func test_build_scalar_scales_the_model() -> void:
-	var big := auto_free(ConvictRig.new())
+	# Typed explicitly: auto_free() returns Variant, and `:=` inference from a
+	# Variant is a warning — gdUnit4 discovery compiles warnings as errors.
+	var big: ConvictRig = auto_free(ConvictRig.new())
 	big.build = 1.2
 	add_child(big)
 	assert_float(big._model.scale.x).is_equal_approx(1.2, 0.001)
