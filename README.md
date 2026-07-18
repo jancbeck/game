@@ -14,7 +14,8 @@ way to finish the story; generalists keep their options and their doubts.
 ## Playing
 
 Open the project in Godot 4.5 (or run `godot --path .`) and play. WASD to
-move, E to talk, F5/F9 quick save/load. Talk to Rurik at the gate, earn
+move, E to talk, J to open the journal (quest log + recorded entries),
+F5/F9 quick save/load. Talk to Rurik at the gate, earn
 your place with Marda, deal with the chained man, then face the Overseer.
 Four endings, gated by what you've made of yourself.
 

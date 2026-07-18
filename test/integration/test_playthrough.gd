@@ -70,6 +70,27 @@ func test_guile_specialist_full_playthrough() -> void:
 	assert_bool(runner.is_running()).is_false()
 
 
+func test_narrative_hud_reflects_playthrough_journal_and_quests() -> void:
+	# The journal viewer + quest log (narrative HUD) read the store through
+	# Reducers.journal_log / quest_log; drive real content and assert the
+	# panel would show the recorded entries and quest state.
+	_talk("gatekeeper", ["brandy", "[Enter the camp]"])
+	var state: Dictionary = store.get_state()
+	var journal: Array = Reducers.journal_log(state)
+	# Newest entry first: the gate lie is the most recent thing recorded.
+	assert_int(journal.size()).is_equal(1)
+	assert_str(str(journal[0])).contains("brandy")
+	var rows: Array = Reducers.quest_log(state)
+	var by_id := {}
+	for row: Dictionary in rows:
+		by_id[row["id"]] = row
+	assert_bool(by_id.has("enter_the_vale")).is_true()
+	assert_bool(by_id["enter_the_vale"]["done"]).is_true()
+	assert_str(by_id["enter_the_vale"]["approach"]).is_equal("guile")
+	assert_bool(by_id.has("earn_your_place")).is_true()
+	assert_bool(by_id["earn_your_place"]["done"]).is_false()
+
+
 func test_specialist_is_hardened_out_of_offpath_options() -> void:
 	_talk("gatekeeper", ["open you", "[Enter the camp]"])
 	_talk("camp_leader", ["lift cage", "look into it"])

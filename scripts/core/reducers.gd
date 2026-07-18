@@ -98,6 +98,27 @@ static func quest_active(state: Dictionary, quest_id: String) -> bool:
 	return quest_id in state["quests"]["active"]
 
 
+## Journal entries in reverse-chronological order (newest first), for the
+## narrative HUD's journal panel. Returns a fresh copy; never the live array.
+static func journal_log(state: Dictionary) -> Array:
+	var entries: Array = state["journal"].duplicate()
+	entries.reverse()
+	return entries
+
+
+## Quest log rows for the narrative HUD: active quests first (in the order
+## they were started), then completed ones with the approach taken. Titles
+## are resolved from Db by the panel; this stays engine-free and testable.
+static func quest_log(state: Dictionary) -> Array:
+	var rows: Array = []
+	for quest_id: String in state["quests"]["active"]:
+		rows.append({"id": quest_id, "done": false, "approach": ""})
+	var completed: Dictionary = state["quests"]["completed"]
+	for quest_id: String in completed:
+		rows.append({"id": quest_id, "done": true, "approach": str(completed[quest_id])})
+	return rows
+
+
 ## Evaluate a dialogue option's "requires" block against state.
 ## Supported keys:
 ##   attributes: {attr_id: min_score}

@@ -42,6 +42,16 @@ func _run() -> void:
 		await process_frame
 	await _snap("03_dialogue")
 
+	# Drive the conversation to completion so a quest is completed, another
+	# starts, and a journal entry is recorded — then open the narrative HUD.
+	_choose(main, "brandy")
+	_choose(main, "[Enter the camp]")
+	main.toggle_journal()
+	for i in 10:
+		await process_frame
+	await _snap("07_journal")
+	main.toggle_journal()
+
 	# The painted scene (Disco Elysium-style pipeline).
 	main.queue_free()
 	await process_frame
@@ -62,7 +72,19 @@ func _run() -> void:
 		await process_frame
 	await _snap("06_occlusion")
 	print("Screenshots written: %d" % shots)
-	quit(0 if shots == 6 else 1)
+	quit(0 if shots == 7 else 1)
+
+
+## Pick the first available dialogue option whose text contains `substring`.
+func _choose(main: Node, substring: String) -> void:
+	if main.runner == null:
+		return
+	var store: Node = root.get_node("/root/Store")
+	var options: Array[Dictionary] = main.runner.visible_options(store.get_state())
+	for option in options:
+		if option["available"] and substring in str(option["text"]):
+			main._on_option_chosen(option["index"])
+			return
 
 
 func _snap(shot_name: String) -> void:

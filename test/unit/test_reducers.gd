@@ -110,3 +110,30 @@ func test_apply_effects_dispatches_all_types() -> void:
 	assert_bool(Reducers.has_flag(state, "f1")).is_true()
 	assert_int(Reducers.attribute_score(state, "lore")).is_equal(2)
 	assert_array(state["journal"]).contains(["entry"])
+
+
+func test_journal_log_is_newest_first_and_non_destructive() -> void:
+	state = Reducers.add_journal_entry(state, "first")
+	state = Reducers.add_journal_entry(state, "second")
+	var log: Array = Reducers.journal_log(state)
+	assert_array(log).is_equal(["second", "first"])
+	# The selector must not reverse or otherwise mutate the stored journal.
+	assert_array(state["journal"]).is_equal(["first", "second"])
+
+
+func test_quest_log_lists_active_then_completed_with_approach() -> void:
+	state = Reducers.start_quest(state, "q_active")
+	state = Reducers.start_quest(state, "q_done")
+	state = Reducers.complete_quest(state, "q_done", "guile")
+	var rows: Array = Reducers.quest_log(state)
+	assert_int(rows.size()).is_equal(2)
+	assert_str(rows[0]["id"]).is_equal("q_active")
+	assert_bool(rows[0]["done"]).is_false()
+	assert_str(rows[1]["id"]).is_equal("q_done")
+	assert_bool(rows[1]["done"]).is_true()
+	assert_str(rows[1]["approach"]).is_equal("guile")
+
+
+func test_quest_log_and_journal_log_empty_on_fresh_state() -> void:
+	assert_array(Reducers.quest_log(state)).is_empty()
+	assert_array(Reducers.journal_log(state)).is_empty()

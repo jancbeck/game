@@ -32,6 +32,7 @@ var backdrop_size := Vector2(1536, 1024)
 
 @onready var dialogue_ui: Control = $UI/DialogueUI
 @onready var hud: Control = $UI/Hud
+@onready var journal: Control = $UI/JournalPanel
 
 var _fires: Array[OmniLight3D] = []
 var _flicker_time := 0.0
@@ -343,6 +344,13 @@ func _update_nearby_npc() -> void:
 
 
 func _unhandled_input(event: InputEvent) -> void:
+	# The journal can be opened whenever no dialogue is running, and closed
+	# while open; it pauses world movement like dialogue does.
+	if event.is_action_pressed("toggle_journal") and runner == null:
+		toggle_journal()
+		return
+	if journal.is_open():
+		return
 	if event.is_action_pressed("interact") and runner == null and not nearby_npc.is_empty():
 		start_dialogue(nearby_npc)
 	elif event.is_action_pressed("save_game"):
@@ -354,6 +362,11 @@ func _unhandled_input(event: InputEvent) -> void:
 			hud.flash_message("No save found")
 		elif Store.restore(loaded):
 			hud.flash_message("Game loaded")
+
+
+func toggle_journal() -> void:
+	journal.toggle()
+	input_enabled = not journal.is_open()
 
 
 func start_dialogue(npc: Dictionary) -> void:
