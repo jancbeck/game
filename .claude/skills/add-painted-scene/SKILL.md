@@ -15,6 +15,14 @@ that loads it. The manifest field schema lives in the `painted_scene.gd`
 header comment — read it there, don't reproduce it. This skill is the
 *workflow and the judgment calls*.
 
+> **Pixel-picking helper.** Every backdrop-pixel coordinate below (walk
+> polygon, light `px`, occluder polygons + anchors, `spawn`, NPC `pos`) can be
+> read without an external editor: open `tools/manifest_picker.html` in a
+> browser, load the backdrop PNG, and click to collect points. It draws a
+> labelled grid + a live overlay and emits a paste-ready manifest fragment.
+> You still make the judgment calls (which floor is walkable, where a prop
+> meets the ground); the helper just spares you the coordinate arithmetic.
+
 ## Order of operations
 
 1. **Backdrop** — generate `art/scenes/<id>.png` (see `generate-assets`).
