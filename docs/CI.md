@@ -15,6 +15,11 @@ So visual review is a CI job:
 - The job force-pushes the PNGs to a dedicated **`ci-screenshots` branch**.
   An agent then `git fetch`es that branch, `Read`s the PNGs, and judges them
   — this is the only way to review look-and-feel from here.
+- After publishing, the job runs **`tools/compare_goldens.gd`** against the
+  committed reference frames in `test/golden/` and **fails on a visual
+  regression** (see below). The publish/upload steps run `if: always()`, so the
+  frames are still pushed to `ci-screenshots` even when the golden check fails —
+  you can look at exactly what drifted.
 - The headless smoke test (`tools/smoke_test.gd`) uses plain `--headless`
   (no renderer) because it only exercises logic/scene-tree wiring, not
   pixels.
@@ -54,7 +59,41 @@ Ordered cheapest-first; a failure early skips the expensive stages.
 3. **gdUnit4 tests** — unit suites (reducers, dialogue runner, save/load) and
    the content-graph validator, plus the integration playthroughs of the
    real shipped story.
-4. **Render screenshots** — the visual review artifacts described above.
+4. **Render screenshots + golden check** — the visual review artifacts
+   described above, plus an automated regression gate.
+
+## Golden-image regression check
+
+`tools/compare_goldens.gd` decodes each rendered `screenshots/<name>.png` and
+the committed `test/golden/<name>.png` and compares them with a **tolerance**
+(llvmpipe is not bit-exact run to run, so exact-match would flap). Two
+complementary metrics, a shot fails if *either* trips:
+
+- **changed fraction** — share of pixels whose worst RGB channel moved past
+  `PIXEL_CHANNEL_TOLERANCE` (24/255); fails above `MAX_CHANGED_FRACTION` (2%).
+- **mean luma delta** — average luminance shift over the whole frame; fails
+  above `MAX_MEAN_LUMA_DELTA` (4/255). Catches a uniform darken/brighten (e.g.
+  reverting a lighting fix).
+
+**Non-gating shots (measured, not guessed).** Most shots are deterministic
+between two identical llvmpipe renders — the painted scenes churn ~0.2% of
+pixels / ~0.1 luma, the settled `01_world` establishing shot ~0.01%, the
+journal ~0.6%. But `02_walking` and `03_dialogue` capture the gray-box world's
+character **mid-walk**: the stride phase at capture depends on frame timing, so
+limbs land differently each run (`02_walking` measured 2.4% then 6.3% changed
+between two identical-code runs — unbounded, not tunable). Those two are in the
+tool's `NONGATING` list: still rendered, published, and reported as `info`, but
+never fail CI. The gray-box world's lighting is still guarded by the
+deterministic `01_world` shot, and the painted-pipeline shots (the reason this
+check exists) are fully gated. Because every *gated* shot is deterministic, the
+thresholds are tight (2% / 4) rather than padded to swallow animation noise, so
+a real regression in a painted scene actually trips them.
+
+A **missing** golden warns (bootstraps a new shot without breaking CI); a
+**size mismatch** fails. Accepting new goldens after an intentional change is
+described in `test/golden/README.md` (fetch the CI render, then
+`godot --headless -s tools/compare_goldens.gd -- --update`). The check decodes
+PNGs only — no renderer — so it also runs under plain `--headless`.
 
 ## Local pre-push checklist
 

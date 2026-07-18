@@ -76,11 +76,12 @@ jobs:
       - name: Render screenshots (Xvfb + llvmpipe)
         run: xvfb-run -a godot --rendering-driver opengl3 -s tools/screenshots.gd
       - uses: actions/upload-artifact@v4
+        if: always()
         with:
           name: screenshots
           path: screenshots/*.png
       - name: Publish to ci-screenshots branch
-        if: github.event_name == 'pull_request'
+        if: always() && github.event_name == 'pull_request'
         run: |
           cd screenshots
           git init -q -b ci-screenshots
@@ -91,6 +92,8 @@ jobs:
           git push -f "https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" ci-screenshots
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Golden-image regression check
+        run: godot --headless -s tools/compare_goldens.gd
 
   unit-tests:
     name: "gdUnit4 tests"
