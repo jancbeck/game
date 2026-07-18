@@ -33,7 +33,11 @@ invisible `y=0` ground plane. This is the whole illusion:
 
 The consequence to remember: the mapping assumes everything is on the ground
 plane. Anything the painting depicts *above* the ground (wall torches,
-hanging signs) will be mis-placed if you feed its pixel to `px_to_world`.
+hanging signs) is mis-placed if you feed its pixel to `px_to_world` alone.
+For those, a light carries an authored height hint — `"wall": true` +
+`"wall_height"` reads the flame pixel on a horizontal plane at that height
+(via `px_to_world_at_height`), or `"world": [x, y, z]` sets the position
+outright — so the light lands at the painted flame instead of far up the wall.
 
 ## Occlusion: cards, not a depth map
 
@@ -46,7 +50,9 @@ deeper than the card is hidden by the ordinary depth buffer.
 Trade-offs (by design, so you can weigh them):
 - The card is a *duplicate* of a region already in the far-plane painting.
   If the card's depth/scale is slightly off, you get a faint double-image of
-  the prop. Align the anchor carefully.
+  the prop. Because the card is cut from those exact pixels and the camera is
+  fixed, a correctly-anchored card lands 1:1 over its source with no seam —
+  the CI `06_occlusion` frame is the proof; align the anchor carefully.
 - Cutting is per-pixel in GDScript at load time. Fine for a few props per
   scene; if a scene needs many/large occluders, bake the cards offline
   instead of at runtime.
@@ -56,18 +62,20 @@ Trade-offs (by design, so you can weigh them):
 These are true of the code as merged; they are facts you cannot read off the
 source, only off rendered frames:
 
-1. **Wall-mounted fires land wrong.** Light/ember `px` is ground-projected,
-   so torches painted high on a wall get their light and particles placed too
-   far back. Ground-level braziers are correct. Proper fix: an authored world
-   `height`/`wall` hint in the manifest instead of ground projection —
-   deferred pending a call on how much fire fidelity is worth.
-2. **Occlusion is implemented but not yet proven on screen.** The demo pose
-   used so far leaves the character fully hidden, which doesn't demonstrate
-   the effect. Needs a half-behind-the-prop pose to confirm no seams.
-3. **`CharacterRig` proportions are stubby** (large head) — acceptable
-   gray-box, tunable in the rig.
-4. **No music or designed SFX.** Ambience/crackle/clicks are procedurally
+1. **No music or designed SFX.** Ambience/crackle/clicks are procedurally
    synthesized placeholders; the asset key cannot make music or real SFX.
+
+Resolved (kept as breadcrumbs so they aren't reopened):
+
+- *Wall-mounted fires.* Lights now take an authored height hint
+  (`"wall"`/`"wall_height"` or `"world"`) so torches painted high on a wall
+  light at the flame; ground braziers still ground-project. See the mapping
+  section above and `_light_position`.
+- *Occlusion proven.* The `06_occlusion` frame stands a character half behind
+  the low foreground prop — legs hidden, torso clear, no double-image seam.
+- *`CharacterRig` proportions.* Rebalanced to a taller, smaller-headed
+  silhouette with an idle weight-shift and a lean-in gesture during dialogue;
+  a manifest `"build"` scalar varies height/bulk per character.
 
 ## Two visual modes coexist
 

@@ -62,7 +62,8 @@
         460,
         270
       ],
-      "height": 2.6,
+      "wall": true,
+      "wall_height": 3.5,
       "color": "#ffab55",
       "energy": 4.0,
       "range": 8.0,
@@ -73,7 +74,8 @@
         815,
         190
       ],
-      "height": 2.6,
+      "wall": true,
+      "wall_height": 3.5,
       "color": "#ffab55",
       "energy": 4.0,
       "range": 8.0,
@@ -98,6 +100,7 @@
         "body": "#8a4f2d",
         "head": "#b98a6a"
       },
+      "build": 1.12,
       "dialogue": "royal_jailer",
       "portrait": "res://art/sprites/jailer.png",
       "interact_radius": 160
