@@ -15,7 +15,7 @@ extends Node3D
 ##               "height",                    (ground fire: lift above ground)
 ##               "wall": true, "wall_height", (wall torch: read flame at height)
 ##               "world": [x, y, z]}],        (explicit 3D position)
-##   "player": {"palette": {"body": "#rrggbb", "head": "#rrggbb"}, "build"},
+##   "player": {"build"},                  (the convict GLB; palette unused)
 ##   "npcs": [{"id", "name", "pos": [px, py], "palette": {...}, "build",
 ##             "dialogue", "portrait", "interact_radius"}]     (px radius)
 ## }
@@ -170,10 +170,13 @@ func _light_position(light_data: Dictionary, px: Vector2) -> Vector3:
 
 
 func _build_player() -> void:
-	player = _make_character(
-		manifest.get("player", {}).get("palette", {}),
-		float(manifest.get("player", {}).get("build", 1.0))
-	)
+	# The player is the convict: the rigged, animated Blender model
+	# (scripts/world/convict_rig.gd). NPCs stay procedural CharacterRigs.
+	# The manifest "build" scalar still applies; its palette does not —
+	# the convict's colors are baked into the model from the sprite.
+	player = ConvictRig.new()
+	player.build = float(manifest.get("player", {}).get("build", 1.0))
+	add_child(player)
 	player.name = "Player"
 	var spawn: Array = manifest["spawn"]
 	player.position = px_to_world(Vector2(spawn[0], spawn[1]))

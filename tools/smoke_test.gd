@@ -105,6 +105,22 @@ func _run() -> void:
 	_check(painted.player != null, "painted scene built player from manifest")
 	_check(painted.npcs.size() == 1, "painted scene placed NPCs")
 
+	# The player is the convict: the Blender-built rigged model with its
+	# baked idle/walk/talk clips, driven through the CharacterRig interface.
+	_check(painted.player is ConvictRig, "player is the convict model")
+	var convict: ConvictRig = painted.player
+	_check(convict.has_clips(), "convict.glb shipped idle/walk/talk clips")
+	_check(convict.current_clip() == "idle", "convict starts in idle")
+	convict.animate(0.1, 1.0)
+	_check(convict.current_clip() == "walk", "convict walks when driven")
+	convict.animate(0.1, 0.0)
+	_check(convict.current_clip() == "idle", "convict settles back to idle")
+	convict.set_speaking(true)
+	convict.animate(0.1, 0.0)
+	_check(convict.current_clip() == "talk", "convict talks while speaking")
+	convict.set_speaking(false)
+	convict.animate(0.1, 0.0)
+
 	# Pipeline fixes: the NPC rig picks up its manifest build scalar, and the
 	# wall-mounted torches are placed high (at the painted flame) rather than
 	# ground-projected — a ground brazier stays low.

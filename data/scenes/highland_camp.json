@@ -59,12 +59,6 @@
       "fire": true
     }
   ],
-  "player": {
-    "palette": {
-      "body": "#4d5a3a",
-      "head": "#c8a284"
-    }
-  },
   "npcs": [],
   "ambience": "res://art/audio/wind_ambience.wav",
   "exits": [

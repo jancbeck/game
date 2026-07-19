@@ -32,14 +32,22 @@ flexibility of the others; hardened attributes lock dialogue options forever.
 - `scripts/main.gd` — glue: world ↔ runner ↔ UI ↔ store.
 - `scripts/systems/painted_scene.gd` + `scripts/world/character_rig.gd` —
   the Disco Elysium-style presentation: a 2D painted backdrop with
-  real-time, code-animated 3D characters walking on it. Scenes are data
-  (`data/scenes/*.json`); assets live in `art/`.
+  real-time 3D characters walking on it. Scenes are data
+  (`data/scenes/*.json`); assets live in `art/`. NPCs are procedural
+  `CharacterRig`s; the player is `scripts/world/convict_rig.gd`, a wrapper
+  around `art/models/convict.glb` (Blender-built, rigged, idle/walk/talk
+  clips) exposing the same interface. Rebuild the GLB locally with
+  `blender -b -P tools/build_convict.py` (never in CI; the .glb is
+  committed).
 - **Presentation is dual.** `scenes/main.tscn` is the original gray-box 3D
   world (procedural capsules, fog, torch pools); `scenes/painted/*.tscn` is
   the painted-backdrop direction new content should use. Both share the same
-  store/reducers/dialogue runner. Characters everywhere are procedural — no
-  skeletal rigs, no imported models, no retargeting (the pipeline that
-  killed the previous prototype). See `docs/PIPELINE.md`.
+  store/reducers/dialogue runner. NPCs everywhere are procedural — no
+  third-party models, no animation libraries, no retargeting (the pipeline
+  that killed the previous prototype). The single sanctioned exception is
+  the player: `art/models/convict.glb`, where ONE Blender script owns mesh,
+  armature, and animations together, so mismatch is impossible by
+  construction. See `docs/PIPELINE.md`.
 
 ## Pipeline knowledge (not inferable from code)
 
