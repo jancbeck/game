@@ -104,6 +104,12 @@ func _run() -> void:
 	await process_frame
 	_check(painted.player != null, "painted scene built player from manifest")
 	_check(painted.npcs.size() == 1, "painted scene placed NPCs")
+	var occluder_count: int = painted.manifest.get("occluders", []).size()
+	# owned=false: the quads are runtime-added children, so they have no owner.
+	_check(
+		painted.find_children("OccluderCard*", "", true, false).size() == occluder_count,
+		"painted scene built one occluder card quad per manifest occluder (%d)" % occluder_count
+	)
 
 	# The player is the convict: the Blender-built rigged model with its
 	# baked idle/walk/talk clips, driven through the CharacterRig interface.

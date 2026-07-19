@@ -38,7 +38,10 @@ flexibility of the others; hardened attributes lock dialogue options forever.
   around `art/models/convict.glb` (Blender-built, rigged, idle/walk/talk
   clips) exposing the same interface. Rebuild the GLB locally with
   `blender -b -P tools/build_convict.py` (never in CI; the .glb is
-  committed).
+  committed). Occluder cards are baked offline with
+  `tools/bake_occluders.py` and committed under `art/occluders/<scene>/`;
+  re-run after changing a backdrop or occluder polygon (CI drift-checks
+  with `--check`).
 - **Presentation is dual.** `scenes/main.tscn` is the original gray-box 3D
   world (procedural capsules, fog, torch pools); `scenes/painted/*.tscn` is
   the painted-backdrop direction new content should use. Both share the same
