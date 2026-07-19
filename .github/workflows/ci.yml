@@ -40,6 +40,9 @@ jobs:
               print("\n".join(bad)); sys.exit(1)
           print("All content JSON valid")
           EOF
+      - run: pip install Pillow
+      - name: Occluder cards up to date
+        run: python tools/bake_occluders.py --check
 
   smoke-test:
     name: "Headless boot & playthrough"

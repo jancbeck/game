@@ -191,6 +191,83 @@ func test_scene_exits_resolve_to_real_scenes() -> void:
 			)
 
 
+func test_baked_occluder_cards_match_manifests() -> void:
+	var scenes: Dictionary = DbScript._load_dir("res://data/scenes")
+	for scene_id: String in scenes:
+		var occluders: Array = scenes[scene_id].get("occluders", [])
+		if occluders.is_empty():
+			continue
+		var cards_path := "res://art/occluders/%s/cards.json" % scene_id
+		(
+			assert_bool(FileAccess.file_exists(cards_path))
+			. override_failure_message("scene '%s': missing %s" % [scene_id, cards_path])
+			. is_true()
+		)
+		if not FileAccess.file_exists(cards_path):
+			continue
+		var parsed: Variant = JSON.parse_string(FileAccess.get_file_as_string(cards_path))
+		var cards_ok := parsed is Dictionary and parsed.has("cards")
+		(
+			assert_bool(cards_ok)
+			. override_failure_message("scene '%s': cards.json not valid JSON" % scene_id)
+			. is_true()
+		)
+		if not cards_ok:
+			continue
+		var cards: Array = parsed["cards"]
+		(
+			assert_int(cards.size())
+			. override_failure_message(
+				"scene '%s': %d cards, want %d" % [scene_id, cards.size(), occluders.size()]
+			)
+			. is_equal(occluders.size())
+		)
+		for i: int in occluders.size():
+			if i >= cards.size():
+				break
+			var where := "%s occluder %d" % [scene_id, i]
+			var card: Dictionary = cards[i]
+			var occluder: Dictionary = occluders[i]
+			(
+				assert_array(_to_ints(card.get("anchor", [])))
+				. override_failure_message("%s: baked anchor mismatch" % where)
+				. is_equal(_to_ints(occluder["anchor"]))
+			)
+			var bounds := _occluder_bounds(occluder["polygon"])
+			var expected := [bounds.position.x, bounds.position.y, bounds.size.x, bounds.size.y]
+			(
+				assert_array(_to_ints(card.get("bounds", [])))
+				. override_failure_message("%s: baked bounds mismatch" % where)
+				. is_equal(expected)
+			)
+			var card_path := str(card.get("card", ""))
+			(
+				assert_bool(FileAccess.file_exists(card_path))
+				. override_failure_message("%s: missing card %s" % [where, card_path])
+				. is_true()
+			)
+			if not FileAccess.file_exists(card_path):
+				continue
+			var image := Image.load_from_file(card_path)
+			(
+				assert_bool(image != null)
+				. override_failure_message("%s: cannot decode %s" % [where, card_path])
+				. is_true()
+			)
+			if image == null:
+				continue
+			(
+				assert_int(image.get_width())
+				. override_failure_message("%s: card width != bounds width" % where)
+				. is_equal(bounds.size.x)
+			)
+			(
+				assert_int(image.get_height())
+				. override_failure_message("%s: card height != bounds height" % where)
+				. is_equal(bounds.size.y)
+			)
+
+
 func test_cutscenes_reference_real_scenes_and_valid_steps() -> void:
 	var cutscenes: Dictionary = DbScript._load_dir("res://data/cutscenes")
 	var scenes: Dictionary = DbScript._load_dir("res://data/scenes")
@@ -266,3 +343,24 @@ func _assert_requires_valid(requires: Dictionary, where: String) -> void:
 		assert_array(ATTRIBUTES).contains([attr])
 	for attr: String in requires.get("not_hardened", []):
 		assert_array(ATTRIBUTES).contains([attr])
+
+
+## Bounds of a manifest occluder polygon, reimplementing the runtime's
+## Rect2i.expand math exactly: the origin is the componentwise min of all
+## points and the end the componentwise max (but at least polygon[0]+1), so
+## the max point itself is EXCLUDED from the covered pixel region.
+func _occluder_bounds(polygon: Array) -> Rect2i:
+	var bounds := Rect2i(int(polygon[0][0]), int(polygon[0][1]), 1, 1)
+	for point: Array in polygon:
+		bounds = bounds.expand(Vector2i(int(point[0]), int(point[1])))
+	return bounds
+
+
+## JSON numbers parse as floats; cast each element to int so array equality
+## with the computed bounds/anchor compares values, not numeric types.
+func _to_ints(value: Variant) -> Array:
+	var result := []
+	if value is Array:
+		for item in value:
+			result.append(int(item))
+	return result

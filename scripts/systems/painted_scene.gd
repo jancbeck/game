@@ -18,6 +18,10 @@ extends Node3D
 ##   "player": {"build"},                  (the convict GLB; palette unused)
 ##   "npcs": [{"id", "name", "pos": [px, py], "palette": {...}, "build",
 ##             "dialogue", "portrait", "interact_radius"}]     (px radius)
+##   "occluders": [{"polygon": [[px, py], ...], "anchor": [px, py]}]
+##                (bake-time input only: tools/bake_occluders.py cuts these
+##                regions out of the backdrop offline; at runtime we load the
+##                committed cards from art/occluders/<id>/, see _build_occluders)
 ## }
 ## "build" (default 1.0) scales a character's height/bulk for silhouette
 ## variety — e.g. 1.1 reads as burlier, 0.9 as slighter.
@@ -209,39 +213,44 @@ func _make_character(palette: Dictionary, build: float = 1.0) -> CharacterRig:
 
 ## Foreground occlusion — the "depth map" of this pipeline, authorable as
 ## text: each occluder is a polygon of backdrop pixels (a prop painted in
-## the foreground) plus an anchor where it meets the ground. We cut that
-## region out of the painting (alpha-masked by the polygon) and mount it
-## as a camera-facing quad at the anchor's TRUE 3D depth. Characters
-## walking behind the anchor line are then genuinely occluded by the
-## depth buffer — same effect as Disco Elysium's height maps, built from
-## polygons instead of a painted depth pass.
+## the foreground) plus an anchor where it meets the ground. The manifest
+## polygons are BAKE-TIME input: tools/bake_occluders.py cuts each region
+## out of the painting offline (alpha-masked by the polygon) and commits
+## trimmed RGBA cards plus a cards.json index under art/occluders/<scene>/.
+## Here we load those pre-baked cards and mount each as a camera-facing
+## quad at the anchor's TRUE 3D depth. Characters walking behind the anchor
+## line are then genuinely occluded by the depth buffer — same effect as
+## Disco Elysium's height maps, built from polygons instead of a painted
+## depth pass. There is no runtime fallback: missing cards are an authoring
+## error (re-run the baker), not something we paper over per-pixel.
 func _build_occluders() -> void:
-	var source: Image = (load(manifest["backdrop"]) as Texture2D).get_image()
-	source.convert(Image.FORMAT_RGBA8)
-	for occluder: Dictionary in manifest.get("occluders", []):
-		var polygon := PackedVector2Array()
-		for point: Array in occluder["polygon"]:
-			polygon.append(Vector2(point[0], point[1]))
-		var bounds := Rect2i(polygon[0].x, polygon[0].y, 1, 1)
-		for point in polygon:
-			bounds = bounds.expand(Vector2i(point))
-		var cut := source.get_region(bounds)
-		for y in cut.get_height():
-			for x in cut.get_width():
-				var px := Vector2(bounds.position.x + x, bounds.position.y + y)
-				if not Geometry2D.is_point_in_polygon(px, polygon):
-					var pixel := cut.get_pixel(x, y)
-					pixel.a = 0.0
-					cut.set_pixel(x, y, pixel)
-		var anchor_arr: Array = occluder["anchor"]
+	if manifest.get("occluders", []).is_empty():
+		return
+	var cards_path := "res://art/occluders/%s/cards.json" % scene_id
+	var data: Variant = null
+	if FileAccess.file_exists(cards_path):
+		data = JSON.parse_string(FileAccess.get_file_as_string(cards_path))
+	if not data is Dictionary or not (data as Dictionary).get("cards") is Array:
+		var msg := "PaintedScene: no usable occluder cards at '%s' — run tools/bake_occluders.py"
+		push_error(msg % cards_path)
+		return
+	var cards: Array = data["cards"]
+	for i in cards.size():
+		var card: Dictionary = cards[i]
+		var anchor_arr: Array = card["anchor"]
 		var anchor_px := Vector2(anchor_arr[0], anchor_arr[1])
+		var bounds_arr: Array = card["bounds"]
+		var bounds := Rect2i(
+			int(bounds_arr[0]), int(bounds_arr[1]), int(bounds_arr[2]), int(bounds_arr[3])
+		)
 		var anchor_world := px_to_world(anchor_px)
 		var wpp := _world_per_backdrop_px(anchor_world)
 		var quad := MeshInstance3D.new()
+		quad.name = "OccluderCard_%d" % i
 		var mesh := QuadMesh.new()
 		mesh.size = Vector2(bounds.size.x * wpp, bounds.size.y * wpp)
 		var material := StandardMaterial3D.new()
-		material.albedo_texture = ImageTexture.create_from_image(cut)
+		material.albedo_texture = load(str(card["card"]))
 		material.shading_mode = BaseMaterial3D.SHADING_MODE_UNSHADED
 		material.transparency = BaseMaterial3D.TRANSPARENCY_ALPHA_SCISSOR
 		mesh.material = material

@@ -1,0 +1,44 @@
+{
+  "scene": "prison_yard",
+  "cards": [
+    {
+      "card": "res://art/occluders/prison_yard/occluder_0.png",
+      "anchor": [
+        1230,
+        630
+      ],
+      "bounds": [
+        1005,
+        140,
+        465,
+        500
+      ]
+    },
+    {
+      "card": "res://art/occluders/prison_yard/occluder_1.png",
+      "anchor": [
+        1240,
+        905
+      ],
+      "bounds": [
+        1020,
+        650,
+        450,
+        260
+      ]
+    },
+    {
+      "card": "res://art/occluders/prison_yard/occluder_2.png",
+      "anchor": [
+        290,
+        595
+      ],
+      "bounds": [
+        150,
+        345,
+        285,
+        255
+      ]
+    }
+  ]
+}

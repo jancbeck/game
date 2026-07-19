@@ -51,9 +51,12 @@ Trade-offs (by design, so you can weigh them):
   the prop. Because the card is cut from those exact pixels and the camera is
   fixed, a correctly-anchored card lands 1:1 over its source with no seam —
   the CI `06_occlusion` frame is the proof; align the anchor carefully.
-- Cutting is per-pixel in GDScript at load time. Fine for a few props per
-  scene; if a scene needs many/large occluders, bake the cards offline
-  instead of at runtime.
+- Cards are baked offline by `tools/bake_occluders.py` (Python + Pillow)
+  from the manifest polygons and committed under `art/occluders/<scene>/`
+  with a `cards.json` (anchor + bounds per card). Scene load is a plain
+  texture load, no per-pixel work. Re-run the baker after changing a
+  backdrop or any occluder polygon — CI's `bake_occluders.py --check`
+  guards drift.
 
 ## Known limitations (do not "discover" these again)
 
