@@ -206,7 +206,7 @@ func test_baked_occluder_cards_match_manifests() -> void:
 		if not FileAccess.file_exists(cards_path):
 			continue
 		var parsed: Variant = JSON.parse_string(FileAccess.get_file_as_string(cards_path))
-		var cards_ok := parsed is Dictionary and parsed.has("cards")
+		var cards_ok: bool = parsed is Dictionary and (parsed as Dictionary).has("cards")
 		(
 			assert_bool(cards_ok)
 			. override_failure_message("scene '%s': cards.json not valid JSON" % scene_id)
