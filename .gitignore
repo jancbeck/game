@@ -26,5 +26,11 @@ build/
 node_modules/
 # Generated grid overlays from tools/gridshot.mjs
 *_grid.png
+# Screenshot renders are CI artifacts (rendered fresh, published to the
+# ci-screenshots branch; goldens live in test/golden/)
+screenshots/*.png
+# Textures Godot's GLB import extracts next to the model (regenerated on
+# every import; the embedded copies in the .glb are the truth)
+art/models/convict_convict_*.png
 # npm lockfile not tracked; CI resolves the single exact-pinned dev dep
 package-lock.json
