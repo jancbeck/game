@@ -36,20 +36,25 @@ The story asks what you do once you know the price of safety.
 
 ## Visual approach
 
-Two coexisting modes, one constant: **characters are always procedural 3D**
-— no skeletal animation, no imported models, no rig retargeting (the exact
-pipeline that killed the previous prototype).
+Two coexisting modes. NPCs are procedural 3D — no third-party models, no
+animation libraries, no rig retargeting (the exact pipeline that killed the
+previous prototype). The single sanctioned exception is the player: the
+convict from `art/sprites/convict.png`, a Blender-built skeletal model
+(`art/models/convict.glb`) where ONE script owns mesh, armature, and
+animations, so mismatch is impossible by construction.
 
 - **Gray-box** (`scenes/main.tscn`): procedural capsule characters, fog,
   cold moonlight, warm torch pools, fixed isometric camera. The original
   bootstrap; still boots and is tested.
 - **Painted** (`scenes/painted/*.tscn`): the Disco Elysium direction — a 2D
-  painted backdrop (generated art) with the same procedural characters,
-  now full limbed `CharacterRig` actors, walking on it under lights placed
-  where the painting's fires are. This is where new story content goes.
+  painted backdrop (generated art) with real-time 3D actors walking on it
+  under lights placed where the painting's fires are. This is where new
+  story content goes.
 
 The mechanics layer is identical across both; only presentation differs.
-See `docs/PIPELINE.md` for the how and why.
+See `docs/PIPELINE.md` for the how and why. The character track (issue
+#30's "production-ready rig" section: animation driver, items, costumes,
+emotes) builds the convict model out to full Disco Elysium parity.
 
 ## Two settings currently coexist
 
@@ -69,5 +74,8 @@ Decide which setting a new scene belongs to before authoring it.
 
 ## Deliberate non-goals
 
-Combat, inventory, crafting, open world, procedural generation,
-multiplayer, visual dialogue editors.
+Combat, crafting, open world, procedural generation, multiplayer, visual
+dialogue editors. (Inventory was on this list during the prototype; the
+production character track — items as data and state, #41/#42 — removed
+it. *Combat* stays: gesture and item-use animations are presentation, not
+a combat system.)
