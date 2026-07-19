@@ -65,12 +65,13 @@ func _run() -> void:
 		await process_frame
 	await _snap("05_prison_dialogue")
 	painted._on_dialogue_ended()
-	# Occlusion proof: stand the character behind the LOW foreground prop
-	# (the occluder whose card covers the bottom-right of the frame) so it is
-	# cut at the waist — legs hidden by the prop, torso and head clear above
-	# its top edge (backdrop y~655). The feet px is tuned so the card bisects
-	# the ~115px-tall rig; a fully-hidden pose would prove nothing.
-	painted.player.position = painted.px_to_world(Vector2(1240, 712))
+	# Occlusion proof: stand the character behind a foreground prop so its
+	# card cuts it at the waist — legs hidden, torso and head clear; a
+	# fully-hidden pose would prove nothing. The convict stands behind the
+	# LEFT SHED's card at (290, 620): the old bottom-right spot (1240, 712)
+	# was tuned for the taller capsule rig — the huge tilted scaffold card
+	# there swallows the shorter convict whole.
+	painted.player.position = painted.px_to_world(Vector2(290, 620))
 	painted.player.rotation.y = 0.0
 	for i in 5:
 		await process_frame
