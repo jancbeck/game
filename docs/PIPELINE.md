@@ -33,11 +33,9 @@ invisible `y=0` ground plane. This is the whole illusion:
 
 The consequence to remember: the mapping assumes everything is on the ground
 plane. Anything the painting depicts *above* the ground (wall torches,
-hanging signs) is mis-placed if you feed its pixel to `px_to_world` alone.
-For those, a light carries an authored height hint — `"wall": true` +
-`"wall_height"` reads the flame pixel on a horizontal plane at that height
-(via `px_to_world_at_height`), or `"world": [x, y, z]` sets the position
-outright — so the light lands at the painted flame instead of far up the wall.
+hanging signs) is mis-placed if you feed its pixel to `px_to_world` alone —
+which is why a light can carry an authored height hint instead (the fields
+live in the manifest schema in `painted_scene.gd`).
 
 ## Occlusion: cards, not a depth map
 
@@ -67,52 +65,39 @@ source, only off rendered frames:
 
 Resolved (kept as breadcrumbs so they aren't reopened):
 
-- *Wall-mounted fires.* Lights now take an authored height hint
-  (`"wall"`/`"wall_height"` or `"world"`) so torches painted high on a wall
-  light at the flame; ground braziers still ground-project. See the mapping
-  section above and `_light_position`.
-- *Occlusion proven.* The `06_occlusion` frame stands a character half behind
-  the low foreground prop — legs hidden, torso clear, no double-image seam.
+- *Wall-mounted fires.* Lights can carry an authored height hint so torches
+  painted high on a wall light at the flame; ground braziers still
+  ground-project.
+- *Occlusion proven.* The `06_occlusion` frame stands a character half
+  behind a foreground prop — legs hidden, torso clear, no double-image
+  seam. It is re-staged per character: the card/spot geometry is
+  height-sensitive, and a shorter actor can vanish behind a neighbouring
+  card while the golden diff stays inside tolerance. Eyeball the frame
+  after any player-model change.
 - *`CharacterRig` proportions.* Rebalanced to a taller, smaller-headed
-  silhouette with an idle weight-shift and a lean-in gesture during dialogue;
-  a manifest `"build"` scalar varies height/bulk per character.
+  silhouette; a manifest `"build"` scalar varies height/bulk per
+  character.
 
 ## The player model: a real rig, one script
 
-The player is the convict from `art/sprites/convict.png` — a genuine
-skeletal rig (`art/models/convict.glb`: 15 bones, puppet-style rigid
-skinning, baked 30 fps `idle`/`walk`/`talk` clips), not a procedural
-capsule. This does not reopen the postmortem's #6 ("AI models + third-party
-animation libraries = rig mismatch hell"): `tools/build_convict.py` authors
-mesh, armature, AND animations in a single Blender run, so there is nothing
-to mismatch. The rule that stands is **no third-party rigs or animation
-libraries**; one self-contained generator script is the loophole, and it is
-the only one.
+The player is the convict from the sprite — a genuine skeletal model, not
+a procedural capsule. This does not reopen the postmortem's #6 ("AI
+models + third-party animation libraries = rig mismatch hell"): the rule
+that stands is **no third-party rigs or animation libraries**, and
+`tools/build_convict.py` authors mesh, armature, AND animations in a
+single Blender run, so there is nothing to mismatch. That self-contained
+generator is the loophole, and it is the only one. NPCs stay procedural.
 
-- Rebuild locally (Blender is not in CI; the .glb is a committed artifact):
-  `blender -b -P tools/build_convict.py` — also writes pose renders to
-  `reports/convict/` for eyeballing before you commit.
-- The cloth/rag textures (`art/models/convict_cloth.png`, `convict_rag.png`)
-  are one-off `tools/genart.py` edits-endpoint generations with the sprite
-  as style reference, committed like all art. The rag strip is authored
-  full-frame (solid at v=1, tatter tips at v=0) and alpha-blended onto the
-  hem cone — that is where the silhouette's raggedness comes from.
-- `scripts/world/convict_rig.gd` (`ConvictRig extends CharacterRig`) wraps
-  the GLB and maps the familiar interface onto the AnimationPlayer:
-  `animate(delta, speed)` crossfades idle/walk/talk, `set_speaking` picks
-  the talk loop, `face_direction` is inherited (the model faces +Z in glTF,
-  so the wrapper spins it π to agree with the -Z facing math). `build`
-  scales the whole model; palettes are a no-op — the convict's colors are
-  baked from the sprite. NPCs stay procedural `CharacterRig`s.
-- CI proof: the smoke test asserts the player is a ConvictRig with all
-  three clips and walks/talks/idles on command; `test/unit/test_convict_rig.gd`
-  covers the state machine; `tools/screenshots.gd` frames 09–11 are a
-  deterministic model sheet (clips frozen at fixed timestamps).
+Non-obvious facts around it (learned from rendered frames, not from the
+code):
 
-## Two visual modes coexist
-
-`scenes/main.tscn` is the original gray-box 3D world (capsule characters,
-fog, torch pools) and still boots/tests. `scenes/painted/*.tscn` is the
-painted-backdrop direction. Both share the same store/reducers/dialogue
-runner — the difference is purely presentational. New story content should
-use painted scenes.
+- Blender is not in CI. The GLB is a committed build artifact;
+  regenerating it is a local step (the build script also renders poses
+  for eyeballing — look at them before committing).
+- glTF assets face +Z; the game's facing math aims -Z. Any imported
+  model needs that compensation on the Godot side or it walks backwards.
+- Manifest palettes tint only procedural rigs; a GLB character's colors
+  are baked into the model.
+- The rag-hem texture must be authored full-frame — solid at the top,
+  tatter tips at the bottom — or the hem mapping breaks. It came from
+  the same reference-guided generation pass as the sprites.
