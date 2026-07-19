@@ -84,11 +84,22 @@ def _bake_card(backdrop, polygon, bounds):
 
 
 def _png_bytes(image):
-    """Deterministic encoding (explicit compress_level) so --check can
-    compare committed PNG bytes against an in-memory re-bake."""
     buf = io.BytesIO()
     image.save(buf, format="PNG", compress_level=6)
     return buf.getvalue()
+
+
+def _same_content(path, expected_bytes):
+    """PNG bytes vary across zlib builds, so compare PNGs by decoded RGBA
+    pixels (and size); everything else byte-exact."""
+    if path.suffix != ".png":
+        return path.read_bytes() == expected_bytes
+    committed = Image.open(path).convert("RGBA")
+    expected = Image.open(io.BytesIO(expected_bytes)).convert("RGBA")
+    return (
+        committed.size == expected.size
+        and committed.tobytes() == expected.tobytes()
+    )
 
 
 def _bake_scene(scene_id, manifest):
@@ -149,7 +160,7 @@ def _check(expected):
         path = ROOT / rel
         if not path.is_file():
             problems.append(f"missing: {rel}")
-        elif path.read_bytes() != expected[rel]:
+        elif not _same_content(path, expected[rel]):
             problems.append(f"differs: {rel}")
     if OUT_ROOT.is_dir():
         for path in sorted(OUT_ROOT.rglob("*")):
