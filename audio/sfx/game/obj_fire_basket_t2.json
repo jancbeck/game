@@ -1,0 +1,12 @@
+{
+  "prompt": "wet logs hissing and crackling in an iron fire basket, one log pushed with an iron poker, sparks crackle and steam hiss, dry close-miked film sound effect, no reverb",
+  "negative_prompt": "reverb, echo, hall, music, melody, speech, voices, singing, rain",
+  "seed": 1001,
+  "seconds": 6.0,
+  "dit": "medium",
+  "decoder": "same-l",
+  "cfg": 2.0,
+  "steps": 8,
+  "wall_seconds": 11.81,
+  "file": "obj_fire_basket_t2.wav"
+}

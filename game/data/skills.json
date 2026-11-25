@@ -1,0 +1,58 @@
+{
+ "_doc": "The player's six skills (scripts/skills.gd). id: what the story names in a `# skill:<id>` tag and in roll(\"<id>\", ...); name and description: shown on the character sheet (C) and in the dialogue log; color: the skill's voice in the log; value: where a new game starts, 1 to 5. difficulties: the named levels of a check, easiest first; a check is two six-sided dice plus the skill against the number, a passive check is the skill plus 6 against it.",
+ "skills": [
+  {
+   "id": "perception",
+   "name": "Sentry's Eye",
+   "description": "Seeing what moves, what does not, and what should not be there.",
+   "color": "#6ea8d8",
+   "value": 4
+  },
+  {
+   "id": "empathy",
+   "name": "Folk Sense",
+   "description": "The mood of a room, and the thing a man is not saying.",
+   "color": "#d68aa6",
+   "value": 3
+  },
+  {
+   "id": "authority",
+   "name": "Bearing",
+   "description": "Being obeyed by people who have no reason to.",
+   "color": "#a98ad6",
+   "value": 2
+  },
+  {
+   "id": "logic",
+   "name": "Tally",
+   "description": "Counting, accounts and arguments, in that order of reliability.",
+   "color": "#98c46e",
+   "value": 3
+  },
+  {
+   "id": "composure",
+   "name": "Backbone",
+   "description": "Keeping your face still while the rest of you is not.",
+   "color": "#62bfae",
+   "value": 2
+  },
+  {
+   "id": "stonework",
+   "name": "The Rock",
+   "description": "The old castle, thinking. Slowly, and mostly about weather.",
+   "color": "#c98a5a",
+   "value": 3
+  }
+ ],
+ "difficulties": [
+  {"name": "Trivial", "dc": 6},
+  {"name": "Easy", "dc": 8},
+  {"name": "Medium", "dc": 10},
+  {"name": "Challenging", "dc": 12},
+  {"name": "Formidable", "dc": 13},
+  {"name": "Legendary", "dc": 14},
+  {"name": "Heroic", "dc": 15},
+  {"name": "Godly", "dc": 16},
+  {"name": "Impossible", "dc": 18}
+ ]
+}

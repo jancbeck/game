@@ -1,0 +1,15 @@
+{
+  "_comment": "Crop boxes in pixels [x, y, w, h] on ref/courtyard.webp (1536x1024). gen=true means this prop goes through Trellis.2; the rest are grey-boxed or procedural in Blender.",
+  "image": "ref/courtyard.webp",
+  "props": {
+    "gallows":  {"box": [960, 140, 400, 430], "gen": true,  "note": "wooden gallows platform with noose and stairs"},
+    "cart":     {"box": [1070, 640, 370, 270], "gen": true,  "note": "broken wooden cart with wheel"},
+    "shed":     {"box": [100, 320, 340, 280], "gen": true,  "note": "wooden lean-to shelter"},
+    "brazier":  {"box": [230, 480, 120, 130], "gen": true,  "note": "iron fire brazier, burning"},
+    "barrel":   {"box": [415, 420, 70, 90],   "gen": true,  "note": "wooden barrel"},
+    "crates":   {"box": [870, 285, 130, 100], "gen": true,  "note": "stacked wooden crates"},
+    "gate":     {"box": [515, 95, 250, 250],  "gen": false, "note": "arched gate door - modeled as inset arch in wall"},
+    "grate":    {"box": [670, 575, 170, 120], "gen": false, "note": "drain grate - flat plane with texture"},
+    "walls":    {"box": [0, 0, 1536, 700],    "gen": false, "note": "battlement walls - procedural grey-box"}
+  }
+}

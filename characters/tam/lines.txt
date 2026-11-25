@@ -1,0 +1,5 @@
+# Tam, the courier, woken in the watch hood of the north-west tower. Voice: tam (designed, voice_design.json).
+tam: [startled, groggy, frightened] Who's there? Don't touch that. It's for the commander, that is, and it was sealed when they gave it me. I swear it was.
+tam: [fast, ashamed] It was broken at the ford. A man in a grey ferryman's cloak held my satchel while I watered the horse. When he gave it back, the wax was split.
+tam: [pleading, close to tears] Please, don't tell the sergeant. Aunt Hedda tied the bell for me. If anyone hangs for it, let it be me and not her.
+tam: [exhausted, giving up] Take it, then. I'm too tired to fight you and too scared to sleep. Only give it to the commander, will you? Not to Marl.

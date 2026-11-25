@@ -1,0 +1,12 @@
+{
+  "prompt": "footsteps of one person in heavy leather boots walking slowly through deep thick clay mud with a short pause after each step, low muffled squelch as the boot sinks and a soft wet suck as it pulls out, dry close-miked film sound effect, no reverb",
+  "negative_prompt": "reverb, echo, hall, music, speech, voices, singing, rain, running, jogging, multiple people, sneakers, high heels, hiss, crackle, splashing water, gravel",
+  "seed": 2003,
+  "seconds": 12.0,
+  "dit": "medium",
+  "decoder": "same-l",
+  "cfg": 2.0,
+  "steps": 8,
+  "wall_seconds": 10.2,
+  "file": "steps_mud_t6.wav"
+}

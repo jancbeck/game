@@ -1,0 +1,148 @@
+{
+  "file": "/Users/jan/workspace/projects/game/characters/tam/voice/part_00/01_tam_whos_there_dont_touch_that_t3.wav",
+  "character": "tam",
+  "text": "[startled, groggy, frightened] Who's there? Don't touch that. It's for the commander, that is, and it was sealed when they gave it me. I swear it was.",
+  "spoken_text": "Who's there? Don't touch that. It's for the commander, that is, and it was sealed when they gave it me. I swear it was.",
+  "tags": [
+    "startled, groggy, frightened"
+  ],
+  "take": 3,
+  "reference": "voices/tam-reference-dry.wav",
+  "model": "drama3-small-IQ3_XXS.gguf",
+  "sampling": [
+    "temperature=0.7",
+    "top_p=0.7",
+    "top_k=30"
+  ],
+  "render_wall_s_all_takes": 121.7,
+  "speaker_similarity": 0.8274,
+  "duration_s": 7.43,
+  "expected_s": 9.73,
+  "silences": [],
+  "transcript": "Who's there? Don't touch that. It's for the commander, that is, and it was sealed when they gave it me. I swear it was.",
+  "words": [
+    {
+      "word": "Who's",
+      "start": 0.06,
+      "end": 0.19
+    },
+    {
+      "word": "there?",
+      "start": 0.3,
+      "end": 0.62
+    },
+    {
+      "word": "Don't",
+      "start": 1.62,
+      "end": 1.62
+    },
+    {
+      "word": "touch",
+      "start": 1.66,
+      "end": 1.66
+    },
+    {
+      "word": "that.",
+      "start": 1.68,
+      "end": 2.26
+    },
+    {
+      "word": "It's",
+      "start": 2.52,
+      "end": 2.62
+    },
+    {
+      "word": "for",
+      "start": 2.62,
+      "end": 2.71
+    },
+    {
+      "word": "the",
+      "start": 2.82,
+      "end": 2.92
+    },
+    {
+      "word": "commander,",
+      "start": 2.92,
+      "end": 3.47
+    },
+    {
+      "word": "that",
+      "start": 3.47,
+      "end": 3.62
+    },
+    {
+      "word": "is,",
+      "start": 3.69,
+      "end": 3.89
+    },
+    {
+      "word": "and",
+      "start": 3.9,
+      "end": 4.01
+    },
+    {
+      "word": "it",
+      "start": 4.02,
+      "end": 4.1
+    },
+    {
+      "word": "was",
+      "start": 4.1,
+      "end": 4.19
+    },
+    {
+      "word": "sealed",
+      "start": 4.34,
+      "end": 4.46
+    },
+    {
+      "word": "when",
+      "start": 4.5,
+      "end": 4.62
+    },
+    {
+      "word": "they",
+      "start": 4.66,
+      "end": 4.81
+    },
+    {
+      "word": "gave",
+      "start": 4.81,
+      "end": 4.9
+    },
+    {
+      "word": "it",
+      "start": 5.06,
+      "end": 5.06
+    },
+    {
+      "word": "me.",
+      "start": 5.06,
+      "end": 5.32
+    },
+    {
+      "word": "I",
+      "start": 6.12,
+      "end": 6.12
+    },
+    {
+      "word": "swear",
+      "start": 6.13,
+      "end": 6.13
+    },
+    {
+      "word": "it",
+      "start": 6.18,
+      "end": 6.31
+    },
+    {
+      "word": "was.",
+      "start": 6.41,
+      "end": 6.84
+    }
+  ],
+  "missing_words": [],
+  "reasons": [],
+  "pass": true
+}

@@ -1,0 +1,12 @@
+{
+  "prompt": "a heavy oak door swinging shut with a deep wooden thud, then an iron latch dropping into its catch with a metallic clack, dry close-miked film sound effect, no reverb",
+  "negative_prompt": "reverb, echo, hall, music, melody, speech, voices, singing, rain",
+  "seed": 1000,
+  "seconds": 6.0,
+  "dit": "medium",
+  "decoder": "same-l",
+  "cfg": 2.0,
+  "steps": 8,
+  "wall_seconds": 13.07,
+  "file": "door_close_t1.wav"
+}

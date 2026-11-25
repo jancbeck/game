@@ -1,0 +1,36 @@
+{
+ "_doc": "The builds a new game offers (scripts/archetypes.gd, shown by the title screen's New game). skills: a value for every skill of data/skills.json, from min to max; every build spends the same points (min x six skills + points), and the check refuses one that does not. Custom lets the player spend the points freely. Nothing here says who the player is: the story keeps that open.",
+ "points": 12,
+ "min": 1,
+ "max": 5,
+ "archetypes": [
+  {
+   "id": "ledger",
+   "name": "Ledger",
+   "description": "You trust what can be counted. Spears, boots, days to the thaw: a number stays where you put it. People rarely do.",
+   "skills": {"perception": 4, "empathy": 2, "authority": 1, "logic": 5, "composure": 3, "stonework": 3}
+  },
+  {
+   "id": "upright",
+   "name": "Upright",
+   "description": "You keep your back straight and your voice level. Most orders carry themselves out if they are given as though they already had been.",
+   "skills": {"perception": 3, "empathy": 1, "authority": 5, "logic": 2, "composure": 4, "stonework": 3}
+  },
+  {
+   "id": "listener",
+   "name": "Listener",
+   "description": "You hear the room before it speaks. Cooks, sergeants, old stone: all of them say more than they mean, if you wait out the weather.",
+   "skills": {"perception": 3, "empathy": 5, "authority": 1, "logic": 2, "composure": 3, "stonework": 4}
+  },
+  {
+   "id": "level",
+   "name": "Level",
+   "description": "Nothing in you sticks out and nothing gives way. A little of every voice, and none of them sure to win the argument.",
+   "skills": {"perception": 3, "empathy": 3, "authority": 3, "logic": 3, "composure": 3, "stonework": 3}
+  }
+ ],
+ "custom": {
+  "name": "Custom",
+  "description": "Twelve points and six voices. Nobody will ask for your reasons."
+ }
+}

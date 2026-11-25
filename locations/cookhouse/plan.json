@@ -1,0 +1,421 @@
+{
+  "_doc": "The garrison cookhouse inside, in metres, X east, Y north, Z up, the floor at z = 0: a kitchen of 5.5 x 3.8 m (x -2.5 .. 3.0) and a larder of 2.8 x 3.8 m beside it (x 3.8 .. 6.6), between 0.8 m walls. The yard is north of the north wall; the door in it is the way out. The camera looks from the south, so the south wall is a sill, the west wall is breast high and the north, partition and east walls stand full height. Outside the building lies the yard at z = -0.15 and the curtain wall behind the north wall. kind 'room': the export builds a walk mesh of platform.walk with the prop footprints cut out, and exits and people from location.json.",
+  "kind": "room",
+  "heights": {
+    "wall": 3.1,
+    "low_wall": 1.0,
+    "sill": 0.4,
+    "lower_ward": -0.5,
+    "curtain": 7.0
+  },
+  "merlon": {
+    "w": 0.75,
+    "h": 0.75,
+    "gap": 0.55,
+    "depth": 0.6,
+    "broken": 0.14,
+    "parapet": 1.0,
+    "_doc": "w, h, gap, depth: merlon size; parapet: breast-high wall under the merlons; broken: share broken down; missing: share fallen, leaving a stump and rubble; leaning: share tilted; coping: share with a cap stone.",
+    "missing": 0.05,
+    "leaning": 0.2,
+    "coping": 0.6
+  },
+  "blocks": {
+    "_doc": "Masonry boxes from `base` (default lower_ward) up to h. center [x, y], size [w, d]. The partition is three blocks, so the doorway between kitchen and larder is open in the proxy geometry too.",
+    "north_wall": {
+      "center": [
+        2.05,
+        2.3
+      ],
+      "size": [
+        10.7,
+        0.8
+      ],
+      "h": "wall",
+      "rot_z": 0
+    },
+    "west_wall": {
+      "center": [
+        -2.75,
+        0.0
+      ],
+      "size": [
+        0.5,
+        3.8
+      ],
+      "h": "low_wall",
+      "rot_z": 0
+    },
+    "south_wall": {
+      "center": [
+        2.05,
+        -2.15
+      ],
+      "size": [
+        10.7,
+        0.5
+      ],
+      "h": 0.4,
+      "rot_z": 0
+    },
+    "partition_s": {
+      "center": [
+        3.4,
+        -1.275
+      ],
+      "size": [
+        0.8,
+        1.25
+      ],
+      "h": "wall",
+      "h_offset": -0.004,
+      "rot_z": 0
+    },
+    "partition_n": {
+      "center": [
+        3.4,
+        1.175
+      ],
+      "size": [
+        0.8,
+        1.45
+      ],
+      "h": "wall",
+      "h_offset": -0.004,
+      "rot_z": 0
+    },
+    "partition_lintel": {
+      "center": [
+        3.4,
+        -0.1
+      ],
+      "size": [
+        0.8,
+        1.1
+      ],
+      "base": 2.15,
+      "h": "wall",
+      "h_offset": -0.008,
+      "rot_z": 0
+    },
+    "east_wall": {
+      "center": [
+        7.0,
+        0.0
+      ],
+      "size": [
+        0.8,
+        3.8
+      ],
+      "h": "wall",
+      "h_offset": -0.006,
+      "rot_z": 0
+    },
+    "curtain": {
+      "center": [
+        2.05,
+        7.6
+      ],
+      "size": [
+        40.0,
+        1.2
+      ],
+      "h": "curtain",
+      "rot_z": 0
+    }
+  },
+  "ground": {
+    "terrain": false,
+    "floor": "flagstone",
+    "apron": {
+      "size": [
+        44.0,
+        34.0
+      ],
+      "z": -0.03,
+      "material": "yard_paving"
+    }
+  },
+  "platform": {
+    "_doc": "polygon: the floor of the room (z = 0) with its wall footings. walk: the polygon that may be walked on, the inside of the kitchen and the larder, the doorway between them and the yard door's tongue. surface: the footstep surface of the floor.",
+    "polygon": [
+      [
+        -3.3,
+        -2.4
+      ],
+      [
+        7.4,
+        -2.4
+      ],
+      [
+        7.4,
+        2.3
+      ],
+      [
+        -3.3,
+        2.3
+      ]
+    ],
+    "walk": [
+      [
+        -2.5,
+        -1.9
+      ],
+      [
+        3.0,
+        -1.9
+      ],
+      [
+        3.0,
+        -0.65
+      ],
+      [
+        3.8,
+        -0.65
+      ],
+      [
+        3.8,
+        -1.9
+      ],
+      [
+        6.6,
+        -1.9
+      ],
+      [
+        6.6,
+        1.9
+      ],
+      [
+        3.8,
+        1.9
+      ],
+      [
+        3.8,
+        0.45
+      ],
+      [
+        3.0,
+        0.45
+      ],
+      [
+        3.0,
+        1.9
+      ],
+      [
+        2.5,
+        1.9
+      ],
+      [
+        2.5,
+        2.4
+      ],
+      [
+        1.5,
+        2.4
+      ],
+      [
+        1.5,
+        1.9
+      ],
+      [
+        -2.5,
+        1.9
+      ]
+    ],
+    "surface": "cobble"
+  },
+  "props": {
+    "_doc": "pos [x, y] on the floor, rot_z degrees (0 = front faces south). The hearth, the oven, the door, the window and the shelves stand on the north wall; the cat's seat between hearth and oven; the archway is on the partition (rot_z -90).",
+    "kitchen_hearth": {
+      "pos": [
+        -1.3,
+        1.9
+      ],
+      "rot_z": 0
+    },
+    "kitchen_oven": {
+      "pos": [
+        -0.07,
+        1.84
+      ],
+      "rot_z": 0
+    },
+    "kitchen_door": {
+      "pos": [
+        2.0,
+        1.9
+      ],
+      "rot_z": 0
+    },
+    "kitchen_wall_things": {
+      "pos": [
+        0.55,
+        1.9
+      ],
+      "rot_z": 0
+    },
+    "kitchen_cat_seat": {
+      "pos": [
+        -0.17,
+        1.5
+      ],
+      "rot_z": 0
+    },
+    "kitchen_table": {
+      "pos": [
+        -0.05,
+        -0.8
+      ],
+      "rot_z": 0
+    },
+    "kitchen_rack": {
+      "pos": [
+        -2.12,
+        -0.55
+      ],
+      "rot_z": 0
+    },
+    "kitchen_flour": {
+      "pos": [
+        1.8,
+        -1.4
+      ],
+      "rot_z": 0
+    },
+    "kitchen_archway": {
+      "pos": [
+        3.0,
+        -0.1
+      ],
+      "rot_z": -90
+    },
+    "kitchen_shelves": {
+      "pos": [
+        5.0,
+        1.9
+      ],
+      "rot_z": 0
+    },
+    "kitchen_larder": {
+      "pos": [
+        5.2,
+        0.0
+      ],
+      "rot_z": 0
+    },
+    "kitchen_ceiling": {
+      "pos": [
+        0.0,
+        0.0
+      ],
+      "rot_z": 0
+    },
+    "barrel": {
+      "pos": [
+        2.55,
+        -1.3
+      ],
+      "rot_z": 20
+    },
+    "barrel#2": {
+      "pos": [
+        6.2,
+        -1.4
+      ],
+      "rot_z": 70
+    },
+    "barrel#3": {
+      "pos": [
+        5.55,
+        -1.5
+      ],
+      "rot_z": -30
+    },
+    "bucket": {
+      "pos": [
+        -2.15,
+        1.1
+      ],
+      "rot_z": 0
+    },
+    "kitchen_sacks": {
+      "pos": [
+        -2.05,
+        -1.3
+      ],
+      "rot_z": 20
+    },
+    "kitchen_sacks#2": {
+      "pos": [
+        4.45,
+        -1.35
+      ],
+      "rot_z": -30
+    },
+    "kitchen_sacks#3": {
+      "pos": [
+        6.0,
+        0.55
+      ],
+      "rot_z": 100
+    },
+    "kitchen_logbox": {
+      "pos": [
+        -2.1,
+        0.4
+      ],
+      "rot_z": 90
+    }
+  },
+  "mounted": {
+    "_doc": "Wall props at an explicit point [x, y, z] on the face.",
+    "kitchen_window": {
+      "pos": [
+        1.24,
+        1.9,
+        1.5
+      ],
+      "rot_z": 0
+    },
+    "kitchen_window#2": {
+      "pos": [
+        6.1,
+        1.9,
+        1.45
+      ],
+      "rot_z": 0
+    }
+  },
+  "crows": {
+    "seed": 1,
+    "perched": 0,
+    "perch_region": [
+      [
+        -3,
+        3
+      ],
+      [
+        -3,
+        3
+      ]
+    ],
+    "flying": [],
+    "points": [],
+    "scale": 1.15
+  },
+  "humans": {
+    "_doc": "1.8 m scale figures, rendered only by --check-scale.",
+    "points": [
+      [
+        -0.9,
+        -1.3,
+        20
+      ],
+      [
+        0.8,
+        0.6,
+        -150
+      ]
+    ]
+  }
+}

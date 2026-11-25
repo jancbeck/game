@@ -1,0 +1,9 @@
+{
+ "_doc": "Voice design for Hedda (scripts/design_voice.py). Picked: smoke_t1, cut 5.3-22.6 s as the reference (the first sentence left out because line 1 reuses it).",
+ "text": "Shut that door, you're letting the rain in on my bread. Sit. No, not there, that's the cat's. You want soup, you wait like the rest of them. Eleven men and not one of them can boil water without praying over it. Ha. Now, what is it you're really after?",
+ "candidates": {
+  "smoke": "An old woman in her late sixties with a very deep, smoky, gravelly alto voice, hoarse from forty years over a smoking hearth. She speaks slowly and deliberately with a broad rural northern English burr, savouring each word, dry and mocking, with a low rattling chuckle. Close to the microphone, dry room.",
+  "crow": "A wiry old woman around seventy with a cracked, reedy, slightly nasal voice and a rasp, quick and sharp, full of sly amusement, rolling her r's in a West Country accent, sometimes dropping to a conspiratorial near-whisper. Close to the microphone, dry room.",
+  "bear": "A big, broad-chested woman in her fifties with a booming, warm, chesty contralto, a thick Scots accent, a laugh always waiting at the back of her throat, bossy and generous at once, speaking with relish. Close to the microphone, dry room."
+ }
+}

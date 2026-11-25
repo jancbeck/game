@@ -1,0 +1,88 @@
+{
+  "file": "/Users/jan/workspace/projects/game/characters/marl/voice/02_leonard_sergeant_marl_thirty_one_winters_t2.wav",
+  "character": "leonard",
+  "text": "[dry] Sergeant Marl. Thirty-one winters on this rock, and the rock is winning.",
+  "spoken_text": "Sergeant Marl. Thirty-one winters on this rock, and the rock is winning.",
+  "tags": [
+    "dry"
+  ],
+  "take": 2,
+  "reference": "voices/leonard-reference-dry.wav",
+  "model": "drama3-small-IQ3_XXS.gguf",
+  "sampling": [
+    "temperature=0.7",
+    "top_p=0.7",
+    "top_k=30"
+  ],
+  "render_wall_s_all_takes": 270.9,
+  "speaker_similarity": 0.7499,
+  "duration_s": 5.43,
+  "expected_s": 5.5,
+  "silences": [],
+  "transcript": "Sergeant Marl. 31 winters on this rock, and the rock is winning.",
+  "words": [
+    {
+      "word": "Sergeant",
+      "start": 0.12,
+      "end": 0.66
+    },
+    {
+      "word": "Marl.",
+      "start": 0.66,
+      "end": 1.28
+    },
+    {
+      "word": "31",
+      "start": 1.28,
+      "end": 1.87
+    },
+    {
+      "word": "winters",
+      "start": 2.0,
+      "end": 2.54
+    },
+    {
+      "word": "on",
+      "start": 2.54,
+      "end": 2.72
+    },
+    {
+      "word": "this",
+      "start": 2.72,
+      "end": 3.06
+    },
+    {
+      "word": "rock,",
+      "start": 3.17,
+      "end": 3.6
+    },
+    {
+      "word": "and",
+      "start": 3.64,
+      "end": 3.85
+    },
+    {
+      "word": "the",
+      "start": 3.85,
+      "end": 4.05
+    },
+    {
+      "word": "rock",
+      "start": 4.16,
+      "end": 4.32
+    },
+    {
+      "word": "is",
+      "start": 4.32,
+      "end": 4.45
+    },
+    {
+      "word": "winning.",
+      "start": 4.45,
+      "end": 5.14
+    }
+  ],
+  "missing_words": [],
+  "reasons": [],
+  "pass": true
+}

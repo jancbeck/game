@@ -1,0 +1,137 @@
+{
+  "file": "/Users/jan/workspace/projects/game/characters/marl/voice/line_11/01_leonard_a_horse_for_the_ford_t2.wav",
+  "character": "leonard",
+  "text": "[dry, resigned] A horse. For the ford. In this weather. The commander's idea, I suppose, and my mare. Bring her back with four legs and I'll forgive you the rest.",
+  "spoken_text": "A horse. For the ford. In this weather. The commander's idea, I suppose, and my mare. Bring her back with four legs and I'll forgive you the rest.",
+  "tags": [
+    "dry, resigned"
+  ],
+  "take": 2,
+  "reference": "voices/leonard-reference-dry.wav",
+  "model": "drama3-small-IQ3_XXS.gguf",
+  "sampling": [
+    "temperature=0.7",
+    "top_p=0.7",
+    "top_k=30"
+  ],
+  "render_wall_s_all_takes": 109.4,
+  "speaker_similarity": 0.583,
+  "duration_s": 26.05,
+  "expected_s": 11.27,
+  "silences": [
+    [
+      0.81,
+      4.75
+    ],
+    [
+      5.54,
+      23.27
+    ]
+  ],
+  "transcript": "A horse for the Ford. Bring her back with four legs and I'll forgive you the rest.",
+  "words": [
+    {
+      "word": "A",
+      "start": 0.07,
+      "end": 0.16
+    },
+    {
+      "word": "horse",
+      "start": 0.16,
+      "end": 0.7
+    },
+    {
+      "word": "for",
+      "start": 0.98,
+      "end": 2.08
+    },
+    {
+      "word": "the",
+      "start": 2.08,
+      "end": 3.16
+    },
+    {
+      "word": "Ford.",
+      "start": 3.16,
+      "end": 5.46
+    },
+    {
+      "word": "Bring",
+      "start": 23.2,
+      "end": 23.2
+    },
+    {
+      "word": "her",
+      "start": 23.2,
+      "end": 23.2
+    },
+    {
+      "word": "back",
+      "start": 23.2,
+      "end": 23.2
+    },
+    {
+      "word": "with",
+      "start": 23.2,
+      "end": 23.2
+    },
+    {
+      "word": "four",
+      "start": 23.2,
+      "end": 23.2
+    },
+    {
+      "word": "legs",
+      "start": 23.2,
+      "end": 23.2
+    },
+    {
+      "word": "and",
+      "start": 23.2,
+      "end": 23.2
+    },
+    {
+      "word": "I'll",
+      "start": 23.2,
+      "end": 23.2
+    },
+    {
+      "word": "forgive",
+      "start": 23.2,
+      "end": 23.2
+    },
+    {
+      "word": "you",
+      "start": 23.2,
+      "end": 23.2
+    },
+    {
+      "word": "the",
+      "start": 23.27,
+      "end": 23.93
+    },
+    {
+      "word": "rest.",
+      "start": 24.28,
+      "end": 26.06
+    }
+  ],
+  "missing_words": [
+    "in",
+    "this",
+    "weather",
+    "the",
+    "commander's",
+    "idea",
+    "i",
+    "suppose",
+    "and",
+    "my",
+    "mare"
+  ],
+  "reasons": [
+    "silence of 1.5 s or more at [[0.81, 4.75], [5.54, 23.27]]",
+    "missing words: in this weather the commander's idea i suppose and my mare"
+  ],
+  "pass": false
+}

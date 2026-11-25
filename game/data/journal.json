@@ -1,0 +1,14 @@
+{
+ "_doc": "Titles of the journal's tasks (scripts/journal.gd). The story adds or updates a task with `# journal:<id>:<text>` and closes it with `# journal_done:<id>`; a task without a title here is shown by its id.",
+ "quests": {
+  "rider": {
+   "title": "The rider nobody rang for"
+  },
+  "letter": {
+   "title": "The commander's letter"
+  },
+  "ferryman": {
+   "title": "The ferryman at the ford"
+  }
+ }
+}

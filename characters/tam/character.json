@@ -1,0 +1,11 @@
+{
+ "_doc": "Recipe for scripts/character.py. Tam, the courier, Hedda's nephew: nineteen, designed voice (voice_design.json), portrait-2.",
+ "name": "Tam",
+ "voice": "tam",
+ "lines": ["lines.txt"],
+ "portrait": "final/portrait_768.jpg",
+ "clip_prompt": "A frightened young courier, just woken, talks quickly and earnestly to someone in front of him, wide eyes, small nervous head movements, lantern light from the left",
+ "idle_prompt": "A frightened young courier listens to someone speaking, mouth closed, swallowing, blinking, breathing fast, head still, lantern light",
+ "face_crop": "crop=420:420:102:50",
+ "distance": 1.5
+}

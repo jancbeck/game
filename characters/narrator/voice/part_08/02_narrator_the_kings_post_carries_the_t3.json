@@ -1,0 +1,93 @@
+{
+  "file": "/Users/jan/workspace/projects/game/characters/narrator/voice/part_08/02_narrator_the_kings_post_carries_the_t3.wav",
+  "character": "narrator",
+  "text": "[dry, pleased with itself, inner voice] The king's post carries the council's crown. Three waves is somebody else's seal.",
+  "spoken_text": "The king's post carries the council's crown. Three waves is somebody else's seal.",
+  "tags": [
+    "dry, pleased with itself, inner voice"
+  ],
+  "take": 3,
+  "reference": "voices/narrator-reference-dry.wav",
+  "model": "drama3-small-IQ3_XXS.gguf",
+  "sampling": [
+    "temperature=0.7",
+    "top_p=0.7",
+    "top_k=30"
+  ],
+  "render_wall_s_all_takes": 97.4,
+  "speaker_similarity": 0.68,
+  "duration_s": 5.57,
+  "expected_s": 5.5,
+  "silences": [],
+  "transcript": "The king's post carries the council's crown. Three waves is somebody else's seal.",
+  "words": [
+    {
+      "word": "The",
+      "start": 0.04,
+      "end": 0.16
+    },
+    {
+      "word": "king's",
+      "start": 0.2,
+      "end": 0.47
+    },
+    {
+      "word": "post",
+      "start": 0.59,
+      "end": 0.78
+    },
+    {
+      "word": "carries",
+      "start": 0.78,
+      "end": 1.21
+    },
+    {
+      "word": "the",
+      "start": 1.21,
+      "end": 1.33
+    },
+    {
+      "word": "council's",
+      "start": 1.42,
+      "end": 1.94
+    },
+    {
+      "word": "crown.",
+      "start": 1.94,
+      "end": 2.47
+    },
+    {
+      "word": "Three",
+      "start": 3.3,
+      "end": 3.3
+    },
+    {
+      "word": "waves",
+      "start": 3.34,
+      "end": 3.34
+    },
+    {
+      "word": "is",
+      "start": 3.34,
+      "end": 3.51
+    },
+    {
+      "word": "somebody",
+      "start": 3.51,
+      "end": 4.09
+    },
+    {
+      "word": "else's",
+      "start": 4.3,
+      "end": 4.73
+    },
+    {
+      "word": "seal.",
+      "start": 4.73,
+      "end": 5.33
+    }
+  ],
+  "missing_words": [],
+  "reasons": [],
+  "pass": true
+}

@@ -1,0 +1,195 @@
+{
+  "file": "characters/marl/voice6/part_ab/02_leonard_recalled_the_commanders_recalled_to_t2.wav",
+  "character": "leonard",
+  "text": "[reading, quiet] Recalled. The commander's recalled to the capital, and we're to be cut to six men. [break] Six men, on a wall built for forty. [break] Well. Now you know why nobody wanted that bell rung.",
+  "spoken_text": "Recalled. The commander's recalled to the capital, and we're to be cut to six men. Six men, on a wall built for forty. Well. Now you know why nobody wanted that bell rung.",
+  "tags": [
+    "reading, quiet",
+    "break",
+    "break"
+  ],
+  "take": 2,
+  "reference": "voices/leonard-reference-dry.wav",
+  "model": "drama3-small-IQ3_XXS.gguf",
+  "sampling": [
+    "temperature=0.7",
+    "top_p=0.7",
+    "top_k=30"
+  ],
+  "render_wall_s_all_takes": 174.9,
+  "speaker_similarity": 0.7701,
+  "duration_s": 12.49,
+  "expected_s": 13.19,
+  "silences": [],
+  "transcript": "Recalled. The commanders recalled to the capital and were to be cut to six men. Six men on a wall built for 40. Well, now you know why nobody wanted that bell rung.",
+  "words": [
+    {
+      "word": "Recalled.",
+      "start": 0.05,
+      "end": 1.5
+    },
+    {
+      "word": "The",
+      "start": 1.54,
+      "end": 1.66
+    },
+    {
+      "word": "commanders",
+      "start": 1.72,
+      "end": 2.09
+    },
+    {
+      "word": "recalled",
+      "start": 2.96,
+      "end": 2.97
+    },
+    {
+      "word": "to",
+      "start": 3.02,
+      "end": 3.07
+    },
+    {
+      "word": "the",
+      "start": 3.15,
+      "end": 3.32
+    },
+    {
+      "word": "capital",
+      "start": 3.32,
+      "end": 3.84
+    },
+    {
+      "word": "and",
+      "start": 3.88,
+      "end": 4.06
+    },
+    {
+      "word": "were",
+      "start": 4.07,
+      "end": 4.38
+    },
+    {
+      "word": "to",
+      "start": 4.38,
+      "end": 4.44
+    },
+    {
+      "word": "be",
+      "start": 4.53,
+      "end": 4.69
+    },
+    {
+      "word": "cut",
+      "start": 4.69,
+      "end": 4.93
+    },
+    {
+      "word": "to",
+      "start": 4.93,
+      "end": 5.09
+    },
+    {
+      "word": "six",
+      "start": 5.32,
+      "end": 5.32
+    },
+    {
+      "word": "men.",
+      "start": 5.37,
+      "end": 5.6
+    },
+    {
+      "word": "Six",
+      "start": 5.64,
+      "end": 6.17
+    },
+    {
+      "word": "men",
+      "start": 6.17,
+      "end": 6.3
+    },
+    {
+      "word": "on",
+      "start": 7.07,
+      "end": 7.07
+    },
+    {
+      "word": "a",
+      "start": 7.12,
+      "end": 7.16
+    },
+    {
+      "word": "wall",
+      "start": 7.16,
+      "end": 7.54
+    },
+    {
+      "word": "built",
+      "start": 7.55,
+      "end": 8.03
+    },
+    {
+      "word": "for",
+      "start": 8.03,
+      "end": 8.31
+    },
+    {
+      "word": "40.",
+      "start": 8.31,
+      "end": 8.94
+    },
+    {
+      "word": "Well,",
+      "start": 9.26,
+      "end": 9.9
+    },
+    {
+      "word": "now",
+      "start": 10.19,
+      "end": 10.37
+    },
+    {
+      "word": "you",
+      "start": 10.37,
+      "end": 10.54
+    },
+    {
+      "word": "know",
+      "start": 10.74,
+      "end": 10.78
+    },
+    {
+      "word": "why",
+      "start": 10.78,
+      "end": 10.98
+    },
+    {
+      "word": "nobody",
+      "start": 10.98,
+      "end": 11.38
+    },
+    {
+      "word": "wanted",
+      "start": 11.38,
+      "end": 11.74
+    },
+    {
+      "word": "that",
+      "start": 11.74,
+      "end": 11.97
+    },
+    {
+      "word": "bell",
+      "start": 12.07,
+      "end": 12.21
+    },
+    {
+      "word": "rung.",
+      "start": 12.29,
+      "end": 12.5
+    }
+  ],
+  "missing_words": [],
+  "reasons": [],
+  "pass": true
+}

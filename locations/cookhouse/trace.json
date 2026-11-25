@@ -1,0 +1,13 @@
+{
+  "_doc": "Orthographic camera of the cookhouse: elevation 46 deg and yaw 5 deg, steeper and squarer than the courtyard's so that a long room shows its floor and not only its walls. The frame is width_m wide; center_px is where the world origin lands in the 1536 x 1024 still (2.03 m left of the centre and 1.42 m below it), so the kitchen and the larder fill the frame.",
+  "camera": {
+    "elevation_deg": 46.0,
+    "yaw_deg": 5.0,
+    "px_per_m": 100.0,
+    "center_px": [
+      565,
+      654
+    ],
+    "width_m": 13.4
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "prompt": "a single soft muffled tap of a fingertip on a thick leather book cover, one short quiet tap, dry close-miked film sound effect, no reverb",
+  "negative_prompt": "reverb, echo, music, melody, speech, voices, beep, electronic, digital, synth, click track",
+  "seed": 1002,
+  "seconds": 3.0,
+  "dit": "medium",
+  "decoder": "same-l",
+  "cfg": 3.0,
+  "steps": 8,
+  "wall_seconds": 7.63,
+  "file": "ui_walk_t3.wav"
+}

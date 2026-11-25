@@ -1,0 +1,6 @@
+inkgd, the Ink runtime in pure GDScript (MIT, see LICENSE).
+Source: https://github.com/ephread/inkgd, branch godot4, commit fea9098ee18d6cdbe9a5e25f8f0296bcdf0fd96a
+(the Godot 4 line; the tagged 0.5.0 release is for Godot 3).
+Only the runtime is vendored: runtime/ and ink_runtime.gd. The editor plugin and the C# bridge are left out.
+The runtime registers global classes (InkStory, InkObject, ...), so a fresh checkout needs one
+`Godot --headless --path game --import` before it runs; scripts/game.py check does that.

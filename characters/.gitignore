@@ -1,0 +1,6 @@
+# voice takes and talking-head clips are large; the game copies live in game/assets/npcs (ignored)
+*.wav
+*.mp4
+# MPFB, the asset pack parts and the CMU BVH clips: scripts/fetch_character_assets.py
+vendor/
+*.mp3

@@ -1,0 +1,11 @@
+{
+ "_doc": "Recipe for scripts/character.py. Hedda, the garrison cook: sixties, smoky raspy voice designed from text (design_voice.py, candidate smoke_t1), portrait-2.",
+ "name": "Hedda",
+ "voice": "hedda",
+ "lines": ["lines.txt"],
+ "portrait": "final/portrait_768.jpg",
+ "clip_prompt": "An old woman, the cook of a medieval castle, talks to someone in front of her with dry, mocking humour, expressive eyebrows, natural head movement, warm firelight from the left",
+ "idle_prompt": "An old woman, the cook of a medieval castle, listens to someone speaking, mouth closed, slight knowing smile, small nods, blinks, breathing, head still, warm firelight",
+ "face_crop": "crop=420:420:102:50",
+ "distance": 2.5
+}

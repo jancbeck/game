@@ -1,0 +1,8 @@
+{
+ "_doc": "Voice design for the inner voices (skills); one narrator speaks every skill line, as in Disco Elysium.",
+ "text": "Listen. Under the rain there is another sound, older, slower. Stone settling. A wall remembering a winter when nobody came. You are tired, and the cold has found the gap in your collar. Good. Tired people notice things. Look again, and do not blink first.",
+ "candidates": {
+  "deep": "A deep, resonant, intimate male voice, ageless, speaking slowly and very close like a thought inside your own head, calm and faintly amused, warm bass with a soft breathy edge, a measured British accent. Close to the microphone, dry room.",
+  "velvet": "A low, smoky male voice in his forties, conspiratorial and dry, half-whispered, unhurried, savouring words, a slight rasp, a neutral British accent, like a storyteller leaning in. Close to the microphone, dry room."
+ }
+}

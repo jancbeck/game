@@ -1,0 +1,543 @@
+{
+  "scene": "Garrison-outpost castle courtyard in steady rain, just after sunset (blue hour).",
+  "sfx": [
+    {
+      "id": "rain_bed",
+      "title": "Rain on cobblestones",
+      "kind": "bed",
+      "loop": true,
+      "seconds": 30,
+      "desc": "Steady rain on cobblestones and puddles, open courtyard.",
+      "sa3": {
+        "prompt": "steady rain falling on wet cobblestones and splashing into puddles in an open stone courtyard in the evening, constant even rain texture, wide stereo field recording, open air",
+        "neg": "music, melody, speech, voices, singing, thunder, wind gusts, distortion",
+        "cfg": 3.0
+      }
+    },
+    {
+      "id": "rain_roof",
+      "title": "Rain on a shingle roof",
+      "kind": "bed",
+      "loop": true,
+      "seconds": 20,
+      "desc": "Rain drumming on a wooden shingle roof with eaves dripping.",
+      "sa3": {
+        "prompt": "steady rain drumming on a wooden shingle roof with water dripping from the eaves onto the ground below, heard from underneath the roof, wide stereo field recording",
+        "neg": "music, melody, speech, voices, singing, thunder, distortion",
+        "cfg": 3.0
+      }
+    },
+    {
+      "id": "spout",
+      "title": "Stone water spout",
+      "kind": "spot",
+      "loop": true,
+      "seconds": 15,
+      "desc": "A stone water spout pouring onto wet stone.",
+      "sa3": {
+        "prompt": "water pouring from a stone gargoyle spout in a steady stream onto wet stone paving, splashing and gurgling, outdoors in the evening, dry close-miked film sound effect, no reverb",
+        "neg": "reverb, echo, hall, music, speech, voices, singing",
+        "cfg": 3.0
+      }
+    },
+    {
+      "id": "brazier",
+      "title": "Brazier in the rain",
+      "kind": "spot",
+      "loop": true,
+      "seconds": 15,
+      "desc": "An iron brazier fire crackling and hissing in the rain.",
+      "sa3": {
+        "prompt": "an iron brazier fire crackling and popping with soft hissing as rain drops fall into the embers, dry close-miked film sound effect, no reverb",
+        "neg": "reverb, echo, hall, music, speech, voices, singing, loud, explosion",
+        "cfg": 3.0
+      }
+    },
+    {
+      "id": "torch",
+      "title": "Wall torch in wind",
+      "kind": "spot",
+      "loop": true,
+      "seconds": 12,
+      "desc": "A wall torch flame fluttering in wind.",
+      "sa3": {
+        "prompt": "a wall torch flame fluttering and flapping in a gusty wind, bright crackling and soft whooshing of the flame, dry close-miked film sound effect, no reverb",
+        "neg": "reverb, echo, hall, music, speech, voices, singing, loud, explosion, rumble, low frequency boom, wind noise",
+        "cfg": 2.0
+      }
+    },
+    {
+      "id": "crows",
+      "title": "Crows on the battlements",
+      "kind": "bed",
+      "loop": false,
+      "seconds": 20,
+      "desc": "Crows cawing on castle battlements, mid-distance, a few wing flaps.",
+      "sa3": {
+        "prompt": "several crows cawing from castle battlements at mid-distance with a few wing flaps, light rain in the background, wide open-air field recording",
+        "neg": "music, melody, speech, voices, singing, thunder",
+        "cfg": 2.0
+      }
+    },
+    {
+      "id": "wind",
+      "title": "Wind over the walls",
+      "kind": "bed",
+      "loop": true,
+      "seconds": 30,
+      "desc": "Cold wind gusting over stone battlements, low and moody.",
+      "sa3": {
+        "prompt": "cold wind gusting over stone battlements, low moody howl rising and falling, no rain, wide stereo field recording, open air",
+        "neg": "music, melody, speech, voices, singing, rain, distortion",
+        "cfg": 2.0
+      }
+    },
+    {
+      "id": "forge",
+      "title": "Distant forge",
+      "kind": "bed",
+      "loop": false,
+      "seconds": 15,
+      "desc": "A distant blacksmith hammer on an anvil with a bellows puff, heard across a courtyard.",
+      "sa3": {
+        "prompt": "a distant blacksmith hammer striking an anvil in a slow steady rhythm with one soft bellows puff, heard across an open courtyard in light rain, wide open-air field recording",
+        "neg": "music, melody, speech, voices, singing, loud, close microphone",
+        "cfg": 2.0
+      }
+    },
+    {
+      "id": "stable",
+      "title": "Horse in the stable",
+      "kind": "spot",
+      "loop": false,
+      "seconds": 15,
+      "desc": "A horse snorting and shifting hooves on straw in a wooden stable, rain outside.",
+      "sa3": {
+        "prompt": "a horse snorting and shifting its hooves on straw in a wooden stable, soft muffled rain outside, dry close-miked film sound effect, no reverb",
+        "neg": "reverb, echo, hall, music, speech, voices, singing, loud, aggressive",
+        "cfg": 2.0
+      }
+    },
+    {
+      "id": "gallows",
+      "title": "Gallows rope",
+      "kind": "spot",
+      "loop": true,
+      "seconds": 15,
+      "desc": "A hemp rope creaking on a wooden beam in the wind.",
+      "sa3": {
+        "prompt": "a hemp rope creaking slowly on a wooden beam in the wind, slow rhythmic strain and groan of fibers, dry close-miked film sound effect, no reverb",
+        "neg": "reverb, echo, hall, music, speech, voices, singing, loud, aggressive",
+        "cfg": 3.0
+      }
+    },
+    {
+      "id": "gate",
+      "title": "Castle gate closing",
+      "kind": "spot",
+      "loop": false,
+      "seconds": 12,
+      "desc": "A heavy wooden castle gate creaking and thudding shut, iron bar dropping.",
+      "sa3": {
+        "prompt": "a heavy wooden castle gate creaking and thudding shut, then a heavy iron bar dropping into its brackets with a clank, dry close-miked film sound effect, no reverb",
+        "neg": "reverb, echo, hall, music, speech, voices, singing",
+        "cfg": 2.0
+      }
+    },
+    {
+      "id": "footsteps",
+      "title": "Boots on wet cobbles",
+      "kind": "spot",
+      "loop": false,
+      "seconds": 15,
+      "desc": "Boots walking on wet cobblestones, splashing through puddles.",
+      "sa3": {
+        "prompt": "a person in leather boots walking at a slow steady pace on wet cobblestones and splashing through puddles, dry close-miked film sound effect, no reverb",
+        "neg": "reverb, echo, hall, music, speech, voices, singing, loud, running",
+        "cfg": 3.0
+      }
+    }
+  ],
+  "game_sfx": [
+    {
+      "id": "steps_cobble",
+      "group": "steps",
+      "title": "Boots on wet cobbles",
+      "seconds": 12,
+      "takes": 4,
+      "desc": "One person in leather boots, slow walk on wet cobblestones.",
+      "sa3": {
+        "prompt": "footsteps of one person in heavy leather boots walking slowly on wet cobblestones with a short pause after each step, hard heel knock then sole with a light wet slap, dry close-miked film sound effect, no reverb",
+        "neg": "reverb, echo, hall, music, speech, voices, singing, rain, running, jogging, multiple people, sneakers, high heels",
+        "cfg": 2.0
+      },
+      "takes_v1": {
+        "prompt": "footsteps of one person in heavy leather boots walking slowly on wet cobblestones, distinct separate steps, hard heel then sole with a light wet slap, dry close-miked film sound effect, no reverb",
+        "cfg": 3.0,
+        "seed": 1000,
+        "takes": 2,
+        "files": "t1, t2"
+      },
+      "seed": 2000,
+      "files": "t3 to t6"
+    },
+    {
+      "id": "steps_mud",
+      "group": "steps",
+      "title": "Boots in mud",
+      "seconds": 12,
+      "takes": 4,
+      "desc": "Slow walk through thick wet mud.",
+      "sa3": {
+        "prompt": "footsteps of one person in heavy leather boots walking slowly through deep thick clay mud with a short pause after each step, low muffled squelch as the boot sinks and a soft wet suck as it pulls out, dry close-miked film sound effect, no reverb",
+        "neg": "reverb, echo, hall, music, speech, voices, singing, rain, running, jogging, multiple people, sneakers, high heels, hiss, crackle, splashing water, gravel",
+        "cfg": 2.0
+      },
+      "takes_v1": {
+        "prompt": "footsteps of one person in heavy leather boots walking slowly through thick wet mud, distinct separate squelching steps, boot sinking and sucking out of the mud, dry close-miked film sound effect, no reverb",
+        "cfg": 3.0,
+        "seed": 1000,
+        "takes": 2,
+        "files": "t1, t2"
+      },
+      "seed": 2000,
+      "files": "t3 to t6"
+    },
+    {
+      "id": "steps_puddle",
+      "group": "steps",
+      "title": "Boots through puddles",
+      "seconds": 12,
+      "takes": 4,
+      "desc": "Slow walk through shallow rainwater puddles on stone.",
+      "sa3": {
+        "prompt": "footsteps of one person in heavy leather boots walking slowly through shallow puddles of water on stone with a short pause after each step, a splash of water and a few drips with each step, dry close-miked film sound effect, no reverb",
+        "neg": "reverb, echo, hall, music, speech, voices, singing, rain, running, jogging, multiple people, sneakers, high heels",
+        "cfg": 2.0
+      },
+      "takes_v1": {
+        "prompt": "footsteps of one person in heavy leather boots walking slowly through shallow puddles of water on stone, distinct separate splashing steps, water splash and drip with each step, dry close-miked film sound effect, no reverb",
+        "cfg": 3.0,
+        "seed": 1000,
+        "takes": 2,
+        "files": "t1, t2"
+      },
+      "seed": 2000,
+      "files": "t3 to t6"
+    },
+    {
+      "id": "steps_stone_stair",
+      "group": "steps",
+      "title": "Boots on stone stairs",
+      "seconds": 12,
+      "takes": 4,
+      "desc": "Climbing a stone stair.",
+      "sa3": {
+        "prompt": "footsteps of one person in heavy leather boots climbing a narrow stone staircase slowly with a short pause after each step, crisp hard heel click and gritty scrape on each granite step, dry close-miked film sound effect, no reverb",
+        "neg": "reverb, echo, hall, music, speech, voices, singing, rain, running, jogging, multiple people, sneakers, high heels, wooden stairs, thud, boom",
+        "cfg": 2.0
+      },
+      "takes_v1": {
+        "prompt": "footsteps of one person in heavy leather boots climbing a stone staircase slowly, distinct separate steps, hard heel knock and scuff on each stone step, dry close-miked film sound effect, no reverb",
+        "cfg": 3.0,
+        "seed": 1000,
+        "takes": 2,
+        "files": "t1, t2"
+      },
+      "seed": 2000,
+      "files": "t3 to t6"
+    },
+    {
+      "id": "steps_stone_walk",
+      "group": "steps",
+      "title": "Boots on the wall-walk",
+      "seconds": 12,
+      "takes": 4,
+      "desc": "Walking on flat stone slabs of a castle wall-walk.",
+      "sa3": {
+        "prompt": "footsteps of one person in heavy leather boots walking slowly on large flat wet stone slabs with a short pause after each step, crisp heel click and short sole scuff on stone, dry close-miked film sound effect, no reverb",
+        "neg": "reverb, echo, hall, music, speech, voices, singing, rain, running, jogging, multiple people, sneakers, high heels",
+        "cfg": 2.0
+      },
+      "takes_v1": {
+        "prompt": "footsteps of one person in heavy leather boots walking slowly on large flat wet stone slabs, distinct separate steps, crisp heel click and sole scuff on stone, dry close-miked film sound effect, no reverb",
+        "cfg": 3.0,
+        "seed": 1000,
+        "takes": 2,
+        "files": "t1, t2"
+      },
+      "seed": 2000,
+      "files": "t3 to t6"
+    },
+    {
+      "id": "steps_wood",
+      "group": "steps",
+      "title": "Boots on wooden boards",
+      "seconds": 12,
+      "takes": 4,
+      "desc": "Walking on the thick planks of the gallows deck and stair.",
+      "sa3": {
+        "prompt": "footsteps of one person in heavy leather boots walking slowly on thick wooden planks of a raised scaffold deck with a short pause after each step, hollow knock of the boards with a faint creak, dry close-miked film sound effect, no reverb",
+        "neg": "reverb, echo, hall, music, speech, voices, singing, rain, running, jogging, multiple people, sneakers, high heels",
+        "cfg": 2.0
+      },
+      "takes_v1": {
+        "prompt": "footsteps of one person in heavy leather boots walking slowly on thick wooden planks of a raised scaffold deck, distinct separate steps, hollow knock of boards with a faint creak, dry close-miked film sound effect, no reverb",
+        "cfg": 3.0,
+        "seed": 1000,
+        "takes": 2,
+        "files": "t1, t2"
+      },
+      "seed": 2000,
+      "files": "t3 to t6"
+    },
+    {
+      "id": "steps_straw",
+      "group": "steps",
+      "title": "Boots on straw",
+      "seconds": 12,
+      "takes": 4,
+      "desc": "Walking on straw and hay strewn on the ground.",
+      "sa3": {
+        "prompt": "footsteps of one person in heavy leather boots walking slowly on a thick layer of straw over earth with a short pause after each step, soft rustle and crunch of straw under each boot, dry close-miked film sound effect, no reverb",
+        "neg": "reverb, echo, hall, music, speech, voices, singing, rain, running, jogging, multiple people, sneakers, high heels",
+        "cfg": 2.0
+      },
+      "takes_v1": {
+        "prompt": "footsteps of one person in heavy leather boots walking slowly on a thick layer of dry straw and hay on the ground, distinct separate steps, soft rustle and crunch of straw, dry close-miked film sound effect, no reverb",
+        "cfg": 3.0,
+        "seed": 1000,
+        "takes": 2,
+        "files": "t1, t2"
+      },
+      "seed": 2000,
+      "files": "t3 to t6"
+    },
+    {
+      "id": "ui_walk",
+      "group": "ui",
+      "title": "Walk click",
+      "seconds": 3,
+      "takes": 4,
+      "desc": "Soft confirm when sending the character somewhere.",
+      "sa3": {
+        "prompt": "a single soft muffled tap of a fingertip on a thick leather book cover, one short quiet tap, dry close-miked film sound effect, no reverb",
+        "neg": "reverb, echo, music, melody, speech, voices, beep, electronic, digital, synth, click track",
+        "cfg": 3.0
+      }
+    },
+    {
+      "id": "ui_interact",
+      "group": "ui",
+      "title": "Interact click",
+      "seconds": 3,
+      "takes": 4,
+      "desc": "Distinct confirm when interacting with an object.",
+      "sa3": {
+        "prompt": "a single small iron ring knocking once lightly on oak wood, one short soft wooden knock with a faint metallic clink, dry close-miked film sound effect, no reverb",
+        "neg": "reverb, echo, music, melody, speech, voices, beep, electronic, digital, synth, bell ringing",
+        "cfg": 3.0
+      }
+    },
+    {
+      "id": "obj_gate",
+      "group": "objects",
+      "title": "Gate bar",
+      "seconds": 6,
+      "takes": 2,
+      "desc": "Heavy oak gate barred from inside: the bar rattles in its iron brackets.",
+      "sa3": {
+        "prompt": "a heavy wooden beam bar lifted slightly in its iron brackets on an oak castle gate and dropped back, wooden thud and iron rattle, dry close-miked film sound effect, no reverb",
+        "neg": "reverb, echo, hall, music, melody, speech, voices, singing, rain",
+        "cfg": 2.0
+      }
+    },
+    {
+      "id": "obj_fire_basket",
+      "group": "objects",
+      "title": "Fire basket",
+      "seconds": 6,
+      "takes": 2,
+      "desc": "Wet larch logs hissing in an iron fire basket, a log shifted.",
+      "sa3": {
+        "prompt": "wet logs hissing and crackling in an iron fire basket, one log pushed with an iron poker, sparks crackle and steam hiss, dry close-miked film sound effect, no reverb",
+        "neg": "reverb, echo, hall, music, melody, speech, voices, singing, rain",
+        "cfg": 2.0
+      }
+    },
+    {
+      "id": "obj_bell",
+      "group": "objects",
+      "title": "Gate bell",
+      "seconds": 6,
+      "takes": 2,
+      "desc": "A small bronze bell struck once by its rope.",
+      "sa3": {
+        "prompt": "a small bronze hand bell on a bracket struck once by pulling its rope, single clear ring decaying naturally, dry close-miked film sound effect, no reverb",
+        "neg": "reverb, echo, hall, music, melody, speech, voices, singing, church organ, choir, rain",
+        "cfg": 2.0
+      }
+    },
+    {
+      "id": "obj_well",
+      "group": "objects",
+      "title": "Well windlass",
+      "seconds": 7,
+      "takes": 3,
+      "desc": "Wooden windlass cranked, rope paying out, bucket into water.",
+      "sa3": {
+        "prompt": "a wooden well windlass handle turned slowly with a creaking wooden axle and a rattling iron crank, rope unwinding, then a wooden bucket splashing into deep water, dry close-miked film sound effect, no reverb",
+        "neg": "reverb, echo, hall, music, melody, speech, voices, singing, rain",
+        "cfg": 2.0
+      },
+      "takes_v1": {
+        "prompt": "a wooden well windlass cranked with creaking wooden axle and rope, then a wooden bucket splashing into water below, dry close-miked film sound effect, no reverb",
+        "cfg": 3.0,
+        "seed": 1000,
+        "takes": 2,
+        "files": "t1, t2"
+      },
+      "seed": 3000,
+      "files": "t3 to t5"
+    },
+    {
+      "id": "obj_cart",
+      "group": "objects",
+      "title": "Handcart",
+      "seconds": 6,
+      "takes": 2,
+      "desc": "Two-wheeled wooden handcart shifted: wood creak, dry axle squeak.",
+      "sa3": {
+        "prompt": "an old two-wheeled wooden handcart pushed a short way, wooden frame creaking, dry iron axle squeaking, wheel rolling on stones, dry close-miked film sound effect, no reverb",
+        "neg": "reverb, echo, hall, music, melody, speech, voices, singing, rain",
+        "cfg": 2.0
+      }
+    },
+    {
+      "id": "obj_cookhouse",
+      "group": "objects",
+      "title": "Cookhouse pots",
+      "seconds": 6,
+      "takes": 2,
+      "desc": "Iron pot lid and ladle clatter on a hearth.",
+      "sa3": {
+        "prompt": "an iron cooking pot lid lifted and set back down, ladle knocking on the pot rim, small clatter of iron cookware, dry close-miked film sound effect, no reverb",
+        "neg": "reverb, echo, hall, music, melody, speech, voices, singing, rain",
+        "cfg": 2.0
+      }
+    },
+    {
+      "id": "obj_forge",
+      "group": "objects",
+      "title": "Forge",
+      "seconds": 7,
+      "takes": 2,
+      "desc": "A few hammer strikes on iron over an anvil, one bellows puff.",
+      "sa3": {
+        "prompt": "a blacksmith hammer striking hot iron on an anvil four times, then one leather bellows puff of air, dry close-miked film sound effect, no reverb",
+        "neg": "reverb, echo, hall, music, melody, speech, voices, singing, rain",
+        "cfg": 2.0
+      }
+    },
+    {
+      "id": "obj_gallows",
+      "group": "objects",
+      "title": "Gallows",
+      "seconds": 6,
+      "takes": 2,
+      "desc": "Scaffold beam and rope creak under weight.",
+      "sa3": {
+        "prompt": "a heavy wooden gallows beam creaking and a thick hemp rope straining under weight, slow low wooden groan, dry close-miked film sound effect, no reverb",
+        "neg": "reverb, echo, hall, music, melody, speech, voices, singing, rain, hiss, squeal",
+        "cfg": 2.0
+      }
+    },
+    {
+      "id": "obj_stable",
+      "group": "objects",
+      "title": "Horse",
+      "seconds": 6,
+      "takes": 3,
+      "desc": "A horse snorts and stamps a hoof on straw.",
+      "sa3": {
+        "prompt": "a large horse in a wooden stall blowing a loud fluttering snort through its nostrils, a low soft nicker, and one hoof stamping on straw, dry close-miked film sound effect, no reverb",
+        "neg": "reverb, echo, hall, music, melody, speech, voices, singing, rain",
+        "cfg": 2.0
+      },
+      "takes_v1": {
+        "prompt": "a horse snorting through its nostrils and stamping one hoof on straw in a wooden stall, dry close-miked film sound effect, no reverb",
+        "cfg": 2.0,
+        "seed": 1000,
+        "takes": 2,
+        "files": "t1, t2"
+      },
+      "seed": 3000,
+      "files": "t3 to t5"
+    },
+    {
+      "id": "obj_tool_rack",
+      "group": "objects",
+      "title": "Tool rack",
+      "seconds": 6,
+      "takes": 2,
+      "desc": "Spade, fork and mattock knocked against each other on a wooden rack.",
+      "sa3": {
+        "prompt": "wooden handled farm tools, a spade, a hay fork and a mattock, knocking and clattering against each other on a wooden rack, iron blades clinking, dry close-miked film sound effect, no reverb",
+        "neg": "reverb, echo, hall, music, melody, speech, voices, singing, rain",
+        "cfg": 2.0
+      }
+    },
+    {
+      "id": "obj_trough",
+      "group": "objects",
+      "title": "Trough",
+      "seconds": 6,
+      "takes": 2,
+      "desc": "A hand sloshing through rainwater in a plank trough.",
+      "sa3": {
+        "prompt": "a hand sloshing and splashing through water in a wooden trough, water slopping against the planks, dry close-miked film sound effect, no reverb",
+        "neg": "reverb, echo, hall, music, melody, speech, voices, singing, rain",
+        "cfg": 2.0
+      }
+    },
+    {
+      "id": "obj_guardroom",
+      "group": "objects",
+      "title": "Guardroom door",
+      "seconds": 6,
+      "takes": 2,
+      "desc": "A sticking wooden door shouldered open, scraping its frame.",
+      "sa3": {
+        "prompt": "a swollen wooden door shoved open with a shoulder, sticking and scraping on its frame, then creaking on iron hinges, dry close-miked film sound effect, no reverb",
+        "neg": "reverb, echo, hall, music, melody, speech, voices, singing, rain",
+        "cfg": 2.0
+      }
+    },
+    {
+      "id": "door_open",
+      "group": "doors",
+      "title": "Tower door open",
+      "seconds": 6,
+      "takes": 3,
+      "desc": "Heavy oak tower door: iron latch lifted, door swings open on iron hinges.",
+      "sa3": {
+        "prompt": "a heavy oak door with an iron latch: the latch lifted with a metallic clack, then the door swinging open slowly on creaking iron hinges, dry close-miked film sound effect, no reverb",
+        "neg": "reverb, echo, hall, music, melody, speech, voices, singing, rain",
+        "cfg": 2.0
+      }
+    },
+    {
+      "id": "door_close",
+      "group": "doors",
+      "title": "Tower door close",
+      "seconds": 6,
+      "takes": 3,
+      "desc": "Heavy oak tower door swings shut, thud, iron latch drops.",
+      "sa3": {
+        "prompt": "a heavy oak door swinging shut with a deep wooden thud, then an iron latch dropping into its catch with a metallic clack, dry close-miked film sound effect, no reverb",
+        "neg": "reverb, echo, hall, music, melody, speech, voices, singing, rain",
+        "cfg": 2.0
+      }
+    }
+  ]
+}

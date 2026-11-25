@@ -1,0 +1,113 @@
+{
+  "file": "/Users/jan/workspace/projects/game/characters/narrator/voice/part_04/02_narrator_two_bowls_drying_by_the_t2.wav",
+  "character": "narrator",
+  "text": "[quick, precise, close, inner voice] Two bowls drying by the basin. A spoon still in one. She has not been eating alone.",
+  "spoken_text": "Two bowls drying by the basin. A spoon still in one. She has not been eating alone.",
+  "tags": [
+    "quick, precise, close, inner voice"
+  ],
+  "take": 2,
+  "reference": "voices/narrator-reference-dry.wav",
+  "model": "drama3-small-IQ3_XXS.gguf",
+  "sampling": [
+    "temperature=0.7",
+    "top_p=0.7",
+    "top_k=30"
+  ],
+  "render_wall_s_all_takes": 62.8,
+  "speaker_similarity": 0.7973,
+  "duration_s": 5.48,
+  "expected_s": 7.04,
+  "silences": [],
+  "transcript": "two bowls drying by the basin, a spoon still in one. She has not been eating alone.",
+  "words": [
+    {
+      "word": "two",
+      "start": 0.03,
+      "end": 0.17
+    },
+    {
+      "word": "bowls",
+      "start": 0.17,
+      "end": 0.46
+    },
+    {
+      "word": "drying",
+      "start": 0.46,
+      "end": 0.81
+    },
+    {
+      "word": "by",
+      "start": 0.81,
+      "end": 0.92
+    },
+    {
+      "word": "the",
+      "start": 0.92,
+      "end": 1.09
+    },
+    {
+      "word": "basin,",
+      "start": 1.09,
+      "end": 1.54
+    },
+    {
+      "word": "a",
+      "start": 1.54,
+      "end": 1.62
+    },
+    {
+      "word": "spoon",
+      "start": 1.62,
+      "end": 1.63
+    },
+    {
+      "word": "still",
+      "start": 2.1,
+      "end": 2.48
+    },
+    {
+      "word": "in",
+      "start": 2.48,
+      "end": 2.54
+    },
+    {
+      "word": "one.",
+      "start": 2.69,
+      "end": 3.19
+    },
+    {
+      "word": "She",
+      "start": 3.19,
+      "end": 3.27
+    },
+    {
+      "word": "has",
+      "start": 3.42,
+      "end": 3.45
+    },
+    {
+      "word": "not",
+      "start": 3.89,
+      "end": 3.89
+    },
+    {
+      "word": "been",
+      "start": 4.02,
+      "end": 4.19
+    },
+    {
+      "word": "eating",
+      "start": 4.19,
+      "end": 4.63
+    },
+    {
+      "word": "alone.",
+      "start": 4.65,
+      "end": 5.28
+    }
+  ],
+  "missing_words": [],
+  "reasons": [],
+  "pass": true
+}

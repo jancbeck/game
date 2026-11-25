@@ -1,0 +1,133 @@
+{
+  "file": "/Users/jan/workspace/projects/game/characters/narrator/voice/part_00/02_narrator_he_folds_the_letter_along_t3.wav",
+  "character": "narrator",
+  "text": "[warm, soft, inner voice] He folds the letter along its old creases, very carefully, the way a man handles something that has already hurt him.",
+  "spoken_text": "He folds the letter along its old creases, very carefully, the way a man handles something that has already hurt him.",
+  "tags": [
+    "warm, soft, inner voice"
+  ],
+  "take": 3,
+  "reference": "voices/narrator-reference-dry.wav",
+  "model": "drama3-small-IQ3_XXS.gguf",
+  "sampling": [
+    "temperature=0.7",
+    "top_p=0.7",
+    "top_k=30"
+  ],
+  "render_wall_s_all_takes": 95.9,
+  "speaker_similarity": 0.7086,
+  "duration_s": 8.64,
+  "expected_s": 8.58,
+  "silences": [],
+  "transcript": "He folds the letter along its old creases, very carefully, the way a man handles something that has already hurt him.",
+  "words": [
+    {
+      "word": "He",
+      "start": 0.07,
+      "end": 0.17
+    },
+    {
+      "word": "folds",
+      "start": 0.3,
+      "end": 0.62
+    },
+    {
+      "word": "the",
+      "start": 0.75,
+      "end": 0.97
+    },
+    {
+      "word": "letter",
+      "start": 0.97,
+      "end": 1.55
+    },
+    {
+      "word": "along",
+      "start": 1.55,
+      "end": 2.01
+    },
+    {
+      "word": "its",
+      "start": 2.09,
+      "end": 2.33
+    },
+    {
+      "word": "old",
+      "start": 2.33,
+      "end": 2.62
+    },
+    {
+      "word": "creases,",
+      "start": 2.62,
+      "end": 3.36
+    },
+    {
+      "word": "very",
+      "start": 3.36,
+      "end": 3.57
+    },
+    {
+      "word": "carefully,",
+      "start": 3.57,
+      "end": 4.15
+    },
+    {
+      "word": "the",
+      "start": 5.12,
+      "end": 5.12
+    },
+    {
+      "word": "way",
+      "start": 5.12,
+      "end": 5.12
+    },
+    {
+      "word": "a",
+      "start": 5.12,
+      "end": 5.12
+    },
+    {
+      "word": "man",
+      "start": 5.12,
+      "end": 5.12
+    },
+    {
+      "word": "handles",
+      "start": 5.19,
+      "end": 5.59
+    },
+    {
+      "word": "something",
+      "start": 5.59,
+      "end": 6.36
+    },
+    {
+      "word": "that",
+      "start": 6.36,
+      "end": 6.7
+    },
+    {
+      "word": "has",
+      "start": 6.7,
+      "end": 6.95
+    },
+    {
+      "word": "already",
+      "start": 6.95,
+      "end": 7.54
+    },
+    {
+      "word": "hurt",
+      "start": 7.54,
+      "end": 7.83
+    },
+    {
+      "word": "him.",
+      "start": 8.14,
+      "end": 8.48
+    }
+  ],
+  "missing_words": [],
+  "reasons": [],
+  "pass": true
+}

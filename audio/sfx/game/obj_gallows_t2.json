@@ -1,0 +1,12 @@
+{
+  "prompt": "a heavy wooden gallows beam creaking and a thick hemp rope straining under weight, slow low wooden groan, dry close-miked film sound effect, no reverb",
+  "negative_prompt": "reverb, echo, hall, music, melody, speech, voices, singing, rain, hiss, squeal",
+  "seed": 1001,
+  "seconds": 6.0,
+  "dit": "medium",
+  "decoder": "same-l",
+  "cfg": 2.0,
+  "steps": 8,
+  "wall_seconds": 10.56,
+  "file": "obj_gallows_t2.wav"
+}

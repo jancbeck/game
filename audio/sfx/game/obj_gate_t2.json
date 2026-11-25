@@ -1,0 +1,12 @@
+{
+  "prompt": "a heavy wooden beam bar lifted slightly in its iron brackets on an oak castle gate and dropped back, wooden thud and iron rattle, dry close-miked film sound effect, no reverb",
+  "negative_prompt": "reverb, echo, hall, music, melody, speech, voices, singing, rain",
+  "seed": 1001,
+  "seconds": 6.0,
+  "dit": "medium",
+  "decoder": "same-l",
+  "cfg": 2.0,
+  "steps": 8,
+  "wall_seconds": 9.88,
+  "file": "obj_gate_t2.wav"
+}

@@ -1,0 +1,158 @@
+{
+  "file": "/Users/jan/workspace/projects/game/characters/narrator/voice/part_12/02_narrator_a_ferryman_at_a_ford_t1.wav",
+  "character": "narrator",
+  "text": "[dry, pleased with itself, inner voice] A ferryman at a ford, with time enough to read a letter. The fords belong to the Wardens of the Three Waters. So does that seal.",
+  "spoken_text": "A ferryman at a ford, with time enough to read a letter. The fords belong to the Wardens of the Three Waters. So does that seal.",
+  "tags": [
+    "dry, pleased with itself, inner voice"
+  ],
+  "take": 1,
+  "reference": "voices/narrator-reference-dry.wav",
+  "model": "drama3-small-IQ3_XXS.gguf",
+  "sampling": [
+    "temperature=0.7",
+    "top_p=0.7",
+    "top_k=30"
+  ],
+  "render_wall_s_all_takes": 146.1,
+  "speaker_similarity": 0.7755,
+  "duration_s": 7.94,
+  "expected_s": 10.5,
+  "silences": [],
+  "transcript": "A ferryman at a ford with time enough to read a letter. The fords belong to the wardens of the Three Waters, so does that seal.",
+  "words": [
+    {
+      "word": "A",
+      "start": 0.04,
+      "end": 0.08
+    },
+    {
+      "word": "ferryman",
+      "start": 0.08,
+      "end": 0.78
+    },
+    {
+      "word": "at",
+      "start": 0.78,
+      "end": 0.9
+    },
+    {
+      "word": "a",
+      "start": 1.03,
+      "end": 1.03
+    },
+    {
+      "word": "ford",
+      "start": 1.05,
+      "end": 1.41
+    },
+    {
+      "word": "with",
+      "start": 1.41,
+      "end": 1.46
+    },
+    {
+      "word": "time",
+      "start": 1.88,
+      "end": 1.92
+    },
+    {
+      "word": "enough",
+      "start": 1.92,
+      "end": 2.3
+    },
+    {
+      "word": "to",
+      "start": 2.3,
+      "end": 2.42
+    },
+    {
+      "word": "read",
+      "start": 2.42,
+      "end": 2.59
+    },
+    {
+      "word": "a",
+      "start": 2.73,
+      "end": 2.73
+    },
+    {
+      "word": "letter.",
+      "start": 2.75,
+      "end": 3.36
+    },
+    {
+      "word": "The",
+      "start": 3.56,
+      "end": 3.56
+    },
+    {
+      "word": "fords",
+      "start": 3.6,
+      "end": 3.84
+    },
+    {
+      "word": "belong",
+      "start": 3.84,
+      "end": 4.2
+    },
+    {
+      "word": "to",
+      "start": 4.2,
+      "end": 4.32
+    },
+    {
+      "word": "the",
+      "start": 4.32,
+      "end": 4.46
+    },
+    {
+      "word": "wardens",
+      "start": 4.61,
+      "end": 4.92
+    },
+    {
+      "word": "of",
+      "start": 4.92,
+      "end": 5.01
+    },
+    {
+      "word": "the",
+      "start": 5.22,
+      "end": 5.22
+    },
+    {
+      "word": "Three",
+      "start": 5.44,
+      "end": 5.52
+    },
+    {
+      "word": "Waters,",
+      "start": 5.52,
+      "end": 6.04
+    },
+    {
+      "word": "so",
+      "start": 6.04,
+      "end": 6.16
+    },
+    {
+      "word": "does",
+      "start": 6.31,
+      "end": 6.64
+    },
+    {
+      "word": "that",
+      "start": 6.64,
+      "end": 6.97
+    },
+    {
+      "word": "seal.",
+      "start": 7.13,
+      "end": 7.74
+    }
+  ],
+  "missing_words": [],
+  "reasons": [],
+  "pass": true
+}

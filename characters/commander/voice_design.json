@@ -1,0 +1,8 @@
+{
+ "_doc": "Voice design for the commander (scripts/design_voice.py).",
+ "text": "Sit down, sergeant, before you fall down. No, I have read the dispatch twice already, and it does not improve. We have flour for nine weeks and wood for six. That is the arithmetic. I did not make it. I only have to live inside it, like everyone else.",
+ "candidates": {
+  "iron": "A man in his mid-fifties with a low, quiet, precise baritone and a slight gravel of age, educated but plain, speaking slowly and economically with tired authority, a faint English West Country lilt, never raising his voice. Close to the microphone, dry room.",
+  "ash": "A lean man in his fifties with a dry, cool tenor-baritone, clipped consonants, an aristocratic northern English accent worn down by years in the field, ironic and weary, a short exhale before hard words. Close to the microphone, dry room."
+ }
+}

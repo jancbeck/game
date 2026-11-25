@@ -1,0 +1,12 @@
+{
+  "prompt": "an iron cooking pot lid lifted and set back down, ladle knocking on the pot rim, small clatter of iron cookware, dry close-miked film sound effect, no reverb",
+  "negative_prompt": "reverb, echo, hall, music, melody, speech, voices, singing, rain",
+  "seed": 1000,
+  "seconds": 6.0,
+  "dit": "medium",
+  "decoder": "same-l",
+  "cfg": 2.0,
+  "steps": 8,
+  "wall_seconds": 10.62,
+  "file": "obj_cookhouse_t1.wav"
+}

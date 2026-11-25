@@ -1,0 +1,306 @@
+[
+ {
+  "id": "desk",
+  "name": "Commander's desk",
+  "text": "Oak, black with forty winters of ink and elbows, and heavy enough that nobody has ever moved it twice. Three candles on an iron stand, a sand-shaker, a jug and a cup that have not been washed since morning. Whatever the commander does at night, he does here, on his feet.",
+  "position": [
+   -0.2,
+   0.0,
+   -0.15
+  ],
+  "volume": {
+   "center": [
+    -0.19255,
+    0.584,
+    -0.14001
+   ],
+   "size": [
+    1.7750929123683692,
+    1.1679999409243464,
+    0.8141827126036816
+   ],
+   "yaw_rad": 0.0
+  },
+  "stand": [
+   0.0,
+   0.0,
+   0.65
+  ],
+  "plan": {
+   "stand_xy": [
+    0.0,
+    -0.65
+   ]
+  },
+  "screen_px": [
+   1281.5,
+   1089.3
+  ]
+ },
+ {
+  "id": "ledgers",
+  "name": "Ledgers",
+  "text": "The muster roll and the stores book, side by side. The roll has forty lines ruled in it, and eleven have a name. The stores book is thinner and the corners are soft from turning. Under a river stone beside them lies a letter with a crown seal, a month old and unanswered.",
+  "position": [
+   -0.64,
+   0.86,
+   -0.25
+  ],
+  "volume": {
+   "center": [
+    -0.64,
+    0.96,
+    -0.2
+   ],
+   "size": [
+    0.82,
+    0.22,
+    0.42
+   ],
+   "yaw_rad": 0.0
+  },
+  "stand": [
+   -0.8,
+   0.0,
+   0.65
+  ],
+  "plan": {
+   "stand_xy": [
+    -0.8,
+    -0.65
+   ]
+  },
+  "screen_px": [
+   1099.4,
+   1100.8
+  ]
+ },
+ {
+  "id": "map",
+  "name": "Map of the march",
+  "text": "The march painted on a board: the north road as one red line, the river as a blue one, the garrison a black tower where they nearly cross. Pin holes run along the road, one for every rider that came through. There are not many. The board is rubbed pale in the south, where the capital is.",
+  "position": [
+   -0.7,
+   0.0,
+   -2.1
+  ],
+  "volume": {
+   "center": [
+    -0.7,
+    1.41,
+    -2.0675
+   ],
+   "size": [
+    1.009999968111515,
+    0.7899999991059303,
+    0.06499996181877066
+   ],
+   "yaw_rad": 0.0
+  },
+  "stand": [
+   -0.7,
+   0.0,
+   0.65
+  ],
+  "plan": {
+   "stand_xy": [
+    -0.7,
+    -0.65
+   ]
+  },
+  "screen_px": [
+   1122.1,
+   1099.4
+  ]
+ },
+ {
+  "id": "window",
+  "name": "Paired window",
+  "text": "A paired window, deep enough to sit in, a shutter folded back on each side. Outside there is nothing: the rock falls away ten metres into a valley full of mist and rain. The garrison needs no wall on this side. The sill is wet and nobody has wiped it.",
+  "position": [
+   -2.0,
+   0.0,
+   -2.1
+  ],
+  "volume": {
+   "center": [
+    -2.0,
+    1.3995,
+    -2.073
+   ],
+   "size": [
+    1.6399999856948853,
+    2.801000026986003,
+    1.526000127196312
+   ],
+   "yaw_rad": 0.0
+  },
+  "stand": [
+   -1.3,
+   0.0,
+   -1.4
+  ],
+  "plan": {
+   "stand_xy": [
+    -1.3,
+    1.4
+   ]
+  },
+  "screen_px": [
+   944.7,
+   772.2
+  ]
+ },
+ {
+  "id": "bed",
+  "name": "Narrow bed",
+  "text": "A narrow bed with a grey wool blanket pulled tight, as soldiers make them, and a curtain on a rod that is drawn on cold nights and ignored on the others. The pillow has a dent in it. The boots stand side by side under the edge, toes out.",
+  "position": [
+   -2.325,
+   0.0,
+   -1.1
+  ],
+  "volume": {
+   "center": [
+    -2.26856,
+    0.93907,
+    -1.1422
+   ],
+   "size": [
+    1.1128830780785088,
+    1.9218542221933603,
+    2.0843905082533682
+   ],
+   "yaw_rad": 0.0
+  },
+  "stand": [
+   -1.45,
+   0.0,
+   0.3
+  ],
+  "plan": {
+   "stand_xy": [
+    -1.45,
+    -0.3
+   ]
+  },
+  "screen_px": [
+   944.4,
+   1052.8
+  ]
+ },
+ {
+  "id": "weapon_rack",
+  "name": "Weapon rack",
+  "text": "A sword on two pegs, a pair of boar spears, a shield with the paint worn off the boss. The mail shirt on its stand is oiled against rust and mended at the left shoulder. Nobody has worn it since the old king died.",
+  "position": [
+   1.75,
+   0.0,
+   1.3
+  ],
+  "volume": {
+   "center": [
+    1.55458,
+    1.26,
+    1.27508
+   ],
+   "size": [
+    2.2891584185462435,
+    2.5200000405311584,
+    0.5501690748010466
+   ],
+   "yaw_rad": 0.0
+  },
+  "stand": [
+   1.55,
+   0.0,
+   0.65
+  ],
+  "plan": {
+   "stand_xy": [
+    1.55,
+    -0.65
+   ]
+  },
+  "screen_px": [
+   1634.5,
+   1067.1
+  ]
+ },
+ {
+  "id": "shrine",
+  "name": "Wall niche",
+  "text": "A niche no bigger than a loaf, a carved saint in it and an oil lamp that is never let go out. The saint's face is rubbed smooth by thumbs. Whose saint it is, the garrison argues about; the commander says nothing.",
+  "position": [
+   1.5,
+   0.0,
+   -2.1
+  ],
+  "volume": {
+   "center": [
+    1.51325,
+    1.725,
+    -2.165
+   ],
+   "size": [
+    0.5864951442927122,
+    0.650000037625432,
+    0.42999991215765476
+   ],
+   "yaw_rad": 0.0
+  },
+  "stand": [
+   1.4,
+   0.0,
+   -0.85
+  ],
+  "plan": {
+   "stand_xy": [
+    1.4,
+    0.85
+   ]
+  },
+  "screen_px": [
+   1570.4,
+   823.6
+  ]
+ },
+ {
+  "id": "stair_door",
+  "name": "Stair door",
+  "text": "A low door studded with iron, left ajar. The spiral behind it goes down in the dark, past the guard room, to the door on the yard. Thirty-odd steps, worn hollow in the middle; the garrison has counted them in every kind of mood.",
+  "position": [
+   2.3,
+   0.0,
+   -2.1
+  ],
+  "volume": {
+   "center": [
+    2.3,
+    0.63,
+    -2.60467
+   ],
+   "size": [
+    1.350000023841858,
+    3.260000079870224,
+    1.9306506788976585
+   ],
+   "yaw_rad": 0.0
+  },
+  "stand": [
+   2.3,
+   0.0,
+   -1.75
+  ],
+  "plan": {
+   "stand_xy": [
+    2.3,
+    1.75
+   ]
+  },
+  "screen_px": [
+   1757.4,
+   663.3
+  ]
+ }
+]

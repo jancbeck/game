@@ -1,0 +1,12 @@
+{
+  "prompt": "a horse snorting and shifting its hooves on straw in a wooden stable, soft muffled rain outside, dry close-miked film sound effect, no reverb",
+  "negative_prompt": "reverb, echo, hall, music, speech, voices, singing, loud, aggressive",
+  "seed": 1000,
+  "seconds": 15.0,
+  "dit": "medium",
+  "decoder": "same-l",
+  "cfg": 2.0,
+  "steps": 8,
+  "wall_seconds": 7.81,
+  "file": "stable_t1.wav"
+}

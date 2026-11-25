@@ -1,0 +1,8 @@
+{
+ "_doc": "Voice design for Tam, the courier (scripts/design_voice.py).",
+ "text": "Easy, girl, easy. Two more miles and there's oats, I promise. Lord, the river was high tonight. I near lost a boot at the crossing, and the bag with it. Don't look at me like that. I'm not crying, it's the rain. It's only the rain.",
+ "candidates": {
+  "reed": "A young man of nineteen with a light, slightly husky tenor voice, breathless and earnest, a soft rural northern accent, nervous energy, words tumbling out quickly when he is scared, a little crack in the voice. Close to the microphone, dry room.",
+  "soft": "A gentle, soft-spoken young man around twenty with a warm, quiet baritone, polite and anxious, a lilting Welsh accent, pausing to catch his breath, tired to the bone. Close to the microphone, dry room."
+ }
+}

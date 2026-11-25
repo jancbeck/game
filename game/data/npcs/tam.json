@@ -1,0 +1,50 @@
+{
+ "_doc": "Tam, the courier, asleep on the landing under the timber watch hood by the north-west tower door (top of the stair beside the cookhouse). He lies along his own Z axis, head toward the stair; the stand point is the open floor of the landing beside his chest, not his head. Fields as in marl.json. Source material: characters/tam/.",
+ "id": "tam",
+ "name": "Tam",
+ "location": "courtyard",
+ "model": "tam",
+ "position": [
+  -10.35,
+  6.0,
+  -2.3
+ ],
+ "face": [
+  -9.8,
+  6.0,
+  -1.8
+ ],
+ "stand": [
+  -10.95,
+  6.0,
+  -1.72
+ ],
+ "palette": {
+  "wool": [
+   0.12,
+   0.12,
+   0.13
+  ],
+  "hood": [
+   0.11,
+   0.11,
+   0.12
+  ],
+  "jerkin": [
+   0.25,
+   0.17,
+   0.1
+  ],
+  "skin": [
+   0.6,
+   0.47,
+   0.4
+  ]
+ },
+ "assets": "assets/npcs/tam",
+ "portrait": "assets/npcs/tam/portrait.jpg",
+ "fps": 25,
+ "idle_clip": "sleep",
+ "hit_height": 0.6,
+ "hit_half_width": 0.9
+}

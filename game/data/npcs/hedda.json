@@ -1,0 +1,66 @@
+{
+ "_doc": "Hedda, the garrison cook, at her hearth in the cookhouse: she stirs the pot from the right front corner of the hearth, turned toward it, and the player talks to her from the aisle left of the work table, a metre in front of the hearth, so neither stands in the hearth mouth (the walk mesh of the cookhouse is floor from z = -0.75 outward in front of the hearth). Fields as in marl.json; the fallback places her by the cookhouse in the yard when the cookhouse has no export. Source material: characters/hedda/.",
+ "id": "hedda",
+ "name": "Hedda",
+ "model": "hedda",
+ "idle_clip": "stir",
+ "location": "cookhouse",
+ "position": [
+  -0.72,
+  0.0,
+  -0.62
+ ],
+ "face": [
+  -1.3,
+  0.0,
+  -1.3
+ ],
+ "stand": [
+  0.8,
+  0.0,
+  -0.55
+ ],
+ "fallback": {
+  "location": "courtyard",
+  "position": [
+   -5.9,
+   0.0,
+   1.0
+  ],
+  "face": [
+   -5.0,
+   0.0,
+   2.0
+  ],
+  "stand": [
+   -5.0,
+   0.0,
+   2.0
+  ]
+ },
+ "palette": {
+  "wool": [
+   0.26,
+   0.19,
+   0.13
+  ],
+  "hood": [
+   0.62,
+   0.58,
+   0.5
+  ],
+  "jerkin": [
+   0.22,
+   0.16,
+   0.11
+  ],
+  "skin": [
+   0.62,
+   0.44,
+   0.36
+  ]
+ },
+ "assets": "assets/npcs/hedda",
+ "portrait": "assets/npcs/hedda/portrait.jpg",
+ "fps": 25
+}

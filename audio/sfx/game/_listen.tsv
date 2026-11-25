@@ -1,0 +1,35 @@
+.listen/walk_cobble.wav	The audio contains the sound of a plastic bottle being crushed. There is no speech, singing, or music present. 
+.listen/walk_mud.wav	The audio contains the sound of a plastic bag being crumpled and manipulated. There is no speech, singing, or music present. 
+.listen/walk_puddle.wav	The audio contains the sound of a liquid being poured, followed by the sound of the liquid being stirred. There is no speech, singing, or music present. 
+.listen/walk_stone_stair.wav	The audio contains the sound of a plastic bottle being crushed. There is no speech, singing, or music present. 
+.listen/walk_stone_walk.wav	The audio contains the sound of a plastic bottle being crushed. There is no speech, singing, or music present. 
+.listen/walk_straw.wav	The audio contains the sound of a person walking on a wooden floor, with the distinct creaking and scraping of the floorboards underfoot. There is no speech, singing, or music present. 
+.listen/walk_wood.wav	The audio contains the sound of a door being opened and closed. 
+final/ui/interact.wav	The audio contains the sound of a door being opened and closed, with a distinct creaking sound. There is no human voice, speech, singing, or music present. 
+final/ui/walk_click.wav	The audio contains the sound of a door being opened and closed, with a distinct creaking sound. There is no human voice, speech, singing, or music present. 
+final/objects/bell_01.wav	The audio contains the sound of a metal object being struck, producing a sharp, metallic impact. There is no speech, singing, or music present. 
+final/objects/bell_02.wav	The audio contains the sound of a metal object being struck, producing a sharp, metallic impact. There is no speech, singing, or music present. 
+final/objects/cart_01.wav	The audio contains the sound of a door being opened and closed, with a creaking sound as the door moves. There is no speech, singing, or music present. 
+final/objects/cart_02.wav	The audio contains the sound of a door being opened and closed, with a creaking sound as the door moves. There is no speech, singing, or music present. 
+final/objects/cookhouse_01.wav	The audio contains the sound of a metal pot being dropped onto a hard surface, followed by a brief echo. There is no speech, singing, or music present. 
+final/objects/cookhouse_02.wav	The audio contains the sound of a metal object being dropped onto a hard surface, followed by a brief metallic clatter. There is no human voice, speech, singing, or music present. 
+final/objects/fire_basket_01.wav	The audio contains the sound of a plastic bag being crumpled and torn. There is no speech, singing, or music present. 
+final/objects/fire_basket_02.wav	The audio contains the sound of a plastic bag being crumpled and torn. There is no speech, singing, or music present. 
+final/objects/forge_01.wav	The audio contains the sound of a hammer hitting a metal object, producing a sharp, metallic impact. There is no speech, singing, or music present. 
+final/objects/forge_02.wav	The audio contains the sound of a metal object being struck, producing a sharp, metallic impact. There is no speech, singing, or music present. 
+final/objects/gallows_01.wav	The audio contains the sound of a door being opened and closed, with a distinct creaking sound as the door hinges move. There is no speech, singing, or music present. 
+final/objects/gallows_02.wav	The audio contains the sound of a door being opened and closed, with a distinct creaking sound as the door hinges move. There is no speech, singing, or music present. 
+final/objects/gate_01.wav	The audio contains the sound of a door being opened and closed, with a distinct creaking and scraping noise as the door moves on its hinges. There is no speech, singing, or music present. 
+final/objects/gate_02.wav	The audio contains the sound of a metal object being dropped onto a hard surface, followed by a brief echo. There is no human voice, speech, singing, or music present. 
+final/objects/guardroom_01.wav	The audio contains the sound of a door being opened and closed, with a creaking sound as it moves. There is no speech, singing, or music present. 
+final/objects/guardroom_02.wav	The audio contains the sound of a door being opened and closed, with a creaking sound as the door moves. There is no speech, singing, or music present. 
+final/objects/stable_01.wav	The audio contains the sound of a zipper being opened and closed, with a distinct metallic click and a sliding noise. There is no speech, singing, or music present. 
+final/objects/stable_02.wav	The audio contains the sound of a zipper being opened and closed on a piece of clothing. There is no speech, singing, or music present. 
+final/objects/tool_rack_01.wav	The audio contains the sound of a metal object being dropped onto a hard surface, followed by a brief period of silence. There is no speech, singing, or music present. 
+final/objects/tool_rack_02.wav	The audio contains the sound of a metal object being dropped onto a hard surface, followed by a brief period of silence. There is no speech, singing, or music present. 
+final/objects/trough_01.wav	The audio contains the sound of a toilet flushing. 
+final/objects/trough_02.wav	The audio contains the sound of a liquid being poured into a container, followed by a brief pause and then the sound of the liquid being poured again. There is no speech, singing, or music present. 
+final/objects/well_01.wav	The audio contains the sound of a plastic bottle being crushed, with a distinct crunching and breaking sound. There is no speech, singing, or music present. 
+final/objects/well_02.wav	The audio contains the sound of a plastic bottle being crushed, with a distinct crinkling and crunching texture. There is no speech, singing, or music present. 
+final/doors/door_heavy_close.wav	The audio contains the sound of a door being opened and closed. 
+final/doors/door_heavy_open.wav	The audio contains the sound of a door being opened and closed. The door is made of wood and has a metal handle. There is no speech, singing, or music present. 

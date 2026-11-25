@@ -1,0 +1,13 @@
+{
+  "_doc": "Orthographic camera matched to ref/courtyard.webp. The castle itself is in plan.json.",
+  "camera": {
+    "_doc": "Orthographic. elevation = downward tilt from horizontal (barrel lid ellipse ratio ~0.6 -> ~38 deg). yaw = turn from north toward east, set so east-west lines rise ~0.12 px/px to the right like the gatehouse. px_per_m = 52 frames the whole castle, wall tops and the ground outside the walls, like the reference composition. The reference draws props at about 70 px/m and the gate oversized.",
+    "elevation_deg": 38.0,
+    "yaw_deg": 11.0,
+    "px_per_m": 52.0,
+    "center_px": [
+      880,
+      680
+    ]
+  }
+}

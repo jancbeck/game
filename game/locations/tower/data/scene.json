@@ -1,0 +1,1360 @@
+{
+ "_doc": "Written by scene/export_game.py. Godot axes: godot (x, y, z) = blender (x, z, -y). Pixels: the 2560 x 1440 game frame, row 0 at the top.",
+ "conversion": {
+  "godot_from_blender": [
+   [
+    1.0,
+    0.0,
+    0.0
+   ],
+   [
+    0.0,
+    0.0,
+    1.0
+   ],
+   [
+    0.0,
+    -1.0,
+    0.0
+   ]
+  ],
+  "meters": 1.0
+ },
+ "camera": {
+  "_doc": "Orthographic game camera. basis columns are the camera's local +X (right), +Y (up), +Z (back; it looks along -Z), already in Godot axes. size is the frame width in meters (Godot keep_aspect = KEEP_WIDTH). The image-centre shift is baked into origin.",
+  "origin": [
+   -2.60255,
+   33.16915,
+   30.32094
+  ],
+  "basis_x": [
+   0.99619,
+   0.0,
+   0.08716
+  ],
+  "basis_y": [
+   0.06269,
+   0.69466,
+   -0.7166
+  ],
+  "basis_z": [
+   -0.06054,
+   0.71934,
+   0.69201
+  ],
+  "ortho_width_m": 11.2,
+  "ortho_height_m": 6.3,
+  "px_per_m": 228.57143,
+  "resolution": [
+   2560,
+   1440
+  ],
+  "near": 1.0,
+  "far": 200.0,
+  "blender": {
+   "location": [
+    -2.6025476455688477,
+    -30.320940017700195,
+    33.16914749145508
+   ],
+   "rotation_euler_xyz": [
+    0.767944872379303,
+    0.0,
+    -0.0872664600610733
+   ],
+   "ortho_scale": 11.2,
+   "elevation_deg": 46.0,
+   "yaw_deg": 5.0,
+   "px_per_m": 228.57142857142858,
+   "world_origin_px": [
+    1268.57,
+    982.86
+   ]
+  }
+ },
+ "depth": {
+  "_doc": "depth.f32: float32 little-endian, width*height, row 0 = top. Metres along the camera axis from the camera origin (orthographic). Sky pixels hold sky_m.",
+  "file": "locations/tower/assets/depth.f32",
+  "width": 2560,
+  "height": 1440,
+  "min_m": 40.11488723754883,
+  "max_m": 61.66184616088867,
+  "sky_m": 196.0,
+  "sky_fraction": 0.0
+ },
+ "background": "locations/tower/assets/layers/reference.png",
+ "layers": {
+  "color_space": "linear Rec.709, scene-referred, exposure already applied",
+  "view_transform": "AgX",
+  "look": "AgX - Punchy",
+  "exposure_applied_ev": 2.0,
+  "post": {
+   "_doc": "kuwahara: painterly brush size in px. bloom: glare strength above threshold. grade: lift/gamma/gain RGB. vignette: edge darkening 0..1.",
+   "kuwahara": 0,
+   "kuwahara_sharpness": 0.85,
+   "bloom": 0.6,
+   "bloom_threshold": 0.8,
+   "bloom_size": 0.6,
+   "grade": {
+    "lift": [
+     0.97,
+     0.975,
+     0.99
+    ],
+    "gamma": [
+     1.0,
+     1.0,
+     1.0
+    ],
+    "gain": [
+     1.0,
+     1.0,
+     1.02
+    ]
+   },
+   "vignette": 0.35,
+   "sharpen": 0,
+   "saturation": 0.9
+  },
+  "base": "locations/tower/assets/layers/base.exr",
+  "groups": [
+   {
+    "id": "tower_hearth",
+    "image": "locations/tower/assets/layers/lg_tower_hearth.exr",
+    "curve": "fire",
+    "seed": 13606736,
+    "prop": "tower_hearth",
+    "anchor": [
+     0.5,
+     0.41,
+     -1.35
+    ]
+   },
+   {
+    "id": "tower_lamp",
+    "image": "locations/tower/assets/layers/lg_tower_lamp.exr",
+    "curve": "lamp",
+    "seed": 6511623,
+    "prop": "tower_shrine",
+    "anchor": [
+     1.6,
+     1.52,
+     -2.18
+    ]
+   },
+   {
+    "id": "tower_candles",
+    "image": "locations/tower/assets/layers/lg_tower_candles.exr",
+    "curve": "lamp",
+    "seed": 8775613,
+    "prop": "tower_desk",
+    "anchor": [
+     0.4,
+     1.12,
+     -0.2
+    ]
+   }
+  ],
+  "reference": "locations/tower/assets/layers/reference.png",
+  "reference_post": "locations/tower/assets/layers/reference_post.png"
+ },
+ "masks": {
+  "puddle": "locations/tower/assets/masks/puddle.png",
+  "wet": "locations/tower/assets/masks/wet.png",
+  "normal": "locations/tower/assets/masks/normal.png",
+  "_doc": "normal: camera-space unit normal as rgb = n * 0.5 + 0.5 (x right, y up, z toward the camera). ids: 8-bit, 0 = nothing, k = hotspot k (1-based, hotspots.json order)",
+  "ids": "locations/tower/assets/masks/ids.png"
+ },
+ "views": {
+  "_doc": "Zoom views. wide: zoom 0.5, its own camera block (same direction and image centre, twice the coverage). tiles: zoom 2 around each hotspot; rect is in main-frame px [x0, y0, w, h], the tile images are rect * scale px. A tile lists only the light groups that reach it; the others are zero there (their faint rest is in its base). Images, depth, ids and masks follow the main frame's formats.",
+  "wide": {
+   "camera": {
+    "_doc": "Orthographic game camera. basis columns are the camera's local +X (right), +Y (up), +Z (back; it looks along -Z), already in Godot axes. size is the frame width in meters (Godot keep_aspect = KEEP_WIDTH). The image-centre shift is baked into origin.",
+    "origin": [
+     -2.60255,
+     33.16915,
+     30.32094
+    ],
+    "basis_x": [
+     0.99619,
+     0.0,
+     0.08716
+    ],
+    "basis_y": [
+     0.06269,
+     0.69466,
+     -0.7166
+    ],
+    "basis_z": [
+     -0.06054,
+     0.71934,
+     0.69201
+    ],
+    "ortho_width_m": 22.4,
+    "ortho_height_m": 12.6,
+    "px_per_m": 114.28571,
+    "resolution": [
+     2560,
+     1440
+    ],
+    "near": 1.0,
+    "far": 200.0,
+    "blender": {
+     "location": [
+      -2.6025476455688477,
+      -30.320940017700195,
+      33.16914749145508
+     ],
+     "rotation_euler_xyz": [
+      0.767944872379303,
+      0.0,
+      -0.0872664600610733
+     ],
+     "ortho_scale": 22.4,
+     "elevation_deg": 46.0,
+     "yaw_deg": 5.0,
+     "px_per_m": 114.28571428571429,
+     "world_origin_px": [
+      1274.29,
+      851.43
+     ]
+    }
+   },
+   "base": "locations/tower/assets/wide/base.exr",
+   "groups": [
+    {
+     "id": "tower_hearth",
+     "image": "locations/tower/assets/wide/lg_tower_hearth.exr"
+    },
+    {
+     "id": "tower_lamp",
+     "image": "locations/tower/assets/wide/lg_tower_lamp.exr"
+    },
+    {
+     "id": "tower_candles",
+     "image": "locations/tower/assets/wide/lg_tower_candles.exr"
+    }
+   ],
+   "depth": "locations/tower/assets/wide/depth.f32",
+   "depth_meta": {
+    "file": "locations/tower/assets/wide/depth.f32",
+    "width": 2560,
+    "height": 1440,
+    "min_m": 40.11526870727539,
+    "max_m": 64.70165252685547,
+    "sky_m": 196.0,
+    "sky_fraction": 0.0
+   },
+   "ids": "locations/tower/assets/wide/ids.png",
+   "masks": {
+    "puddle": "locations/tower/assets/wide/puddle.png",
+    "wet": "locations/tower/assets/wide/wet.png"
+   },
+   "reference": "locations/tower/assets/wide/reference.png"
+  },
+  "tiles": [
+   {
+    "id": "desk",
+    "hotspot": "desk",
+    "rect": [
+     582,
+     510,
+     1280,
+     720
+    ],
+    "scale": 2,
+    "base": "locations/tower/assets/tiles/desk/base.exr",
+    "groups": [
+     {
+      "id": "tower_hearth",
+      "image": "locations/tower/assets/tiles/desk/lg_tower_hearth.exr"
+     },
+     {
+      "id": "tower_candles",
+      "image": "locations/tower/assets/tiles/desk/lg_tower_candles.exr"
+     }
+    ],
+    "depth": "locations/tower/assets/tiles/desk/depth.f32",
+    "ids": "locations/tower/assets/tiles/desk/ids.png",
+    "masks": {
+     "puddle": "locations/tower/assets/tiles/desk/puddle.png",
+     "wet": "locations/tower/assets/tiles/desk/wet.png"
+    },
+    "reference": "locations/tower/assets/tiles/desk/reference.png"
+   },
+   {
+    "id": "ledgers",
+    "hotspot": "ledgers",
+    "rect": [
+     479,
+     447,
+     1280,
+     720
+    ],
+    "scale": 2,
+    "base": "locations/tower/assets/tiles/ledgers/base.exr",
+    "groups": [
+     {
+      "id": "tower_hearth",
+      "image": "locations/tower/assets/tiles/ledgers/lg_tower_hearth.exr"
+     },
+     {
+      "id": "tower_lamp",
+      "image": "locations/tower/assets/tiles/ledgers/lg_tower_lamp.exr"
+     },
+     {
+      "id": "tower_candles",
+      "image": "locations/tower/assets/tiles/ledgers/lg_tower_candles.exr"
+     }
+    ],
+    "depth": "locations/tower/assets/tiles/ledgers/depth.f32",
+    "ids": "locations/tower/assets/tiles/ledgers/ids.png",
+    "masks": {
+     "puddle": "locations/tower/assets/tiles/ledgers/puddle.png",
+     "wet": "locations/tower/assets/tiles/ledgers/wet.png"
+    },
+    "reference": "locations/tower/assets/tiles/ledgers/reference.png"
+   },
+   {
+    "id": "map",
+    "hotspot": "map",
+    "rect": [
+     428,
+     70,
+     1280,
+     720
+    ],
+    "scale": 2,
+    "base": "locations/tower/assets/tiles/map/base.exr",
+    "groups": [
+     {
+      "id": "tower_hearth",
+      "image": "locations/tower/assets/tiles/map/lg_tower_hearth.exr"
+     },
+     {
+      "id": "tower_lamp",
+      "image": "locations/tower/assets/tiles/map/lg_tower_lamp.exr"
+     },
+     {
+      "id": "tower_candles",
+      "image": "locations/tower/assets/tiles/map/lg_tower_candles.exr"
+     }
+    ],
+    "depth": "locations/tower/assets/tiles/map/depth.f32",
+    "ids": "locations/tower/assets/tiles/map/ids.png",
+    "masks": {
+     "puddle": "locations/tower/assets/tiles/map/puddle.png",
+     "wet": "locations/tower/assets/tiles/map/wet.png"
+    },
+    "reference": "locations/tower/assets/tiles/map/reference.png"
+   },
+   {
+    "id": "window",
+    "hotspot": "window",
+    "rect": [
+     132,
+     90,
+     1280,
+     720
+    ],
+    "scale": 2,
+    "base": "locations/tower/assets/tiles/window/base.exr",
+    "groups": [
+     {
+      "id": "tower_hearth",
+      "image": "locations/tower/assets/tiles/window/lg_tower_hearth.exr"
+     },
+     {
+      "id": "tower_candles",
+      "image": "locations/tower/assets/tiles/window/lg_tower_candles.exr"
+     }
+    ],
+    "depth": "locations/tower/assets/tiles/window/depth.f32",
+    "ids": "locations/tower/assets/tiles/window/ids.png",
+    "masks": {
+     "puddle": "locations/tower/assets/tiles/window/puddle.png",
+     "wet": "locations/tower/assets/tiles/window/wet.png"
+    },
+    "reference": "locations/tower/assets/tiles/window/reference.png"
+   },
+   {
+    "id": "bed",
+    "hotspot": "bed",
+    "rect": [
+     89,
+     319,
+     1280,
+     720
+    ],
+    "scale": 2,
+    "base": "locations/tower/assets/tiles/bed/base.exr",
+    "groups": [
+     {
+      "id": "tower_hearth",
+      "image": "locations/tower/assets/tiles/bed/lg_tower_hearth.exr"
+     },
+     {
+      "id": "tower_candles",
+      "image": "locations/tower/assets/tiles/bed/lg_tower_candles.exr"
+     }
+    ],
+    "depth": "locations/tower/assets/tiles/bed/depth.f32",
+    "ids": "locations/tower/assets/tiles/bed/ids.png",
+    "masks": {
+     "puddle": "locations/tower/assets/tiles/bed/puddle.png",
+     "wet": "locations/tower/assets/tiles/bed/wet.png"
+    },
+    "reference": "locations/tower/assets/tiles/bed/reference.png"
+   },
+   {
+    "id": "weapon_rack",
+    "hotspot": "weapon_rack",
+    "rect": [
+     1008,
+     609,
+     1280,
+     720
+    ],
+    "scale": 2,
+    "base": "locations/tower/assets/tiles/weapon_rack/base.exr",
+    "groups": [
+     {
+      "id": "tower_hearth",
+      "image": "locations/tower/assets/tiles/weapon_rack/lg_tower_hearth.exr"
+     },
+     {
+      "id": "tower_candles",
+      "image": "locations/tower/assets/tiles/weapon_rack/lg_tower_candles.exr"
+     }
+    ],
+    "depth": "locations/tower/assets/tiles/weapon_rack/depth.f32",
+    "ids": "locations/tower/assets/tiles/weapon_rack/ids.png",
+    "masks": {
+     "puddle": "locations/tower/assets/tiles/weapon_rack/puddle.png",
+     "wet": "locations/tower/assets/tiles/weapon_rack/wet.png"
+    },
+    "reference": "locations/tower/assets/tiles/weapon_rack/reference.png"
+   },
+   {
+    "id": "shrine",
+    "hotspot": "shrine",
+    "rect": [
+     930,
+     0,
+     1280,
+     720
+    ],
+    "scale": 2,
+    "base": "locations/tower/assets/tiles/shrine/base.exr",
+    "groups": [
+     {
+      "id": "tower_hearth",
+      "image": "locations/tower/assets/tiles/shrine/lg_tower_hearth.exr"
+     },
+     {
+      "id": "tower_lamp",
+      "image": "locations/tower/assets/tiles/shrine/lg_tower_lamp.exr"
+     },
+     {
+      "id": "tower_candles",
+      "image": "locations/tower/assets/tiles/shrine/lg_tower_candles.exr"
+     }
+    ],
+    "depth": "locations/tower/assets/tiles/shrine/depth.f32",
+    "ids": "locations/tower/assets/tiles/shrine/ids.png",
+    "masks": {
+     "puddle": "locations/tower/assets/tiles/shrine/puddle.png",
+     "wet": "locations/tower/assets/tiles/shrine/wet.png"
+    },
+    "reference": "locations/tower/assets/tiles/shrine/reference.png"
+   },
+   {
+    "id": "stair_door",
+    "hotspot": "stair_door",
+    "rect": [
+     1100,
+     63,
+     1280,
+     720
+    ],
+    "scale": 2,
+    "base": "locations/tower/assets/tiles/stair_door/base.exr",
+    "groups": [
+     {
+      "id": "tower_hearth",
+      "image": "locations/tower/assets/tiles/stair_door/lg_tower_hearth.exr"
+     },
+     {
+      "id": "tower_lamp",
+      "image": "locations/tower/assets/tiles/stair_door/lg_tower_lamp.exr"
+     },
+     {
+      "id": "tower_candles",
+      "image": "locations/tower/assets/tiles/stair_door/lg_tower_candles.exr"
+     }
+    ],
+    "depth": "locations/tower/assets/tiles/stair_door/depth.f32",
+    "ids": "locations/tower/assets/tiles/stair_door/ids.png",
+    "masks": {
+     "puddle": "locations/tower/assets/tiles/stair_door/puddle.png",
+     "wet": "locations/tower/assets/tiles/stair_door/wet.png"
+    },
+    "reference": "locations/tower/assets/tiles/stair_door/reference.png"
+   }
+  ]
+ },
+ "flipbooks": [
+  {
+   "id": "tower_hearth_flame",
+   "atlas": "locations/tower/assets/flipbooks/tower_hearth_flame.png",
+   "cols": 9,
+   "rows": 8,
+   "frames": 72,
+   "fps": 24.0,
+   "loop": true,
+   "rect": [
+    1280,
+    497,
+    139,
+    189
+   ],
+   "cell": [
+    139,
+    189
+   ],
+   "blend": "premul",
+   "encoding": "srgb",
+   "scale": 13.0,
+   "depth": null,
+   "depth_m": 45.902,
+   "group": "tower_hearth",
+   "kind": "flame",
+   "density": 1,
+   "source": "mantaflow"
+  },
+  {
+   "id": "tower_hearth_flame@2",
+   "atlas": "locations/tower/assets/flipbooks/tower_hearth_flame@2.png",
+   "cols": 9,
+   "rows": 8,
+   "frames": 72,
+   "fps": 24.0,
+   "loop": true,
+   "rect": [
+    1280,
+    497,
+    139,
+    189
+   ],
+   "cell": [
+    278,
+    378
+   ],
+   "blend": "premul",
+   "encoding": "srgb",
+   "scale": 13.25,
+   "depth": null,
+   "depth_m": 45.902,
+   "group": "tower_hearth",
+   "kind": "flame",
+   "density": 2,
+   "source": "mantaflow"
+  },
+  {
+   "id": "tower_hearth_chimney_smoke",
+   "atlas": "locations/tower/assets/flipbooks/tower_hearth_chimney_smoke.png",
+   "cols": 3,
+   "rows": 11,
+   "frames": 32,
+   "fps": 8.0,
+   "loop": true,
+   "rect": [
+    1296,
+    0,
+    1094,
+    373
+   ],
+   "cell": [
+    1092,
+    372
+   ],
+   "blend": "premul",
+   "encoding": "srgb",
+   "scale": 1.0,
+   "depth": null,
+   "depth_m": 44.243,
+   "group": null,
+   "kind": "smoke"
+  },
+  {
+   "id": "tower_hearth_smoke",
+   "atlas": "locations/tower/assets/flipbooks/tower_hearth_smoke.png",
+   "cols": 5,
+   "rows": 7,
+   "frames": 32,
+   "fps": 8.0,
+   "loop": true,
+   "rect": [
+    1375,
+    187,
+    455,
+    351
+   ],
+   "cell": [
+    455,
+    351
+   ],
+   "blend": "premul",
+   "encoding": "srgb",
+   "scale": 1.0,
+   "depth": null,
+   "depth_m": 45.467,
+   "group": null,
+   "kind": "smoke"
+  },
+  {
+   "id": "tower_hearth_embers",
+   "atlas": "locations/tower/assets/flipbooks/tower_hearth_embers.png",
+   "cols": 4,
+   "rows": 4,
+   "frames": 14,
+   "fps": 24.7117,
+   "loop": true,
+   "rect": [
+    1323,
+    0,
+    25,
+    29
+   ],
+   "cell": [
+    25,
+    29
+   ],
+   "blend": "premul",
+   "encoding": "srgb",
+   "scale": 9.0,
+   "depth": null,
+   "depth_m": 44.165,
+   "group": "tower_hearth",
+   "kind": "embers"
+  }
+ ],
+ "crows": {
+  "_doc": "crow.glb faces Godot +Z (Blender -Y) at yaw 0, feet at the origin. Perch yaw is degrees about Godot +Y (the same angle as Blender rot_z). Nodes body, head, tail, wing_l, wing_r; the pivots sit at the neck, the tail base and the shoulders.",
+  "model": "locations/tower/assets/crow.glb",
+  "head_height_m": 0.31,
+  "perches": [
+   {
+    "id": "merlon_0",
+    "pos": [
+     -4.1,
+     4.57192,
+     -2.475
+    ],
+    "yaw": 0.0,
+    "kind": "merlon"
+   },
+   {
+    "id": "merlon_1",
+    "pos": [
+     4.1,
+     4.61255,
+     -2.475
+    ],
+    "yaw": 0.0,
+    "kind": "merlon"
+   },
+   {
+    "id": "merlon_2",
+    "pos": [
+     -4.1,
+     4.63321,
+     1.45
+    ],
+    "yaw": 0.0,
+    "kind": "merlon"
+   },
+   {
+    "id": "merlon_3",
+    "pos": [
+     -4.1,
+     4.48043,
+     0.15
+    ],
+    "yaw": 0.0,
+    "kind": "merlon"
+   },
+   {
+    "id": "merlon_4",
+    "pos": [
+     -4.1,
+     4.63582,
+     -1.15
+    ],
+    "yaw": 0.0,
+    "kind": "merlon"
+   },
+   {
+    "id": "merlon_5",
+    "pos": [
+     4.1,
+     4.58176,
+     0.15
+    ],
+    "yaw": 0.0,
+    "kind": "merlon"
+   },
+   {
+    "id": "merlon_6",
+    "pos": [
+     4.1,
+     4.69345,
+     -1.15
+    ],
+    "yaw": 0.0,
+    "kind": "merlon"
+   },
+   {
+    "id": "merlon_7",
+    "pos": [
+     4.95,
+     1.81662,
+     -3.0
+    ],
+    "yaw": 0.0,
+    "kind": "merlon"
+   },
+   {
+    "id": "merlon_8",
+    "pos": [
+     7.55,
+     1.85355,
+     -3.0
+    ],
+    "yaw": 0.0,
+    "kind": "merlon"
+   },
+   {
+    "id": "merlon_9",
+    "pos": [
+     8.85,
+     2.00244,
+     -3.0
+    ],
+    "yaw": 0.0,
+    "kind": "merlon"
+   }
+  ],
+  "start": []
+ },
+ "walk": {
+  "_doc": "walk.glb: the room's walkable floor, prop footprints cut out, no agent radius. exits: walking into one leaves for the location named by target.",
+  "mesh": "locations/tower/assets/walk.glb",
+  "area_m2": 16.0,
+  "surfaces": [
+   "cobble",
+   "mud",
+   "straw",
+   "stone_stair",
+   "stone_walk",
+   "wood"
+  ],
+  "surface_area_m2": {
+   "wood": 16.0
+  },
+  "wall_walks": {},
+  "links": [],
+  "exits": [
+   {
+    "id": "courtyard",
+    "pos": [
+     2.3,
+     0.0,
+     -1.8
+    ],
+    "label": "Stairs down",
+    "target": "courtyard"
+   }
+  ],
+  "portals": []
+ },
+ "proxy": "locations/tower/assets/proxy.glb",
+ "proxy_counts": {
+  "walls": 11,
+  "prop_obstacles": 11
+ },
+ "ambient": {
+  "_doc": "blue-hour sky fill for real-time objects",
+  "color": [
+   0.03,
+   0.045,
+   0.09
+  ],
+  "moon": {
+   "direction_euler": [
+    44,
+    0,
+    -150
+   ],
+   "color": [
+    0.62,
+    0.74,
+    1.0
+   ],
+   "strength": 1.1,
+   "angle_deg": 25
+  },
+  "moon_direction": [
+   0.34733,
+   -0.71934,
+   0.60159
+  ]
+ },
+ "lights": [
+  {
+   "name": "light_tower_desk",
+   "position": [
+    0.4,
+    1.12,
+    -0.2
+   ],
+   "color": [
+    1.0,
+    0.52,
+    0.18
+   ],
+   "watts": 36.4,
+   "reach_m": 4.5,
+   "radius_m": 0.03,
+   "inside_wall": false,
+   "group": "tower_candles"
+  },
+  {
+   "name": "light_tower_fill_front",
+   "position": [
+    0.2,
+    4.4,
+    6.5
+   ],
+   "color": [
+    0.5,
+    0.64,
+    1.0
+   ],
+   "watts": 2100.0,
+   "reach_m": 12.0,
+   "radius_m": 2.6,
+   "inside_wall": false,
+   "group": "base"
+  },
+  {
+   "name": "light_tower_hearth",
+   "position": [
+    0.5,
+    0.42,
+    -1.8
+   ],
+   "color": [
+    1.0,
+    0.36,
+    0.07
+   ],
+   "watts": 182.0,
+   "reach_m": 7.0,
+   "radius_m": 0.12,
+   "inside_wall": false,
+   "group": "tower_hearth"
+  },
+  {
+   "name": "light_tower_hearth_floor",
+   "position": [
+    0.5,
+    0.4,
+    -0.9
+   ],
+   "color": [
+    1.0,
+    0.33,
+    0.06
+   ],
+   "watts": 44.8,
+   "reach_m": 5.0,
+   "radius_m": 0.3,
+   "inside_wall": false,
+   "group": "tower_hearth"
+  },
+  {
+   "name": "light_tower_shrine",
+   "position": [
+    1.6,
+    1.52,
+    -2.18
+   ],
+   "color": [
+    1.0,
+    0.52,
+    0.18
+   ],
+   "watts": 4.2,
+   "reach_m": 1.6,
+   "radius_m": 0.02,
+   "inside_wall": true,
+   "group": "tower_lamp"
+  },
+  {
+   "name": "light_tower_window",
+   "position": [
+    -2.0,
+    1.8,
+    -2.4
+   ],
+   "color": [
+    0.42,
+    0.58,
+    1.0
+   ],
+   "watts": 33.6,
+   "reach_m": 5.17,
+   "radius_m": 0.25,
+   "inside_wall": true,
+   "group": "base"
+  },
+  {
+   "name": "light_tower_window_side",
+   "position": [
+    2.5,
+    1.75,
+    -0.7
+   ],
+   "color": [
+    0.42,
+    0.58,
+    1.0
+   ],
+   "watts": 49.0,
+   "reach_m": 6.24,
+   "radius_m": 0.25,
+   "inside_wall": false,
+   "group": "base"
+  }
+ ],
+ "checks": {
+  "layers": {
+   "raw_groups_vs_noisy_combined_identity": "Cycles combined is denoised; raw groups are not",
+   "raw_sum_vs_combined": {
+    "mean_abs": 0.007332765031605959,
+    "p99_abs": 0.07617461681365967,
+    "max_abs": 24.109893798828125,
+    "mean_rel": 0.11800040304660797
+   },
+   "denoised_sum_vs_combined": {
+    "mean_abs": 0.0009579498437233269,
+    "p99_abs": 0.014116734266281128,
+    "max_abs": 13.152534484863281,
+    "mean_rel": 0.01541553158313036
+   },
+   "display_8bit_vs_combined": {
+    "mean": 0.68328857421875,
+    "p99": 8.0,
+    "max": 69,
+    "share_over_4": 0.026791901765046297
+   }
+  },
+  "mask_stats": {
+   "depth_holes_filled": 0,
+   "puddle_fraction": 0.01495578342013889,
+   "wet_mean": 0.24406600463292666,
+   "rough_hist": [
+    66287,
+    14134,
+    48256,
+    420050,
+    887479,
+    855943,
+    480040,
+    183681,
+    152889,
+    250477
+   ]
+  },
+  "render": {
+   "samples": 128,
+   "percent": 100,
+   "seconds": 693,
+   "resolution": [
+    2560,
+    1440
+   ],
+   "exr": "/Users/jan/workspace/projects/game/game/locations/tower/build/layers_exr/layers.exr"
+  },
+  "views": {
+   "wide": {
+    "checks": {
+     "raw_sum_vs_combined": {
+      "mean_abs": 0.005016243550926447,
+      "p99_abs": 0.0447998046875,
+      "max_abs": 24.1875,
+      "mean_rel": 0.1431368738412857
+     },
+     "denoised_sum_vs_combined": {
+      "mean_abs": 0.0015233774902299047,
+      "p99_abs": 0.020965576171875,
+      "max_abs": 18.067100524902344,
+      "mean_rel": 0.04346907511353493
+     },
+     "display_8bit_vs_combined": {
+      "mean": 2.400841652199074,
+      "p99": 32.0,
+      "max": 63,
+      "share_over_4": 0.2098117404513889
+     }
+    },
+    "render": {
+     "data_seconds": 25,
+     "beauty_seconds": 197,
+     "samples": 64,
+     "data_samples": 8,
+     "regions": [
+      null
+     ],
+     "region_seconds": [
+      197
+     ]
+    },
+    "mask_stats": {
+     "depth_holes_filled": 0,
+     "puddle_fraction": 0.0058984375,
+     "wet_mean": 0.13137853381437803,
+     "rough_hist": [
+      26110,
+      5020,
+      22471,
+      292928,
+      476800,
+      341310,
+      155551,
+      72083,
+      68237,
+      1688337
+     ]
+    }
+   },
+   "tiles": {
+    "render": {
+     "data_seconds": 171,
+     "beauty_seconds": 1657,
+     "samples": 80,
+     "data_samples": 8,
+     "regions": [
+      [
+       1812,
+       0,
+       4808,
+       188
+      ],
+      [
+       130,
+       92,
+       4808,
+       2706
+      ]
+     ],
+     "region_seconds": [
+      74,
+      1583
+     ]
+    },
+    "per_tile": {
+     "desk": {
+      "checks": {
+       "raw_sum_vs_combined": {
+        "mean_abs": 0.01605166681110859,
+        "p99_abs": 0.194091796875,
+        "max_abs": 26.2578125,
+        "mean_rel": 0.2452535629272461
+       },
+       "denoised_sum_vs_combined": {
+        "mean_abs": 0.0020273341797292233,
+        "p99_abs": 0.024339258670806885,
+        "max_abs": 13.874592781066895,
+        "mean_rel": 0.03097565658390522
+       },
+       "display_8bit_vs_combined": {
+        "mean": 1.285290798611111,
+        "p99": 10.0,
+        "max": 73,
+        "share_over_4": 0.06502902560763889
+       }
+      },
+      "folded_into_base": [
+       "tower_lamp"
+      ],
+      "ids_pixels": {
+       "desk": 242353,
+       "ledgers": 36161,
+       "window": 807,
+       "bed": 339351,
+       "weapon_rack": 256643,
+       "stair_door": 116864
+      }
+     },
+     "ledgers": {
+      "checks": {
+       "raw_sum_vs_combined": {
+        "mean_abs": 0.016969604417681694,
+        "p99_abs": 0.206756591796875,
+        "max_abs": 26.2578125,
+        "mean_rel": 0.24731604754924774
+       },
+       "denoised_sum_vs_combined": {
+        "mean_abs": 0.0021191444247961044,
+        "p99_abs": 0.02526557445526123,
+        "max_abs": 13.874592781066895,
+        "mean_rel": 0.03088454157114029
+       },
+       "display_8bit_vs_combined": {
+        "mean": 1.2840436921296297,
+        "p99": 10.0,
+        "max": 73,
+        "share_over_4": 0.06790192780671296
+       }
+      },
+      "folded_into_base": [],
+      "ids_pixels": {
+       "desk": 242353,
+       "ledgers": 36161,
+       "map": 44245,
+       "window": 17977,
+       "bed": 348345,
+       "weapon_rack": 184870,
+       "stair_door": 105221
+      }
+     },
+     "map": {
+      "checks": {
+       "raw_sum_vs_combined": {
+        "mean_abs": 0.016279112547636032,
+        "p99_abs": 0.182647705078125,
+        "max_abs": 26.2578125,
+        "mean_rel": 0.2824789881706238
+       },
+       "denoised_sum_vs_combined": {
+        "mean_abs": 0.0017701862379908562,
+        "p99_abs": 0.020543217658996582,
+        "max_abs": 13.874592781066895,
+        "mean_rel": 0.030716685578227043
+       },
+       "display_8bit_vs_combined": {
+        "mean": 1.0404471390335648,
+        "p99": 9.0,
+        "max": 73,
+        "share_over_4": 0.051504720052083335
+       }
+      },
+      "folded_into_base": [],
+      "ids_pixels": {
+       "desk": 42658,
+       "ledgers": 4074,
+       "map": 121058,
+       "window": 232858,
+       "bed": 222489,
+       "weapon_rack": 852,
+       "shrine": 46387,
+       "stair_door": 107850
+      }
+     },
+     "window": {
+      "checks": {
+       "raw_sum_vs_combined": {
+        "mean_abs": 0.014044046401977539,
+        "p99_abs": 0.1693115234375,
+        "max_abs": 26.2578125,
+        "mean_rel": 0.2379615604877472
+       },
+       "denoised_sum_vs_combined": {
+        "mean_abs": 0.0014249779051169753,
+        "p99_abs": 0.01898324489593506,
+        "max_abs": 13.874592781066895,
+        "mean_rel": 0.024144748225808144
+       },
+       "display_8bit_vs_combined": {
+        "mean": 0.6942554615162037,
+        "p99": 7.0,
+        "max": 48,
+        "share_over_4": 0.03170482494212963
+       }
+      },
+      "folded_into_base": [
+       "tower_lamp"
+      ],
+      "ids_pixels": {
+       "desk": 63764,
+       "ledgers": 14307,
+       "map": 121058,
+       "window": 232858,
+       "bed": 238052
+      }
+     },
+     "bed": {
+      "checks": {
+       "raw_sum_vs_combined": {
+        "mean_abs": 0.01369066908955574,
+        "p99_abs": 0.171630859375,
+        "max_abs": 24.875,
+        "mean_rel": 0.21292857825756073
+       },
+       "denoised_sum_vs_combined": {
+        "mean_abs": 0.0014303397620096803,
+        "p99_abs": 0.01971125602722168,
+        "max_abs": 13.405990600585938,
+        "mean_rel": 0.022245824337005615
+       },
+       "display_8bit_vs_combined": {
+        "mean": 0.7432289858217592,
+        "p99": 8.0,
+        "max": 68,
+        "share_over_4": 0.035761537905092594
+       }
+      },
+      "folded_into_base": [
+       "tower_lamp"
+      ],
+      "ids_pixels": {
+       "desk": 199785,
+       "ledgers": 36161,
+       "map": 121058,
+       "window": 92683,
+       "bed": 355467
+      }
+     },
+     "weapon_rack": {
+      "checks": {
+       "raw_sum_vs_combined": {
+        "mean_abs": 0.016069676727056503,
+        "p99_abs": 0.169677734375,
+        "max_abs": 26.2578125,
+        "mean_rel": 0.16809241473674774
+       },
+       "denoised_sum_vs_combined": {
+        "mean_abs": 0.0019601688254624605,
+        "p99_abs": 0.021709918975830078,
+        "max_abs": 13.874592781066895,
+        "mean_rel": 0.020503804087638855
+       },
+       "display_8bit_vs_combined": {
+        "mean": 1.1183518699363426,
+        "p99": 9.0,
+        "max": 68,
+        "share_over_4": 0.053808955439814815
+       }
+      },
+      "folded_into_base": [
+       "tower_lamp"
+      ],
+      "ids_pixels": {
+       "desk": 242353,
+       "ledgers": 36161,
+       "weapon_rack": 265634,
+       "stair_door": 21691
+      }
+     },
+     "shrine": {
+      "checks": {
+       "raw_sum_vs_combined": {
+        "mean_abs": 0.01539833378046751,
+        "p99_abs": 0.17816162109375,
+        "max_abs": 4.8203125,
+        "mean_rel": 0.26738885045051575
+       },
+       "denoised_sum_vs_combined": {
+        "mean_abs": 0.0015508206561207771,
+        "p99_abs": 0.021502137184143066,
+        "max_abs": 1.1939163208007812,
+        "mean_rel": 0.02692967653274536
+       },
+       "display_8bit_vs_combined": {
+        "mean": 1.0567047345196758,
+        "p99": 9.0,
+        "max": 73,
+        "share_over_4": 0.05118860315393518
+       }
+      },
+      "folded_into_base": [],
+      "ids_pixels": {
+       "map": 121058,
+       "window": 5696,
+       "shrine": 46387,
+       "stair_door": 336535
+      }
+     },
+     "stair_door": {
+      "checks": {
+       "raw_sum_vs_combined": {
+        "mean_abs": 0.014669353142380714,
+        "p99_abs": 0.17718505859375,
+        "max_abs": 26.2578125,
+        "mean_rel": 0.24515831470489502
+       },
+       "denoised_sum_vs_combined": {
+        "mean_abs": 0.001675098785199225,
+        "p99_abs": 0.023927340283989906,
+        "max_abs": 13.874592781066895,
+        "mean_rel": 0.02799471653997898
+       },
+       "display_8bit_vs_combined": {
+        "mean": 0.9961589445891204,
+        "p99": 9.0,
+        "max": 73,
+        "share_over_4": 0.04443648726851852
+       }
+      },
+      "folded_into_base": [],
+      "ids_pixels": {
+       "desk": 28804,
+       "ledgers": 2392,
+       "map": 43599,
+       "weapon_rack": 375,
+       "shrine": 46387,
+       "stair_door": 336535
+      }
+     }
+    }
+   }
+  }
+ },
+ "people": [
+  {
+   "id": "commander",
+   "position": [
+    -0.3,
+    0.0,
+    -1.1
+   ],
+   "face": [
+    -0.2,
+    1.0,
+    0.65
+   ],
+   "stand": [
+    -0.2,
+    0.0,
+    0.65
+   ],
+   "plan": {
+    "position": [
+     -0.3,
+     1.1
+    ],
+    "face": [
+     -0.2,
+     -0.65
+    ],
+    "stand": [
+     -0.2,
+     -0.65
+    ]
+   }
+  }
+ ],
+ "rain": false
+}

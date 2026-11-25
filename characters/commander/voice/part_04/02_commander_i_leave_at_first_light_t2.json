@@ -1,0 +1,183 @@
+{
+  "file": "/Users/jan/workspace/projects/game/characters/commander/voice/part_04/02_commander_i_leave_at_first_light_t2.wav",
+  "character": "commander",
+  "text": "[decided, low] I leave at first light, if I leave at all. Before then, find me that ferryman. Quietly. Marl will give you a horse if you ask him nicely.",
+  "spoken_text": "I leave at first light, if I leave at all. Before then, find me that ferryman. Quietly. Marl will give you a horse if you ask him nicely.",
+  "tags": [
+    "decided, low"
+  ],
+  "take": 2,
+  "reference": "voices/commander-reference-dry.wav",
+  "model": "drama3-small-IQ3_XXS.gguf",
+  "sampling": [
+    "temperature=0.7",
+    "top_p=0.7",
+    "top_k=30"
+  ],
+  "render_wall_s_all_takes": 136.9,
+  "speaker_similarity": 0.8324,
+  "duration_s": 17.51,
+  "expected_s": 11.27,
+  "silences": [
+    [
+      1.9,
+      4.15
+    ],
+    [
+      5.34,
+      7.22
+    ],
+    [
+      10.8,
+      13.18
+    ]
+  ],
+  "transcript": "I leave at first light. If I leave at all. Before then, find me that ferryman. Quietly. Marl will give you a horse if you ask him nicely.",
+  "words": [
+    {
+      "word": "I",
+      "start": 0.04,
+      "end": 0.08
+    },
+    {
+      "word": "leave",
+      "start": 0.08,
+      "end": 0.52
+    },
+    {
+      "word": "at",
+      "start": 0.52,
+      "end": 0.6
+    },
+    {
+      "word": "first",
+      "start": 0.68,
+      "end": 1.13
+    },
+    {
+      "word": "light.",
+      "start": 1.13,
+      "end": 1.74
+    },
+    {
+      "word": "If",
+      "start": 3.62,
+      "end": 3.62
+    },
+    {
+      "word": "I",
+      "start": 3.62,
+      "end": 3.62
+    },
+    {
+      "word": "leave",
+      "start": 3.62,
+      "end": 3.62
+    },
+    {
+      "word": "at",
+      "start": 3.67,
+      "end": 4.01
+    },
+    {
+      "word": "all.",
+      "start": 4.01,
+      "end": 5.31
+    },
+    {
+      "word": "Before",
+      "start": 7.12,
+      "end": 7.12
+    },
+    {
+      "word": "then,",
+      "start": 7.16,
+      "end": 7.82
+    },
+    {
+      "word": "find",
+      "start": 9.3,
+      "end": 9.3
+    },
+    {
+      "word": "me",
+      "start": 9.3,
+      "end": 9.3
+    },
+    {
+      "word": "that",
+      "start": 9.3,
+      "end": 9.3
+    },
+    {
+      "word": "ferryman.",
+      "start": 9.34,
+      "end": 10.65
+    },
+    {
+      "word": "Quietly.",
+      "start": 13.06,
+      "end": 13.76
+    },
+    {
+      "word": "Marl",
+      "start": 14.04,
+      "end": 14.12
+    },
+    {
+      "word": "will",
+      "start": 14.12,
+      "end": 14.46
+    },
+    {
+      "word": "give",
+      "start": 14.46,
+      "end": 14.79
+    },
+    {
+      "word": "you",
+      "start": 14.79,
+      "end": 14.92
+    },
+    {
+      "word": "a",
+      "start": 15.11,
+      "end": 15.14
+    },
+    {
+      "word": "horse",
+      "start": 15.14,
+      "end": 15.6
+    },
+    {
+      "word": "if",
+      "start": 15.6,
+      "end": 15.76
+    },
+    {
+      "word": "you",
+      "start": 15.76,
+      "end": 15.9
+    },
+    {
+      "word": "ask",
+      "start": 16.26,
+      "end": 16.26
+    },
+    {
+      "word": "him",
+      "start": 16.26,
+      "end": 16.51
+    },
+    {
+      "word": "nicely.",
+      "start": 16.51,
+      "end": 17.28
+    }
+  ],
+  "missing_words": [],
+  "reasons": [
+    "silence of 1.5 s or more at [[1.9, 4.15], [5.34, 7.22], [10.8, 13.18]]"
+  ],
+  "pass": false
+}

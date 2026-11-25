@@ -1,0 +1,28 @@
+{
+ "_doc": "Sergeant Marl: older, heavier, dark wool, leather jerkin, steel coif under a deep hood, grey beard (portrait: characters/marl/final/portrait.png). See characters/player/recipe.json for the keys.",
+ "id": "marl",
+ "height_m": 1.76,
+ "macro": {"gender": 1.0, "age": 0.80, "muscle": 0.55, "weight": 0.68, "proportions": 0.5, "height": 0.45,
+           "race": {"asian": 0.0, "caucasian": 1.0, "african": 0.0}},
+ "skin": {"name": "old_caucasian_male", "tint": [0.84, 0.74, 0.68], "size": 512,
+          "beard": {"color": [0.66, 0.64, 0.62], "strength": 0.85, "up": 0.02}},
+ "eyes": "brown",
+ "garments": {
+  "tunic": {"color": [0.27, 0.26, 0.24], "ease": 0.030, "sleeve_ease": 0.022, "hem_above_knee": -0.06},
+  "skirt": {"flare": 0.04, "stride_total": 0.04, "fold_amp": 0.04, "fold_count": 6},
+  "jerkin": {"color": [0.33, 0.23, 0.14], "ease": 0.040, "top": 0.20},
+  "hose": {"color": [0.20, 0.19, 0.18]},
+  "boots": {"color": [0.16, 0.12, 0.09], "height": 0.28},
+  "coif": {"color": [0.46, 0.48, 0.50]},
+  "hood": {"color": [0.22, 0.21, 0.20], "head_ease": 0.030, "cowl_ease": 0.062, "cowl_drop": 0.20, "peak": 0.05},
+  "belt": {"color": [0.31, 0.22, 0.14], "width": 0.06, "ease": 0.052}
+ },
+ "wear": {"dirt": 0.40, "wet": 0.12},
+ "detail": {"skin": 0.14, "tunic": 0.2, "hose": 0.2, "boots": 0.12, "hood": 0.16, "belt": 0.6, "jerkin": 0.25, "coif": 0.3},
+ "fit": {"walk": {"mode": "clear", "keys": 30}},
+ "animations": {
+  "idle": {"type": "stand", "bvh": "18_08", "range_s": [2.4, 5.4], "rate": 0.85},
+  "talk": {"type": "stand", "bvh": "18_08", "range_s": [8.0, 14.0], "rate": 0.9},
+  "walk": {"type": "walk", "bvh": "07_01"}
+ }
+}

@@ -1,0 +1,6972 @@
+{
+ "cobble": [
+  {
+   "onset_s": 0.253,
+   "len_s": 0.584,
+   "pre_db": -8.4,
+   "tail_db": -14.1,
+   "peak": 0.043,
+   "loud": -49.0,
+   "take": "steps_cobble_t3",
+   "reject": "overlaps previous step (-8.4 dB before onset)"
+  },
+  {
+   "onset_s": 0.848,
+   "len_s": 0.62,
+   "pre_db": -30.9,
+   "tail_db": -34.2,
+   "peak": 0.125,
+   "loud": -32.6,
+   "take": "steps_cobble_t3",
+   "reject": "faint event, -8.8 dB below the surface's steps"
+  },
+  {
+   "onset_s": 1.724,
+   "len_s": 0.62,
+   "pre_db": 24.9,
+   "tail_db": -24.4,
+   "peak": 0.096,
+   "loud": -42.3,
+   "take": "steps_cobble_t3",
+   "reject": "overlaps previous step (24.9 dB before onset)"
+  },
+  {
+   "onset_s": 2.423,
+   "len_s": 0.62,
+   "pre_db": -7.0,
+   "tail_db": -42.6,
+   "peak": 0.623,
+   "loud": -27.3,
+   "take": "steps_cobble_t3",
+   "reject": "overlaps previous step (-7.0 dB before onset)"
+  },
+  {
+   "onset_s": 3.191,
+   "len_s": 0.62,
+   "pre_db": -27.7,
+   "tail_db": -45.3,
+   "peak": 0.578,
+   "loud": -25.4,
+   "take": "steps_cobble_t3",
+   "spec": {
+    "centroid_hz": 1510,
+    "below_500": 0.011,
+    "150_600": 0.011,
+    "above_4k": 0.015,
+    "flatness": 0.163,
+    "tonal_bins": 0,
+    "tone_hz": []
+   },
+   "dist": 0.407,
+   "reject": "spare (the 8 nearest the surface profile are kept)"
+  },
+  {
+   "onset_s": 3.924,
+   "len_s": 0.62,
+   "pre_db": -16.3,
+   "tail_db": -38.1,
+   "peak": 0.212,
+   "loud": -29.4,
+   "take": "steps_cobble_t3",
+   "spec": {
+    "centroid_hz": 2132,
+    "below_500": 0.028,
+    "150_600": 0.035,
+    "above_4k": 0.135,
+    "flatness": 0.363,
+    "tonal_bins": 0,
+    "tone_hz": []
+   },
+   "dist": 0.174,
+   "file": "cobble_01.wav",
+   "decay_ms": 55
+  },
+  {
+   "onset_s": 4.678,
+   "len_s": 0.62,
+   "pre_db": -25.8,
+   "tail_db": -41.9,
+   "peak": 0.497,
+   "loud": -27.0,
+   "take": "steps_cobble_t3",
+   "spec": {
+    "centroid_hz": 2694,
+    "below_500": 0.037,
+    "150_600": 0.039,
+    "above_4k": 0.174,
+    "flatness": 0.352,
+    "tonal_bins": 0,
+    "tone_hz": []
+   },
+   "dist": 0.532,
+   "reject": "spare (the 8 nearest the surface profile are kept)"
+  },
+  {
+   "onset_s": 5.611,
+   "len_s": 0.502,
+   "pre_db": -15.1,
+   "tail_db": -32.6,
+   "peak": 0.275,
+   "loud": -31.4,
+   "take": "steps_cobble_t3",
+   "spec": {
+    "centroid_hz": 2401,
+    "below_500": 0.056,
+    "150_600": 0.022,
+    "above_4k": 0.046,
+    "flatness": 0.2,
+    "tonal_bins": 0,
+    "tone_hz": []
+   },
+   "dist": 0.442,
+   "reject": "spare (the 8 nearest the surface profile are kept)"
+  },
+  {
+   "onset_s": 6.124,
+   "len_s": 0.62,
+   "pre_db": -36.2,
+   "tail_db": -41.0,
+   "peak": 0.289,
+   "loud": -27.3,
+   "take": "steps_cobble_t3",
+   "spec": {
+    "centroid_hz": 1604,
+    "below_500": 0.02,
+    "150_600": 0.027,
+    "above_4k": 0.027,
+    "flatness": 0.258,
+    "tonal_bins": 0,
+    "tone_hz": []
+   },
+   "dist": 0.284,
+   "file": "cobble_02.wav",
+   "decay_ms": 41
+  },
+  {
+   "onset_s": 6.863,
+   "len_s": 0.62,
+   "pre_db": -25.0,
+   "tail_db": -41.5,
+   "peak": 0.23,
+   "loud": -28.0,
+   "take": "steps_cobble_t3",
+   "spec": {
+    "centroid_hz": 2296,
+    "below_500": 0.101,
+    "150_600": 0.11,
+    "above_4k": 0.129,
+    "flatness": 0.339,
+    "tonal_bins": 0,
+    "tone_hz": []
+   },
+   "dist": 0.557,
+   "reject": "spare (the 8 nearest the surface profile are kept)"
+  },
+  {
+   "onset_s": 7.583,
+   "len_s": 0.62,
+   "pre_db": -17.9,
+   "tail_db": -50.8,
+   "peak": 0.575,
+   "loud": -22.3,
+   "take": "steps_cobble_t3",
+   "spec": {
+    "centroid_hz": 1111,
+    "below_500": 0.003,
+    "150_600": 0.005,
+    "above_4k": 0.0,
+    "flatness": 0.052,
+    "tonal_bins": 0,
+    "tone_hz": []
+   },
+   "dist": 0.882,
+   "reject": "spare (the 8 nearest the surface profile are kept)"
+  },
+  {
+   "onset_s": 8.414,
+   "len_s": 0.599,
+   "pre_db": -12.1,
+   "tail_db": -42.5,
+   "peak": 0.656,
+   "loud": -27.2,
+   "take": "steps_cobble_t3",
+   "spec": {
+    "centroid_hz": 2142,
+    "below_500": 0.038,
+    "150_600": 0.038,
+    "above_4k": 0.024,
+    "flatness": 0.372,
+    "tonal_bins": 0,
+    "tone_hz": []
+   },
+   "dist": 0.205,
+   "file": "cobble_03.wav",
+   "decay_ms": 8
+  },
+  {
+   "onset_s": 9.024,
+   "len_s": 0.62,
+   "pre_db": -16.0,
+   "tail_db": -48.8,
+   "peak": 0.558,
+   "loud": -24.4,
+   "take": "steps_cobble_t3",
+   "spec": {
+    "centroid_hz": 1324,
+    "below_500": 0.049,
+    "150_600": 0.048,
+    "above_4k": 0.001,
+    "flatness": 0.128,
+    "tonal_bins": 0,
+    "tone_hz": []
+   },
+   "dist": 0.597,
+   "reject": "spare (the 8 nearest the surface profile are kept)"
+  },
+  {
+   "onset_s": 9.753,
+   "len_s": 0.62,
+   "pre_db": -29.8,
+   "tail_db": -40.8,
+   "peak": 0.246,
+   "loud": -29.9,
+   "take": "steps_cobble_t3",
+   "spec": {
+    "centroid_hz": 1032,
+    "below_500": 0.011,
+    "150_600": 0.027,
+    "above_4k": 0.006,
+    "flatness": 0.152,
+    "tonal_bins": 0,
+    "tone_hz": []
+   },
+   "dist": 0.957,
+   "reject": "spare (the 8 nearest the surface profile are kept)"
+  },
+  {
+   "onset_s": 10.646,
+   "len_s": 0.62,
+   "pre_db": -0.6,
+   "tail_db": -31.8,
+   "peak": 0.318,
+   "loud": -31.3,
+   "take": "steps_cobble_t3",
+   "reject": "overlaps previous step (-0.6 dB before onset)"
+  },
+  {
+   "onset_s": 11.462,
+   "len_s": 0.527,
+   "pre_db": 5.4,
+   "tail_db": -87.4,
+   "peak": 0.521,
+   "loud": -28.6,
+   "take": "steps_cobble_t3",
+   "reject": "overlaps previous step (5.4 dB before onset)"
+  },
+  {
+   "onset_s": 0.023,
+   "reject": "starts with the take (attack may be cut)",
+   "take": "steps_cobble_t4"
+  },
+  {
+   "onset_s": 0.863,
+   "len_s": 0.62,
+   "pre_db": -29.2,
+   "tail_db": -77.0,
+   "peak": 0.76,
+   "loud": -22.1,
+   "take": "steps_cobble_t4",
+   "spec": {
+    "centroid_hz": 1025,
+    "below_500": 0.011,
+    "150_600": 0.027,
+    "above_4k": 0.001,
+    "flatness": 0.051,
+    "tonal_bins": 0,
+    "tone_hz": []
+   },
+   "dist": 0.966,
+   "reject": "spare (the 8 nearest the surface profile are kept)"
+  },
+  {
+   "onset_s": 1.619,
+   "len_s": 0.62,
+   "pre_db": -14.5,
+   "tail_db": -71.3,
+   "peak": 0.515,
+   "loud": -26.6,
+   "take": "steps_cobble_t4",
+   "spec": {
+    "centroid_hz": 3159,
+    "below_500": 0.024,
+    "150_600": 0.041,
+    "above_4k": 0.371,
+    "flatness": 0.35,
+    "tonal_bins": 0,
+    "tone_hz": []
+   },
+   "dist": 0.757,
+   "reject": "spare (the 8 nearest the surface profile are kept)"
+  },
+  {
+   "onset_s": 2.386,
+   "len_s": 0.62,
+   "pre_db": -12.5,
+   "tail_db": -71.9,
+   "peak": 0.497,
+   "loud": -24.1,
+   "take": "steps_cobble_t4",
+   "spec": {
+    "centroid_hz": 2322,
+    "below_500": 0.012,
+    "150_600": 0.017,
+    "above_4k": 0.059,
+    "flatness": 0.291,
+    "tonal_bins": 0,
+    "tone_hz": []
+   },
+   "dist": 0.361,
+   "reject": "spare (the 8 nearest the surface profile are kept)"
+  },
+  {
+   "onset_s": 3.192,
+   "len_s": 0.62,
+   "pre_db": -22.1,
+   "tail_db": -74.8,
+   "peak": 0.867,
+   "loud": -24.5,
+   "take": "steps_cobble_t4",
+   "spec": {
+    "centroid_hz": 3371,
+    "below_500": 0.013,
+    "150_600": 0.017,
+    "above_4k": 0.218,
+    "flatness": 0.255,
+    "tonal_bins": 0,
+    "tone_hz": []
+   },
+   "dist": 0.895,
+   "reject": "spare (the 8 nearest the surface profile are kept)"
+  },
+  {
+   "onset_s": 3.988,
+   "len_s": 0.62,
+   "pre_db": -24.8,
+   "tail_db": -71.5,
+   "peak": 0.346,
+   "loud": -28.6,
+   "take": "steps_cobble_t4",
+   "spec": {
+    "centroid_hz": 3954,
+    "below_500": 0.076,
+    "150_600": 0.08,
+    "above_4k": 0.315,
+    "flatness": 0.415,
+    "tonal_bins": 0,
+    "tone_hz": []
+   },
+   "dist": 1.241,
+   "reject": "spare (the 8 nearest the surface profile are kept)"
+  },
+  {
+   "onset_s": 4.783,
+   "len_s": 0.62,
+   "pre_db": -22.4,
+   "tail_db": -67.2,
+   "peak": 0.255,
+   "loud": -31.8,
+   "take": "steps_cobble_t4",
+   "reject": "faint event, -8.0 dB below the surface's steps"
+  },
+  {
+   "onset_s": 5.567,
+   "len_s": 0.62,
+   "pre_db": -32.3,
+   "tail_db": -73.5,
+   "peak": 0.632,
+   "loud": -25.2,
+   "take": "steps_cobble_t4",
+   "spec": {
+    "centroid_hz": 1617,
+    "below_500": 0.078,
+    "150_600": 0.092,
+    "above_4k": 0.068,
+    "flatness": 0.239,
+    "tonal_bins": 0,
+    "tone_hz": []
+   },
+   "dist": 0.425,
+   "reject": "spare (the 8 nearest the surface profile are kept)"
+  },
+  {
+   "onset_s": 6.386,
+   "len_s": 0.62,
+   "pre_db": -19.0,
+   "tail_db": -70.2,
+   "peak": 0.393,
+   "loud": -29.5,
+   "take": "steps_cobble_t4",
+   "spec": {
+    "centroid_hz": 2471,
+    "below_500": 0.012,
+    "150_600": 0.015,
+    "above_4k": 0.051,
+    "flatness": 0.337,
+    "tonal_bins": 0,
+    "tone_hz": []
+   },
+   "dist": 0.451,
+   "reject": "spare (the 8 nearest the surface profile are kept)"
+  },
+  {
+   "onset_s": 7.195,
+   "len_s": 0.62,
+   "pre_db": -29.3,
+   "tail_db": -75.1,
+   "peak": 0.692,
+   "loud": -22.7,
+   "take": "steps_cobble_t4",
+   "spec": {
+    "centroid_hz": 1087,
+    "below_500": 0.008,
+    "150_600": 0.015,
+    "above_4k": 0.005,
+    "flatness": 0.05,
+    "tonal_bins": 0,
+    "tone_hz": []
+   },
+   "dist": 0.894,
+   "reject": "spare (the 8 nearest the surface profile are kept)"
+  },
+  {
+   "onset_s": 8.037,
+   "len_s": 0.62,
+   "pre_db": -18.8,
+   "tail_db": -77.1,
+   "peak": 0.596,
+   "loud": -23.8,
+   "take": "steps_cobble_t4",
+   "spec": {
+    "centroid_hz": 1254,
+    "below_500": 0.009,
+    "150_600": 0.016,
+    "above_4k": 0.004,
+    "flatness": 0.162,
+    "tonal_bins": 0,
+    "tone_hz": []
+   },
+   "dist": 0.683,
+   "reject": "spare (the 8 nearest the surface profile are kept)"
+  },
+  {
+   "onset_s": 8.87,
+   "len_s": 0.62,
+   "pre_db": -22.3,
+   "tail_db": -73.0,
+   "peak": 0.388,
+   "loud": -27.0,
+   "take": "steps_cobble_t4",
+   "spec": {
+    "centroid_hz": 2347,
+    "below_500": 0.037,
+    "150_600": 0.041,
+    "above_4k": 0.07,
+    "flatness": 0.326,
+    "tonal_bins": 0,
+    "tone_hz": []
+   },
+   "dist": 0.333,
+   "reject": "spare (the 8 nearest the surface profile are kept)"
+  },
+  {
+   "onset_s": 9.683,
+   "len_s": 0.62,
+   "pre_db": -37.3,
+   "tail_db": -74.5,
+   "peak": 0.879,
+   "loud": -24.0,
+   "take": "steps_cobble_t4",
+   "spec": {
+    "centroid_hz": 2358,
+    "below_500": 0.021,
+    "150_600": 0.035,
+    "above_4k": 0.114,
+    "flatness": 0.298,
+    "tonal_bins": 0,
+    "tone_hz": []
+   },
+   "dist": 0.348,
+   "reject": "spare (the 8 nearest the surface profile are kept)"
+  },
+  {
+   "onset_s": 10.513,
+   "len_s": 0.62,
+   "pre_db": -38.8,
+   "tail_db": -69.7,
+   "peak": 0.371,
+   "loud": -28.6,
+   "take": "steps_cobble_t4",
+   "spec": {
+    "centroid_hz": 4516,
+    "below_500": 0.015,
+    "150_600": 0.017,
+    "above_4k": 0.272,
+    "flatness": 0.39,
+    "tonal_bins": 0,
+    "tone_hz": []
+   },
+   "dist": 1.309,
+   "reject": "spare (the 8 nearest the surface profile are kept)"
+  },
+  {
+   "onset_s": 11.419,
+   "len_s": 0.57,
+   "pre_db": -17.6,
+   "tail_db": -91.0,
+   "peak": 0.493,
+   "loud": -25.8,
+   "take": "steps_cobble_t4",
+   "spec": {
+    "centroid_hz": 1885,
+    "below_500": 0.036,
+    "150_600": 0.041,
+    "above_4k": 0.04,
+    "flatness": 0.25,
+    "tonal_bins": 0,
+    "tone_hz": []
+   },
+   "dist": 0.035,
+   "file": "cobble_04.wav",
+   "decay_ms": 52
+  },
+  {
+   "onset_s": 0.145,
+   "len_s": 0.62,
+   "pre_db": 5.7,
+   "tail_db": -28.5,
+   "peak": 0.056,
+   "loud": -51.0,
+   "take": "steps_cobble_t5",
+   "reject": "overlaps previous step (5.7 dB before onset)"
+  },
+  {
+   "onset_s": 0.801,
+   "len_s": 0.62,
+   "pre_db": 8.1,
+   "tail_db": -36.2,
+   "peak": 0.32,
+   "loud": -29.4,
+   "take": "steps_cobble_t5",
+   "reject": "overlaps previous step (8.1 dB before onset)"
+  },
+  {
+   "onset_s": 1.503,
+   "len_s": 0.62,
+   "pre_db": 12.8,
+   "tail_db": -31.2,
+   "peak": 0.161,
+   "loud": -36.1,
+   "take": "steps_cobble_t5",
+   "reject": "overlaps previous step (12.8 dB before onset)"
+  },
+  {
+   "onset_s": 2.242,
+   "len_s": 0.62,
+   "pre_db": 10.1,
+   "tail_db": -22.1,
+   "peak": 0.094,
+   "loud": -41.7,
+   "take": "steps_cobble_t5",
+   "reject": "overlaps previous step (10.1 dB before onset)"
+  },
+  {
+   "onset_s": 2.897,
+   "len_s": 0.62,
+   "pre_db": -31.0,
+   "tail_db": -56.9,
+   "peak": 1.0,
+   "loud": -18.7,
+   "take": "steps_cobble_t5",
+   "reject": "clipped"
+  },
+  {
+   "onset_s": 3.657,
+   "len_s": 0.62,
+   "pre_db": 0.6,
+   "tail_db": -45.4,
+   "peak": 0.202,
+   "loud": -31.5,
+   "take": "steps_cobble_t5",
+   "reject": "overlaps previous step (0.6 dB before onset)"
+  },
+  {
+   "onset_s": 4.383,
+   "len_s": 0.62,
+   "pre_db": 1.8,
+   "tail_db": -39.7,
+   "peak": 0.375,
+   "loud": -28.2,
+   "take": "steps_cobble_t5",
+   "reject": "overlaps previous step (1.8 dB before onset)"
+  },
+  {
+   "onset_s": 5.092,
+   "len_s": 0.62,
+   "pre_db": 3.4,
+   "tail_db": -42.8,
+   "peak": 0.229,
+   "loud": -29.9,
+   "take": "steps_cobble_t5",
+   "reject": "overlaps previous step (3.4 dB before onset)"
+  },
+  {
+   "onset_s": 5.731,
+   "len_s": 0.62,
+   "pre_db": -16.0,
+   "tail_db": -25.3,
+   "peak": 0.141,
+   "loud": -37.2,
+   "take": "steps_cobble_t5",
+   "reject": "faint event, -13.4 dB below the surface's steps"
+  },
+  {
+   "onset_s": 6.562,
+   "len_s": 0.549,
+   "pre_db": 9.0,
+   "tail_db": -31.5,
+   "peak": 0.077,
+   "loud": -47.3,
+   "take": "steps_cobble_t5",
+   "reject": "overlaps previous step (9.0 dB before onset)"
+  },
+  {
+   "onset_s": 7.123,
+   "len_s": 0.62,
+   "pre_db": -25.2,
+   "tail_db": -44.3,
+   "peak": 0.736,
+   "loud": -22.3,
+   "take": "steps_cobble_t5",
+   "spec": {
+    "centroid_hz": 1664,
+    "below_500": 0.007,
+    "150_600": 0.014,
+    "above_4k": 0.041,
+    "flatness": 0.229,
+    "tonal_bins": 0,
+    "tone_hz": []
+   },
+   "dist": 0.283,
+   "file": "cobble_05.wav",
+   "decay_ms": 20
+  },
+  {
+   "onset_s": 7.837,
+   "len_s": 0.62,
+   "pre_db": -35.3,
+   "tail_db": -46.4,
+   "peak": 0.958,
+   "loud": -19.6,
+   "take": "steps_cobble_t5",
+   "spec": {
+    "centroid_hz": 1407,
+    "below_500": 0.02,
+    "150_600": 0.024,
+    "above_4k": 0.014,
+    "flatness": 0.11,
+    "tonal_bins": 0,
+    "tone_hz": []
+   },
+   "dist": 0.473,
+   "reject": "spare (the 8 nearest the surface profile are kept)"
+  },
+  {
+   "onset_s": 8.568,
+   "len_s": 0.62,
+   "pre_db": 12.2,
+   "tail_db": -32.2,
+   "peak": 0.193,
+   "loud": -33.0,
+   "take": "steps_cobble_t5",
+   "reject": "overlaps previous step (12.2 dB before onset)"
+  },
+  {
+   "onset_s": 9.304,
+   "len_s": 0.62,
+   "pre_db": -20.0,
+   "tail_db": -48.0,
+   "peak": 0.662,
+   "loud": -24.7,
+   "take": "steps_cobble_t5",
+   "spec": {
+    "centroid_hz": 2091,
+    "below_500": 0.017,
+    "150_600": 0.019,
+    "above_4k": 0.104,
+    "flatness": 0.333,
+    "tonal_bins": 0,
+    "tone_hz": []
+   },
+   "dist": 0.19,
+   "file": "cobble_06.wav",
+   "decay_ms": 34
+  },
+  {
+   "onset_s": 9.987,
+   "len_s": 0.62,
+   "pre_db": -34.8,
+   "tail_db": -35.1,
+   "peak": 0.121,
+   "loud": -33.5,
+   "take": "steps_cobble_t5",
+   "reject": "faint event, -9.7 dB below the surface's steps"
+  },
+  {
+   "onset_s": 10.7,
+   "len_s": 0.62,
+   "pre_db": -24.9,
+   "tail_db": -47.1,
+   "peak": 0.973,
+   "loud": -19.3,
+   "take": "steps_cobble_t5",
+   "spec": {
+    "centroid_hz": 1442,
+    "below_500": 0.006,
+    "150_600": 0.008,
+    "above_4k": 0.015,
+    "flatness": 0.132,
+    "tonal_bins": 0,
+    "tone_hz": []
+   },
+   "dist": 0.494,
+   "reject": "spare (the 8 nearest the surface profile are kept)"
+  },
+  {
+   "onset_s": 0.0,
+   "reject": "starts with the take (attack may be cut)",
+   "take": "steps_cobble_t6"
+  },
+  {
+   "onset_s": 1.036,
+   "len_s": 0.62,
+   "pre_db": -20.8,
+   "tail_db": -74.8,
+   "peak": 0.784,
+   "loud": -21.2,
+   "take": "steps_cobble_t6",
+   "spec": {
+    "centroid_hz": 1970,
+    "below_500": 0.022,
+    "150_600": 0.028,
+    "above_4k": 0.008,
+    "flatness": 0.168,
+    "tonal_bins": 0,
+    "tone_hz": []
+   },
+   "dist": 0.084,
+   "file": "cobble_07.wav",
+   "decay_ms": 35
+  },
+  {
+   "onset_s": 1.848,
+   "len_s": 0.62,
+   "pre_db": -16.0,
+   "tail_db": -70.6,
+   "peak": 0.571,
+   "loud": -24.2,
+   "take": "steps_cobble_t6",
+   "spec": {
+    "centroid_hz": 2377,
+    "below_500": 0.017,
+    "150_600": 0.02,
+    "above_4k": 0.113,
+    "flatness": 0.279,
+    "tonal_bins": 0,
+    "tone_hz": []
+   },
+   "dist": 0.375,
+   "reject": "spare (the 8 nearest the surface profile are kept)"
+  },
+  {
+   "onset_s": 2.583,
+   "len_s": 0.62,
+   "pre_db": -25.8,
+   "tail_db": -71.9,
+   "peak": 0.577,
+   "loud": -26.2,
+   "take": "steps_cobble_t6",
+   "spec": {
+    "centroid_hz": 1504,
+    "below_500": 0.008,
+    "150_600": 0.008,
+    "above_4k": 0.025,
+    "flatness": 0.2,
+    "tonal_bins": 0,
+    "tone_hz": []
+   },
+   "dist": 0.425,
+   "reject": "spare (the 8 nearest the surface profile are kept)"
+  },
+  {
+   "onset_s": 3.341,
+   "len_s": 0.62,
+   "pre_db": -24.8,
+   "tail_db": -71.1,
+   "peak": 0.564,
+   "loud": -24.5,
+   "take": "steps_cobble_t6",
+   "spec": {
+    "centroid_hz": 1215,
+    "below_500": 0.005,
+    "150_600": 0.008,
+    "above_4k": 0.012,
+    "flatness": 0.106,
+    "tonal_bins": 0,
+    "tone_hz": []
+   },
+   "dist": 0.745,
+   "reject": "spare (the 8 nearest the surface profile are kept)"
+  },
+  {
+   "onset_s": 4.192,
+   "len_s": 0.62,
+   "pre_db": 2.7,
+   "tail_db": -64.3,
+   "peak": 0.355,
+   "loud": -31.6,
+   "take": "steps_cobble_t6",
+   "reject": "overlaps previous step (2.7 dB before onset)"
+  },
+  {
+   "onset_s": 4.981,
+   "len_s": 0.62,
+   "pre_db": -2.7,
+   "tail_db": -62.5,
+   "peak": 0.213,
+   "loud": -31.7,
+   "take": "steps_cobble_t6",
+   "reject": "overlaps previous step (-2.7 dB before onset)"
+  },
+  {
+   "onset_s": 5.682,
+   "len_s": 0.62,
+   "pre_db": -16.0,
+   "tail_db": -78.1,
+   "peak": 0.889,
+   "loud": -21.0,
+   "take": "steps_cobble_t6",
+   "spec": {
+    "centroid_hz": 1375,
+    "below_500": 0.029,
+    "150_600": 0.03,
+    "above_4k": 0.006,
+    "flatness": 0.149,
+    "tonal_bins": 0,
+    "tone_hz": []
+   },
+   "dist": 0.471,
+   "reject": "spare (the 8 nearest the surface profile are kept)"
+  },
+  {
+   "onset_s": 6.438,
+   "len_s": 0.62,
+   "pre_db": -16.0,
+   "tail_db": -71.8,
+   "peak": 0.441,
+   "loud": -25.5,
+   "take": "steps_cobble_t6",
+   "spec": {
+    "centroid_hz": 1118,
+    "below_500": 0.069,
+    "150_600": 0.092,
+    "above_4k": 0.004,
+    "flatness": 0.141,
+    "tonal_bins": 0,
+    "tone_hz": []
+   },
+   "dist": 0.921,
+   "reject": "spare (the 8 nearest the surface profile are kept)"
+  },
+  {
+   "onset_s": 7.242,
+   "len_s": 0.62,
+   "pre_db": 4.7,
+   "tail_db": -65.6,
+   "peak": 0.297,
+   "loud": -28.5,
+   "take": "steps_cobble_t6",
+   "reject": "overlaps previous step (4.7 dB before onset)"
+  },
+  {
+   "onset_s": 8.044,
+   "len_s": 0.62,
+   "pre_db": 3.5,
+   "tail_db": -63.5,
+   "peak": 0.431,
+   "loud": -31.0,
+   "take": "steps_cobble_t6",
+   "reject": "overlaps previous step (3.5 dB before onset)"
+  },
+  {
+   "onset_s": 8.708,
+   "len_s": 0.62,
+   "pre_db": -22.3,
+   "tail_db": -71.2,
+   "peak": 0.444,
+   "loud": -25.7,
+   "take": "steps_cobble_t6",
+   "spec": {
+    "centroid_hz": 1121,
+    "below_500": 0.005,
+    "150_600": 0.007,
+    "above_4k": 0.001,
+    "flatness": 0.125,
+    "tonal_bins": 0,
+    "tone_hz": []
+   },
+   "dist": 0.861,
+   "reject": "spare (the 8 nearest the surface profile are kept)"
+  },
+  {
+   "onset_s": 9.503,
+   "len_s": 0.62,
+   "pre_db": 4.5,
+   "tail_db": -66.0,
+   "peak": 0.452,
+   "loud": -28.3,
+   "take": "steps_cobble_t6",
+   "reject": "overlaps previous step (4.5 dB before onset)"
+  },
+  {
+   "onset_s": 10.253,
+   "len_s": 0.62,
+   "pre_db": 0.5,
+   "tail_db": -66.0,
+   "peak": 0.475,
+   "loud": -29.1,
+   "take": "steps_cobble_t6",
+   "reject": "overlaps previous step (0.5 dB before onset)"
+  },
+  {
+   "onset_s": 10.902,
+   "len_s": 0.62,
+   "pre_db": -18.7,
+   "tail_db": -74.9,
+   "peak": 0.741,
+   "loud": -21.0,
+   "take": "steps_cobble_t6",
+   "spec": {
+    "centroid_hz": 1767,
+    "below_500": 0.009,
+    "150_600": 0.012,
+    "above_4k": 0.015,
+    "flatness": 0.082,
+    "tonal_bins": 0,
+    "tone_hz": []
+   },
+   "dist": 0.189,
+   "file": "cobble_08.wav",
+   "decay_ms": 50
+  },
+  {
+   "onset_s": 11.633,
+   "len_s": 0.356,
+   "pre_db": -25.7,
+   "tail_db": -43.9,
+   "peak": 0.518,
+   "loud": -23.7,
+   "take": "steps_cobble_t6",
+   "spec": {
+    "centroid_hz": 1335,
+    "below_500": 0.053,
+    "150_600": 0.032,
+    "above_4k": 0.004,
+    "flatness": 0.151,
+    "tonal_bins": 0,
+    "tone_hz": []
+   },
+   "dist": 0.601,
+   "reject": "spare (the 8 nearest the surface profile are kept)"
+  }
+ ],
+ "mud": [
+  {
+   "onset_s": 0.237,
+   "len_s": 0.601,
+   "pre_db": -3.5,
+   "tail_db": -49.6,
+   "peak": 0.569,
+   "loud": -24.0,
+   "take": "steps_mud_t3",
+   "reject": "overlaps previous step (-3.5 dB before onset)"
+  },
+  {
+   "onset_s": 0.849,
+   "len_s": 0.537,
+   "pre_db": -34.8,
+   "tail_db": -55.8,
+   "peak": 0.47,
+   "loud": -25.4,
+   "take": "steps_mud_t3",
+   "spec": {
+    "centroid_hz": 1426,
+    "below_500": 0.577,
+    "150_600": 0.363,
+    "above_4k": 0.116,
+    "flatness": 0.382,
+    "tonal_bins": 0,
+    "tone_hz": []
+   },
+   "dist": 1.22,
+   "file": "mud_01.wav",
+   "decay_ms": 23
+  },
+  {
+   "onset_s": 1.397,
+   "len_s": 0.339,
+   "pre_db": -21.2,
+   "tail_db": 25.8,
+   "peak": 0.547,
+   "loud": -22.5,
+   "take": "steps_mud_t3",
+   "reject": "cut while still sounding (tail 25.8 dB)"
+  },
+  {
+   "onset_s": 1.747,
+   "len_s": 0.616,
+   "pre_db": 20.1,
+   "tail_db": -36.7,
+   "peak": 0.168,
+   "loud": -38.2,
+   "take": "steps_mud_t3",
+   "reject": "overlaps previous step (20.1 dB before onset)"
+  },
+  {
+   "onset_s": 2.374,
+   "len_s": 0.345,
+   "pre_db": -7.4,
+   "tail_db": -15.2,
+   "peak": 0.163,
+   "loud": -30.0,
+   "take": "steps_mud_t3",
+   "reject": "overlaps previous step (-7.4 dB before onset)"
+  },
+  {
+   "onset_s": 2.73,
+   "len_s": 0.314,
+   "pre_db": -7.7,
+   "tail_db": 4.1,
+   "peak": 0.008,
+   "loud": -61.0,
+   "take": "steps_mud_t3",
+   "reject": "overlaps previous step (-7.7 dB before onset); cut while still sounding (tail 4.1 dB)"
+  },
+  {
+   "onset_s": 3.055,
+   "len_s": 0.59,
+   "pre_db": -23.5,
+   "tail_db": -42.8,
+   "peak": 0.192,
+   "loud": -30.2,
+   "take": "steps_mud_t3",
+   "spec": {
+    "centroid_hz": 920,
+    "below_500": 0.636,
+    "150_600": 0.163,
+    "above_4k": 0.063,
+    "flatness": 0.286,
+    "tonal_bins": 0,
+    "tone_hz": []
+   },
+   "dist": 1.064,
+   "file": "mud_02.wav",
+   "decay_ms": 34
+  },
+  {
+   "onset_s": 3.656,
+   "len_s": 0.373,
+   "pre_db": -12.2,
+   "tail_db": 2.6,
+   "peak": 0.1,
+   "loud": -38.6,
+   "take": "steps_mud_t3",
+   "reject": "cut while still sounding (tail 2.6 dB)"
+  },
+  {
+   "onset_s": 4.04,
+   "len_s": 0.62,
+   "pre_db": 5.3,
+   "tail_db": -36.9,
+   "peak": 0.211,
+   "loud": -34.6,
+   "take": "steps_mud_t3",
+   "reject": "overlaps previous step (5.3 dB before onset)"
+  },
+  {
+   "onset_s": 4.683,
+   "len_s": 0.62,
+   "pre_db": -22.0,
+   "tail_db": -44.2,
+   "peak": 0.264,
+   "loud": -31.1,
+   "take": "steps_mud_t3",
+   "spec": {
+    "centroid_hz": 3609,
+    "below_500": 0.114,
+    "150_600": 0.11,
+    "above_4k": 0.435,
+    "flatness": 0.505,
+    "tonal_bins": 0,
+    "tone_hz": []
+   },
+   "dist": 2.996,
+   "reject": "spare (the 8 nearest the surface profile are kept)"
+  },
+  {
+   "onset_s": 5.362,
+   "len_s": 0.566,
+   "pre_db": -22.0,
+   "tail_db": -47.4,
+   "peak": 0.497,
+   "loud": -23.5,
+   "take": "steps_mud_t3",
+   "spec": {
+    "centroid_hz": 2638,
+    "below_500": 0.183,
+    "150_600": 0.051,
+    "above_4k": 0.218,
+    "flatness": 0.366,
+    "tonal_bins": 0,
+    "tone_hz": []
+   },
+   "dist": 2.267,
+   "file": "mud_03.wav",
+   "decay_ms": 10
+  },
+  {
+   "onset_s": 5.938,
+   "len_s": 0.303,
+   "pre_db": -27.3,
+   "tail_db": 2.5,
+   "peak": 0.111,
+   "loud": -31.2,
+   "take": "steps_mud_t3",
+   "reject": "cut while still sounding (tail 2.5 dB)"
+  },
+  {
+   "onset_s": 6.252,
+   "len_s": 0.62,
+   "pre_db": 32.4,
+   "tail_db": -16.1,
+   "peak": 0.036,
+   "loud": -51.4,
+   "take": "steps_mud_t3",
+   "reject": "overlaps previous step (32.4 dB before onset)"
+  },
+  {
+   "onset_s": 6.986,
+   "len_s": 0.62,
+   "pre_db": -1.5,
+   "tail_db": -29.7,
+   "peak": 0.097,
+   "loud": -41.9,
+   "take": "steps_mud_t3",
+   "reject": "overlaps previous step (-1.5 dB before onset)"
+  },
+  {
+   "onset_s": 7.735,
+   "len_s": 0.561,
+   "pre_db": -6.3,
+   "tail_db": -38.1,
+   "peak": 0.191,
+   "loud": -32.9,
+   "take": "steps_mud_t3",
+   "reject": "overlaps previous step (-6.3 dB before onset)"
+  },
+  {
+   "onset_s": 8.307,
+   "len_s": 0.62,
+   "pre_db": -19.1,
+   "tail_db": -56.8,
+   "peak": 0.94,
+   "loud": -23.7,
+   "take": "steps_mud_t3",
+   "spec": {
+    "centroid_hz": 844,
+    "below_500": 0.508,
+    "150_600": 0.316,
+    "above_4k": 0.027,
+    "flatness": 0.272,
+    "tonal_bins": 0,
+    "tone_hz": []
+   },
+   "dist": 0.677,
+   "file": "mud_04.wav",
+   "decay_ms": 30
+  },
+  {
+   "onset_s": 8.979,
+   "len_s": 0.454,
+   "pre_db": -24.7,
+   "tail_db": -4.4,
+   "peak": 0.153,
+   "loud": -37.9,
+   "take": "steps_mud_t3",
+   "reject": "cut while still sounding (tail -4.4 dB)"
+  },
+  {
+   "onset_s": 9.445,
+   "len_s": 0.4,
+   "pre_db": -9.9,
+   "tail_db": 21.6,
+   "peak": 0.501,
+   "loud": -27.3,
+   "take": "steps_mud_t3",
+   "reject": "overlaps previous step (-9.9 dB before onset); cut while still sounding (tail 21.6 dB)"
+  },
+  {
+   "onset_s": 9.856,
+   "len_s": 0.617,
+   "pre_db": 0.9,
+   "tail_db": -9.6,
+   "peak": 0.134,
+   "loud": -62.7,
+   "take": "steps_mud_t3",
+   "reject": "overlaps previous step (0.9 dB before onset)"
+  },
+  {
+   "onset_s": 10.484,
+   "len_s": 0.62,
+   "pre_db": -5.8,
+   "tail_db": -49.6,
+   "peak": 0.152,
+   "loud": -29.8,
+   "take": "steps_mud_t3",
+   "reject": "overlaps previous step (-5.8 dB before onset)"
+  },
+  {
+   "onset_s": 11.193,
+   "len_s": 0.31,
+   "pre_db": -30.0,
+   "tail_db": 4.4,
+   "peak": 0.42,
+   "loud": -23.4,
+   "take": "steps_mud_t3",
+   "reject": "cut while still sounding (tail 4.4 dB)"
+  },
+  {
+   "onset_s": 11.514,
+   "len_s": 0.475,
+   "pre_db": 10.5,
+   "tail_db": -50.6,
+   "peak": 0.193,
+   "loud": -36.3,
+   "take": "steps_mud_t3",
+   "reject": "overlaps previous step (10.5 dB before onset)"
+  },
+  {
+   "onset_s": 0.106,
+   "len_s": 0.574,
+   "pre_db": -9.9,
+   "tail_db": -33.6,
+   "peak": 0.553,
+   "loud": -28.5,
+   "take": "steps_mud_t4",
+   "reject": "overlaps previous step (-9.9 dB before onset)"
+  },
+  {
+   "onset_s": 0.691,
+   "len_s": 0.62,
+   "pre_db": -5.1,
+   "tail_db": -77.2,
+   "peak": 0.508,
+   "loud": -23.8,
+   "take": "steps_mud_t4",
+   "reject": "overlaps previous step (-5.1 dB before onset)"
+  },
+  {
+   "onset_s": 1.549,
+   "len_s": 0.412,
+   "pre_db": -17.4,
+   "tail_db": -22.7,
+   "peak": 0.281,
+   "loud": -30.0,
+   "take": "steps_mud_t4",
+   "spec": {
+    "centroid_hz": 4978,
+    "below_500": 0.011,
+    "150_600": 0.013,
+    "above_4k": 0.626,
+    "flatness": 0.419,
+    "tonal_bins": 0,
+    "tone_hz": []
+   },
+   "dist": 3.872,
+   "reject": "spare (the 8 nearest the surface profile are kept)"
+  },
+  {
+   "onset_s": 1.972,
+   "len_s": 0.34,
+   "pre_db": 6.6,
+   "tail_db": 0.3,
+   "peak": 0.028,
+   "loud": -47.4,
+   "take": "steps_mud_t4",
+   "reject": "overlaps previous step (6.6 dB before onset); cut while still sounding (tail 0.3 dB)"
+  },
+  {
+   "onset_s": 2.323,
+   "len_s": 0.62,
+   "pre_db": -10.6,
+   "tail_db": -62.0,
+   "peak": 0.117,
+   "loud": -36.7,
+   "take": "steps_mud_t4",
+   "reject": "faint event, -12.8 dB below the surface's steps"
+  },
+  {
+   "onset_s": 3.199,
+   "len_s": 0.62,
+   "pre_db": 0.2,
+   "tail_db": -74.0,
+   "peak": 0.551,
+   "loud": -24.0,
+   "take": "steps_mud_t4",
+   "reject": "overlaps previous step (0.2 dB before onset)"
+  },
+  {
+   "onset_s": 3.994,
+   "len_s": 0.307,
+   "pre_db": -45.4,
+   "tail_db": 7.8,
+   "peak": 0.163,
+   "loud": -28.9,
+   "take": "steps_mud_t4",
+   "reject": "cut while still sounding (tail 7.8 dB)"
+  },
+  {
+   "onset_s": 4.312,
+   "len_s": 0.62,
+   "pre_db": 23.5,
+   "tail_db": -42.6,
+   "peak": 0.012,
+   "loud": -61.8,
+   "take": "steps_mud_t4",
+   "reject": "overlaps previous step (23.5 dB before onset)"
+  },
+  {
+   "onset_s": 5.135,
+   "len_s": 0.33,
+   "pre_db": -14.6,
+   "tail_db": 6.3,
+   "peak": 0.18,
+   "loud": -30.0,
+   "take": "steps_mud_t4",
+   "reject": "cut while still sounding (tail 6.3 dB)"
+  },
+  {
+   "onset_s": 5.476,
+   "len_s": 0.62,
+   "pre_db": -1.9,
+   "tail_db": -65.8,
+   "peak": 0.276,
+   "loud": -30.0,
+   "take": "steps_mud_t4",
+   "reject": "overlaps previous step (-1.9 dB before onset)"
+  },
+  {
+   "onset_s": 6.501,
+   "len_s": 0.62,
+   "pre_db": 16.0,
+   "tail_db": -51.1,
+   "peak": 0.062,
+   "loud": -45.7,
+   "take": "steps_mud_t4",
+   "reject": "overlaps previous step (16.0 dB before onset)"
+  },
+  {
+   "onset_s": 7.23,
+   "len_s": 0.62,
+   "pre_db": -8.5,
+   "tail_db": -62.1,
+   "peak": 0.148,
+   "loud": -33.4,
+   "take": "steps_mud_t4",
+   "reject": "overlaps previous step (-8.5 dB before onset)"
+  },
+  {
+   "onset_s": 8.338,
+   "len_s": 0.62,
+   "pre_db": 4.3,
+   "tail_db": -58.8,
+   "peak": 0.254,
+   "loud": -32.5,
+   "take": "steps_mud_t4",
+   "reject": "overlaps previous step (4.3 dB before onset)"
+  },
+  {
+   "onset_s": 9.299,
+   "len_s": 0.477,
+   "pre_db": 0.6,
+   "tail_db": 18.1,
+   "peak": 0.286,
+   "loud": -45.2,
+   "take": "steps_mud_t4",
+   "reject": "overlaps previous step (0.6 dB before onset); cut while still sounding (tail 18.1 dB)"
+  },
+  {
+   "onset_s": 9.786,
+   "len_s": 0.62,
+   "pre_db": -10.5,
+   "tail_db": -56.4,
+   "peak": 0.081,
+   "loud": -42.8,
+   "take": "steps_mud_t4",
+   "reject": "faint event, -18.9 dB below the surface's steps"
+  },
+  {
+   "onset_s": 10.693,
+   "len_s": 0.611,
+   "pre_db": -15.0,
+   "tail_db": -78.5,
+   "peak": 0.859,
+   "loud": -20.7,
+   "take": "steps_mud_t4",
+   "spec": {
+    "centroid_hz": 336,
+    "below_500": 0.833,
+    "150_600": 0.476,
+    "above_4k": 0.001,
+    "flatness": 0.013,
+    "tonal_bins": 0,
+    "tone_hz": []
+   },
+   "dist": 3.305,
+   "reject": "spare (the 8 nearest the surface profile are kept)"
+  },
+  {
+   "onset_s": 11.316,
+   "len_s": 0.62,
+   "pre_db": -27.6,
+   "tail_db": -49.0,
+   "peak": 0.131,
+   "loud": -33.3,
+   "take": "steps_mud_t4",
+   "reject": "faint event, -9.4 dB below the surface's steps"
+  },
+  {
+   "onset_s": 0.102,
+   "len_s": 0.572,
+   "pre_db": -16.1,
+   "tail_db": -39.1,
+   "peak": 0.07,
+   "loud": -37.1,
+   "take": "steps_mud_t5",
+   "reject": "faint event, -13.2 dB below the surface's steps"
+  },
+  {
+   "onset_s": 0.685,
+   "len_s": 0.469,
+   "pre_db": -13.8,
+   "tail_db": -9.6,
+   "peak": 0.089,
+   "loud": -41.1,
+   "take": "steps_mud_t5",
+   "reject": "faint event, -17.2 dB below the surface's steps"
+  },
+  {
+   "onset_s": 1.165,
+   "len_s": 0.62,
+   "pre_db": 2.3,
+   "tail_db": -56.8,
+   "peak": 0.338,
+   "loud": -29.6,
+   "take": "steps_mud_t5",
+   "reject": "overlaps previous step (2.3 dB before onset)"
+  },
+  {
+   "onset_s": 2.003,
+   "len_s": 0.62,
+   "pre_db": 2.0,
+   "tail_db": -64.1,
+   "peak": 0.372,
+   "loud": -25.8,
+   "take": "steps_mud_t5",
+   "reject": "overlaps previous step (2.0 dB before onset)"
+  },
+  {
+   "onset_s": 3.068,
+   "len_s": 0.445,
+   "pre_db": -24.4,
+   "tail_db": 15.1,
+   "peak": 0.341,
+   "loud": -31.3,
+   "take": "steps_mud_t5",
+   "reject": "cut while still sounding (tail 15.1 dB)"
+  },
+  {
+   "onset_s": 3.524,
+   "len_s": 0.553,
+   "pre_db": 11.8,
+   "tail_db": -50.9,
+   "peak": 0.196,
+   "loud": -34.4,
+   "take": "steps_mud_t5",
+   "reject": "overlaps previous step (11.8 dB before onset)"
+  },
+  {
+   "onset_s": 4.087,
+   "len_s": 0.363,
+   "pre_db": -27.1,
+   "tail_db": 9.7,
+   "peak": 0.122,
+   "loud": -33.1,
+   "take": "steps_mud_t5",
+   "reject": "cut while still sounding (tail 9.7 dB)"
+  },
+  {
+   "onset_s": 4.461,
+   "len_s": 0.481,
+   "pre_db": 8.3,
+   "tail_db": -47.8,
+   "peak": 0.108,
+   "loud": -40.0,
+   "take": "steps_mud_t5",
+   "reject": "overlaps previous step (8.3 dB before onset)"
+  },
+  {
+   "onset_s": 4.953,
+   "len_s": 0.434,
+   "pre_db": -23.5,
+   "tail_db": 4.0,
+   "peak": 0.136,
+   "loud": -34.3,
+   "take": "steps_mud_t5",
+   "reject": "cut while still sounding (tail 4.0 dB)"
+  },
+  {
+   "onset_s": 5.398,
+   "len_s": 0.434,
+   "pre_db": 2.8,
+   "tail_db": -31.3,
+   "peak": 0.108,
+   "loud": -44.2,
+   "take": "steps_mud_t5",
+   "reject": "overlaps previous step (2.8 dB before onset)"
+  },
+  {
+   "onset_s": 5.843,
+   "len_s": 0.344,
+   "pre_db": -34.3,
+   "tail_db": 22.6,
+   "peak": 0.605,
+   "loud": -23.7,
+   "take": "steps_mud_t5",
+   "reject": "cut while still sounding (tail 22.6 dB)"
+  },
+  {
+   "onset_s": 6.198,
+   "len_s": 0.62,
+   "pre_db": -12.7,
+   "tail_db": -57.8,
+   "peak": 0.416,
+   "loud": -30.0,
+   "take": "steps_mud_t5",
+   "spec": {
+    "centroid_hz": 5277,
+    "below_500": 0.003,
+    "150_600": 0.002,
+    "above_4k": 0.808,
+    "flatness": 0.227,
+    "tonal_bins": 0,
+    "tone_hz": []
+   },
+   "dist": 3.988,
+   "reject": "spare (the 8 nearest the surface profile are kept)"
+  },
+  {
+   "onset_s": 6.891,
+   "len_s": 0.401,
+   "pre_db": -2.5,
+   "tail_db": 2.1,
+   "peak": 0.094,
+   "loud": -37.6,
+   "take": "steps_mud_t5",
+   "reject": "overlaps previous step (-2.5 dB before onset); cut while still sounding (tail 2.1 dB)"
+  },
+  {
+   "onset_s": 7.303,
+   "len_s": 0.523,
+   "pre_db": 3.0,
+   "tail_db": -4.0,
+   "peak": 0.029,
+   "loud": -51.2,
+   "take": "steps_mud_t5",
+   "reject": "overlaps previous step (3.0 dB before onset); cut while still sounding (tail -4.0 dB)"
+  },
+  {
+   "onset_s": 7.837,
+   "len_s": 0.62,
+   "pre_db": -14.5,
+   "tail_db": -63.9,
+   "peak": 0.956,
+   "loud": -23.5,
+   "take": "steps_mud_t5",
+   "spec": {
+    "centroid_hz": 2292,
+    "below_500": 0.119,
+    "150_600": 0.113,
+    "above_4k": 0.199,
+    "flatness": 0.498,
+    "tonal_bins": 0,
+    "tone_hz": []
+   },
+   "dist": 2.321,
+   "file": "mud_05.wav",
+   "decay_ms": 18
+  },
+  {
+   "onset_s": 8.91,
+   "len_s": 0.384,
+   "pre_db": -16.5,
+   "tail_db": -27.8,
+   "peak": 0.422,
+   "loud": -23.0,
+   "take": "steps_mud_t5",
+   "spec": {
+    "centroid_hz": 2597,
+    "below_500": 0.006,
+    "150_600": 0.007,
+    "above_4k": 0.139,
+    "flatness": 0.379,
+    "tonal_bins": 0,
+    "tone_hz": []
+   },
+   "dist": 2.953,
+   "reject": "spare (the 8 nearest the surface profile are kept)"
+  },
+  {
+   "onset_s": 9.304,
+   "len_s": 0.62,
+   "pre_db": -24.5,
+   "tail_db": -31.8,
+   "peak": 0.313,
+   "loud": -30.0,
+   "take": "steps_mud_t5",
+   "spec": {
+    "centroid_hz": 4843,
+    "below_500": 0.018,
+    "150_600": 0.016,
+    "above_4k": 0.689,
+    "flatness": 0.325,
+    "tonal_bins": 0,
+    "tone_hz": []
+   },
+   "dist": 3.804,
+   "reject": "spare (the 8 nearest the surface profile are kept)"
+  },
+  {
+   "onset_s": 10.024,
+   "len_s": 0.308,
+   "pre_db": 4.6,
+   "tail_db": -14.8,
+   "peak": 0.102,
+   "loud": -39.4,
+   "take": "steps_mud_t5",
+   "reject": "overlaps previous step (4.6 dB before onset)"
+  },
+  {
+   "onset_s": 10.344,
+   "len_s": 0.429,
+   "pre_db": -20.8,
+   "tail_db": 32.1,
+   "peak": 0.661,
+   "loud": -24.6,
+   "take": "steps_mud_t5",
+   "reject": "cut while still sounding (tail 32.1 dB)"
+  },
+  {
+   "onset_s": 10.784,
+   "len_s": 0.62,
+   "pre_db": 28.8,
+   "tail_db": -39.0,
+   "peak": 0.088,
+   "loud": -41.0,
+   "take": "steps_mud_t5",
+   "reject": "overlaps previous step (28.8 dB before onset)"
+  },
+  {
+   "onset_s": 0.084,
+   "len_s": 0.373,
+   "pre_db": -22.3,
+   "tail_db": 6.6,
+   "peak": 0.177,
+   "loud": -32.0,
+   "take": "steps_mud_t6",
+   "reject": "cut while still sounding (tail 6.6 dB)"
+  },
+  {
+   "onset_s": 0.468,
+   "len_s": 0.62,
+   "pre_db": -3.2,
+   "tail_db": -63.3,
+   "peak": 0.272,
+   "loud": -31.6,
+   "take": "steps_mud_t6",
+   "reject": "overlaps previous step (-3.2 dB before onset)"
+  },
+  {
+   "onset_s": 1.91,
+   "len_s": 0.477,
+   "pre_db": -13.9,
+   "tail_db": -68.9,
+   "peak": 0.803,
+   "loud": -21.4,
+   "take": "steps_mud_t6",
+   "spec": {
+    "centroid_hz": 513,
+    "below_500": 0.808,
+    "150_600": 0.329,
+    "above_4k": 0.03,
+    "flatness": 0.066,
+    "tonal_bins": 0,
+    "tone_hz": []
+   },
+   "dist": 2.595,
+   "reject": "spare (the 8 nearest the surface profile are kept)"
+  },
+  {
+   "onset_s": 2.398,
+   "len_s": 0.62,
+   "pre_db": -13.2,
+   "tail_db": -73.7,
+   "peak": 0.421,
+   "loud": -24.5,
+   "take": "steps_mud_t6",
+   "spec": {
+    "centroid_hz": 1077,
+    "below_500": 0.381,
+    "150_600": 0.231,
+    "above_4k": 0.028,
+    "flatness": 0.151,
+    "tonal_bins": 0,
+    "tone_hz": []
+   },
+   "dist": 0.183,
+   "file": "mud_06.wav",
+   "decay_ms": 32
+  },
+  {
+   "onset_s": 3.188,
+   "len_s": 0.62,
+   "pre_db": -21.3,
+   "tail_db": -73.4,
+   "peak": 0.375,
+   "loud": -27.1,
+   "take": "steps_mud_t6",
+   "spec": {
+    "centroid_hz": 3947,
+    "below_500": 0.027,
+    "150_600": 0.025,
+    "above_4k": 0.456,
+    "flatness": 0.492,
+    "tonal_bins": 0,
+    "tone_hz": []
+   },
+   "dist": 3.473,
+   "reject": "spare (the 8 nearest the surface profile are kept)"
+  },
+  {
+   "onset_s": 4.342,
+   "len_s": 0.62,
+   "pre_db": 10.5,
+   "tail_db": -68.3,
+   "peak": 0.153,
+   "loud": -35.8,
+   "take": "steps_mud_t6",
+   "reject": "overlaps previous step (10.5 dB before onset)"
+  },
+  {
+   "onset_s": 5.131,
+   "len_s": 0.295,
+   "pre_db": -31.6,
+   "tail_db": -11.3,
+   "peak": 0.106,
+   "loud": -37.3,
+   "take": "steps_mud_t6",
+   "reject": "faint event, -13.4 dB below the surface's steps"
+  },
+  {
+   "onset_s": 5.437,
+   "len_s": 0.62,
+   "pre_db": -37.4,
+   "tail_db": -79.5,
+   "peak": 0.742,
+   "loud": -21.4,
+   "take": "steps_mud_t6",
+   "spec": {
+    "centroid_hz": 1954,
+    "below_500": 0.006,
+    "150_600": 0.006,
+    "above_4k": 0.032,
+    "flatness": 0.332,
+    "tonal_bins": 0,
+    "tone_hz": []
+   },
+   "dist": 2.542,
+   "reject": "spare (the 8 nearest the surface profile are kept)"
+  },
+  {
+   "onset_s": 6.423,
+   "len_s": 0.62,
+   "pre_db": -4.5,
+   "tail_db": -67.5,
+   "peak": 0.082,
+   "loud": -36.5,
+   "take": "steps_mud_t6",
+   "reject": "overlaps previous step (-4.5 dB before onset)"
+  },
+  {
+   "onset_s": 7.269,
+   "len_s": 0.432,
+   "pre_db": -23.4,
+   "tail_db": -7.0,
+   "peak": 0.138,
+   "loud": -30.9,
+   "take": "steps_mud_t6",
+   "spec": {
+    "centroid_hz": 1334,
+    "below_500": 0.616,
+    "150_600": 0.505,
+    "above_4k": 0.097,
+    "flatness": 0.304,
+    "tonal_bins": 0,
+    "tone_hz": []
+   },
+   "dist": 1.28,
+   "file": "mud_07.wav",
+   "decay_ms": 269
+  },
+  {
+   "onset_s": 7.712,
+   "len_s": 0.62,
+   "pre_db": 0.1,
+   "tail_db": -44.7,
+   "peak": 0.116,
+   "loud": -42.6,
+   "take": "steps_mud_t6",
+   "reject": "overlaps previous step (0.1 dB before onset)"
+  },
+  {
+   "onset_s": 8.483,
+   "len_s": 0.343,
+   "pre_db": -11.6,
+   "tail_db": -14.7,
+   "peak": 0.207,
+   "loud": -33.0,
+   "take": "steps_mud_t6",
+   "reject": "faint event, -9.1 dB below the surface's steps"
+  },
+  {
+   "onset_s": 8.837,
+   "len_s": 0.62,
+   "pre_db": -17.5,
+   "tail_db": -5.8,
+   "peak": 0.075,
+   "loud": -44.1,
+   "take": "steps_mud_t6",
+   "reject": "cut while still sounding (tail -5.8 dB)"
+  },
+  {
+   "onset_s": 9.555,
+   "len_s": 0.62,
+   "pre_db": -5.1,
+   "tail_db": -67.9,
+   "peak": 0.416,
+   "loud": -24.9,
+   "take": "steps_mud_t6",
+   "reject": "overlaps previous step (-5.1 dB before onset)"
+  },
+  {
+   "onset_s": 10.253,
+   "len_s": 0.449,
+   "pre_db": -20.2,
+   "tail_db": -57.4,
+   "peak": 0.369,
+   "loud": -25.8,
+   "take": "steps_mud_t6",
+   "spec": {
+    "centroid_hz": 4465,
+    "below_500": 0.043,
+    "150_600": 0.043,
+    "above_4k": 0.599,
+    "flatness": 0.228,
+    "tonal_bins": 0,
+    "tone_hz": []
+   },
+   "dist": 3.587,
+   "reject": "spare (the 8 nearest the surface profile are kept)"
+  },
+  {
+   "onset_s": 10.713,
+   "len_s": 0.419,
+   "pre_db": -23.6,
+   "tail_db": -26.5,
+   "peak": 0.465,
+   "loud": -25.4,
+   "take": "steps_mud_t6",
+   "spec": {
+    "centroid_hz": 1986,
+    "below_500": 0.153,
+    "150_600": 0.047,
+    "above_4k": 0.079,
+    "flatness": 0.362,
+    "tonal_bins": 0,
+    "tone_hz": []
+   },
+   "dist": 1.978,
+   "file": "mud_08.wav",
+   "decay_ms": 21
+  },
+  {
+   "onset_s": 11.142,
+   "len_s": 0.62,
+   "pre_db": -18.3,
+   "tail_db": -55.9,
+   "peak": 0.228,
+   "loud": -35.2,
+   "take": "steps_mud_t6",
+   "reject": "faint event, -11.3 dB below the surface's steps"
+  }
+ ],
+ "puddle": [
+  {
+   "onset_s": 0.228,
+   "len_s": 0.611,
+   "pre_db": -3.2,
+   "tail_db": -32.6,
+   "peak": 0.628,
+   "loud": -22.8,
+   "take": "steps_puddle_t3",
+   "reject": "overlaps previous step (-3.2 dB before onset)"
+  },
+  {
+   "onset_s": 0.85,
+   "len_s": 0.535,
+   "pre_db": -29.0,
+   "tail_db": -22.4,
+   "peak": 0.251,
+   "loud": -27.3,
+   "take": "steps_puddle_t3",
+   "spec": {
+    "centroid_hz": 2198,
+    "below_500": 0.339,
+    "150_600": 0.367,
+    "above_4k": 0.198,
+    "flatness": 0.335,
+    "tonal_bins": 0,
+    "tone_hz": []
+   },
+   "dist": 1.277,
+   "reject": "spare (the 8 nearest the surface profile are kept)"
+  },
+  {
+   "onset_s": 1.396,
+   "len_s": 0.344,
+   "pre_db": 2.8,
+   "tail_db": 25.8,
+   "peak": 0.263,
+   "loud": -27.4,
+   "take": "steps_puddle_t3",
+   "reject": "overlaps previous step (2.8 dB before onset); cut while still sounding (tail 25.8 dB)"
+  },
+  {
+   "onset_s": 1.751,
+   "len_s": 0.598,
+   "pre_db": -4.6,
+   "tail_db": -30.8,
+   "peak": 0.756,
+   "loud": -24.1,
+   "take": "steps_puddle_t3",
+   "reject": "overlaps previous step (-4.6 dB before onset)"
+  },
+  {
+   "onset_s": 2.36,
+   "len_s": 0.35,
+   "pre_db": -33.8,
+   "tail_db": -3.2,
+   "peak": 0.402,
+   "loud": -22.8,
+   "take": "steps_puddle_t3",
+   "reject": "cut while still sounding (tail -3.2 dB)"
+  },
+  {
+   "onset_s": 2.72,
+   "len_s": 0.419,
+   "pre_db": -4.3,
+   "tail_db": -9.5,
+   "peak": 0.04,
+   "loud": -46.3,
+   "take": "steps_puddle_t3",
+   "reject": "overlaps previous step (-4.3 dB before onset)"
+  },
+  {
+   "onset_s": 3.15,
+   "len_s": 0.494,
+   "pre_db": -20.5,
+   "tail_db": -19.8,
+   "peak": 0.169,
+   "loud": -30.9,
+   "take": "steps_puddle_t3",
+   "spec": {
+    "centroid_hz": 2189,
+    "below_500": 0.013,
+    "150_600": 0.014,
+    "above_4k": 0.136,
+    "flatness": 0.274,
+    "tonal_bins": 0,
+    "tone_hz": []
+   },
+   "dist": 0.035,
+   "file": "puddle_01.wav",
+   "decay_ms": 122
+  },
+  {
+   "onset_s": 3.655,
+   "len_s": 0.37,
+   "pre_db": -0.7,
+   "tail_db": 3.2,
+   "peak": 0.114,
+   "loud": -35.8,
+   "take": "steps_puddle_t3",
+   "reject": "overlaps previous step (-0.7 dB before onset); cut while still sounding (tail 3.2 dB)"
+  },
+  {
+   "onset_s": 4.036,
+   "len_s": 0.62,
+   "pre_db": 4.1,
+   "tail_db": -26.6,
+   "peak": 0.332,
+   "loud": -30.5,
+   "take": "steps_puddle_t3",
+   "reject": "overlaps previous step (4.1 dB before onset)"
+  },
+  {
+   "onset_s": 4.802,
+   "len_s": 0.547,
+   "pre_db": 11.0,
+   "tail_db": -18.4,
+   "peak": 0.11,
+   "loud": -38.4,
+   "take": "steps_puddle_t3",
+   "reject": "overlaps previous step (11.0 dB before onset)"
+  },
+  {
+   "onset_s": 5.361,
+   "len_s": 0.288,
+   "pre_db": -27.8,
+   "tail_db": -6.4,
+   "peak": 0.55,
+   "loud": -19.4,
+   "take": "steps_puddle_t3",
+   "spec": {
+    "centroid_hz": 1787,
+    "below_500": 0.007,
+    "150_600": 0.013,
+    "above_4k": 0.079,
+    "flatness": 0.177,
+    "tonal_bins": 0,
+    "tone_hz": []
+   },
+   "dist": 0.352,
+   "file": "puddle_02.wav",
+   "decay_ms": 103
+  },
+  {
+   "onset_s": 5.66,
+   "len_s": 0.561,
+   "pre_db": 33.5,
+   "tail_db": -5.3,
+   "peak": 0.09,
+   "loud": -52.2,
+   "take": "steps_puddle_t3",
+   "reject": "overlaps previous step (33.5 dB before onset); cut while still sounding (tail -5.3 dB)"
+  },
+  {
+   "onset_s": 6.231,
+   "len_s": 0.62,
+   "pre_db": -1.1,
+   "tail_db": -28.4,
+   "peak": 0.758,
+   "loud": -23.8,
+   "take": "steps_puddle_t3",
+   "reject": "overlaps previous step (-1.1 dB before onset)"
+  },
+  {
+   "onset_s": 6.891,
+   "len_s": 0.37,
+   "pre_db": 3.8,
+   "tail_db": -18.0,
+   "peak": 0.184,
+   "loud": -29.0,
+   "take": "steps_puddle_t3",
+   "reject": "overlaps previous step (3.8 dB before onset)"
+  },
+  {
+   "onset_s": 7.272,
+   "len_s": 0.426,
+   "pre_db": -1.0,
+   "tail_db": 14.9,
+   "peak": 0.305,
+   "loud": -44.3,
+   "take": "steps_puddle_t3",
+   "reject": "overlaps previous step (-1.0 dB before onset); cut while still sounding (tail 14.9 dB)"
+  },
+  {
+   "onset_s": 7.709,
+   "len_s": 0.535,
+   "pre_db": 3.2,
+   "tail_db": -23.2,
+   "peak": 0.161,
+   "loud": -31.7,
+   "take": "steps_puddle_t3",
+   "reject": "overlaps previous step (3.2 dB before onset)"
+  },
+  {
+   "onset_s": 8.255,
+   "len_s": 0.324,
+   "pre_db": -29.6,
+   "tail_db": 8.6,
+   "peak": 0.58,
+   "loud": -21.7,
+   "take": "steps_puddle_t3",
+   "reject": "cut while still sounding (tail 8.6 dB)"
+  },
+  {
+   "onset_s": 8.589,
+   "len_s": 0.344,
+   "pre_db": -2.0,
+   "tail_db": -7.4,
+   "peak": 0.067,
+   "loud": -45.4,
+   "take": "steps_puddle_t3",
+   "reject": "overlaps previous step (-2.0 dB before onset)"
+  },
+  {
+   "onset_s": 8.944,
+   "len_s": 0.318,
+   "pre_db": -28.6,
+   "tail_db": -6.1,
+   "peak": 0.184,
+   "loud": -29.0,
+   "take": "steps_puddle_t3",
+   "spec": {
+    "centroid_hz": 2055,
+    "below_500": 0.031,
+    "150_600": 0.035,
+    "above_4k": 0.081,
+    "flatness": 0.266,
+    "tonal_bins": 0,
+    "tone_hz": []
+   },
+   "dist": 0.142,
+   "file": "puddle_03.wav",
+   "decay_ms": 106
+  },
+  {
+   "onset_s": 9.273,
+   "len_s": 0.448,
+   "pre_db": 6.1,
+   "tail_db": -22.5,
+   "peak": 0.22,
+   "loud": -37.9,
+   "take": "steps_puddle_t3",
+   "reject": "overlaps previous step (6.1 dB before onset)"
+  },
+  {
+   "onset_s": 9.732,
+   "len_s": 0.351,
+   "pre_db": 4.6,
+   "tail_db": -21.1,
+   "peak": 0.234,
+   "loud": -29.7,
+   "take": "steps_puddle_t3",
+   "reject": "overlaps previous step (4.6 dB before onset)"
+  },
+  {
+   "onset_s": 10.094,
+   "len_s": 0.379,
+   "pre_db": 8.3,
+   "tail_db": -2.1,
+   "peak": 0.055,
+   "loud": -47.9,
+   "take": "steps_puddle_t3",
+   "reject": "overlaps previous step (8.3 dB before onset); cut while still sounding (tail -2.1 dB)"
+  },
+  {
+   "onset_s": 10.484,
+   "len_s": 0.616,
+   "pre_db": -7.6,
+   "tail_db": -22.3,
+   "peak": 0.199,
+   "loud": -30.6,
+   "take": "steps_puddle_t3",
+   "reject": "overlaps previous step (-7.6 dB before onset)"
+  },
+  {
+   "onset_s": 11.111,
+   "len_s": 0.341,
+   "pre_db": -11.7,
+   "tail_db": 29.7,
+   "peak": 0.626,
+   "loud": -20.9,
+   "take": "steps_puddle_t3",
+   "reject": "cut while still sounding (tail 29.7 dB)"
+  },
+  {
+   "onset_s": 11.463,
+   "len_s": 0.526,
+   "pre_db": 9.1,
+   "tail_db": -50.8,
+   "peak": 0.297,
+   "loud": -29.8,
+   "take": "steps_puddle_t3",
+   "reject": "overlaps previous step (9.1 dB before onset)"
+  },
+  {
+   "onset_s": 0.023,
+   "reject": "starts with the take (attack may be cut)",
+   "take": "steps_puddle_t4"
+  },
+  {
+   "onset_s": 0.406,
+   "len_s": 0.354,
+   "pre_db": 3.3,
+   "tail_db": -32.7,
+   "peak": 0.031,
+   "loud": -56.4,
+   "take": "steps_puddle_t4",
+   "reject": "overlaps previous step (3.3 dB before onset)"
+  },
+  {
+   "onset_s": 0.771,
+   "len_s": 0.283,
+   "pre_db": -21.4,
+   "tail_db": -16.2,
+   "peak": 0.211,
+   "loud": -28.3,
+   "take": "steps_puddle_t4",
+   "spec": {
+    "centroid_hz": 1094,
+    "below_500": 0.02,
+    "150_600": 0.075,
+    "above_4k": 0.028,
+    "flatness": 0.226,
+    "tonal_bins": 0,
+    "tone_hz": []
+   },
+   "dist": 1.008,
+   "reject": "spare (the 8 nearest the surface profile are kept)"
+  },
+  {
+   "onset_s": 1.065,
+   "len_s": 0.506,
+   "pre_db": 18.3,
+   "tail_db": -42.4,
+   "peak": 0.077,
+   "loud": -45.7,
+   "take": "steps_puddle_t4",
+   "reject": "overlaps previous step (18.3 dB before onset)"
+  },
+  {
+   "onset_s": 1.582,
+   "len_s": 0.62,
+   "pre_db": -1.7,
+   "tail_db": -55.0,
+   "peak": 0.4,
+   "loud": -26.9,
+   "take": "steps_puddle_t4",
+   "reject": "overlaps previous step (-1.7 dB before onset)"
+  },
+  {
+   "onset_s": 2.316,
+   "len_s": 0.368,
+   "pre_db": -30.3,
+   "tail_db": -4.8,
+   "peak": 0.588,
+   "loud": -22.3,
+   "take": "steps_puddle_t4",
+   "reject": "cut while still sounding (tail -4.8 dB)"
+  },
+  {
+   "onset_s": 2.695,
+   "len_s": 0.452,
+   "pre_db": 1.8,
+   "tail_db": -36.6,
+   "peak": 0.04,
+   "loud": -52.0,
+   "take": "steps_puddle_t4",
+   "reject": "overlaps previous step (1.8 dB before onset)"
+  },
+  {
+   "onset_s": 3.158,
+   "len_s": 0.343,
+   "pre_db": -31.4,
+   "tail_db": -18.8,
+   "peak": 0.537,
+   "loud": -25.9,
+   "take": "steps_puddle_t4",
+   "spec": {
+    "centroid_hz": 4449,
+    "below_500": 0.003,
+    "150_600": 0.005,
+    "above_4k": 0.509,
+    "flatness": 0.275,
+    "tonal_bins": 0,
+    "tone_hz": []
+   },
+   "dist": 1.084,
+   "reject": "spare (the 8 nearest the surface profile are kept)"
+  },
+  {
+   "onset_s": 3.512,
+   "len_s": 0.451,
+   "pre_db": 9.2,
+   "tail_db": -26.6,
+   "peak": 0.011,
+   "loud": -60.7,
+   "take": "steps_puddle_t4",
+   "reject": "overlaps previous step (9.2 dB before onset)"
+  },
+  {
+   "onset_s": 3.974,
+   "len_s": 0.322,
+   "pre_db": -29.4,
+   "tail_db": -2.0,
+   "peak": 0.293,
+   "loud": -29.1,
+   "take": "steps_puddle_t4",
+   "reject": "cut while still sounding (tail -2.0 dB)"
+  },
+  {
+   "onset_s": 4.307,
+   "len_s": 0.434,
+   "pre_db": 13.2,
+   "tail_db": -24.5,
+   "peak": 0.006,
+   "loud": -63.8,
+   "take": "steps_puddle_t4",
+   "reject": "overlaps previous step (13.2 dB before onset)"
+  },
+  {
+   "onset_s": 4.752,
+   "len_s": 0.351,
+   "pre_db": -16.5,
+   "tail_db": -1.2,
+   "peak": 0.163,
+   "loud": -29.1,
+   "take": "steps_puddle_t4",
+   "reject": "cut while still sounding (tail -1.2 dB)"
+  },
+  {
+   "onset_s": 5.114,
+   "len_s": 0.441,
+   "pre_db": -0.4,
+   "tail_db": -31.5,
+   "peak": 0.019,
+   "loud": -53.8,
+   "take": "steps_puddle_t4",
+   "reject": "overlaps previous step (-0.4 dB before onset)"
+  },
+  {
+   "onset_s": 5.566,
+   "len_s": 0.369,
+   "pre_db": -16.2,
+   "tail_db": 6.1,
+   "peak": 0.564,
+   "loud": -23.5,
+   "take": "steps_puddle_t4",
+   "reject": "cut while still sounding (tail 6.1 dB)"
+  },
+  {
+   "onset_s": 5.946,
+   "len_s": 0.62,
+   "pre_db": -1.7,
+   "tail_db": 34.1,
+   "peak": 0.215,
+   "loud": -58.7,
+   "take": "steps_puddle_t4",
+   "reject": "overlaps previous step (-1.7 dB before onset); cut while still sounding (tail 34.1 dB)"
+  },
+  {
+   "onset_s": 6.579,
+   "len_s": 0.62,
+   "pre_db": 7.4,
+   "tail_db": -44.3,
+   "peak": 0.184,
+   "loud": -37.2,
+   "take": "steps_puddle_t4",
+   "reject": "overlaps previous step (7.4 dB before onset)"
+  },
+  {
+   "onset_s": 7.217,
+   "len_s": 0.62,
+   "pre_db": -12.3,
+   "tail_db": -60.5,
+   "peak": 0.833,
+   "loud": -20.7,
+   "take": "steps_puddle_t4",
+   "spec": {
+    "centroid_hz": 1650,
+    "below_500": 0.006,
+    "150_600": 0.013,
+    "above_4k": 0.092,
+    "flatness": 0.325,
+    "tonal_bins": 0,
+    "tone_hz": []
+   },
+   "dist": 0.471,
+   "file": "puddle_04.wav",
+   "decay_ms": 27
+  },
+  {
+   "onset_s": 8.356,
+   "len_s": 0.62,
+   "pre_db": -1.9,
+   "tail_db": -40.0,
+   "peak": 0.092,
+   "loud": -39.7,
+   "take": "steps_puddle_t4",
+   "reject": "overlaps previous step (-1.9 dB before onset)"
+  },
+  {
+   "onset_s": 9.083,
+   "len_s": 0.62,
+   "pre_db": -6.5,
+   "tail_db": -57.8,
+   "peak": 0.331,
+   "loud": -29.8,
+   "take": "steps_puddle_t4",
+   "reject": "overlaps previous step (-6.5 dB before onset)"
+  },
+  {
+   "onset_s": 9.726,
+   "len_s": 0.429,
+   "pre_db": -15.1,
+   "tail_db": -13.4,
+   "peak": 0.421,
+   "loud": -27.9,
+   "take": "steps_puddle_t4",
+   "spec": {
+    "centroid_hz": 4427,
+    "below_500": 0.011,
+    "150_600": 0.029,
+    "above_4k": 0.456,
+    "flatness": 0.279,
+    "tonal_bins": 0,
+    "tone_hz": []
+   },
+   "dist": 1.045,
+   "reject": "spare (the 8 nearest the surface profile are kept)"
+  },
+  {
+   "onset_s": 10.166,
+   "len_s": 0.365,
+   "pre_db": 0.8,
+   "tail_db": -19.3,
+   "peak": 0.005,
+   "loud": -70.4,
+   "take": "steps_puddle_t4",
+   "reject": "overlaps previous step (0.8 dB before onset)"
+  },
+  {
+   "onset_s": 10.542,
+   "len_s": 0.372,
+   "pre_db": -34.2,
+   "tail_db": -19.9,
+   "peak": 0.349,
+   "loud": -25.2,
+   "take": "steps_puddle_t4",
+   "spec": {
+    "centroid_hz": 1341,
+    "below_500": 0.029,
+    "150_600": 0.088,
+    "above_4k": 0.035,
+    "flatness": 0.238,
+    "tonal_bins": 0,
+    "tone_hz": []
+   },
+   "dist": 0.75,
+   "reject": "spare (the 8 nearest the surface profile are kept)"
+  },
+  {
+   "onset_s": 10.925,
+   "len_s": 0.62,
+   "pre_db": -5.4,
+   "tail_db": 34.1,
+   "peak": 0.477,
+   "loud": -66.1,
+   "take": "steps_puddle_t4",
+   "reject": "overlaps previous step (-5.4 dB before onset); cut while still sounding (tail 34.1 dB)"
+  },
+  {
+   "onset_s": 11.596,
+   "len_s": 0.393,
+   "pre_db": 22.7,
+   "tail_db": -31.7,
+   "peak": 0.042,
+   "loud": -49.3,
+   "take": "steps_puddle_t4",
+   "reject": "overlaps previous step (22.7 dB before onset)"
+  },
+  {
+   "onset_s": 0.125,
+   "len_s": 0.52,
+   "pre_db": -17.3,
+   "tail_db": -24.4,
+   "peak": 0.288,
+   "loud": -27.5,
+   "take": "steps_puddle_t5",
+   "spec": {
+    "centroid_hz": 1573,
+    "below_500": 0.007,
+    "150_600": 0.017,
+    "above_4k": 0.037,
+    "flatness": 0.239,
+    "tonal_bins": 0,
+    "tone_hz": []
+   },
+   "dist": 0.536,
+   "reject": "spare (the 8 nearest the surface profile are kept)"
+  },
+  {
+   "onset_s": 0.656,
+   "len_s": 0.62,
+   "pre_db": -4.2,
+   "tail_db": 35.7,
+   "peak": 0.98,
+   "loud": -47.2,
+   "take": "steps_puddle_t5",
+   "reject": "overlaps previous step (-4.2 dB before onset); cut while still sounding (tail 35.7 dB)"
+  },
+  {
+   "onset_s": 1.288,
+   "len_s": 0.62,
+   "pre_db": -0.4,
+   "tail_db": -22.1,
+   "peak": 0.17,
+   "loud": -35.8,
+   "take": "steps_puddle_t5",
+   "reject": "overlaps previous step (-0.4 dB before onset)"
+  },
+  {
+   "onset_s": 2.055,
+   "len_s": 0.337,
+   "pre_db": 14.7,
+   "tail_db": 4.6,
+   "peak": 0.21,
+   "loud": -32.8,
+   "take": "steps_puddle_t5",
+   "reject": "overlaps previous step (14.7 dB before onset); cut while still sounding (tail 4.6 dB)"
+  },
+  {
+   "onset_s": 2.403,
+   "len_s": 0.419,
+   "pre_db": -3.8,
+   "tail_db": -8.4,
+   "peak": 0.068,
+   "loud": -45.3,
+   "take": "steps_puddle_t5",
+   "reject": "overlaps previous step (-3.8 dB before onset)"
+  },
+  {
+   "onset_s": 2.834,
+   "len_s": 0.319,
+   "pre_db": -35.7,
+   "tail_db": -18.4,
+   "peak": 0.715,
+   "loud": -20.2,
+   "take": "steps_puddle_t5",
+   "spec": {
+    "centroid_hz": 1038,
+    "below_500": 0.028,
+    "150_600": 0.056,
+    "above_4k": 0.006,
+    "flatness": 0.2,
+    "tonal_bins": 0,
+    "tone_hz": []
+   },
+   "dist": 1.116,
+   "reject": "spare (the 8 nearest the surface profile are kept)"
+  },
+  {
+   "onset_s": 3.164,
+   "len_s": 0.62,
+   "pre_db": -8.7,
+   "tail_db": -4.3,
+   "peak": 0.164,
+   "loud": -37.9,
+   "take": "steps_puddle_t5",
+   "reject": "overlaps previous step (-8.7 dB before onset); cut while still sounding (tail -4.3 dB)"
+  },
+  {
+   "onset_s": 3.822,
+   "len_s": 0.578,
+   "pre_db": 2.7,
+   "tail_db": -1.9,
+   "peak": 0.128,
+   "loud": -43.0,
+   "take": "steps_puddle_t5",
+   "reject": "overlaps previous step (2.7 dB before onset); cut while still sounding (tail -1.9 dB)"
+  },
+  {
+   "onset_s": 4.412,
+   "len_s": 0.531,
+   "pre_db": 8.9,
+   "tail_db": -19.6,
+   "peak": 0.155,
+   "loud": -30.5,
+   "take": "steps_puddle_t5",
+   "reject": "overlaps previous step (8.9 dB before onset)"
+  },
+  {
+   "onset_s": 4.954,
+   "len_s": 0.433,
+   "pre_db": -26.4,
+   "tail_db": 4.5,
+   "peak": 0.703,
+   "loud": -19.5,
+   "take": "steps_puddle_t5",
+   "reject": "cut while still sounding (tail 4.5 dB)"
+  },
+  {
+   "onset_s": 5.398,
+   "len_s": 0.619,
+   "pre_db": 1.3,
+   "tail_db": 13.2,
+   "peak": 0.209,
+   "loud": -40.8,
+   "take": "steps_puddle_t5",
+   "reject": "overlaps previous step (1.3 dB before onset); cut while still sounding (tail 13.2 dB)"
+  },
+  {
+   "onset_s": 6.029,
+   "len_s": 0.62,
+   "pre_db": 15.2,
+   "tail_db": -4.8,
+   "peak": 0.045,
+   "loud": -45.1,
+   "take": "steps_puddle_t5",
+   "reject": "overlaps previous step (15.2 dB before onset); cut while still sounding (tail -4.8 dB)"
+  },
+  {
+   "onset_s": 6.724,
+   "len_s": 0.581,
+   "pre_db": -4.9,
+   "tail_db": -12.1,
+   "peak": 0.078,
+   "loud": -36.2,
+   "take": "steps_puddle_t5",
+   "reject": "overlaps previous step (-4.9 dB before onset)"
+  },
+  {
+   "onset_s": 7.317,
+   "len_s": 0.509,
+   "pre_db": -8.0,
+   "tail_db": -17.1,
+   "peak": 0.056,
+   "loud": -38.3,
+   "take": "steps_puddle_t5",
+   "reject": "overlaps previous step (-8.0 dB before onset)"
+  },
+  {
+   "onset_s": 7.836,
+   "len_s": 0.307,
+   "pre_db": -23.6,
+   "tail_db": -10.7,
+   "peak": 1.0,
+   "loud": -19.5,
+   "take": "steps_puddle_t5",
+   "reject": "clipped"
+  },
+  {
+   "onset_s": 8.154,
+   "len_s": 0.62,
+   "pre_db": 9.7,
+   "tail_db": -13.6,
+   "peak": 0.1,
+   "loud": -39.9,
+   "take": "steps_puddle_t5",
+   "reject": "overlaps previous step (9.7 dB before onset)"
+  },
+  {
+   "onset_s": 8.81,
+   "len_s": 0.484,
+   "pre_db": -9.2,
+   "tail_db": -15.2,
+   "peak": 0.148,
+   "loud": -31.3,
+   "take": "steps_puddle_t5",
+   "reject": "overlaps previous step (-9.2 dB before onset)"
+  },
+  {
+   "onset_s": 9.305,
+   "len_s": 0.331,
+   "pre_db": -29.0,
+   "tail_db": 1.1,
+   "peak": 0.37,
+   "loud": -25.7,
+   "take": "steps_puddle_t5",
+   "reject": "cut while still sounding (tail 1.1 dB)"
+  },
+  {
+   "onset_s": 9.648,
+   "len_s": 0.31,
+   "pre_db": 11.3,
+   "tail_db": 2.9,
+   "peak": 0.025,
+   "loud": -49.9,
+   "take": "steps_puddle_t5",
+   "reject": "overlaps previous step (11.3 dB before onset); cut while still sounding (tail 2.9 dB)"
+  },
+  {
+   "onset_s": 9.968,
+   "len_s": 0.519,
+   "pre_db": -20.4,
+   "tail_db": -15.0,
+   "peak": 0.098,
+   "loud": -34.4,
+   "take": "steps_puddle_t5",
+   "reject": "faint event, -11.3 dB below the surface's steps"
+  },
+  {
+   "onset_s": 10.498,
+   "len_s": 0.536,
+   "pre_db": -26.4,
+   "tail_db": -20.9,
+   "peak": 0.545,
+   "loud": -20.9,
+   "take": "steps_puddle_t5",
+   "spec": {
+    "centroid_hz": 1711,
+    "below_500": 0.008,
+    "150_600": 0.009,
+    "above_4k": 0.098,
+    "flatness": 0.232,
+    "tonal_bins": 0,
+    "tone_hz": []
+   },
+   "dist": 0.411,
+   "file": "puddle_05.wav",
+   "decay_ms": 115
+  },
+  {
+   "onset_s": 11.045,
+   "len_s": 0.62,
+   "pre_db": -5.1,
+   "tail_db": -75.5,
+   "peak": 0.146,
+   "loud": -41.3,
+   "take": "steps_puddle_t5",
+   "reject": "overlaps previous step (-5.1 dB before onset)"
+  },
+  {
+   "onset_s": 0.02,
+   "reject": "starts with the take (attack may be cut)",
+   "take": "steps_puddle_t6"
+  },
+  {
+   "onset_s": 0.469,
+   "len_s": 0.555,
+   "pre_db": 0.2,
+   "tail_db": -9.9,
+   "peak": 0.064,
+   "loud": -47.1,
+   "take": "steps_puddle_t6",
+   "reject": "overlaps previous step (0.2 dB before onset)"
+  },
+  {
+   "onset_s": 1.035,
+   "len_s": 0.62,
+   "pre_db": -20.6,
+   "tail_db": -44.1,
+   "peak": 0.763,
+   "loud": -16.9,
+   "take": "steps_puddle_t6",
+   "reject": "stomp, +6.2 dB above the surface's steps"
+  },
+  {
+   "onset_s": 1.938,
+   "len_s": 0.455,
+   "pre_db": -5.9,
+   "tail_db": -42.5,
+   "peak": 0.802,
+   "loud": -21.3,
+   "take": "steps_puddle_t6",
+   "reject": "overlaps previous step (-5.9 dB before onset)"
+  },
+  {
+   "onset_s": 2.403,
+   "len_s": 0.297,
+   "pre_db": -27.3,
+   "tail_db": 2.4,
+   "peak": 0.587,
+   "loud": -21.4,
+   "take": "steps_puddle_t6",
+   "reject": "cut while still sounding (tail 2.4 dB)"
+  },
+  {
+   "onset_s": 2.711,
+   "len_s": 0.381,
+   "pre_db": 15.7,
+   "tail_db": -0.9,
+   "peak": 0.015,
+   "loud": -55.9,
+   "take": "steps_puddle_t6",
+   "reject": "overlaps previous step (15.7 dB before onset); cut while still sounding (tail -0.9 dB)"
+  },
+  {
+   "onset_s": 3.103,
+   "len_s": 0.62,
+   "pre_db": -22.9,
+   "tail_db": -31.1,
+   "peak": 0.256,
+   "loud": -29.8,
+   "take": "steps_puddle_t6",
+   "spec": {
+    "centroid_hz": 3139,
+    "below_500": 0.018,
+    "150_600": 0.024,
+    "above_4k": 0.303,
+    "flatness": 0.355,
+    "tonal_bins": 0,
+    "tone_hz": []
+   },
+   "dist": 0.521,
+   "reject": "spare (the 8 nearest the surface profile are kept)"
+  },
+  {
+   "onset_s": 3.763,
+   "len_s": 0.38,
+   "pre_db": -24.7,
+   "tail_db": -15.0,
+   "peak": 0.195,
+   "loud": -30.5,
+   "take": "steps_puddle_t6",
+   "spec": {
+    "centroid_hz": 1717,
+    "below_500": 0.003,
+    "150_600": 0.005,
+    "above_4k": 0.079,
+    "flatness": 0.276,
+    "tonal_bins": 0,
+    "tone_hz": []
+   },
+   "dist": 0.426,
+   "file": "puddle_06.wav",
+   "decay_ms": 37
+  },
+  {
+   "onset_s": 4.154,
+   "len_s": 0.502,
+   "pre_db": -6.4,
+   "tail_db": 16.7,
+   "peak": 0.087,
+   "loud": -49.1,
+   "take": "steps_puddle_t6",
+   "reject": "overlaps previous step (-6.4 dB before onset); cut while still sounding (tail 16.7 dB)"
+  },
+  {
+   "onset_s": 4.667,
+   "len_s": 0.509,
+   "pre_db": -23.0,
+   "tail_db": -44.7,
+   "peak": 1.0,
+   "loud": -17.5,
+   "take": "steps_puddle_t6",
+   "reject": "clipped"
+  },
+  {
+   "onset_s": 5.187,
+   "len_s": 0.62,
+   "pre_db": 9.3,
+   "tail_db": -16.4,
+   "peak": 0.173,
+   "loud": -38.1,
+   "take": "steps_puddle_t6",
+   "reject": "overlaps previous step (9.3 dB before onset)"
+  },
+  {
+   "onset_s": 5.909,
+   "len_s": 0.505,
+   "pre_db": -18.9,
+   "tail_db": -18.2,
+   "peak": 0.099,
+   "loud": -38.1,
+   "take": "steps_puddle_t6",
+   "reject": "faint event, -15.0 dB below the surface's steps"
+  },
+  {
+   "onset_s": 6.425,
+   "len_s": 0.423,
+   "pre_db": -27.6,
+   "tail_db": 5.2,
+   "peak": 0.286,
+   "loud": -27.5,
+   "take": "steps_puddle_t6",
+   "reject": "cut while still sounding (tail 5.2 dB)"
+  },
+  {
+   "onset_s": 6.859,
+   "len_s": 0.395,
+   "pre_db": -1.2,
+   "tail_db": -2.7,
+   "peak": 0.02,
+   "loud": -53.7,
+   "take": "steps_puddle_t6",
+   "reject": "overlaps previous step (-1.2 dB before onset); cut while still sounding (tail -2.7 dB)"
+  },
+  {
+   "onset_s": 7.266,
+   "len_s": 0.303,
+   "pre_db": -15.5,
+   "tail_db": 10.0,
+   "peak": 0.118,
+   "loud": -34.3,
+   "take": "steps_puddle_t6",
+   "reject": "cut while still sounding (tail 10.0 dB)"
+  },
+  {
+   "onset_s": 7.58,
+   "len_s": 0.572,
+   "pre_db": 7.1,
+   "tail_db": -8.1,
+   "peak": 0.04,
+   "loud": -46.5,
+   "take": "steps_puddle_t6",
+   "reject": "overlaps previous step (7.1 dB before onset)"
+  },
+  {
+   "onset_s": 8.163,
+   "len_s": 0.37,
+   "pre_db": -28.8,
+   "tail_db": -9.3,
+   "peak": 0.578,
+   "loud": -23.8,
+   "take": "steps_puddle_t6",
+   "spec": {
+    "centroid_hz": 1819,
+    "below_500": 0.001,
+    "150_600": 0.001,
+    "above_4k": 0.028,
+    "flatness": 0.251,
+    "tonal_bins": 0,
+    "tone_hz": []
+   },
+   "dist": 0.35,
+   "file": "puddle_07.wav",
+   "decay_ms": 12
+  },
+  {
+   "onset_s": 8.545,
+   "len_s": 0.291,
+   "pre_db": 0.2,
+   "tail_db": 0.1,
+   "peak": 0.014,
+   "loud": -53.2,
+   "take": "steps_puddle_t6",
+   "reject": "overlaps previous step (0.2 dB before onset); cut while still sounding (tail 0.1 dB)"
+  },
+  {
+   "onset_s": 8.847,
+   "len_s": 0.62,
+   "pre_db": 10.8,
+   "tail_db": -25.5,
+   "peak": 0.197,
+   "loud": -35.9,
+   "take": "steps_puddle_t6",
+   "reject": "overlaps previous step (10.8 dB before onset)"
+  },
+  {
+   "onset_s": 9.53,
+   "len_s": 0.62,
+   "pre_db": -9.6,
+   "tail_db": -35.6,
+   "peak": 0.37,
+   "loud": -24.2,
+   "take": "steps_puddle_t6",
+   "reject": "overlaps previous step (-9.6 dB before onset)"
+  },
+  {
+   "onset_s": 10.253,
+   "len_s": 0.576,
+   "pre_db": -12.0,
+   "tail_db": -33.4,
+   "peak": 0.357,
+   "loud": -25.0,
+   "take": "steps_puddle_t6",
+   "spec": {
+    "centroid_hz": 3239,
+    "below_500": 0.014,
+    "150_600": 0.016,
+    "above_4k": 0.29,
+    "flatness": 0.263,
+    "tonal_bins": 0,
+    "tone_hz": []
+   },
+   "dist": 0.582,
+   "reject": "spare (the 8 nearest the surface profile are kept)"
+  },
+  {
+   "onset_s": 10.841,
+   "len_s": 0.308,
+   "pre_db": -37.2,
+   "tail_db": -8.1,
+   "peak": 0.379,
+   "loud": -25.9,
+   "take": "steps_puddle_t6",
+   "spec": {
+    "centroid_hz": 2350,
+    "below_500": 0.002,
+    "150_600": 0.003,
+    "above_4k": 0.099,
+    "flatness": 0.252,
+    "tonal_bins": 0,
+    "tone_hz": []
+   },
+   "dist": 0.167,
+   "file": "puddle_08.wav",
+   "decay_ms": 80
+  },
+  {
+   "onset_s": 11.159,
+   "len_s": 0.48,
+   "pre_db": 20.9,
+   "tail_db": -10.1,
+   "peak": 0.083,
+   "loud": -47.2,
+   "take": "steps_puddle_t6",
+   "reject": "overlaps previous step (20.9 dB before onset)"
+  },
+  {
+   "onset_s": 11.651,
+   "len_s": 0.338,
+   "pre_db": 0.8,
+   "tail_db": -27.1,
+   "peak": 0.905,
+   "loud": -20.3,
+   "take": "steps_puddle_t6",
+   "reject": "overlaps previous step (0.8 dB before onset)"
+  }
+ ],
+ "stone_stair": [
+  {
+   "onset_s": 0.249,
+   "len_s": 0.62,
+   "pre_db": -1.4,
+   "tail_db": -62.4,
+   "peak": 0.52,
+   "loud": -23.1,
+   "take": "steps_stone_stair_t3",
+   "reject": "overlaps previous step (-1.4 dB before onset)"
+  },
+  {
+   "onset_s": 0.953,
+   "len_s": 0.616,
+   "pre_db": -11.7,
+   "tail_db": -60.5,
+   "peak": 0.837,
+   "loud": -21.8,
+   "take": "steps_stone_stair_t3",
+   "spec": {
+    "centroid_hz": 416,
+    "below_500": 0.944,
+    "150_600": 0.971,
+    "above_4k": 0.005,
+    "flatness": 0.003,
+    "tonal_bins": 0,
+    "tone_hz": []
+   },
+   "dist": 5.409,
+   "reject": "spare (the 8 nearest the surface profile are kept)"
+  },
+  {
+   "onset_s": 1.58,
+   "len_s": 0.305,
+   "pre_db": -29.3,
+   "tail_db": -5.0,
+   "peak": 0.765,
+   "loud": -18.1,
+   "take": "steps_stone_stair_t3",
+   "reject": "cut while still sounding (tail -5.0 dB)"
+  },
+  {
+   "onset_s": 1.896,
+   "len_s": 0.513,
+   "pre_db": 3.4,
+   "tail_db": -36.9,
+   "peak": 0.087,
+   "loud": -45.5,
+   "take": "steps_stone_stair_t3",
+   "reject": "overlaps previous step (3.4 dB before onset)"
+  },
+  {
+   "onset_s": 2.42,
+   "len_s": 0.282,
+   "pre_db": -10.9,
+   "tail_db": -20.5,
+   "peak": 1.0,
+   "loud": -18.2,
+   "take": "steps_stone_stair_t3",
+   "reject": "clipped"
+  },
+  {
+   "onset_s": 2.714,
+   "len_s": 0.468,
+   "pre_db": -25.5,
+   "tail_db": -50.0,
+   "peak": 0.122,
+   "loud": -34.1,
+   "take": "steps_stone_stair_t3",
+   "reject": "faint event, -9.1 dB below the surface's steps"
+  },
+  {
+   "onset_s": 3.192,
+   "len_s": 0.62,
+   "pre_db": -8.0,
+   "tail_db": -57.3,
+   "peak": 0.508,
+   "loud": -26.6,
+   "take": "steps_stone_stair_t3",
+   "reject": "overlaps previous step (-8.0 dB before onset)"
+  },
+  {
+   "onset_s": 3.924,
+   "len_s": 0.62,
+   "pre_db": -0.8,
+   "tail_db": -51.0,
+   "peak": 0.469,
+   "loud": -25.2,
+   "take": "steps_stone_stair_t3",
+   "reject": "overlaps previous step (-0.8 dB before onset)"
+  },
+  {
+   "onset_s": 4.679,
+   "len_s": 0.62,
+   "pre_db": -35.4,
+   "tail_db": -60.6,
+   "peak": 0.507,
+   "loud": -23.7,
+   "take": "steps_stone_stair_t3",
+   "spec": {
+    "centroid_hz": 820,
+    "below_500": 0.788,
+    "150_600": 0.813,
+    "above_4k": 0.009,
+    "flatness": 0.027,
+    "tonal_bins": 0,
+    "tone_hz": []
+   },
+   "dist": 3.806,
+   "reject": "spare (the 8 nearest the surface profile are kept)"
+  },
+  {
+   "onset_s": 5.392,
+   "len_s": 0.62,
+   "pre_db": -20.7,
+   "tail_db": -52.2,
+   "peak": 1.0,
+   "loud": -18.3,
+   "take": "steps_stone_stair_t3",
+   "reject": "clipped"
+  },
+  {
+   "onset_s": 6.123,
+   "len_s": 0.304,
+   "pre_db": -38.0,
+   "tail_db": -12.6,
+   "peak": 0.343,
+   "loud": -26.2,
+   "take": "steps_stone_stair_t3",
+   "spec": {
+    "centroid_hz": 875,
+    "below_500": 0.697,
+    "150_600": 0.739,
+    "above_4k": 0.042,
+    "flatness": 0.08,
+    "tonal_bins": 0,
+    "tone_hz": []
+   },
+   "dist": 3.349,
+   "reject": "spare (the 8 nearest the surface profile are kept)"
+  },
+  {
+   "onset_s": 6.438,
+   "len_s": 0.415,
+   "pre_db": 10.0,
+   "tail_db": -10.4,
+   "peak": 0.002,
+   "loud": -72.3,
+   "take": "steps_stone_stair_t3",
+   "reject": "overlaps previous step (10.0 dB before onset)"
+  },
+  {
+   "onset_s": 6.864,
+   "len_s": 0.396,
+   "pre_db": -26.8,
+   "tail_db": -24.7,
+   "peak": 0.246,
+   "loud": -27.6,
+   "take": "steps_stone_stair_t3",
+   "spec": {
+    "centroid_hz": 589,
+    "below_500": 0.916,
+    "150_600": 0.923,
+    "above_4k": 0.023,
+    "flatness": 0.028,
+    "tonal_bins": 0,
+    "tone_hz": []
+   },
+   "dist": 4.796,
+   "reject": "spare (the 8 nearest the surface profile are kept)"
+  },
+  {
+   "onset_s": 7.272,
+   "len_s": 0.485,
+   "pre_db": -1.9,
+   "tail_db": 45.6,
+   "peak": 0.337,
+   "loud": -65.1,
+   "take": "steps_stone_stair_t3",
+   "reject": "overlaps previous step (-1.9 dB before onset); cut while still sounding (tail 45.6 dB)"
+  },
+  {
+   "onset_s": 7.768,
+   "len_s": 0.62,
+   "pre_db": -6.6,
+   "tail_db": -51.3,
+   "peak": 0.204,
+   "loud": -30.5,
+   "take": "steps_stone_stair_t3",
+   "reject": "overlaps previous step (-6.6 dB before onset)"
+  },
+  {
+   "onset_s": 8.415,
+   "len_s": 0.595,
+   "pre_db": -23.9,
+   "tail_db": -63.5,
+   "peak": 0.926,
+   "loud": -20.4,
+   "take": "steps_stone_stair_t3",
+   "spec": {
+    "centroid_hz": 794,
+    "below_500": 0.302,
+    "150_600": 0.392,
+    "above_4k": 0.001,
+    "flatness": 0.037,
+    "tonal_bins": 0,
+    "tone_hz": []
+   },
+   "dist": 2.374,
+   "file": "stone_stair_01.wav",
+   "decay_ms": 93
+  },
+  {
+   "onset_s": 9.021,
+   "len_s": 0.62,
+   "pre_db": -32.2,
+   "tail_db": -57.3,
+   "peak": 0.437,
+   "loud": -28.6,
+   "take": "steps_stone_stair_t3",
+   "spec": {
+    "centroid_hz": 1036,
+    "below_500": 0.387,
+    "150_600": 0.404,
+    "above_4k": 0.0,
+    "flatness": 0.015,
+    "tonal_bins": 0,
+    "tone_hz": []
+   },
+   "dist": 2.736,
+   "file": "stone_stair_02.wav",
+   "decay_ms": 51
+  },
+  {
+   "onset_s": 9.679,
+   "len_s": 0.535,
+   "pre_db": -23.4,
+   "tail_db": -38.0,
+   "peak": 0.14,
+   "loud": -35.7,
+   "take": "steps_stone_stair_t3",
+   "reject": "faint event, -10.7 dB below the surface's steps"
+  },
+  {
+   "onset_s": 10.224,
+   "len_s": 0.413,
+   "pre_db": -27.0,
+   "tail_db": -31.8,
+   "peak": 0.107,
+   "loud": -36.1,
+   "take": "steps_stone_stair_t3",
+   "reject": "faint event, -11.1 dB below the surface's steps"
+  },
+  {
+   "onset_s": 10.648,
+   "len_s": 0.62,
+   "pre_db": -20.1,
+   "tail_db": -59.4,
+   "peak": 0.417,
+   "loud": -25.6,
+   "take": "steps_stone_stair_t3",
+   "spec": {
+    "centroid_hz": 5268,
+    "below_500": 0.004,
+    "150_600": 0.005,
+    "above_4k": 0.812,
+    "flatness": 0.301,
+    "tonal_bins": 0,
+    "tone_hz": []
+   },
+   "dist": 1.991,
+   "file": "stone_stair_03.wav",
+   "decay_ms": 80
+  },
+  {
+   "onset_s": 11.462,
+   "len_s": 0.527,
+   "pre_db": -9.5,
+   "tail_db": -89.3,
+   "peak": 0.514,
+   "loud": -27.5,
+   "take": "steps_stone_stair_t3",
+   "reject": "overlaps previous step (-9.5 dB before onset)"
+  },
+  {
+   "onset_s": 0.023,
+   "reject": "starts with the take (attack may be cut)",
+   "take": "steps_stone_stair_t4"
+  },
+  {
+   "onset_s": 0.743,
+   "len_s": 0.62,
+   "pre_db": -10.4,
+   "tail_db": -74.1,
+   "peak": 1.0,
+   "loud": -20.2,
+   "take": "steps_stone_stair_t4",
+   "reject": "clipped"
+  },
+  {
+   "onset_s": 1.499,
+   "len_s": 0.62,
+   "pre_db": -18.3,
+   "tail_db": -71.0,
+   "peak": 0.773,
+   "loud": -24.1,
+   "take": "steps_stone_stair_t4",
+   "spec": {
+    "centroid_hz": 1425,
+    "below_500": 0.467,
+    "150_600": 0.572,
+    "above_4k": 0.14,
+    "flatness": 0.104,
+    "tonal_bins": 0,
+    "tone_hz": []
+   },
+   "dist": 2.455,
+   "file": "stone_stair_04.wav",
+   "decay_ms": 108
+  },
+  {
+   "onset_s": 2.415,
+   "len_s": 0.62,
+   "pre_db": 3.5,
+   "tail_db": -65.5,
+   "peak": 0.64,
+   "loud": -24.6,
+   "take": "steps_stone_stair_t4",
+   "reject": "overlaps previous step (3.5 dB before onset)"
+  },
+  {
+   "onset_s": 3.193,
+   "len_s": 0.62,
+   "pre_db": 8.1,
+   "tail_db": -69.0,
+   "peak": 0.243,
+   "loud": -28.2,
+   "take": "steps_stone_stair_t4",
+   "reject": "overlaps previous step (8.1 dB before onset)"
+  },
+  {
+   "onset_s": 3.986,
+   "len_s": 0.62,
+   "pre_db": -22.9,
+   "tail_db": -67.7,
+   "peak": 0.282,
+   "loud": -31.8,
+   "take": "steps_stone_stair_t4",
+   "spec": {
+    "centroid_hz": 1448,
+    "below_500": 0.419,
+    "150_600": 0.47,
+    "above_4k": 0.092,
+    "flatness": 0.186,
+    "tonal_bins": 0,
+    "tone_hz": []
+   },
+   "dist": 2.443,
+   "file": "stone_stair_05.wav",
+   "decay_ms": 112
+  },
+  {
+   "onset_s": 4.797,
+   "len_s": 0.62,
+   "pre_db": -8.6,
+   "tail_db": -70.3,
+   "peak": 0.522,
+   "loud": -26.2,
+   "take": "steps_stone_stair_t4",
+   "reject": "overlaps previous step (-8.6 dB before onset)"
+  },
+  {
+   "onset_s": 5.569,
+   "len_s": 0.62,
+   "pre_db": -18.2,
+   "tail_db": -74.2,
+   "peak": 0.647,
+   "loud": -25.0,
+   "take": "steps_stone_stair_t4",
+   "spec": {
+    "centroid_hz": 854,
+    "below_500": 0.477,
+    "150_600": 0.657,
+    "above_4k": 0.031,
+    "flatness": 0.068,
+    "tonal_bins": 0,
+    "tone_hz": []
+   },
+   "dist": 3.172,
+   "file": "stone_stair_06.wav",
+   "decay_ms": 86
+  },
+  {
+   "onset_s": 6.385,
+   "len_s": 0.62,
+   "pre_db": -16.4,
+   "tail_db": -73.0,
+   "peak": 0.585,
+   "loud": -27.0,
+   "take": "steps_stone_stair_t4",
+   "spec": {
+    "centroid_hz": 2057,
+    "below_500": 0.331,
+    "150_600": 0.36,
+    "above_4k": 0.18,
+    "flatness": 0.166,
+    "tonal_bins": 0,
+    "tone_hz": []
+   },
+   "dist": 1.511,
+   "file": "stone_stair_07.wav",
+   "decay_ms": 61
+  },
+  {
+   "onset_s": 7.216,
+   "len_s": 0.62,
+   "pre_db": -18.5,
+   "tail_db": -72.6,
+   "peak": 1.0,
+   "loud": -20.6,
+   "take": "steps_stone_stair_t4",
+   "reject": "clipped"
+  },
+  {
+   "onset_s": 8.04,
+   "len_s": 0.62,
+   "pre_db": -32.9,
+   "tail_db": -71.3,
+   "peak": 0.511,
+   "loud": -25.6,
+   "take": "steps_stone_stair_t4",
+   "spec": {
+    "centroid_hz": 538,
+    "below_500": 0.769,
+    "150_600": 0.847,
+    "above_4k": 0.004,
+    "flatness": 0.024,
+    "tonal_bins": 0,
+    "tone_hz": []
+   },
+   "dist": 4.338,
+   "reject": "spare (the 8 nearest the surface profile are kept)"
+  },
+  {
+   "onset_s": 8.925,
+   "len_s": 0.62,
+   "pre_db": -7.7,
+   "tail_db": -73.1,
+   "peak": 0.839,
+   "loud": -24.3,
+   "take": "steps_stone_stair_t4",
+   "reject": "overlaps previous step (-7.7 dB before onset)"
+  },
+  {
+   "onset_s": 9.723,
+   "len_s": 0.62,
+   "pre_db": -33.4,
+   "tail_db": -73.6,
+   "peak": 0.6,
+   "loud": -26.4,
+   "take": "steps_stone_stair_t4",
+   "spec": {
+    "centroid_hz": 1535,
+    "below_500": 0.56,
+    "150_600": 0.593,
+    "above_4k": 0.138,
+    "flatness": 0.114,
+    "tonal_bins": 0,
+    "tone_hz": []
+   },
+   "dist": 2.966,
+   "file": "stone_stair_08.wav",
+   "decay_ms": 45
+  },
+  {
+   "onset_s": 10.595,
+   "len_s": 0.62,
+   "pre_db": -9.1,
+   "tail_db": -71.1,
+   "peak": 0.506,
+   "loud": -26.7,
+   "take": "steps_stone_stair_t4",
+   "reject": "overlaps previous step (-9.1 dB before onset)"
+  },
+  {
+   "onset_s": 11.546,
+   "len_s": 0.443,
+   "pre_db": 4.2,
+   "tail_db": -38.7,
+   "peak": 0.076,
+   "loud": -42.1,
+   "take": "steps_stone_stair_t4",
+   "reject": "overlaps previous step (4.2 dB before onset)"
+  },
+  {
+   "onset_s": 0.28,
+   "len_s": 0.62,
+   "pre_db": 5.1,
+   "tail_db": -57.7,
+   "peak": 0.13,
+   "loud": -39.5,
+   "take": "steps_stone_stair_t5",
+   "reject": "overlaps previous step (5.1 dB before onset)"
+  },
+  {
+   "onset_s": 1.056,
+   "len_s": 0.62,
+   "pre_db": -39.4,
+   "tail_db": -78.4,
+   "peak": 1.0,
+   "loud": -16.4,
+   "take": "steps_stone_stair_t5",
+   "reject": "clipped"
+  },
+  {
+   "onset_s": 1.926,
+   "len_s": 0.62,
+   "pre_db": -29.7,
+   "tail_db": -76.8,
+   "peak": 0.861,
+   "loud": -18.4,
+   "take": "steps_stone_stair_t5",
+   "reject": "stomp, +6.6 dB above the surface's steps"
+  },
+  {
+   "onset_s": 2.805,
+   "len_s": 0.62,
+   "pre_db": 9.3,
+   "tail_db": -66.1,
+   "peak": 0.335,
+   "loud": -32.6,
+   "take": "steps_stone_stair_t5",
+   "reject": "overlaps previous step (9.3 dB before onset)"
+  },
+  {
+   "onset_s": 3.657,
+   "len_s": 0.62,
+   "pre_db": 9.7,
+   "tail_db": -63.0,
+   "peak": 0.129,
+   "loud": -33.6,
+   "take": "steps_stone_stair_t5",
+   "reject": "overlaps previous step (9.7 dB before onset)"
+  },
+  {
+   "onset_s": 4.487,
+   "len_s": 0.62,
+   "pre_db": 12.3,
+   "tail_db": -56.4,
+   "peak": 0.088,
+   "loud": -40.2,
+   "take": "steps_stone_stair_t5",
+   "reject": "overlaps previous step (12.3 dB before onset)"
+  },
+  {
+   "onset_s": 5.323,
+   "len_s": 0.62,
+   "pre_db": 5.6,
+   "tail_db": -61.6,
+   "peak": 0.35,
+   "loud": -32.9,
+   "take": "steps_stone_stair_t5",
+   "reject": "overlaps previous step (5.6 dB before onset)"
+  },
+  {
+   "onset_s": 6.194,
+   "len_s": 0.62,
+   "pre_db": -2.7,
+   "tail_db": -71.6,
+   "peak": 0.685,
+   "loud": -23.2,
+   "take": "steps_stone_stair_t5",
+   "reject": "overlaps previous step (-2.7 dB before onset)"
+  },
+  {
+   "onset_s": 7.059,
+   "len_s": 0.62,
+   "pre_db": 1.1,
+   "tail_db": -64.1,
+   "peak": 0.369,
+   "loud": -30.2,
+   "take": "steps_stone_stair_t5",
+   "reject": "overlaps previous step (1.1 dB before onset)"
+  },
+  {
+   "onset_s": 7.808,
+   "len_s": 0.62,
+   "pre_db": -25.1,
+   "tail_db": -76.3,
+   "peak": 0.945,
+   "loud": -18.1,
+   "take": "steps_stone_stair_t5",
+   "reject": "stomp, +6.9 dB above the surface's steps"
+  },
+  {
+   "onset_s": 8.76,
+   "len_s": 0.62,
+   "pre_db": 16.2,
+   "tail_db": -63.0,
+   "peak": 0.086,
+   "loud": -36.2,
+   "take": "steps_stone_stair_t5",
+   "reject": "overlaps previous step (16.2 dB before onset)"
+  },
+  {
+   "onset_s": 9.556,
+   "len_s": 0.421,
+   "pre_db": -19.0,
+   "tail_db": -28.0,
+   "peak": 0.365,
+   "loud": -29.6,
+   "take": "steps_stone_stair_t5",
+   "spec": {
+    "centroid_hz": 427,
+    "below_500": 0.923,
+    "150_600": 0.964,
+    "above_4k": 0.004,
+    "flatness": 0.042,
+    "tonal_bins": 0,
+    "tone_hz": []
+   },
+   "dist": 5.288,
+   "reject": "spare (the 8 nearest the surface profile are kept)"
+  },
+  {
+   "onset_s": 9.987,
+   "len_s": 0.501,
+   "pre_db": -28.2,
+   "tail_db": -55.6,
+   "peak": 0.067,
+   "loud": -36.3,
+   "take": "steps_stone_stair_t5",
+   "reject": "faint event, -11.2 dB below the surface's steps"
+  },
+  {
+   "onset_s": 10.499,
+   "len_s": 0.281,
+   "pre_db": -45.2,
+   "tail_db": 0.9,
+   "peak": 1.0,
+   "loud": -15.6,
+   "take": "steps_stone_stair_t5",
+   "reject": "cut while still sounding (tail 0.9 dB); clipped"
+  },
+  {
+   "onset_s": 10.791,
+   "len_s": 0.62,
+   "pre_db": 15.0,
+   "tail_db": -27.7,
+   "peak": 0.006,
+   "loud": -56.8,
+   "take": "steps_stone_stair_t5",
+   "reject": "overlaps previous step (15.0 dB before onset)"
+  },
+  {
+   "onset_s": 0.0,
+   "reject": "starts with the take (attack may be cut)",
+   "take": "steps_stone_stair_t6"
+  },
+  {
+   "onset_s": 0.347,
+   "len_s": 0.62,
+   "pre_db": -12.0,
+   "tail_db": -57.2,
+   "peak": 0.195,
+   "loud": -39.0,
+   "take": "steps_stone_stair_t6",
+   "reject": "faint event, -14.0 dB below the surface's steps"
+  },
+  {
+   "onset_s": 1.075,
+   "len_s": 0.62,
+   "pre_db": -19.4,
+   "tail_db": -78.6,
+   "peak": 1.0,
+   "loud": -18.2,
+   "take": "steps_stone_stair_t6",
+   "reject": "clipped"
+  },
+  {
+   "onset_s": 1.849,
+   "len_s": 0.62,
+   "pre_db": -23.5,
+   "tail_db": -76.3,
+   "peak": 1.0,
+   "loud": -17.4,
+   "take": "steps_stone_stair_t6",
+   "reject": "clipped"
+  },
+  {
+   "onset_s": 2.578,
+   "len_s": 0.62,
+   "pre_db": -12.0,
+   "tail_db": -78.5,
+   "peak": 1.0,
+   "loud": -18.6,
+   "take": "steps_stone_stair_t6",
+   "reject": "clipped"
+  },
+  {
+   "onset_s": 3.349,
+   "len_s": 0.62,
+   "pre_db": 4.6,
+   "tail_db": -72.4,
+   "peak": 0.823,
+   "loud": -22.9,
+   "take": "steps_stone_stair_t6",
+   "reject": "overlaps previous step (4.6 dB before onset)"
+  },
+  {
+   "onset_s": 4.128,
+   "len_s": 0.62,
+   "pre_db": 9.4,
+   "tail_db": -68.8,
+   "peak": 0.233,
+   "loud": -30.0,
+   "take": "steps_stone_stair_t6",
+   "reject": "overlaps previous step (9.4 dB before onset)"
+  },
+  {
+   "onset_s": 4.835,
+   "len_s": 0.62,
+   "pre_db": -18.4,
+   "tail_db": -70.2,
+   "peak": 0.291,
+   "loud": -27.0,
+   "take": "steps_stone_stair_t6",
+   "spec": {
+    "centroid_hz": 416,
+    "below_500": 0.842,
+    "150_600": 0.908,
+    "above_4k": 0.001,
+    "flatness": 0.016,
+    "tonal_bins": 0,
+    "tone_hz": []
+   },
+   "dist": 5.001,
+   "reject": "spare (the 8 nearest the surface profile are kept)"
+  },
+  {
+   "onset_s": 5.51,
+   "len_s": 0.62,
+   "pre_db": -21.9,
+   "tail_db": -83.4,
+   "peak": 1.0,
+   "loud": -21.8,
+   "take": "steps_stone_stair_t6",
+   "reject": "clipped"
+  },
+  {
+   "onset_s": 6.424,
+   "len_s": 0.612,
+   "pre_db": -19.5,
+   "tail_db": -64.8,
+   "peak": 0.074,
+   "loud": -40.9,
+   "take": "steps_stone_stair_t6",
+   "reject": "faint event, -15.9 dB below the surface's steps"
+  },
+  {
+   "onset_s": 7.047,
+   "len_s": 0.317,
+   "pre_db": -36.6,
+   "tail_db": -45.0,
+   "peak": 0.072,
+   "loud": -44.4,
+   "take": "steps_stone_stair_t6",
+   "reject": "faint event, -19.4 dB below the surface's steps"
+  },
+  {
+   "onset_s": 7.375,
+   "len_s": 0.62,
+   "pre_db": -19.6,
+   "tail_db": -57.2,
+   "peak": 0.007,
+   "loud": -59.5,
+   "take": "steps_stone_stair_t6",
+   "reject": "faint event, -34.5 dB below the surface's steps"
+  },
+  {
+   "onset_s": 8.164,
+   "len_s": 0.62,
+   "pre_db": -17.4,
+   "tail_db": -4.0,
+   "peak": 0.008,
+   "loud": -57.3,
+   "take": "steps_stone_stair_t6",
+   "reject": "cut while still sounding (tail -4.0 dB)"
+  },
+  {
+   "onset_s": 8.836,
+   "len_s": 0.62,
+   "pre_db": -20.3,
+   "tail_db": -65.7,
+   "peak": 0.031,
+   "loud": -51.5,
+   "take": "steps_stone_stair_t6",
+   "reject": "faint event, -26.5 dB below the surface's steps"
+  },
+  {
+   "onset_s": 9.722,
+   "len_s": 0.556,
+   "pre_db": -13.1,
+   "tail_db": -27.3,
+   "peak": 0.003,
+   "loud": -66.8,
+   "take": "steps_stone_stair_t6",
+   "reject": "faint event, -41.8 dB below the surface's steps"
+  },
+  {
+   "onset_s": 10.289,
+   "len_s": 0.41,
+   "pre_db": -21.0,
+   "tail_db": -53.0,
+   "peak": 0.101,
+   "loud": -34.6,
+   "take": "steps_stone_stair_t6",
+   "reject": "faint event, -9.6 dB below the surface's steps"
+  },
+  {
+   "onset_s": 10.71,
+   "len_s": 0.62,
+   "pre_db": -46.3,
+   "tail_db": -67.1,
+   "peak": 0.12,
+   "loud": -36.3,
+   "take": "steps_stone_stair_t6",
+   "reject": "faint event, -11.2 dB below the surface's steps"
+  },
+  {
+   "onset_s": 11.513,
+   "len_s": 0.476,
+   "pre_db": -23.6,
+   "tail_db": -63.6,
+   "peak": 0.018,
+   "loud": -54.7,
+   "take": "steps_stone_stair_t6",
+   "reject": "faint event, -29.7 dB below the surface's steps"
+  }
+ ],
+ "stone_walk": [
+  {
+   "onset_s": 0.251,
+   "len_s": 0.588,
+   "pre_db": -3.8,
+   "tail_db": -33.0,
+   "peak": 0.481,
+   "loud": -28.2,
+   "take": "steps_stone_walk_t3",
+   "reject": "overlaps previous step (-3.8 dB before onset)"
+  },
+  {
+   "onset_s": 0.85,
+   "len_s": 0.536,
+   "pre_db": -23.0,
+   "tail_db": -25.6,
+   "peak": 0.21,
+   "loud": -31.1,
+   "take": "steps_stone_walk_t3",
+   "spec": {
+    "centroid_hz": 1415,
+    "below_500": 0.38,
+    "150_600": 0.438,
+    "above_4k": 0.1,
+    "flatness": 0.29,
+    "tonal_bins": 0,
+    "tone_hz": []
+   },
+   "dist": 1.699,
+   "reject": "spare (the 8 nearest the surface profile are kept)"
+  },
+  {
+   "onset_s": 1.397,
+   "len_s": 0.342,
+   "pre_db": -7.6,
+   "tail_db": 35.2,
+   "peak": 0.776,
+   "loud": -22.6,
+   "take": "steps_stone_walk_t3",
+   "reject": "overlaps previous step (-7.6 dB before onset); cut while still sounding (tail 35.2 dB)"
+  },
+  {
+   "onset_s": 1.75,
+   "len_s": 0.59,
+   "pre_db": 12.1,
+   "tail_db": -15.7,
+   "peak": 0.126,
+   "loud": -41.9,
+   "take": "steps_stone_walk_t3",
+   "reject": "overlaps previous step (12.1 dB before onset)"
+  },
+  {
+   "onset_s": 2.351,
+   "len_s": 0.359,
+   "pre_db": -37.3,
+   "tail_db": -36.1,
+   "peak": 0.533,
+   "loud": -25.1,
+   "take": "steps_stone_walk_t3",
+   "spec": {
+    "centroid_hz": 794,
+    "below_500": 0.194,
+    "150_600": 0.265,
+    "above_4k": 0.014,
+    "flatness": 0.119,
+    "tonal_bins": 0,
+    "tone_hz": []
+   },
+   "dist": 1.789,
+   "reject": "spare (the 8 nearest the surface profile are kept)"
+  },
+  {
+   "onset_s": 2.721,
+   "len_s": 0.324,
+   "pre_db": -16.5,
+   "tail_db": -9.6,
+   "peak": 0.073,
+   "loud": -46.6,
+   "take": "steps_stone_walk_t3",
+   "reject": "faint event, -22.5 dB below the surface's steps"
+  },
+  {
+   "onset_s": 3.056,
+   "len_s": 0.522,
+   "pre_db": -17.6,
+   "tail_db": -32.1,
+   "peak": 0.299,
+   "loud": -30.2,
+   "take": "steps_stone_walk_t3",
+   "spec": {
+    "centroid_hz": 1260,
+    "below_500": 0.181,
+    "150_600": 0.214,
+    "above_4k": 0.058,
+    "flatness": 0.248,
+    "tonal_bins": 0,
+    "tone_hz": []
+   },
+   "dist": 1.071,
+   "reject": "spare (the 8 nearest the surface profile are kept)"
+  },
+  {
+   "onset_s": 3.589,
+   "len_s": 0.44,
+   "pre_db": -0.6,
+   "tail_db": 11.6,
+   "peak": 0.123,
+   "loud": -37.9,
+   "take": "steps_stone_walk_t3",
+   "reject": "overlaps previous step (-0.6 dB before onset); cut while still sounding (tail 11.6 dB)"
+  },
+  {
+   "onset_s": 4.04,
+   "len_s": 0.62,
+   "pre_db": 9.8,
+   "tail_db": -13.4,
+   "peak": 0.046,
+   "loud": -47.9,
+   "take": "steps_stone_walk_t3",
+   "reject": "overlaps previous step (9.8 dB before onset)"
+  },
+  {
+   "onset_s": 4.74,
+   "len_s": 0.611,
+   "pre_db": 3.6,
+   "tail_db": -29.7,
+   "peak": 0.238,
+   "loud": -34.6,
+   "take": "steps_stone_walk_t3",
+   "reject": "overlaps previous step (3.6 dB before onset)"
+  },
+  {
+   "onset_s": 5.362,
+   "len_s": 0.62,
+   "pre_db": -31.3,
+   "tail_db": -38.2,
+   "peak": 0.726,
+   "loud": -22.0,
+   "take": "steps_stone_walk_t3",
+   "spec": {
+    "centroid_hz": 1844,
+    "below_500": 0.036,
+    "150_600": 0.045,
+    "above_4k": 0.066,
+    "flatness": 0.162,
+    "tonal_bins": 0,
+    "tone_hz": []
+   },
+   "dist": 0.293,
+   "file": "stone_walk_01.wav",
+   "decay_ms": 25
+  },
+  {
+   "onset_s": 6.122,
+   "len_s": 0.282,
+   "pre_db": -30.2,
+   "tail_db": -0.5,
+   "peak": 0.166,
+   "loud": -30.9,
+   "take": "steps_stone_walk_t3",
+   "reject": "cut while still sounding (tail -0.5 dB)"
+  },
+  {
+   "onset_s": 6.416,
+   "len_s": 0.56,
+   "pre_db": -1.2,
+   "tail_db": 13.7,
+   "peak": 0.086,
+   "loud": -57.5,
+   "take": "steps_stone_walk_t3",
+   "reject": "overlaps previous step (-1.2 dB before onset); cut while still sounding (tail 13.7 dB)"
+  },
+  {
+   "onset_s": 6.986,
+   "len_s": 0.62,
+   "pre_db": -3.9,
+   "tail_db": -27.0,
+   "peak": 0.188,
+   "loud": -35.7,
+   "take": "steps_stone_walk_t3",
+   "reject": "overlaps previous step (-3.9 dB before onset)"
+  },
+  {
+   "onset_s": 7.734,
+   "len_s": 0.511,
+   "pre_db": -8.2,
+   "tail_db": -22.8,
+   "peak": 0.135,
+   "loud": -37.2,
+   "take": "steps_stone_walk_t3",
+   "reject": "overlaps previous step (-8.2 dB before onset)"
+  },
+  {
+   "onset_s": 8.256,
+   "len_s": 0.32,
+   "pre_db": -24.1,
+   "tail_db": 14.2,
+   "peak": 0.948,
+   "loud": -22.2,
+   "take": "steps_stone_walk_t3",
+   "reject": "cut while still sounding (tail 14.2 dB)"
+  },
+  {
+   "onset_s": 8.586,
+   "len_s": 0.504,
+   "pre_db": -7.8,
+   "tail_db": -12.9,
+   "peak": 0.104,
+   "loud": -54.3,
+   "take": "steps_stone_walk_t3",
+   "reject": "overlaps previous step (-7.8 dB before onset)"
+  },
+  {
+   "onset_s": 9.101,
+   "len_s": 0.361,
+   "pre_db": 15.7,
+   "tail_db": -10.1,
+   "peak": 0.064,
+   "loud": -45.9,
+   "take": "steps_stone_walk_t3",
+   "reject": "overlaps previous step (15.7 dB before onset)"
+  },
+  {
+   "onset_s": 9.473,
+   "len_s": 0.499,
+   "pre_db": -3.3,
+   "tail_db": 10.8,
+   "peak": 0.318,
+   "loud": -29.1,
+   "take": "steps_stone_walk_t3",
+   "reject": "overlaps previous step (-3.3 dB before onset); cut while still sounding (tail 10.8 dB)"
+  },
+  {
+   "onset_s": 9.982,
+   "len_s": 0.62,
+   "pre_db": -1.1,
+   "tail_db": 16.9,
+   "peak": 0.097,
+   "loud": -53.7,
+   "take": "steps_stone_walk_t3",
+   "reject": "overlaps previous step (-1.1 dB before onset); cut while still sounding (tail 16.9 dB)"
+  },
+  {
+   "onset_s": 10.629,
+   "len_s": 0.465,
+   "pre_db": 5.5,
+   "tail_db": -23.7,
+   "peak": 0.109,
+   "loud": -35.9,
+   "take": "steps_stone_walk_t3",
+   "reject": "overlaps previous step (5.5 dB before onset)"
+  },
+  {
+   "onset_s": 11.105,
+   "len_s": 0.399,
+   "pre_db": -10.6,
+   "tail_db": 18.9,
+   "peak": 0.612,
+   "loud": -22.2,
+   "take": "steps_stone_walk_t3",
+   "reject": "cut while still sounding (tail 18.9 dB)"
+  },
+  {
+   "onset_s": 11.515,
+   "len_s": 0.474,
+   "pre_db": 4.1,
+   "tail_db": -77.9,
+   "peak": 0.263,
+   "loud": -35.0,
+   "take": "steps_stone_walk_t3",
+   "reject": "overlaps previous step (4.1 dB before onset)"
+  },
+  {
+   "onset_s": 0.255,
+   "len_s": 0.389,
+   "pre_db": -16.3,
+   "tail_db": -53.4,
+   "peak": 0.454,
+   "loud": -30.2,
+   "take": "steps_stone_walk_t4",
+   "spec": {
+    "centroid_hz": 1262,
+    "below_500": 0.026,
+    "150_600": 0.041,
+    "above_4k": 0.02,
+    "flatness": 0.417,
+    "tonal_bins": 0,
+    "tone_hz": []
+   },
+   "dist": 0.88,
+   "reject": "spare (the 8 nearest the surface profile are kept)"
+  },
+  {
+   "onset_s": 0.655,
+   "len_s": 0.326,
+   "pre_db": -28.8,
+   "tail_db": -2.3,
+   "peak": 0.277,
+   "loud": -27.5,
+   "take": "steps_stone_walk_t4",
+   "reject": "cut while still sounding (tail -2.3 dB)"
+  },
+  {
+   "onset_s": 0.992,
+   "len_s": 0.405,
+   "pre_db": -2.0,
+   "tail_db": -16.8,
+   "peak": 0.006,
+   "loud": -63.9,
+   "take": "steps_stone_walk_t4",
+   "reject": "overlaps previous step (-2.0 dB before onset)"
+  },
+  {
+   "onset_s": 1.408,
+   "len_s": 0.332,
+   "pre_db": -20.6,
+   "tail_db": -0.1,
+   "peak": 0.194,
+   "loud": -32.2,
+   "take": "steps_stone_walk_t4",
+   "reject": "cut while still sounding (tail -0.1 dB)"
+  },
+  {
+   "onset_s": 1.751,
+   "len_s": 0.62,
+   "pre_db": -4.6,
+   "tail_db": -45.2,
+   "peak": 0.305,
+   "loud": -35.0,
+   "take": "steps_stone_walk_t4",
+   "reject": "overlaps previous step (-4.6 dB before onset)"
+  },
+  {
+   "onset_s": 2.401,
+   "len_s": 0.62,
+   "pre_db": -2.0,
+   "tail_db": -52.9,
+   "peak": 0.272,
+   "loud": -27.5,
+   "take": "steps_stone_walk_t4",
+   "reject": "overlaps previous step (-2.0 dB before onset)"
+  },
+  {
+   "onset_s": 3.235,
+   "len_s": 0.62,
+   "pre_db": 0.9,
+   "tail_db": -37.9,
+   "peak": 0.248,
+   "loud": -35.0,
+   "take": "steps_stone_walk_t4",
+   "reject": "overlaps previous step (0.9 dB before onset)"
+  },
+  {
+   "onset_s": 3.974,
+   "len_s": 0.62,
+   "pre_db": -33.1,
+   "tail_db": -38.7,
+   "peak": 0.132,
+   "loud": -37.2,
+   "take": "steps_stone_walk_t4",
+   "reject": "faint event, -13.1 dB below the surface's steps"
+  },
+  {
+   "onset_s": 4.994,
+   "len_s": 0.558,
+   "pre_db": -5.2,
+   "tail_db": -45.8,
+   "peak": 0.132,
+   "loud": -35.0,
+   "take": "steps_stone_walk_t4",
+   "reject": "overlaps previous step (-5.2 dB before onset)"
+  },
+  {
+   "onset_s": 5.563,
+   "len_s": 0.372,
+   "pre_db": -14.0,
+   "tail_db": 5.9,
+   "peak": 0.31,
+   "loud": -29.8,
+   "take": "steps_stone_walk_t4",
+   "reject": "cut while still sounding (tail 5.9 dB)"
+  },
+  {
+   "onset_s": 5.946,
+   "len_s": 0.62,
+   "pre_db": -5.4,
+   "tail_db": 29.6,
+   "peak": 0.124,
+   "loud": -60.2,
+   "take": "steps_stone_walk_t4",
+   "reject": "overlaps previous step (-5.4 dB before onset); cut while still sounding (tail 29.6 dB)"
+  },
+  {
+   "onset_s": 6.602,
+   "len_s": 0.62,
+   "pre_db": -9.9,
+   "tail_db": -31.8,
+   "peak": 0.094,
+   "loud": -41.2,
+   "take": "steps_stone_walk_t4",
+   "reject": "overlaps previous step (-9.9 dB before onset)"
+  },
+  {
+   "onset_s": 7.326,
+   "len_s": 0.62,
+   "pre_db": -5.5,
+   "tail_db": -31.5,
+   "peak": 0.128,
+   "loud": -39.3,
+   "take": "steps_stone_walk_t4",
+   "reject": "overlaps previous step (-5.5 dB before onset)"
+  },
+  {
+   "onset_s": 8.356,
+   "len_s": 0.62,
+   "pre_db": 4.0,
+   "tail_db": -34.0,
+   "peak": 0.073,
+   "loud": -43.7,
+   "take": "steps_stone_walk_t4",
+   "reject": "overlaps previous step (4.0 dB before onset)"
+  },
+  {
+   "onset_s": 9.084,
+   "len_s": 0.62,
+   "pre_db": -7.4,
+   "tail_db": -50.5,
+   "peak": 0.371,
+   "loud": -31.2,
+   "take": "steps_stone_walk_t4",
+   "reject": "overlaps previous step (-7.4 dB before onset)"
+  },
+  {
+   "onset_s": 9.915,
+   "len_s": 0.616,
+   "pre_db": -7.5,
+   "tail_db": -51.3,
+   "peak": 0.074,
+   "loud": -41.1,
+   "take": "steps_stone_walk_t4",
+   "reject": "overlaps previous step (-7.5 dB before onset)"
+  },
+  {
+   "onset_s": 10.542,
+   "len_s": 0.62,
+   "pre_db": -42.8,
+   "tail_db": -38.7,
+   "peak": 0.271,
+   "loud": -30.8,
+   "take": "steps_stone_walk_t4",
+   "spec": {
+    "centroid_hz": 1563,
+    "below_500": 0.039,
+    "150_600": 0.049,
+    "above_4k": 0.055,
+    "flatness": 0.302,
+    "tonal_bins": 0,
+    "tone_hz": []
+   },
+   "dist": 0.52,
+   "file": "stone_walk_02.wav",
+   "decay_ms": 26
+  },
+  {
+   "onset_s": 11.43,
+   "len_s": 0.559,
+   "pre_db": 0.7,
+   "tail_db": -80.8,
+   "peak": 0.158,
+   "loud": -33.1,
+   "take": "steps_stone_walk_t4",
+   "reject": "overlaps previous step (0.7 dB before onset)"
+  },
+  {
+   "onset_s": 0.28,
+   "len_s": 0.264,
+   "pre_db": -9.0,
+   "tail_db": -31.6,
+   "peak": 0.54,
+   "loud": -28.6,
+   "take": "steps_stone_walk_t5",
+   "reject": "overlaps previous step (-9.0 dB before onset)"
+  },
+  {
+   "onset_s": 0.555,
+   "len_s": 0.492,
+   "pre_db": -12.7,
+   "tail_db": -10.4,
+   "peak": 0.066,
+   "loud": -40.5,
+   "take": "steps_stone_walk_t5",
+   "reject": "faint event, -16.4 dB below the surface's steps"
+  },
+  {
+   "onset_s": 1.058,
+   "len_s": 0.328,
+   "pre_db": -25.5,
+   "tail_db": -35.3,
+   "peak": 0.468,
+   "loud": -21.4,
+   "take": "steps_stone_walk_t5",
+   "spec": {
+    "centroid_hz": 1409,
+    "below_500": 0.029,
+    "150_600": 0.059,
+    "above_4k": 0.025,
+    "flatness": 0.186,
+    "tonal_bins": 0,
+    "tone_hz": []
+   },
+   "dist": 0.709,
+   "file": "stone_walk_03.wav",
+   "decay_ms": 43
+  },
+  {
+   "onset_s": 1.397,
+   "len_s": 0.379,
+   "pre_db": -13.1,
+   "tail_db": -24.8,
+   "peak": 0.331,
+   "loud": -31.4,
+   "take": "steps_stone_walk_t5",
+   "spec": {
+    "centroid_hz": 855,
+    "below_500": 0.59,
+    "150_600": 0.557,
+    "above_4k": 0.031,
+    "flatness": 0.15,
+    "tonal_bins": 0,
+    "tone_hz": []
+   },
+   "dist": 3.266,
+   "reject": "spare (the 8 nearest the surface profile are kept)"
+  },
+  {
+   "onset_s": 1.787,
+   "len_s": 0.505,
+   "pre_db": -27.9,
+   "tail_db": -10.5,
+   "peak": 0.307,
+   "loud": -28.4,
+   "take": "steps_stone_walk_t5",
+   "spec": {
+    "centroid_hz": 1405,
+    "below_500": 0.067,
+    "150_600": 0.087,
+    "above_4k": 0.038,
+    "flatness": 0.211,
+    "tonal_bins": 0,
+    "tone_hz": []
+   },
+   "dist": 0.561,
+   "file": "stone_walk_04.wav",
+   "decay_ms": 75
+  },
+  {
+   "onset_s": 2.303,
+   "len_s": 0.519,
+   "pre_db": 2.3,
+   "tail_db": -10.8,
+   "peak": 0.103,
+   "loud": -45.0,
+   "take": "steps_stone_walk_t5",
+   "reject": "overlaps previous step (2.3 dB before onset)"
+  },
+  {
+   "onset_s": 2.834,
+   "len_s": 0.538,
+   "pre_db": -26.4,
+   "tail_db": -30.1,
+   "peak": 0.463,
+   "loud": -22.2,
+   "take": "steps_stone_walk_t5",
+   "spec": {
+    "centroid_hz": 855,
+    "below_500": 0.116,
+    "150_600": 0.235,
+    "above_4k": 0.002,
+    "flatness": 0.102,
+    "tonal_bins": 0,
+    "tone_hz": []
+   },
+   "dist": 1.37,
+   "reject": "spare (the 8 nearest the surface profile are kept)"
+  },
+  {
+   "onset_s": 3.382,
+   "len_s": 0.328,
+   "pre_db": -19.4,
+   "tail_db": -23.4,
+   "peak": 0.263,
+   "loud": -30.2,
+   "take": "steps_stone_walk_t5",
+   "spec": {
+    "centroid_hz": 6116,
+    "below_500": 0.027,
+    "150_600": 0.038,
+    "above_4k": 0.521,
+    "flatness": 0.522,
+    "tonal_bins": 0,
+    "tone_hz": []
+   },
+   "dist": 1.825,
+   "reject": "spare (the 8 nearest the surface profile are kept)"
+  },
+  {
+   "onset_s": 3.721,
+   "len_s": 0.328,
+   "pre_db": -4.8,
+   "tail_db": -22.2,
+   "peak": 0.237,
+   "loud": -36.0,
+   "take": "steps_stone_walk_t5",
+   "reject": "overlaps previous step (-4.8 dB before onset)"
+  },
+  {
+   "onset_s": 4.06,
+   "len_s": 0.417,
+   "pre_db": -2.9,
+   "tail_db": 17.6,
+   "peak": 0.135,
+   "loud": -35.2,
+   "take": "steps_stone_walk_t5",
+   "reject": "overlaps previous step (-2.9 dB before onset); cut while still sounding (tail 17.6 dB)"
+  },
+  {
+   "onset_s": 4.487,
+   "len_s": 0.456,
+   "pre_db": -5.7,
+   "tail_db": 4.4,
+   "peak": 0.068,
+   "loud": -45.9,
+   "take": "steps_stone_walk_t5",
+   "reject": "overlaps previous step (-5.7 dB before onset); cut while still sounding (tail 4.4 dB)"
+  },
+  {
+   "onset_s": 4.954,
+   "len_s": 0.361,
+   "pre_db": -28.9,
+   "tail_db": -18.9,
+   "peak": 0.653,
+   "loud": -22.9,
+   "take": "steps_stone_walk_t5",
+   "spec": {
+    "centroid_hz": 1227,
+    "below_500": 0.079,
+    "150_600": 0.114,
+    "above_4k": 0.01,
+    "flatness": 0.169,
+    "tonal_bins": 0,
+    "tone_hz": []
+   },
+   "dist": 0.709,
+   "file": "stone_walk_05.wav",
+   "decay_ms": 14
+  },
+  {
+   "onset_s": 5.326,
+   "len_s": 0.62,
+   "pre_db": -9.8,
+   "tail_db": -19.3,
+   "peak": 0.236,
+   "loud": -34.2,
+   "take": "steps_stone_walk_t5",
+   "reject": "overlaps previous step (-9.8 dB before onset)"
+  },
+  {
+   "onset_s": 6.049,
+   "len_s": 0.483,
+   "pre_db": -13.7,
+   "tail_db": -27.4,
+   "peak": 0.311,
+   "loud": -31.8,
+   "take": "steps_stone_walk_t5",
+   "spec": {
+    "centroid_hz": 459,
+    "below_500": 0.85,
+    "150_600": 0.824,
+    "above_4k": 0.008,
+    "flatness": 0.099,
+    "tonal_bins": 0,
+    "tone_hz": []
+   },
+   "dist": 5.203,
+   "reject": "spare (the 8 nearest the surface profile are kept)"
+  },
+  {
+   "onset_s": 6.542,
+   "len_s": 0.337,
+   "pre_db": 4.8,
+   "tail_db": 2.9,
+   "peak": 0.076,
+   "loud": -40.0,
+   "take": "steps_stone_walk_t5",
+   "reject": "overlaps previous step (4.8 dB before onset); cut while still sounding (tail 2.9 dB)"
+  },
+  {
+   "onset_s": 6.891,
+   "len_s": 0.423,
+   "pre_db": 25.7,
+   "tail_db": 13.0,
+   "peak": 0.14,
+   "loud": -38.5,
+   "take": "steps_stone_walk_t5",
+   "reject": "overlaps previous step (25.7 dB before onset); cut while still sounding (tail 13.0 dB)"
+  },
+  {
+   "onset_s": 7.325,
+   "len_s": 0.495,
+   "pre_db": -1.9,
+   "tail_db": -9.4,
+   "peak": 0.075,
+   "loud": -41.3,
+   "take": "steps_stone_walk_t5",
+   "reject": "overlaps previous step (-1.9 dB before onset)"
+  },
+  {
+   "onset_s": 7.831,
+   "len_s": 0.317,
+   "pre_db": -5.7,
+   "tail_db": -38.8,
+   "peak": 1.0,
+   "loud": -21.3,
+   "take": "steps_stone_walk_t5",
+   "reject": "overlaps previous step (-5.7 dB before onset); clipped"
+  },
+  {
+   "onset_s": 8.158,
+   "len_s": 0.62,
+   "pre_db": 5.2,
+   "tail_db": -11.9,
+   "peak": 0.22,
+   "loud": -34.1,
+   "take": "steps_stone_walk_t5",
+   "reject": "overlaps previous step (5.2 dB before onset)"
+  },
+  {
+   "onset_s": 8.843,
+   "len_s": 0.451,
+   "pre_db": -14.0,
+   "tail_db": -26.5,
+   "peak": 0.478,
+   "loud": -23.1,
+   "take": "steps_stone_walk_t5",
+   "spec": {
+    "centroid_hz": 1070,
+    "below_500": 0.116,
+    "150_600": 0.27,
+    "above_4k": 0.02,
+    "flatness": 0.237,
+    "tonal_bins": 0,
+    "tone_hz": []
+   },
+   "dist": 1.046,
+   "reject": "spare (the 8 nearest the surface profile are kept)"
+  },
+  {
+   "onset_s": 9.305,
+   "len_s": 0.62,
+   "pre_db": 1.3,
+   "tail_db": -7.3,
+   "peak": 0.351,
+   "loud": -36.6,
+   "take": "steps_stone_walk_t5",
+   "reject": "overlaps previous step (1.3 dB before onset)"
+  },
+  {
+   "onset_s": 10.087,
+   "len_s": 0.4,
+   "pre_db": 8.7,
+   "tail_db": 7.6,
+   "peak": 0.074,
+   "loud": -42.4,
+   "take": "steps_stone_walk_t5",
+   "reject": "overlaps previous step (8.7 dB before onset); cut while still sounding (tail 7.6 dB)"
+  },
+  {
+   "onset_s": 10.498,
+   "len_s": 0.483,
+   "pre_db": -21.0,
+   "tail_db": -19.7,
+   "peak": 0.565,
+   "loud": -24.1,
+   "take": "steps_stone_walk_t5",
+   "spec": {
+    "centroid_hz": 1153,
+    "below_500": 0.065,
+    "150_600": 0.089,
+    "above_4k": 0.026,
+    "flatness": 0.259,
+    "tonal_bins": 0,
+    "tone_hz": []
+   },
+   "dist": 0.855,
+   "file": "stone_walk_06.wav",
+   "decay_ms": 19
+  },
+  {
+   "onset_s": 10.993,
+   "len_s": 0.62,
+   "pre_db": -15.2,
+   "tail_db": -60.3,
+   "peak": 0.201,
+   "loud": -35.1,
+   "take": "steps_stone_walk_t5",
+   "reject": "faint event, -11.0 dB below the surface's steps"
+  },
+  {
+   "onset_s": 0.014,
+   "reject": "starts with the take (attack may be cut)",
+   "take": "steps_stone_walk_t6"
+  },
+  {
+   "onset_s": 0.469,
+   "len_s": 0.569,
+   "pre_db": -7.4,
+   "tail_db": -13.1,
+   "peak": 0.089,
+   "loud": -43.6,
+   "take": "steps_stone_walk_t6",
+   "reject": "overlaps previous step (-7.4 dB before onset)"
+  },
+  {
+   "onset_s": 1.049,
+   "len_s": 0.62,
+   "pre_db": -37.3,
+   "tail_db": -33.2,
+   "peak": 0.456,
+   "loud": -29.2,
+   "take": "steps_stone_walk_t6",
+   "spec": {
+    "centroid_hz": 952,
+    "below_500": 0.316,
+    "150_600": 0.324,
+    "above_4k": 0.024,
+    "flatness": 0.257,
+    "tonal_bins": 0,
+    "tone_hz": []
+   },
+   "dist": 2.015,
+   "reject": "spare (the 8 nearest the surface profile are kept)"
+  },
+  {
+   "onset_s": 1.938,
+   "len_s": 0.62,
+   "pre_db": -11.6,
+   "tail_db": -2.8,
+   "peak": 1.0,
+   "loud": -19.6,
+   "take": "steps_stone_walk_t6",
+   "reject": "cut while still sounding (tail -2.8 dB); clipped"
+  },
+  {
+   "onset_s": 2.585,
+   "len_s": 0.507,
+   "pre_db": 17.8,
+   "tail_db": -23.9,
+   "peak": 0.346,
+   "loud": -32.4,
+   "take": "steps_stone_walk_t6",
+   "reject": "overlaps previous step (17.8 dB before onset)"
+  },
+  {
+   "onset_s": 3.103,
+   "len_s": 0.62,
+   "pre_db": -29.4,
+   "tail_db": -31.7,
+   "peak": 0.133,
+   "loud": -33.5,
+   "take": "steps_stone_walk_t6",
+   "reject": "faint event, -9.4 dB below the surface's steps"
+  },
+  {
+   "onset_s": 3.775,
+   "len_s": 0.369,
+   "pre_db": -25.1,
+   "tail_db": 5.5,
+   "peak": 0.079,
+   "loud": -40.1,
+   "take": "steps_stone_walk_t6",
+   "reject": "cut while still sounding (tail 5.5 dB)"
+  },
+  {
+   "onset_s": 4.155,
+   "len_s": 0.5,
+   "pre_db": 13.6,
+   "tail_db": -20.6,
+   "peak": 0.117,
+   "loud": -45.9,
+   "take": "steps_stone_walk_t6",
+   "reject": "overlaps previous step (13.6 dB before onset)"
+  },
+  {
+   "onset_s": 4.666,
+   "len_s": 0.28,
+   "pre_db": -23.2,
+   "tail_db": -32.4,
+   "peak": 0.69,
+   "loud": -25.7,
+   "take": "steps_stone_walk_t6",
+   "spec": {
+    "centroid_hz": 772,
+    "below_500": 0.579,
+    "150_600": 0.641,
+    "above_4k": 0.016,
+    "flatness": 0.282,
+    "tonal_bins": 0,
+    "tone_hz": []
+   },
+   "dist": 3.369,
+   "reject": "spare (the 8 nearest the surface profile are kept)"
+  },
+  {
+   "onset_s": 4.957,
+   "len_s": 0.542,
+   "pre_db": 11.3,
+   "tail_db": -28.2,
+   "peak": 0.018,
+   "loud": -50.7,
+   "take": "steps_stone_walk_t6",
+   "reject": "overlaps previous step (11.3 dB before onset)"
+  },
+  {
+   "onset_s": 5.51,
+   "len_s": 0.336,
+   "pre_db": -15.9,
+   "tail_db": -22.9,
+   "peak": 0.563,
+   "loud": -25.0,
+   "take": "steps_stone_walk_t6",
+   "spec": {
+    "centroid_hz": 1303,
+    "below_500": 0.032,
+    "150_600": 0.044,
+    "above_4k": 0.024,
+    "flatness": 0.209,
+    "tonal_bins": 0,
+    "tone_hz": []
+   },
+   "dist": 0.81,
+   "file": "stone_walk_07.wav",
+   "decay_ms": 44
+  },
+  {
+   "onset_s": 5.857,
+   "len_s": 0.463,
+   "pre_db": 1.3,
+   "tail_db": -1.3,
+   "peak": 0.058,
+   "loud": -64.1,
+   "take": "steps_stone_walk_t6",
+   "reject": "overlaps previous step (1.3 dB before onset); cut while still sounding (tail -1.3 dB)"
+  },
+  {
+   "onset_s": 6.331,
+   "len_s": 0.334,
+   "pre_db": -4.6,
+   "tail_db": -16.6,
+   "peak": 0.204,
+   "loud": -33.6,
+   "take": "steps_stone_walk_t6",
+   "reject": "overlaps previous step (-4.6 dB before onset)"
+  },
+  {
+   "onset_s": 6.676,
+   "len_s": 0.345,
+   "pre_db": 0.4,
+   "tail_db": -4.8,
+   "peak": 0.005,
+   "loud": -63.2,
+   "take": "steps_stone_walk_t6",
+   "reject": "overlaps previous step (0.4 dB before onset); cut while still sounding (tail -4.8 dB)"
+  },
+  {
+   "onset_s": 7.032,
+   "len_s": 0.348,
+   "pre_db": -19.1,
+   "tail_db": -50.5,
+   "peak": 0.727,
+   "loud": -20.3,
+   "take": "steps_stone_walk_t6",
+   "spec": {
+    "centroid_hz": 1359,
+    "below_500": 0.186,
+    "150_600": 0.34,
+    "above_4k": 0.065,
+    "flatness": 0.287,
+    "tonal_bins": 0,
+    "tone_hz": []
+   },
+   "dist": 0.981,
+   "reject": "spare (the 8 nearest the surface profile are kept)"
+  },
+  {
+   "onset_s": 7.39,
+   "len_s": 0.3,
+   "pre_db": -6.7,
+   "tail_db": -1.8,
+   "peak": 0.036,
+   "loud": -46.0,
+   "take": "steps_stone_walk_t6",
+   "reject": "overlaps previous step (-6.7 dB before onset); cut while still sounding (tail -1.8 dB)"
+  },
+  {
+   "onset_s": 7.702,
+   "len_s": 0.451,
+   "pre_db": -4.6,
+   "tail_db": -30.2,
+   "peak": 0.077,
+   "loud": -38.7,
+   "take": "steps_stone_walk_t6",
+   "reject": "overlaps previous step (-4.6 dB before onset)"
+  },
+  {
+   "onset_s": 8.164,
+   "len_s": 0.371,
+   "pre_db": -34.2,
+   "tail_db": 2.4,
+   "peak": 0.353,
+   "loud": -29.0,
+   "take": "steps_stone_walk_t6",
+   "reject": "cut while still sounding (tail 2.4 dB)"
+  },
+  {
+   "onset_s": 8.546,
+   "len_s": 0.354,
+   "pre_db": -1.9,
+   "tail_db": -1.0,
+   "peak": 0.049,
+   "loud": -42.0,
+   "take": "steps_stone_walk_t6",
+   "reject": "overlaps previous step (-1.9 dB before onset); cut while still sounding (tail -1.0 dB)"
+  },
+  {
+   "onset_s": 8.91,
+   "len_s": 0.62,
+   "pre_db": 1.8,
+   "tail_db": -26.5,
+   "peak": 0.081,
+   "loud": -40.7,
+   "take": "steps_stone_walk_t6",
+   "reject": "overlaps previous step (1.8 dB before onset)"
+  },
+  {
+   "onset_s": 9.778,
+   "len_s": 0.399,
+   "pre_db": 3.9,
+   "tail_db": -11.3,
+   "peak": 0.053,
+   "loud": -49.1,
+   "take": "steps_stone_walk_t6",
+   "reject": "overlaps previous step (3.9 dB before onset)"
+  },
+  {
+   "onset_s": 10.188,
+   "len_s": 0.285,
+   "pre_db": -36.2,
+   "tail_db": -14.5,
+   "peak": 0.346,
+   "loud": -28.2,
+   "take": "steps_stone_walk_t6",
+   "spec": {
+    "centroid_hz": 2371,
+    "below_500": 0.172,
+    "150_600": 0.288,
+    "above_4k": 0.188,
+    "flatness": 0.382,
+    "tonal_bins": 0,
+    "tone_hz": []
+   },
+   "dist": 0.613,
+   "file": "stone_walk_08.wav",
+   "decay_ms": 27
+  },
+  {
+   "onset_s": 10.484,
+   "len_s": 0.334,
+   "pre_db": 3.3,
+   "tail_db": -22.1,
+   "peak": 0.123,
+   "loud": -43.5,
+   "take": "steps_stone_walk_t6",
+   "reject": "overlaps previous step (3.3 dB before onset)"
+  },
+  {
+   "onset_s": 10.829,
+   "len_s": 0.482,
+   "pre_db": -27.9,
+   "tail_db": 8.2,
+   "peak": 0.263,
+   "loud": -31.8,
+   "take": "steps_stone_walk_t6",
+   "reject": "cut while still sounding (tail 8.2 dB)"
+  },
+  {
+   "onset_s": 11.322,
+   "len_s": 0.352,
+   "pre_db": -10.6,
+   "tail_db": 14.8,
+   "peak": 0.088,
+   "loud": -40.4,
+   "take": "steps_stone_walk_t6",
+   "reject": "cut while still sounding (tail 14.8 dB)"
+  },
+  {
+   "onset_s": 11.685,
+   "len_s": 0.304,
+   "pre_db": 19.4,
+   "tail_db": -20.1,
+   "peak": 0.053,
+   "loud": -47.3,
+   "take": "steps_stone_walk_t6",
+   "reject": "overlaps previous step (19.4 dB before onset)"
+  }
+ ],
+ "wood": [
+  {
+   "onset_s": 0.401,
+   "len_s": 0.549,
+   "pre_db": 8.4,
+   "tail_db": -24.4,
+   "peak": 0.085,
+   "loud": -35.1,
+   "take": "steps_wood_t3",
+   "reject": "overlaps previous step (8.4 dB before onset)"
+  },
+  {
+   "onset_s": 0.961,
+   "len_s": 0.62,
+   "pre_db": -16.7,
+   "tail_db": -35.9,
+   "peak": 0.022,
+   "loud": -51.0,
+   "take": "steps_wood_t3",
+   "reject": "faint event, -33.0 dB below the surface's steps"
+  },
+  {
+   "onset_s": 1.869,
+   "len_s": 0.62,
+   "pre_db": 9.5,
+   "tail_db": -34.6,
+   "peak": 0.081,
+   "loud": -35.1,
+   "take": "steps_wood_t3",
+   "reject": "overlaps previous step (9.5 dB before onset)"
+  },
+  {
+   "onset_s": 3.058,
+   "len_s": 0.62,
+   "pre_db": -31.3,
+   "tail_db": -37.2,
+   "peak": 1.0,
+   "loud": -14.3,
+   "take": "steps_wood_t3",
+   "reject": "clipped"
+  },
+  {
+   "onset_s": 4.492,
+   "len_s": 0.373,
+   "pre_db": -21.5,
+   "tail_db": -13.6,
+   "peak": 0.775,
+   "loud": -17.9,
+   "take": "steps_wood_t3",
+   "spec": {
+    "centroid_hz": 124,
+    "below_500": 0.967,
+    "150_600": 0.122,
+    "above_4k": 0.0,
+    "flatness": 0.0,
+    "tonal_bins": 0,
+    "tone_hz": []
+   },
+   "dist": 1.536,
+   "reject": "spare (the 8 nearest the surface profile are kept)"
+  },
+  {
+   "onset_s": 4.876,
+   "len_s": 0.62,
+   "pre_db": 7.8,
+   "tail_db": -47.0,
+   "peak": 0.013,
+   "loud": -48.3,
+   "take": "steps_wood_t3",
+   "reject": "overlaps previous step (7.8 dB before onset)"
+  },
+  {
+   "onset_s": 6.211,
+   "len_s": 0.62,
+   "pre_db": 10.2,
+   "tail_db": -32.6,
+   "peak": 0.07,
+   "loud": -36.8,
+   "take": "steps_wood_t3",
+   "reject": "overlaps previous step (10.2 dB before onset)"
+  },
+  {
+   "onset_s": 7.509,
+   "len_s": 0.62,
+   "pre_db": -26.3,
+   "tail_db": -36.0,
+   "peak": 1.0,
+   "loud": -13.5,
+   "take": "steps_wood_t3",
+   "reject": "clipped"
+  },
+  {
+   "onset_s": 8.994,
+   "len_s": 0.394,
+   "pre_db": -22.6,
+   "tail_db": -14.8,
+   "peak": 1.0,
+   "loud": -15.5,
+   "take": "steps_wood_t3",
+   "reject": "clipped"
+  },
+  {
+   "onset_s": 9.398,
+   "len_s": 0.62,
+   "pre_db": 8.3,
+   "tail_db": -42.1,
+   "peak": 0.011,
+   "loud": -50.2,
+   "take": "steps_wood_t3",
+   "reject": "overlaps previous step (8.3 dB before onset)"
+  },
+  {
+   "onset_s": 10.363,
+   "len_s": 0.342,
+   "pre_db": -24.1,
+   "tail_db": -10.7,
+   "peak": 1.0,
+   "loud": -16.6,
+   "take": "steps_wood_t3",
+   "reject": "clipped"
+  },
+  {
+   "onset_s": 10.716,
+   "len_s": 0.62,
+   "pre_db": 6.6,
+   "tail_db": -29.0,
+   "peak": 0.026,
+   "loud": -43.6,
+   "take": "steps_wood_t3",
+   "reject": "overlaps previous step (6.6 dB before onset)"
+  },
+  {
+   "onset_s": 0.09,
+   "len_s": 0.62,
+   "pre_db": -20.5,
+   "tail_db": -55.3,
+   "peak": 1.0,
+   "loud": -17.3,
+   "take": "steps_wood_t4",
+   "reject": "clipped"
+  },
+  {
+   "onset_s": 0.786,
+   "len_s": 0.62,
+   "pre_db": -27.8,
+   "tail_db": -48.1,
+   "peak": 0.671,
+   "loud": -18.2,
+   "take": "steps_wood_t4",
+   "spec": {
+    "centroid_hz": 273,
+    "below_500": 0.851,
+    "150_600": 0.381,
+    "above_4k": 0.0,
+    "flatness": 0.002,
+    "tonal_bins": 0,
+    "tone_hz": []
+   },
+   "dist": 0.256,
+   "file": "wood_01.wav",
+   "decay_ms": 143
+  },
+  {
+   "onset_s": 1.562,
+   "len_s": 0.62,
+   "pre_db": -25.4,
+   "tail_db": -51.8,
+   "peak": 0.607,
+   "loud": -21.3,
+   "take": "steps_wood_t4",
+   "spec": {
+    "centroid_hz": 364,
+    "below_500": 0.68,
+    "150_600": 0.286,
+    "above_4k": 0.0,
+    "flatness": 0.002,
+    "tonal_bins": 0,
+    "tone_hz": []
+   },
+   "dist": 1.165,
+   "reject": "spare (the 8 nearest the surface profile are kept)"
+  },
+  {
+   "onset_s": 2.314,
+   "len_s": 0.62,
+   "pre_db": -21.5,
+   "tail_db": -40.3,
+   "peak": 0.677,
+   "loud": -21.0,
+   "take": "steps_wood_t4",
+   "spec": {
+    "centroid_hz": 601,
+    "below_500": 0.469,
+    "150_600": 0.263,
+    "above_4k": 0.0,
+    "flatness": 0.006,
+    "tonal_bins": 0,
+    "tone_hz": []
+   },
+   "dist": 2.733,
+   "reject": "spare (the 8 nearest the surface profile are kept)"
+  },
+  {
+   "onset_s": 3.121,
+   "len_s": 0.62,
+   "pre_db": -19.1,
+   "tail_db": -42.7,
+   "peak": 0.478,
+   "loud": -22.6,
+   "take": "steps_wood_t4",
+   "spec": {
+    "centroid_hz": 324,
+    "below_500": 0.731,
+    "150_600": 0.207,
+    "above_4k": 0.0,
+    "flatness": 0.002,
+    "tonal_bins": 0,
+    "tone_hz": []
+   },
+   "dist": 0.793,
+   "reject": "spare (the 8 nearest the surface profile are kept)"
+  },
+  {
+   "onset_s": 3.986,
+   "len_s": 0.62,
+   "pre_db": -23.7,
+   "tail_db": -34.1,
+   "peak": 0.411,
+   "loud": -23.1,
+   "take": "steps_wood_t4",
+   "spec": {
+    "centroid_hz": 178,
+    "below_500": 0.922,
+    "150_600": 0.241,
+    "above_4k": 0.0,
+    "flatness": 0.0,
+    "tonal_bins": 0,
+    "tone_hz": []
+   },
+   "dist": 0.835,
+   "reject": "spare (the 8 nearest the surface profile are kept)"
+  },
+  {
+   "onset_s": 4.97,
+   "len_s": 0.62,
+   "pre_db": -2.7,
+   "tail_db": -46.7,
+   "peak": 0.291,
+   "loud": -24.2,
+   "take": "steps_wood_t4",
+   "reject": "overlaps previous step (-2.7 dB before onset)"
+  },
+  {
+   "onset_s": 5.736,
+   "len_s": 0.62,
+   "pre_db": -24.3,
+   "tail_db": -51.8,
+   "peak": 0.41,
+   "loud": -22.7,
+   "take": "steps_wood_t4",
+   "spec": {
+    "centroid_hz": 131,
+    "below_500": 0.979,
+    "150_600": 0.182,
+    "above_4k": 0.0,
+    "flatness": 0.0,
+    "tonal_bins": 0,
+    "tone_hz": []
+   },
+   "dist": 1.505,
+   "reject": "spare (the 8 nearest the surface profile are kept)"
+  },
+  {
+   "onset_s": 6.425,
+   "len_s": 0.62,
+   "pre_db": -30.4,
+   "tail_db": -52.2,
+   "peak": 0.449,
+   "loud": -20.9,
+   "take": "steps_wood_t4",
+   "spec": {
+    "centroid_hz": 113,
+    "below_500": 0.976,
+    "150_600": 0.078,
+    "above_4k": 0.0,
+    "flatness": 0.0,
+    "tonal_bins": 0,
+    "tone_hz": []
+   },
+   "dist": 1.706,
+   "reject": "spare (the 8 nearest the surface profile are kept)"
+  },
+  {
+   "onset_s": 7.216,
+   "len_s": 0.62,
+   "pre_db": -26.7,
+   "tail_db": -43.9,
+   "peak": 1.0,
+   "loud": -18.0,
+   "take": "steps_wood_t4",
+   "reject": "clipped"
+  },
+  {
+   "onset_s": 8.035,
+   "len_s": 0.62,
+   "pre_db": -29.2,
+   "tail_db": -39.9,
+   "peak": 0.668,
+   "loud": -18.8,
+   "take": "steps_wood_t4",
+   "spec": {
+    "centroid_hz": 181,
+    "below_500": 0.919,
+    "150_600": 0.198,
+    "above_4k": 0.0,
+    "flatness": 0.001,
+    "tonal_bins": 0,
+    "tone_hz": []
+   },
+   "dist": 0.799,
+   "reject": "spare (the 8 nearest the surface profile are kept)"
+  },
+  {
+   "onset_s": 8.905,
+   "len_s": 0.62,
+   "pre_db": -0.4,
+   "tail_db": -47.7,
+   "peak": 0.245,
+   "loud": -22.7,
+   "take": "steps_wood_t4",
+   "reject": "overlaps previous step (-0.4 dB before onset)"
+  },
+  {
+   "onset_s": 9.758,
+   "len_s": 0.62,
+   "pre_db": 2.2,
+   "tail_db": -46.1,
+   "peak": 0.461,
+   "loud": -20.8,
+   "take": "steps_wood_t4",
+   "reject": "overlaps previous step (2.2 dB before onset)"
+  },
+  {
+   "onset_s": 10.594,
+   "len_s": 0.62,
+   "pre_db": -16.4,
+   "tail_db": -49.6,
+   "peak": 0.289,
+   "loud": -23.8,
+   "take": "steps_wood_t4",
+   "spec": {
+    "centroid_hz": 97,
+    "below_500": 0.999,
+    "150_600": 0.081,
+    "above_4k": 0.0,
+    "flatness": 0.0,
+    "tonal_bins": 0,
+    "tone_hz": []
+   },
+   "dist": 2.018,
+   "reject": "spare (the 8 nearest the surface profile are kept)"
+  },
+  {
+   "onset_s": 11.291,
+   "len_s": 0.62,
+   "pre_db": 3.0,
+   "tail_db": -63.0,
+   "peak": 0.15,
+   "loud": -27.6,
+   "take": "steps_wood_t4",
+   "reject": "overlaps previous step (3.0 dB before onset)"
+  },
+  {
+   "onset_s": 0.165,
+   "len_s": 0.62,
+   "pre_db": -22.3,
+   "tail_db": -61.8,
+   "peak": 0.898,
+   "loud": -18.6,
+   "take": "steps_wood_t5",
+   "spec": {
+    "centroid_hz": 335,
+    "below_500": 0.759,
+    "150_600": 0.433,
+    "above_4k": 0.0,
+    "flatness": 0.008,
+    "tonal_bins": 0,
+    "tone_hz": []
+   },
+   "dist": 0.34,
+   "file": "wood_02.wav",
+   "decay_ms": 159
+  },
+  {
+   "onset_s": 1.059,
+   "len_s": 0.62,
+   "pre_db": -16.2,
+   "tail_db": -48.2,
+   "peak": 1.0,
+   "loud": -16.7,
+   "take": "steps_wood_t5",
+   "reject": "clipped"
+  },
+  {
+   "onset_s": 2.003,
+   "len_s": 0.62,
+   "pre_db": 6.5,
+   "tail_db": -55.3,
+   "peak": 0.214,
+   "loud": -29.2,
+   "take": "steps_wood_t5",
+   "reject": "overlaps previous step (6.5 dB before onset)"
+  },
+  {
+   "onset_s": 2.806,
+   "len_s": 0.62,
+   "pre_db": 7.2,
+   "tail_db": -56.1,
+   "peak": 0.478,
+   "loud": -25.6,
+   "take": "steps_wood_t5",
+   "reject": "overlaps previous step (7.2 dB before onset)"
+  },
+  {
+   "onset_s": 3.657,
+   "len_s": 0.62,
+   "pre_db": 8.1,
+   "tail_db": -58.2,
+   "peak": 0.571,
+   "loud": -23.8,
+   "take": "steps_wood_t5",
+   "reject": "overlaps previous step (8.1 dB before onset)"
+  },
+  {
+   "onset_s": 4.461,
+   "len_s": 0.62,
+   "pre_db": -19.8,
+   "tail_db": -53.5,
+   "peak": 0.867,
+   "loud": -17.6,
+   "take": "steps_wood_t5",
+   "spec": {
+    "centroid_hz": 341,
+    "below_500": 0.749,
+    "150_600": 0.327,
+    "above_4k": 0.0,
+    "flatness": 0.012,
+    "tonal_bins": 0,
+    "tone_hz": []
+   },
+   "dist": 0.795,
+   "reject": "spare (the 8 nearest the surface profile are kept)"
+  },
+  {
+   "onset_s": 5.225,
+   "len_s": 0.62,
+   "pre_db": -19.1,
+   "tail_db": -56.1,
+   "peak": 1.0,
+   "loud": -17.7,
+   "take": "steps_wood_t5",
+   "reject": "clipped"
+  },
+  {
+   "onset_s": 6.031,
+   "len_s": 0.62,
+   "pre_db": -30.3,
+   "tail_db": -59.0,
+   "peak": 0.965,
+   "loud": -16.8,
+   "take": "steps_wood_t5",
+   "spec": {
+    "centroid_hz": 300,
+    "below_500": 0.797,
+    "150_600": 0.481,
+    "above_4k": 0.0,
+    "flatness": 0.002,
+    "tonal_bins": 0,
+    "tone_hz": []
+   },
+   "dist": 0.121,
+   "file": "wood_03.wav",
+   "decay_ms": 158
+  },
+  {
+   "onset_s": 6.942,
+   "len_s": 0.62,
+   "pre_db": -26.1,
+   "tail_db": -56.1,
+   "peak": 0.931,
+   "loud": -18.7,
+   "take": "steps_wood_t5",
+   "spec": {
+    "centroid_hz": 315,
+    "below_500": 0.801,
+    "150_600": 0.513,
+    "above_4k": 0.0,
+    "flatness": 0.01,
+    "tonal_bins": 0,
+    "tone_hz": []
+   },
+   "dist": 0.256,
+   "file": "wood_04.wav",
+   "decay_ms": 164
+  },
+  {
+   "onset_s": 7.809,
+   "len_s": 0.62,
+   "pre_db": -23.5,
+   "tail_db": -61.4,
+   "peak": 1.0,
+   "loud": -16.1,
+   "take": "steps_wood_t5",
+   "reject": "clipped"
+  },
+  {
+   "onset_s": 8.661,
+   "len_s": 0.62,
+   "pre_db": -26.1,
+   "tail_db": -55.7,
+   "peak": 1.0,
+   "loud": -16.0,
+   "take": "steps_wood_t5",
+   "reject": "clipped"
+  },
+  {
+   "onset_s": 9.556,
+   "len_s": 0.62,
+   "pre_db": -25.7,
+   "tail_db": -61.8,
+   "peak": 1.0,
+   "loud": -14.0,
+   "take": "steps_wood_t5",
+   "reject": "clipped"
+  },
+  {
+   "onset_s": 10.336,
+   "len_s": 0.62,
+   "pre_db": -24.9,
+   "tail_db": -53.4,
+   "peak": 1.0,
+   "loud": -16.4,
+   "take": "steps_wood_t5",
+   "reject": "clipped"
+  },
+  {
+   "onset_s": 11.258,
+   "len_s": 0.62,
+   "pre_db": -25.1,
+   "tail_db": -61.2,
+   "peak": 0.861,
+   "loud": -14.9,
+   "take": "steps_wood_t5",
+   "spec": {
+    "centroid_hz": 168,
+    "below_500": 0.987,
+    "150_600": 0.478,
+    "above_4k": 0.0,
+    "flatness": 0.0,
+    "tonal_bins": 0,
+    "tone_hz": []
+   },
+   "dist": 1.178,
+   "reject": "spare (the 8 nearest the surface profile are kept)"
+  },
+  {
+   "onset_s": 0.098,
+   "len_s": 0.62,
+   "pre_db": -26.0,
+   "tail_db": -39.2,
+   "peak": 0.954,
+   "loud": -16.6,
+   "take": "steps_wood_t6",
+   "spec": {
+    "centroid_hz": 278,
+    "below_500": 0.853,
+    "150_600": 0.307,
+    "above_4k": 0.0,
+    "flatness": 0.003,
+    "tonal_bins": 0,
+    "tone_hz": []
+   },
+   "dist": 0.229,
+   "file": "wood_05.wav",
+   "decay_ms": 192
+  },
+  {
+   "onset_s": 1.19,
+   "len_s": 0.62,
+   "pre_db": 15.3,
+   "tail_db": -27.2,
+   "peak": 0.012,
+   "loud": -47.5,
+   "take": "steps_wood_t6",
+   "reject": "overlaps previous step (15.3 dB before onset)"
+  },
+  {
+   "onset_s": 1.939,
+   "len_s": 0.62,
+   "pre_db": -25.9,
+   "tail_db": -32.8,
+   "peak": 0.819,
+   "loud": -17.1,
+   "take": "steps_wood_t6",
+   "spec": {
+    "centroid_hz": 155,
+    "below_500": 0.948,
+    "150_600": 0.155,
+    "above_4k": 0.0,
+    "flatness": 0.0,
+    "tonal_bins": 0,
+    "tone_hz": []
+   },
+   "dist": 1.138,
+   "reject": "spare (the 8 nearest the surface profile are kept)"
+  },
+  {
+   "onset_s": 2.65,
+   "len_s": 0.62,
+   "pre_db": -18.8,
+   "tail_db": -29.2,
+   "peak": 0.682,
+   "loud": -20.5,
+   "take": "steps_wood_t6",
+   "spec": {
+    "centroid_hz": 143,
+    "below_500": 0.958,
+    "150_600": 0.145,
+    "above_4k": 0.0,
+    "flatness": 0.0,
+    "tonal_bins": 0,
+    "tone_hz": []
+   },
+   "dist": 1.294,
+   "reject": "spare (the 8 nearest the surface profile are kept)"
+  },
+  {
+   "onset_s": 3.338,
+   "len_s": 0.62,
+   "pre_db": -38.7,
+   "tail_db": -33.4,
+   "peak": 0.577,
+   "loud": -19.8,
+   "take": "steps_wood_t6",
+   "spec": {
+    "centroid_hz": 155,
+    "below_500": 0.949,
+    "150_600": 0.174,
+    "above_4k": 0.0,
+    "flatness": 0.0,
+    "tonal_bins": 0,
+    "tone_hz": []
+   },
+   "dist": 1.142,
+   "reject": "spare (the 8 nearest the surface profile are kept)"
+  },
+  {
+   "onset_s": 4.035,
+   "len_s": 0.62,
+   "pre_db": -25.9,
+   "tail_db": -31.9,
+   "peak": 0.71,
+   "loud": -20.5,
+   "take": "steps_wood_t6",
+   "spec": {
+    "centroid_hz": 325,
+    "below_500": 0.778,
+    "150_600": 0.254,
+    "above_4k": 0.0,
+    "flatness": 0.002,
+    "tonal_bins": 0,
+    "tone_hz": []
+   },
+   "dist": 0.18,
+   "file": "wood_06.wav",
+   "decay_ms": 162
+  },
+  {
+   "onset_s": 4.743,
+   "len_s": 0.62,
+   "pre_db": -24.2,
+   "tail_db": -29.9,
+   "peak": 0.638,
+   "loud": -18.8,
+   "take": "steps_wood_t6",
+   "spec": {
+    "centroid_hz": 132,
+    "below_500": 0.97,
+    "150_600": 0.167,
+    "above_4k": 0.0,
+    "flatness": 0.0,
+    "tonal_bins": 0,
+    "tone_hz": []
+   },
+   "dist": 1.458,
+   "reject": "spare (the 8 nearest the surface profile are kept)"
+  },
+  {
+   "onset_s": 5.498,
+   "len_s": 0.62,
+   "pre_db": -22.8,
+   "tail_db": -31.5,
+   "peak": 0.831,
+   "loud": -21.9,
+   "take": "steps_wood_t6",
+   "spec": {
+    "centroid_hz": 359,
+    "below_500": 0.751,
+    "150_600": 0.233,
+    "above_4k": 0.0,
+    "flatness": 0.001,
+    "tonal_bins": 0,
+    "tone_hz": []
+   },
+   "dist": 0.861,
+   "reject": "spare (the 8 nearest the surface profile are kept)"
+  },
+  {
+   "onset_s": 6.398,
+   "len_s": 0.612,
+   "pre_db": 9.0,
+   "tail_db": -24.9,
+   "peak": 0.06,
+   "loud": -37.9,
+   "take": "steps_wood_t6",
+   "reject": "overlaps previous step (9.0 dB before onset)"
+  },
+  {
+   "onset_s": 7.021,
+   "len_s": 0.62,
+   "pre_db": -29.1,
+   "tail_db": -27.4,
+   "peak": 0.569,
+   "loud": -21.3,
+   "take": "steps_wood_t6",
+   "spec": {
+    "centroid_hz": 345,
+    "below_500": 0.758,
+    "150_600": 0.217,
+    "above_4k": 0.0,
+    "flatness": 0.002,
+    "tonal_bins": 0,
+    "tone_hz": []
+   },
+   "dist": 0.776,
+   "reject": "spare (the 8 nearest the surface profile are kept)"
+  },
+  {
+   "onset_s": 7.818,
+   "len_s": 0.42,
+   "pre_db": -30.7,
+   "tail_db": -13.9,
+   "peak": 0.395,
+   "loud": -20.4,
+   "take": "steps_wood_t6",
+   "spec": {
+    "centroid_hz": 90,
+    "below_500": 0.999,
+    "150_600": 0.053,
+    "above_4k": 0.0,
+    "flatness": 0.0,
+    "tonal_bins": 0,
+    "tone_hz": []
+   },
+   "dist": 2.127,
+   "reject": "spare (the 8 nearest the surface profile are kept)"
+  },
+  {
+   "onset_s": 8.249,
+   "len_s": 0.448,
+   "pre_db": 7.4,
+   "tail_db": -13.2,
+   "peak": 0.007,
+   "loud": -52.0,
+   "take": "steps_wood_t6",
+   "reject": "overlaps previous step (7.4 dB before onset)"
+  },
+  {
+   "onset_s": 8.707,
+   "len_s": 0.62,
+   "pre_db": -45.3,
+   "tail_db": -34.0,
+   "peak": 0.534,
+   "loud": -18.8,
+   "take": "steps_wood_t6",
+   "spec": {
+    "centroid_hz": 109,
+    "below_500": 0.975,
+    "150_600": 0.066,
+    "above_4k": 0.0,
+    "flatness": 0.001,
+    "tonal_bins": 0,
+    "tone_hz": []
+   },
+   "dist": 1.754,
+   "reject": "spare (the 8 nearest the surface profile are kept)"
+  },
+  {
+   "onset_s": 9.529,
+   "len_s": 0.62,
+   "pre_db": -31.2,
+   "tail_db": -30.0,
+   "peak": 0.669,
+   "loud": -21.8,
+   "take": "steps_wood_t6",
+   "spec": {
+    "centroid_hz": 268,
+    "below_500": 0.829,
+    "150_600": 0.231,
+    "above_4k": 0.0,
+    "flatness": 0.002,
+    "tonal_bins": 0,
+    "tone_hz": []
+   },
+   "dist": 0.45,
+   "file": "wood_07.wav",
+   "decay_ms": 181
+  },
+  {
+   "onset_s": 10.252,
+   "len_s": 0.62,
+   "pre_db": -27.5,
+   "tail_db": -36.1,
+   "peak": 0.727,
+   "loud": -19.6,
+   "take": "steps_wood_t6",
+   "spec": {
+    "centroid_hz": 373,
+    "below_500": 0.703,
+    "150_600": 0.303,
+    "above_4k": 0.0,
+    "flatness": 0.002,
+    "tonal_bins": 0,
+    "tone_hz": []
+   },
+   "dist": 1.109,
+   "reject": "spare (the 8 nearest the surface profile are kept)"
+  },
+  {
+   "onset_s": 11.115,
+   "len_s": 0.62,
+   "pre_db": -20.9,
+   "tail_db": -56.2,
+   "peak": 0.471,
+   "loud": -24.2,
+   "take": "steps_wood_t6",
+   "spec": {
+    "centroid_hz": 320,
+    "below_500": 0.755,
+    "150_600": 0.259,
+    "above_4k": 0.0,
+    "flatness": 0.001,
+    "tonal_bins": 0,
+    "tone_hz": []
+   },
+   "dist": 0.15,
+   "file": "wood_08.wav",
+   "decay_ms": 193
+  }
+ ],
+ "straw": [
+  {
+   "onset_s": 0.252,
+   "len_s": 0.468,
+   "pre_db": -13.5,
+   "tail_db": -23.0,
+   "peak": 0.661,
+   "loud": -24.0,
+   "take": "steps_straw_t3",
+   "spec": {
+    "centroid_hz": 3373,
+    "below_500": 0.463,
+    "150_600": 0.467,
+    "above_4k": 0.403,
+    "flatness": 0.302,
+    "tonal_bins": 0,
+    "tone_hz": []
+   },
+   "dist": 1.284,
+   "file": "straw_01.wav",
+   "decay_ms": 34
+  },
+  {
+   "onset_s": 0.731,
+   "len_s": 0.602,
+   "pre_db": -2.8,
+   "tail_db": -22.2,
+   "peak": 0.632,
+   "loud": -26.3,
+   "take": "steps_straw_t3",
+   "reject": "overlaps previous step (-2.8 dB before onset)"
+  },
+  {
+   "onset_s": 1.345,
+   "len_s": 0.394,
+   "pre_db": -12.8,
+   "tail_db": 14.5,
+   "peak": 0.497,
+   "loud": -24.5,
+   "take": "steps_straw_t3",
+   "reject": "cut while still sounding (tail 14.5 dB)"
+  },
+  {
+   "onset_s": 1.75,
+   "len_s": 0.529,
+   "pre_db": 3.2,
+   "tail_db": -46.0,
+   "peak": 0.398,
+   "loud": -30.8,
+   "take": "steps_straw_t3",
+   "reject": "overlaps previous step (3.2 dB before onset)"
+  },
+  {
+   "onset_s": 2.29,
+   "len_s": 0.423,
+   "pre_db": -29.3,
+   "tail_db": -5.1,
+   "peak": 0.514,
+   "loud": -25.7,
+   "take": "steps_straw_t3",
+   "reject": "cut while still sounding (tail -5.1 dB)"
+  },
+  {
+   "onset_s": 2.724,
+   "len_s": 0.32,
+   "pre_db": -11.7,
+   "tail_db": -10.7,
+   "peak": 0.204,
+   "loud": -37.9,
+   "take": "steps_straw_t3",
+   "reject": "faint event, -9.9 dB below the surface's steps"
+  },
+  {
+   "onset_s": 3.055,
+   "len_s": 0.372,
+   "pre_db": -10.9,
+   "tail_db": 4.8,
+   "peak": 0.216,
+   "loud": -27.1,
+   "take": "steps_straw_t3",
+   "reject": "cut while still sounding (tail 4.8 dB)"
+  },
+  {
+   "onset_s": 3.438,
+   "len_s": 0.371,
+   "pre_db": -4.8,
+   "tail_db": 0.6,
+   "peak": 0.096,
+   "loud": -42.8,
+   "take": "steps_straw_t3",
+   "reject": "overlaps previous step (-4.8 dB before onset); cut while still sounding (tail 0.6 dB)"
+  },
+  {
+   "onset_s": 3.82,
+   "len_s": 0.335,
+   "pre_db": -15.4,
+   "tail_db": 5.2,
+   "peak": 0.561,
+   "loud": -26.3,
+   "take": "steps_straw_t3",
+   "reject": "cut while still sounding (tail 5.2 dB)"
+  },
+  {
+   "onset_s": 4.167,
+   "len_s": 0.62,
+   "pre_db": 12.7,
+   "tail_db": 12.9,
+   "peak": 0.259,
+   "loud": -44.9,
+   "take": "steps_straw_t3",
+   "reject": "overlaps previous step (12.7 dB before onset); cut while still sounding (tail 12.9 dB)"
+  },
+  {
+   "onset_s": 4.803,
+   "len_s": 0.547,
+   "pre_db": 3.8,
+   "tail_db": -29.7,
+   "peak": 0.204,
+   "loud": -35.0,
+   "take": "steps_straw_t3",
+   "reject": "overlaps previous step (3.8 dB before onset)"
+  },
+  {
+   "onset_s": 5.361,
+   "len_s": 0.528,
+   "pre_db": -15.0,
+   "tail_db": -33.8,
+   "peak": 0.736,
+   "loud": -21.7,
+   "take": "steps_straw_t3",
+   "reject": "stomp, +6.2 dB above the surface's steps"
+  },
+  {
+   "onset_s": 5.9,
+   "len_s": 0.382,
+   "pre_db": -12.3,
+   "tail_db": 12.1,
+   "peak": 0.158,
+   "loud": -26.4,
+   "take": "steps_straw_t3",
+   "reject": "cut while still sounding (tail 12.1 dB)"
+  },
+  {
+   "onset_s": 6.293,
+   "len_s": 0.415,
+   "pre_db": 13.7,
+   "tail_db": -25.9,
+   "peak": 0.194,
+   "loud": -35.3,
+   "take": "steps_straw_t3",
+   "reject": "overlaps previous step (13.7 dB before onset)"
+  },
+  {
+   "onset_s": 6.719,
+   "len_s": 0.541,
+   "pre_db": -21.5,
+   "tail_db": -7.1,
+   "peak": 0.14,
+   "loud": -28.7,
+   "take": "steps_straw_t3",
+   "spec": {
+    "centroid_hz": 5763,
+    "below_500": 0.102,
+    "150_600": 0.109,
+    "above_4k": 0.669,
+    "flatness": 0.382,
+    "tonal_bins": 0,
+    "tone_hz": []
+   },
+   "dist": 0.996,
+   "file": "straw_02.wav",
+   "decay_ms": 85
+  },
+  {
+   "onset_s": 7.272,
+   "len_s": 0.452,
+   "pre_db": -3.9,
+   "tail_db": 3.1,
+   "peak": 0.068,
+   "loud": -49.3,
+   "take": "steps_straw_t3",
+   "reject": "overlaps previous step (-3.9 dB before onset); cut while still sounding (tail 3.1 dB)"
+  },
+  {
+   "onset_s": 7.735,
+   "len_s": 0.62,
+   "pre_db": -12.0,
+   "tail_db": -30.7,
+   "peak": 0.221,
+   "loud": -31.7,
+   "take": "steps_straw_t3",
+   "spec": {
+    "centroid_hz": 3053,
+    "below_500": 0.195,
+    "150_600": 0.276,
+    "above_4k": 0.292,
+    "flatness": 0.318,
+    "tonal_bins": 0,
+    "tone_hz": []
+   },
+   "dist": 0.292,
+   "file": "straw_03.wav",
+   "decay_ms": 73
+  },
+  {
+   "onset_s": 8.413,
+   "len_s": 0.62,
+   "pre_db": -20.9,
+   "tail_db": -56.3,
+   "peak": 0.433,
+   "loud": -28.1,
+   "take": "steps_straw_t3",
+   "spec": {
+    "centroid_hz": 3936,
+    "below_500": 0.135,
+    "150_600": 0.295,
+    "above_4k": 0.424,
+    "flatness": 0.374,
+    "tonal_bins": 0,
+    "tone_hz": []
+   },
+   "dist": 0.314,
+   "file": "straw_04.wav",
+   "decay_ms": 7
+  },
+  {
+   "onset_s": 9.053,
+   "len_s": 0.355,
+   "pre_db": -6.8,
+   "tail_db": 18.7,
+   "peak": 0.406,
+   "loud": -25.8,
+   "take": "steps_straw_t3",
+   "reject": "overlaps previous step (-6.8 dB before onset); cut while still sounding (tail 18.7 dB)"
+  },
+  {
+   "onset_s": 9.418,
+   "len_s": 0.302,
+   "pre_db": -3.1,
+   "tail_db": -16.6,
+   "peak": 0.154,
+   "loud": -38.0,
+   "take": "steps_straw_t3",
+   "reject": "overlaps previous step (-3.1 dB before onset)"
+  },
+  {
+   "onset_s": 9.731,
+   "len_s": 0.62,
+   "pre_db": 16.2,
+   "tail_db": 5.1,
+   "peak": 0.109,
+   "loud": -45.8,
+   "take": "steps_straw_t3",
+   "reject": "overlaps previous step (16.2 dB before onset); cut while still sounding (tail 5.1 dB)"
+  },
+  {
+   "onset_s": 10.371,
+   "len_s": 0.62,
+   "pre_db": -12.5,
+   "tail_db": -34.8,
+   "peak": 0.284,
+   "loud": -30.1,
+   "take": "steps_straw_t3",
+   "spec": {
+    "centroid_hz": 4839,
+    "below_500": 0.199,
+    "150_600": 0.231,
+    "above_4k": 0.534,
+    "flatness": 0.386,
+    "tonal_bins": 0,
+    "tone_hz": []
+   },
+   "dist": 0.748,
+   "file": "straw_05.wav",
+   "decay_ms": 77
+  },
+  {
+   "onset_s": 11.109,
+   "len_s": 0.316,
+   "pre_db": -25.3,
+   "tail_db": 3.5,
+   "peak": 0.341,
+   "loud": -31.4,
+   "take": "steps_straw_t3",
+   "reject": "cut while still sounding (tail 3.5 dB)"
+  },
+  {
+   "onset_s": 11.436,
+   "len_s": 0.553,
+   "pre_db": 0.8,
+   "tail_db": -58.9,
+   "peak": 0.486,
+   "loud": -25.5,
+   "take": "steps_straw_t3",
+   "reject": "overlaps previous step (0.8 dB before onset)"
+  },
+  {
+   "onset_s": 0.048,
+   "reject": "starts with the take (attack may be cut)",
+   "take": "steps_straw_t4"
+  },
+  {
+   "onset_s": 0.377,
+   "len_s": 0.482,
+   "pre_db": -2.7,
+   "tail_db": 6.0,
+   "peak": 0.435,
+   "loud": -26.2,
+   "take": "steps_straw_t4",
+   "reject": "overlaps previous step (-2.7 dB before onset); cut while still sounding (tail 6.0 dB)"
+  },
+  {
+   "onset_s": 0.871,
+   "len_s": 0.478,
+   "pre_db": 39.2,
+   "tail_db": -31.4,
+   "peak": 0.014,
+   "loud": -55.8,
+   "take": "steps_straw_t4",
+   "reject": "overlaps previous step (39.2 dB before onset)"
+  },
+  {
+   "onset_s": 1.359,
+   "len_s": 0.479,
+   "pre_db": -20.8,
+   "tail_db": -0.9,
+   "peak": 0.562,
+   "loud": -24.0,
+   "take": "steps_straw_t4",
+   "reject": "cut while still sounding (tail -0.9 dB)"
+  },
+  {
+   "onset_s": 1.849,
+   "len_s": 0.338,
+   "pre_db": 0.9,
+   "tail_db": -29.5,
+   "peak": 0.046,
+   "loud": -53.0,
+   "take": "steps_straw_t4",
+   "reject": "overlaps previous step (0.9 dB before onset)"
+  },
+  {
+   "onset_s": 2.198,
+   "len_s": 0.486,
+   "pre_db": -47.1,
+   "tail_db": 2.4,
+   "peak": 0.419,
+   "loud": -23.6,
+   "take": "steps_straw_t4",
+   "reject": "cut while still sounding (tail 2.4 dB)"
+  },
+  {
+   "onset_s": 2.695,
+   "len_s": 0.62,
+   "pre_db": -4.4,
+   "tail_db": 19.0,
+   "peak": 0.487,
+   "loud": -48.0,
+   "take": "steps_straw_t4",
+   "reject": "overlaps previous step (-4.4 dB before onset); cut while still sounding (tail 19.0 dB)"
+  },
+  {
+   "onset_s": 3.329,
+   "len_s": 0.508,
+   "pre_db": 11.6,
+   "tail_db": -50.9,
+   "peak": 0.116,
+   "loud": -38.1,
+   "take": "steps_straw_t4",
+   "reject": "overlaps previous step (11.6 dB before onset)"
+  },
+  {
+   "onset_s": 3.848,
+   "len_s": 0.361,
+   "pre_db": -26.5,
+   "tail_db": 9.6,
+   "peak": 0.184,
+   "loud": -32.3,
+   "take": "steps_straw_t4",
+   "reject": "cut while still sounding (tail 9.6 dB)"
+  },
+  {
+   "onset_s": 4.219,
+   "len_s": 0.509,
+   "pre_db": 21.4,
+   "tail_db": -40.5,
+   "peak": 0.067,
+   "loud": -47.9,
+   "take": "steps_straw_t4",
+   "reject": "overlaps previous step (21.4 dB before onset)"
+  },
+  {
+   "onset_s": 4.74,
+   "len_s": 0.385,
+   "pre_db": -16.4,
+   "tail_db": 1.1,
+   "peak": 0.281,
+   "loud": -28.1,
+   "take": "steps_straw_t4",
+   "reject": "cut while still sounding (tail 1.1 dB)"
+  },
+  {
+   "onset_s": 5.135,
+   "len_s": 0.379,
+   "pre_db": -9.4,
+   "tail_db": -26.5,
+   "peak": 0.023,
+   "loud": -56.9,
+   "take": "steps_straw_t4",
+   "reject": "overlaps previous step (-9.4 dB before onset)"
+  },
+  {
+   "onset_s": 5.525,
+   "len_s": 0.409,
+   "pre_db": -31.8,
+   "tail_db": 3.6,
+   "peak": 0.207,
+   "loud": -29.6,
+   "take": "steps_straw_t4",
+   "reject": "cut while still sounding (tail 3.6 dB)"
+  },
+  {
+   "onset_s": 5.945,
+   "len_s": 0.351,
+   "pre_db": 4.1,
+   "tail_db": -19.2,
+   "peak": 0.006,
+   "loud": -68.1,
+   "take": "steps_straw_t4",
+   "reject": "overlaps previous step (4.1 dB before onset)"
+  },
+  {
+   "onset_s": 6.307,
+   "len_s": 0.369,
+   "pre_db": -30.1,
+   "tail_db": 0.1,
+   "peak": 0.203,
+   "loud": -26.0,
+   "take": "steps_straw_t4",
+   "reject": "cut while still sounding (tail 0.1 dB)"
+  },
+  {
+   "onset_s": 6.687,
+   "len_s": 0.413,
+   "pre_db": -2.7,
+   "tail_db": -43.5,
+   "peak": 0.095,
+   "loud": -45.4,
+   "take": "steps_straw_t4",
+   "reject": "overlaps previous step (-2.7 dB before onset)"
+  },
+  {
+   "onset_s": 7.111,
+   "len_s": 0.299,
+   "pre_db": -26.2,
+   "tail_db": 1.4,
+   "peak": 0.175,
+   "loud": -33.3,
+   "take": "steps_straw_t4",
+   "reject": "cut while still sounding (tail 1.4 dB)"
+  },
+  {
+   "onset_s": 7.421,
+   "len_s": 0.62,
+   "pre_db": 11.5,
+   "tail_db": -48.0,
+   "peak": 0.082,
+   "loud": -43.2,
+   "take": "steps_straw_t4",
+   "reject": "overlaps previous step (11.5 dB before onset)"
+  },
+  {
+   "onset_s": 8.098,
+   "len_s": 0.351,
+   "pre_db": -20.5,
+   "tail_db": -1.1,
+   "peak": 0.107,
+   "loud": -31.3,
+   "take": "steps_straw_t4",
+   "reject": "cut while still sounding (tail -1.1 dB)"
+  },
+  {
+   "onset_s": 8.46,
+   "len_s": 0.62,
+   "pre_db": -7.5,
+   "tail_db": -6.1,
+   "peak": 0.148,
+   "loud": -38.5,
+   "take": "steps_straw_t4",
+   "reject": "overlaps previous step (-7.5 dB before onset)"
+  },
+  {
+   "onset_s": 9.186,
+   "len_s": 0.529,
+   "pre_db": 8.3,
+   "tail_db": -34.7,
+   "peak": 0.127,
+   "loud": -38.2,
+   "take": "steps_straw_t4",
+   "reject": "overlaps previous step (8.3 dB before onset)"
+  },
+  {
+   "onset_s": 9.726,
+   "len_s": 0.429,
+   "pre_db": -23.9,
+   "tail_db": -2.1,
+   "peak": 0.151,
+   "loud": -32.1,
+   "take": "steps_straw_t4",
+   "reject": "cut while still sounding (tail -2.1 dB)"
+  },
+  {
+   "onset_s": 10.166,
+   "len_s": 0.556,
+   "pre_db": 0.1,
+   "tail_db": 42.9,
+   "peak": 0.201,
+   "loud": -72.1,
+   "take": "steps_straw_t4",
+   "reject": "overlaps previous step (0.1 dB before onset); cut while still sounding (tail 42.9 dB)"
+  },
+  {
+   "onset_s": 10.733,
+   "len_s": 0.62,
+   "pre_db": 25.6,
+   "tail_db": -39.9,
+   "peak": 0.047,
+   "loud": -48.6,
+   "take": "steps_straw_t4",
+   "reject": "overlaps previous step (25.6 dB before onset)"
+  },
+  {
+   "onset_s": 11.52,
+   "len_s": 0.469,
+   "pre_db": -6.3,
+   "tail_db": -52.8,
+   "peak": 0.321,
+   "loud": -29.1,
+   "take": "steps_straw_t4",
+   "reject": "overlaps previous step (-6.3 dB before onset)"
+  },
+  {
+   "onset_s": 0.374,
+   "len_s": 0.457,
+   "pre_db": 1.4,
+   "tail_db": -3.0,
+   "peak": 0.082,
+   "loud": -44.3,
+   "take": "steps_straw_t5",
+   "reject": "overlaps previous step (1.4 dB before onset); cut while still sounding (tail -3.0 dB)"
+  },
+  {
+   "onset_s": 0.842,
+   "len_s": 0.313,
+   "pre_db": -37.5,
+   "tail_db": 6.1,
+   "peak": 0.187,
+   "loud": -31.3,
+   "take": "steps_straw_t5",
+   "reject": "cut while still sounding (tail 6.1 dB)"
+  },
+  {
+   "onset_s": 1.166,
+   "len_s": 0.443,
+   "pre_db": 8.0,
+   "tail_db": -51.5,
+   "peak": 0.356,
+   "loud": -32.9,
+   "take": "steps_straw_t5",
+   "reject": "overlaps previous step (8.0 dB before onset)"
+  },
+  {
+   "onset_s": 1.62,
+   "len_s": 0.344,
+   "pre_db": -15.9,
+   "tail_db": 3.1,
+   "peak": 0.098,
+   "loud": -39.7,
+   "take": "steps_straw_t5",
+   "reject": "cut while still sounding (tail 3.1 dB)"
+  },
+  {
+   "onset_s": 1.974,
+   "len_s": 0.418,
+   "pre_db": 14.0,
+   "tail_db": 16.1,
+   "peak": 0.284,
+   "loud": -32.1,
+   "take": "steps_straw_t5",
+   "reject": "overlaps previous step (14.0 dB before onset); cut while still sounding (tail 16.1 dB)"
+  },
+  {
+   "onset_s": 2.403,
+   "len_s": 0.418,
+   "pre_db": -0.1,
+   "tail_db": -53.0,
+   "peak": 0.298,
+   "loud": -30.9,
+   "take": "steps_straw_t5",
+   "reject": "overlaps previous step (-0.1 dB before onset)"
+  },
+  {
+   "onset_s": 2.833,
+   "len_s": 0.487,
+   "pre_db": -12.6,
+   "tail_db": 6.3,
+   "peak": 0.14,
+   "loud": -37.7,
+   "take": "steps_straw_t5",
+   "reject": "cut while still sounding (tail 6.3 dB)"
+  },
+  {
+   "onset_s": 3.33,
+   "len_s": 0.38,
+   "pre_db": -5.9,
+   "tail_db": -13.4,
+   "peak": 0.681,
+   "loud": -22.6,
+   "take": "steps_straw_t5",
+   "reject": "overlaps previous step (-5.9 dB before onset)"
+  },
+  {
+   "onset_s": 3.721,
+   "len_s": 0.33,
+   "pre_db": 0.7,
+   "tail_db": -49.0,
+   "peak": 0.49,
+   "loud": -30.1,
+   "take": "steps_straw_t5",
+   "reject": "overlaps previous step (0.7 dB before onset)"
+  },
+  {
+   "onset_s": 4.062,
+   "len_s": 0.345,
+   "pre_db": -17.5,
+   "tail_db": 8.0,
+   "peak": 0.153,
+   "loud": -33.6,
+   "take": "steps_straw_t5",
+   "reject": "cut while still sounding (tail 8.0 dB)"
+  },
+  {
+   "onset_s": 4.418,
+   "len_s": 0.36,
+   "pre_db": 0.2,
+   "tail_db": -10.8,
+   "peak": 0.427,
+   "loud": -26.3,
+   "take": "steps_straw_t5",
+   "reject": "overlaps previous step (0.2 dB before onset)"
+  },
+  {
+   "onset_s": 4.789,
+   "len_s": 0.525,
+   "pre_db": -23.6,
+   "tail_db": 18.7,
+   "peak": 0.253,
+   "loud": -32.5,
+   "take": "steps_straw_t5",
+   "reject": "cut while still sounding (tail 18.7 dB)"
+  },
+  {
+   "onset_s": 5.325,
+   "len_s": 0.485,
+   "pre_db": 0.0,
+   "tail_db": -20.3,
+   "peak": 0.298,
+   "loud": -33.0,
+   "take": "steps_straw_t5",
+   "reject": "overlaps previous step (0.0 dB before onset)"
+  },
+  {
+   "onset_s": 5.822,
+   "len_s": 0.541,
+   "pre_db": -6.3,
+   "tail_db": 1.2,
+   "peak": 0.454,
+   "loud": -23.8,
+   "take": "steps_straw_t5",
+   "reject": "overlaps previous step (-6.3 dB before onset); cut while still sounding (tail 1.2 dB)"
+  },
+  {
+   "onset_s": 6.374,
+   "len_s": 0.62,
+   "pre_db": 0.6,
+   "tail_db": 0.4,
+   "peak": 0.118,
+   "loud": -40.7,
+   "take": "steps_straw_t5",
+   "reject": "overlaps previous step (0.6 dB before onset); cut while still sounding (tail 0.4 dB)"
+  },
+  {
+   "onset_s": 7.009,
+   "len_s": 0.44,
+   "pre_db": -10.4,
+   "tail_db": 3.3,
+   "peak": 0.198,
+   "loud": -30.0,
+   "take": "steps_straw_t5",
+   "reject": "cut while still sounding (tail 3.3 dB)"
+  },
+  {
+   "onset_s": 7.46,
+   "len_s": 0.338,
+   "pre_db": -6.7,
+   "tail_db": 0.4,
+   "peak": 0.293,
+   "loud": -33.7,
+   "take": "steps_straw_t5",
+   "reject": "overlaps previous step (-6.7 dB before onset); cut while still sounding (tail 0.4 dB)"
+  },
+  {
+   "onset_s": 7.81,
+   "len_s": 0.356,
+   "pre_db": -9.2,
+   "tail_db": -42.8,
+   "peak": 0.315,
+   "loud": -31.7,
+   "take": "steps_straw_t5",
+   "reject": "overlaps previous step (-9.2 dB before onset)"
+  },
+  {
+   "onset_s": 8.177,
+   "len_s": 0.383,
+   "pre_db": -20.0,
+   "tail_db": 11.0,
+   "peak": 0.461,
+   "loud": -30.1,
+   "take": "steps_straw_t5",
+   "reject": "cut while still sounding (tail 11.0 dB)"
+  },
+  {
+   "onset_s": 8.571,
+   "len_s": 0.616,
+   "pre_db": -5.7,
+   "tail_db": -27.3,
+   "peak": 0.47,
+   "loud": -29.6,
+   "take": "steps_straw_t5",
+   "reject": "overlaps previous step (-5.7 dB before onset)"
+  },
+  {
+   "onset_s": 9.198,
+   "len_s": 0.349,
+   "pre_db": -21.8,
+   "tail_db": -0.2,
+   "peak": 0.341,
+   "loud": -26.7,
+   "take": "steps_straw_t5",
+   "reject": "cut while still sounding (tail -0.2 dB)"
+  },
+  {
+   "onset_s": 9.558,
+   "len_s": 0.591,
+   "pre_db": -12.8,
+   "tail_db": -12.1,
+   "peak": 0.281,
+   "loud": -30.7,
+   "take": "steps_straw_t5",
+   "spec": {
+    "centroid_hz": 2887,
+    "below_500": 0.61,
+    "150_600": 0.481,
+    "above_4k": 0.308,
+    "flatness": 0.207,
+    "tonal_bins": 0,
+    "tone_hz": []
+   },
+   "dist": 2.033,
+   "reject": "spare (the 8 nearest the surface profile are kept)"
+  },
+  {
+   "onset_s": 10.16,
+   "len_s": 0.446,
+   "pre_db": -4.5,
+   "tail_db": -4.2,
+   "peak": 0.2,
+   "loud": -30.8,
+   "take": "steps_straw_t5",
+   "reject": "overlaps previous step (-4.5 dB before onset); cut while still sounding (tail -4.2 dB)"
+  },
+  {
+   "onset_s": 10.617,
+   "len_s": 0.508,
+   "pre_db": -3.9,
+   "tail_db": -12.7,
+   "peak": 0.381,
+   "loud": -30.5,
+   "take": "steps_straw_t5",
+   "reject": "overlaps previous step (-3.9 dB before onset)"
+  },
+  {
+   "onset_s": 11.136,
+   "len_s": 0.62,
+   "pre_db": -25.2,
+   "tail_db": -59.2,
+   "peak": 0.444,
+   "loud": -26.2,
+   "take": "steps_straw_t5",
+   "spec": {
+    "centroid_hz": 901,
+    "below_500": 0.759,
+    "150_600": 0.703,
+    "above_4k": 0.069,
+    "flatness": 0.234,
+    "tonal_bins": 0,
+    "tone_hz": []
+   },
+   "dist": 4.309,
+   "reject": "spare (the 8 nearest the surface profile are kept)"
+  },
+  {
+   "onset_s": 0.254,
+   "len_s": 0.372,
+   "pre_db": -7.3,
+   "tail_db": -8.6,
+   "peak": 0.459,
+   "loud": -24.9,
+   "take": "steps_straw_t6",
+   "reject": "overlaps previous step (-7.3 dB before onset)"
+  },
+  {
+   "onset_s": 0.636,
+   "len_s": 0.62,
+   "pre_db": -6.2,
+   "tail_db": -5.0,
+   "peak": 0.551,
+   "loud": -28.6,
+   "take": "steps_straw_t6",
+   "reject": "overlaps previous step (-6.2 dB before onset); cut while still sounding (tail -5.0 dB)"
+  },
+  {
+   "onset_s": 1.339,
+   "len_s": 0.589,
+   "pre_db": 7.4,
+   "tail_db": -5.0,
+   "peak": 0.214,
+   "loud": -38.1,
+   "take": "steps_straw_t6",
+   "reject": "overlaps previous step (7.4 dB before onset); cut while still sounding (tail -5.0 dB)"
+  },
+  {
+   "onset_s": 1.939,
+   "len_s": 0.62,
+   "pre_db": -4.3,
+   "tail_db": 2.9,
+   "peak": 0.701,
+   "loud": -25.5,
+   "take": "steps_straw_t6",
+   "reject": "overlaps previous step (-4.3 dB before onset); cut while still sounding (tail 2.9 dB)"
+  },
+  {
+   "onset_s": 2.629,
+   "len_s": 0.327,
+   "pre_db": 12.6,
+   "tail_db": -17.2,
+   "peak": 0.238,
+   "loud": -36.7,
+   "take": "steps_straw_t6",
+   "reject": "overlaps previous step (12.6 dB before onset)"
+  },
+  {
+   "onset_s": 2.966,
+   "len_s": 0.399,
+   "pre_db": -37.6,
+   "tail_db": 15.9,
+   "peak": 0.28,
+   "loud": -26.8,
+   "take": "steps_straw_t6",
+   "reject": "cut while still sounding (tail 15.9 dB)"
+  },
+  {
+   "onset_s": 3.376,
+   "len_s": 0.461,
+   "pre_db": 0.5,
+   "tail_db": -44.8,
+   "peak": 0.158,
+   "loud": -35.7,
+   "take": "steps_straw_t6",
+   "reject": "overlaps previous step (0.5 dB before onset)"
+  },
+  {
+   "onset_s": 3.848,
+   "len_s": 0.403,
+   "pre_db": -9.9,
+   "tail_db": 12.7,
+   "peak": 0.117,
+   "loud": -45.4,
+   "take": "steps_straw_t6",
+   "reject": "overlaps previous step (-9.9 dB before onset); cut while still sounding (tail 12.7 dB)"
+  },
+  {
+   "onset_s": 4.263,
+   "len_s": 0.393,
+   "pre_db": -15.7,
+   "tail_db": -0.5,
+   "peak": 0.257,
+   "loud": -32.6,
+   "take": "steps_straw_t6",
+   "reject": "cut while still sounding (tail -0.5 dB)"
+  },
+  {
+   "onset_s": 4.667,
+   "len_s": 0.376,
+   "pre_db": -11.4,
+   "tail_db": -46.8,
+   "peak": 0.26,
+   "loud": -34.8,
+   "take": "steps_straw_t6",
+   "spec": {
+    "centroid_hz": 1855,
+    "below_500": 0.059,
+    "150_600": 0.069,
+    "above_4k": 0.099,
+    "flatness": 0.432,
+    "tonal_bins": 0,
+    "tone_hz": []
+   },
+   "dist": 1.195,
+   "file": "straw_06.wav",
+   "decay_ms": 13
+  },
+  {
+   "onset_s": 5.054,
+   "len_s": 0.373,
+   "pre_db": -27.7,
+   "tail_db": -25.2,
+   "peak": 0.27,
+   "loud": -29.5,
+   "take": "steps_straw_t6",
+   "spec": {
+    "centroid_hz": 1468,
+    "below_500": 0.78,
+    "150_600": 0.759,
+    "above_4k": 0.136,
+    "flatness": 0.275,
+    "tonal_bins": 0,
+    "tone_hz": []
+   },
+   "dist": 3.689,
+   "reject": "spare (the 8 nearest the surface profile are kept)"
+  },
+  {
+   "onset_s": 5.438,
+   "len_s": 0.407,
+   "pre_db": -39.5,
+   "tail_db": -1.2,
+   "peak": 0.43,
+   "loud": -27.2,
+   "take": "steps_straw_t6",
+   "reject": "cut while still sounding (tail -1.2 dB)"
+  },
+  {
+   "onset_s": 5.856,
+   "len_s": 0.465,
+   "pre_db": 11.5,
+   "tail_db": -25.4,
+   "peak": 0.044,
+   "loud": -54.4,
+   "take": "steps_straw_t6",
+   "reject": "overlaps previous step (11.5 dB before onset)"
+  },
+  {
+   "onset_s": 6.332,
+   "len_s": 0.282,
+   "pre_db": -14.8,
+   "tail_db": 0.2,
+   "peak": 0.202,
+   "loud": -30.7,
+   "take": "steps_straw_t6",
+   "reject": "cut while still sounding (tail 0.2 dB)"
+  },
+  {
+   "onset_s": 6.625,
+   "len_s": 0.62,
+   "pre_db": 4.3,
+   "tail_db": -38.0,
+   "peak": 0.247,
+   "loud": -32.4,
+   "take": "steps_straw_t6",
+   "reject": "overlaps previous step (4.3 dB before onset)"
+  },
+  {
+   "onset_s": 7.272,
+   "len_s": 0.428,
+   "pre_db": -28.1,
+   "tail_db": 13.8,
+   "peak": 0.11,
+   "loud": -31.5,
+   "take": "steps_straw_t6",
+   "reject": "cut while still sounding (tail 13.8 dB)"
+  },
+  {
+   "onset_s": 7.711,
+   "len_s": 0.62,
+   "pre_db": 5.1,
+   "tail_db": -3.0,
+   "peak": 0.102,
+   "loud": -40.6,
+   "take": "steps_straw_t6",
+   "reject": "overlaps previous step (5.1 dB before onset); cut while still sounding (tail -3.0 dB)"
+  },
+  {
+   "onset_s": 8.484,
+   "len_s": 0.317,
+   "pre_db": -10.2,
+   "tail_db": -11.2,
+   "peak": 0.341,
+   "loud": -30.5,
+   "take": "steps_straw_t6",
+   "spec": {
+    "centroid_hz": 3488,
+    "below_500": 0.018,
+    "150_600": 0.02,
+    "above_4k": 0.349,
+    "flatness": 0.294,
+    "tonal_bins": 0,
+    "tone_hz": []
+   },
+   "dist": 0.608,
+   "file": "straw_07.wav",
+   "decay_ms": 22
+  },
+  {
+   "onset_s": 8.812,
+   "len_s": 0.62,
+   "pre_db": -8.7,
+   "tail_db": -12.1,
+   "peak": 0.089,
+   "loud": -43.4,
+   "take": "steps_straw_t6",
+   "reject": "overlaps previous step (-8.7 dB before onset)"
+  },
+  {
+   "onset_s": 9.848,
+   "len_s": 0.62,
+   "pre_db": 12.1,
+   "tail_db": 19.4,
+   "peak": 0.383,
+   "loud": -41.3,
+   "take": "steps_straw_t6",
+   "reject": "overlaps previous step (12.1 dB before onset); cut while still sounding (tail 19.4 dB)"
+  },
+  {
+   "onset_s": 10.484,
+   "len_s": 0.62,
+   "pre_db": 11.2,
+   "tail_db": 11.3,
+   "peak": 0.197,
+   "loud": -42.1,
+   "take": "steps_straw_t6",
+   "reject": "overlaps previous step (11.2 dB before onset); cut while still sounding (tail 11.3 dB)"
+  },
+  {
+   "onset_s": 11.143,
+   "len_s": 0.397,
+   "pre_db": -18.3,
+   "tail_db": -38.8,
+   "peak": 0.285,
+   "loud": -35.2,
+   "take": "steps_straw_t6",
+   "spec": {
+    "centroid_hz": 3215,
+    "below_500": 0.034,
+    "150_600": 0.035,
+    "above_4k": 0.369,
+    "flatness": 0.251,
+    "tonal_bins": 0,
+    "tone_hz": []
+   },
+   "dist": 0.502,
+   "file": "straw_08.wav",
+   "decay_ms": 10
+  },
+  {
+   "onset_s": 11.552,
+   "len_s": 0.437,
+   "pre_db": -25.0,
+   "tail_db": -33.1,
+   "peak": 0.233,
+   "loud": -27.9,
+   "take": "steps_straw_t6",
+   "spec": {
+    "centroid_hz": 1492,
+    "below_500": 0.269,
+    "150_600": 0.391,
+    "above_4k": 0.087,
+    "flatness": 0.303,
+    "tonal_bins": 0,
+    "tone_hz": []
+   },
+   "dist": 1.621,
+   "reject": "spare (the 8 nearest the surface profile are kept)"
+  }
+ ]
+}

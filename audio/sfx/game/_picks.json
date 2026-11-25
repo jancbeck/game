@@ -1,0 +1,170 @@
+{
+ "ui/walk_click.wav": {
+  "take": "ui_walk_t4",
+  "start": 0,
+  "end": 0.4,
+  "target": -16.0
+ },
+ "ui/interact.wav": {
+  "take": "ui_interact_t2",
+  "start": 0,
+  "end": 0.45,
+  "target": -16.0
+ },
+ "objects/gate_01.wav": {
+  "take": "obj_gate_t2",
+  "start": 1.9,
+  "end": null,
+  "target": -16.0
+ },
+ "objects/gate_02.wav": {
+  "take": "obj_gate_t1",
+  "start": 0,
+  "end": 1.6,
+  "target": -16.0
+ },
+ "objects/fire_basket_01.wav": {
+  "take": "obj_fire_basket_t1",
+  "start": 0,
+  "end": 5,
+  "target": -16.0
+ },
+ "objects/fire_basket_02.wav": {
+  "take": "obj_fire_basket_t2",
+  "start": 0,
+  "end": 4.5,
+  "target": -16.0
+ },
+ "objects/bell_01.wav": {
+  "take": "obj_bell_t1",
+  "start": 0,
+  "end": null,
+  "target": -16.0
+ },
+ "objects/bell_02.wav": {
+  "take": "obj_bell_t2",
+  "start": 0,
+  "end": null,
+  "target": -16.0
+ },
+ "objects/well_01.wav": {
+  "take": "obj_well_t3",
+  "start": 0,
+  "end": null,
+  "target": -16.0
+ },
+ "objects/well_02.wav": {
+  "take": "obj_well_t4",
+  "start": 0,
+  "end": null,
+  "target": -16.0
+ },
+ "objects/cart_01.wav": {
+  "take": "obj_cart_t1",
+  "start": 0,
+  "end": 4.5,
+  "target": -16.0
+ },
+ "objects/cart_02.wav": {
+  "take": "obj_cart_t2",
+  "start": 0,
+  "end": 5,
+  "target": -16.0
+ },
+ "objects/cookhouse_01.wav": {
+  "take": "obj_cookhouse_t2",
+  "start": 0,
+  "end": null,
+  "target": -16.0
+ },
+ "objects/cookhouse_02.wav": {
+  "take": "obj_cookhouse_t1",
+  "start": 4.1,
+  "end": null,
+  "target": -16.0
+ },
+ "objects/forge_01.wav": {
+  "take": "obj_forge_t1",
+  "start": 0,
+  "end": 3.1,
+  "target": -16.0
+ },
+ "objects/forge_02.wav": {
+  "take": "obj_forge_t2",
+  "start": 0,
+  "end": 2.7,
+  "target": -16.0
+ },
+ "objects/gallows_01.wav": {
+  "take": "obj_gallows_t1",
+  "start": 0,
+  "end": null,
+  "target": -16.0
+ },
+ "objects/gallows_02.wav": {
+  "take": "obj_gallows_t2",
+  "start": 0,
+  "end": null,
+  "target": -16.0
+ },
+ "objects/stable_01.wav": {
+  "take": "obj_stable_t1",
+  "start": 0,
+  "end": null,
+  "target": -16.0
+ },
+ "objects/stable_02.wav": {
+  "take": "obj_stable_t2",
+  "start": 0,
+  "end": null,
+  "target": -16.0
+ },
+ "objects/tool_rack_01.wav": {
+  "take": "obj_tool_rack_t1",
+  "start": 0,
+  "end": null,
+  "target": -16.0
+ },
+ "objects/tool_rack_02.wav": {
+  "take": "obj_tool_rack_t2",
+  "start": 0,
+  "end": null,
+  "target": -16.0
+ },
+ "objects/trough_01.wav": {
+  "take": "obj_trough_t1",
+  "start": 0,
+  "end": 4,
+  "target": -16.0
+ },
+ "objects/trough_02.wav": {
+  "take": "obj_trough_t2",
+  "start": 0,
+  "end": 4.5,
+  "target": -16.0
+ },
+ "objects/guardroom_01.wav": {
+  "take": "obj_guardroom_t2",
+  "start": 0,
+  "end": null,
+  "target": -16.0
+ },
+ "objects/guardroom_02.wav": {
+  "take": "obj_guardroom_t1",
+  "start": 2.1,
+  "end": null,
+  "target": -16.0
+ },
+ "doors/door_heavy_open.wav": {
+  "take": "door_open_t3",
+  "start": 1.3,
+  "end": 3.9,
+  "target": -16.0
+ },
+ "doors/door_heavy_close.wav": {
+  "take": "door_close_t1",
+  "start": 1.8,
+  "end": 3.6,
+  "target": -16.0
+ }
+}

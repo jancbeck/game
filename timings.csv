@@ -1,0 +1,194 @@
+step,name,estimate_s,actual_s,finished
+download,trellis2-weights-11GB,300,~1500,2026-11-22T00:03:00
+mask,rembg-6-crops,,~25,2026-11-22T00:05:30
+render,greybox-eevee-1536x1024,,~25,2026-11-22T00:08:00
+gen_prop,gallows,150,320,2026-11-22T00:12:00
+gen_prop,barrel,300,282,2026-11-22T00:17:00
+gen_prop,crates,300,326,2026-11-22T00:22:00
+gen_prop,brazier,300,FAILED,2026-11-22T00:25:00
+gen_prop,cart,300,317,2026-11-22T00:30:00
+gen_prop,gallows-remask,320,557,2026-11-22T00:40:06
+framework,kit+materials+preview,,~360,2026-11-22T00:55:00
+render,material-swatches,,3,2026-11-22T00:55:00
+agent,gate_door+grate,900,197,2026-11-22T00:58:54
+agent,brazier+torch+crow+banner,900,393,2026-11-22T01:02:10
+agent,cart+barrel+shed,900,402,2026-11-22T01:02:19
+agent,gallows+crates,900,438,2026-11-22T01:02:55
+trace,camera-solve+walls+build_scene,,~700,2026-11-22T01:03:00
+iteration,iter_002-blockout,1200,~1080,2026-11-22T01:07:50
+render,iter_002,,6,2026-11-22T01:07:50
+render,iter_003 (4 views),,19,2026-11-22T01:21:20
+render,iter_003 (4 views),,19,2026-11-22T01:22:11
+agent,human+wall_stair+spire,600,244,2026-11-22T01:20:02
+iteration,iter_003-realism,,383,2026-11-22T01:22:21
+render,iter_004 (4 views),,26,2026-11-22T01:42:44
+render,iter_004 (4 views),,27,2026-11-22T01:43:34
+agent,mats-stone+cobble,1200,772,2026-11-22T01:39:30
+agent,mats-wood+iron+cloth+fire,1200,905,2026-11-22T01:41:42
+iteration,iter_004-look,1500,1039,2026-11-22T01:43:56
+agent,round5-weathering,900,685,2026-11-22T02:21:28
+agent,round5-trees,900,795,2026-11-22T02:23:18
+agent,round5-walls,900,916,2026-11-22T02:25:19
+agent,round5-ground,900,936,2026-11-22T02:25:39
+agent,round5-clutter,900,981,2026-11-22T02:26:24
+agent,round5-propfix,900,1097,2026-11-22T02:28:20
+agent,round5-fire,900,1265,2026-11-22T02:31:08
+render,iter_005 (4 views),,54,2026-11-22T02:32:02
+iteration,round6-agents(4),720,639,2026-11-22T02:44:19
+render,iter_006 (4 views),,59,2026-11-22T02:45:18
+iteration,round5-total(7 agents+integration),1500,1319,2026-11-22T02:32:02
+iteration,round7-agents(4)+fable,900,800,2026-11-22T02:59:26
+render,iter_007 (4 views),,83,2026-11-22T03:00:50
+iteration,round8-agents(3)+builder,900,708,2026-11-22T03:16:48
+render,iter_008 (4 views),,102,2026-11-22T03:18:30
+iteration,round9-agents(6)+builder,900,103,2026-11-22T03:29:43
+render,iter_009 (4 views),,120,2026-11-22T03:31:44
+iteration,round10-agents(6)+builder,900,467,2026-11-22T03:41:22
+render,iter_010 (4 views),,138,2026-11-22T03:43:41
+render,iter_011 (4 views),,204,2026-11-22T13:58:49
+iteration,round11-agents(6)+builder,1200,4922,2026-11-22T13:59:01
+render,iter_012 (4 views),,227,2026-11-22T15:08:15
+iteration,round12-agents(4)+builder,1200,4097,2026-11-22T15:08:30
+render,iter_013 (4 views),,385,2026-11-22T16:24:52
+iteration,round13-agents(5)+builder,1200,4599,2026-11-22T16:25:10
+render,iter_014 (4 views),,466,2026-11-22T17:47:51
+iteration,round14-agents(3)+builder,1200,4978,2026-11-22T17:48:08
+round,15 garrison rebuild start,,,2026-11-23T01:47:17
+render,iter_015 (4 views),,485,2026-11-23T02:26:33
+render,iter_015 (4 views),,434,2026-11-23T02:40:19
+iteration,round15-agents(5)+builder,7200,3193,2026-11-23T02:40:30
+render,iter_016 (4 views),,1341,2026-11-23T03:43:00
+render,iter_016 (4 views),,1336,2026-11-23T04:22:27
+iteration,round16-look(cycles+scans)+builder,,6099,2026-11-23T04:22:39
+render,orbit 480 frames,,12525,2026-11-23T07:52:34
+round,round17-start,7200,,2026-11-23T10:56:43
+render,iter_017 (4 views),,1456,2026-11-23T12:19:43
+render,iter_017 (4 views),,,2026-11-23T12:23:20
+round,round18-game-prep-start,10800,,2026-11-23T12:26:13
+iteration,round18-game-slice,10800,,2026-11-23T12:56:56
+round,round19-game-layers-start,14400,,2026-11-23T13:05:55
+render,round19-game-layers-cycles-2560x1440,3600,2076,2026-11-23T13:51:00
+render,round19-game-flipbooks-eevee,600,169,2026-11-23T15:15:00
+iteration,round19-game-layers,14400,,2026-11-23T15:31:23
+round,round20-game-feel-start,14400,,2026-11-23T15:47:35
+render,round20-game-ids-main-cycles-8spp,180,149,2026-11-23T16:05:00
+render,round20-game-wide-cycles-64spp,1320,974,2026-11-23T16:35:00
+render,round20-game-tiles-cycles-80spp,3600,3336,2026-11-23T17:45:00
+sim,round20-fire-mantaflow-bakes-3-fires-144f,700,1344,2026-11-23T17:25:00
+render,round20-fire-flipbooks-eevee-reuse,300,116,2026-11-23T17:47:00
+iteration,round20-game-feel,14400,,2026-11-23T18:59:06
+round,round21-workflow-npc-start,14400,,2026-11-23T23:55:02
+iteration,round21-npc-marl,,,2026-11-24T00:15:19
+iteration,round21-workflow,14400,,2026-11-24T00:43:32
+game,courtyard/preview/ref@50,93,395,2026-11-24T01:22:53
+game,courtyard/preview/ref@50,89,726,2026-11-24T01:41:16
+game,courtyard/draft/fire-cpu,136,141,2026-11-24T01:41:50
+game,courtyard/preview/tower_cliff+tower_east+tower_yard+se_corner_in+se_corner_out+eye@50,160,1022,2026-11-24T01:57:07
+game,cookhouse/preview/ref+eye+door@60,135,1069,2026-11-24T01:57:58
+game,courtyard/draft/fire,82,1075,2026-11-24T01:59:44
+game,courtyard/draft/fire-cpu,139,80,2026-11-24T02:01:35
+game,courtyard/draft/fire,89,614,2026-11-24T02:11:50
+game,cookhouse/draft/layers,150,626,2026-11-24T02:13:55
+game,courtyard/draft/fire-cpu,136,162,2026-11-24T02:15:18
+game,cookhouse/draft/ids,120,280,2026-11-24T02:18:35
+game,courtyard/draft/fire,97,285,2026-11-24T02:20:03
+game,courtyard/preview/tower_east+ref@60,113,406,2026-11-24T02:22:05
+game,courtyard/preview/ref+eye+tower_south+tower_top+tower_east+se_corner_out+se_corner_in@60,221,654,2026-11-24T02:26:13
+game,cookhouse/draft/wide,240,574,2026-11-24T02:28:09
+game,cookhouse/draft/tiles,300,101,2026-11-24T02:29:51
+game,cookhouse/draft/flipbooks,120,26,2026-11-24T02:30:17
+game,cookhouse/draft/fire-cpu,,45,2026-11-24T02:31:01
+game,cookhouse/draft/fire,180,35,2026-11-24T02:31:36
+game,cookhouse/draft/export,100,12,2026-11-24T02:31:48
+game,cookhouse/preview/ref+eye@40,89,30,2026-11-24T03:20:40
+game,cookhouse/draft/layers,123,171,2026-11-24T03:23:43
+game,cookhouse/draft/ids,27,49,2026-11-24T03:24:33
+game,cookhouse/draft/wide,90,88,2026-11-24T03:26:00
+game,cookhouse/draft/tiles,98,296,2026-11-24T03:30:57
+game,cookhouse/draft/flipbooks,26,58,2026-11-24T03:31:55
+game,cookhouse/draft/fire-cpu,44,105,2026-11-24T03:33:40
+game,cookhouse/draft/fire,35,46,2026-11-24T03:34:26
+game,cookhouse/draft/export,12,17,2026-11-24T03:34:43
+game,cookhouse/draft/layers,141,138,2026-11-24T03:39:12
+game,cookhouse/draft/ids,38,68,2026-11-24T03:40:21
+game,cookhouse/draft/wide,89,99,2026-11-24T03:42:00
+game,cookhouse/draft/tiles,197,319,2026-11-24T03:47:19
+game,cookhouse/draft/flipbooks,30,61,2026-11-24T03:48:20
+game,cookhouse/draft/fire-cpu,75,11,2026-11-24T03:48:31
+game,cookhouse/draft/fire,40,46,2026-11-24T03:49:17
+game,cookhouse/draft/export,14,13,2026-11-24T03:49:30
+game,tower/draft/layers,150,96,2026-11-24T04:52:43
+game,tower/draft/ids,120,41,2026-11-24T04:53:24
+game,tower/draft/wide,240,47,2026-11-24T04:54:10
+game,tower/draft/tiles,300,276,2026-11-24T04:58:46
+game,tower/draft/flipbooks,120,44,2026-11-24T04:59:30
+game,tower/draft/fire-cpu,,29,2026-11-24T04:59:58
+game,tower/draft/fire,180,71,2026-11-24T05:01:09
+game,tower/draft/export,100,11,2026-11-24T05:01:21
+game,tower/draft/layers,96,96,2026-11-24T05:08:44
+game,tower/draft/ids,26,122,2026-11-24T05:10:45
+game,tower/draft/wide,47,47,2026-11-24T05:11:33
+game,tower/draft/tiles,261,272,2026-11-24T05:16:05
+game,tower/draft/flipbooks,29,41,2026-11-24T05:16:45
+game,tower/draft/fire-cpu,29,11,2026-11-24T05:16:56
+game,tower/draft/fire,23,23,2026-11-24T05:17:19
+game,tower/draft/export,12,11,2026-11-24T05:17:30
+game,cookhouse/draft/layers,138,153,2026-11-24T05:43:21
+game,cookhouse/draft/ids,32,60,2026-11-24T05:44:21
+game,cookhouse/draft/wide,90,111,2026-11-24T05:46:12
+game,cookhouse/draft/tiles,296,355,2026-11-24T05:52:07
+game,cookhouse/draft/flipbooks,34,130,2026-11-24T05:54:17
+game,cookhouse/draft/fire-cpu,44,20,2026-11-24T05:54:37
+game,cookhouse/draft/fire,46,71,2026-11-24T05:55:48
+game,cookhouse/draft/export,13,36,2026-11-24T05:56:24
+game,tower/draft/layers,96,144,2026-11-24T06:06:10
+game,tower/draft/layers,96,142,2026-11-24T06:09:28
+game,tower/draft/layers,138,140,2026-11-24T06:12:04
+game,tower/draft/ids,25,36,2026-11-24T06:12:40
+game,tower/draft/wide,47,67,2026-11-24T06:13:47
+game,tower/draft/tiles,262,352,2026-11-24T06:19:40
+game,tower/draft/flipbooks,29,14,2026-11-24T06:19:54
+game,tower/draft/layers,140,134,2026-11-24T06:25:40
+game,tower/draft/layers,140,135,2026-11-24T06:28:37
+game,tower/draft/layers,135,135,2026-11-24T06:31:02
+game,tower/draft/ids,26,34,2026-11-24T06:31:36
+game,tower/draft/wide,47,61,2026-11-24T06:32:37
+game,tower/draft/tiles,263,328,2026-11-24T06:38:05
+game,tower/draft/flipbooks,29,27,2026-11-24T06:38:32
+game,tower/draft/fire-cpu,20,11,2026-11-24T06:38:43
+game,tower/draft/fire,23,22,2026-11-24T06:39:05
+game,tower/draft/export,11,12,2026-11-24T06:39:17
+game,tower/draft/layers,135,516,2026-11-24T07:02:05
+game,tower/draft/layers,135,133,2026-11-24T07:05:14
+game,tower/draft/layers,134,134,2026-11-24T07:07:41
+game,tower/draft/ids,34,34,2026-11-24T07:08:15
+game,tower/draft/wide,61,61,2026-11-24T07:09:16
+game,tower/draft/tiles,328,328,2026-11-24T07:14:44
+game,tower/draft/flipbooks,29,28,2026-11-24T07:15:11
+game,tower/draft/fire-cpu,11,11,2026-11-24T07:15:22
+game,tower/draft/fire,23,22,2026-11-24T07:15:44
+game,tower/draft/export,12,12,2026-11-24T07:15:56
+game,courtyard/final/layers,2100,1656,2026-11-24T07:48:12
+game,courtyard/final/ids,180,135,2026-11-24T07:50:27
+game,courtyard/final/wide,960,750,2026-11-24T08:02:57
+game,courtyard/final/tiles,3360,3489,2026-11-24T09:01:06
+game,courtyard/final/flipbooks,180,174,2026-11-24T09:04:00
+game,courtyard/final/fire-cpu,,521,2026-11-24T09:12:41
+game,courtyard/final/fire,420,124,2026-11-24T09:14:45
+game,courtyard/final/export,100,85,2026-11-24T09:16:10
+game,cookhouse/final/layers,2100,592,2026-11-24T09:26:03
+game,cookhouse/final/ids,180,64,2026-11-24T09:27:06
+game,cookhouse/final/wide,960,329,2026-11-24T09:32:35
+game,cookhouse/final/tiles,3360,1660,2026-11-24T10:00:16
+game,cookhouse/final/flipbooks,180,89,2026-11-24T10:01:44
+game,cookhouse/final/fire-cpu,,594,2026-11-24T10:11:39
+game,cookhouse/final/fire,420,124,2026-11-24T10:13:43
+game,cookhouse/final/export,100,12,2026-11-24T10:13:55
+game,tower/final/layers,2100,708,2026-11-24T10:25:44
+game,tower/final/ids,180,68,2026-11-24T10:26:51
+game,tower/final/wide,960,237,2026-11-24T10:30:48
+game,tower/final/tiles,3360,1867,2026-11-24T11:01:55
+game,tower/final/flipbooks,180,66,2026-11-24T11:03:01
+game,tower/final/fire-cpu,,141,2026-11-24T11:05:22
+game,tower/final/fire,420,44,2026-11-24T11:06:06
+game,tower/final/export,100,12,2026-11-24T11:06:18

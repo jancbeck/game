@@ -1,0 +1,12 @@
+{
+  "prompt": "water pouring from a stone gargoyle spout in a steady stream onto wet stone paving, splashing and gurgling, outdoors in the evening, dry close-miked film sound effect, no reverb",
+  "negative_prompt": "reverb, echo, hall, music, speech, voices, singing",
+  "seed": 1000,
+  "seconds": 15.0,
+  "dit": "medium",
+  "decoder": "same-l",
+  "cfg": 3.0,
+  "steps": 8,
+  "wall_seconds": 7.78,
+  "file": "spout_t1.wav"
+}

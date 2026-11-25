@@ -1,0 +1,133 @@
+{
+  "file": "characters/hedda/voice/part_aa/02_hedda_hedda_i_cook_ive_cooked_t3.wav",
+  "character": "hedda",
+  "text": "[dry, savouring it] Hedda. I cook. I've cooked for three commanders and buried two of them, and the third one won't eat his greens.",
+  "spoken_text": "Hedda. I cook. I've cooked for three commanders and buried two of them, and the third one won't eat his greens.",
+  "tags": [
+    "dry, savouring it"
+  ],
+  "take": 3,
+  "reference": "voices/hedda-reference-dry.wav",
+  "model": "drama3-small-IQ3_XXS.gguf",
+  "sampling": [
+    "temperature=0.7",
+    "top_p=0.7",
+    "top_k=30"
+  ],
+  "render_wall_s_all_takes": 132.9,
+  "speaker_similarity": 0.8658,
+  "duration_s": 8.36,
+  "expected_s": 8.58,
+  "silences": [],
+  "transcript": "Hedda, I cook. I've cooked for three commanders and buried two of them, and the third one won't eat his greens.",
+  "words": [
+    {
+      "word": "Hedda,",
+      "start": 0.09,
+      "end": 0.78
+    },
+    {
+      "word": "I",
+      "start": 0.78,
+      "end": 0.92
+    },
+    {
+      "word": "cook.",
+      "start": 1.32,
+      "end": 1.79
+    },
+    {
+      "word": "I've",
+      "start": 2.16,
+      "end": 2.18
+    },
+    {
+      "word": "cooked",
+      "start": 2.23,
+      "end": 2.54
+    },
+    {
+      "word": "for",
+      "start": 2.54,
+      "end": 2.6
+    },
+    {
+      "word": "three",
+      "start": 2.73,
+      "end": 3.02
+    },
+    {
+      "word": "commanders",
+      "start": 3.48,
+      "end": 3.64
+    },
+    {
+      "word": "and",
+      "start": 3.64,
+      "end": 3.92
+    },
+    {
+      "word": "buried",
+      "start": 3.92,
+      "end": 4.48
+    },
+    {
+      "word": "two",
+      "start": 4.56,
+      "end": 4.7
+    },
+    {
+      "word": "of",
+      "start": 4.78,
+      "end": 4.95
+    },
+    {
+      "word": "them,",
+      "start": 4.95,
+      "end": 5.54
+    },
+    {
+      "word": "and",
+      "start": 6.12,
+      "end": 6.12
+    },
+    {
+      "word": "the",
+      "start": 6.12,
+      "end": 6.12
+    },
+    {
+      "word": "third",
+      "start": 6.21,
+      "end": 6.35
+    },
+    {
+      "word": "one",
+      "start": 6.35,
+      "end": 6.51
+    },
+    {
+      "word": "won't",
+      "start": 6.51,
+      "end": 6.93
+    },
+    {
+      "word": "eat",
+      "start": 6.94,
+      "end": 7.16
+    },
+    {
+      "word": "his",
+      "start": 7.38,
+      "end": 7.38
+    },
+    {
+      "word": "greens.",
+      "start": 7.44,
+      "end": 8.07
+    }
+  ],
+  "missing_words": [],
+  "reasons": [],
+  "pass": true
+}

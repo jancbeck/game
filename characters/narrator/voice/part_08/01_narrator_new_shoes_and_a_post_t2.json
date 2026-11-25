@@ -1,0 +1,148 @@
+{
+  "file": "/Users/jan/workspace/projects/game/characters/narrator/voice/part_08/01_narrator_new_shoes_and_a_post_t2.wav",
+  "character": "narrator",
+  "text": "[quick, precise, close, inner voice] New shoes, and a post-house brand on her shoulder. The king's post: she has been changed at every station and ridden hard between them.",
+  "spoken_text": "New shoes, and a post-house brand on her shoulder. The king's post: she has been changed at every station and ridden hard between them.",
+  "tags": [
+    "quick, precise, close, inner voice"
+  ],
+  "take": 2,
+  "reference": "voices/narrator-reference-dry.wav",
+  "model": "drama3-small-IQ3_XXS.gguf",
+  "sampling": [
+    "temperature=0.7",
+    "top_p=0.7",
+    "top_k=30"
+  ],
+  "render_wall_s_all_takes": 97.4,
+  "speaker_similarity": 0.7031,
+  "duration_s": 9.94,
+  "expected_s": 10.12,
+  "silences": [],
+  "transcript": "new shoes, and a post-house brand on her shoulder, the King's Post. She has been changed at every station and ridden hard between them.",
+  "words": [
+    {
+      "word": "new",
+      "start": 0.04,
+      "end": 0.28
+    },
+    {
+      "word": "shoes,",
+      "start": 0.42,
+      "end": 1.25
+    },
+    {
+      "word": "and",
+      "start": 1.3,
+      "end": 1.45
+    },
+    {
+      "word": "a",
+      "start": 1.45,
+      "end": 1.45
+    },
+    {
+      "word": "post-house",
+      "start": 1.58,
+      "end": 2.17
+    },
+    {
+      "word": "brand",
+      "start": 2.18,
+      "end": 2.52
+    },
+    {
+      "word": "on",
+      "start": 2.52,
+      "end": 2.65
+    },
+    {
+      "word": "her",
+      "start": 2.65,
+      "end": 2.85
+    },
+    {
+      "word": "shoulder,",
+      "start": 2.85,
+      "end": 3.55
+    },
+    {
+      "word": "the",
+      "start": 3.55,
+      "end": 3.61
+    },
+    {
+      "word": "King's",
+      "start": 3.75,
+      "end": 3.99
+    },
+    {
+      "word": "Post.",
+      "start": 4.17,
+      "end": 4.38
+    },
+    {
+      "word": "She",
+      "start": 5.5,
+      "end": 5.5
+    },
+    {
+      "word": "has",
+      "start": 5.5,
+      "end": 5.5
+    },
+    {
+      "word": "been",
+      "start": 5.51,
+      "end": 5.51
+    },
+    {
+      "word": "changed",
+      "start": 5.54,
+      "end": 6.22
+    },
+    {
+      "word": "at",
+      "start": 6.22,
+      "end": 6.37
+    },
+    {
+      "word": "every",
+      "start": 6.8,
+      "end": 6.93
+    },
+    {
+      "word": "station",
+      "start": 6.93,
+      "end": 7.67
+    },
+    {
+      "word": "and",
+      "start": 7.68,
+      "end": 7.91
+    },
+    {
+      "word": "ridden",
+      "start": 7.91,
+      "end": 8.35
+    },
+    {
+      "word": "hard",
+      "start": 8.38,
+      "end": 8.66
+    },
+    {
+      "word": "between",
+      "start": 8.67,
+      "end": 9.19
+    },
+    {
+      "word": "them.",
+      "start": 9.25,
+      "end": 9.76
+    }
+  ],
+  "missing_words": [],
+  "reasons": [],
+  "pass": true
+}

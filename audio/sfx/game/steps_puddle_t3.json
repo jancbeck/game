@@ -1,0 +1,12 @@
+{
+  "prompt": "footsteps of one person in heavy leather boots walking slowly through shallow puddles of water on stone with a short pause after each step, a splash of water and a few drips with each step, dry close-miked film sound effect, no reverb",
+  "negative_prompt": "reverb, echo, hall, music, speech, voices, singing, rain, running, jogging, multiple people, sneakers, high heels",
+  "seed": 2000,
+  "seconds": 12.0,
+  "dit": "medium",
+  "decoder": "same-l",
+  "cfg": 2.0,
+  "steps": 8,
+  "wall_seconds": 11.27,
+  "file": "steps_puddle_t3.wav"
+}

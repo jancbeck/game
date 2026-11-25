@@ -1,0 +1,12 @@
+{
+  "prompt": "a large horse in a wooden stall blowing a loud fluttering snort through its nostrils, a low soft nicker, and one hoof stamping on straw, dry close-miked film sound effect, no reverb",
+  "negative_prompt": "reverb, echo, hall, music, melody, speech, voices, singing, rain",
+  "seed": 3000,
+  "seconds": 6.0,
+  "dit": "medium",
+  "decoder": "same-l",
+  "cfg": 2.0,
+  "steps": 8,
+  "wall_seconds": 10.04,
+  "file": "obj_stable_t3.wav"
+}

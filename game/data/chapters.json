@@ -1,0 +1,66 @@
+{
+ "_doc": "The chapters of the story (scripts/chapter_ui.gd, chapters.gd). The story ends one with the Ink external `end_chapter(\"<id>\")`: the screen fades to black, a card shows `title` and `body`, then a page lists the player's choices, and the game returns to the title. The save written at that moment loads to the card again (and the title's Continue is disabled for it). `summary.lines`: one row per entry, `label` and a text chosen by the value of the Ink variable `var`: `values` maps the value written as text (a string as it is, a boolean as \"true\" or \"false\", a number without decimals) to the row's text; `default` is used for a value `values` does not list; a row with no text is left out. `summary.checks`: when present, a section of that name lists every skill check made so far and whether it passed. `summary.next`: the line under the button.",
+ "chapters": {
+  "night_one": {
+   "title": "The first night",
+   "body": "The rain does not stop for you. Marl's mare picks her way down the north road in the dark, and behind you the gate closes without a bell. Somewhere ahead, where the road meets the river, a man in a grey ferryman's cloak is waiting for nobody. Six men will hold Varrow Gate by spring, if the council has its way. Tonight there are eleven, a cook, a frightened boy, and a captain who has not slept. And you, whoever you are.",
+   "summary": {
+    "title": "What you did",
+    "lines": [
+     {
+      "var": "rider",
+      "label": "The rider",
+      "values": {
+       "6": "You found out who came through the gate."
+      },
+      "default": ""
+     },
+     {
+      "var": "letter_outcome",
+      "label": "The letter",
+      "values": {
+       "marl": "You gave Marl the letter, and he carried it up the tower himself.",
+       "kept": "You kept the letter from Marl and climbed the tower with it.",
+       "commander": "You kept your promise to Tam: the letter went to the commander from your hand."
+      }
+     },
+     {
+      "var": "tam_woken",
+      "label": "Tam",
+      "values": {
+       "true": "You woke Tam, and he told you what he could.",
+       "false": "Tam slept through the night, and never knew you were there."
+      }
+     },
+     {
+      "var": "knows_ford",
+      "label": "The seal",
+      "values": {
+       "true": "Broken at the ford, by a ferryman in a grey cloak."
+      }
+     },
+     {
+      "var": "player_claim",
+      "label": "Who you said you were",
+      "values": {
+       "assessor": "You came to count the spears.",
+       "lost": "You were only lost.",
+       "silent": "You held the captain's eye and said nothing.",
+       "flinched": "You tried to hold the captain's eye and blinked."
+      }
+     },
+     {
+      "var": "marl_knows_hedda",
+      "label": "Hedda",
+      "values": {
+       "true": "Marl knows the cook tied up his bell.",
+       "false": "Hedda's knot stays between you and her."
+      }
+     }
+    ],
+    "checks": "Checks",
+    "next": "The ford is two hours north. The story continues there. (Not yet written.)"
+   }
+  }
+ }
+}

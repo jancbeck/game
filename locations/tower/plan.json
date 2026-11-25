@@ -1,0 +1,72 @@
+{
+  "_doc": "The commander's chamber, third floor of the residential tower (scene/assets/palas.py), in metres, X east, Y north, Z up, the floor at z = 0 (the tower's own floor is 5.8 over the courtyard). A room of 5.6 x 4.2 m (x -2.8 .. 2.8, y -2.1 .. 2.1) between thick walls: the back wall (y 2.1 .. 2.85) is the cliff side with the paired window, the hearth and the niche, the side walls are 1.6 m thick. The camera looks from the south over a low sill into the cutaway. Around the room: the tower's walls with their parapets and merlons, the lower storey as dark masonry under the floor down to the rock shelf 9 m below, the courtyard wall abutting the tower on the east at the floor's level, a spur of the cliff rock on the west (prop tower_surround). The valley floor is the apron, 9 m down, in mist: it shows only through the window. kind 'room': the export builds a walk mesh of platform.walk with the prop footprints cut out, and exits and people from location.json.",
+  "kind": "room",
+  "heights": {
+    "wall": 2.8,
+    "low_wall": 0.4,
+    "lower_ward": -9.0
+  },
+  "merlon": {
+    "w": 0.75,
+    "h": 0.75,
+    "gap": 0.55,
+    "depth": 0.6,
+    "broken": 0.14,
+    "parapet": 1.0,
+    "missing": 0.05,
+    "leaning": 0.2,
+    "coping": 0.6
+  },
+  "blocks": {
+    "_doc": "Masonry boxes from `base` (default lower_ward, the rock shelf 9 m under the floor) up to h. center [x, y], size [w, d]. The tower's walls are 1.6 m thick at the sides (x 2.8 .. 4.4 and -4.4 .. -2.8) and carry a parapet with merlons on their outer edges; the cutaway shows their tops. The back wall carries a low kerb along its outer edge, left open where the hearth's stack rises through it. The back wall is three blocks, so the doorway of the stair is open in the proxy geometry too, and the stair turret stands behind it; the windows, the passage and the niche are cut into the blocks by their props. The south wall is a low sill whose face, with two arrow slits, is the lower storey of the tower under the floor. curtain_east is the courtyard wall that abuts the tower on the east at the level of this floor: a wall-walk 0.1 m over the floor with a low parapet on the courtyard side and merlons over the cliff.",
+    "back_wall_w": {"center": [-1.2625, 2.475], "size": [6.275, 0.75], "h": "wall", "rot_z": 0, "merlons": ["-x"]},
+    "back_wall_e": {"center": [3.5625, 2.475], "size": [1.675, 0.75], "h": "wall", "h_offset": -0.004, "rot_z": 0, "merlons": ["+x"]},
+    "back_kerb_w": {"center": [-1.875, 2.64], "size": [3.85, 0.38], "base": 2.79, "h": 3.3, "rot_z": 0},
+    "back_kerb_e": {"center": [2.375, 2.64], "size": [2.85, 0.38], "base": 2.79, "h": 3.3, "h_offset": -0.004, "rot_z": 0},
+    "back_lintel": {"center": [2.3, 2.475], "size": [0.85, 0.75], "base": 2.1, "h": "wall", "h_offset": -0.008, "rot_z": 0},
+    "stair_turret": {"center": [2.3, 3.45], "size": [1.5, 1.2], "h": "wall", "h_offset": -0.012, "rot_z": 0},
+    "west_wall": {"center": [-3.6, -0.15], "size": [1.6, 4.5], "h": "wall", "h_offset": -0.004, "rot_z": 0, "merlons": ["-x"]},
+    "east_wall": {"center": [3.6, -0.15], "size": [1.6, 4.5], "h": "wall", "h_offset": -0.006, "rot_z": 0, "merlons": ["+x"]},
+    "south_wall": {"center": [0.0, -2.25], "size": [5.6, 0.3], "h": "low_wall", "rot_z": 0,
+                   "slits": [["-y", -1.7, -0.55], ["-y", 1.7, -0.55]]},
+    "curtain_east": {"center": [6.9, 1.8], "size": [5.0, 3.0], "h": 0.1, "rot_z": 0, "merlons": ["+y"]},
+    "curtain_east_inner": {"center": [6.9, 0.55], "size": [5.0, 0.5], "base": 0.1, "h": 1.0, "h_offset": -0.004, "rot_z": 0}
+  },
+  "ground": {
+    "terrain": false,
+    "floor": "wood_dark",
+    "apron": {"size": [150.0, 150.0], "z": -9.0, "material": "valley"}
+  },
+  "platform": {
+    "_doc": "polygon: the floor of the room (z = 0) with its wall footings, 3 cm inside the walls' outer faces so that no two faces lie in one plane. walk: where a person may walk, the inside of the room. surface: the footstep surface of the floor.",
+    "polygon": [[-3.27, -2.37], [3.37, -2.37], [3.37, 2.82], [-3.27, 2.82]],
+    "walk": [[-2.7, -2.0], [2.7, -2.0], [2.7, 2.0], [-2.7, 2.0]],
+    "surface": "wood"
+  },
+  "props": {
+    "_doc": "pos [x, y] on the floor, rot_z degrees (0 = front faces south, the room is toward -y of the prop). Back wall from the left: the window, the map, the hearth, the niche, the stair door. The east wall (rot_z -90): the side window. The weapon rack and the mail shirt stand in the front right corner, 0.8 m clear of the desk so that the way from the stair door to the front of the desk stays open (the chair behind the desk closes the way behind it). The bed stands along the west wall, the desk in the middle, the commander's chair (tower_chair, seat top 0.50 m, its position is where `people.commander` sits) behind it. tower_surround is the rock and the string courses around the room; it is no obstacle (export_game NOT_OBSTACLES).",
+    "tower_floor": {"pos": [0.0, 0.0], "rot_z": 0},
+    "tower_ceiling": {"pos": [0.0, 0.0], "rot_z": 0},
+    "tower_view": {"pos": [0.0, 0.0], "rot_z": 0},
+    "tower_window": {"pos": [-2.0, 2.1], "rot_z": 0},
+    "tower_window_side": {"pos": [2.8, 0.7], "rot_z": -90},
+    "tower_map": {"pos": [-0.7, 2.1], "rot_z": 0},
+    "tower_hearth": {"pos": [0.5, 2.1], "rot_z": 0},
+    "tower_shrine": {"pos": [1.5, 2.1], "rot_z": 0},
+    "tower_rack": {"pos": [1.75, -1.3], "rot_z": 0},
+    "tower_stair_door": {"pos": [2.3, 2.1], "rot_z": 0},
+    "tower_desk": {"pos": [-0.2, 0.15], "rot_z": 0},
+    "tower_bed": {"pos": [-2.325, 1.1], "rot_z": 0},
+    "tower_chest": {"pos": [-2.5, -0.75], "rot_z": 90},
+    "tower_stool": {"pos": [-1.6, 1.75], "rot_z": 0},
+    "tower_rushes": {"pos": [0.0, 0.0], "rot_z": 0},
+    "tower_chair": {"pos": [-0.3, 1.1], "rot_z": 3},
+    "tower_surround": {"pos": [0.0, 0.0], "rot_z": 0}
+  },
+  "mounted": {},
+  "crows": {"seed": 1, "perched": 0, "perch_region": [[-3, 3], [-3, 3]], "flying": [], "points": [], "scale": 1.15},
+  "humans": {
+    "_doc": "1.8 m scale figures, rendered only by --check-scale.",
+    "points": [[-0.3, 0.95, 180], [-0.2, -0.65, 0]]
+  }
+}

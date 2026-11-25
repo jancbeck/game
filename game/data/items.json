@@ -1,0 +1,25 @@
+{
+ "_doc": "Things the player can carry (scripts/inventory.gd). id: what the story and scripts call it; name and description: shown in the satchel; icon: optional picture, a path under game/ (without one the satchel draws the initial). Give one with main.inventory.add(id) or give_item(\"id\") in the ink.",
+ "items": [
+  {
+   "id": "tally_stick",
+   "name": "Tally stick",
+   "description": "A hazel stick with notches cut along one edge, split lengthwise. Someone has kept the other half."
+  },
+  {
+   "id": "broken_seal",
+   "name": "Broken seal",
+   "description": "Half a disc of red wax, broken clean. A tower over three wavy lines."
+  },
+  {
+   "id": "greasy_rag",
+   "name": "Strip of linen",
+   "description": "Kitchen linen, stiff with old fat and smelling of onions. It held the bell rope out of reach."
+  },
+  {
+   "id": "letter",
+   "name": "Courier's letter",
+   "description": "Folded, its seal already broken: a tower over three wavy lines. Addressed to the commander."
+  }
+ ]
+}

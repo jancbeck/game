@@ -1,0 +1,98 @@
+{
+  "file": "/Users/jan/workspace/projects/game/characters/narrator/voice/part_14/01_narrator_he_means_it_he_also_t2.wav",
+  "character": "narrator",
+  "text": "[warm, soft, inner voice] He means it. He also hopes you will not take him up on it.",
+  "spoken_text": "He means it. He also hopes you will not take him up on it.",
+  "tags": [
+    "warm, soft, inner voice"
+  ],
+  "take": 2,
+  "reference": "voices/narrator-reference-dry.wav",
+  "model": "drama3-small-IQ3_XXS.gguf",
+  "sampling": [
+    "temperature=0.7",
+    "top_p=0.7",
+    "top_k=30"
+  ],
+  "render_wall_s_all_takes": 44.0,
+  "speaker_similarity": 0.7526,
+  "duration_s": 3.76,
+  "expected_s": 5.88,
+  "silences": [],
+  "transcript": "He means it. He also hopes you will not take him up on it.",
+  "words": [
+    {
+      "word": "He",
+      "start": 0.06,
+      "end": 0.1
+    },
+    {
+      "word": "means",
+      "start": 0.1,
+      "end": 0.36
+    },
+    {
+      "word": "it.",
+      "start": 0.36,
+      "end": 0.54
+    },
+    {
+      "word": "He",
+      "start": 1.28,
+      "end": 1.28
+    },
+    {
+      "word": "also",
+      "start": 1.28,
+      "end": 1.28
+    },
+    {
+      "word": "hopes",
+      "start": 1.34,
+      "end": 1.52
+    },
+    {
+      "word": "you",
+      "start": 1.52,
+      "end": 1.76
+    },
+    {
+      "word": "will",
+      "start": 1.76,
+      "end": 1.9
+    },
+    {
+      "word": "not",
+      "start": 2.32,
+      "end": 2.32
+    },
+    {
+      "word": "take",
+      "start": 2.64,
+      "end": 2.64
+    },
+    {
+      "word": "him",
+      "start": 2.69,
+      "end": 2.88
+    },
+    {
+      "word": "up",
+      "start": 2.88,
+      "end": 2.97
+    },
+    {
+      "word": "on",
+      "start": 3.07,
+      "end": 3.2
+    },
+    {
+      "word": "it.",
+      "start": 3.2,
+      "end": 3.66
+    }
+  ],
+  "missing_words": [],
+  "reasons": [],
+  "pass": true
+}

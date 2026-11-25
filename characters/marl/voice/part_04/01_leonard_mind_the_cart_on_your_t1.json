@@ -1,0 +1,103 @@
+{
+  "file": "/Users/jan/workspace/projects/game/characters/marl/voice/part_04/01_leonard_mind_the_cart_on_your_t1.wav",
+  "character": "leonard",
+  "text": "[dry] Mind the cart on your way out, and the cook as well. Mostly the cook.",
+  "spoken_text": "Mind the cart on your way out, and the cook as well. Mostly the cook.",
+  "tags": [
+    "dry"
+  ],
+  "take": 1,
+  "reference": "voices/leonard-reference-dry.wav",
+  "model": "drama3-small-IQ3_XXS.gguf",
+  "sampling": [
+    "temperature=0.7",
+    "top_p=0.7",
+    "top_k=30"
+  ],
+  "render_wall_s_all_takes": 41.5,
+  "speaker_similarity": 0.762,
+  "duration_s": 4.46,
+  "expected_s": 6.27,
+  "silences": [],
+  "transcript": "Mind the cart on your way out, and the cook as well, mostly the cook.",
+  "words": [
+    {
+      "word": "Mind",
+      "start": 0.05,
+      "end": 0.27
+    },
+    {
+      "word": "the",
+      "start": 0.27,
+      "end": 0.43
+    },
+    {
+      "word": "cart",
+      "start": 0.51,
+      "end": 0.74
+    },
+    {
+      "word": "on",
+      "start": 0.74,
+      "end": 0.87
+    },
+    {
+      "word": "your",
+      "start": 0.87,
+      "end": 1.14
+    },
+    {
+      "word": "way",
+      "start": 1.14,
+      "end": 1.34
+    },
+    {
+      "word": "out,",
+      "start": 1.34,
+      "end": 1.6
+    },
+    {
+      "word": "and",
+      "start": 1.74,
+      "end": 1.8
+    },
+    {
+      "word": "the",
+      "start": 1.8,
+      "end": 1.93
+    },
+    {
+      "word": "cook",
+      "start": 2.01,
+      "end": 2.15
+    },
+    {
+      "word": "as",
+      "start": 2.24,
+      "end": 2.32
+    },
+    {
+      "word": "well,",
+      "start": 2.39,
+      "end": 2.67
+    },
+    {
+      "word": "mostly",
+      "start": 2.67,
+      "end": 2.74
+    },
+    {
+      "word": "the",
+      "start": 3.38,
+      "end": 3.61
+    },
+    {
+      "word": "cook.",
+      "start": 3.61,
+      "end": 4.34
+    }
+  ],
+  "missing_words": [],
+  "reasons": [],
+  "pass": true
+}

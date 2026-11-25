@@ -1,0 +1,21 @@
+# The inner voices (skills), one narrator. Row k is skill_kk; clip ids are tagged in the ink.
+narrator: [quick, precise, close, inner voice] He has not slept. The candle has been trimmed three times; the wax on the desk says so.
+narrator: [warm, soft, inner voice] He folds the letter along its old creases, very carefully, the way a man handles something that has already hurt him.
+narrator: [dry, pleased with itself, inner voice] The seal half in the straw was broken clean and cold: the wax had set long before the mare stood there. A letter opened on the road, resealed badly, and opened again here by nobody.
+narrator: [dry, pleased with itself, inner voice] Where on the road does a royal courier stop long enough? Water. A ford.
+narrator: [clipped, proud, inner voice] He is not asking. He is giving you the chance to lie well.
+narrator: [quick, precise, close, inner voice] Two bowls drying by the basin. A spoon still in one. She has not been eating alone.
+narrator: [clipped, proud, inner voice] He has not stood up. A sergeant who stays seated is telling you exactly what he thinks of you.
+narrator: [warm, soft, inner voice] He let you keep it. He also let you see him decide to.
+narrator: [quick, precise, close, inner voice] New shoes, and a post-house brand on her shoulder. The king's post: she has been changed at every station and ridden hard between them.
+narrator: [dry, pleased with itself, inner voice] The king's post carries the council's crown. Three waves is somebody else's seal.
+narrator: [slow, ancient, low, inner voice] The bracket is older than the shelter, older than the gate. This bell has been rung for riders since before your grandfather's grandfather. It has never been gagged.
+narrator: [quick, precise, close, inner voice] Up on the landing by the tower door, a bundle of wet cloak that breathes.
+narrator: [quick, precise, close, inner voice] The strap is loose. One hand rests on the buckle, not holding it.
+narrator: [dry, pleased with itself, inner voice] A ferryman at a ford, with time enough to read a letter. The fords belong to the Wardens of the Three Waters. So does that seal.
+narrator: [warm, soft, inner voice] He means it. He also hopes you will not take him up on it.
+narrator: [warm, soft, inner voice] The milk is fresh. She feeds the cat before she feeds eleven men, and she would deny it under oath.
+narrator: [dry, pleased with itself, inner voice] A month. He knew something was coming long before Tam rode in, and chose not to open the door to it.
+narrator: [quick, precise, close, inner voice] Where road meets river there is a ford, and somebody has pressed a thumbnail into the paint there until the board split.
+narrator: [slow, ancient, low, inner voice] The niche is older than the tower. Somebody built a soldier's house around a prayer, and the stone has kept it.
+narrator: [cool, a little vain, inner voice] Ten metres of dark air. Your stomach notices before you do. Breathe out. Step back.

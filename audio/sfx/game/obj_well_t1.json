@@ -1,0 +1,12 @@
+{
+  "prompt": "a wooden well windlass cranked with creaking wooden axle and rope, then a wooden bucket splashing into water below, dry close-miked film sound effect, no reverb",
+  "negative_prompt": "reverb, echo, hall, music, melody, speech, voices, singing, rain",
+  "seed": 1000,
+  "seconds": 7.0,
+  "dit": "medium",
+  "decoder": "same-l",
+  "cfg": 3.0,
+  "steps": 8,
+  "wall_seconds": 9.18,
+  "file": "obj_well_t1.wav"
+}

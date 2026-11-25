@@ -1,0 +1,11 @@
+{
+ "_doc": "Recipe for scripts/character.py. Captain Orrin Vael, the commander: mid-fifties, designed voice (voice_design.json), portrait-2.",
+ "name": "Captain Vael",
+ "voice": "commander",
+ "lines": ["lines.txt"],
+ "portrait": "final/portrait_768.jpg",
+ "clip_prompt": "A tired, controlled garrison commander in his fifties speaks quietly to someone in front of him, economical small head movements, candlelight from the left",
+ "idle_prompt": "A tired garrison commander listens to someone speaking, mouth closed, eyes attentive, slow blinks, breathing, head still, candlelight",
+ "face_crop": "crop=440:440:92:62",
+ "distance": 2.0
+}

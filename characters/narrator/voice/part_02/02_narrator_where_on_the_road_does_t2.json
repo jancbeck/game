@@ -1,0 +1,98 @@
+{
+  "file": "/Users/jan/workspace/projects/game/characters/narrator/voice/part_02/02_narrator_where_on_the_road_does_t2.wav",
+  "character": "narrator",
+  "text": "[dry, pleased with itself, inner voice] Where on the road does a royal courier stop long enough? Water. A ford.",
+  "spoken_text": "Where on the road does a royal courier stop long enough? Water. A ford.",
+  "tags": [
+    "dry, pleased with itself, inner voice"
+  ],
+  "take": 2,
+  "reference": "voices/narrator-reference-dry.wav",
+  "model": "drama3-small-IQ3_XXS.gguf",
+  "sampling": [
+    "temperature=0.7",
+    "top_p=0.7",
+    "top_k=30"
+  ],
+  "render_wall_s_all_takes": 117.6,
+  "speaker_similarity": 0.7733,
+  "duration_s": 5.85,
+  "expected_s": 5.88,
+  "silences": [],
+  "transcript": "Where on the road does a royal courier stop long enough? Water. A Ford.",
+  "words": [
+    {
+      "word": "Where",
+      "start": 0.06,
+      "end": 0.33
+    },
+    {
+      "word": "on",
+      "start": 0.33,
+      "end": 0.46
+    },
+    {
+      "word": "the",
+      "start": 0.46,
+      "end": 0.66
+    },
+    {
+      "word": "road",
+      "start": 0.66,
+      "end": 0.93
+    },
+    {
+      "word": "does",
+      "start": 0.93,
+      "end": 1.2
+    },
+    {
+      "word": "a",
+      "start": 1.2,
+      "end": 1.26
+    },
+    {
+      "word": "royal",
+      "start": 1.26,
+      "end": 1.59
+    },
+    {
+      "word": "courier",
+      "start": 1.59,
+      "end": 2.06
+    },
+    {
+      "word": "stop",
+      "start": 2.06,
+      "end": 2.31
+    },
+    {
+      "word": "long",
+      "start": 2.32,
+      "end": 2.53
+    },
+    {
+      "word": "enough?",
+      "start": 2.62,
+      "end": 3.18
+    },
+    {
+      "word": "Water.",
+      "start": 4.08,
+      "end": 4.4
+    },
+    {
+      "word": "A",
+      "start": 4.4,
+      "end": 4.55
+    },
+    {
+      "word": "Ford.",
+      "start": 4.55,
+      "end": 5.66
+    }
+  ],
+  "missing_words": [],
+  "reasons": [],
+  "pass": true
+}

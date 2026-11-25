@@ -1,0 +1,64 @@
+{
+ "_doc": "Hedda, the garrison cook: late sixties, 1.60 m, heavy, ruddy face, grey hair under a linen kerchief tied under the chin, coarse brown wool dress to the ankle, a stained apron, sleeves rolled to the elbow, sturdy shoes (portrait: characters/hedda/portrait-2.png). The keys are listed in the docstring of characters/build_human.py. Clips: idle (weight shifts), talk (damped, dry), stir (at the hearth: set idle_clip in game/data/npcs/hedda.json), walk.",
+ "id": "hedda",
+ "height_m": 1.6,
+ "macro": {
+  "gender": 0.0,
+  "age": 0.84,
+  "muscle": 0.3,
+  "weight": 0.9,
+  "proportions": 0.5,
+  "height": 0.35,
+  "cupsize": 0.65,
+  "firmness": 0.25,
+  "race": {"asian": 0.0, "caucasian": 1.0, "african": 0.0}
+ },
+ "skin": {
+  "name": "old_caucasian_female",
+  "tint": [0.94, 0.77, 0.7],
+  "size": 512,
+  "flush": {"strength": 0.3, "color": [0.72, 0.36, 0.3]},
+  "hair": {"color": [0.56, 0.53, 0.5], "strength": 0.9},
+  "brows": {"color": [0.34, 0.31, 0.29], "strength": 0.75, "raise": -0.025, "arch": 0.1, "thickness": 0.0045}
+ },
+ "eyes": "grey",
+ "garments": {
+  "skin": {"forearms": true},
+  "tunic": {
+   "color": [0.38, 0.29, 0.21],
+   "ease": 0.034,
+   "sleeve_ease": 0.02,
+   "sleeves": "elbow",
+   "roll": 0.022,
+   "hem_above_ankle": 0.075,
+   "collar_rise": 0.01,
+   "wear": {"dirt": 0.35, "wet": 0.05}
+  },
+  "skirt": {"flare": 0.03, "rows": 8, "stride_total": 0.04, "thigh_share": 0.7, "side_bias": 0.0, "fold_amp": 0.05, "fold_count": 7},
+  "apron": {
+   "color": [0.46, 0.41, 0.33],
+   "hem_above_floor": 0.26,
+   "bib_half_width": 0.15,
+   "skirt_half_width": 0.29,
+   "top": 0.06,
+   "ease": 0.012,
+   "tie_color": [0.44, 0.39, 0.3],
+   "wear": {"dirt": 0.15, "wet": 0.0, "stain": 0.85, "stain_colour": [0.24, 0.15, 0.08]}
+  },
+  "hose": {"color": [0.26, 0.23, 0.21]},
+  "boots": {"color": [0.22, 0.16, 0.12], "height": 0.085, "ease": 0.016},
+  "kerchief": {
+   "color": [0.50, 0.46, 0.38],
+   "wear": {"dirt": 0.1, "wet": 0.0}
+  }
+ },
+ "wear": {"dirt": 0.3, "wet": 0.04},
+ "detail": {"skin": 0.14, "tunic": 0.2, "apron": 0.35, "boots": 0.15, "kerchief": 0.35, "belt": 0.6},
+ "fit": {"walk": {"mode": "clear", "keys": 30}},
+ "animations": {
+  "idle": {"type": "stand", "bvh": "77_02", "range_s": [3.0, 7.4], "rate": 0.8},
+  "talk": {"type": "stand", "bvh": "18_08", "range_s": [11.0, 16.6], "rate": 0.85, "amplitude": 0.55},
+  "stir": {"type": "stand", "bvh": "79_13", "range_s": [2.27, 3.83], "rate": 0.8, "overlap_s": 0.35},
+  "walk": {"type": "walk", "bvh": "07_01"}
+ }
+}

@@ -1,0 +1,12 @@
+{
+  "prompt": "a swollen wooden door shoved open with a shoulder, sticking and scraping on its frame, then creaking on iron hinges, dry close-miked film sound effect, no reverb",
+  "negative_prompt": "reverb, echo, hall, music, melody, speech, voices, singing, rain",
+  "seed": 1001,
+  "seconds": 6.0,
+  "dit": "medium",
+  "decoder": "same-l",
+  "cfg": 2.0,
+  "steps": 8,
+  "wall_seconds": 27.53,
+  "file": "obj_guardroom_t2.wav"
+}

@@ -1,0 +1,1344 @@
+{
+ "_doc": "Written by scene/export_game.py. Godot axes: godot (x, y, z) = blender (x, z, -y). Pixels: the 2560 x 1440 game frame, row 0 at the top.",
+ "conversion": {
+  "godot_from_blender": [
+   [
+    1.0,
+    0.0,
+    0.0
+   ],
+   [
+    0.0,
+    0.0,
+    1.0
+   ],
+   [
+    0.0,
+    -1.0,
+    0.0
+   ]
+  ],
+  "meters": 1.0
+ },
+ "camera": {
+  "_doc": "Orthographic game camera. basis columns are the camera's local +X (right), +Y (up), +Z (back; it looks along -Z), already in Godot axes. size is the frame width in meters (Godot keep_aspect = KEEP_WIDTH). The image-centre shift is baked into origin.",
+  "origin": [
+   -0.61315,
+   33.3567,
+   30.30003
+  ],
+  "basis_x": [
+   0.99619,
+   0.0,
+   0.08716
+  ],
+  "basis_y": [
+   0.06269,
+   0.69466,
+   -0.7166
+  ],
+  "basis_z": [
+   -0.06054,
+   0.71934,
+   0.69201
+  ],
+  "ortho_width_m": 13.4,
+  "ortho_height_m": 7.5375,
+  "px_per_m": 191.04478,
+  "resolution": [
+   2560,
+   1440
+  ],
+  "near": 1.0,
+  "far": 200.0,
+  "blender": {
+   "location": [
+    -0.6131546497344971,
+    -30.300025939941406,
+    33.35670471191406
+   ],
+   "rotation_euler_xyz": [
+    0.767944872379303,
+    0.0,
+    -0.0872664600610733
+   ],
+   "ortho_scale": 13.4,
+   "elevation_deg": 46.0,
+   "yaw_deg": 5.0,
+   "px_per_m": 191.04477611940297,
+   "world_origin_px": [
+    892.18,
+    991.28
+   ]
+  }
+ },
+ "depth": {
+  "_doc": "depth.f32: float32 little-endian, width*height, row 0 = top. Metres along the camera axis from the camera origin (orthographic). Sky pixels hold sky_m.",
+  "file": "locations/cookhouse/assets/depth.f32",
+  "width": 2560,
+  "height": 1440,
+  "min_m": 41.662506103515625,
+  "max_m": 50.049903869628906,
+  "sky_m": 196.0,
+  "sky_fraction": 0.0
+ },
+ "background": "locations/cookhouse/assets/layers/reference.png",
+ "layers": {
+  "color_space": "linear Rec.709, scene-referred, exposure already applied",
+  "view_transform": "AgX",
+  "look": "AgX - Punchy",
+  "exposure_applied_ev": 2.0,
+  "post": {
+   "_doc": "kuwahara: painterly brush size in px. bloom: glare strength above threshold. grade: lift/gamma/gain RGB. vignette: edge darkening 0..1.",
+   "kuwahara": 0,
+   "kuwahara_sharpness": 0.85,
+   "bloom": 0.6,
+   "bloom_threshold": 0.8,
+   "bloom_size": 0.6,
+   "grade": {
+    "lift": [
+     0.97,
+     0.975,
+     0.99
+    ],
+    "gamma": [
+     1.0,
+     1.0,
+     1.0
+    ],
+    "gain": [
+     1.0,
+     1.0,
+     1.02
+    ]
+   },
+   "vignette": 0.35,
+   "sharpen": 0,
+   "saturation": 0.9
+  },
+  "base": "locations/cookhouse/assets/layers/base.exr",
+  "groups": [
+   {
+    "id": "cookhouse_hearth",
+    "image": "locations/cookhouse/assets/layers/lg_cookhouse_hearth.exr",
+    "curve": "fire",
+    "seed": 2045931,
+    "prop": "kitchen_hearth",
+    "anchor": [
+     -1.3,
+     0.475,
+     -0.74
+    ]
+   },
+   {
+    "id": "cookhouse_oven",
+    "image": "locations/cookhouse/assets/layers/lg_cookhouse_oven.exr",
+    "curve": "fire",
+    "seed": 5616833,
+    "prop": "kitchen_oven",
+    "anchor": [
+     0.55,
+     0.74,
+     -0.955
+    ]
+   }
+  ],
+  "reference": "locations/cookhouse/assets/layers/reference.png",
+  "reference_post": "locations/cookhouse/assets/layers/reference_post.png"
+ },
+ "masks": {
+  "puddle": "locations/cookhouse/assets/masks/puddle.png",
+  "wet": "locations/cookhouse/assets/masks/wet.png",
+  "normal": "locations/cookhouse/assets/masks/normal.png",
+  "_doc": "normal: camera-space unit normal as rgb = n * 0.5 + 0.5 (x right, y up, z toward the camera). ids: 8-bit, 0 = nothing, k = hotspot k (1-based, hotspots.json order)",
+  "ids": "locations/cookhouse/assets/masks/ids.png"
+ },
+ "views": {
+  "_doc": "Zoom views. wide: zoom 0.5, its own camera block (same direction and image centre, twice the coverage). tiles: zoom 2 around each hotspot; rect is in main-frame px [x0, y0, w, h], the tile images are rect * scale px. A tile lists only the light groups that reach it; the others are zero there (their faint rest is in its base). Images, depth, ids and masks follow the main frame's formats.",
+  "wide": {
+   "camera": {
+    "_doc": "Orthographic game camera. basis columns are the camera's local +X (right), +Y (up), +Z (back; it looks along -Z), already in Godot axes. size is the frame width in meters (Godot keep_aspect = KEEP_WIDTH). The image-centre shift is baked into origin.",
+    "origin": [
+     -0.61315,
+     33.3567,
+     30.30003
+    ],
+    "basis_x": [
+     0.99619,
+     0.0,
+     0.08716
+    ],
+    "basis_y": [
+     0.06269,
+     0.69466,
+     -0.7166
+    ],
+    "basis_z": [
+     -0.06054,
+     0.71934,
+     0.69201
+    ],
+    "ortho_width_m": 26.8,
+    "ortho_height_m": 15.075,
+    "px_per_m": 95.52239,
+    "resolution": [
+     2560,
+     1440
+    ],
+    "near": 1.0,
+    "far": 200.0,
+    "blender": {
+     "location": [
+      -0.6131546497344971,
+      -30.300025939941406,
+      33.35670471191406
+     ],
+     "rotation_euler_xyz": [
+      0.767944872379303,
+      0.0,
+      -0.0872664600610733
+     ],
+     "ortho_scale": 26.8,
+     "elevation_deg": 46.0,
+     "yaw_deg": 5.0,
+     "px_per_m": 95.52238805970148,
+     "world_origin_px": [
+      1086.09,
+      855.64
+     ]
+    }
+   },
+   "base": "locations/cookhouse/assets/wide/base.exr",
+   "groups": [
+    {
+     "id": "cookhouse_hearth",
+     "image": "locations/cookhouse/assets/wide/lg_cookhouse_hearth.exr"
+    },
+    {
+     "id": "cookhouse_oven",
+     "image": "locations/cookhouse/assets/wide/lg_cookhouse_oven.exr"
+    }
+   ],
+   "depth": "locations/cookhouse/assets/wide/depth.f32",
+   "depth_meta": {
+    "file": "locations/cookhouse/assets/wide/depth.f32",
+    "width": 2560,
+    "height": 1440,
+    "min_m": 39.139163970947266,
+    "max_m": 50.5576171875,
+    "sky_m": 196.0,
+    "sky_fraction": 0.0
+   },
+   "ids": "locations/cookhouse/assets/wide/ids.png",
+   "masks": {
+    "puddle": "locations/cookhouse/assets/wide/puddle.png",
+    "wet": "locations/cookhouse/assets/wide/wet.png"
+   },
+   "reference": "locations/cookhouse/assets/wide/reference.png"
+  },
+  "tiles": [
+   {
+    "id": "hearth",
+    "hotspot": "hearth",
+    "rect": [
+     0,
+     145,
+     1280,
+     720
+    ],
+    "scale": 2,
+    "base": "locations/cookhouse/assets/tiles/hearth/base.exr",
+    "groups": [
+     {
+      "id": "cookhouse_hearth",
+      "image": "locations/cookhouse/assets/tiles/hearth/lg_cookhouse_hearth.exr"
+     },
+     {
+      "id": "cookhouse_oven",
+      "image": "locations/cookhouse/assets/tiles/hearth/lg_cookhouse_oven.exr"
+     }
+    ],
+    "depth": "locations/cookhouse/assets/tiles/hearth/depth.f32",
+    "ids": "locations/cookhouse/assets/tiles/hearth/ids.png",
+    "masks": {
+     "puddle": "locations/cookhouse/assets/tiles/hearth/puddle.png",
+     "wet": "locations/cookhouse/assets/tiles/hearth/wet.png"
+    },
+    "reference": "locations/cookhouse/assets/tiles/hearth/reference.png"
+   },
+   {
+    "id": "oven",
+    "hotspot": "oven",
+    "rect": [
+     341,
+     369,
+     1280,
+     720
+    ],
+    "scale": 2,
+    "base": "locations/cookhouse/assets/tiles/oven/base.exr",
+    "groups": [
+     {
+      "id": "cookhouse_hearth",
+      "image": "locations/cookhouse/assets/tiles/oven/lg_cookhouse_hearth.exr"
+     },
+     {
+      "id": "cookhouse_oven",
+      "image": "locations/cookhouse/assets/tiles/oven/lg_cookhouse_oven.exr"
+     }
+    ],
+    "depth": "locations/cookhouse/assets/tiles/oven/depth.f32",
+    "ids": "locations/cookhouse/assets/tiles/oven/ids.png",
+    "masks": {
+     "puddle": "locations/cookhouse/assets/tiles/oven/puddle.png",
+     "wet": "locations/cookhouse/assets/tiles/oven/wet.png"
+    },
+    "reference": "locations/cookhouse/assets/tiles/oven/reference.png"
+   },
+   {
+    "id": "table",
+    "hotspot": "table",
+    "rect": [
+     257,
+     667,
+     1280,
+     720
+    ],
+    "scale": 2,
+    "base": "locations/cookhouse/assets/tiles/table/base.exr",
+    "groups": [
+     {
+      "id": "cookhouse_hearth",
+      "image": "locations/cookhouse/assets/tiles/table/lg_cookhouse_hearth.exr"
+     },
+     {
+      "id": "cookhouse_oven",
+      "image": "locations/cookhouse/assets/tiles/table/lg_cookhouse_oven.exr"
+     }
+    ],
+    "depth": "locations/cookhouse/assets/tiles/table/depth.f32",
+    "ids": "locations/cookhouse/assets/tiles/table/ids.png",
+    "masks": {
+     "puddle": "locations/cookhouse/assets/tiles/table/puddle.png",
+     "wet": "locations/cookhouse/assets/tiles/table/wet.png"
+    },
+    "reference": "locations/cookhouse/assets/tiles/table/reference.png"
+   },
+   {
+    "id": "yard_door",
+    "hotspot": "yard_door",
+    "rect": [
+     600,
+     192,
+     1280,
+     720
+    ],
+    "scale": 2,
+    "base": "locations/cookhouse/assets/tiles/yard_door/base.exr",
+    "groups": [
+     {
+      "id": "cookhouse_hearth",
+      "image": "locations/cookhouse/assets/tiles/yard_door/lg_cookhouse_hearth.exr"
+     },
+     {
+      "id": "cookhouse_oven",
+      "image": "locations/cookhouse/assets/tiles/yard_door/lg_cookhouse_oven.exr"
+     }
+    ],
+    "depth": "locations/cookhouse/assets/tiles/yard_door/depth.f32",
+    "ids": "locations/cookhouse/assets/tiles/yard_door/ids.png",
+    "masks": {
+     "puddle": "locations/cookhouse/assets/tiles/yard_door/puddle.png",
+     "wet": "locations/cookhouse/assets/tiles/yard_door/wet.png"
+    },
+    "reference": "locations/cookhouse/assets/tiles/yard_door/reference.png"
+   },
+   {
+    "id": "pot_rack",
+    "hotspot": "pot_rack",
+    "rect": [
+     0,
+     597,
+     1280,
+     720
+    ],
+    "scale": 2,
+    "base": "locations/cookhouse/assets/tiles/pot_rack/base.exr",
+    "groups": [
+     {
+      "id": "cookhouse_hearth",
+      "image": "locations/cookhouse/assets/tiles/pot_rack/lg_cookhouse_hearth.exr"
+     },
+     {
+      "id": "cookhouse_oven",
+      "image": "locations/cookhouse/assets/tiles/pot_rack/lg_cookhouse_oven.exr"
+     }
+    ],
+    "depth": "locations/cookhouse/assets/tiles/pot_rack/depth.f32",
+    "ids": "locations/cookhouse/assets/tiles/pot_rack/ids.png",
+    "masks": {
+     "puddle": "locations/cookhouse/assets/tiles/pot_rack/puddle.png",
+     "wet": "locations/cookhouse/assets/tiles/pot_rack/wet.png"
+    },
+    "reference": "locations/cookhouse/assets/tiles/pot_rack/reference.png"
+   },
+   {
+    "id": "shelves",
+    "hotspot": "shelves",
+    "rect": [
+     1174,
+     144,
+     1280,
+     720
+    ],
+    "scale": 2,
+    "base": "locations/cookhouse/assets/tiles/shelves/base.exr",
+    "groups": [
+     {
+      "id": "cookhouse_hearth",
+      "image": "locations/cookhouse/assets/tiles/shelves/lg_cookhouse_hearth.exr"
+     },
+     {
+      "id": "cookhouse_oven",
+      "image": "locations/cookhouse/assets/tiles/shelves/lg_cookhouse_oven.exr"
+     }
+    ],
+    "depth": "locations/cookhouse/assets/tiles/shelves/depth.f32",
+    "ids": "locations/cookhouse/assets/tiles/shelves/ids.png",
+    "masks": {
+     "puddle": "locations/cookhouse/assets/tiles/shelves/puddle.png",
+     "wet": "locations/cookhouse/assets/tiles/shelves/wet.png"
+    },
+    "reference": "locations/cookhouse/assets/tiles/shelves/reference.png"
+   },
+   {
+    "id": "cat_seat",
+    "hotspot": "cat_seat",
+    "rect": [
+     198,
+     420,
+     1280,
+     720
+    ],
+    "scale": 2,
+    "base": "locations/cookhouse/assets/tiles/cat_seat/base.exr",
+    "groups": [
+     {
+      "id": "cookhouse_hearth",
+      "image": "locations/cookhouse/assets/tiles/cat_seat/lg_cookhouse_hearth.exr"
+     },
+     {
+      "id": "cookhouse_oven",
+      "image": "locations/cookhouse/assets/tiles/cat_seat/lg_cookhouse_oven.exr"
+     }
+    ],
+    "depth": "locations/cookhouse/assets/tiles/cat_seat/depth.f32",
+    "ids": "locations/cookhouse/assets/tiles/cat_seat/ids.png",
+    "masks": {
+     "puddle": "locations/cookhouse/assets/tiles/cat_seat/puddle.png",
+     "wet": "locations/cookhouse/assets/tiles/cat_seat/wet.png"
+    },
+    "reference": "locations/cookhouse/assets/tiles/cat_seat/reference.png"
+   },
+   {
+    "id": "larder",
+    "hotspot": "larder",
+    "rect": [
+     1229,
+     181,
+     1280,
+     720
+    ],
+    "scale": 2,
+    "base": "locations/cookhouse/assets/tiles/larder/base.exr",
+    "groups": [
+     {
+      "id": "cookhouse_hearth",
+      "image": "locations/cookhouse/assets/tiles/larder/lg_cookhouse_hearth.exr"
+     },
+     {
+      "id": "cookhouse_oven",
+      "image": "locations/cookhouse/assets/tiles/larder/lg_cookhouse_oven.exr"
+     }
+    ],
+    "depth": "locations/cookhouse/assets/tiles/larder/depth.f32",
+    "ids": "locations/cookhouse/assets/tiles/larder/ids.png",
+    "masks": {
+     "puddle": "locations/cookhouse/assets/tiles/larder/puddle.png",
+     "wet": "locations/cookhouse/assets/tiles/larder/wet.png"
+    },
+    "reference": "locations/cookhouse/assets/tiles/larder/reference.png"
+   }
+  ]
+ },
+ "flipbooks": [
+  {
+   "id": "cookhouse_hearth_flame",
+   "atlas": "locations/cookhouse/assets/flipbooks/cookhouse_hearth_flame.png",
+   "cols": 8,
+   "rows": 9,
+   "frames": 72,
+   "fps": 24.0,
+   "loop": true,
+   "rect": [
+    493,
+    676,
+    282,
+    261
+   ],
+   "cell": [
+    282,
+    261
+   ],
+   "blend": "premul",
+   "encoding": "srgb",
+   "scale": 11.25,
+   "depth": null,
+   "depth_m": 45.24,
+   "group": "cookhouse_hearth",
+   "kind": "flame",
+   "density": 1,
+   "source": "mantaflow"
+  },
+  {
+   "id": "cookhouse_hearth_flame@2",
+   "atlas": "locations/cookhouse/assets/flipbooks/cookhouse_hearth_flame@2.png",
+   "cols": 8,
+   "rows": 9,
+   "frames": 72,
+   "fps": 24.0,
+   "loop": true,
+   "rect": [
+    493,
+    676,
+    282,
+    261
+   ],
+   "cell": [
+    491,
+    455
+   ],
+   "blend": "premul",
+   "encoding": "srgb",
+   "scale": 11.5,
+   "depth": null,
+   "depth_m": 45.24,
+   "group": "cookhouse_hearth",
+   "kind": "flame",
+   "density": 2,
+   "source": "mantaflow"
+  },
+  {
+   "id": "cookhouse_oven_flame",
+   "atlas": "locations/cookhouse/assets/flipbooks/cookhouse_oven_flame.png",
+   "cols": 8,
+   "rows": 9,
+   "frames": 72,
+   "fps": 24.0,
+   "loop": true,
+   "rect": [
+    920,
+    615,
+    122,
+    115
+   ],
+   "cell": [
+    122,
+    115
+   ],
+   "blend": "premul",
+   "encoding": "srgb",
+   "scale": 10.25,
+   "depth": null,
+   "depth_m": 45.082,
+   "group": "cookhouse_oven",
+   "kind": "flame",
+   "density": 1,
+   "source": "mantaflow"
+  },
+  {
+   "id": "cookhouse_oven_flame@2",
+   "atlas": "locations/cookhouse/assets/flipbooks/cookhouse_oven_flame@2.png",
+   "cols": 8,
+   "rows": 9,
+   "frames": 72,
+   "fps": 24.0,
+   "loop": true,
+   "rect": [
+    920,
+    615,
+    122,
+    115
+   ],
+   "cell": [
+    244,
+    230
+   ],
+   "blend": "premul",
+   "encoding": "srgb",
+   "scale": 10.25,
+   "depth": null,
+   "depth_m": 45.082,
+   "group": "cookhouse_oven",
+   "kind": "flame",
+   "density": 2,
+   "source": "mantaflow"
+  },
+  {
+   "id": "cookhouse_hearth_chimney_smoke",
+   "atlas": "locations/cookhouse/assets/flipbooks/cookhouse_hearth_chimney_smoke.png",
+   "cols": 3,
+   "rows": 11,
+   "frames": 32,
+   "fps": 8.0,
+   "loop": true,
+   "rect": [
+    537,
+    0,
+    1139,
+    367
+   ],
+   "cell": [
+    1139,
+    367
+   ],
+   "blend": "premul",
+   "encoding": "srgb",
+   "scale": 1.0,
+   "depth": null,
+   "depth_m": 43.155,
+   "group": null,
+   "kind": "smoke"
+  },
+  {
+   "id": "cookhouse_hearth_smoke",
+   "atlas": "locations/cookhouse/assets/flipbooks/cookhouse_hearth_smoke.png",
+   "cols": 6,
+   "rows": 6,
+   "frames": 32,
+   "fps": 8.0,
+   "loop": true,
+   "rect": [
+    621,
+    336,
+    450,
+    423
+   ],
+   "cell": [
+    450,
+    423
+   ],
+   "blend": "premul",
+   "encoding": "srgb",
+   "scale": 1.0,
+   "depth": null,
+   "depth_m": 45.107,
+   "group": null,
+   "kind": "smoke"
+  },
+  {
+   "id": "cookhouse_hearth_embers",
+   "atlas": "locations/cookhouse/assets/flipbooks/cookhouse_hearth_embers.png",
+   "cols": 5,
+   "rows": 5,
+   "frames": 24,
+   "fps": 24.301,
+   "loop": true,
+   "rect": [
+    602,
+    0,
+    119,
+    138
+   ],
+   "cell": [
+    119,
+    138
+   ],
+   "blend": "premul",
+   "encoding": "srgb",
+   "scale": 9.0,
+   "depth": null,
+   "depth_m": 42.878,
+   "group": "cookhouse_hearth",
+   "kind": "embers"
+  }
+ ],
+ "crows": {
+  "_doc": "crow.glb faces Godot +Z (Blender -Y) at yaw 0, feet at the origin. Perch yaw is degrees about Godot +Y (the same angle as Blender rot_z). Nodes body, head, tail, wing_l, wing_r; the pivots sit at the neck, the tail base and the shoulders.",
+  "model": "locations/cookhouse/assets/crow.glb",
+  "head_height_m": 0.31,
+  "perches": [],
+  "start": []
+ },
+ "walk": {
+  "_doc": "walk.glb: the room's walkable floor, prop footprints cut out, no agent radius. exits: walking into one leaves for the location named by target.",
+  "mesh": "locations/cookhouse/assets/walk.glb",
+  "area_m2": 21.2,
+  "surfaces": [
+   "cobble",
+   "mud",
+   "straw",
+   "stone_stair",
+   "stone_walk",
+   "wood"
+  ],
+  "surface_area_m2": {
+   "cobble": 21.2
+  },
+  "wall_walks": {},
+  "links": [],
+  "exits": [
+   {
+    "id": "courtyard",
+    "pos": [
+     2.0,
+     0.0,
+     -1.55
+    ],
+    "label": "Yard",
+    "target": "courtyard"
+   }
+  ],
+  "portals": []
+ },
+ "proxy": "locations/cookhouse/assets/proxy.glb",
+ "proxy_counts": {
+  "walls": 8,
+  "prop_obstacles": 20
+ },
+ "ambient": {
+  "_doc": "blue-hour sky fill for real-time objects",
+  "color": [
+   0.03,
+   0.045,
+   0.09
+  ],
+  "moon": {
+   "direction_euler": [
+    44,
+    0,
+    -30
+   ],
+   "color": [
+    0.62,
+    0.74,
+    1.0
+   ],
+   "strength": 0.6,
+   "angle_deg": 25
+  },
+  "moon_direction": [
+   0.34733,
+   -0.71934,
+   -0.60159
+  ]
+ },
+ "lights": [
+  {
+   "name": "light_kitchen_archway",
+   "position": [
+    3.9,
+    1.3,
+    0.1
+   ],
+   "color": [
+    1.0,
+    0.45,
+    0.14
+   ],
+   "watts": 12.6,
+   "reach_m": 3.2,
+   "radius_m": 0.3,
+   "inside_wall": false,
+   "group": "base"
+  },
+  {
+   "name": "light_kitchen_door",
+   "position": [
+    2.0,
+    1.25,
+    -2.25
+   ],
+   "color": [
+    0.42,
+    0.58,
+    1.0
+   ],
+   "watts": 140.0,
+   "reach_m": 10.56,
+   "radius_m": 0.35,
+   "inside_wall": true,
+   "group": "base"
+  },
+  {
+   "name": "light_kitchen_fill_kitchen",
+   "position": [
+    0.8,
+    2.8,
+    8.0
+   ],
+   "color": [
+    0.5,
+    0.64,
+    1.0
+   ],
+   "watts": 2100.0,
+   "reach_m": 12.0,
+   "radius_m": 2.6,
+   "inside_wall": false,
+   "group": "base"
+  },
+  {
+   "name": "light_kitchen_fill_larder",
+   "position": [
+    5.0,
+    2.8,
+    8.0
+   ],
+   "color": [
+    0.5,
+    0.64,
+    1.0
+   ],
+   "watts": 2100.0,
+   "reach_m": 12.0,
+   "radius_m": 2.6,
+   "inside_wall": false,
+   "group": "base"
+  },
+  {
+   "name": "light_kitchen_hearth",
+   "position": [
+    -1.3,
+    0.5,
+    -1.28
+   ],
+   "color": [
+    1.0,
+    0.36,
+    0.07
+   ],
+   "watts": 420.0,
+   "reach_m": 9.0,
+   "radius_m": 0.16,
+   "inside_wall": false,
+   "group": "cookhouse_hearth"
+  },
+  {
+   "name": "light_kitchen_hearth_floor",
+   "position": [
+    -1.3,
+    0.45,
+    -0.2
+   ],
+   "color": [
+    1.0,
+    0.33,
+    0.06
+   ],
+   "watts": 126.0,
+   "reach_m": 6.5,
+   "radius_m": 0.35,
+   "inside_wall": false,
+   "group": "cookhouse_hearth"
+  },
+  {
+   "name": "light_kitchen_larder_dusk",
+   "position": [
+    6.1,
+    2.1,
+    -1.0
+   ],
+   "color": [
+    0.45,
+    0.6,
+    1.0
+   ],
+   "watts": 98.0,
+   "reach_m": 5.0,
+   "radius_m": 0.5,
+   "inside_wall": false,
+   "group": "base"
+  },
+  {
+   "name": "light_kitchen_oven",
+   "position": [
+    0.55,
+    0.98,
+    -1.22
+   ],
+   "color": [
+    1.0,
+    0.3,
+    0.05
+   ],
+   "watts": 47.6,
+   "reach_m": 4.5,
+   "radius_m": 0.1,
+   "inside_wall": false,
+   "group": "cookhouse_oven"
+  },
+  {
+   "name": "light_kitchen_oven_floor",
+   "position": [
+    0.55,
+    0.5,
+    -0.69
+   ],
+   "color": [
+    1.0,
+    0.3,
+    0.05
+   ],
+   "watts": 28.0,
+   "reach_m": 3.5,
+   "radius_m": 0.25,
+   "inside_wall": false,
+   "group": "cookhouse_oven"
+  },
+  {
+   "name": "light_kitchen_window",
+   "position": [
+    1.24,
+    1.88,
+    -2.2
+   ],
+   "color": [
+    0.42,
+    0.58,
+    1.0
+   ],
+   "watts": 77.0,
+   "reach_m": 7.83,
+   "radius_m": 0.18,
+   "inside_wall": true,
+   "group": "base"
+  },
+  {
+   "name": "light_kitchen_window.001",
+   "position": [
+    6.1,
+    1.83,
+    -2.2
+   ],
+   "color": [
+    0.42,
+    0.58,
+    1.0
+   ],
+   "watts": 77.0,
+   "reach_m": 7.83,
+   "radius_m": 0.18,
+   "inside_wall": true,
+   "group": "base"
+  }
+ ],
+ "checks": {
+  "layers": {
+   "raw_groups_vs_noisy_combined_identity": "Cycles combined is denoised; raw groups are not",
+   "raw_sum_vs_combined": {
+    "mean_abs": 0.0022993963211774826,
+    "p99_abs": 0.02569456398487091,
+    "max_abs": 5.436653137207031,
+    "mean_rel": 0.06068877503275871
+   },
+   "denoised_sum_vs_combined": {
+    "mean_abs": 0.0003700852394104004,
+    "p99_abs": 0.005199551582336426,
+    "max_abs": 0.9927749633789062,
+    "mean_rel": 0.009767789393663406
+   },
+   "display_8bit_vs_combined": {
+    "mean": 0.28321451822916666,
+    "p99": 3.0,
+    "max": 53,
+    "share_over_4": 0.0048469147858796295
+   }
+  },
+  "mask_stats": {
+   "depth_holes_filled": 0,
+   "puddle_fraction": 0.008567165798611111,
+   "wet_mean": 0.17211610935314808,
+   "rough_hist": [
+    37942,
+    62092,
+    65891,
+    220785,
+    509928,
+    717904,
+    560473,
+    519892,
+    731871,
+    198845
+   ]
+  },
+  "render": {
+   "samples": 128,
+   "percent": 100,
+   "seconds": 577,
+   "resolution": [
+    2560,
+    1440
+   ],
+   "exr": "/Users/jan/workspace/projects/game/game/locations/cookhouse/build/layers_exr/layers.exr"
+  },
+  "views": {
+   "wide": {
+    "checks": {
+     "raw_sum_vs_combined": {
+      "mean_abs": 0.0019561329390853643,
+      "p99_abs": 0.0159912109375,
+      "max_abs": 6.859375,
+      "mean_rel": 0.05288182199001312
+     },
+     "denoised_sum_vs_combined": {
+      "mean_abs": 0.00017635873518884182,
+      "p99_abs": 0.002206563949584961,
+      "max_abs": 3.5196990966796875,
+      "mean_rel": 0.00476765725761652
+     },
+     "display_8bit_vs_combined": {
+      "mean": 0.1386958369502315,
+      "p99": 2.0,
+      "max": 44,
+      "share_over_4": 0.002760868778935185
+     }
+    },
+    "render": {
+     "data_seconds": 43,
+     "beauty_seconds": 272,
+     "samples": 64,
+     "data_samples": 8,
+     "regions": [
+      null
+     ],
+     "region_seconds": [
+      272
+     ]
+    },
+    "mask_stats": {
+     "depth_holes_filled": 0,
+     "puddle_fraction": 0.0019932725694444446,
+     "wet_mean": 0.14669897759842285,
+     "rough_hist": [
+      9116,
+      96267,
+      80486,
+      164870,
+      325471,
+      700359,
+      712095,
+      603918,
+      792507,
+      146677
+     ]
+    }
+   },
+   "tiles": {
+    "render": {
+     "data_seconds": 159,
+     "beauty_seconds": 1464,
+     "samples": 80,
+     "data_samples": 8,
+     "regions": [
+      [
+       0,
+       240,
+       5066,
+       2328
+      ],
+      [
+       0,
+       2232,
+       3122,
+       2822
+      ]
+     ],
+     "region_seconds": [
+      1279,
+      185
+     ]
+    },
+    "per_tile": {
+     "hearth": {
+      "checks": {
+       "raw_sum_vs_combined": {
+        "mean_abs": 0.0046041677705943584,
+        "p99_abs": 0.062255859375,
+        "max_abs": 9.75,
+        "mean_rel": 0.11431045830249786
+       },
+       "denoised_sum_vs_combined": {
+        "mean_abs": 0.0007919594063423574,
+        "p99_abs": 0.010265827178955078,
+        "max_abs": 1.2447948455810547,
+        "mean_rel": 0.01966245472431183
+       },
+       "display_8bit_vs_combined": {
+        "mean": 0.5281170428240741,
+        "p99": 5.0,
+        "max": 38,
+        "share_over_4": 0.013011158130787038
+       }
+      },
+      "folded_into_base": [],
+      "ids_pixels": {
+       "hearth": 924402,
+       "oven": 175548,
+       "yard_door": 210441,
+       "pot_rack": 29691,
+       "cat_seat": 8976
+      }
+     },
+     "oven": {
+      "checks": {
+       "raw_sum_vs_combined": {
+        "mean_abs": 0.007270842790603638,
+        "p99_abs": 0.10986328125,
+        "max_abs": 9.75,
+        "mean_rel": 0.11320606619119644
+       },
+       "denoised_sum_vs_combined": {
+        "mean_abs": 0.001242164638824761,
+        "p99_abs": 0.017822265625,
+        "max_abs": 1.2447948455810547,
+        "mean_rel": 0.01934034191071987
+       },
+       "display_8bit_vs_combined": {
+        "mean": 0.7483104564525463,
+        "p99": 5.0,
+        "max": 85,
+        "share_over_4": 0.01709617332175926
+       }
+      },
+      "folded_into_base": [],
+      "ids_pixels": {
+       "hearth": 791167,
+       "oven": 183009,
+       "table": 219857,
+       "yard_door": 326121,
+       "pot_rack": 65419,
+       "cat_seat": 8976,
+       "larder": 1310
+      }
+     },
+     "table": {
+      "checks": {
+       "raw_sum_vs_combined": {
+        "mean_abs": 0.006838431116193533,
+        "p99_abs": 0.10693359375,
+        "max_abs": 9.75,
+        "mean_rel": 0.11018485575914383
+       },
+       "denoised_sum_vs_combined": {
+        "mean_abs": 0.0012795813381671906,
+        "p99_abs": 0.01827239990234375,
+        "max_abs": 1.2447948455810547,
+        "mean_rel": 0.020617373287677765
+       },
+       "display_8bit_vs_combined": {
+        "mean": 0.7839440465856482,
+        "p99": 6.0,
+        "max": 85,
+        "share_over_4": 0.022602629484953705
+       }
+      },
+      "folded_into_base": [],
+      "ids_pixels": {
+       "hearth": 353546,
+       "oven": 146627,
+       "table": 266048,
+       "yard_door": 70146,
+       "pot_rack": 68294,
+       "cat_seat": 8976
+      }
+     },
+     "yard_door": {
+      "checks": {
+       "raw_sum_vs_combined": {
+        "mean_abs": 0.00482941372320056,
+        "p99_abs": 0.04791259765625,
+        "max_abs": 9.75,
+        "mean_rel": 0.10724068433046341
+       },
+       "denoised_sum_vs_combined": {
+        "mean_abs": 0.0007088353740982711,
+        "p99_abs": 0.008011341094970703,
+        "max_abs": 1.2447948455810547,
+        "mean_rel": 0.015740210190415382
+       },
+       "display_8bit_vs_combined": {
+        "mean": 0.4747589337384259,
+        "p99": 4.0,
+        "max": 38,
+        "share_over_4": 0.008539225260416667
+       }
+      },
+      "folded_into_base": [],
+      "ids_pixels": {
+       "hearth": 540700,
+       "oven": 182282,
+       "yard_door": 326121,
+       "shelves": 53040,
+       "cat_seat": 8976,
+       "larder": 53610
+      }
+     },
+     "pot_rack": {
+      "checks": {
+       "raw_sum_vs_combined": {
+        "mean_abs": 0.006551303900778294,
+        "p99_abs": 0.1070556640625,
+        "max_abs": 9.75,
+        "mean_rel": 0.11516672372817993
+       },
+       "denoised_sum_vs_combined": {
+        "mean_abs": 0.0012551891850307584,
+        "p99_abs": 0.018321990966796875,
+        "max_abs": 1.2447948455810547,
+        "mean_rel": 0.022065231576561928
+       },
+       "display_8bit_vs_combined": {
+        "mean": 0.7685606553819444,
+        "p99": 6.0,
+        "max": 85,
+        "share_over_4": 0.022919108072916666
+       }
+      },
+      "folded_into_base": [],
+      "ids_pixels": {
+       "hearth": 478247,
+       "oven": 183009,
+       "table": 266048,
+       "yard_door": 91859,
+       "pot_rack": 68294,
+       "cat_seat": 8976
+      }
+     },
+     "shelves": {
+      "checks": {
+       "raw_sum_vs_combined": {
+        "mean_abs": 0.0031311374623328447,
+        "p99_abs": 0.031005859375,
+        "max_abs": 1.4755859375,
+        "mean_rel": 0.0971163734793663
+       },
+       "denoised_sum_vs_combined": {
+        "mean_abs": 0.0001263643498532474,
+        "p99_abs": 0.0015522241592407227,
+        "max_abs": 0.03509998321533203,
+        "mean_rel": 0.0039193578995764256
+       },
+       "display_8bit_vs_combined": {
+        "mean": 0.1481542064525463,
+        "p99": 2.0,
+        "max": 28,
+        "share_over_4": 0.0005682146990740741
+       }
+      },
+      "folded_into_base": [],
+      "ids_pixels": {
+       "yard_door": 254879,
+       "shelves": 71516,
+       "larder": 151655
+      }
+     },
+     "cat_seat": {
+      "checks": {
+       "raw_sum_vs_combined": {
+        "mean_abs": 0.0074129654094576836,
+        "p99_abs": 0.1103515625,
+        "max_abs": 9.75,
+        "mean_rel": 0.11958007514476776
+       },
+       "denoised_sum_vs_combined": {
+        "mean_abs": 0.0012964203488081694,
+        "p99_abs": 0.01813507080078125,
+        "max_abs": 1.2447948455810547,
+        "mean_rel": 0.02091282419860363
+       },
+       "display_8bit_vs_combined": {
+        "mean": 0.8121784577546296,
+        "p99": 6.0,
+        "max": 85,
+        "share_over_4": 0.02063675491898148
+       }
+      },
+      "folded_into_base": [],
+      "ids_pixels": {
+       "hearth": 750400,
+       "oven": 183009,
+       "table": 253075,
+       "yard_door": 304523,
+       "pot_rack": 65646,
+       "cat_seat": 8976
+      }
+     },
+     "larder": {
+      "checks": {
+       "raw_sum_vs_combined": {
+        "mean_abs": 0.0031957647297531366,
+        "p99_abs": 0.0308837890625,
+        "max_abs": 1.4755859375,
+        "mean_rel": 0.09321878850460052
+       },
+       "denoised_sum_vs_combined": {
+        "mean_abs": 0.00012566220539156348,
+        "p99_abs": 0.001495361328125,
+        "max_abs": 0.03509998321533203,
+        "mean_rel": 0.0036655007861554623
+       },
+       "display_8bit_vs_combined": {
+        "mean": 0.1408030418113426,
+        "p99": 2.0,
+        "max": 28,
+        "share_over_4": 0.000542896412037037
+       }
+      },
+      "folded_into_base": [],
+      "ids_pixels": {
+       "yard_door": 184214,
+       "shelves": 71516,
+       "larder": 164286
+      }
+     }
+    }
+   }
+  }
+ },
+ "people": [
+  {
+   "id": "cook",
+   "position": [
+    -0.72,
+    0.0,
+    -0.62
+   ],
+   "face": [
+    -1.3,
+    1.0,
+    -1.3
+   ],
+   "stand": [
+    0.8,
+    0.0,
+    -0.55
+   ],
+   "plan": {
+    "position": [
+     -0.72,
+     0.62
+    ],
+    "face": [
+     -1.3,
+     1.3
+    ],
+    "stand": [
+     0.8,
+     0.55
+    ]
+   }
+  }
+ ],
+ "rain": false
+}

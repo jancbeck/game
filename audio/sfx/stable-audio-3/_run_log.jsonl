@@ -1,0 +1,15 @@
+{"id": "rain_bed", "cfg": 3.0, "takes": 2, "seed": 1000, "wall_total_s": 23.1, "returncode": 0, "max_rss_gb": 2.96, "peak_footprint_gb": 0.01}
+{"id": "rain_roof", "cfg": 3.0, "takes": 2, "seed": 1000, "wall_total_s": 16.5, "returncode": 0, "max_rss_gb": 2.96, "peak_footprint_gb": 0.01}
+{"id": "spout", "cfg": 3.0, "takes": 2, "seed": 1000, "wall_total_s": 15.6, "returncode": 0, "max_rss_gb": 2.98, "peak_footprint_gb": 0.01}
+{"id": "brazier", "cfg": 3.0, "takes": 2, "seed": 1000, "wall_total_s": 15.5, "returncode": 0, "max_rss_gb": 2.96, "peak_footprint_gb": 0.01}
+{"id": "torch", "cfg": 3.0, "takes": 2, "seed": 1000, "wall_total_s": 13.0, "returncode": 0, "max_rss_gb": 2.96, "peak_footprint_gb": 0.01}
+{"id": "crows", "cfg": 2.0, "takes": 2, "seed": 1000, "wall_total_s": 16.6, "returncode": 0, "max_rss_gb": 2.96, "peak_footprint_gb": 0.01}
+{"id": "wind", "cfg": 3.0, "takes": 2, "seed": 1000, "wall_total_s": 22.1, "returncode": 0, "max_rss_gb": 2.96, "peak_footprint_gb": 0.01}
+{"id": "forge", "cfg": 2.0, "takes": 2, "seed": 1000, "wall_total_s": 15.5, "returncode": 0, "max_rss_gb": 3.17, "peak_footprint_gb": 0.01}
+{"id": "stable", "cfg": 3.0, "takes": 2, "seed": 1000, "wall_total_s": 15.6, "returncode": 0, "max_rss_gb": 2.96, "peak_footprint_gb": 0.01}
+{"id": "gallows", "cfg": 3.0, "takes": 2, "seed": 1000, "wall_total_s": 15.6, "returncode": 0, "max_rss_gb": 2.96, "peak_footprint_gb": 0.01}
+{"id": "gate", "cfg": 2.0, "takes": 2, "seed": 1000, "wall_total_s": 13.0, "returncode": 0, "max_rss_gb": 2.97, "peak_footprint_gb": 0.01}
+{"id": "footsteps", "cfg": 3.0, "takes": 2, "seed": 1000, "wall_total_s": 15.5, "returncode": 0, "max_rss_gb": 2.97, "peak_footprint_gb": 0.01}
+{"id": "torch", "cfg": 2.0, "takes": 2, "seed": 1000, "wall_total_s": 13.0, "returncode": 0, "max_rss_gb": 2.96, "peak_footprint_gb": 0.01}
+{"id": "wind", "cfg": 2.0, "takes": 2, "seed": 1000, "wall_total_s": 22.2, "returncode": 0, "max_rss_gb": 2.97, "peak_footprint_gb": 0.01}
+{"id": "stable", "cfg": 2.0, "takes": 2, "seed": 1000, "wall_total_s": 15.6, "returncode": 0, "max_rss_gb": 2.96, "peak_footprint_gb": 0.01}

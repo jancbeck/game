@@ -1,0 +1,208 @@
+{
+  "_doc": "Tables of the courtyard that are not geometry (plan.json), camera (trace.json) or look (layout*.json). Positions are plan metres: X east, Y north, Z up.",
+  "views": {
+    "_doc": "Check views of build_scene.py --view, and the point the orbit video turns about. plan: orthographic, straight down. eye: perspective at a person's eye height. Any other entry with a lens is a perspective view (location, target, lens), without a lens an orthographic one (location, ortho_scale).",
+    "centre": [0.5, -3.0],
+    "plan": {"location": [0.5, -3.0, 100], "ortho_scale": 34},
+    "eye": {"location": [-2.0, -9.0, 1.65], "target": [-0.5, 3.0, 2.6], "lens": 24},
+    "tower_cliff": {"location": [-10.0, -35.0, -8.0], "target": [-16.8, -17.0, 0.5], "lens": 20},
+    "tower_east": {"location": [-4.0, -19.0, 1.5], "target": [-14.5, -15.0, 3.0], "lens": 28},
+    "tower_yard": {"location": [-6.0, -9.0, 4.0], "target": [-16.0, -16.0, 5.0], "lens": 28},
+    "tower_south": {"location": [-12.0, -33.0, 7.0], "target": [-16.8, -18.9, 4.0], "lens": 26},
+    "tower_top": {"location": [-6.0, -26.0, 15.0], "target": [-16.8, -16.2, 8.0], "lens": 30},
+    "se_corner_in": {"location": [4.0, -3.0, 8.0], "target": [11.8, -9.4, 4.0], "lens": 30},
+    "se_corner_out": {"location": [21.0, -19.0, 9.0], "target": [12.0, -9.8, 4.0], "lens": 30}
+  },
+  "light_groups": {
+    "_doc": "Light-group ids for anim.py's flickering sources, by \"<plan key>/<index of the source within its prop>\". A source not listed gets its plan key.",
+    "shed/0": "cookhouse_hearth",
+    "shed/1": "cookhouse_oven",
+    "gate_door/0": "passage_torch",
+    "brazier/0": "fire_basket",
+    "forge/0": "forge",
+    "lit_door/0": "guardroom_door",
+    "lit_window#2/0": "guardroom_window",
+    "lit_door#2/0": "nw_tower_door",
+    "lit_window/0": "nw_tower_window",
+    "lit_door#3/0": "ne_tower_door"
+  },
+  "perch_names": [
+    "south_parapet_merlon",
+    "gallows_beam",
+    "cart",
+    "well_roof",
+    "trough",
+    "forge_roof",
+    "gatehouse_merlon_w",
+    "ground_brazier",
+    "gatehouse_merlon_e",
+    "ground_cart",
+    "gallows_beam_e",
+    "west_curtain_merlon_s",
+    "west_curtain_merlon_n",
+    "east_chamfer_merlon",
+    "south_parapet_w",
+    "nw_tower_merlon",
+    "cookhouse_roof"
+  ],
+  "exits": {
+    "_doc": "Exits of the yard that are not tied to a prop, added to the doors of scene/game_walk.py exits(): id, pos [x, y] on the walk mesh, label, target (a location). tower: the gap in the south parapet near the south-west corner, where a stair would lead down along the cliff to the door of the commander's tower (palas props.door, plan (-13.8, -14.8), east face). It takes effect with the next final render of the yard's export.",
+    "list": [
+      {"id": "tower", "pos": [-9.5, -12.55], "label": "Commander's tower", "target": "tower"}
+    ]
+  },
+  "fires": {
+    "_doc": "Mantaflow fire simulations of scene/game_fire.py, by light-group id. pad: domain around the fuel (-x, +x, -y, +y); below and height: under the fuel and above its top; voxel: cell size; wind: force-field strength; fuel, burn, beta, vort, flame_vort, noise, smoke: gas settings; peak: luminance of the brightest flame pixels before the exposure; emit_from: lowest emitter height; surf: emission distance; temp: temperature at flame 0 and 1; chamber: the fire burns in an oven chamber of that height, open to the front.",
+    "fire_basket": {
+      "pad": [0.15, 0.35, 0.2, 0.2],
+      "below": 0.1,
+      "height": 1.15,
+      "voxel": 0.014,
+      "wind": 0.1,
+      "fuel": 2.2,
+      "burn": 0.42,
+      "beta": 3.0,
+      "vort": 0.2,
+      "flame_vort": 1.2,
+      "noise": 0.2,
+      "smoke": 0.55,
+      "peak": 0.85,
+      "emit_from": 0.84
+    },
+    "passage_torch": {
+      "pad": [0.16, 0.2, 0.17, 0.17],
+      "below": 0.03,
+      "height": 0.7,
+      "voxel": 0.01,
+      "wind": 0.02,
+      "fuel": 3.0,
+      "burn": 0.4,
+      "beta": 3.5,
+      "vort": 0.3,
+      "flame_vort": 1.5,
+      "noise": 0.3,
+      "smoke": 0.6,
+      "peak": 1.5,
+      "emit_from": null,
+      "surf": 0.035,
+      "temp": [1300.0, 2100.0]
+    },
+    "cookhouse_oven": {
+      "pad": [0.12, 0.12, 0.3, 0.05],
+      "below": 0.01,
+      "height": 0.62,
+      "voxel": 0.01,
+      "wind": 0.0,
+      "fuel": 1.6,
+      "burn": 0.5,
+      "beta": 2.6,
+      "vort": 0.2,
+      "flame_vort": 1.2,
+      "noise": 0.3,
+      "smoke": 0.5,
+      "peak": 1.2,
+      "emit_from": null,
+      "chamber": 0.34
+    }
+  },
+  "_hotspots_doc": "Interactable objects, in hotspots.json order (the ids masks number them from 1). anchor: plan key of the prop, or obj:<object name>. stand: where the figure stands to interact (plan x, y). volume: click box (center, size in plan metres, rot in degrees); without it the box is the prop's own bounds. min_h: lowest box height. text: the look text.",
+  "hotspots": [
+    {
+      "id": "gate",
+      "name": "Gate",
+      "anchor": "gate_door",
+      "stand": [-1.15, 1.7],
+      "volume": {"center": [-1.15, 3.85, 2.25], "size": [3.4, 2.4, 4.5], "rot": 0},
+      "text": "Oak leaves, barred from inside since the bell for vespers. The portcullis has not come down in eleven winters; the windlass pawl is rusted open and nobody has put in for a new one. The porter's torch keeps the passage honest. Whatever comes up the road at night knocks, and waits.",
+      "note": "volume from the arch ring back to the barred leaves, which hang 1.3-1.8 m into the passage"
+    },
+    {
+      "id": "fire_basket",
+      "name": "Fire basket",
+      "anchor": "brazier",
+      "stand": [0.05, -0.2],
+      "min_h": 1.5,
+      "text": "Iron basket on splayed legs, three logs of wet larch hissing in it. It is the only fire the gate watch is allowed, and it is there so the man on watch can see a face before he lifts the bar, not to warm him. The smoke goes where the wind says. Tonight that is into the shelter."
+    },
+    {
+      "id": "bell",
+      "name": "Gate bell",
+      "anchor": "obj:bell",
+      "stand": [1.6, 1.05],
+      "volume": {"center": [1.85, 2.45, 2.45], "size": [0.7, 0.7, 2.4], "rot": 0},
+      "text": "A bronze bell no bigger than a helmet, on a bracket above the watch shelter. The rope comes down through the roof boards to a knot at shoulder height. Three strokes for riders, continuous for fire. The knot is black and smooth: somebody pulls it every hour to prove he is awake."
+    },
+    {
+      "id": "well",
+      "name": "Well",
+      "anchor": "well",
+      "stand": [-4.6, -8.15],
+      "text": "Rubble drum, windlass, a shingle roof missing a few shingles. Water stands half a metre under the rim tonight; in August it is ten. The bucket rope was spliced twice this year. Everything in this yard drinks from here, horses first, men after, the cook before both."
+    },
+    {
+      "id": "cart",
+      "name": "Handcart",
+      "anchor": "cart",
+      "stand": [-1.3, -3.0],
+      "text": "Two-wheeled handcart, tipped on its shafts, sacks and a rope coil left in the bed. The left tyre is worn through to the felloe and the axle wants grease. It brought up the flour from the village on Tuesday. Nobody has unloaded the last two sacks, and they are getting wet."
+    },
+    {
+      "id": "cookhouse",
+      "name": "Cookhouse",
+      "anchor": "shed",
+      "stand": [-6.3, -1.75],
+      "text": "A lean-to against the north-west tower: oven in front, hearth at the back under a stone hood. Bread, pease pottage, salt pork on feast days. The cook keeps the store door key on a string round his neck and counts the onions. The roof leaks over the table, so the table has moved."
+    },
+    {
+      "id": "forge",
+      "name": "Forge",
+      "anchor": "forge",
+      "stand": [2.9, -9.0],
+      "text": "The hearth is banked for the night: grey ash, a few coals breathing under it. Anvil on an oak stump, quench tub, horseshoes on the shelf. The smith shoes the garrison's four horses and mends hinges, pot hooks and spear heads. He has not made a new blade here in years. Iron costs money."
+    },
+    {
+      "id": "gallows",
+      "name": "Gallows",
+      "anchor": "gallows",
+      "stand": [4.3, -3.15],
+      "text": "Boarded scaffold, two posts, a beam, a rope left hanging. It stands where the whole yard has to walk past it. It has been used twice in living memory, both times for deserters. The trapdoor bolt is oiled more often than the gate hinges."
+    },
+    {
+      "id": "stable",
+      "name": "Stable door",
+      "anchor": "stable",
+      "stand": [7.8, -6.3],
+      "volume": {"center": [8.4, -6.3, 1.4], "size": [1.6, 3.8, 2.8], "rot": 0},
+      "text": "Two stalls under a lean-to against the east wall, hay in the loft over the mangers, oat bin with a stone on the lid against rats. One horse in, head down. The other went out with the dispatch rider at noon and is not back.",
+      "note": "volume over the open front and hitching rail only: a box around the whole stable reaches the east curtain, whose inner face shows above the south-east curtain"
+    },
+    {
+      "id": "tool_rack",
+      "name": "Tool rack",
+      "anchor": "tool_rack",
+      "stand": [-4.0, 1.45],
+      "text": "Spade, shovel, hay fork, mattock, rake and a besom, under their own small roof. Every iron edge is rusted and every handle is worn dark where hands go. The besom is the newest thing in the rack. Somebody sweeps the gate passage every morning, whether or not anyone comes."
+    },
+    {
+      "id": "trough",
+      "name": "Trough",
+      "anchor": "trough",
+      "stand": [-7.2, -8.6],
+      "text": "Plank trough on two stones, full to a hand below the rim with rain. Leaves, a scrap of board, green scum at the waterline. The horses drink from it and the men wash in it, in that order, which is why the men wash quickly."
+    },
+    {
+      "id": "guardroom",
+      "name": "Guardroom door",
+      "anchor": "lit_door",
+      "stand": [3.55, 1.0],
+      "text": "Lit from inside: the guardroom hearth. Off-watch men sleep in there in their boots. The door sticks in wet weather and has to be shouldered, so it is left a hand open, and the yard can hear the dice."
+    },
+    {
+      "id": "nw_tower_stair",
+      "name": "Tower stair",
+      "anchor": "wall_stair",
+      "stand": [-9.8, -4.9],
+      "text": "Twenty-four steps of wet stone up the west curtain, worn to a dish in the middle of every tread, and no rail on the drop side. It starts at the flank of the cookhouse and ends at the north-west tower door, where a lamp is lit. The watch hood on the roof above keeps the rain off whoever is up there, and nobody has come down in an hour."
+    }
+  ]
+}

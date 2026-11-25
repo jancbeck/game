@@ -1,0 +1,47 @@
+{
+  "_doc": "A person to talk to (game/scripts/npc.gd). location: where the person stands (default: the start location). position/face/stand in Godot metres. model: the figure, assets/characters/<model>.glb from characters/<model>/recipe.json (scripts/make_character.py); without it, or without the GLB, the procedural figure coloured by palette. assets: folder with portrait.jpg, idle/ and per clip <clip>.wav plus <clip>/0001.jpg... frames at fps; the story's `# line:<clip>` tags name the clips. What the person says is the knot talk_<id> in game/data/story/<id>.ink. Optional: knot (another entry knot), fallback {location, position, face, stand} (where the person stands while `location` has no export). Source material: characters/marl/.",
+ "id": "marl",
+ "model": "marl",
+ "name": "Sergeant Marl",
+ "location": "courtyard",
+ "position": [
+  1.95,
+  0.0,
+  -0.45
+ ],
+ "face": [
+  1.0,
+  0.0,
+  -0.55
+ ],
+ "stand": [
+  0.3,
+  0.0,
+  -0.25
+ ],
+ "palette": {
+  "wool": [
+   0.17,
+   0.16,
+   0.15
+  ],
+  "hood": [
+   0.14,
+   0.13,
+   0.12
+  ],
+  "jerkin": [
+   0.2,
+   0.14,
+   0.09
+  ],
+  "skin": [
+   0.55,
+   0.4,
+   0.33
+  ]
+ },
+ "assets": "assets/npcs/marl",
+ "portrait": "assets/npcs/marl/portrait.jpg",
+ "fps": 25
+}

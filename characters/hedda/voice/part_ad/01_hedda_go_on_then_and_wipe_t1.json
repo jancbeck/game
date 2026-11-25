@@ -1,0 +1,128 @@
+{
+  "file": "characters/hedda/voice/part_ad/01_hedda_go_on_then_and_wipe_t1.wav",
+  "character": "hedda",
+  "text": "[dismissive, amused] Go on, then. And wipe your feet. This floor has seen more blood than you have, and it's still cleaner.",
+  "spoken_text": "Go on, then. And wipe your feet. This floor has seen more blood than you have, and it's still cleaner.",
+  "tags": [
+    "dismissive, amused"
+  ],
+  "take": 1,
+  "reference": "voices/hedda-reference-dry.wav",
+  "model": "drama3-small-IQ3_XXS.gguf",
+  "sampling": [
+    "temperature=0.7",
+    "top_p=0.7",
+    "top_k=30"
+  ],
+  "render_wall_s_all_takes": 55.2,
+  "speaker_similarity": 0.857,
+  "duration_s": 7.85,
+  "expected_s": 8.19,
+  "silences": [],
+  "transcript": "Go on, then, and wipe your feet. This floor has seen more blood than you have, and it's still cleaner.",
+  "words": [
+    {
+      "word": "Go",
+      "start": 0.14,
+      "end": 0.16
+    },
+    {
+      "word": "on,",
+      "start": 0.16,
+      "end": 0.48
+    },
+    {
+      "word": "then,",
+      "start": 0.48,
+      "end": 0.97
+    },
+    {
+      "word": "and",
+      "start": 0.97,
+      "end": 0.98
+    },
+    {
+      "word": "wipe",
+      "start": 1.51,
+      "end": 1.55
+    },
+    {
+      "word": "your",
+      "start": 1.55,
+      "end": 1.88
+    },
+    {
+      "word": "feet.",
+      "start": 1.88,
+      "end": 2.54
+    },
+    {
+      "word": "This",
+      "start": 3.44,
+      "end": 3.44
+    },
+    {
+      "word": "floor",
+      "start": 3.44,
+      "end": 3.44
+    },
+    {
+      "word": "has",
+      "start": 3.58,
+      "end": 3.64
+    },
+    {
+      "word": "seen",
+      "start": 3.64,
+      "end": 3.99
+    },
+    {
+      "word": "more",
+      "start": 3.99,
+      "end": 4.38
+    },
+    {
+      "word": "blood",
+      "start": 4.38,
+      "end": 4.41
+    },
+    {
+      "word": "than",
+      "start": 4.95,
+      "end": 5.21
+    },
+    {
+      "word": "you",
+      "start": 5.21,
+      "end": 5.48
+    },
+    {
+      "word": "have,",
+      "start": 5.48,
+      "end": 6.02
+    },
+    {
+      "word": "and",
+      "start": 6.09,
+      "end": 6.25
+    },
+    {
+      "word": "it's",
+      "start": 6.25,
+      "end": 6.55
+    },
+    {
+      "word": "still",
+      "start": 6.9,
+      "end": 6.9
+    },
+    {
+      "word": "cleaner.",
+      "start": 6.96,
+      "end": 7.62
+    }
+  ],
+  "missing_words": [],
+  "reasons": [],
+  "pass": true
+}

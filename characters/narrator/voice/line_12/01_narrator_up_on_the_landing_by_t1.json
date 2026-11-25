@@ -1,0 +1,103 @@
+{
+  "file": "/Users/jan/workspace/projects/game/characters/narrator/voice/line_12/01_narrator_up_on_the_landing_by_t1.wav",
+  "character": "narrator",
+  "text": "[quick, precise, close, inner voice] Up on the landing by the tower door, a bundle of wet cloak that breathes.",
+  "spoken_text": "Up on the landing by the tower door, a bundle of wet cloak that breathes.",
+  "tags": [
+    "quick, precise, close, inner voice"
+  ],
+  "take": 1,
+  "reference": "voices/narrator-reference-dry.wav",
+  "model": "drama3-small-IQ3_XXS.gguf",
+  "sampling": [
+    "temperature=0.7",
+    "top_p=0.7",
+    "top_k=30"
+  ],
+  "render_wall_s_all_takes": 37.4,
+  "speaker_similarity": 0.6586,
+  "duration_s": 4.74,
+  "expected_s": 6.27,
+  "silences": [],
+  "transcript": "Up on the landing by the tower door, a bundle of wet cloak that breathes.",
+  "words": [
+    {
+      "word": "Up",
+      "start": 0.04,
+      "end": 0.13
+    },
+    {
+      "word": "on",
+      "start": 0.21,
+      "end": 0.28
+    },
+    {
+      "word": "the",
+      "start": 0.28,
+      "end": 0.5
+    },
+    {
+      "word": "landing",
+      "start": 0.5,
+      "end": 1.0
+    },
+    {
+      "word": "by",
+      "start": 1.0,
+      "end": 1.14
+    },
+    {
+      "word": "the",
+      "start": 1.15,
+      "end": 1.34
+    },
+    {
+      "word": "tower",
+      "start": 1.38,
+      "end": 1.69
+    },
+    {
+      "word": "door,",
+      "start": 1.74,
+      "end": 2.11
+    },
+    {
+      "word": "a",
+      "start": 2.31,
+      "end": 2.31
+    },
+    {
+      "word": "bundle",
+      "start": 2.57,
+      "end": 2.82
+    },
+    {
+      "word": "of",
+      "start": 2.82,
+      "end": 2.99
+    },
+    {
+      "word": "wet",
+      "start": 2.99,
+      "end": 3.23
+    },
+    {
+      "word": "cloak",
+      "start": 3.23,
+      "end": 3.67
+    },
+    {
+      "word": "that",
+      "start": 3.67,
+      "end": 4.01
+    },
+    {
+      "word": "breathes.",
+      "start": 4.01,
+      "end": 4.73
+    }
+  ],
+  "missing_words": [],
+  "reasons": [],
+  "pass": true
+}

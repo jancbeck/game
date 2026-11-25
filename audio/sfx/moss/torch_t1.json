@@ -1,0 +1,17 @@
+{
+  "prompt": "a wall torch flame fluttering and flapping in a gusty wind, bright crackling and soft whooshing of the flame, dry close-miked film sound effect, no reverb",
+  "negative_prompt": "reverb, echo, hall, music, speech, voices, singing, loud, explosion, rumble, low frequency boom, wind noise",
+  "seed": 1000,
+  "seconds": 12,
+  "steps": 50,
+  "cfg": 4.0,
+  "sigma_shift": 5.0,
+  "model": "mlx-community/MOSS-SoundEffect-v2.0-bf16",
+  "sample_rate": 48000,
+  "channels": 1,
+  "wall_seconds": 203.5,
+  "model_load_seconds": 0.8,
+  "mlx_peak_memory_gb": 13.93,
+  "float_peak_before_clip": 0.654,
+  "file": "torch_t1.wav"
+}

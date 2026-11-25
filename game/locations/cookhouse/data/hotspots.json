@@ -1,0 +1,306 @@
+[
+ {
+  "id": "hearth",
+  "name": "Hearth",
+  "text": "A hood of rubble over a hearth wide enough for a whole pig, and tonight a pease pottage that has been on since noon. The cauldron chain is black to the first link; the cook says that is where the flavour comes from. Nobody has ever swept the soot from the stack, and nobody will until it takes fire.",
+  "position": [
+   -1.3,
+   0.0,
+   -1.9
+  ],
+  "volume": {
+   "center": [
+    -1.3586,
+    2.25,
+    -1.48862
+   ],
+   "size": [
+    2.5896987915039062,
+    4.5,
+    2.6327683329582214
+   ],
+   "yaw_rad": 0.0
+  },
+  "stand": [
+   -1.3,
+   0.0,
+   -0.35
+  ],
+  "plan": {
+   "stand_xy": [
+    -1.3,
+    0.35
+   ]
+  },
+  "screen_px": [
+   638.9,
+   958.9
+  ]
+ },
+ {
+  "id": "oven",
+  "name": "Bread oven",
+  "text": "A beehive oven built in at the cook's elbow. The coals are raked out when the loaves go in, and the garrison eats bread that is two days old by the time it reaches the table. The iron door leans where it was dropped. The peel is the only tool in the room that has its own nail.",
+  "position": [
+   -0.07,
+   0.0,
+   -1.84
+  ],
+  "volume": {
+   "center": [
+    0.56196,
+    0.77462,
+    -1.11269
+   ],
+   "size": [
+    1.3849681348124414,
+    1.5548411577232315,
+    1.5746280252933502
+   ],
+   "yaw_rad": 0.0
+  },
+  "stand": [
+   0.5,
+   0.0,
+   -0.55
+  ],
+  "plan": {
+   "stand_xy": [
+    0.5,
+    0.55
+   ]
+  },
+  "screen_px": [
+   978.2,
+   910.0
+  ]
+ },
+ {
+  "id": "table",
+  "name": "Work table",
+  "text": "Scrubbed to the grain along the middle and black at the edges. A loaf with the heel cut off, a cleaver stuck in the board, onions in a heap, a jug of small beer that is the cook's and not for sharing. Two stools, one of them mended with a bootlace.",
+  "position": [
+   -0.05,
+   0.0,
+   0.8
+  ],
+  "volume": {
+   "center": [
+    -0.05,
+    0.61219,
+    0.8495
+   ],
+   "size": [
+    1.750209584150533,
+    1.2293443293820994,
+    1.6809901362062376
+   ],
+   "yaw_rad": 0.0
+  },
+  "stand": [
+   1.2,
+   0.0,
+   0.45
+  ],
+  "plan": {
+   "stand_xy": [
+    1.2,
+    -0.45
+   ]
+  },
+  "screen_px": [
+   1128.1,
+   1038.5
+  ]
+ },
+ {
+  "id": "yard_door",
+  "name": "Door to the yard",
+  "text": "Oak, banded in iron, left a hand ajar so the smoke has somewhere to go. The step outside is worn into a dish by forty years of buckets. Beyond it the yard, the rain and the well, in that order.",
+  "position": [
+   2.0,
+   0.0,
+   -1.9
+  ],
+  "volume": {
+   "center": [
+    2.0,
+    1.13,
+    -1.93829
+   ],
+   "size": [
+    1.600000023841858,
+    2.4000000581145287,
+    1.0634109590398182
+   ],
+   "yaw_rad": 0.0
+  },
+  "stand": [
+   2.0,
+   0.0,
+   -1.4
+  ],
+  "plan": {
+   "stand_xy": [
+    2.0,
+    1.4
+   ]
+  },
+  "screen_px": [
+   1249.5,
+   775.7
+  ]
+ },
+ {
+  "id": "pot_rack",
+  "name": "Pot rack",
+  "text": "Four pots, a pan with a handle too long for any hearth in this garrison, two ladles and a string of sausages that the cook counts every morning. The onions are counted too. The cook is a careful man with anything that can be eaten.",
+  "position": [
+   -2.12,
+   0.0,
+   0.55
+  ],
+  "volume": {
+   "center": [
+    -2.12,
+    0.9725,
+    0.51
+   ],
+   "size": [
+    0.550000011920929,
+    1.9450001365566705,
+    2.2600002456568244
+   ],
+   "yaw_rad": 0.0
+  },
+  "stand": [
+   -1.45,
+   0.0,
+   0.1
+  ],
+  "plan": {
+   "stand_xy": [
+    -1.45,
+    -0.1
+   ]
+  },
+  "screen_px": [
+   617.9,
+   1022.3
+  ]
+ },
+ {
+  "id": "shelves",
+  "name": "Shelves",
+  "text": "Crocks of salt pork, honey and rendered fat under rope-tied cloths, a salt box, bowls stacked by size. The shelf boards bow in the middle. One crock holds nothing but a dead mouse and a note in a hand nobody can read.",
+  "position": [
+   5.0,
+   0.0,
+   -1.9
+  ],
+  "volume": {
+   "center": [
+    5.0,
+    1.40225,
+    -1.76
+   ],
+   "size": [
+    1.5003694281370326,
+    1.0894940104266744,
+    0.28198601463809503
+   ],
+   "yaw_rad": 0.0
+  },
+  "stand": [
+   5.0,
+   0.0,
+   -1.15
+  ],
+  "plan": {
+   "stand_xy": [
+    5.0,
+    1.15
+   ]
+  },
+  "screen_px": [
+   1824.6,
+   774.0
+  ]
+ },
+ {
+  "id": "cat_seat",
+  "name": "Cat's seat",
+  "text": "A plaited basket in the warm gap between hearth and oven, with half a sack folded into it and a dent in the middle the size of a curled-up cat. The bowl beside it is red clay and filled every evening. Hedda says the animal belongs to nobody, and nobody has ever seen her forget the milk.",
+  "position": [
+   -0.17,
+   0.0,
+   -1.5
+  ],
+  "volume": {
+   "center": [
+    -0.17,
+    0.225,
+    -1.34
+   ],
+   "size": [
+    0.4880000054836273,
+    0.45,
+    0.8080000430345535
+   ],
+   "yaw_rad": 0.0
+  },
+  "stand": [
+   0.05,
+   0.0,
+   -0.45
+  ],
+  "plan": {
+   "stand_xy": [
+    0.05,
+    0.45
+   ]
+  },
+  "screen_px": [
+   894.2,
+   929.1
+  ]
+ },
+ {
+  "id": "larder",
+  "name": "Larder",
+  "text": "Hams and sausages on a pole high enough to be safe from rats and from soldiers, onions on strings, a bench with crocks and a cheese that has had a wedge cut out of it. The doorway has an iron hook and no door. The cook says whoever steals from this room will have to explain it to her in person.",
+  "position": [
+   5.2,
+   0.0,
+   0.0
+  ],
+  "volume": {
+   "center": [
+    5.2,
+    2.15,
+    -0.75
+   ],
+   "size": [
+    2.7,
+    1.2,
+    0.55
+   ],
+   "yaw_rad": 0.0
+  },
+  "stand": [
+   5.0,
+   0.0,
+   0.3
+  ],
+  "plan": {
+   "stand_xy": [
+    5.0,
+    -0.3
+   ]
+  },
+  "screen_px": [
+   1848.8,
+   972.5
+  ]
+ }
+]

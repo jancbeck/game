@@ -1,0 +1,12 @@
+{
+  "prompt": "a wall torch flame fluttering and flapping in a gusty wind, bright crackling and soft whooshing of the flame, dry close-miked film sound effect, no reverb",
+  "negative_prompt": "reverb, echo, hall, music, speech, voices, singing, loud, explosion, rumble, low frequency boom, wind noise",
+  "seed": 1001,
+  "seconds": 12.0,
+  "dit": "medium",
+  "decoder": "same-l",
+  "cfg": 2.0,
+  "steps": 8,
+  "wall_seconds": 6.48,
+  "file": "torch_t2.wav"
+}

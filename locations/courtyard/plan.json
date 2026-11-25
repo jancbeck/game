@@ -1,0 +1,1301 @@
+{
+  "_doc": "Realistic castle plan in meters: X east, Y north, Z up. The courtyard floor is z = 0, the lower ward outside it z = -3. trace.json holds only the camera matched to the reference; everything placed here is designed for realism and checked against the reference with the overlay.",
+  "heights": {
+    "curtain": 6.0,
+    "tower": 11.0,
+    "gatehouse": 9.5,
+    "lower_ward": -3.0
+  },
+  "merlon": {
+    "w": 0.75,
+    "h": 0.75,
+    "gap": 0.55,
+    "depth": 0.6,
+    "broken": 0.14,
+    "parapet": 1.0,
+    "_doc": "w, h, gap, depth: merlon size; parapet: breast-high wall under the merlons; broken: share broken down; missing: share fallen, leaving a stump and rubble; leaning: share tilted; coping: share with a cap stone.",
+    "missing": 0.05,
+    "leaning": 0.2,
+    "coping": 0.6
+  },
+  "blocks": {
+    "_doc": "Masonry boxes from the lower ward up to h. center [x, y], size [w, d], rot_z degrees. merlons: edges of the top that carry battlements (+x, -x, +y, -y, all, center). cut_gate: arched opening in the -y face. slits: arrow slits [face, offset along the face, center height]. h_offset: lowers the block's top by a few mm where it meets a block of the same height.",
+    "north_curtain": {
+      "center": [
+        -4.1,
+        4.6
+      ],
+      "size": [
+        16.6,
+        2.0
+      ],
+      "h": "curtain",
+      "rot_z": 0,
+      "merlons": [
+        "+y"
+      ]
+    },
+    "gatehouse": {
+      "center": [
+        -1.85,
+        4.8
+      ],
+      "size": [
+        10.1,
+        3.6
+      ],
+      "h": "gatehouse",
+      "rot_z": 0,
+      "merlons": [
+        "+y",
+        "-y"
+      ],
+      "cut_gate": {
+        "x": -1.15,
+        "width": 3.0,
+        "spring": 3.0
+      },
+      "slits": [
+        [
+          "-y",
+          -2.7,
+          4.5
+        ],
+        [
+          "-y",
+          -2.7,
+          7.5
+        ],
+        [
+          "-y",
+          2.9,
+          7.5
+        ],
+        [
+          "+y",
+          -3.05,
+          4.5
+        ],
+        [
+          "+y",
+          3.75,
+          4.5
+        ],
+        [
+          "+y",
+          -3.05,
+          7.5
+        ]
+      ]
+    },
+    "nw_tower": {
+      "center": [
+        -9.65,
+        5.5
+      ],
+      "size": [
+        5.5,
+        5.0
+      ],
+      "h": "tower",
+      "rot_z": 0,
+      "merlons": [
+        "all"
+      ],
+      "slits": [
+        [
+          "-y",
+          -1.3,
+          3.6
+        ],
+        [
+          "-y",
+          1.3,
+          6.6
+        ],
+        [
+          "+x",
+          -1.0,
+          7.2
+        ],
+        [
+          "-x",
+          0.5,
+          5.0
+        ]
+      ]
+    },
+    "ne_tower": {
+      "center": [
+        5.1,
+        5.2
+      ],
+      "size": [
+        3.8,
+        5.2
+      ],
+      "h": "tower",
+      "rot_z": 0,
+      "merlons": [
+        "all"
+      ],
+      "slits": [
+        [
+          "-y",
+          0.0,
+          4.2
+        ],
+        [
+          "-y",
+          0.0,
+          7.0
+        ],
+        [
+          "+x",
+          0.0,
+          5.5
+        ]
+      ]
+    },
+    "east_chamfer": {
+      "center": [
+        8.42,
+        0.41
+      ],
+      "size": [
+        11.5,
+        2.0
+      ],
+      "h": "curtain",
+      "rot_z": -47.6,
+      "merlons": [
+        "+y"
+      ]
+    },
+    "east_curtain": {
+      "center": [
+        12.3,
+        -6.225
+      ],
+      "size": [
+        2.0,
+        6.45
+      ],
+      "h": "curtain",
+      "rot_z": 0,
+      "merlons": [
+        "+x"
+      ],
+      "h_offset": -0.01
+    },
+    "se_curtain": {
+      "center": [
+        9.272,
+        -10.105
+      ],
+      "size": [
+        7.86,
+        2.0
+      ],
+      "h": "curtain",
+      "rot_z": 24,
+      "merlons": [
+        "-y"
+      ],
+      "slits": [
+        [
+          "-y",
+          -2.33,
+          3.0
+        ],
+        [
+          "-y",
+          0.27,
+          3.0
+        ]
+      ],
+      "h_offset": -0.02
+    },
+    "se_curtain_end": {
+      "center": [
+        4.789,
+        -12.101
+      ],
+      "size": [
+        2.05,
+        2.1
+      ],
+      "h": 3.0,
+      "rot_z": 24,
+      "merlons": [
+        "-y",
+        "-x"
+      ],
+      "slits": [
+        [
+          "-y",
+          0.1,
+          1.6
+        ],
+        [
+          "-x",
+          -0.1,
+          1.7
+        ]
+      ]
+    },
+    "west_curtain": {
+      "center": [
+        -11.4,
+        -4.95
+      ],
+      "size": [
+        2.0,
+        15.9
+      ],
+      "h": "curtain",
+      "rot_z": 0,
+      "merlons": [
+        "-x"
+      ],
+      "slits": [
+        [
+          "-x",
+          -4.5,
+          3.4
+        ],
+        [
+          "-x",
+          0.0,
+          3.4
+        ],
+        [
+          "-x",
+          4.5,
+          3.4
+        ]
+      ]
+    },
+    "south_parapet_west": {
+      "from": [
+        -10.4,
+        -12.9
+      ],
+      "to": [
+        -10.154,
+        -12.854
+      ],
+      "t": 0.8,
+      "h": 1.1,
+      "merlons": []
+    },
+    "south_parapet": {
+      "from": [
+        -8.68,
+        -12.577
+      ],
+      "to": [
+        2.9,
+        -10.4
+      ],
+      "t": 0.8,
+      "h": 1.1,
+      "merlons": [
+        "center"
+      ]
+    },
+    "parapet_joint": {
+      "from": [
+        2.9,
+        -10.4
+      ],
+      "to": [
+        3.6,
+        -11.9
+      ],
+      "t": 0.8,
+      "h": 1.1,
+      "merlons": []
+    },
+    "sw_tower": {
+      "center": [
+        -16.8,
+        -16.2
+      ],
+      "size": [
+        6.0,
+        5.4
+      ],
+      "h": 8.6,
+      "base": -3.45,
+      "rot_z": 0,
+      "merlons": [
+        "all"
+      ],
+      "slits": [
+        [
+          "-y",
+          -1.6,
+          -1.4
+        ],
+        [
+          "-y",
+          1.6,
+          -1.4
+        ],
+        [
+          "-x",
+          0.0,
+          -1.4
+        ],
+        [
+          "+y",
+          1.2,
+          -1.4
+        ],
+        [
+          "+x",
+          -1.4,
+          -1.4
+        ],
+        [
+          "-y",
+          0.0,
+          1.4
+        ],
+        [
+          "-x",
+          -0.9,
+          1.4
+        ],
+        [
+          "+y",
+          -1.5,
+          1.4
+        ],
+        [
+          "+x",
+          -1.3,
+          1.4
+        ]
+      ]
+    }
+  },
+  "platform": {
+    "_doc": "Courtyard floor polygon (z = 0). Its edges run inside the wall footprints, so outside the walls only three faces show: the south edge (the parapet's retaining wall over the lower ward), the west ledge under the west curtain, and the bridge abutment in front of the gate (x -3.75 to 1.45, y 6.6 to 9.0).",
+    "polygon": [
+      [
+        -13.0,
+        8.0
+      ],
+      [
+        -7.2,
+        7.7
+      ],
+      [
+        -7.2,
+        6.3
+      ],
+      [
+        -3.75,
+        6.3
+      ],
+      [
+        -3.75,
+        9.0
+      ],
+      [
+        1.45,
+        9.0
+      ],
+      [
+        1.45,
+        6.3
+      ],
+      [
+        6.7,
+        6.3
+      ],
+      [
+        6.7,
+        3.17
+      ],
+      [
+        13.0,
+        -3.72
+      ],
+      [
+        13.0,
+        -9.21
+      ],
+      [
+        4.45,
+        -13.2
+      ],
+      [
+        3.25,
+        -11.95
+      ],
+      [
+        2.75,
+        -10.9
+      ],
+      [
+        -10.4,
+        -13.3
+      ],
+      [
+        -13.0,
+        -13.3
+      ]
+    ]
+  },
+  "props": {
+    "_doc": "pos [x, y] on the courtyard floor, rot_z degrees (0 = front faces south), scale. z: height of the root, a heights key, or \"ground\" for the terrain outside the walls.",
+    "gallows": {
+      "pos": [
+        5.3,
+        -1.25
+      ],
+      "rot_z": -18
+    },
+    "crates": {
+      "pos": [
+        -8.4,
+        -10.3
+      ],
+      "rot_z": 5
+    },
+    "shed": {
+      "pos": [
+        -6.975,
+        0.87
+      ],
+      "rot_z": 0
+    },
+    "barrel": {
+      "pos": [
+        -4.44,
+        0.96
+      ],
+      "rot_z": 20
+    },
+    "barrel#2": {
+      "pos": [
+        6.3,
+        -5.6
+      ],
+      "rot_z": 70
+    },
+    "cart": {
+      "pos": [
+        -0.2,
+        -4.7
+      ],
+      "rot_z": 100
+    },
+    "grate": {
+      "pos": [
+        -0.4,
+        -2.6
+      ],
+      "rot_z": 0,
+      "scale": 0.55
+    },
+    "gate_door": {
+      "pos": [
+        -1.15,
+        3.0
+      ],
+      "rot_z": 0
+    },
+    "watch_shelter": {
+      "pos": [
+        1.75,
+        2.15
+      ],
+      "rot_z": 0
+    },
+    "brazier": {
+      "pos": [
+        1.0,
+        0.55
+      ],
+      "rot_z": 0
+    },
+    "tool_rack": {
+      "pos": [
+        -4.0,
+        2.55
+      ],
+      "rot_z": 0
+    },
+    "watch_hood": {
+      "pos": [
+        -8.55,
+        6.35
+      ],
+      "z": "tower",
+      "rot_z": 0
+    },
+    "palas": {
+      "pos": [
+        -16.8,
+        -16.2
+      ],
+      "z": 0.0,
+      "rot_z": 0,
+      "door": {
+        "_doc": "threshold center of the first-floor door on the east face (plan metres), for a later portal; the leaf is the object palas_door",
+        "pos": [
+          -13.8,
+          -14.8,
+          0.0
+        ],
+        "face": "+x"
+      }
+    },
+    "tree": {
+      "pos": [
+        -18.7,
+        -6.5
+      ],
+      "z": -2.62,
+      "rot_z": 20,
+      "scale": 1.0
+    },
+    "tree#2": {
+      "pos": [
+        -19.0,
+        -11.2
+      ],
+      "z": -2.66,
+      "rot_z": 130,
+      "scale": 1.15
+    },
+    "tree#3": {
+      "pos": [
+        -14.55,
+        -1.2
+      ],
+      "z": -2.87,
+      "rot_z": 250,
+      "scale": 0.9
+    },
+    "tree#4": {
+      "pos": [
+        -19.5,
+        -14.0
+      ],
+      "z": -3.11,
+      "rot_z": 60,
+      "scale": 1.1
+    },
+    "tree#5": {
+      "pos": [
+        -18.6,
+        3.4
+      ],
+      "z": -2.52,
+      "rot_z": 300,
+      "scale": 1.15
+    },
+    "dead_bush": {
+      "pos": [
+        -19.2,
+        -2.0
+      ],
+      "z": -2.54,
+      "rot_z": 40
+    },
+    "dead_bush#2": {
+      "pos": [
+        -14.65,
+        -8.0
+      ],
+      "z": -2.93,
+      "rot_z": 200
+    },
+    "dead_bush#3": {
+      "pos": [
+        -13.2,
+        4.6
+      ],
+      "z": -2.75,
+      "rot_z": 120
+    },
+    "dead_bush#4": {
+      "pos": [
+        -1.0,
+        -13.3
+      ],
+      "z": "ground",
+      "rot_z": 300
+    },
+    "grass_tuft": {
+      "pos": [
+        -13.3,
+        -3.2
+      ],
+      "z": -2.81,
+      "rot_z": 10
+    },
+    "grass_tuft#2": {
+      "pos": [
+        -13.2,
+        0.4
+      ],
+      "z": -2.78,
+      "rot_z": 80
+    },
+    "grass_tuft#3": {
+      "pos": [
+        -13.2,
+        6.0
+      ],
+      "z": -2.75,
+      "rot_z": 160
+    },
+    "grass_tuft#4": {
+      "pos": [
+        -14.6,
+        -6.2
+      ],
+      "z": -2.9,
+      "rot_z": 220
+    },
+    "sack#2": {
+      "pos": [
+        1.2,
+        -4.9
+      ],
+      "rot_z": 30
+    },
+    "sack#3": {
+      "pos": [
+        -8.4,
+        -11.3
+      ],
+      "rot_z": 200
+    },
+    "sack#4": {
+      "pos": [
+        4.2,
+        1.7
+      ],
+      "rot_z": 0
+    },
+    "straw_pile#2": {
+      "pos": [
+        1.9,
+        -8.4
+      ],
+      "rot_z": 0,
+      "scale": 1.2
+    },
+    "debris": {
+      "pos": [
+        3.1,
+        -3.7
+      ],
+      "rot_z": 15,
+      "scale": 0.85
+    },
+    "debris#2": {
+      "pos": [
+        -7.5,
+        -9.0
+      ],
+      "rot_z": 160,
+      "scale": 0.9
+    },
+    "bucket#2": {
+      "pos": [
+        2.9,
+        -4.9
+      ],
+      "rot_z": 0
+    },
+    "wall_stair": {
+      "pos": [
+        -9.8,
+        -0.6
+      ],
+      "rot_z": 90
+    },
+    "base_dressing#3": {
+      "pos": [
+        9.47,
+        -2.96
+      ],
+      "rot_z": -47.6
+    },
+    "ladder": {
+      "pos": [
+        9.99,
+        -3.44
+      ],
+      "rot_z": -47.6
+    },
+    "ladder#2": {
+      "pos": [
+        5.177,
+        -11.655
+      ],
+      "z": 3.0,
+      "rot_z": -66
+    },
+    "base_dressing#5": {
+      "pos": [
+        5.44,
+        -10.17
+      ],
+      "rot_z": -156
+    },
+    "base_dressing#6": {
+      "pos": [
+        9.09,
+        -8.54
+      ],
+      "rot_z": -156
+    },
+    "base_dressing#7": {
+      "pos": [
+        -9.03,
+        -11.73
+      ],
+      "rot_z": -169.35,
+      "scale": [
+        0.9,
+        1,
+        1
+      ]
+    },
+    "base_dressing#8": {
+      "pos": [
+        -5.88,
+        -11.13
+      ],
+      "rot_z": -169.35,
+      "scale": [
+        0.9,
+        1,
+        1
+      ]
+    },
+    "base_dressing#9": {
+      "pos": [
+        -2.74,
+        -10.54
+      ],
+      "rot_z": -169.35,
+      "scale": [
+        0.9,
+        1,
+        1
+      ]
+    },
+    "base_dressing#10": {
+      "pos": [
+        0.7,
+        -9.9
+      ],
+      "rot_z": -169.35
+    },
+    "base_dressing#11": {
+      "pos": [
+        -9.9,
+        -6.0
+      ],
+      "rot_z": 90,
+      "scale": [
+        0.25,
+        1,
+        1
+      ]
+    },
+    "well": {
+      "pos": [
+        -4.6,
+        -6.9
+      ],
+      "rot_z": 8
+    },
+    "trough": {
+      "pos": [
+        -7.3,
+        -7.7
+      ],
+      "rot_z": 8
+    },
+    "treeline": {
+      "pos": [
+        0.0,
+        17.0
+      ],
+      "z": "lower_ward",
+      "rot_z": 0
+    },
+    "tree#6": {
+      "pos": [
+        -3.8,
+        11.0
+      ],
+      "z": "ground",
+      "rot_z": 200,
+      "scale": 1.0
+    },
+    "tree#7": {
+      "pos": [
+        1.4,
+        11.8
+      ],
+      "z": "lower_ward",
+      "rot_z": 80,
+      "scale": 1.15
+    },
+    "tree#8": {
+      "pos": [
+        12.4,
+        12.2
+      ],
+      "z": "lower_ward",
+      "rot_z": 300,
+      "scale": 1.1
+    },
+    "tree#9": {
+      "pos": [
+        15.0,
+        14.5
+      ],
+      "z": "lower_ward",
+      "rot_z": 150,
+      "scale": 1.0
+    },
+    "tree#10": {
+      "pos": [
+        15.3,
+        8.6
+      ],
+      "z": "lower_ward",
+      "rot_z": 40,
+      "scale": 0.95
+    },
+    "tree#11": {
+      "pos": [
+        -14.8,
+        9.5
+      ],
+      "z": -2.88,
+      "rot_z": 110,
+      "scale": 1.05
+    },
+    "dead_bush#5": {
+      "pos": [
+        -2.4,
+        17.6
+      ],
+      "z": -1.54,
+      "rot_z": 30
+    },
+    "dead_bush#6": {
+      "pos": [
+        3.2,
+        18.4
+      ],
+      "z": -0.93,
+      "rot_z": 150
+    },
+    "dead_bush#7": {
+      "pos": [
+        11.0,
+        16.8
+      ],
+      "z": -2.28,
+      "rot_z": 260
+    },
+    "dead_bush#8": {
+      "pos": [
+        14.5,
+        16.0
+      ],
+      "z": -2.65,
+      "rot_z": 90
+    },
+    "drip_bucket_well": {
+      "pos": [
+        -4.71,
+        -6.13
+      ],
+      "z": 0.8,
+      "rot_z": 0
+    },
+    "base_dressing#o0": {
+      "pos": [
+        -13.4,
+        -10.5
+      ],
+      "z": -2.84,
+      "rot_z": -90
+    },
+    "base_dressing#o1": {
+      "pos": [
+        -13.4,
+        -6.5
+      ],
+      "z": -2.81,
+      "rot_z": -90
+    },
+    "base_dressing#o2": {
+      "pos": [
+        -13.4,
+        -2.5
+      ],
+      "z": -2.82,
+      "rot_z": -90
+    },
+    "base_dressing#o3": {
+      "pos": [
+        -13.4,
+        1.5
+      ],
+      "z": -2.76,
+      "rot_z": -90
+    },
+    "stable": {
+      "pos": [
+        9.8,
+        -6.3
+      ],
+      "rot_z": -90
+    },
+    "forge": {
+      "pos": [
+        2.9,
+        -7.1
+      ],
+      "rot_z": 0
+    },
+    "tarp": {
+      "pos": [
+        -8.4,
+        -10.3
+      ],
+      "rot_z": 5
+    },
+    "west_ditch": {
+      "pos": [
+        -13.0,
+        0.0
+      ],
+      "z": "lower_ward",
+      "rot_z": 0
+    },
+    "muck_heap": {
+      "pos": [
+        7.2,
+        -9.1
+      ],
+      "rot_z": -156
+    },
+    "drips": {
+      "pos": [
+        0,
+        0
+      ],
+      "rot_z": 0
+    },
+    "ground_mist": {
+      "pos": [
+        0,
+        0
+      ],
+      "rot_z": 0
+    },
+    "ground_dressing": {
+      "pos": [
+        0.0,
+        0.0
+      ],
+      "rot_z": 0
+    },
+    "age_dressing": {
+      "pos": [
+        0.0,
+        0.0
+      ],
+      "rot_z": 0
+    },
+    "road": {
+      "pos": [
+        -1.15,
+        6.6
+      ],
+      "z": 0,
+      "rot_z": 0
+    }
+  },
+  "mounted": {
+    "_doc": "Wall props at an explicit point: pos [x, y, z] on the face, rot_z turns the prop's back (+Y) toward the wall.",
+    "torch_sconce": {
+      "pos": [
+        -3.3,
+        3.0,
+        2.6
+      ],
+      "rot_z": 0,
+      "scale": 1.3
+    },
+    "banner": {
+      "pos": [
+        2.5,
+        3.0,
+        6.3
+      ],
+      "rot_z": 0
+    },
+    "banner#2": {
+      "pos": [
+        7.9,
+        -11.81,
+        4.6
+      ],
+      "rot_z": 24
+    },
+    "lit_door": {
+      "pos": [
+        4.1,
+        2.6,
+        0.0
+      ],
+      "rot_z": 0
+    },
+    "lit_window": {
+      "pos": [
+        -9.0,
+        3.0,
+        7.4
+      ],
+      "rot_z": 0
+    },
+    "lit_window#2": {
+      "pos": [
+        4.1,
+        2.6,
+        4.4
+      ],
+      "rot_z": 0
+    },
+    "lit_door#2": {
+      "pos": [
+        -11.1,
+        3.0,
+        6.0
+      ],
+      "rot_z": 0,
+      "scale": 0.85
+    },
+    "lit_door#3": {
+      "pos": [
+        6.2,
+        2.6,
+        6.0
+      ],
+      "rot_z": 0,
+      "scale": 0.85
+    },
+    "tether_ring": {
+      "pos": [
+        -2.95,
+        3.0,
+        0.85
+      ],
+      "rot_z": 0
+    },
+    "garderobe": {
+      "pos": [
+        7.0,
+        5.95,
+        3.0
+      ],
+      "rot_z": -90
+    },
+    "breteche": {
+      "pos": [
+        -1.15,
+        6.6,
+        5.35
+      ],
+      "rot_z": 180
+    }
+  },
+  "crows": {
+    "_doc": "perched: how many crows sit on merlon tops, picked at random (seed) inside perch_region [[x0, x1], [y0, y1]]; perches buried inside a taller block are skipped. points: [x, y, z, rot_z] crows at explicit spots (gallows crossbeam). flying: [x, y, z, rot_z] birds in the air.",
+    "seed": 3,
+    "perched": 0,
+    "perch_region": [
+      [
+        -14,
+        14
+      ],
+      [
+        -6,
+        10
+      ]
+    ],
+    "flying": [
+      [
+        -2.24,
+        -0.45,
+        8.0,
+        -70
+      ],
+      [
+        9.5,
+        3.0,
+        12.0,
+        -120
+      ]
+    ],
+    "points": [
+      [
+        0.08,
+        -10.93,
+        1.92,
+        80
+      ],
+      [
+        3.82,
+        -0.45,
+        4.72,
+        72
+      ],
+      [
+        0.48,
+        -3.38,
+        1.33,
+        95
+      ],
+      [
+        -4.9,
+        -6.85,
+        2.7,
+        -85
+      ],
+      [
+        -7.0,
+        -7.6,
+        0.6,
+        95
+      ],
+      [
+        2.7,
+        -6.52,
+        3.72,
+        -60
+      ],
+      [
+        -5.2,
+        3.5,
+        11.37,
+        100
+      ],
+      [
+        2.2,
+        -2.3,
+        0.0,
+        -75
+      ],
+      [
+        0.15,
+        3.3,
+        11.3,
+        70
+      ],
+      [
+        -2.2,
+        -5.3,
+        0.0,
+        110
+      ],
+      [
+        6.53,
+        -1.34,
+        4.72,
+        -108
+      ],
+      [
+        -12.1,
+        -6.9,
+        7.89,
+        20
+      ],
+      [
+        -12.1,
+        0.9,
+        7.84,
+        -30
+      ],
+      [
+        8.94,
+        0.88,
+        7.83,
+        -100
+      ],
+      [
+        -3.75,
+        -11.65,
+        1.77,
+        -70
+      ],
+      [
+        -7.7,
+        3.3,
+        12.83,
+        90
+      ],
+      [
+        -5.95,
+        0.87,
+        3.33,
+        80
+      ]
+    ],
+    "scale": 1.15
+  },
+  "humans": {
+    "_doc": "1.8 m scale figures, rendered only by --check-scale.",
+    "points": [
+      [
+        -1.15,
+        1.6,
+        0
+      ],
+      [
+        3.7,
+        -3.2,
+        0
+      ],
+      [
+        -0.6,
+        -3.9,
+        20
+      ],
+      [
+        -5.5,
+        -1.6,
+        -20
+      ],
+      [
+        -11.6,
+        -17.6,
+        90
+      ],
+      [
+        -12.9,
+        -14.6,
+        90
+      ]
+    ]
+  }
+}

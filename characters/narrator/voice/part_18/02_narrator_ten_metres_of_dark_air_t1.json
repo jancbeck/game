@@ -1,0 +1,103 @@
+{
+  "file": "/Users/jan/workspace/projects/game/characters/narrator/voice/part_18/02_narrator_ten_metres_of_dark_air_t1.wav",
+  "character": "narrator",
+  "text": "[cool, a little vain, inner voice] Ten metres of dark air. Your stomach notices before you do. Breathe out. Step back.",
+  "spoken_text": "Ten metres of dark air. Your stomach notices before you do. Breathe out. Step back.",
+  "tags": [
+    "cool, a little vain, inner voice"
+  ],
+  "take": 1,
+  "reference": "voices/narrator-reference-dry.wav",
+  "model": "drama3-small-IQ3_XXS.gguf",
+  "sampling": [
+    "temperature=0.7",
+    "top_p=0.7",
+    "top_k=30"
+  ],
+  "render_wall_s_all_takes": 104.4,
+  "speaker_similarity": 0.779,
+  "duration_s": 8.78,
+  "expected_s": 6.27,
+  "silences": [],
+  "transcript": "10 meters of dark air. Your stomach notices before you do. Breathe out. Step back.",
+  "words": [
+    {
+      "word": "10",
+      "start": 0.12,
+      "end": 0.4
+    },
+    {
+      "word": "meters",
+      "start": 0.4,
+      "end": 0.8
+    },
+    {
+      "word": "of",
+      "start": 0.8,
+      "end": 0.86
+    },
+    {
+      "word": "dark",
+      "start": 0.95,
+      "end": 1.18
+    },
+    {
+      "word": "air.",
+      "start": 1.27,
+      "end": 1.64
+    },
+    {
+      "word": "Your",
+      "start": 2.64,
+      "end": 2.64
+    },
+    {
+      "word": "stomach",
+      "start": 2.76,
+      "end": 2.93
+    },
+    {
+      "word": "notices",
+      "start": 2.93,
+      "end": 3.76
+    },
+    {
+      "word": "before",
+      "start": 3.76,
+      "end": 4.16
+    },
+    {
+      "word": "you",
+      "start": 4.17,
+      "end": 4.33
+    },
+    {
+      "word": "do.",
+      "start": 4.52,
+      "end": 4.73
+    },
+    {
+      "word": "Breathe",
+      "start": 5.94,
+      "end": 5.94
+    },
+    {
+      "word": "out.",
+      "start": 6.06,
+      "end": 6.62
+    },
+    {
+      "word": "Step",
+      "start": 7.96,
+      "end": 7.96
+    },
+    {
+      "word": "back.",
+      "start": 8.06,
+      "end": 8.59
+    }
+  ],
+  "missing_words": [],
+  "reasons": [],
+  "pass": true
+}

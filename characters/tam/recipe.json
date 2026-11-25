@@ -1,0 +1,83 @@
+{
+ "_doc": "Tam, the courier: about 19, lean, a wet dark cloak over a short tunic, riding boots, a leather satchel, wet dark hair; asleep in the north-west tower's watch hood (clip 'sleep': a lying pose with the chest breathing). The keys are listed in the docstring of characters/build_human.py. The sleep clip lies on the floor around the figure's origin, 0.87 x 1.65 m and 0.57 m high, along the figure's Z axis with the head toward -Z (the way a standing figure faces).",
+ "id": "tam",
+ "height_m": 1.77,
+ "macro": {
+  "gender": 1.0,
+  "age": 0.38,
+  "muscle": 0.35,
+  "weight": 0.2,
+  "proportions": 0.5,
+  "height": 0.55,
+  "race": {"asian": 0.0, "caucasian": 1.0, "african": 0.0}
+ },
+ "skin": {
+  "name": "young_caucasian_male",
+  "tint": [0.9, 0.8, 0.76],
+  "size": 512,
+  "brows": {"color": [0.16, 0.12, 0.1], "strength": 0.8, "raise": -0.025, "arch": 0.1, "thickness": 0.0048},
+  "flush": {"strength": 0.22, "color": [0.7, 0.4, 0.34]}
+ },
+ "eyes": "brown",
+ "garments": {
+  "tunic": {
+   "color": [0.36, 0.32, 0.26],
+   "ease": 0.016,
+   "sleeve_ease": 0.012,
+   "hem_above_knee": 0.12,
+   "wear": {"dirt": 0.35, "wet": 0.3}
+  },
+  "skirt": {"flare": 0.02, "stride_total": 0.03, "thigh_share": 0.45},
+  "hose": {
+   "color": [0.22, 0.21, 0.21],
+   "wear": {"wet": 0.3}
+  },
+  "boots": {
+   "color": [0.15, 0.11, 0.09],
+   "height": 0.4,
+   "ease": 0.012,
+   "wear": {"dirt": 0.5, "wet": 0.25}
+  },
+  "hair": {
+   "color": [0.12, 0.09, 0.07],
+   "wear": {"wet": 0.35, "dirt": 0.0}
+  },
+  "belt": {"color": [0.26, 0.17, 0.1], "width": 0.05, "ease": 0.03},
+  "cloak": {
+   "color": [0.24, 0.24, 0.26],
+   "ease": 0.04,
+   "half_width": 0.25,
+   "opening": 0.105,
+   "hem_below_knee": -0.02,
+   "flare": 0.03,
+   "rows": 5,
+   "stride_total": 0.04,
+   "thigh_share": 0.45,
+   "wear": {"dirt": 0.45, "wet": 0.42}
+  },
+  "satchel": {
+   "color": [0.34, 0.22, 0.12],
+   "strap_ease": 0.058,
+   "bag_x": 0.31,
+   "wear": {"wet": 0.25},
+   "strap_width": 0.02
+  }
+ },
+ "wear": {"dirt": 0.3, "wet": 0.25},
+ "detail": {"skin": 0.14, "tunic": 0.2, "hose": 0.2, "boots": 0.12, "hair": 0.4, "belt": 0.6, "cloak": 0.35},
+ "fit": {"walk": {"mode": "clear", "keys": 30}, "sleep": {"mode": "drape", "floor": 0.0}},
+ "animations": {
+  "idle": {"type": "stand", "bvh": "77_02", "range_s": [0.8, 7.4], "rate": 0.9},
+  "talk": {"type": "stand", "bvh": "18_08", "range_s": [8.0, 14.0]},
+  "walk": {"type": "walk", "bvh": "07_01"},
+  "sleep": {
+   "type": "rest",
+   "bvh": "77_18",
+   "t": 0.6,
+   "period_s": 9.0,
+   "breaths": 2,
+   "breath_deg": 3.5,
+   "tweaks": {"lowerarm_l": [-60, 0, 0], "lowerarm_r": [-60, 0, 0]}
+  }
+ }
+}

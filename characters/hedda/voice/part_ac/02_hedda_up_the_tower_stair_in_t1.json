@@ -1,0 +1,158 @@
+{
+  "file": "characters/hedda/voice/part_ac/02_hedda_up_the_tower_stair_in_t1.wav",
+  "character": "hedda",
+  "text": "[warning, with a dark chuckle] Up the tower stair, in the watch hood, asleep with the satchel under his head like a pillow. Wake him, and I'll salt your soup till midsummer.",
+  "spoken_text": "Up the tower stair, in the watch hood, asleep with the satchel under his head like a pillow. Wake him, and I'll salt your soup till midsummer.",
+  "tags": [
+    "warning, with a dark chuckle"
+  ],
+  "take": 1,
+  "reference": "voices/hedda-reference-dry.wav",
+  "model": "drama3-small-IQ3_XXS.gguf",
+  "sampling": [
+    "temperature=0.7",
+    "top_p=0.7",
+    "top_k=30"
+  ],
+  "render_wall_s_all_takes": 173.6,
+  "speaker_similarity": 0.835,
+  "duration_s": 11.52,
+  "expected_s": 10.88,
+  "silences": [],
+  "transcript": "Up the tower stare, in the watch-hood, asleep, with the satchel under his head like a pillow. Wake him, and I'll salt your soup till midsummer.",
+  "words": [
+    {
+      "word": "Up",
+      "start": 0.04,
+      "end": 0.12
+    },
+    {
+      "word": "the",
+      "start": 0.31,
+      "end": 0.38
+    },
+    {
+      "word": "tower",
+      "start": 0.45,
+      "end": 0.85
+    },
+    {
+      "word": "stare,",
+      "start": 0.85,
+      "end": 1.38
+    },
+    {
+      "word": "in",
+      "start": 1.5,
+      "end": 1.61
+    },
+    {
+      "word": "the",
+      "start": 1.63,
+      "end": 1.87
+    },
+    {
+      "word": "watch-hood,",
+      "start": 2.0,
+      "end": 2.87
+    },
+    {
+      "word": "asleep,",
+      "start": 2.88,
+      "end": 4.4
+    },
+    {
+      "word": "with",
+      "start": 4.91,
+      "end": 4.91
+    },
+    {
+      "word": "the",
+      "start": 4.98,
+      "end": 5.22
+    },
+    {
+      "word": "satchel",
+      "start": 5.22,
+      "end": 5.8
+    },
+    {
+      "word": "under",
+      "start": 5.8,
+      "end": 5.82
+    },
+    {
+      "word": "his",
+      "start": 6.3,
+      "end": 6.37
+    },
+    {
+      "word": "head",
+      "start": 6.37,
+      "end": 6.65
+    },
+    {
+      "word": "like",
+      "start": 6.65,
+      "end": 6.93
+    },
+    {
+      "word": "a",
+      "start": 6.93,
+      "end": 6.97
+    },
+    {
+      "word": "pillow.",
+      "start": 7.0,
+      "end": 7.68
+    },
+    {
+      "word": "Wake",
+      "start": 7.72,
+      "end": 8.01
+    },
+    {
+      "word": "him,",
+      "start": 8.01,
+      "end": 8.41
+    },
+    {
+      "word": "and",
+      "start": 8.41,
+      "end": 8.65
+    },
+    {
+      "word": "I'll",
+      "start": 8.65,
+      "end": 8.97
+    },
+    {
+      "word": "salt",
+      "start": 8.97,
+      "end": 9.06
+    },
+    {
+      "word": "your",
+      "start": 9.63,
+      "end": 9.63
+    },
+    {
+      "word": "soup",
+      "start": 9.68,
+      "end": 9.95
+    },
+    {
+      "word": "till",
+      "start": 9.96,
+      "end": 10.29
+    },
+    {
+      "word": "midsummer.",
+      "start": 10.29,
+      "end": 11.32
+    }
+  ],
+  "missing_words": [],
+  "reasons": [],
+  "pass": true
+}

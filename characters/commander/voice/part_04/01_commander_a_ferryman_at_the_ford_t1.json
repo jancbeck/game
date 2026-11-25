@@ -1,0 +1,168 @@
+{
+  "file": "/Users/jan/workspace/projects/game/characters/commander/voice/part_04/01_commander_a_ferryman_at_the_ford_t1.wav",
+  "character": "commander",
+  "text": "[slow, thinking it through] A ferryman at the ford. The Wardens take their tolls at that ford, and they have wanted this road unwatched for as long as I have watched it.",
+  "spoken_text": "A ferryman at the ford. The Wardens take their tolls at that ford, and they have wanted this road unwatched for as long as I have watched it.",
+  "tags": [
+    "slow, thinking it through"
+  ],
+  "take": 1,
+  "reference": "voices/commander-reference-dry.wav",
+  "model": "drama3-small-IQ3_XXS.gguf",
+  "sampling": [
+    "temperature=0.7",
+    "top_p=0.7",
+    "top_k=30"
+  ],
+  "render_wall_s_all_takes": 136.9,
+  "speaker_similarity": 0.8392,
+  "duration_s": 10.36,
+  "expected_s": 11.27,
+  "silences": [],
+  "transcript": "A ferryman at the Ford. The wardens take their tolls at that Ford, and they have wanted this road unwatched for as long as I have watched it.",
+  "words": [
+    {
+      "word": "A",
+      "start": 0.04,
+      "end": 0.09
+    },
+    {
+      "word": "ferryman",
+      "start": 0.09,
+      "end": 0.87
+    },
+    {
+      "word": "at",
+      "start": 0.87,
+      "end": 1.03
+    },
+    {
+      "word": "the",
+      "start": 1.03,
+      "end": 1.73
+    },
+    {
+      "word": "Ford.",
+      "start": 2.19,
+      "end": 2.92
+    },
+    {
+      "word": "The",
+      "start": 3.15,
+      "end": 3.15
+    },
+    {
+      "word": "wardens",
+      "start": 3.19,
+      "end": 3.69
+    },
+    {
+      "word": "take",
+      "start": 3.69,
+      "end": 4.0
+    },
+    {
+      "word": "their",
+      "start": 4.0,
+      "end": 4.17
+    },
+    {
+      "word": "tolls",
+      "start": 4.17,
+      "end": 4.77
+    },
+    {
+      "word": "at",
+      "start": 4.77,
+      "end": 4.92
+    },
+    {
+      "word": "that",
+      "start": 5.23,
+      "end": 5.23
+    },
+    {
+      "word": "Ford,",
+      "start": 5.33,
+      "end": 5.6
+    },
+    {
+      "word": "and",
+      "start": 5.76,
+      "end": 5.98
+    },
+    {
+      "word": "they",
+      "start": 5.98,
+      "end": 6.16
+    },
+    {
+      "word": "have",
+      "start": 6.39,
+      "end": 6.6
+    },
+    {
+      "word": "wanted",
+      "start": 6.6,
+      "end": 6.94
+    },
+    {
+      "word": "this",
+      "start": 7.08,
+      "end": 7.37
+    },
+    {
+      "word": "road",
+      "start": 7.37,
+      "end": 7.68
+    },
+    {
+      "word": "unwatched",
+      "start": 7.68,
+      "end": 8.27
+    },
+    {
+      "word": "for",
+      "start": 8.47,
+      "end": 8.7
+    },
+    {
+      "word": "as",
+      "start": 8.7,
+      "end": 8.79
+    },
+    {
+      "word": "long",
+      "start": 8.79,
+      "end": 8.82
+    },
+    {
+      "word": "as",
+      "start": 9.03,
+      "end": 9.13
+    },
+    {
+      "word": "I",
+      "start": 9.24,
+      "end": 9.24
+    },
+    {
+      "word": "have",
+      "start": 9.37,
+      "end": 9.48
+    },
+    {
+      "word": "watched",
+      "start": 9.48,
+      "end": 9.9
+    },
+    {
+      "word": "it.",
+      "start": 9.9,
+      "end": 10.2
+    }
+  ],
+  "missing_words": [],
+  "reasons": [],
+  "pass": true
+}

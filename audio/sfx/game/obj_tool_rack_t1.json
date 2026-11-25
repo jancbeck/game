@@ -1,0 +1,12 @@
+{
+  "prompt": "wooden handled farm tools, a spade, a hay fork and a mattock, knocking and clattering against each other on a wooden rack, iron blades clinking, dry close-miked film sound effect, no reverb",
+  "negative_prompt": "reverb, echo, hall, music, melody, speech, voices, singing, rain",
+  "seed": 1000,
+  "seconds": 6.0,
+  "dit": "medium",
+  "decoder": "same-l",
+  "cfg": 2.0,
+  "steps": 8,
+  "wall_seconds": 12.02,
+  "file": "obj_tool_rack_t1.wav"
+}

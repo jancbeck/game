@@ -1,0 +1,133 @@
+{
+  "file": "/Users/jan/workspace/projects/game/characters/narrator/voice/part_16/01_narrator_a_month_he_knew_something_t2.wav",
+  "character": "narrator",
+  "text": "[dry, pleased with itself, inner voice] A month. He knew something was coming long before Tam rode in, and chose not to open the door to it.",
+  "spoken_text": "A month. He knew something was coming long before Tam rode in, and chose not to open the door to it.",
+  "tags": [
+    "dry, pleased with itself, inner voice"
+  ],
+  "take": 2,
+  "reference": "voices/narrator-reference-dry.wav",
+  "model": "drama3-small-IQ3_XXS.gguf",
+  "sampling": [
+    "temperature=0.7",
+    "top_p=0.7",
+    "top_k=30"
+  ],
+  "render_wall_s_all_takes": 110.4,
+  "speaker_similarity": 0.6423,
+  "duration_s": 6.18,
+  "expected_s": 8.58,
+  "silences": [],
+  "transcript": "a month. He knew something was coming long before Tam rode in, and chose not to open the door to it.",
+  "words": [
+    {
+      "word": "a",
+      "start": 0.02,
+      "end": 0.05
+    },
+    {
+      "word": "month.",
+      "start": 0.06,
+      "end": 0.47
+    },
+    {
+      "word": "He",
+      "start": 0.49,
+      "end": 0.63
+    },
+    {
+      "word": "knew",
+      "start": 0.84,
+      "end": 0.9
+    },
+    {
+      "word": "something",
+      "start": 0.9,
+      "end": 1.43
+    },
+    {
+      "word": "was",
+      "start": 1.43,
+      "end": 1.6
+    },
+    {
+      "word": "coming",
+      "start": 1.6,
+      "end": 1.98
+    },
+    {
+      "word": "long",
+      "start": 1.98,
+      "end": 2.32
+    },
+    {
+      "word": "before",
+      "start": 2.32,
+      "end": 2.73
+    },
+    {
+      "word": "Tam",
+      "start": 2.87,
+      "end": 3.1
+    },
+    {
+      "word": "rode",
+      "start": 3.1,
+      "end": 3.43
+    },
+    {
+      "word": "in,",
+      "start": 3.43,
+      "end": 3.69
+    },
+    {
+      "word": "and",
+      "start": 3.75,
+      "end": 3.9
+    },
+    {
+      "word": "chose",
+      "start": 4.18,
+      "end": 4.5
+    },
+    {
+      "word": "not",
+      "start": 4.5,
+      "end": 4.76
+    },
+    {
+      "word": "to",
+      "start": 4.76,
+      "end": 4.84
+    },
+    {
+      "word": "open",
+      "start": 4.97,
+      "end": 5.3
+    },
+    {
+      "word": "the",
+      "start": 5.3,
+      "end": 5.44
+    },
+    {
+      "word": "door",
+      "start": 5.48,
+      "end": 5.66
+    },
+    {
+      "word": "to",
+      "start": 5.66,
+      "end": 5.76
+    },
+    {
+      "word": "it.",
+      "start": 5.8,
+      "end": 6.01
+    }
+  ],
+  "missing_words": [],
+  "reasons": [],
+  "pass": true
+}

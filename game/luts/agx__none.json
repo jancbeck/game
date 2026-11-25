@@ -1,0 +1,11 @@
+{
+ "size": 65,
+ "log_min": -12.5,
+ "log_max": 5.0,
+ "mid_grey": 0.18,
+ "view": "AgX",
+ "look": null,
+ "display": "sRGB",
+ "layout": "float32 RGB, red fastest, then green, then blue",
+ "source": "Blender 5.2.0 LTS OCIO config"
+}

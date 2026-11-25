@@ -1,0 +1,154 @@
+{
+  "file": "/Users/jan/workspace/projects/game/characters/hedda/voice/line_03/01_hedda_rider_what_rider_ive_been_t3.wav",
+  "character": "hedda",
+  "text": "[too innocent] Rider? What rider. I've been up to my elbows in pease since vespers. Did you see a rider? No. Then there wasn't one.",
+  "spoken_text": "Rider? What rider. I've been up to my elbows in pease since vespers. Did you see a rider? No. Then there wasn't one.",
+  "tags": [
+    "too innocent"
+  ],
+  "take": 3,
+  "reference": "voices/hedda-reference-dry.wav",
+  "model": "drama3-small-IQ3_XXS.gguf",
+  "sampling": [
+    "temperature=0.7",
+    "top_p=0.7",
+    "top_k=30"
+  ],
+  "render_wall_s_all_takes": 111.6,
+  "speaker_similarity": 0.8468,
+  "duration_s": 12.26,
+  "expected_s": 9.35,
+  "silences": [
+    [
+      0.65,
+      2.21
+    ],
+    [
+      3.01,
+      4.59
+    ]
+  ],
+  "transcript": "Rider? What rider? I've been up to my elbows in peas since Vespers. Did you see a rider? No, then there wasn't one.",
+  "words": [
+    {
+      "word": "Rider?",
+      "start": 0.05,
+      "end": 0.5
+    },
+    {
+      "word": "What",
+      "start": 1.9,
+      "end": 1.9
+    },
+    {
+      "word": "rider?",
+      "start": 1.99,
+      "end": 2.53
+    },
+    {
+      "word": "I've",
+      "start": 4.2,
+      "end": 4.2
+    },
+    {
+      "word": "been",
+      "start": 4.2,
+      "end": 4.2
+    },
+    {
+      "word": "up",
+      "start": 4.29,
+      "end": 4.34
+    },
+    {
+      "word": "to",
+      "start": 4.34,
+      "end": 4.63
+    },
+    {
+      "word": "my",
+      "start": 4.63,
+      "end": 4.82
+    },
+    {
+      "word": "elbows",
+      "start": 4.93,
+      "end": 5.72
+    },
+    {
+      "word": "in",
+      "start": 5.81,
+      "end": 6.04
+    },
+    {
+      "word": "peas",
+      "start": 6.42,
+      "end": 6.5
+    },
+    {
+      "word": "since",
+      "start": 6.5,
+      "end": 6.81
+    },
+    {
+      "word": "Vespers.",
+      "start": 6.81,
+      "end": 7.44
+    },
+    {
+      "word": "Did",
+      "start": 8.26,
+      "end": 8.26
+    },
+    {
+      "word": "you",
+      "start": 8.26,
+      "end": 8.26
+    },
+    {
+      "word": "see",
+      "start": 8.32,
+      "end": 8.34
+    },
+    {
+      "word": "a",
+      "start": 8.35,
+      "end": 8.44
+    },
+    {
+      "word": "rider?",
+      "start": 8.44,
+      "end": 9.28
+    },
+    {
+      "word": "No,",
+      "start": 10.44,
+      "end": 10.44
+    },
+    {
+      "word": "then",
+      "start": 10.44,
+      "end": 10.44
+    },
+    {
+      "word": "there",
+      "start": 10.53,
+      "end": 10.74
+    },
+    {
+      "word": "wasn't",
+      "start": 10.74,
+      "end": 11.4
+    },
+    {
+      "word": "one.",
+      "start": 11.4,
+      "end": 12.14
+    }
+  ],
+  "missing_words": [],
+  "reasons": [
+    "silence of 1.5 s or more at [[0.65, 2.21], [3.01, 4.59]]"
+  ],
+  "pass": false
+}

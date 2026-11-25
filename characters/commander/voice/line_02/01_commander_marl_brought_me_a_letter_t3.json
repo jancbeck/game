@@ -1,0 +1,163 @@
+{
+  "file": "/Users/jan/workspace/projects/game/characters/commander/voice/line_02/01_commander_marl_brought_me_a_letter_t3.wav",
+  "character": "commander",
+  "text": "[weary, unsurprised] Marl brought me a letter tonight, and a story about a stranger who found it. I assume the stranger is you. Stand by the fire, at least.",
+  "spoken_text": "Marl brought me a letter tonight, and a story about a stranger who found it. I assume the stranger is you. Stand by the fire, at least.",
+  "tags": [
+    "weary, unsurprised"
+  ],
+  "take": 3,
+  "reference": "voices/commander-reference-dry.wav",
+  "model": "drama3-small-IQ3_XXS.gguf",
+  "sampling": [
+    "temperature=0.7",
+    "top_p=0.7",
+    "top_k=30"
+  ],
+  "render_wall_s_all_takes": 76.5,
+  "speaker_similarity": 0.8834,
+  "duration_s": 9.98,
+  "expected_s": 10.88,
+  "silences": [],
+  "transcript": "Marl brought me a letter tonight, and a story about a stranger who found it. I assume the stranger is you. Stand by the fire, at least.",
+  "words": [
+    {
+      "word": "Marl",
+      "start": 0.04,
+      "end": 0.26
+    },
+    {
+      "word": "brought",
+      "start": 0.26,
+      "end": 0.72
+    },
+    {
+      "word": "me",
+      "start": 0.82,
+      "end": 0.86
+    },
+    {
+      "word": "a",
+      "start": 0.86,
+      "end": 0.92
+    },
+    {
+      "word": "letter",
+      "start": 0.92,
+      "end": 1.32
+    },
+    {
+      "word": "tonight,",
+      "start": 1.32,
+      "end": 1.84
+    },
+    {
+      "word": "and",
+      "start": 1.86,
+      "end": 1.88
+    },
+    {
+      "word": "a",
+      "start": 2.16,
+      "end": 2.25
+    },
+    {
+      "word": "story",
+      "start": 2.25,
+      "end": 2.8
+    },
+    {
+      "word": "about",
+      "start": 2.8,
+      "end": 3.13
+    },
+    {
+      "word": "a",
+      "start": 3.13,
+      "end": 3.19
+    },
+    {
+      "word": "stranger",
+      "start": 3.38,
+      "end": 3.71
+    },
+    {
+      "word": "who",
+      "start": 3.72,
+      "end": 3.92
+    },
+    {
+      "word": "found",
+      "start": 3.92,
+      "end": 4.25
+    },
+    {
+      "word": "it.",
+      "start": 4.25,
+      "end": 4.49
+    },
+    {
+      "word": "I",
+      "start": 5.4,
+      "end": 5.4
+    },
+    {
+      "word": "assume",
+      "start": 5.4,
+      "end": 5.4
+    },
+    {
+      "word": "the",
+      "start": 5.44,
+      "end": 5.66
+    },
+    {
+      "word": "stranger",
+      "start": 5.66,
+      "end": 6.52
+    },
+    {
+      "word": "is",
+      "start": 6.52,
+      "end": 6.73
+    },
+    {
+      "word": "you.",
+      "start": 6.73,
+      "end": 7.28
+    },
+    {
+      "word": "Stand",
+      "start": 7.76,
+      "end": 7.86
+    },
+    {
+      "word": "by",
+      "start": 7.86,
+      "end": 8.04
+    },
+    {
+      "word": "the",
+      "start": 8.04,
+      "end": 8.31
+    },
+    {
+      "word": "fire,",
+      "start": 8.31,
+      "end": 8.85
+    },
+    {
+      "word": "at",
+      "start": 8.85,
+      "end": 9.03
+    },
+    {
+      "word": "least.",
+      "start": 9.03,
+      "end": 9.6
+    }
+  ],
+  "missing_words": [],
+  "reasons": [],
+  "pass": true
+}

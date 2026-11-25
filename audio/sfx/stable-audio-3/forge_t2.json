@@ -1,0 +1,12 @@
+{
+  "prompt": "a distant blacksmith hammer striking an anvil in a slow steady rhythm with one soft bellows puff, heard across an open courtyard in light rain, wide open-air field recording",
+  "negative_prompt": "music, melody, speech, voices, singing, loud, close microphone",
+  "seed": 1001,
+  "seconds": 15.0,
+  "dit": "medium",
+  "decoder": "same-l",
+  "cfg": 2.0,
+  "steps": 8,
+  "wall_seconds": 7.75,
+  "file": "forge_t2.wav"
+}

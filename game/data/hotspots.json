@@ -1,0 +1,496 @@
+[
+ {
+  "id": "gate",
+  "name": "Gate",
+  "text": "Oak leaves, barred from inside since the bell for vespers. The portcullis has not come down in eleven winters; the windlass pawl is rusted open and nobody has put in for a new one. The porter's torch keeps the passage honest. Whatever comes up the road at night knocks, and waits.",
+  "position": [
+   -1.15,
+   0.0,
+   -3.0
+  ],
+  "volume": {
+   "center": [
+    -1.15,
+    2.25,
+    -3.85
+   ],
+   "size": [
+    3.4,
+    4.5,
+    2.4
+   ],
+   "yaw_rad": 0.0
+  },
+  "stand": [
+   -1.15,
+   0.0,
+   -1.7
+  ],
+  "plan": {
+   "stand_xy": [
+    -1.15,
+    1.7
+   ]
+  },
+  "screen_px": [
+   1331.2,
+   891.0
+  ]
+ },
+ {
+  "id": "fire_basket",
+  "name": "Fire basket",
+  "text": "Iron basket on splayed legs, three logs of wet larch hissing in it. It is the only fire the gate watch is allowed, and it is there so the man on watch can see a face before he lifts the bar, not to warm him. The smoke goes where the wind says. Tonight that is into the shelter.",
+  "position": [
+   1.0,
+   0.0,
+   -0.55
+  ],
+  "volume": {
+   "center": [
+    1.0,
+    0.74481,
+    -0.55
+   ],
+   "size": [
+    0.7812485588374942,
+    1.5,
+    0.7812485082612408
+   ],
+   "yaw_rad": 0.0
+  },
+  "stand": [
+   0.05,
+   0.0,
+   0.2
+  ],
+  "plan": {
+   "stand_xy": [
+    0.05,
+    -0.2
+   ]
+  },
+  "screen_px": [
+   1443.9,
+   964.7
+  ]
+ },
+ {
+  "id": "bell",
+  "name": "Gate bell",
+  "text": "A bronze bell no bigger than a helmet, on a bracket above the watch shelter. The rope comes down through the roof boards to a knot at shoulder height. Three strokes for riders, continuous for fire. The knot is black and smooth: somebody pulls it every hour to prove he is awake.",
+  "position": [
+   1.85,
+   3.5,
+   -2.45
+  ],
+  "volume": {
+   "center": [
+    1.85,
+    2.45,
+    -2.45
+   ],
+   "size": [
+    0.7,
+    2.4,
+    0.7
+   ],
+   "yaw_rad": 0.0
+  },
+  "stand": [
+   1.6,
+   0.0,
+   -1.05
+  ],
+  "plan": {
+   "stand_xy": [
+    1.6,
+    1.05
+   ]
+  },
+  "screen_px": [
+   1537.8,
+   896.1
+  ]
+ },
+ {
+  "id": "well",
+  "name": "Well",
+  "text": "Rubble drum, windlass, a shingle roof missing a few shingles. Water stands half a metre under the rim tonight; in August it is ten. The bucket rope was spliced twice this year. Everything in this yard drinks from here, horses first, men after, the cook before both.",
+  "position": [
+   -4.6,
+   0.0,
+   6.9
+  ],
+  "volume": {
+   "center": [
+    -4.58334,
+    1.35777,
+    6.95802
+   ],
+   "size": [
+    2.491152244472948,
+    2.7232576739042997,
+    1.891458990142655
+   ],
+   "yaw_rad": 0.13962633907794952
+  },
+  "stand": [
+   -4.6,
+   0.0,
+   8.15
+  ],
+  "plan": {
+   "stand_xy": [
+    -4.6,
+    -8.15
+   ]
+  },
+  "screen_px": [
+   1221.0,
+   1356.1
+  ]
+ },
+ {
+  "id": "cart",
+  "name": "Handcart",
+  "text": "Two-wheeled handcart, tipped on its shafts, sacks and a rope coil left in the bed. The left tyre is worn through to the felloe and the axle wants grease. It brought up the flour from the village on Tuesday. Nobody has unloaded the last two sacks, and they are getting wet.",
+  "position": [
+   -0.2,
+   0.0,
+   4.7
+  ],
+  "volume": {
+   "center": [
+    -0.19517,
+    0.67694,
+    4.72738
+   ],
+   "size": [
+    3.4823244599523973,
+    1.3647467734282182,
+    1.7916873722099842
+   ],
+   "yaw_rad": 1.7453292608261108
+  },
+  "stand": [
+   -1.3,
+   0.0,
+   3.0
+  ],
+  "plan": {
+   "stand_xy": [
+    -1.3,
+    -3.0
+   ]
+  },
+  "screen_px": [
+   1386.1,
+   1100.1
+  ]
+ },
+ {
+  "id": "cookhouse",
+  "name": "Cookhouse",
+  "text": "A lean-to against the north-west tower: oven in front, hearth at the back under a stone hood. Bread, pease pottage, salt pork on feast days. The cook keeps the store door key on a string round his neck and counts the onions. The roof leaks over the table, so the table has moved.",
+  "position": [
+   -6.975,
+   0.0,
+   -0.87
+  ],
+  "volume": {
+   "center": [
+    -6.82339,
+    2.25,
+    -0.53054
+   ],
+   "size": [
+    4.963218986988068,
+    4.5,
+    5.006966844350351
+   ],
+   "yaw_rad": 0.0
+  },
+  "stand": [
+   -6.3,
+   0.0,
+   1.75
+  ],
+  "plan": {
+   "stand_xy": [
+    -6.3,
+    -1.75
+   ]
+  },
+  "screen_px": [
+   1009.6,
+   1087.8
+  ]
+ },
+ {
+  "id": "forge",
+  "name": "Forge",
+  "text": "The hearth is banked for the night: grey ash, a few coals breathing under it. Anvil on an oak stump, quench tub, horseshoes on the shelf. The smith shoes the garrison's four horses and mends hinges, pot hooks and spear heads. He has not made a new blade here in years. Iron costs money.",
+  "position": [
+   2.9,
+   0.0,
+   7.1
+  ],
+  "volume": {
+   "center": [
+    3.00055,
+    1.886,
+    7.1933
+   ],
+   "size": [
+    4.483011596617015,
+    3.832000056281686,
+    3.0633977791294456
+   ],
+   "yaw_rad": 0.0
+  },
+  "stand": [
+   2.9,
+   0.0,
+   9.0
+  ],
+  "plan": {
+   "stand_xy": [
+    2.9,
+    -9.0
+   ]
+  },
+  "screen_px": [
+   1771.4,
+   1329.2
+  ]
+ },
+ {
+  "id": "gallows",
+  "name": "Gallows",
+  "text": "Boarded scaffold, two posts, a beam, a rope left hanging. It stands where the whole yard has to walk past it. It has been used twice in living memory, both times for deserters. The trapdoor bolt is oiled more often than the gate hinges.",
+  "position": [
+   5.3,
+   0.0,
+   1.25
+  ],
+  "volume": {
+   "center": [
+    4.69736,
+    2.25,
+    1.05097
+   ],
+   "size": [
+    5.17070111029018,
+    4.5,
+    2.5696482715917224
+   ],
+   "yaw_rad": -0.3141592741012573
+  },
+  "stand": [
+   4.3,
+   0.0,
+   3.15
+  ],
+  "plan": {
+   "stand_xy": [
+    4.3,
+    -3.15
+   ]
+  },
+  "screen_px": [
+   1790.2,
+   1058.6
+  ]
+ },
+ {
+  "id": "stable",
+  "name": "Stable door",
+  "text": "Two stalls under a lean-to against the east wall, hay in the loft over the mangers, oat bin with a stone on the lid against rats. One horse in, head down. The other went out with the dispatch rider at noon and is not back.",
+  "position": [
+   9.8,
+   0.0,
+   6.3
+  ],
+  "volume": {
+   "center": [
+    8.4,
+    1.4,
+    6.3
+   ],
+   "size": [
+    1.6,
+    2.8,
+    3.8
+   ],
+   "yaw_rad": 0.0
+  },
+  "stand": [
+   7.8,
+   0.0,
+   6.3
+  ],
+  "plan": {
+   "stand_xy": [
+    7.8,
+    -6.3
+   ]
+  },
+  "screen_px": [
+   2085.5,
+   1167.8
+  ]
+ },
+ {
+  "id": "tool_rack",
+  "name": "Tool rack",
+  "text": "Spade, shovel, hay fork, mattock, rake and a besom, under their own small roof. Every iron edge is rusted and every handle is worn dark where hands go. The besom is the newest thing in the rack. Somebody sweeps the gate passage every morning, whether or not anyone comes.",
+  "position": [
+   -4.0,
+   0.0,
+   -2.55
+  ],
+  "volume": {
+   "center": [
+    -4.0,
+    1.31101,
+    -2.46359
+   ],
+   "size": [
+    1.2799999713897705,
+    2.8231296748002297,
+    1.2171707324253616
+   ],
+   "yaw_rad": 0.0
+  },
+  "stand": [
+   -4.0,
+   0.0,
+   -1.45
+  ],
+  "plan": {
+   "stand_xy": [
+    -4.0,
+    1.45
+   ]
+  },
+  "screen_px": [
+   1130.1,
+   926.6
+  ]
+ },
+ {
+  "id": "trough",
+  "name": "Trough",
+  "text": "Plank trough on two stones, full to a hand below the rim with rain. Leaves, a scrap of board, green scum at the waterline. The horses drink from it and the men wash in it, in that order, which is why the men wash quickly.",
+  "position": [
+   -7.3,
+   0.0,
+   7.7
+  ],
+  "volume": {
+   "center": [
+    -7.04865,
+    0.29196,
+    7.66467
+   ],
+   "size": [
+    2.605300719955329,
+    0.6460836202743004,
+    0.6280000419857252
+   ],
+   "yaw_rad": 0.13962633907794952
+  },
+  "stand": [
+   -7.2,
+   0.0,
+   8.6
+  ],
+  "plan": {
+   "stand_xy": [
+    -7.2,
+    -8.6
+   ]
+  },
+  "screen_px": [
+   1040.6,
+   1398.3
+  ]
+ },
+ {
+  "id": "guardroom",
+  "name": "Guardroom door",
+  "text": "Lit from inside: the guardroom hearth. Off-watch men sleep in there in their boots. The door sticks in wet weather and has to be shouldered, so it is left a hand open, and the yard can hear the dice.",
+  "position": [
+   4.1,
+   0.0,
+   -2.6
+  ],
+  "volume": {
+   "center": [
+    4.1,
+    1.23,
+    -2.08022
+   ],
+   "size": [
+    2.0199999809265137,
+    2.460000094026327,
+    1.0395608078152057
+   ],
+   "yaw_rad": 0.0
+  },
+  "stand": [
+   3.55,
+   0.0,
+   -1.0
+  ],
+  "plan": {
+   "stand_xy": [
+    3.55,
+    1.0
+   ]
+  },
+  "screen_px": [
+   1678.5,
+   881.6
+  ]
+ },
+ {
+  "id": "nw_tower_stair",
+  "name": "Tower stair",
+  "text": "Twenty-four steps of wet stone up the west curtain, worn to a dish in the middle of every tread, and no rail on the drop side. It starts at the flank of the cookhouse and ends at the north-west tower door, where a lamp is lit. The watch hood on the roof above keeps the rain off whoever is up there, and nobody has come down in an hour.",
+  "position": [
+   -9.8,
+   0.0,
+   0.6
+  ],
+  "volume": {
+   "center": [
+    -9.80069,
+    2.25,
+    0.59956
+   ],
+   "size": [
+    7.2061655521392876,
+    4.5,
+    1.1986278891563433
+   ],
+   "yaw_rad": 1.5707963705062866
+  },
+  "stand": [
+   -9.8,
+   0.0,
+   4.9
+  ],
+  "plan": {
+   "stand_xy": [
+    -9.8,
+    -4.9
+   ]
+  },
+  "screen_px": [
+   802.3,
+   1257.1
+  ]
+ }
+]

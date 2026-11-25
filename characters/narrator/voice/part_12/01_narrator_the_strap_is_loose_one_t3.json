@@ -1,0 +1,93 @@
+{
+  "file": "/Users/jan/workspace/projects/game/characters/narrator/voice/part_12/01_narrator_the_strap_is_loose_one_t3.wav",
+  "character": "narrator",
+  "text": "[quick, precise, close, inner voice] The strap is loose. One hand rests on the buckle, not holding it.",
+  "spoken_text": "The strap is loose. One hand rests on the buckle, not holding it.",
+  "tags": [
+    "quick, precise, close, inner voice"
+  ],
+  "take": 3,
+  "reference": "voices/narrator-reference-dry.wav",
+  "model": "drama3-small-IQ3_XXS.gguf",
+  "sampling": [
+    "temperature=0.7",
+    "top_p=0.7",
+    "top_k=30"
+  ],
+  "render_wall_s_all_takes": 146.1,
+  "speaker_similarity": 0.8016,
+  "duration_s": 4.41,
+  "expected_s": 5.5,
+  "silences": [],
+  "transcript": "The strap is loose. One hand rests on the buckle, not holding it.",
+  "words": [
+    {
+      "word": "The",
+      "start": 0.03,
+      "end": 0.16
+    },
+    {
+      "word": "strap",
+      "start": 0.16,
+      "end": 0.42
+    },
+    {
+      "word": "is",
+      "start": 0.42,
+      "end": 0.52
+    },
+    {
+      "word": "loose.",
+      "start": 0.52,
+      "end": 0.96
+    },
+    {
+      "word": "One",
+      "start": 1.72,
+      "end": 1.72
+    },
+    {
+      "word": "hand",
+      "start": 1.72,
+      "end": 1.72
+    },
+    {
+      "word": "rests",
+      "start": 1.76,
+      "end": 1.9
+    },
+    {
+      "word": "on",
+      "start": 1.97,
+      "end": 2.11
+    },
+    {
+      "word": "the",
+      "start": 2.11,
+      "end": 2.32
+    },
+    {
+      "word": "buckle,",
+      "start": 2.33,
+      "end": 3.06
+    },
+    {
+      "word": "not",
+      "start": 3.3,
+      "end": 3.3
+    },
+    {
+      "word": "holding",
+      "start": 3.43,
+      "end": 3.87
+    },
+    {
+      "word": "it.",
+      "start": 3.87,
+      "end": 4.3
+    }
+  ],
+  "missing_words": [],
+  "reasons": [],
+  "pass": true
+}

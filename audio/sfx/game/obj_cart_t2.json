@@ -1,0 +1,12 @@
+{
+  "prompt": "an old two-wheeled wooden handcart pushed a short way, wooden frame creaking, dry iron axle squeaking, wheel rolling on stones, dry close-miked film sound effect, no reverb",
+  "negative_prompt": "reverb, echo, hall, music, melody, speech, voices, singing, rain",
+  "seed": 1001,
+  "seconds": 6.0,
+  "dit": "medium",
+  "decoder": "same-l",
+  "cfg": 2.0,
+  "steps": 8,
+  "wall_seconds": 10.14,
+  "file": "obj_cart_t2.wav"
+}

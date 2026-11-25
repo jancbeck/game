@@ -1,0 +1,209 @@
+{
+  "_doc": "Fast EEVEE preview of layout.json for the check views (scale, plan, eye): same scene, lighting balanced for EEVEE's world light.",
+  "render": {
+    "resolution": [
+      1536,
+      1024
+    ],
+    "engine": "BLENDER_EEVEE",
+    "samples": 64,
+    "raytracing": true,
+    "exposure": 0.88
+  },
+  "environment": {
+    "_doc": "Blue hour just after sunset under rain cloud: sky gradient from a dim warm-grey horizon glow to deep blue overhead lights the scene and the puddles; 'moon' is the residual skylight from the west, soft and low (angle_deg). haze is a mist box.",
+    "sky_color": [
+      0.055,
+      0.085,
+      0.16
+    ],
+    "ambient_strength": 2.4,
+    "moon": {
+      "direction_euler": [
+        70,
+        0,
+        -100
+      ],
+      "color": [
+        0.62,
+        0.74,
+        1.0
+      ],
+      "strength": 1.2,
+      "angle_deg": 25
+    },
+    "haze": {
+      "_doc": "box of mist around the castle; density per meter, thicker near the ground",
+      "center": [
+        0,
+        -2
+      ],
+      "size": [
+        70,
+        60
+      ],
+      "z_range": [
+        -3.5,
+        14
+      ],
+      "falloff_m": 2.5,
+      "ground_density": 0.05,
+      "density": 0.0045,
+      "color": [
+        0.42,
+        0.47,
+        0.56
+      ],
+      "anisotropy": 0.4,
+      "tile_px": 4,
+      "samples": 192
+    },
+    "horizon_color": [
+      0.16,
+      0.19,
+      0.25
+    ],
+    "horizon_falloff": 0.8,
+    "camera_sky": [
+      0.045,
+      0.065,
+      0.11
+    ]
+  },
+  "prop_light_scale": 1.4,
+  "post": {
+    "_doc": "kuwahara: painterly brush size in px. bloom: glare strength above threshold. grade: lift/gamma/gain RGB. vignette: edge darkening 0..1.",
+    "kuwahara": 0,
+    "kuwahara_sharpness": 0.85,
+    "bloom": 0.6,
+    "bloom_threshold": 0.8,
+    "bloom_size": 0.6,
+    "grade": {
+      "lift": [
+        0.97,
+        0.975,
+        0.99
+      ],
+      "gamma": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "gain": [
+        1.0,
+        1.0,
+        1.02
+      ]
+    },
+    "vignette": 0.45,
+    "sharpen": 0,
+    "saturation": 0.9
+  },
+  "rain": {
+    "_doc": "streaks: count in region [[x],[y],[z]], length range m, width m, wind (x, y) slant per meter fallen. splashes: crowns on the ground. layers: [share of count, brightness, length scale, width scale] per depth layer. sheltered: [[x],[y],[z]] boxes under the gate vault and roofs where no streaks fall.",
+    "count": 16000,
+    "region": [
+      [
+        -22,
+        22
+      ],
+      [
+        -22,
+        16
+      ],
+      [
+        -3,
+        14
+      ]
+    ],
+    "length": [
+      0.18,
+      0.55
+    ],
+    "width": 0.008,
+    "wind": [
+      0.12,
+      0.05
+    ],
+    "splashes": 1500,
+    "lower_ward_z": -3.0,
+    "layers": [
+      [
+        0.55,
+        0.6,
+        0.7,
+        0.8
+      ],
+      [
+        0.33,
+        1.1,
+        1.0,
+        1.0
+      ],
+      [
+        0.12,
+        2.0,
+        1.5,
+        1.4
+      ]
+    ],
+    "sheltered": [
+      [
+        [
+          -2.7,
+          0.4
+        ],
+        [
+          3.0,
+          6.6
+        ],
+        [
+          -1,
+          4.5
+        ]
+      ],
+      [
+        [
+          -9.2,
+          -4.75
+        ],
+        [
+          -1.3,
+          3.0
+        ],
+        [
+          -1,
+          3.5
+        ]
+      ],
+      [
+        [
+          8.2,
+          11.3
+        ],
+        [
+          -8.2,
+          -4.4
+        ],
+        [
+          -1,
+          3.6
+        ]
+      ],
+      [
+        [
+          -9.5,
+          -7.6
+        ],
+        [
+          5.6,
+          7.1
+        ],
+        [
+          11.0,
+          13.2
+        ]
+      ]
+    ]
+  }
+}

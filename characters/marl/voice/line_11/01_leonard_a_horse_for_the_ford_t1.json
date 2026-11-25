@@ -1,0 +1,175 @@
+{
+  "file": "/Users/jan/workspace/projects/game/characters/marl/voice/line_11/01_leonard_a_horse_for_the_ford_t1.wav",
+  "character": "leonard",
+  "text": "[dry, resigned] A horse. For the ford. In this weather. The commander's idea, I suppose, and my mare. Bring her back with four legs and I'll forgive you the rest.",
+  "spoken_text": "A horse. For the ford. In this weather. The commander's idea, I suppose, and my mare. Bring her back with four legs and I'll forgive you the rest.",
+  "tags": [
+    "dry, resigned"
+  ],
+  "take": 1,
+  "reference": "voices/leonard-reference-dry.wav",
+  "model": "drama3-small-IQ3_XXS.gguf",
+  "sampling": [
+    "temperature=0.7",
+    "top_p=0.7",
+    "top_k=30"
+  ],
+  "render_wall_s_all_takes": 109.4,
+  "speaker_similarity": 0.7877,
+  "duration_s": 13.98,
+  "expected_s": 11.27,
+  "silences": [
+    [
+      2.15,
+      3.68
+    ]
+  ],
+  "transcript": "A horse for the Ford in this weather, the commander's idea, I suppose, and my mare. Bring her back with four legs, and I'll forgive you the rest.",
+  "words": [
+    {
+      "word": "A",
+      "start": 0.02,
+      "end": 0.13
+    },
+    {
+      "word": "horse",
+      "start": 0.13,
+      "end": 0.64
+    },
+    {
+      "word": "for",
+      "start": 0.64,
+      "end": 1.17
+    },
+    {
+      "word": "the",
+      "start": 1.48,
+      "end": 1.57
+    },
+    {
+      "word": "Ford",
+      "start": 1.57,
+      "end": 2.1
+    },
+    {
+      "word": "in",
+      "start": 2.1,
+      "end": 2.14
+    },
+    {
+      "word": "this",
+      "start": 2.45,
+      "end": 3.15
+    },
+    {
+      "word": "weather,",
+      "start": 3.68,
+      "end": 4.4
+    },
+    {
+      "word": "the",
+      "start": 4.63,
+      "end": 5.03
+    },
+    {
+      "word": "commander's",
+      "start": 5.88,
+      "end": 6.5
+    },
+    {
+      "word": "idea,",
+      "start": 6.5,
+      "end": 7.12
+    },
+    {
+      "word": "I",
+      "start": 7.12,
+      "end": 7.18
+    },
+    {
+      "word": "suppose,",
+      "start": 7.18,
+      "end": 7.73
+    },
+    {
+      "word": "and",
+      "start": 7.73,
+      "end": 7.84
+    },
+    {
+      "word": "my",
+      "start": 8.29,
+      "end": 8.67
+    },
+    {
+      "word": "mare.",
+      "start": 9.26,
+      "end": 9.98
+    },
+    {
+      "word": "Bring",
+      "start": 10.22,
+      "end": 10.31
+    },
+    {
+      "word": "her",
+      "start": 10.42,
+      "end": 10.56
+    },
+    {
+      "word": "back",
+      "start": 10.56,
+      "end": 10.74
+    },
+    {
+      "word": "with",
+      "start": 10.74,
+      "end": 10.88
+    },
+    {
+      "word": "four",
+      "start": 11.13,
+      "end": 11.43
+    },
+    {
+      "word": "legs,",
+      "start": 11.66,
+      "end": 11.84
+    },
+    {
+      "word": "and",
+      "start": 11.97,
+      "end": 12.08
+    },
+    {
+      "word": "I'll",
+      "start": 12.08,
+      "end": 12.28
+    },
+    {
+      "word": "forgive",
+      "start": 12.39,
+      "end": 12.87
+    },
+    {
+      "word": "you",
+      "start": 12.87,
+      "end": 13.1
+    },
+    {
+      "word": "the",
+      "start": 13.1,
+      "end": 13.32
+    },
+    {
+      "word": "rest.",
+      "start": 13.32,
+      "end": 13.9
+    }
+  ],
+  "missing_words": [],
+  "reasons": [
+    "silence of 1.5 s or more at [[2.15, 3.68]]"
+  ],
+  "pass": false
+}

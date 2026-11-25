@@ -1,0 +1,110 @@
+{
+  "file": "/Users/jan/workspace/projects/game/characters/commander/voice/part_06/02_commander_go_on_mind_the_stair_t2.wav",
+  "character": "commander",
+  "text": "[weary, almost kind] Go on. Mind the stair on your way down. The seventh step is a liar.",
+  "spoken_text": "Go on. Mind the stair on your way down. The seventh step is a liar.",
+  "tags": [
+    "weary, almost kind"
+  ],
+  "take": 2,
+  "reference": "voices/commander-reference-dry.wav",
+  "model": "drama3-small-IQ3_XXS.gguf",
+  "sampling": [
+    "temperature=0.7",
+    "top_p=0.7",
+    "top_k=30"
+  ],
+  "render_wall_s_all_takes": 133.9,
+  "speaker_similarity": 0.0127,
+  "duration_s": 42.96,
+  "expected_s": 6.27,
+  "silences": [
+    [
+      0.71,
+      4.33
+    ],
+    [
+      6.37,
+      33.06
+    ],
+    [
+      34.12,
+      42.96
+    ]
+  ],
+  "transcript": "Go on. Mind the stair on your way down. The seventh step.",
+  "words": [
+    {
+      "word": "Go",
+      "start": 0.09,
+      "end": 0.5
+    },
+    {
+      "word": "on.",
+      "start": 0.5,
+      "end": 2.0
+    },
+    {
+      "word": "Mind",
+      "start": 4.24,
+      "end": 4.24
+    },
+    {
+      "word": "the",
+      "start": 4.24,
+      "end": 4.24
+    },
+    {
+      "word": "stair",
+      "start": 4.33,
+      "end": 4.66
+    },
+    {
+      "word": "on",
+      "start": 4.66,
+      "end": 4.91
+    },
+    {
+      "word": "your",
+      "start": 5.09,
+      "end": 5.93
+    },
+    {
+      "word": "way",
+      "start": 5.93,
+      "end": 6.65
+    },
+    {
+      "word": "down.",
+      "start": 6.65,
+      "end": 8.24
+    },
+    {
+      "word": "The",
+      "start": 30.07,
+      "end": 30.67
+    },
+    {
+      "word": "seventh",
+      "start": 30.67,
+      "end": 32.96
+    },
+    {
+      "word": "step.",
+      "start": 32.97,
+      "end": 34.16
+    }
+  ],
+  "missing_words": [
+    "is",
+    "a",
+    "liar"
+  ],
+  "reasons": [
+    "too long: 42.96 s, expected about 6.3 s",
+    "silence of 1.5 s or more at [[0.71, 4.33], [6.37, 33.06], [34.12, 42.96]]",
+    "missing words: is a liar",
+    "speaker similarity 0.0127 below 0.4"
+  ],
+  "pass": false
+}

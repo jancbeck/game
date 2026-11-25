@@ -1,0 +1,133 @@
+{
+  "file": "/Users/jan/workspace/projects/game/characters/commander/voice/part_06/01_commander_and_you_marl_says_you_t3.wav",
+  "character": "commander",
+  "text": "[dry, probing] And you. Marl says you came to count our spears. If you did, count carefully. They are all we have left.",
+  "spoken_text": "And you. Marl says you came to count our spears. If you did, count carefully. They are all we have left.",
+  "tags": [
+    "dry, probing"
+  ],
+  "take": 3,
+  "reference": "voices/commander-reference-dry.wav",
+  "model": "drama3-small-IQ3_XXS.gguf",
+  "sampling": [
+    "temperature=0.7",
+    "top_p=0.7",
+    "top_k=30"
+  ],
+  "render_wall_s_all_takes": 133.9,
+  "speaker_similarity": 0.7925,
+  "duration_s": 9.94,
+  "expected_s": 8.58,
+  "silences": [],
+  "transcript": "and you. Marl says you came to count our spears. If you did, count carefully. They are all we have left.",
+  "words": [
+    {
+      "word": "and",
+      "start": 0.07,
+      "end": 0.25
+    },
+    {
+      "word": "you.",
+      "start": 0.25,
+      "end": 0.74
+    },
+    {
+      "word": "Marl",
+      "start": 0.75,
+      "end": 2.12
+    },
+    {
+      "word": "says",
+      "start": 2.12,
+      "end": 2.42
+    },
+    {
+      "word": "you",
+      "start": 2.42,
+      "end": 2.64
+    },
+    {
+      "word": "came",
+      "start": 2.64,
+      "end": 2.94
+    },
+    {
+      "word": "to",
+      "start": 2.94,
+      "end": 3.06
+    },
+    {
+      "word": "count",
+      "start": 3.12,
+      "end": 3.46
+    },
+    {
+      "word": "our",
+      "start": 3.5,
+      "end": 3.68
+    },
+    {
+      "word": "spears.",
+      "start": 3.68,
+      "end": 4.37
+    },
+    {
+      "word": "If",
+      "start": 4.37,
+      "end": 4.53
+    },
+    {
+      "word": "you",
+      "start": 4.91,
+      "end": 4.91
+    },
+    {
+      "word": "did,",
+      "start": 5.22,
+      "end": 5.39
+    },
+    {
+      "word": "count",
+      "start": 5.49,
+      "end": 5.9
+    },
+    {
+      "word": "carefully.",
+      "start": 5.93,
+      "end": 7.2
+    },
+    {
+      "word": "They",
+      "start": 7.2,
+      "end": 7.36
+    },
+    {
+      "word": "are",
+      "start": 8.15,
+      "end": 8.35
+    },
+    {
+      "word": "all",
+      "start": 8.35,
+      "end": 8.86
+    },
+    {
+      "word": "we",
+      "start": 8.86,
+      "end": 9.01
+    },
+    {
+      "word": "have",
+      "start": 9.01,
+      "end": 9.36
+    },
+    {
+      "word": "left.",
+      "start": 9.36,
+      "end": 9.6
+    }
+  ],
+  "missing_words": [],
+  "reasons": [],
+  "pass": true
+}

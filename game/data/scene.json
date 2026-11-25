@@ -1,0 +1,3469 @@
+{
+ "_doc": "Written by scene/export_game.py. Godot axes: godot (x, y, z) = blender (x, z, -y). Pixels: the 2560 x 1440 game frame, row 0 at the top.",
+ "conversion": {
+  "godot_from_blender": [
+   [
+    1.0,
+    0.0,
+    0.0
+   ],
+   [
+    0.0,
+    0.0,
+    1.0
+   ],
+   [
+    0.0,
+    -1.0,
+    0.0
+   ]
+  ],
+  "meters": 1.0
+ },
+ "camera": {
+  "_doc": "Orthographic game camera. basis columns are the camera's local +X (right), +Y (up), +Z (back; it looks along -Z), already in Godot axes. size is the frame width in meters (Godot keep_aspect = KEEP_WIDTH). The image-centre shift is baked into origin.",
+  "origin": [
+   -8.50092,
+   30.25065,
+   32.44549
+  ],
+  "basis_x": [
+   0.98163,
+   0.0,
+   0.19081
+  ],
+  "basis_y": [
+   0.11747,
+   0.78801,
+   -0.60435
+  ],
+  "basis_z": [
+   -0.15036,
+   0.61566,
+   0.77353
+  ],
+  "ortho_width_m": 35.0,
+  "ortho_height_m": 19.6875,
+  "px_per_m": 73.14286,
+  "resolution": [
+   2560,
+   1440
+  ],
+  "near": 1.0,
+  "far": 200.0,
+  "blender": {
+   "location": [
+    -8.500923156738281,
+    -32.44548797607422,
+    30.250648498535156
+   ],
+   "rotation_euler_xyz": [
+    0.9075711965560913,
+    0.0,
+    -0.19198621809482574
+   ],
+   "ortho_scale": 35.0,
+   "elevation_deg": 38.0,
+   "yaw_deg": 11.0,
+   "px_per_m": 73.14285714285714,
+   "world_origin_px": [
+    1437.54,
+    956.31
+   ]
+  }
+ },
+ "depth": {
+  "_doc": "depth.f32: float32 little-endian, width*height, row 0 = top. Metres along the camera axis from the camera origin (orthographic). Sky pixels hold sky_m.",
+  "file": "assets/depth.f32",
+  "width": 2560,
+  "height": 1440,
+  "min_m": 21.064701080322266,
+  "max_m": 66.0892333984375,
+  "sky_m": 196.0,
+  "sky_fraction": 0.0
+ },
+ "background": "assets/layers/reference.png",
+ "layers": {
+  "color_space": "linear Rec.709, scene-referred, exposure already applied",
+  "view_transform": "AgX",
+  "look": "AgX - Punchy",
+  "exposure_applied_ev": 1.3,
+  "post": {
+   "_doc": "kuwahara: painterly brush size in px. bloom: glare strength above threshold. grade: lift/gamma/gain RGB. vignette: edge darkening 0..1.",
+   "kuwahara": 0,
+   "kuwahara_sharpness": 0.85,
+   "bloom": 0.6,
+   "bloom_threshold": 0.8,
+   "bloom_size": 0.6,
+   "grade": {
+    "lift": [
+     0.97,
+     0.975,
+     0.99
+    ],
+    "gamma": [
+     1.0,
+     1.0,
+     1.0
+    ],
+    "gain": [
+     1.0,
+     1.0,
+     1.02
+    ]
+   },
+   "vignette": 0.45,
+   "sharpen": 0,
+   "saturation": 0.9
+  },
+  "base": "assets/layers/base.exr",
+  "groups": [
+   {
+    "id": "cookhouse_hearth",
+    "image": "assets/layers/lg_cookhouse_hearth.exr",
+    "curve": "fire",
+    "seed": 9982752,
+    "prop": "shed",
+    "anchor": [
+     -7.645,
+     0.95,
+     -2.32
+    ]
+   },
+   {
+    "id": "cookhouse_oven",
+    "image": "assets/layers/lg_cookhouse_oven.exr",
+    "curve": "fire",
+    "seed": 9983155,
+    "prop": "shed",
+    "anchor": [
+     -6.355,
+     0.85,
+     -0.36
+    ]
+   },
+   {
+    "id": "passage_torch",
+    "image": "assets/layers/lg_passage_torch.exr",
+    "curve": "fire",
+    "seed": 3461744,
+    "prop": "gate_door",
+    "anchor": [
+     -0.604,
+     1.897,
+     -4.125
+    ]
+   },
+   {
+    "id": "fire_basket",
+    "image": "assets/layers/lg_fire_basket.exr",
+    "curve": "fire",
+    "seed": 14734317,
+    "prop": "brazier",
+    "anchor": [
+     1.0,
+     1.025,
+     -0.325
+    ]
+   },
+   {
+    "id": "forge",
+    "image": "assets/layers/lg_forge.exr",
+    "curve": "banked",
+    "seed": 3539623,
+    "prop": "forge",
+    "anchor": [
+     2.9,
+     1.11,
+     7.0
+    ]
+   },
+   {
+    "id": "guardroom_door",
+    "image": "assets/layers/lg_guardroom_door.exr",
+    "curve": "interior",
+    "seed": 8038516,
+    "prop": "lit_door",
+    "anchor": [
+     3.51667,
+     0.66667,
+     -1.81
+    ]
+   },
+   {
+    "id": "nw_tower_window",
+    "image": "assets/layers/lg_nw_tower_window.exr",
+    "curve": "interior",
+    "seed": 2233228,
+    "prop": "lit_window",
+    "anchor": [
+     -9.0,
+     7.28,
+     -2.68
+    ]
+   },
+   {
+    "id": "guardroom_window",
+    "image": "assets/layers/lg_guardroom_window.exr",
+    "curve": "interior",
+    "seed": 2164961,
+    "prop": "lit_window#2",
+    "anchor": [
+     4.1,
+     4.28,
+     -2.28
+    ]
+   },
+   {
+    "id": "nw_tower_door",
+    "image": "assets/layers/lg_nw_tower_door.exr",
+    "curve": "interior",
+    "seed": 5592489,
+    "prop": "lit_door#2",
+    "anchor": [
+     -11.59583,
+     6.56667,
+     -2.3285
+    ]
+   },
+   {
+    "id": "ne_tower_door",
+    "image": "assets/layers/lg_ne_tower_door.exr",
+    "curve": "interior",
+    "seed": 14527230,
+    "prop": "lit_door#3",
+    "anchor": [
+     5.70417,
+     6.56667,
+     -1.9285
+    ]
+   }
+  ],
+  "reference": "assets/layers/reference.png",
+  "reference_post": "assets/layers/reference_post.png"
+ },
+ "masks": {
+  "puddle": "assets/masks/puddle.png",
+  "wet": "assets/masks/wet.png",
+  "normal": "assets/masks/normal.png",
+  "_doc": "normal: camera-space unit normal as rgb = n * 0.5 + 0.5 (x right, y up, z toward the camera). ids: 8-bit, 0 = nothing, k = hotspot k (1-based, hotspots.json order)",
+  "ids": "assets/masks/ids.png"
+ },
+ "views": {
+  "_doc": "Zoom views. wide: zoom 0.5, its own camera block (same direction and image centre, twice the coverage). tiles: zoom 2 around each hotspot; rect is in main-frame px [x0, y0, w, h], the tile images are rect * scale px. A tile lists only the light groups that reach it; the others are zero there (their faint rest is in its base). Images, depth, ids and masks follow the main frame's formats.",
+  "wide": {
+   "camera": {
+    "_doc": "Orthographic game camera. basis columns are the camera's local +X (right), +Y (up), +Z (back; it looks along -Z), already in Godot axes. size is the frame width in meters (Godot keep_aspect = KEEP_WIDTH). The image-centre shift is baked into origin.",
+    "origin": [
+     -8.50092,
+     30.25065,
+     32.44549
+    ],
+    "basis_x": [
+     0.98163,
+     0.0,
+     0.19081
+    ],
+    "basis_y": [
+     0.11747,
+     0.78801,
+     -0.60435
+    ],
+    "basis_z": [
+     -0.15036,
+     0.61566,
+     0.77353
+    ],
+    "ortho_width_m": 70.0,
+    "ortho_height_m": 39.375,
+    "px_per_m": 36.57143,
+    "resolution": [
+     2560,
+     1440
+    ],
+    "near": 1.0,
+    "far": 200.0,
+    "blender": {
+     "location": [
+      -8.500923156738281,
+      -32.44548797607422,
+      30.250648498535156
+     ],
+     "rotation_euler_xyz": [
+      0.9075711965560913,
+      0.0,
+      -0.19198621809482574
+     ],
+     "ortho_scale": 70.0,
+     "elevation_deg": 38.0,
+     "yaw_deg": 11.0,
+     "px_per_m": 36.57142857142857,
+     "world_origin_px": [
+      1358.77,
+      838.15
+     ]
+    }
+   },
+   "base": "assets/wide/base.exr",
+   "groups": [
+    {
+     "id": "cookhouse_hearth",
+     "image": "assets/wide/lg_cookhouse_hearth.exr"
+    },
+    {
+     "id": "cookhouse_oven",
+     "image": "assets/wide/lg_cookhouse_oven.exr"
+    },
+    {
+     "id": "passage_torch",
+     "image": "assets/wide/lg_passage_torch.exr"
+    },
+    {
+     "id": "fire_basket",
+     "image": "assets/wide/lg_fire_basket.exr"
+    },
+    {
+     "id": "forge",
+     "image": "assets/wide/lg_forge.exr"
+    },
+    {
+     "id": "guardroom_door",
+     "image": "assets/wide/lg_guardroom_door.exr"
+    },
+    {
+     "id": "nw_tower_window",
+     "image": "assets/wide/lg_nw_tower_window.exr"
+    },
+    {
+     "id": "guardroom_window",
+     "image": "assets/wide/lg_guardroom_window.exr"
+    },
+    {
+     "id": "nw_tower_door",
+     "image": "assets/wide/lg_nw_tower_door.exr"
+    },
+    {
+     "id": "ne_tower_door",
+     "image": "assets/wide/lg_ne_tower_door.exr"
+    }
+   ],
+   "depth": "assets/wide/depth.f32",
+   "depth_meta": {
+    "file": "assets/wide/depth.f32",
+    "width": 2560,
+    "height": 1440,
+    "min_m": 21.066049575805664,
+    "max_m": 83.13386535644531,
+    "sky_m": 196.0,
+    "sky_fraction": 0.0
+   },
+   "ids": "assets/wide/ids.png",
+   "masks": {
+    "puddle": "assets/wide/puddle.png",
+    "wet": "assets/wide/wet.png"
+   },
+   "reference": "assets/wide/reference.png"
+  },
+  "tiles": [
+   {
+    "id": "gate",
+    "hotspot": "gate",
+    "rect": [
+     661,
+     306,
+     1280,
+     720
+    ],
+    "scale": 2,
+    "base": "assets/tiles/gate/base.exr",
+    "groups": [
+     {
+      "id": "cookhouse_hearth",
+      "image": "assets/tiles/gate/lg_cookhouse_hearth.exr"
+     },
+     {
+      "id": "cookhouse_oven",
+      "image": "assets/tiles/gate/lg_cookhouse_oven.exr"
+     },
+     {
+      "id": "passage_torch",
+      "image": "assets/tiles/gate/lg_passage_torch.exr"
+     },
+     {
+      "id": "fire_basket",
+      "image": "assets/tiles/gate/lg_fire_basket.exr"
+     },
+     {
+      "id": "guardroom_door",
+      "image": "assets/tiles/gate/lg_guardroom_door.exr"
+     },
+     {
+      "id": "nw_tower_window",
+      "image": "assets/tiles/gate/lg_nw_tower_window.exr"
+     },
+     {
+      "id": "guardroom_window",
+      "image": "assets/tiles/gate/lg_guardroom_window.exr"
+     },
+     {
+      "id": "nw_tower_door",
+      "image": "assets/tiles/gate/lg_nw_tower_door.exr"
+     },
+     {
+      "id": "ne_tower_door",
+      "image": "assets/tiles/gate/lg_ne_tower_door.exr"
+     }
+    ],
+    "depth": "assets/tiles/gate/depth.f32",
+    "ids": "assets/tiles/gate/ids.png",
+    "masks": {
+     "puddle": "assets/tiles/gate/puddle.png",
+     "wet": "assets/tiles/gate/wet.png"
+    },
+    "reference": "assets/tiles/gate/reference.png"
+   },
+   {
+    "id": "fire_basket",
+    "hotspot": "fire_basket",
+    "rect": [
+     862,
+     520,
+     1280,
+     720
+    ],
+    "scale": 2,
+    "base": "assets/tiles/fire_basket/base.exr",
+    "groups": [
+     {
+      "id": "cookhouse_hearth",
+      "image": "assets/tiles/fire_basket/lg_cookhouse_hearth.exr"
+     },
+     {
+      "id": "cookhouse_oven",
+      "image": "assets/tiles/fire_basket/lg_cookhouse_oven.exr"
+     },
+     {
+      "id": "passage_torch",
+      "image": "assets/tiles/fire_basket/lg_passage_torch.exr"
+     },
+     {
+      "id": "fire_basket",
+      "image": "assets/tiles/fire_basket/lg_fire_basket.exr"
+     },
+     {
+      "id": "forge",
+      "image": "assets/tiles/fire_basket/lg_forge.exr"
+     },
+     {
+      "id": "guardroom_door",
+      "image": "assets/tiles/fire_basket/lg_guardroom_door.exr"
+     },
+     {
+      "id": "nw_tower_window",
+      "image": "assets/tiles/fire_basket/lg_nw_tower_window.exr"
+     },
+     {
+      "id": "guardroom_window",
+      "image": "assets/tiles/fire_basket/lg_guardroom_window.exr"
+     },
+     {
+      "id": "ne_tower_door",
+      "image": "assets/tiles/fire_basket/lg_ne_tower_door.exr"
+     }
+    ],
+    "depth": "assets/tiles/fire_basket/depth.f32",
+    "ids": "assets/tiles/fire_basket/ids.png",
+    "masks": {
+     "puddle": "assets/tiles/fire_basket/puddle.png",
+     "wet": "assets/tiles/fire_basket/wet.png"
+    },
+    "reference": "assets/tiles/fire_basket/reference.png"
+   },
+   {
+    "id": "bell",
+    "hotspot": "bell",
+    "rect": [
+     896,
+     331,
+     1280,
+     720
+    ],
+    "scale": 2,
+    "base": "assets/tiles/bell/base.exr",
+    "groups": [
+     {
+      "id": "cookhouse_hearth",
+      "image": "assets/tiles/bell/lg_cookhouse_hearth.exr"
+     },
+     {
+      "id": "cookhouse_oven",
+      "image": "assets/tiles/bell/lg_cookhouse_oven.exr"
+     },
+     {
+      "id": "passage_torch",
+      "image": "assets/tiles/bell/lg_passage_torch.exr"
+     },
+     {
+      "id": "fire_basket",
+      "image": "assets/tiles/bell/lg_fire_basket.exr"
+     },
+     {
+      "id": "guardroom_door",
+      "image": "assets/tiles/bell/lg_guardroom_door.exr"
+     },
+     {
+      "id": "nw_tower_window",
+      "image": "assets/tiles/bell/lg_nw_tower_window.exr"
+     },
+     {
+      "id": "guardroom_window",
+      "image": "assets/tiles/bell/lg_guardroom_window.exr"
+     },
+     {
+      "id": "ne_tower_door",
+      "image": "assets/tiles/bell/lg_ne_tower_door.exr"
+     }
+    ],
+    "depth": "assets/tiles/bell/depth.f32",
+    "ids": "assets/tiles/bell/ids.png",
+    "masks": {
+     "puddle": "assets/tiles/bell/puddle.png",
+     "wet": "assets/tiles/bell/wet.png"
+    },
+    "reference": "assets/tiles/bell/reference.png"
+   },
+   {
+    "id": "well",
+    "hotspot": "well",
+    "rect": [
+     566,
+     720,
+     1280,
+     720
+    ],
+    "scale": 2,
+    "base": "assets/tiles/well/base.exr",
+    "groups": [
+     {
+      "id": "cookhouse_hearth",
+      "image": "assets/tiles/well/lg_cookhouse_hearth.exr"
+     },
+     {
+      "id": "cookhouse_oven",
+      "image": "assets/tiles/well/lg_cookhouse_oven.exr"
+     },
+     {
+      "id": "passage_torch",
+      "image": "assets/tiles/well/lg_passage_torch.exr"
+     },
+     {
+      "id": "fire_basket",
+      "image": "assets/tiles/well/lg_fire_basket.exr"
+     },
+     {
+      "id": "forge",
+      "image": "assets/tiles/well/lg_forge.exr"
+     },
+     {
+      "id": "guardroom_door",
+      "image": "assets/tiles/well/lg_guardroom_door.exr"
+     },
+     {
+      "id": "nw_tower_window",
+      "image": "assets/tiles/well/lg_nw_tower_window.exr"
+     },
+     {
+      "id": "guardroom_window",
+      "image": "assets/tiles/well/lg_guardroom_window.exr"
+     },
+     {
+      "id": "nw_tower_door",
+      "image": "assets/tiles/well/lg_nw_tower_door.exr"
+     },
+     {
+      "id": "ne_tower_door",
+      "image": "assets/tiles/well/lg_ne_tower_door.exr"
+     }
+    ],
+    "depth": "assets/tiles/well/depth.f32",
+    "ids": "assets/tiles/well/ids.png",
+    "masks": {
+     "puddle": "assets/tiles/well/puddle.png",
+     "wet": "assets/tiles/well/wet.png"
+    },
+    "reference": "assets/tiles/well/reference.png"
+   },
+   {
+    "id": "cart",
+    "hotspot": "cart",
+    "rect": [
+     850,
+     720,
+     1280,
+     720
+    ],
+    "scale": 2,
+    "base": "assets/tiles/cart/base.exr",
+    "groups": [
+     {
+      "id": "cookhouse_hearth",
+      "image": "assets/tiles/cart/lg_cookhouse_hearth.exr"
+     },
+     {
+      "id": "cookhouse_oven",
+      "image": "assets/tiles/cart/lg_cookhouse_oven.exr"
+     },
+     {
+      "id": "passage_torch",
+      "image": "assets/tiles/cart/lg_passage_torch.exr"
+     },
+     {
+      "id": "fire_basket",
+      "image": "assets/tiles/cart/lg_fire_basket.exr"
+     },
+     {
+      "id": "forge",
+      "image": "assets/tiles/cart/lg_forge.exr"
+     },
+     {
+      "id": "guardroom_door",
+      "image": "assets/tiles/cart/lg_guardroom_door.exr"
+     },
+     {
+      "id": "nw_tower_window",
+      "image": "assets/tiles/cart/lg_nw_tower_window.exr"
+     },
+     {
+      "id": "guardroom_window",
+      "image": "assets/tiles/cart/lg_guardroom_window.exr"
+     },
+     {
+      "id": "ne_tower_door",
+      "image": "assets/tiles/cart/lg_ne_tower_door.exr"
+     }
+    ],
+    "depth": "assets/tiles/cart/depth.f32",
+    "ids": "assets/tiles/cart/ids.png",
+    "masks": {
+     "puddle": "assets/tiles/cart/puddle.png",
+     "wet": "assets/tiles/cart/wet.png"
+    },
+    "reference": "assets/tiles/cart/reference.png"
+   },
+   {
+    "id": "cookhouse",
+    "hotspot": "cookhouse",
+    "rect": [
+     300,
+     502,
+     1280,
+     720
+    ],
+    "scale": 2,
+    "base": "assets/tiles/cookhouse/base.exr",
+    "groups": [
+     {
+      "id": "cookhouse_hearth",
+      "image": "assets/tiles/cookhouse/lg_cookhouse_hearth.exr"
+     },
+     {
+      "id": "cookhouse_oven",
+      "image": "assets/tiles/cookhouse/lg_cookhouse_oven.exr"
+     },
+     {
+      "id": "passage_torch",
+      "image": "assets/tiles/cookhouse/lg_passage_torch.exr"
+     },
+     {
+      "id": "fire_basket",
+      "image": "assets/tiles/cookhouse/lg_fire_basket.exr"
+     },
+     {
+      "id": "guardroom_door",
+      "image": "assets/tiles/cookhouse/lg_guardroom_door.exr"
+     },
+     {
+      "id": "nw_tower_window",
+      "image": "assets/tiles/cookhouse/lg_nw_tower_window.exr"
+     },
+     {
+      "id": "guardroom_window",
+      "image": "assets/tiles/cookhouse/lg_guardroom_window.exr"
+     },
+     {
+      "id": "nw_tower_door",
+      "image": "assets/tiles/cookhouse/lg_nw_tower_door.exr"
+     },
+     {
+      "id": "ne_tower_door",
+      "image": "assets/tiles/cookhouse/lg_ne_tower_door.exr"
+     }
+    ],
+    "depth": "assets/tiles/cookhouse/depth.f32",
+    "ids": "assets/tiles/cookhouse/ids.png",
+    "masks": {
+     "puddle": "assets/tiles/cookhouse/puddle.png",
+     "wet": "assets/tiles/cookhouse/wet.png"
+    },
+    "reference": "assets/tiles/cookhouse/reference.png"
+   },
+   {
+    "id": "forge",
+    "hotspot": "forge",
+    "rect": [
+     1113,
+     720,
+     1280,
+     720
+    ],
+    "scale": 2,
+    "base": "assets/tiles/forge/base.exr",
+    "groups": [
+     {
+      "id": "cookhouse_hearth",
+      "image": "assets/tiles/forge/lg_cookhouse_hearth.exr"
+     },
+     {
+      "id": "passage_torch",
+      "image": "assets/tiles/forge/lg_passage_torch.exr"
+     },
+     {
+      "id": "fire_basket",
+      "image": "assets/tiles/forge/lg_fire_basket.exr"
+     },
+     {
+      "id": "forge",
+      "image": "assets/tiles/forge/lg_forge.exr"
+     },
+     {
+      "id": "guardroom_door",
+      "image": "assets/tiles/forge/lg_guardroom_door.exr"
+     },
+     {
+      "id": "guardroom_window",
+      "image": "assets/tiles/forge/lg_guardroom_window.exr"
+     },
+     {
+      "id": "ne_tower_door",
+      "image": "assets/tiles/forge/lg_ne_tower_door.exr"
+     }
+    ],
+    "depth": "assets/tiles/forge/depth.f32",
+    "ids": "assets/tiles/forge/ids.png",
+    "masks": {
+     "puddle": "assets/tiles/forge/puddle.png",
+     "wet": "assets/tiles/forge/wet.png"
+    },
+    "reference": "assets/tiles/forge/reference.png"
+   },
+   {
+    "id": "gallows",
+    "hotspot": "gallows",
+    "rect": [
+     1150,
+     473,
+     1280,
+     720
+    ],
+    "scale": 2,
+    "base": "assets/tiles/gallows/base.exr",
+    "groups": [
+     {
+      "id": "passage_torch",
+      "image": "assets/tiles/gallows/lg_passage_torch.exr"
+     },
+     {
+      "id": "fire_basket",
+      "image": "assets/tiles/gallows/lg_fire_basket.exr"
+     },
+     {
+      "id": "forge",
+      "image": "assets/tiles/gallows/lg_forge.exr"
+     },
+     {
+      "id": "guardroom_door",
+      "image": "assets/tiles/gallows/lg_guardroom_door.exr"
+     },
+     {
+      "id": "guardroom_window",
+      "image": "assets/tiles/gallows/lg_guardroom_window.exr"
+     },
+     {
+      "id": "ne_tower_door",
+      "image": "assets/tiles/gallows/lg_ne_tower_door.exr"
+     }
+    ],
+    "depth": "assets/tiles/gallows/depth.f32",
+    "ids": "assets/tiles/gallows/ids.png",
+    "masks": {
+     "puddle": "assets/tiles/gallows/puddle.png",
+     "wet": "assets/tiles/gallows/wet.png"
+    },
+    "reference": "assets/tiles/gallows/reference.png"
+   },
+   {
+    "id": "stable",
+    "hotspot": "stable",
+    "rect": [
+     1280,
+     720,
+     1280,
+     720
+    ],
+    "scale": 2,
+    "base": "assets/tiles/stable/base.exr",
+    "groups": [
+     {
+      "id": "passage_torch",
+      "image": "assets/tiles/stable/lg_passage_torch.exr"
+     },
+     {
+      "id": "fire_basket",
+      "image": "assets/tiles/stable/lg_fire_basket.exr"
+     },
+     {
+      "id": "forge",
+      "image": "assets/tiles/stable/lg_forge.exr"
+     },
+     {
+      "id": "guardroom_door",
+      "image": "assets/tiles/stable/lg_guardroom_door.exr"
+     },
+     {
+      "id": "guardroom_window",
+      "image": "assets/tiles/stable/lg_guardroom_window.exr"
+     },
+     {
+      "id": "ne_tower_door",
+      "image": "assets/tiles/stable/lg_ne_tower_door.exr"
+     }
+    ],
+    "depth": "assets/tiles/stable/depth.f32",
+    "ids": "assets/tiles/stable/ids.png",
+    "masks": {
+     "puddle": "assets/tiles/stable/puddle.png",
+     "wet": "assets/tiles/stable/wet.png"
+    },
+    "reference": "assets/tiles/stable/reference.png"
+   },
+   {
+    "id": "tool_rack",
+    "hotspot": "tool_rack",
+    "rect": [
+     476,
+     446,
+     1280,
+     720
+    ],
+    "scale": 2,
+    "base": "assets/tiles/tool_rack/base.exr",
+    "groups": [
+     {
+      "id": "cookhouse_hearth",
+      "image": "assets/tiles/tool_rack/lg_cookhouse_hearth.exr"
+     },
+     {
+      "id": "cookhouse_oven",
+      "image": "assets/tiles/tool_rack/lg_cookhouse_oven.exr"
+     },
+     {
+      "id": "passage_torch",
+      "image": "assets/tiles/tool_rack/lg_passage_torch.exr"
+     },
+     {
+      "id": "fire_basket",
+      "image": "assets/tiles/tool_rack/lg_fire_basket.exr"
+     },
+     {
+      "id": "guardroom_door",
+      "image": "assets/tiles/tool_rack/lg_guardroom_door.exr"
+     },
+     {
+      "id": "nw_tower_window",
+      "image": "assets/tiles/tool_rack/lg_nw_tower_window.exr"
+     },
+     {
+      "id": "guardroom_window",
+      "image": "assets/tiles/tool_rack/lg_guardroom_window.exr"
+     },
+     {
+      "id": "nw_tower_door",
+      "image": "assets/tiles/tool_rack/lg_nw_tower_door.exr"
+     },
+     {
+      "id": "ne_tower_door",
+      "image": "assets/tiles/tool_rack/lg_ne_tower_door.exr"
+     }
+    ],
+    "depth": "assets/tiles/tool_rack/depth.f32",
+    "ids": "assets/tiles/tool_rack/ids.png",
+    "masks": {
+     "puddle": "assets/tiles/tool_rack/puddle.png",
+     "wet": "assets/tiles/tool_rack/wet.png"
+    },
+    "reference": "assets/tiles/tool_rack/reference.png"
+   },
+   {
+    "id": "trough",
+    "hotspot": "trough",
+    "rect": [
+     398,
+     720,
+     1280,
+     720
+    ],
+    "scale": 2,
+    "base": "assets/tiles/trough/base.exr",
+    "groups": [
+     {
+      "id": "cookhouse_hearth",
+      "image": "assets/tiles/trough/lg_cookhouse_hearth.exr"
+     },
+     {
+      "id": "cookhouse_oven",
+      "image": "assets/tiles/trough/lg_cookhouse_oven.exr"
+     },
+     {
+      "id": "passage_torch",
+      "image": "assets/tiles/trough/lg_passage_torch.exr"
+     },
+     {
+      "id": "fire_basket",
+      "image": "assets/tiles/trough/lg_fire_basket.exr"
+     },
+     {
+      "id": "forge",
+      "image": "assets/tiles/trough/lg_forge.exr"
+     },
+     {
+      "id": "guardroom_door",
+      "image": "assets/tiles/trough/lg_guardroom_door.exr"
+     },
+     {
+      "id": "nw_tower_window",
+      "image": "assets/tiles/trough/lg_nw_tower_window.exr"
+     },
+     {
+      "id": "guardroom_window",
+      "image": "assets/tiles/trough/lg_guardroom_window.exr"
+     },
+     {
+      "id": "nw_tower_door",
+      "image": "assets/tiles/trough/lg_nw_tower_door.exr"
+     },
+     {
+      "id": "ne_tower_door",
+      "image": "assets/tiles/trough/lg_ne_tower_door.exr"
+     }
+    ],
+    "depth": "assets/tiles/trough/depth.f32",
+    "ids": "assets/tiles/trough/ids.png",
+    "masks": {
+     "puddle": "assets/tiles/trough/puddle.png",
+     "wet": "assets/tiles/trough/wet.png"
+    },
+    "reference": "assets/tiles/trough/reference.png"
+   },
+   {
+    "id": "guardroom",
+    "hotspot": "guardroom",
+    "rect": [
+     1063,
+     398,
+     1280,
+     720
+    ],
+    "scale": 2,
+    "base": "assets/tiles/guardroom/base.exr",
+    "groups": [
+     {
+      "id": "passage_torch",
+      "image": "assets/tiles/guardroom/lg_passage_torch.exr"
+     },
+     {
+      "id": "fire_basket",
+      "image": "assets/tiles/guardroom/lg_fire_basket.exr"
+     },
+     {
+      "id": "guardroom_door",
+      "image": "assets/tiles/guardroom/lg_guardroom_door.exr"
+     },
+     {
+      "id": "guardroom_window",
+      "image": "assets/tiles/guardroom/lg_guardroom_window.exr"
+     },
+     {
+      "id": "ne_tower_door",
+      "image": "assets/tiles/guardroom/lg_ne_tower_door.exr"
+     }
+    ],
+    "depth": "assets/tiles/guardroom/depth.f32",
+    "ids": "assets/tiles/guardroom/ids.png",
+    "masks": {
+     "puddle": "assets/tiles/guardroom/puddle.png",
+     "wet": "assets/tiles/guardroom/wet.png"
+    },
+    "reference": "assets/tiles/guardroom/reference.png"
+   },
+   {
+    "id": "nw_tower_stair",
+    "hotspot": "nw_tower_stair",
+    "rect": [
+     102,
+     577,
+     1280,
+     720
+    ],
+    "scale": 2,
+    "base": "assets/tiles/nw_tower_stair/base.exr",
+    "groups": [
+     {
+      "id": "cookhouse_hearth",
+      "image": "assets/tiles/nw_tower_stair/lg_cookhouse_hearth.exr"
+     },
+     {
+      "id": "cookhouse_oven",
+      "image": "assets/tiles/nw_tower_stair/lg_cookhouse_oven.exr"
+     },
+     {
+      "id": "passage_torch",
+      "image": "assets/tiles/nw_tower_stair/lg_passage_torch.exr"
+     },
+     {
+      "id": "fire_basket",
+      "image": "assets/tiles/nw_tower_stair/lg_fire_basket.exr"
+     },
+     {
+      "id": "guardroom_door",
+      "image": "assets/tiles/nw_tower_stair/lg_guardroom_door.exr"
+     },
+     {
+      "id": "nw_tower_window",
+      "image": "assets/tiles/nw_tower_stair/lg_nw_tower_window.exr"
+     },
+     {
+      "id": "nw_tower_door",
+      "image": "assets/tiles/nw_tower_stair/lg_nw_tower_door.exr"
+     },
+     {
+      "id": "ne_tower_door",
+      "image": "assets/tiles/nw_tower_stair/lg_ne_tower_door.exr"
+     }
+    ],
+    "depth": "assets/tiles/nw_tower_stair/depth.f32",
+    "ids": "assets/tiles/nw_tower_stair/ids.png",
+    "masks": {
+     "puddle": "assets/tiles/nw_tower_stair/puddle.png",
+     "wet": "assets/tiles/nw_tower_stair/wet.png"
+    },
+    "reference": "assets/tiles/nw_tower_stair/reference.png"
+   }
+  ]
+ },
+ "flipbooks": [
+  {
+   "id": "cookhouse_oven_flame",
+   "atlas": "assets/flipbooks/cookhouse_oven_flame.png",
+   "cols": 9,
+   "rows": 8,
+   "frames": 72,
+   "fps": 24.0,
+   "loop": true,
+   "rect": [
+    957,
+    916,
+    48,
+    49
+   ],
+   "cell": [
+    48,
+    49
+   ],
+   "blend": "premul",
+   "encoding": "srgb",
+   "scale": 6.0,
+   "depth": null,
+   "depth_m": 43.561,
+   "group": "cookhouse_oven",
+   "kind": "flame",
+   "density": 1,
+   "source": "mantaflow"
+  },
+  {
+   "id": "cookhouse_oven_flame@2",
+   "atlas": "assets/flipbooks/cookhouse_oven_flame@2.png",
+   "cols": 9,
+   "rows": 8,
+   "frames": 72,
+   "fps": 24.0,
+   "loop": true,
+   "rect": [
+    957,
+    916,
+    48,
+    49
+   ],
+   "cell": [
+    96,
+    98
+   ],
+   "blend": "premul",
+   "encoding": "srgb",
+   "scale": 6.5,
+   "depth": null,
+   "depth_m": 43.561,
+   "group": "cookhouse_oven",
+   "kind": "flame",
+   "density": 2,
+   "source": "mantaflow"
+  },
+  {
+   "id": "fire_basket_flame",
+   "atlas": "assets/flipbooks/fire_basket_flame.png",
+   "cols": 9,
+   "rows": 8,
+   "frames": 72,
+   "fps": 24.0,
+   "loop": true,
+   "rect": [
+    1465,
+    771,
+    91,
+    126
+   ],
+   "cell": [
+    91,
+    126
+   ],
+   "blend": "premul",
+   "encoding": "srgb",
+   "scale": 6.25,
+   "depth": null,
+   "depth_m": 44.694,
+   "group": "fire_basket",
+   "kind": "flame",
+   "density": 1,
+   "source": "mantaflow"
+  },
+  {
+   "id": "fire_basket_flame@2",
+   "atlas": "assets/flipbooks/fire_basket_flame@2.png",
+   "cols": 9,
+   "rows": 8,
+   "frames": 72,
+   "fps": 24.0,
+   "loop": true,
+   "rect": [
+    1465,
+    771,
+    91,
+    126
+   ],
+   "cell": [
+    182,
+    252
+   ],
+   "blend": "premul",
+   "encoding": "srgb",
+   "scale": 6.5,
+   "depth": null,
+   "depth_m": 44.694,
+   "group": "fire_basket",
+   "kind": "flame",
+   "density": 2,
+   "source": "mantaflow"
+  },
+  {
+   "id": "passage_torch_flame",
+   "atlas": "assets/flipbooks/passage_torch_flame.png",
+   "cols": 12,
+   "rows": 6,
+   "frames": 72,
+   "fps": 24.0,
+   "loop": true,
+   "rect": [
+    1371,
+    587,
+    33,
+    57
+   ],
+   "cell": [
+    33,
+    57
+   ],
+   "blend": "premul",
+   "encoding": "srgb",
+   "scale": 11.5,
+   "depth": null,
+   "depth_m": 46.457,
+   "group": "passage_torch",
+   "kind": "flame",
+   "density": 1,
+   "source": "mantaflow"
+  },
+  {
+   "id": "passage_torch_flame@2",
+   "atlas": "assets/flipbooks/passage_torch_flame@2.png",
+   "cols": 12,
+   "rows": 6,
+   "frames": 72,
+   "fps": 24.0,
+   "loop": true,
+   "rect": [
+    1371,
+    587,
+    33,
+    57
+   ],
+   "cell": [
+    66,
+    114
+   ],
+   "blend": "premul",
+   "encoding": "srgb",
+   "scale": 11.75,
+   "depth": null,
+   "depth_m": 46.457,
+   "group": "passage_torch",
+   "kind": "flame",
+   "density": 2,
+   "source": "mantaflow"
+  },
+  {
+   "id": "cookhouse_oven_chimney_smoke",
+   "atlas": "assets/flipbooks/cookhouse_oven_chimney_smoke.png",
+   "cols": 6,
+   "rows": 6,
+   "frames": 32,
+   "fps": 8.0,
+   "loop": true,
+   "rect": [
+    828,
+    105,
+    588,
+    539
+   ],
+   "cell": [
+    588,
+    539
+   ],
+   "blend": "premul",
+   "encoding": "srgb",
+   "scale": 1.0,
+   "depth": null,
+   "depth_m": 41.344,
+   "group": null,
+   "kind": "smoke"
+  },
+  {
+   "id": "fire_basket_smoke",
+   "atlas": "assets/flipbooks/fire_basket_smoke.png",
+   "cols": 5,
+   "rows": 7,
+   "frames": 32,
+   "fps": 8.0,
+   "loop": true,
+   "rect": [
+    1488,
+    605,
+    397,
+    337
+   ],
+   "cell": [
+    397,
+    337
+   ],
+   "blend": "premul",
+   "encoding": "srgb",
+   "scale": 1.0,
+   "depth": null,
+   "depth_m": 44.744,
+   "group": null,
+   "kind": "smoke"
+  },
+  {
+   "id": "forge_smoke",
+   "atlas": "assets/flipbooks/forge_smoke.png",
+   "cols": 5,
+   "rows": 7,
+   "frames": 32,
+   "fps": 8.0,
+   "loop": true,
+   "rect": [
+    1691,
+    855,
+    194,
+    159
+   ],
+   "cell": [
+    194,
+    159
+   ],
+   "blend": "premul",
+   "encoding": "srgb",
+   "scale": 1.0,
+   "depth": null,
+   "depth_m": 38.037,
+   "group": null,
+   "kind": "smoke"
+  },
+  {
+   "id": "passage_torch_smoke",
+   "atlas": "assets/flipbooks/passage_torch_smoke.png",
+   "cols": 7,
+   "rows": 5,
+   "frames": 32,
+   "fps": 8.0,
+   "loop": true,
+   "rect": [
+    1372,
+    585,
+    44,
+    60
+   ],
+   "cell": [
+    44,
+    60
+   ],
+   "blend": "premul",
+   "encoding": "srgb",
+   "scale": 1.0,
+   "depth": null,
+   "depth_m": 46.431,
+   "group": null,
+   "kind": "smoke"
+  },
+  {
+   "id": "cookhouse_hearth_embers",
+   "atlas": "assets/flipbooks/cookhouse_hearth_embers.png",
+   "cols": 4,
+   "rows": 3,
+   "frames": 12,
+   "fps": 48.3555,
+   "loop": true,
+   "rect": [
+    847,
+    474,
+    23,
+    27
+   ],
+   "cell": [
+    23,
+    27
+   ],
+   "blend": "premul",
+   "encoding": "srgb",
+   "scale": 4.0,
+   "depth": null,
+   "depth_m": 41.331,
+   "group": "cookhouse_hearth",
+   "kind": "embers"
+  },
+  {
+   "id": "fire_basket_embers",
+   "atlas": "assets/flipbooks/fire_basket_embers.png",
+   "cols": 8,
+   "rows": 7,
+   "frames": 50,
+   "fps": 23.9308,
+   "loop": true,
+   "rect": [
+    1489,
+    705,
+    141,
+    170
+   ],
+   "cell": [
+    141,
+    170
+   ],
+   "blend": "premul",
+   "encoding": "srgb",
+   "scale": 4.75,
+   "depth": null,
+   "depth_m": 44.653,
+   "group": "fire_basket",
+   "kind": "embers"
+  },
+  {
+   "id": "passage_torch_embers",
+   "atlas": "assets/flipbooks/passage_torch_embers.png",
+   "cols": 5,
+   "rows": 4,
+   "frames": 19,
+   "fps": 24.0403,
+   "loop": true,
+   "rect": [
+    1377,
+    603,
+    31,
+    37
+   ],
+   "cell": [
+    31,
+    37
+   ],
+   "blend": "premul",
+   "encoding": "srgb",
+   "scale": 2.75,
+   "depth": null,
+   "depth_m": 45.955,
+   "group": "passage_torch",
+   "kind": "embers"
+  }
+ ],
+ "crows": {
+  "_doc": "crow.glb faces Godot +Z (Blender -Y) at yaw 0, feet at the origin. Perch yaw is degrees about Godot +Y (the same angle as Blender rot_z). Nodes body, head, tail, wing_l, wing_r; the pivots sit at the neck, the tail base and the shoulders.",
+  "model": "assets/crow.glb",
+  "head_height_m": 0.31,
+  "perches": [
+   {
+    "id": "south_parapet_merlon",
+    "pos": [
+     0.08,
+     1.92,
+     10.93
+    ],
+    "yaw": 80.0,
+    "kind": "prop"
+   },
+   {
+    "id": "gallows_beam",
+    "pos": [
+     3.82,
+     4.72,
+     0.45
+    ],
+    "yaw": 72.0,
+    "kind": "prop"
+   },
+   {
+    "id": "cart",
+    "pos": [
+     0.48,
+     1.33,
+     3.38
+    ],
+    "yaw": 95.0,
+    "kind": "prop"
+   },
+   {
+    "id": "well_roof",
+    "pos": [
+     -4.9,
+     2.7,
+     6.85
+    ],
+    "yaw": -85.0,
+    "kind": "prop"
+   },
+   {
+    "id": "trough",
+    "pos": [
+     -7.0,
+     0.6,
+     7.6
+    ],
+    "yaw": 95.0,
+    "kind": "prop"
+   },
+   {
+    "id": "forge_roof",
+    "pos": [
+     2.7,
+     3.72,
+     6.52
+    ],
+    "yaw": -60.0,
+    "kind": "prop"
+   },
+   {
+    "id": "gatehouse_merlon_w",
+    "pos": [
+     -5.2,
+     11.37,
+     -3.5
+    ],
+    "yaw": 100.0,
+    "kind": "prop"
+   },
+   {
+    "id": "ground_brazier",
+    "pos": [
+     2.2,
+     0.0,
+     2.3
+    ],
+    "yaw": -75.0,
+    "kind": "ground"
+   },
+   {
+    "id": "gatehouse_merlon_e",
+    "pos": [
+     0.15,
+     11.3,
+     -3.3
+    ],
+    "yaw": 70.0,
+    "kind": "prop"
+   },
+   {
+    "id": "ground_cart",
+    "pos": [
+     -2.2,
+     0.0,
+     5.3
+    ],
+    "yaw": 110.0,
+    "kind": "ground"
+   },
+   {
+    "id": "gallows_beam_e",
+    "pos": [
+     6.53,
+     4.72,
+     1.34
+    ],
+    "yaw": -108.0,
+    "kind": "prop"
+   },
+   {
+    "id": "west_curtain_merlon_s",
+    "pos": [
+     -12.1,
+     7.89,
+     6.9
+    ],
+    "yaw": 20.0,
+    "kind": "prop"
+   },
+   {
+    "id": "west_curtain_merlon_n",
+    "pos": [
+     -12.1,
+     7.84,
+     -0.9
+    ],
+    "yaw": -30.0,
+    "kind": "prop"
+   },
+   {
+    "id": "east_chamfer_merlon",
+    "pos": [
+     8.94,
+     7.83,
+     -0.88
+    ],
+    "yaw": -100.0,
+    "kind": "prop"
+   },
+   {
+    "id": "south_parapet_w",
+    "pos": [
+     -3.75,
+     1.77,
+     11.65
+    ],
+    "yaw": -70.0,
+    "kind": "prop"
+   },
+   {
+    "id": "nw_tower_merlon",
+    "pos": [
+     -7.7,
+     12.83,
+     -3.3
+    ],
+    "yaw": 90.0,
+    "kind": "prop"
+   },
+   {
+    "id": "cookhouse_roof",
+    "pos": [
+     -5.95,
+     3.33,
+     -0.87
+    ],
+    "yaw": 80.0,
+    "kind": "prop"
+   },
+   {
+    "id": "merlon_0",
+    "pos": [
+     -3.8,
+     11.27313,
+     -6.3
+    ],
+    "yaw": 0.0,
+    "kind": "merlon"
+   },
+   {
+    "id": "merlon_1",
+    "pos": [
+     -2.5,
+     11.36902,
+     -6.3
+    ],
+    "yaw": 0.0,
+    "kind": "merlon"
+   },
+   {
+    "id": "merlon_2",
+    "pos": [
+     0.1,
+     11.28244,
+     -6.3
+    ],
+    "yaw": 0.0,
+    "kind": "merlon"
+   },
+   {
+    "id": "merlon_3",
+    "pos": [
+     1.4,
+     11.24407,
+     -6.3
+    ],
+    "yaw": 0.0,
+    "kind": "merlon"
+   },
+   {
+    "id": "merlon_4",
+    "pos": [
+     2.7,
+     11.36329,
+     -6.3
+    ],
+    "yaw": 0.0,
+    "kind": "merlon"
+   },
+   {
+    "id": "merlon_5",
+    "pos": [
+     -6.4,
+     11.27096,
+     -3.3
+    ],
+    "yaw": 0.0,
+    "kind": "merlon"
+   },
+   {
+    "id": "merlon_6",
+    "pos": [
+     -3.8,
+     11.1587,
+     -3.3
+    ],
+    "yaw": 0.0,
+    "kind": "merlon"
+   },
+   {
+    "id": "merlon_7",
+    "pos": [
+     -1.2,
+     11.39292,
+     -3.3
+    ],
+    "yaw": 0.0,
+    "kind": "merlon"
+   },
+   {
+    "id": "merlon_8",
+    "pos": [
+     1.4,
+     11.21258,
+     -3.3
+    ],
+    "yaw": 0.0,
+    "kind": "merlon"
+   },
+   {
+    "id": "merlon_9",
+    "pos": [
+     2.7,
+     11.29151,
+     -3.3
+    ],
+    "yaw": 0.0,
+    "kind": "merlon"
+   },
+   {
+    "id": "merlon_10",
+    "pos": [
+     -7.2,
+     12.82422,
+     -4.2
+    ],
+    "yaw": 0.0,
+    "kind": "merlon"
+   },
+   {
+    "id": "merlon_11",
+    "pos": [
+     -7.2,
+     12.78002,
+     -5.5
+    ],
+    "yaw": 0.0,
+    "kind": "merlon"
+   },
+   {
+    "id": "merlon_12",
+    "pos": [
+     -7.2,
+     12.69142,
+     -6.8
+    ],
+    "yaw": 0.0,
+    "kind": "merlon"
+   },
+   {
+    "id": "merlon_13",
+    "pos": [
+     -12.1,
+     12.76102,
+     -4.2
+    ],
+    "yaw": 0.0,
+    "kind": "merlon"
+   },
+   {
+    "id": "merlon_14",
+    "pos": [
+     -12.1,
+     12.67921,
+     -5.5
+    ],
+    "yaw": 0.0,
+    "kind": "merlon"
+   },
+   {
+    "id": "merlon_15",
+    "pos": [
+     -12.1,
+     12.68788,
+     -6.8
+    ],
+    "yaw": 0.0,
+    "kind": "merlon"
+   },
+   {
+    "id": "merlon_16",
+    "pos": [
+     -11.6,
+     12.91597,
+     -7.7
+    ],
+    "yaw": 0.0,
+    "kind": "merlon"
+   },
+   {
+    "id": "merlon_17",
+    "pos": [
+     -10.3,
+     12.90134,
+     -7.7
+    ],
+    "yaw": 0.0,
+    "kind": "merlon"
+   },
+   {
+    "id": "merlon_18",
+    "pos": [
+     -9.0,
+     12.84948,
+     -7.7
+    ],
+    "yaw": 0.0,
+    "kind": "merlon"
+   },
+   {
+    "id": "merlon_19",
+    "pos": [
+     -7.7,
+     12.88249,
+     -7.7
+    ],
+    "yaw": 0.0,
+    "kind": "merlon"
+   },
+   {
+    "id": "merlon_20",
+    "pos": [
+     -10.3,
+     12.71559,
+     -3.3
+    ],
+    "yaw": 0.0,
+    "kind": "merlon"
+   },
+   {
+    "id": "merlon_21",
+    "pos": [
+     -9.0,
+     12.86861,
+     -3.3
+    ],
+    "yaw": 0.0,
+    "kind": "merlon"
+   },
+   {
+    "id": "merlon_22",
+    "pos": [
+     6.7,
+     12.90468,
+     -5.2
+    ],
+    "yaw": 0.0,
+    "kind": "merlon"
+   },
+   {
+    "id": "merlon_23",
+    "pos": [
+     6.7,
+     12.74322,
+     -6.5
+    ],
+    "yaw": 0.0,
+    "kind": "merlon"
+   },
+   {
+    "id": "merlon_24",
+    "pos": [
+     3.5,
+     12.75925,
+     -3.9
+    ],
+    "yaw": 0.0,
+    "kind": "merlon"
+   },
+   {
+    "id": "merlon_25",
+    "pos": [
+     3.5,
+     12.89049,
+     -5.2
+    ],
+    "yaw": 0.0,
+    "kind": "merlon"
+   },
+   {
+    "id": "merlon_26",
+    "pos": [
+     3.5,
+     12.80667,
+     -6.5
+    ],
+    "yaw": 0.0,
+    "kind": "merlon"
+   },
+   {
+    "id": "merlon_27",
+    "pos": [
+     3.8,
+     12.88032,
+     -7.5
+    ],
+    "yaw": 0.0,
+    "kind": "merlon"
+   },
+   {
+    "id": "merlon_28",
+    "pos": [
+     5.1,
+     12.76496,
+     -7.5
+    ],
+    "yaw": 0.0,
+    "kind": "merlon"
+   },
+   {
+    "id": "merlon_29",
+    "pos": [
+     6.4,
+     12.89365,
+     -7.5
+    ],
+    "yaw": 0.0,
+    "kind": "merlon"
+   },
+   {
+    "id": "merlon_30",
+    "pos": [
+     3.8,
+     12.67135,
+     -2.9
+    ],
+    "yaw": 0.0,
+    "kind": "merlon"
+   },
+   {
+    "id": "merlon_31",
+    "pos": [
+     5.1,
+     12.82553,
+     -2.9
+    ],
+    "yaw": 0.0,
+    "kind": "merlon"
+   },
+   {
+    "id": "merlon_32",
+    "pos": [
+     6.4,
+     12.85852,
+     -2.9
+    ],
+    "yaw": 0.0,
+    "kind": "merlon"
+   },
+   {
+    "id": "merlon_33",
+    "pos": [
+     7.18373,
+     7.75365,
+     -2.802
+    ],
+    "yaw": -47.6,
+    "kind": "merlon"
+   },
+   {
+    "id": "merlon_34",
+    "pos": [
+     8.06033,
+     7.70622,
+     -1.842
+    ],
+    "yaw": -47.6,
+    "kind": "merlon"
+   },
+   {
+    "id": "merlon_35",
+    "pos": [
+     11.5667,
+     7.73856,
+     1.99796
+    ],
+    "yaw": -47.6,
+    "kind": "merlon"
+   },
+   {
+    "id": "merlon_36",
+    "pos": [
+     12.44329,
+     7.91171,
+     2.95796
+    ],
+    "yaw": -47.6,
+    "kind": "merlon"
+   },
+   {
+    "id": "merlon_37",
+    "pos": [
+     13.0,
+     7.88596,
+     8.825
+    ],
+    "yaw": 0.0,
+    "kind": "merlon"
+   },
+   {
+    "id": "merlon_38",
+    "pos": [
+     13.0,
+     7.80799,
+     6.225
+    ],
+    "yaw": 0.0,
+    "kind": "merlon"
+   },
+   {
+    "id": "merlon_39",
+    "pos": [
+     13.0,
+     7.65029,
+     3.625
+    ],
+    "yaw": 0.0,
+    "kind": "merlon"
+   },
+   {
+    "id": "merlon_40",
+    "pos": [
+     6.58769,
+     7.74057,
+     12.06637
+    ],
+    "yaw": 24.0,
+    "kind": "merlon"
+   },
+   {
+    "id": "merlon_41",
+    "pos": [
+     7.7753,
+     7.76135,
+     11.53762
+    ],
+    "yaw": 24.0,
+    "kind": "merlon"
+   },
+   {
+    "id": "merlon_42",
+    "pos": [
+     8.96291,
+     7.70875,
+     11.00886
+    ],
+    "yaw": 24.0,
+    "kind": "merlon"
+   },
+   {
+    "id": "merlon_43",
+    "pos": [
+     10.15052,
+     7.91297,
+     10.4801
+    ],
+    "yaw": 24.0,
+    "kind": "merlon"
+   },
+   {
+    "id": "merlon_44",
+    "pos": [
+     11.33813,
+     7.82678,
+     9.95134
+    ],
+    "yaw": 24.0,
+    "kind": "merlon"
+   },
+   {
+    "id": "merlon_45",
+    "pos": [
+     12.52574,
+     7.76313,
+     9.42259
+    ],
+    "yaw": 24.0,
+    "kind": "merlon"
+   },
+   {
+    "id": "merlon_46",
+    "pos": [
+     4.00466,
+     4.81054,
+     12.12182
+    ],
+    "yaw": 24.0,
+    "kind": "merlon"
+   },
+   {
+    "id": "merlon_47",
+    "pos": [
+     -12.1,
+     7.64552,
+     12.1
+    ],
+    "yaw": 0.0,
+    "kind": "merlon"
+   },
+   {
+    "id": "merlon_48",
+    "pos": [
+     -12.1,
+     7.85651,
+     10.8
+    ],
+    "yaw": 0.0,
+    "kind": "merlon"
+   },
+   {
+    "id": "merlon_49",
+    "pos": [
+     -12.1,
+     7.80358,
+     9.5
+    ],
+    "yaw": 0.0,
+    "kind": "merlon"
+   },
+   {
+    "id": "merlon_50",
+    "pos": [
+     -12.1,
+     7.7284,
+     8.2
+    ],
+    "yaw": 0.0,
+    "kind": "merlon"
+   },
+   {
+    "id": "merlon_51",
+    "pos": [
+     -12.1,
+     7.73931,
+     5.6
+    ],
+    "yaw": 0.0,
+    "kind": "merlon"
+   },
+   {
+    "id": "merlon_52",
+    "pos": [
+     -12.1,
+     7.77858,
+     4.3
+    ],
+    "yaw": 0.0,
+    "kind": "merlon"
+   },
+   {
+    "id": "merlon_53",
+    "pos": [
+     -12.1,
+     7.75642,
+     3.0
+    ],
+    "yaw": 0.0,
+    "kind": "merlon"
+   },
+   {
+    "id": "merlon_54",
+    "pos": [
+     -12.1,
+     7.87294,
+     1.7
+    ],
+    "yaw": 0.0,
+    "kind": "merlon"
+   },
+   {
+    "id": "merlon_55",
+    "pos": [
+     -12.1,
+     7.72945,
+     -2.2
+    ],
+    "yaw": 0.0,
+    "kind": "merlon"
+   },
+   {
+    "id": "merlon_56",
+    "pos": [
+     -8.00047,
+     1.90258,
+     12.44925
+    ],
+    "yaw": 10.647136412521002,
+    "kind": "merlon"
+   },
+   {
+    "id": "merlon_57",
+    "pos": [
+     -6.72286,
+     1.86962,
+     12.20906
+    ],
+    "yaw": 10.647136412521002,
+    "kind": "merlon"
+   },
+   {
+    "id": "merlon_58",
+    "pos": [
+     -5.44524,
+     1.88402,
+     11.96888
+    ],
+    "yaw": 10.647136412521002,
+    "kind": "merlon"
+   },
+   {
+    "id": "merlon_59",
+    "pos": [
+     -2.89,
+     1.90934,
+     11.4885
+    ],
+    "yaw": 10.647136412521002,
+    "kind": "merlon"
+   },
+   {
+    "id": "merlon_60",
+    "pos": [
+     -1.61238,
+     1.76909,
+     11.24831
+    ],
+    "yaw": 10.647136412521002,
+    "kind": "merlon"
+   },
+   {
+    "id": "merlon_61",
+    "pos": [
+     0.94286,
+     1.75794,
+     10.76794
+    ],
+    "yaw": 10.647136412521002,
+    "kind": "merlon"
+   },
+   {
+    "id": "merlon_62",
+    "pos": [
+     2.22047,
+     1.92343,
+     10.52775
+    ],
+    "yaw": 10.647136412521002,
+    "kind": "merlon"
+   },
+   {
+    "id": "merlon_63",
+    "pos": [
+     -14.1,
+     10.32447,
+     17.5
+    ],
+    "yaw": 0.0,
+    "kind": "merlon"
+   },
+   {
+    "id": "merlon_64",
+    "pos": [
+     -14.1,
+     10.38737,
+     16.2
+    ],
+    "yaw": 0.0,
+    "kind": "merlon"
+   },
+   {
+    "id": "merlon_65",
+    "pos": [
+     -14.1,
+     10.46127,
+     14.9
+    ],
+    "yaw": 0.0,
+    "kind": "merlon"
+   },
+   {
+    "id": "merlon_66",
+    "pos": [
+     -19.5,
+     10.31681,
+     17.5
+    ],
+    "yaw": 0.0,
+    "kind": "merlon"
+   },
+   {
+    "id": "merlon_67",
+    "pos": [
+     -19.5,
+     10.3896,
+     16.2
+    ],
+    "yaw": 0.0,
+    "kind": "merlon"
+   },
+   {
+    "id": "merlon_68",
+    "pos": [
+     -19.5,
+     10.35505,
+     14.9
+    ],
+    "yaw": 0.0,
+    "kind": "merlon"
+   },
+   {
+    "id": "merlon_69",
+    "pos": [
+     -19.4,
+     10.42546,
+     13.8
+    ],
+    "yaw": 0.0,
+    "kind": "merlon"
+   },
+   {
+    "id": "merlon_70",
+    "pos": [
+     -18.1,
+     10.35714,
+     13.8
+    ],
+    "yaw": 0.0,
+    "kind": "merlon"
+   },
+   {
+    "id": "merlon_71",
+    "pos": [
+     -19.4,
+     10.37626,
+     18.6
+    ],
+    "yaw": 0.0,
+    "kind": "merlon"
+   },
+   {
+    "id": "merlon_72",
+    "pos": [
+     -18.1,
+     10.36557,
+     18.6
+    ],
+    "yaw": 0.0,
+    "kind": "merlon"
+   },
+   {
+    "id": "merlon_73",
+    "pos": [
+     -15.5,
+     10.48556,
+     18.6
+    ],
+    "yaw": 0.0,
+    "kind": "merlon"
+   },
+   {
+    "id": "merlon_74",
+    "pos": [
+     -14.2,
+     10.4278,
+     18.6
+    ],
+    "yaw": 0.0,
+    "kind": "merlon"
+   }
+  ],
+  "start": [
+   "south_parapet_merlon",
+   "gallows_beam",
+   "cart",
+   "well_roof",
+   "trough",
+   "forge_roof",
+   "gatehouse_merlon_w",
+   "ground_brazier",
+   "gatehouse_merlon_e",
+   "ground_cart",
+   "gallows_beam_e",
+   "west_curtain_merlon_s",
+   "west_curtain_merlon_n",
+   "east_chamfer_merlon",
+   "south_parapet_w",
+   "nw_tower_merlon",
+   "cookhouse_roof"
+  ]
+ },
+ "walk": {
+  "_doc": "walk.glb: walkable surfaces only, obstacle footprints cut out, no agent radius. Stairs are treads (risers up to 0.25 m): bake with agent_max_climb >= 0.26. links join stair foot and top. Each face's material names the surface underfoot: cobble, mud, straw, stone_stair, stone_walk, wood. Puddles are not a face type: use the puddle mask under the figure. portals: walking into a hides the figure for `seconds`, then it steps out at b (and the reverse); label names a, label_b names b.",
+  "mesh": "assets/walk.glb",
+  "area_m2": 269.0,
+  "surfaces": [
+   "cobble",
+   "mud",
+   "straw",
+   "stone_stair",
+   "stone_walk",
+   "wood"
+  ],
+  "surface_area_m2": {
+   "cobble": 71.3,
+   "mud": 100.3,
+   "straw": 28.2,
+   "stone_stair": 8.6,
+   "stone_walk": 51.2,
+   "wood": 9.5
+  },
+  "wall_walks": {
+   "walks": [
+    "north_curtain",
+    "east_chamfer",
+    "east_curtain",
+    "se_curtain",
+    "west_curtain"
+   ],
+   "cut": [
+    "tall_gatehouse",
+    "tall_nw_tower",
+    "tall_ne_tower",
+    "tall_sw_tower",
+    "jamb_lit_door#2_0",
+    "jamb_lit_door#2_1",
+    "jamb_lit_door#3_0",
+    "jamb_lit_door#3_1"
+   ],
+   "pieces_m2": [
+    28.3,
+    22.0
+   ]
+  },
+  "links": [
+   {
+    "from": [
+     -9.8,
+     0.0,
+     4.47
+    ],
+    "to": [
+     -9.8,
+     6.0,
+     -2.635
+    ],
+    "kind": "stair"
+   },
+   {
+    "from": [
+     1.81679,
+     0.0,
+     0.64397
+    ],
+    "to": [
+     3.90912,
+     1.6,
+     1.32381
+    ],
+    "kind": "stair"
+   }
+  ],
+  "exits": [
+   {
+    "id": "gate_out",
+    "pos": [
+     -1.15,
+     0.0,
+     -4.15
+    ],
+    "label": "Out to the road",
+    "target": "road"
+   },
+   {
+    "id": "guardroom_door",
+    "pos": [
+     4.1,
+     0.0,
+     -1.85
+    ],
+    "label": "Guardroom",
+    "target": "guardroom"
+   },
+   {
+    "id": "cookhouse",
+    "pos": [
+     -6.375,
+     0.0,
+     1.63
+    ],
+    "label": "Cookhouse",
+    "target": "cookhouse"
+   },
+   {
+    "id": "stable",
+    "pos": [
+     7.8,
+     0.0,
+     6.3
+    ],
+    "label": "Stable",
+    "target": "stable"
+   },
+   {
+    "id": "tower",
+    "pos": [
+     -9.5,
+     0.0,
+     12.55
+    ],
+    "label": "Commander's tower",
+    "target": "tower"
+   }
+  ],
+  "portals": [
+   {
+    "id": "nw_tower",
+    "a": [
+     -11.1,
+     6.0,
+     -2.75
+    ],
+    "b": [
+     6.2,
+     6.0,
+     -2.35
+    ],
+    "label": "North-west tower",
+    "label_b": "North-east tower",
+    "seconds": 3.0,
+    "sound": "door_heavy",
+    "via": [
+     "nw_tower",
+     "gatehouse",
+     "ne_tower"
+    ]
+   }
+  ]
+ },
+ "proxy": "assets/proxy.glb",
+ "proxy_counts": {
+  "walls": 18,
+  "prop_obstacles": 34
+ },
+ "ambient": {
+  "_doc": "blue-hour sky fill for real-time objects",
+  "color": [
+   0.055,
+   0.085,
+   0.16
+  ],
+  "moon": {
+   "direction_euler": [
+    70,
+    0,
+    -100
+   ],
+   "color": [
+    0.62,
+    0.74,
+    1.0
+   ],
+   "strength": 1.2,
+   "angle_deg": 25
+  },
+  "moon_direction": [
+   0.92542,
+   -0.34202,
+   0.16318
+  ]
+ },
+ "lights": [
+  {
+   "name": "light_brazier_0",
+   "position": [
+    1.0,
+    1.1,
+    -0.55
+   ],
+   "color": [
+    1.0,
+    0.36,
+    0.07
+   ],
+   "watts": 476.0,
+   "reach_m": 11.0,
+   "radius_m": 0.25,
+   "inside_wall": false,
+   "group": "fire_basket"
+  },
+  {
+   "name": "light_brazier_1",
+   "position": [
+    1.0,
+    0.95,
+    -0.1
+   ],
+   "color": [
+    1.0,
+    0.27,
+    0.04
+   ],
+   "watts": 168.0,
+   "reach_m": 11.0,
+   "radius_m": 0.25,
+   "inside_wall": false,
+   "group": "fire_basket"
+  },
+  {
+   "name": "light_forge_embers",
+   "position": [
+    2.9,
+    1.11,
+    7.0
+   ],
+   "color": [
+    1.0,
+    0.22,
+    0.05
+   ],
+   "watts": 30.8,
+   "reach_m": 2.6,
+   "radius_m": 0.3,
+   "inside_wall": false,
+   "group": "forge"
+  },
+  {
+   "name": "light_lit_door#2_0",
+   "position": [
+    -11.27,
+    7.224,
+    -2.9065
+   ],
+   "color": [
+    1.0,
+    0.42,
+    0.1
+   ],
+   "watts": 294.0,
+   "reach_m": 12.0,
+   "radius_m": 0.25,
+   "inside_wall": false,
+   "group": "nw_tower_door"
+  },
+  {
+   "name": "light_lit_door#2_1",
+   "position": [
+    -11.5675,
+    6.323,
+    -2.439
+   ],
+   "color": [
+    1.0,
+    0.42,
+    0.1
+   ],
+   "watts": 50.4,
+   "reach_m": 6.33,
+   "radius_m": 0.25,
+   "inside_wall": false,
+   "group": "nw_tower_door"
+  },
+  {
+   "name": "light_lit_door#2_2",
+   "position": [
+    -11.95,
+    6.153,
+    -1.64
+   ],
+   "color": [
+    1.0,
+    0.42,
+    0.1
+   ],
+   "watts": 30.8,
+   "reach_m": 4.95,
+   "radius_m": 0.25,
+   "inside_wall": false,
+   "group": "nw_tower_door"
+  },
+  {
+   "name": "light_lit_door#3_0",
+   "position": [
+    6.03,
+    7.224,
+    -2.5065
+   ],
+   "color": [
+    1.0,
+    0.42,
+    0.1
+   ],
+   "watts": 294.0,
+   "reach_m": 12.0,
+   "radius_m": 0.25,
+   "inside_wall": false,
+   "group": "ne_tower_door"
+  },
+  {
+   "name": "light_lit_door#3_1",
+   "position": [
+    5.7325,
+    6.323,
+    -2.039
+   ],
+   "color": [
+    1.0,
+    0.42,
+    0.1
+   ],
+   "watts": 50.4,
+   "reach_m": 6.33,
+   "radius_m": 0.25,
+   "inside_wall": false,
+   "group": "ne_tower_door"
+  },
+  {
+   "name": "light_lit_door#3_2",
+   "position": [
+    5.35,
+    6.153,
+    -1.24
+   ],
+   "color": [
+    1.0,
+    0.42,
+    0.1
+   ],
+   "watts": 30.8,
+   "reach_m": 4.95,
+   "radius_m": 0.25,
+   "inside_wall": false,
+   "group": "ne_tower_door"
+  },
+  {
+   "name": "light_lit_door_0",
+   "position": [
+    3.9,
+    1.44,
+    -2.49
+   ],
+   "color": [
+    1.0,
+    0.42,
+    0.1
+   ],
+   "watts": 294.0,
+   "reach_m": 12.0,
+   "radius_m": 0.25,
+   "inside_wall": false,
+   "group": "guardroom_door"
+  },
+  {
+   "name": "light_lit_door_1",
+   "position": [
+    3.55,
+    0.38,
+    -1.94
+   ],
+   "color": [
+    1.0,
+    0.42,
+    0.1
+   ],
+   "watts": 50.4,
+   "reach_m": 6.33,
+   "radius_m": 0.25,
+   "inside_wall": false,
+   "group": "guardroom_door"
+  },
+  {
+   "name": "light_lit_door_2",
+   "position": [
+    3.1,
+    0.18,
+    -1.0
+   ],
+   "color": [
+    1.0,
+    0.42,
+    0.1
+   ],
+   "watts": 30.8,
+   "reach_m": 4.95,
+   "radius_m": 0.25,
+   "inside_wall": false,
+   "group": "guardroom_door"
+  },
+  {
+   "name": "light_lit_window",
+   "position": [
+    -9.0,
+    7.28,
+    -2.68
+   ],
+   "color": [
+    1.0,
+    0.45,
+    0.12
+   ],
+   "watts": 33.6,
+   "reach_m": 5.0,
+   "radius_m": 0.1,
+   "inside_wall": false,
+   "group": "nw_tower_window"
+  },
+  {
+   "name": "light_lit_window.001",
+   "position": [
+    4.1,
+    4.28,
+    -2.28
+   ],
+   "color": [
+    1.0,
+    0.45,
+    0.12
+   ],
+   "watts": 33.6,
+   "reach_m": 5.0,
+   "radius_m": 0.1,
+   "inside_wall": false,
+   "group": "guardroom_window"
+  },
+  {
+   "name": "light_passage_fill",
+   "position": [
+    -1.15,
+    1.1,
+    -4.2
+   ],
+   "color": [
+    1.0,
+    0.4,
+    0.1
+   ],
+   "watts": 19.6,
+   "reach_m": 4.0,
+   "radius_m": 0.4,
+   "inside_wall": true,
+   "group": "passage_torch"
+  },
+  {
+   "name": "light_passage_torch",
+   "position": [
+    -0.058,
+    2.694,
+    -4.05
+   ],
+   "color": [
+    1.0,
+    0.34,
+    0.06
+   ],
+   "watts": 168.0,
+   "reach_m": 6.0,
+   "radius_m": 0.15,
+   "inside_wall": true,
+   "group": "passage_torch"
+  },
+  {
+   "name": "light_shed",
+   "position": [
+    -7.645,
+    0.95,
+    -2.32
+   ],
+   "color": [
+    1.0,
+    0.34,
+    0.06
+   ],
+   "watts": 308.0,
+   "reach_m": 9.0,
+   "radius_m": 0.2,
+   "inside_wall": false,
+   "group": "cookhouse_hearth"
+  }
+ ],
+ "checks": {
+  "layers": {
+   "raw_groups_vs_noisy_combined_identity": "Cycles combined is denoised; raw groups are not",
+   "raw_sum_vs_combined": {
+    "mean_abs": 0.00577923096716404,
+    "p99_abs": 0.037824347615242004,
+    "max_abs": 5.652303695678711,
+    "mean_rel": 0.09780098497867584
+   },
+   "denoised_sum_vs_combined": {
+    "mean_abs": 0.0007195460493676364,
+    "p99_abs": 0.008085466921329498,
+    "max_abs": 2.668215751647949,
+    "mean_rel": 0.012176760472357273
+   },
+   "display_8bit_vs_combined": {
+    "mean": 0.4697286422164352,
+    "p99": 4.0,
+    "max": 160,
+    "share_over_4": 0.009513527199074074
+   }
+  },
+  "mask_stats": {
+   "depth_holes_filled": 335512,
+   "puddle_fraction": 0.022033962673611112,
+   "wet_mean": 0.23404014343887494,
+   "rough_hist": [
+    122832,
+    64790,
+    260822,
+    228435,
+    425203,
+    712594,
+    798420,
+    580894,
+    258871,
+    77287
+   ]
+  },
+  "render": {
+   "samples": 128,
+   "percent": 100,
+   "seconds": 1583,
+   "resolution": [
+    2560,
+    1440
+   ],
+   "exr": "/Users/jan/workspace/projects/game/game/build/layers_exr/layers.exr"
+  },
+  "views": {
+   "wide": {
+    "checks": {
+     "raw_sum_vs_combined": {
+      "mean_abs": 0.010010235011577606,
+      "p99_abs": 0.0478515625,
+      "max_abs": 7.90625,
+      "mean_rel": 0.11525405943393707
+     },
+     "denoised_sum_vs_combined": {
+      "mean_abs": 0.0003219279460608959,
+      "p99_abs": 0.004046022891998291,
+      "max_abs": 1.928800106048584,
+      "mean_rel": 0.00370655651204288
+     },
+     "display_8bit_vs_combined": {
+      "mean": 0.19346544053819445,
+      "p99": 3.0,
+      "max": 155,
+      "share_over_4": 0.005515769675925926
+     }
+    },
+    "render": {
+     "data_seconds": 34,
+     "beauty_seconds": 652,
+     "samples": 64,
+     "data_samples": 8,
+     "regions": [
+      null
+     ],
+     "region_seconds": [
+      652
+     ]
+    },
+    "mask_stats": {
+     "depth_holes_filled": 0,
+     "puddle_fraction": 0.006706814236111111,
+     "wet_mean": 0.11576363621530406,
+     "rough_hist": [
+      42441,
+      36220,
+      84826,
+      95623,
+      226286,
+      629342,
+      581480,
+      1599936,
+      250220,
+      59149
+     ]
+    }
+   },
+   "tiles": {
+    "render": {
+     "data_seconds": 215,
+     "beauty_seconds": 3159,
+     "samples": 80,
+     "data_samples": 8,
+     "regions": [
+      [
+       1274,
+       564,
+       4734,
+       940
+      ],
+      [
+       156,
+       844,
+       5120,
+       2880
+      ]
+     ],
+     "region_seconds": [
+      356,
+      2803
+     ]
+    },
+    "per_tile": {
+     "gate": {
+      "checks": {
+       "raw_sum_vs_combined": {
+        "mean_abs": 0.010684656910598278,
+        "p99_abs": 0.115447998046875,
+        "max_abs": 6.984375,
+        "mean_rel": 0.1639423370361328
+       },
+       "denoised_sum_vs_combined": {
+        "mean_abs": 0.0019060777267441154,
+        "p99_abs": 0.020161986351013184,
+        "max_abs": 4.9686737060546875,
+        "mean_rel": 0.029246315360069275
+       },
+       "display_8bit_vs_combined": {
+        "mean": 1.055633861400463,
+        "p99": 6.0,
+        "max": 162,
+        "share_over_4": 0.02626293041087963
+       }
+      },
+      "folded_into_base": [
+       "forge"
+      ],
+      "ids_pixels": {
+       "gate": 289283,
+       "fire_basket": 11017,
+       "bell": 1589,
+       "cart": 381,
+       "cookhouse": 485725,
+       "forge": 6148,
+       "gallows": 268875,
+       "tool_rack": 35986,
+       "guardroom": 63646,
+       "nw_tower_stair": 96887
+      }
+     },
+     "fire_basket": {
+      "checks": {
+       "raw_sum_vs_combined": {
+        "mean_abs": 0.011274859309196472,
+        "p99_abs": 0.12298583984375,
+        "max_abs": 6.984375,
+        "mean_rel": 0.1823606789112091
+       },
+       "denoised_sum_vs_combined": {
+        "mean_abs": 0.0019248495809733868,
+        "p99_abs": 0.021538138389587402,
+        "max_abs": 4.9686737060546875,
+        "mean_rel": 0.031132705509662628
+       },
+       "display_8bit_vs_combined": {
+        "mean": 1.07948974609375,
+        "p99": 7.0,
+        "max": 80,
+        "share_over_4": 0.034728461371527776
+       }
+      },
+      "folded_into_base": [
+       "nw_tower_door"
+      ],
+      "ids_pixels": {
+       "gate": 289283,
+       "fire_basket": 11017,
+       "bell": 1589,
+       "well": 63891,
+       "cart": 68474,
+       "cookhouse": 367715,
+       "forge": 218487,
+       "gallows": 300507,
+       "stable": 10823,
+       "tool_rack": 35986,
+       "guardroom": 63646
+      }
+     },
+     "bell": {
+      "checks": {
+       "raw_sum_vs_combined": {
+        "mean_abs": 0.010905331932008266,
+        "p99_abs": 0.115966796875,
+        "max_abs": 6.984375,
+        "mean_rel": 0.16741874814033508
+       },
+       "denoised_sum_vs_combined": {
+        "mean_abs": 0.0018901729490607977,
+        "p99_abs": 0.020226895809173584,
+        "max_abs": 4.9686737060546875,
+        "mean_rel": 0.02901795320212841
+       },
+       "display_8bit_vs_combined": {
+        "mean": 1.0334034107349537,
+        "p99": 6.0,
+        "max": 80,
+        "share_over_4": 0.026564850983796295
+       }
+      },
+      "folded_into_base": [
+       "forge",
+       "nw_tower_door"
+      ],
+      "ids_pixels": {
+       "gate": 289283,
+       "fire_basket": 11017,
+       "bell": 1589,
+       "cart": 6805,
+       "cookhouse": 308651,
+       "forge": 14909,
+       "gallows": 300507,
+       "stable": 15904,
+       "tool_rack": 35986,
+       "guardroom": 63646
+      }
+     },
+     "well": {
+      "checks": {
+       "raw_sum_vs_combined": {
+        "mean_abs": 0.010382382199168205,
+        "p99_abs": 0.11376953125,
+        "max_abs": 6.984375,
+        "mean_rel": 0.16798780858516693
+       },
+       "denoised_sum_vs_combined": {
+        "mean_abs": 0.0017330095870420337,
+        "p99_abs": 0.020894944667816162,
+        "max_abs": 5.464569091796875,
+        "mean_rel": 0.028040237724781036
+       },
+       "display_8bit_vs_combined": {
+        "mean": 0.9425382486979167,
+        "p99": 8.0,
+        "max": 81,
+        "share_over_4": 0.0339013671875
+       }
+      },
+      "folded_into_base": [],
+      "ids_pixels": {
+       "gate": 135137,
+       "fire_basket": 11017,
+       "well": 108553,
+       "cart": 68538,
+       "cookhouse": 383266,
+       "forge": 211540,
+       "gallows": 149131,
+       "tool_rack": 30148,
+       "trough": 34420,
+       "guardroom": 45838,
+       "nw_tower_stair": 50506
+      }
+     },
+     "cart": {
+      "checks": {
+       "raw_sum_vs_combined": {
+        "mean_abs": 0.010442844592034817,
+        "p99_abs": 0.113250732421875,
+        "max_abs": 6.984375,
+        "mean_rel": 0.16832812130451202
+       },
+       "denoised_sum_vs_combined": {
+        "mean_abs": 0.001746577676385641,
+        "p99_abs": 0.02077728509902954,
+        "max_abs": 5.464569091796875,
+        "mean_rel": 0.028153071179986
+       },
+       "display_8bit_vs_combined": {
+        "mean": 0.9583101851851852,
+        "p99": 7.0,
+        "max": 81,
+        "share_over_4": 0.03322247540509259
+       }
+      },
+      "folded_into_base": [
+       "nw_tower_door"
+      ],
+      "ids_pixels": {
+       "gate": 135137,
+       "fire_basket": 11017,
+       "well": 108553,
+       "cart": 68538,
+       "cookhouse": 309258,
+       "forge": 247016,
+       "gallows": 258205,
+       "stable": 9102,
+       "tool_rack": 30148,
+       "trough": 34420,
+       "guardroom": 45838
+      }
+     },
+     "cookhouse": {
+      "checks": {
+       "raw_sum_vs_combined": {
+        "mean_abs": 0.009970217011868954,
+        "p99_abs": 0.105133056640625,
+        "max_abs": 6.984375,
+        "mean_rel": 0.1684233844280243
+       },
+       "denoised_sum_vs_combined": {
+        "mean_abs": 0.0015162033960223198,
+        "p99_abs": 0.018737614154815674,
+        "max_abs": 4.9686737060546875,
+        "mean_rel": 0.025612693279981613
+       },
+       "display_8bit_vs_combined": {
+        "mean": 0.834029224537037,
+        "p99": 7.0,
+        "max": 162,
+        "share_over_4": 0.02686206958912037
+       }
+      },
+      "folded_into_base": [
+       "forge"
+      ],
+      "ids_pixels": {
+       "gate": 289283,
+       "fire_basket": 11017,
+       "bell": 1589,
+       "well": 56101,
+       "cart": 67847,
+       "cookhouse": 502122,
+       "forge": 184,
+       "tool_rack": 35986,
+       "nw_tower_stair": 99699
+      }
+     },
+     "forge": {
+      "checks": {
+       "raw_sum_vs_combined": {
+        "mean_abs": 0.010437823832035065,
+        "p99_abs": 0.1097412109375,
+        "max_abs": 6.984375,
+        "mean_rel": 0.1491657793521881
+       },
+       "denoised_sum_vs_combined": {
+        "mean_abs": 0.0016395008424296975,
+        "p99_abs": 0.020172595977783203,
+        "max_abs": 5.464569091796875,
+        "mean_rel": 0.02342992275953293
+       },
+       "display_8bit_vs_combined": {
+        "mean": 0.8474754050925926,
+        "p99": 7.0,
+        "max": 80,
+        "share_over_4": 0.029472565827546298
+       }
+      },
+      "folded_into_base": [
+       "cookhouse_oven",
+       "nw_tower_window",
+       "nw_tower_door"
+      ],
+      "ids_pixels": {
+       "gate": 135137,
+       "fire_basket": 11017,
+       "well": 108268,
+       "cart": 68538,
+       "cookhouse": 11118,
+       "forge": 247016,
+       "gallows": 258205,
+       "stable": 39206,
+       "tool_rack": 23819,
+       "trough": 86,
+       "guardroom": 45838
+      }
+     },
+     "gallows": {
+      "checks": {
+       "raw_sum_vs_combined": {
+        "mean_abs": 0.01124357245862484,
+        "p99_abs": 0.1197509765625,
+        "max_abs": 6.984375,
+        "mean_rel": 0.16178131103515625
+       },
+       "denoised_sum_vs_combined": {
+        "mean_abs": 0.0018309239530935884,
+        "p99_abs": 0.020907819271087646,
+        "max_abs": 4.9686737060546875,
+        "mean_rel": 0.026344766840338707
+       },
+       "display_8bit_vs_combined": {
+        "mean": 0.9705090784143519,
+        "p99": 7.0,
+        "max": 80,
+        "share_over_4": 0.030981626157407408
+       }
+      },
+      "folded_into_base": [
+       "cookhouse_hearth",
+       "cookhouse_oven",
+       "nw_tower_window",
+       "nw_tower_door"
+      ],
+      "ids_pixels": {
+       "gate": 289283,
+       "fire_basket": 11017,
+       "bell": 1589,
+       "well": 35605,
+       "cart": 65548,
+       "forge": 181196,
+       "gallows": 300507,
+       "stable": 39206,
+       "tool_rack": 9069,
+       "guardroom": 63646
+      }
+     },
+     "stable": {
+      "checks": {
+       "raw_sum_vs_combined": {
+        "mean_abs": 0.010401059873402119,
+        "p99_abs": 0.108642578125,
+        "max_abs": 6.984375,
+        "mean_rel": 0.13985008001327515
+       },
+       "denoised_sum_vs_combined": {
+        "mean_abs": 0.001540215453132987,
+        "p99_abs": 0.01998668909072876,
+        "max_abs": 5.464569091796875,
+        "mean_rel": 0.020709354430437088
+       },
+       "display_8bit_vs_combined": {
+        "mean": 0.7526446759259259,
+        "p99": 7.0,
+        "max": 80,
+        "share_over_4": 0.027666106047453703
+       }
+      },
+      "folded_into_base": [
+       "cookhouse_hearth",
+       "cookhouse_oven",
+       "nw_tower_window",
+       "nw_tower_door"
+      ],
+      "ids_pixels": {
+       "gate": 77890,
+       "fire_basket": 11017,
+       "well": 4937,
+       "cart": 68538,
+       "forge": 247016,
+       "gallows": 258205,
+       "stable": 39206,
+       "guardroom": 45838
+      }
+     },
+     "tool_rack": {
+      "checks": {
+       "raw_sum_vs_combined": {
+        "mean_abs": 0.010896988213062286,
+        "p99_abs": 0.1182861328125,
+        "max_abs": 6.984375,
+        "mean_rel": 0.17249923944473267
+       },
+       "denoised_sum_vs_combined": {
+        "mean_abs": 0.0018391803605481982,
+        "p99_abs": 0.021263539791107178,
+        "max_abs": 4.9686737060546875,
+        "mean_rel": 0.02911420911550522
+       },
+       "display_8bit_vs_combined": {
+        "mean": 1.0048658130787036,
+        "p99": 7.0,
+        "max": 162,
+        "share_over_4": 0.03128472222222222
+       }
+      },
+      "folded_into_base": [
+       "forge"
+      ],
+      "ids_pixels": {
+       "gate": 289283,
+       "fire_basket": 11017,
+       "bell": 1589,
+       "well": 21929,
+       "cart": 62291,
+       "cookhouse": 510353,
+       "forge": 80394,
+       "gallows": 89829,
+       "tool_rack": 35986,
+       "guardroom": 58208,
+       "nw_tower_stair": 99699
+      }
+     },
+     "trough": {
+      "checks": {
+       "raw_sum_vs_combined": {
+        "mean_abs": 0.010107513517141342,
+        "p99_abs": 0.110137939453125,
+        "max_abs": 6.984375,
+        "mean_rel": 0.1637975424528122
+       },
+       "denoised_sum_vs_combined": {
+        "mean_abs": 0.0015761350514367223,
+        "p99_abs": 0.02001774311065674,
+        "max_abs": 4.9686737060546875,
+        "mean_rel": 0.025542093440890312
+       },
+       "display_8bit_vs_combined": {
+        "mean": 0.8429260706018519,
+        "p99": 7.0,
+        "max": 81,
+        "share_over_4": 0.030960286458333333
+       }
+      },
+      "folded_into_base": [],
+      "ids_pixels": {
+       "gate": 135137,
+       "fire_basket": 11017,
+       "well": 108553,
+       "cart": 68538,
+       "cookhouse": 383266,
+       "forge": 61096,
+       "gallows": 23478,
+       "tool_rack": 30148,
+       "trough": 34420,
+       "guardroom": 20763,
+       "nw_tower_stair": 50506
+      }
+     },
+     "guardroom": {
+      "checks": {
+       "raw_sum_vs_combined": {
+        "mean_abs": 0.011188260279595852,
+        "p99_abs": 0.117645263671875,
+        "max_abs": 6.984375,
+        "mean_rel": 0.16571074724197388
+       },
+       "denoised_sum_vs_combined": {
+        "mean_abs": 0.0018668026896193624,
+        "p99_abs": 0.02047044038772583,
+        "max_abs": 4.9686737060546875,
+        "mean_rel": 0.027649451047182083
+       },
+       "display_8bit_vs_combined": {
+        "mean": 1.0063269495081018,
+        "p99": 7.0,
+        "max": 80,
+        "share_over_4": 0.028610026041666667
+       }
+      },
+      "folded_into_base": [
+       "cookhouse_hearth",
+       "cookhouse_oven",
+       "forge",
+       "nw_tower_window",
+       "nw_tower_door"
+      ],
+      "ids_pixels": {
+       "gate": 289283,
+       "fire_basket": 11017,
+       "bell": 1589,
+       "cart": 38460,
+       "cookhouse": 72736,
+       "forge": 95265,
+       "gallows": 300507,
+       "stable": 39206,
+       "tool_rack": 35986,
+       "guardroom": 63646
+      }
+     },
+     "nw_tower_stair": {
+      "checks": {
+       "raw_sum_vs_combined": {
+        "mean_abs": 0.007282227277755737,
+        "p99_abs": 0.04541015625,
+        "max_abs": 5.3125,
+        "mean_rel": 0.15054351091384888
+       },
+       "denoised_sum_vs_combined": {
+        "mean_abs": 0.0007929670973680913,
+        "p99_abs": 0.009409129619598389,
+        "max_abs": 4.082855224609375,
+        "mean_rel": 0.016392793506383896
+       },
+       "display_8bit_vs_combined": {
+        "mean": 0.5624256727430555,
+        "p99": 6.0,
+        "max": 66,
+        "share_over_4": 0.015922670717592593
+       }
+      },
+      "folded_into_base": [
+       "forge",
+       "guardroom_window"
+      ],
+      "ids_pixels": {
+       "gate": 218271,
+       "well": 91567,
+       "cookhouse": 482980,
+       "tool_rack": 35986,
+       "nw_tower_stair": 94782
+      }
+     }
+    }
+   }
+  }
+ }
+}

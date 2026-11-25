@@ -1,0 +1,102 @@
+{
+  "file": "/Users/jan/workspace/projects/game/characters/narrator/voice/line_12/01_narrator_up_on_the_landing_by_t3.wav",
+  "character": "narrator",
+  "text": "[quick, precise, close, inner voice] Up on the landing by the tower door, a bundle of wet cloak that breathes.",
+  "spoken_text": "Up on the landing by the tower door, a bundle of wet cloak that breathes.",
+  "tags": [
+    "quick, precise, close, inner voice"
+  ],
+  "take": 3,
+  "reference": "voices/narrator-reference-dry.wav",
+  "model": "drama3-small-IQ3_XXS.gguf",
+  "sampling": [
+    "temperature=0.7",
+    "top_p=0.7",
+    "top_k=30"
+  ],
+  "render_wall_s_all_takes": 37.4,
+  "speaker_similarity": 0.6208,
+  "duration_s": 4.23,
+  "expected_s": 6.27,
+  "silences": [],
+  "transcript": "Upon the landing by the tower door, a bundle of wet cloak that breathes.",
+  "words": [
+    {
+      "word": "Upon",
+      "start": 0.04,
+      "end": 0.24
+    },
+    {
+      "word": "the",
+      "start": 0.24,
+      "end": 0.42
+    },
+    {
+      "word": "landing",
+      "start": 0.42,
+      "end": 0.83
+    },
+    {
+      "word": "by",
+      "start": 0.83,
+      "end": 0.95
+    },
+    {
+      "word": "the",
+      "start": 0.95,
+      "end": 1.08
+    },
+    {
+      "word": "tower",
+      "start": 1.19,
+      "end": 1.42
+    },
+    {
+      "word": "door,",
+      "start": 1.42,
+      "end": 1.79
+    },
+    {
+      "word": "a",
+      "start": 1.79,
+      "end": 1.86
+    },
+    {
+      "word": "bundle",
+      "start": 2.16,
+      "end": 2.32
+    },
+    {
+      "word": "of",
+      "start": 2.32,
+      "end": 2.46
+    },
+    {
+      "word": "wet",
+      "start": 2.47,
+      "end": 2.67
+    },
+    {
+      "word": "cloak",
+      "start": 2.68,
+      "end": 3.03
+    },
+    {
+      "word": "that",
+      "start": 3.12,
+      "end": 3.29
+    },
+    {
+      "word": "breathes.",
+      "start": 3.45,
+      "end": 4.13
+    }
+  ],
+  "missing_words": [
+    "on"
+  ],
+  "reasons": [
+    "missing words: on"
+  ],
+  "pass": false
+}

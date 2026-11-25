@@ -1,0 +1,168 @@
+{
+  "file": "/Users/jan/workspace/projects/game/characters/narrator/voice/line_11/01_narrator_the_bracket_is_older_than_t2.wav",
+  "character": "narrator",
+  "text": "[slow, ancient, low, inner voice] The bracket is older than the shelter, older than the gate. This bell has been rung for riders since before your grandfather's grandfather. It has never been gagged.",
+  "spoken_text": "The bracket is older than the shelter, older than the gate. This bell has been rung for riders since before your grandfather's grandfather. It has never been gagged.",
+  "tags": [
+    "slow, ancient, low, inner voice"
+  ],
+  "take": 2,
+  "reference": "voices/narrator-reference-dry.wav",
+  "model": "drama3-small-IQ3_XXS.gguf",
+  "sampling": [
+    "temperature=0.7",
+    "top_p=0.7",
+    "top_k=30"
+  ],
+  "render_wall_s_all_takes": 78.7,
+  "speaker_similarity": 0.7367,
+  "duration_s": 11.33,
+  "expected_s": 11.27,
+  "silences": [],
+  "transcript": "The bracket is older than the shelter, older than the gate. This bell has been rung for riders since before your grandfather's grandfather. It has never been gagged.",
+  "words": [
+    {
+      "word": "The",
+      "start": 0.04,
+      "end": 0.2
+    },
+    {
+      "word": "bracket",
+      "start": 0.2,
+      "end": 0.67
+    },
+    {
+      "word": "is",
+      "start": 0.67,
+      "end": 0.8
+    },
+    {
+      "word": "older",
+      "start": 0.8,
+      "end": 1.11
+    },
+    {
+      "word": "than",
+      "start": 1.13,
+      "end": 1.4
+    },
+    {
+      "word": "the",
+      "start": 1.4,
+      "end": 1.6
+    },
+    {
+      "word": "shelter,",
+      "start": 1.6,
+      "end": 2.21
+    },
+    {
+      "word": "older",
+      "start": 2.73,
+      "end": 2.73
+    },
+    {
+      "word": "than",
+      "start": 2.93,
+      "end": 3.09
+    },
+    {
+      "word": "the",
+      "start": 3.09,
+      "end": 3.31
+    },
+    {
+      "word": "gate.",
+      "start": 3.35,
+      "end": 3.93
+    },
+    {
+      "word": "This",
+      "start": 4.27,
+      "end": 4.32
+    },
+    {
+      "word": "bell",
+      "start": 4.32,
+      "end": 4.62
+    },
+    {
+      "word": "has",
+      "start": 4.62,
+      "end": 4.85
+    },
+    {
+      "word": "been",
+      "start": 4.85,
+      "end": 5.15
+    },
+    {
+      "word": "rung",
+      "start": 5.15,
+      "end": 5.45
+    },
+    {
+      "word": "for",
+      "start": 5.45,
+      "end": 5.68
+    },
+    {
+      "word": "riders",
+      "start": 5.68,
+      "end": 6.15
+    },
+    {
+      "word": "since",
+      "start": 6.19,
+      "end": 6.45
+    },
+    {
+      "word": "before",
+      "start": 6.86,
+      "end": 6.86
+    },
+    {
+      "word": "your",
+      "start": 7.1,
+      "end": 7.1
+    },
+    {
+      "word": "grandfather's",
+      "start": 7.17,
+      "end": 7.85
+    },
+    {
+      "word": "grandfather.",
+      "start": 7.9,
+      "end": 8.61
+    },
+    {
+      "word": "It",
+      "start": 9.74,
+      "end": 9.74
+    },
+    {
+      "word": "has",
+      "start": 9.74,
+      "end": 9.74
+    },
+    {
+      "word": "never",
+      "start": 9.77,
+      "end": 9.84
+    },
+    {
+      "word": "been",
+      "start": 9.84,
+      "end": 10.22
+    },
+    {
+      "word": "gagged.",
+      "start": 10.28,
+      "end": 11.22
+    }
+  ],
+  "missing_words": [],
+  "reasons": [],
+  "pass": true
+}

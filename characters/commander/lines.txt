@@ -1,0 +1,9 @@
+# Captain Orrin Vael, the commander, in his chamber in the tower on the cliff. Voice: commander (designed, voice_design.json).
+commander: [tired, courteous] Close the door behind you. The draught finds this room before it finds anyone else. People only climb my stair at night when they carry something.
+commander: [weary, unsurprised] Marl brought me a letter tonight, and a story about a stranger who found it. I assume the stranger is you. Stand by the fire, at least.
+commander: [reading, very quiet] So they recall me, after nineteen years. And six men left to hold a gate built for forty. Somebody in the capital has learned to count.
+commander: [sharp, cold] This seal was broken before it reached me. Three waves. The Wardens' mark, not the council's crown. Tell me where it happened, and tell me exactly.
+commander: [slow, thinking it through] A ferryman at the ford. The Wardens take their tolls at that ford, and they have wanted this road unwatched for as long as I have watched it.
+commander: [decided, low] I leave at first light, if I leave at all. Before then, find me that ferryman. Quietly. Marl will give you a horse if you ask him nicely.
+commander: [dry, probing] And you. Marl says you came to count our spears. If you did, count carefully. They are all we have left.
+commander: [weary, almost kind] Go on. Mind the stair on your way down. The seventh step is a liar.

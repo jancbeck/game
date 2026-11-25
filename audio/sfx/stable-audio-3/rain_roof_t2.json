@@ -1,0 +1,12 @@
+{
+  "prompt": "steady rain drumming on a wooden shingle roof with water dripping from the eaves onto the ground below, heard from underneath the roof, wide stereo field recording",
+  "negative_prompt": "music, melody, speech, voices, singing, thunder, distortion",
+  "seed": 1001,
+  "seconds": 20.0,
+  "dit": "medium",
+  "decoder": "same-l",
+  "cfg": 3.0,
+  "steps": 8,
+  "wall_seconds": 8.26,
+  "file": "rain_roof_t2.wav"
+}

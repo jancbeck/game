@@ -1,0 +1,76 @@
+{
+  "_doc": "Fast EEVEE preview of layout.json for the check views: same room, lighting balanced for EEVEE's world light.",
+  "render": {
+    "resolution": [
+      1536,
+      1024
+    ],
+    "engine": "BLENDER_EEVEE",
+    "samples": 64,
+    "raytracing": true,
+    "exposure": 0.88
+  },
+  "environment": {
+    "_doc": "Dusk through the open top of the cutaway room and one small window: little sky light, the hearth and the oven do the lighting. No haze, no rain.",
+    "sky_color": [
+      0.03,
+      0.045,
+      0.09
+    ],
+    "ambient_strength": 1.0,
+    "moon": {
+      "direction_euler": [
+        60,
+        0,
+        160
+      ],
+      "color": [
+        0.62,
+        0.74,
+        1.0
+      ],
+      "strength": 0.6,
+      "angle_deg": 25
+    },
+    "horizon_color": [
+      0.08,
+      0.1,
+      0.15
+    ],
+    "horizon_falloff": 0.8,
+    "camera_sky": [
+      0.045,
+      0.065,
+      0.11
+    ]
+  },
+  "prop_light_scale": 1.4,
+  "post": {
+    "_doc": "kuwahara: painterly brush size in px. bloom: glare strength above threshold. grade: lift/gamma/gain RGB. vignette: edge darkening 0..1.",
+    "kuwahara": 0,
+    "kuwahara_sharpness": 0.85,
+    "bloom": 0.6,
+    "bloom_threshold": 0.8,
+    "bloom_size": 0.6,
+    "grade": {
+      "lift": [
+        0.97,
+        0.975,
+        0.99
+      ],
+      "gamma": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "gain": [
+        1.0,
+        1.0,
+        1.02
+      ]
+    },
+    "vignette": 0.35,
+    "sharpen": 0,
+    "saturation": 0.9
+  }
+}

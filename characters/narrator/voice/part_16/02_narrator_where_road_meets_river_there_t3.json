@@ -1,0 +1,138 @@
+{
+  "file": "/Users/jan/workspace/projects/game/characters/narrator/voice/part_16/02_narrator_where_road_meets_river_there_t3.wav",
+  "character": "narrator",
+  "text": "[quick, precise, close, inner voice] Where road meets river there is a ford, and somebody has pressed a thumbnail into the paint there until the board split.",
+  "spoken_text": "Where road meets river there is a ford, and somebody has pressed a thumbnail into the paint there until the board split.",
+  "tags": [
+    "quick, precise, close, inner voice"
+  ],
+  "take": 3,
+  "reference": "voices/narrator-reference-dry.wav",
+  "model": "drama3-small-IQ3_XXS.gguf",
+  "sampling": [
+    "temperature=0.7",
+    "top_p=0.7",
+    "top_k=30"
+  ],
+  "render_wall_s_all_takes": 110.4,
+  "speaker_similarity": 0.6634,
+  "duration_s": 6.59,
+  "expected_s": 8.96,
+  "silences": [],
+  "transcript": "Where road meets river there is a Ford, and somebody has pressed a thumbnail into the paint. There until the board split,",
+  "words": [
+    {
+      "word": "Where",
+      "start": 0.06,
+      "end": 0.34
+    },
+    {
+      "word": "road",
+      "start": 0.34,
+      "end": 0.61
+    },
+    {
+      "word": "meets",
+      "start": 0.61,
+      "end": 0.95
+    },
+    {
+      "word": "river",
+      "start": 0.95,
+      "end": 1.29
+    },
+    {
+      "word": "there",
+      "start": 1.29,
+      "end": 1.54
+    },
+    {
+      "word": "is",
+      "start": 1.68,
+      "end": 1.76
+    },
+    {
+      "word": "a",
+      "start": 1.76,
+      "end": 1.82
+    },
+    {
+      "word": "Ford,",
+      "start": 1.82,
+      "end": 2.4
+    },
+    {
+      "word": "and",
+      "start": 2.4,
+      "end": 2.54
+    },
+    {
+      "word": "somebody",
+      "start": 2.62,
+      "end": 2.92
+    },
+    {
+      "word": "has",
+      "start": 2.92,
+      "end": 3.05
+    },
+    {
+      "word": "pressed",
+      "start": 3.21,
+      "end": 3.36
+    },
+    {
+      "word": "a",
+      "start": 3.42,
+      "end": 3.49
+    },
+    {
+      "word": "thumbnail",
+      "start": 3.61,
+      "end": 4.0
+    },
+    {
+      "word": "into",
+      "start": 4.0,
+      "end": 4.23
+    },
+    {
+      "word": "the",
+      "start": 4.24,
+      "end": 4.33
+    },
+    {
+      "word": "paint.",
+      "start": 4.41,
+      "end": 4.66
+    },
+    {
+      "word": "There",
+      "start": 4.94,
+      "end": 5.02
+    },
+    {
+      "word": "until",
+      "start": 5.02,
+      "end": 5.35
+    },
+    {
+      "word": "the",
+      "start": 5.36,
+      "end": 5.56
+    },
+    {
+      "word": "board",
+      "start": 5.56,
+      "end": 5.9
+    },
+    {
+      "word": "split,",
+      "start": 5.9,
+      "end": 6.4
+    }
+  ],
+  "missing_words": [],
+  "reasons": [],
+  "pass": true
+}

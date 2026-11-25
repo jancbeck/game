@@ -1,0 +1,191 @@
+{
+ "_doc": "The commander of the garrison: a lean man in his fifties, close-cropped grey hair, a short grey beard, a dark blue-grey wool doublet (a gambeson cut for riding, no armour) with a plain belt, tired and upright. Clips: idle and talk (standing), walk, and seated in a chair: sit and sit_talk, from CMU 86_15 (the seat is 0.50 m high: <id>.json fit.sit.seat_height_m). Seated at a desk: set idle_clip to sit and talk_clip to sit_talk in game/data/npcs/<id>.json, and put the figure's position on the floor under the seat's centre, facing the desk. The keys are listed in the docstring of characters/build_human.py.",
+ "id": "commander",
+ "height_m": 1.79,
+ "macro": {
+  "gender": 1.0,
+  "age": 0.73,
+  "muscle": 0.35,
+  "weight": 0.22,
+  "proportions": 0.5,
+  "height": 0.5,
+  "race": {
+   "asian": 0.0,
+   "caucasian": 1.0,
+   "african": 0.0
+  }
+ },
+ "skin": {
+  "name": "middleage_caucasian_male",
+  "tint": [
+   0.84,
+   0.76,
+   0.72
+  ],
+  "size": 512,
+  "beard": {
+   "color": [
+    0.58,
+    0.57,
+    0.56
+   ],
+   "strength": 0.75,
+   "up": 0.015
+  },
+  "hair": {
+   "color": [
+    0.44,
+    0.43,
+    0.42
+   ],
+   "strength": 0.9,
+   "hairline": 0.026,
+   "widow": 0.012
+  },
+  "brows": {
+   "color": [
+    0.42,
+    0.41,
+    0.4
+   ],
+   "strength": 0.7,
+   "raise": -0.02,
+   "arch": 0.08,
+   "thickness": 0.005
+  }
+ },
+ "eyes": "grey",
+ "garments": {
+  "tunic": {
+   "color": [
+    0.25,
+    0.27,
+    0.35
+   ],
+   "ease": 0.024,
+   "sleeve_ease": 0.016,
+   "hem_above_knee": 0.17,
+   "collar_rise": 0.02,
+   "wear": {
+    "dirt": 0.2,
+    "wet": 0.04
+   }
+  },
+  "skirt": {
+   "flare": 0.03,
+   "stride_total": 0.03,
+   "fold_amp": 0.03,
+   "fold_count": 8
+  },
+  "hose": {
+   "color": [
+    0.15,
+    0.15,
+    0.17
+   ]
+  },
+  "boots": {
+   "color": [
+    0.17,
+    0.13,
+    0.1
+   ],
+   "height": 0.3,
+   "ease": 0.012
+  },
+  "hair": {
+   "color": [
+    0.42,
+    0.41,
+    0.4
+   ],
+   "head_ease": 0.006,
+   "peak": 0.0,
+   "wear": {
+    "dirt": 0.0,
+    "wet": 0.0
+   },
+   "bottom_above_chin": 0.075
+  },
+  "belt": {
+   "color": [
+    0.24,
+    0.17,
+    0.11
+   ],
+   "width": 0.045,
+   "ease": 0.036
+  }
+ },
+ "wear": {
+  "dirt": 0.2,
+  "wet": 0.06
+ },
+ "detail": {
+  "skin": 0.14,
+  "tunic": 0.2,
+  "hose": 0.2,
+  "boots": 0.12,
+  "hair": 0.2,
+  "belt": 0.6
+ },
+ "fit": {
+  "walk": {
+   "mode": "clear",
+   "keys": 30
+  },
+  "sit": {
+   "mode": "drape",
+   "floor": "seat"
+  },
+  "sit_talk": {
+   "mode": "drape",
+   "floor": "seat"
+  }
+ },
+ "animations": {
+  "idle": {
+   "type": "stand",
+   "bvh": "77_02",
+   "range_s": [
+    3.0,
+    7.4
+   ],
+   "rate": 0.75,
+   "amplitude": 0.7
+  },
+  "talk": {
+   "type": "stand",
+   "bvh": "18_08",
+   "range_s": [
+    8.0,
+    14.0
+   ],
+   "rate": 0.85,
+   "amplitude": 0.6
+  },
+  "walk": {
+   "type": "walk",
+   "bvh": "07_01"
+  },
+  "sit": {
+   "type": "stand",
+   "bvh": "86_15",
+   "range_s": [
+    18.0,
+    22.8
+   ],
+   "overlap_s": 0.5
+  },
+  "sit_talk": {
+   "type": "stand",
+   "bvh": "86_15",
+   "range_s": [
+    30.5,
+    37.5
+   ],
+   "overlap_s": 0.5,
+   "amplitude": 0.85
+  }
+ }
+}

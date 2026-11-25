@@ -1,0 +1,17 @@
+{
+  "prompt": "steady rain falling on wet cobblestones and splashing into puddles in an open stone courtyard in the evening, constant even rain texture, wide stereo field recording, open air",
+  "negative_prompt": "music, melody, speech, voices, singing, thunder, wind gusts, distortion",
+  "seed": 1000,
+  "seconds": 30,
+  "steps": 50,
+  "cfg": 4.0,
+  "sigma_shift": 5.0,
+  "model": "mlx-community/MOSS-SoundEffect-v2.0-bf16",
+  "sample_rate": 48000,
+  "channels": 1,
+  "wall_seconds": 202.6,
+  "model_load_seconds": 0.8,
+  "mlx_peak_memory_gb": 13.92,
+  "float_peak_before_clip": 0.439,
+  "file": "rain_bed_t1.wav"
+}

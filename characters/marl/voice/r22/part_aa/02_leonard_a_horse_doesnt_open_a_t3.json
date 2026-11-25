@@ -1,0 +1,123 @@
+{
+  "file": "characters/marl/voice6/part_aa/02_leonard_a_horse_doesnt_open_a_t3.wav",
+  "character": "leonard",
+  "text": "[dry, patient] A horse doesn't open a gate by itself. Start with the stable. Then have a look at the bell.",
+  "spoken_text": "A horse doesn't open a gate by itself. Start with the stable. Then have a look at the bell.",
+  "tags": [
+    "dry, patient"
+  ],
+  "take": 3,
+  "reference": "voices/leonard-reference-dry.wav",
+  "model": "drama3-small-IQ3_XXS.gguf",
+  "sampling": [
+    "temperature=0.7",
+    "top_p=0.7",
+    "top_k=30"
+  ],
+  "render_wall_s_all_takes": 140.7,
+  "speaker_similarity": 0.7702,
+  "duration_s": 6.69,
+  "expected_s": 7.81,
+  "silences": [],
+  "transcript": "A horse doesn't open a gate by itself. Start with the stable. Then have a look at the bell.",
+  "words": [
+    {
+      "word": "A",
+      "start": 0.04,
+      "end": 0.09
+    },
+    {
+      "word": "horse",
+      "start": 0.09,
+      "end": 0.57
+    },
+    {
+      "word": "doesn't",
+      "start": 0.57,
+      "end": 1.18
+    },
+    {
+      "word": "open",
+      "start": 1.24,
+      "end": 1.62
+    },
+    {
+      "word": "a",
+      "start": 1.62,
+      "end": 1.71
+    },
+    {
+      "word": "gate",
+      "start": 1.71,
+      "end": 2.09
+    },
+    {
+      "word": "by",
+      "start": 2.09,
+      "end": 2.12
+    },
+    {
+      "word": "itself.",
+      "start": 2.12,
+      "end": 3.18
+    },
+    {
+      "word": "Start",
+      "start": 3.23,
+      "end": 3.73
+    },
+    {
+      "word": "with",
+      "start": 3.73,
+      "end": 4.11
+    },
+    {
+      "word": "the",
+      "start": 4.19,
+      "end": 4.5
+    },
+    {
+      "word": "stable.",
+      "start": 4.5,
+      "end": 5.3
+    },
+    {
+      "word": "Then",
+      "start": 5.57,
+      "end": 5.62
+    },
+    {
+      "word": "have",
+      "start": 5.7,
+      "end": 5.87
+    },
+    {
+      "word": "a",
+      "start": 5.92,
+      "end": 5.92
+    },
+    {
+      "word": "look",
+      "start": 5.92,
+      "end": 6.1
+    },
+    {
+      "word": "at",
+      "start": 6.1,
+      "end": 6.19
+    },
+    {
+      "word": "the",
+      "start": 6.19,
+      "end": 6.27
+    },
+    {
+      "word": "bell.",
+      "start": 6.35,
+      "end": 6.68
+    }
+  ],
+  "missing_words": [],
+  "reasons": [],
+  "pass": true
+}

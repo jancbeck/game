@@ -1,0 +1,12 @@
+{
+  "prompt": "a heavy wooden castle gate creaking and thudding shut, then a heavy iron bar dropping into its brackets with a clank, dry close-miked film sound effect, no reverb",
+  "negative_prompt": "reverb, echo, hall, music, speech, voices, singing",
+  "seed": 1001,
+  "seconds": 12.0,
+  "dit": "medium",
+  "decoder": "same-l",
+  "cfg": 2.0,
+  "steps": 8,
+  "wall_seconds": 6.51,
+  "file": "gate_t2.wav"
+}

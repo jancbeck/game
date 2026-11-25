@@ -1,0 +1,12 @@
+{
+  "prompt": "a hand sloshing and splashing through water in a wooden trough, water slopping against the planks, dry close-miked film sound effect, no reverb",
+  "negative_prompt": "reverb, echo, hall, music, melody, speech, voices, singing, rain",
+  "seed": 1001,
+  "seconds": 6.0,
+  "dit": "medium",
+  "decoder": "same-l",
+  "cfg": 2.0,
+  "steps": 8,
+  "wall_seconds": 11.07,
+  "file": "obj_trough_t2.wav"
+}

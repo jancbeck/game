@@ -1,0 +1,93 @@
+{
+  "file": "/Users/jan/workspace/projects/game/characters/narrator/voice/part_04/01_narrator_he_is_not_asking_he_t1.wav",
+  "character": "narrator",
+  "text": "[clipped, proud, inner voice] He is not asking. He is giving you the chance to lie well.",
+  "spoken_text": "He is not asking. He is giving you the chance to lie well.",
+  "tags": [
+    "clipped, proud, inner voice"
+  ],
+  "take": 1,
+  "reference": "voices/narrator-reference-dry.wav",
+  "model": "drama3-small-IQ3_XXS.gguf",
+  "sampling": [
+    "temperature=0.7",
+    "top_p=0.7",
+    "top_k=30"
+  ],
+  "render_wall_s_all_takes": 62.8,
+  "speaker_similarity": 0.6312,
+  "duration_s": 4.09,
+  "expected_s": 5.5,
+  "silences": [],
+  "transcript": "He is not asking. He is giving you the chance to lie well.",
+  "words": [
+    {
+      "word": "He",
+      "start": 0.05,
+      "end": 0.12
+    },
+    {
+      "word": "is",
+      "start": 0.12,
+      "end": 0.24
+    },
+    {
+      "word": "not",
+      "start": 0.24,
+      "end": 0.42
+    },
+    {
+      "word": "asking.",
+      "start": 0.42,
+      "end": 0.98
+    },
+    {
+      "word": "He",
+      "start": 1.66,
+      "end": 1.66
+    },
+    {
+      "word": "is",
+      "start": 1.66,
+      "end": 1.66
+    },
+    {
+      "word": "giving",
+      "start": 1.71,
+      "end": 1.8
+    },
+    {
+      "word": "you",
+      "start": 1.8,
+      "end": 2.05
+    },
+    {
+      "word": "the",
+      "start": 2.05,
+      "end": 2.3
+    },
+    {
+      "word": "chance",
+      "start": 2.3,
+      "end": 2.79
+    },
+    {
+      "word": "to",
+      "start": 2.79,
+      "end": 2.85
+    },
+    {
+      "word": "lie",
+      "start": 3.21,
+      "end": 3.21
+    },
+    {
+      "word": "well.",
+      "start": 3.43,
+      "end": 3.84
+    }
+  ],
+  "missing_words": [],
+  "reasons": [],
+  "pass": true
+}

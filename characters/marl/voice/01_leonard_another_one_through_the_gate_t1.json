@@ -1,0 +1,118 @@
+{
+  "file": "/Users/jan/workspace/projects/game/characters/marl/voice/01_leonard_another_one_through_the_gate_t1.wav",
+  "character": "leonard",
+  "text": "[dry, tired] Another one through the gate after dark. Either you're lost, or somebody sent you to count our spears.",
+  "spoken_text": "Another one through the gate after dark. Either you're lost, or somebody sent you to count our spears.",
+  "tags": [
+    "dry, tired"
+  ],
+  "take": 1,
+  "reference": "voices/leonard-reference-dry.wav",
+  "model": "drama3-small-IQ3_XXS.gguf",
+  "sampling": [
+    "temperature=0.7",
+    "top_p=0.7",
+    "top_k=30"
+  ],
+  "render_wall_s_all_takes": 270.9,
+  "speaker_similarity": 0.7039,
+  "duration_s": 5.11,
+  "expected_s": 7.42,
+  "silences": [],
+  "transcript": "Another one through the gate after dark. Either you're lost or somebody sent you to count our spears.",
+  "words": [
+    {
+      "word": "Another",
+      "start": 0.03,
+      "end": 0.33
+    },
+    {
+      "word": "one",
+      "start": 0.33,
+      "end": 0.47
+    },
+    {
+      "word": "through",
+      "start": 0.47,
+      "end": 0.79
+    },
+    {
+      "word": "the",
+      "start": 0.85,
+      "end": 0.94
+    },
+    {
+      "word": "gate",
+      "start": 0.94,
+      "end": 1.13
+    },
+    {
+      "word": "after",
+      "start": 1.13,
+      "end": 1.35
+    },
+    {
+      "word": "dark.",
+      "start": 1.36,
+      "end": 1.64
+    },
+    {
+      "word": "Either",
+      "start": 2.09,
+      "end": 2.14
+    },
+    {
+      "word": "you're",
+      "start": 2.14,
+      "end": 2.55
+    },
+    {
+      "word": "lost",
+      "start": 2.65,
+      "end": 2.85
+    },
+    {
+      "word": "or",
+      "start": 2.91,
+      "end": 2.97
+    },
+    {
+      "word": "somebody",
+      "start": 2.97,
+      "end": 3.41
+    },
+    {
+      "word": "sent",
+      "start": 3.47,
+      "end": 3.67
+    },
+    {
+      "word": "you",
+      "start": 3.67,
+      "end": 3.71
+    },
+    {
+      "word": "to",
+      "start": 3.77,
+      "end": 3.96
+    },
+    {
+      "word": "count",
+      "start": 4.11,
+      "end": 4.22
+    },
+    {
+      "word": "our",
+      "start": 4.22,
+      "end": 4.38
+    },
+    {
+      "word": "spears.",
+      "start": 4.38,
+      "end": 4.84
+    }
+  ],
+  "missing_words": [],
+  "reasons": [],
+  "pass": true
+}

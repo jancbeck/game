@@ -1,0 +1,6 @@
+{
+ "_doc": "The inner voices (skills): one designed narrator voice (voice_design.json, candidate deep_t1). Lines only: no portrait or clips; the game copies go to game/assets/skills/<clip>.wav (dry, no room).",
+ "name": "Narrator",
+ "voice": "narrator",
+ "lines": ["lines.txt"]
+}

@@ -1,0 +1,12 @@
+{
+  "prompt": "cold wind gusting over stone battlements, low moody howl rising and falling, no rain, wide stereo field recording, open air",
+  "negative_prompt": "music, melody, speech, voices, singing, rain, distortion",
+  "seed": 1000,
+  "seconds": 30.0,
+  "dit": "medium",
+  "decoder": "same-l",
+  "cfg": 2.0,
+  "steps": 8,
+  "wall_seconds": 11.04,
+  "file": "wind_t1.wav"
+}

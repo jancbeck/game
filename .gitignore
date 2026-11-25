@@ -1,36 +1,19 @@
-# Godot 4+ specific ignores
-.godot/
-.nomedia
-*.import
-
-# Godot-specific ignores
-.import/
-export.cfg
-export_credentials.cfg
-
-# Imported translations (automatically generated from CSV files)
-*.translation
-
-# Mono-specific ignores
-.mono/
-data_*/
-mono_crash.*.json
-# GdUnit4 addon (installed via CI or locally)
-addons/
-reports
-
-# Build artifacts
-build/
-
-# Node (authoring-tool test harness only; see package.json)
-node_modules/
-# Generated grid overlays from tools/gridshot.mjs
-*_grid.png
-# Screenshot renders are CI artifacts (rendered fresh, published to the
-# ci-screenshots branch; goldens live in test/golden/)
-screenshots/*.png
-# Textures Godot's GLB import extracts next to the model (regenerated on
-# every import; the embedded copies in the .glb are the truth)
-art/models/convict_convict_*.png
-# npm lockfile not tracked; CI resolves the single exact-pinned dev dep
-package-lock.json
+.venv/
+.uv-cache/
+weights/
+outputs/
+props/meshes/
+renders/
+scene/*.blend
+scene/*.blend1
+__pycache__/
+*.pyc
+.DS_Store
+audio/**/*.wav
+audio/**/*.mp3
+audio/**/*.flac
+audio/.venvs/
+audio/.weights/
+audio/.work/
+scene/textures/
+dist/

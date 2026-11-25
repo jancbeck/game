@@ -1,0 +1,144 @@
+{
+ "footsteps": {
+  "cobble": [
+   "assets/audio/steps/cobble_01.wav",
+   "assets/audio/steps/cobble_02.wav",
+   "assets/audio/steps/cobble_03.wav",
+   "assets/audio/steps/cobble_04.wav",
+   "assets/audio/steps/cobble_05.wav",
+   "assets/audio/steps/cobble_06.wav",
+   "assets/audio/steps/cobble_07.wav",
+   "assets/audio/steps/cobble_08.wav"
+  ],
+  "mud": [
+   "assets/audio/steps/mud_01.wav",
+   "assets/audio/steps/mud_02.wav",
+   "assets/audio/steps/mud_03.wav",
+   "assets/audio/steps/mud_04.wav",
+   "assets/audio/steps/mud_05.wav",
+   "assets/audio/steps/mud_06.wav",
+   "assets/audio/steps/mud_07.wav",
+   "assets/audio/steps/mud_08.wav"
+  ],
+  "puddle": [
+   "assets/audio/steps/puddle_01.wav",
+   "assets/audio/steps/puddle_02.wav",
+   "assets/audio/steps/puddle_03.wav",
+   "assets/audio/steps/puddle_04.wav",
+   "assets/audio/steps/puddle_05.wav",
+   "assets/audio/steps/puddle_06.wav",
+   "assets/audio/steps/puddle_07.wav",
+   "assets/audio/steps/puddle_08.wav"
+  ],
+  "stone_stair": [
+   "assets/audio/steps/stone_stair_01.wav",
+   "assets/audio/steps/stone_stair_02.wav",
+   "assets/audio/steps/stone_stair_03.wav",
+   "assets/audio/steps/stone_stair_04.wav",
+   "assets/audio/steps/stone_stair_05.wav",
+   "assets/audio/steps/stone_stair_06.wav",
+   "assets/audio/steps/stone_stair_07.wav",
+   "assets/audio/steps/stone_stair_08.wav"
+  ],
+  "stone_walk": [
+   "assets/audio/steps/stone_walk_01.wav",
+   "assets/audio/steps/stone_walk_02.wav",
+   "assets/audio/steps/stone_walk_03.wav",
+   "assets/audio/steps/stone_walk_04.wav",
+   "assets/audio/steps/stone_walk_05.wav",
+   "assets/audio/steps/stone_walk_06.wav",
+   "assets/audio/steps/stone_walk_07.wav",
+   "assets/audio/steps/stone_walk_08.wav"
+  ],
+  "wood": [
+   "assets/audio/steps/wood_01.wav",
+   "assets/audio/steps/wood_02.wav",
+   "assets/audio/steps/wood_03.wav",
+   "assets/audio/steps/wood_04.wav",
+   "assets/audio/steps/wood_05.wav",
+   "assets/audio/steps/wood_06.wav",
+   "assets/audio/steps/wood_07.wav",
+   "assets/audio/steps/wood_08.wav"
+  ],
+  "straw": [
+   "assets/audio/steps/straw_01.wav",
+   "assets/audio/steps/straw_02.wav",
+   "assets/audio/steps/straw_03.wav",
+   "assets/audio/steps/straw_04.wav",
+   "assets/audio/steps/straw_05.wav",
+   "assets/audio/steps/straw_06.wav",
+   "assets/audio/steps/straw_07.wav",
+   "assets/audio/steps/straw_08.wav"
+  ]
+ },
+ "step_interval_s": 0.5,
+ "click": {
+  "walk": "assets/audio/ui/walk_click.wav",
+  "interact": "assets/audio/ui/interact.wav"
+ },
+ "hotspots": {
+  "gate": [
+   "assets/audio/objects/gate_01.wav",
+   "assets/audio/objects/gate_02.wav"
+  ],
+  "fire_basket": [
+   "assets/audio/objects/fire_basket_01.wav",
+   "assets/audio/objects/fire_basket_02.wav"
+  ],
+  "bell": [
+   "assets/audio/objects/bell_01.wav",
+   "assets/audio/objects/bell_02.wav"
+  ],
+  "well": [
+   "assets/audio/objects/well_01.wav",
+   "assets/audio/objects/well_02.wav"
+  ],
+  "cart": [
+   "assets/audio/objects/cart_01.wav",
+   "assets/audio/objects/cart_02.wav"
+  ],
+  "cookhouse": [
+   "assets/audio/objects/cookhouse_01.wav",
+   "assets/audio/objects/cookhouse_02.wav"
+  ],
+  "forge": [
+   "assets/audio/objects/forge_01.wav",
+   "assets/audio/objects/forge_02.wav"
+  ],
+  "gallows": [
+   "assets/audio/objects/gallows_01.wav",
+   "assets/audio/objects/gallows_02.wav"
+  ],
+  "stable": [
+   "assets/audio/objects/stable_01.wav",
+   "assets/audio/objects/stable_02.wav"
+  ],
+  "tool_rack": [
+   "assets/audio/objects/tool_rack_01.wav",
+   "assets/audio/objects/tool_rack_02.wav"
+  ],
+  "trough": [
+   "assets/audio/objects/trough_01.wav",
+   "assets/audio/objects/trough_02.wav"
+  ],
+  "guardroom": [
+   "assets/audio/objects/guardroom_01.wav",
+   "assets/audio/objects/guardroom_02.wav"
+  ]
+ },
+ "portals": {
+  "door_heavy": {
+   "open": "assets/audio/doors/door_heavy_open.wav",
+   "close": "assets/audio/doors/door_heavy_close.wav"
+  }
+ },
+ "levels_db": {
+  "rain_bed": -18.5,
+  "fire": -6.0,
+  "crows": -4.0,
+  "footsteps": -8.0,
+  "click": -14.0,
+  "hotspots": -12.0,
+  "doors": -12.0
+ }
+}

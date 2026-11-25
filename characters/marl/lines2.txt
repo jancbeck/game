@@ -1,0 +1,8 @@
+# Sergeant Marl, quest "The rider nobody rang for": lines 06-11. Voice: leonard.
+leonard: [low, irritated] You want to be useful? There's a grey mare in my stable that I never let in. Saddle still steaming. And nobody rang that bell. Find out who came through my gate tonight.
+leonard: [dry, patient] A horse doesn't open a gate by itself. Start with the stable. Then have a look at the bell.
+leonard: [turning it over, suspicious] That is kitchen linen, and greasy with it. There's only one woman on this rock who wipes her hands on everything she owns.
+leonard: [reading, quiet] Recalled. The commander's recalled to the capital, and we're to be cut to six men. [break] Six men, on a wall built for forty. [break] Well. Now you know why nobody wanted that bell rung.
+leonard: [resigned, almost amused] Hedda. Of course it was Hedda. I'll have words with her. Short ones. She'll have longer ones for me.
+leonard: [slow, measuring] You have the face of someone carrying more than they came in with. I'll not ask tonight. But I will ask.
+leonard: [dry, resigned] A horse. For the ford. In this weather. The commander's idea, I suppose, and my mare. Bring her back with four legs and I'll forgive you the rest.

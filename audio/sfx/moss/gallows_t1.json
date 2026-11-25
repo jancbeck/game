@@ -1,0 +1,17 @@
+{
+  "prompt": "a hemp rope creaking slowly on a wooden beam in the wind, slow rhythmic strain and groan of fibers, dry close-miked film sound effect, no reverb",
+  "negative_prompt": "reverb, echo, hall, music, speech, voices, singing, loud, aggressive",
+  "seed": 1000,
+  "seconds": 15,
+  "steps": 50,
+  "cfg": 4.0,
+  "sigma_shift": 5.0,
+  "model": "mlx-community/MOSS-SoundEffect-v2.0-bf16",
+  "sample_rate": 48000,
+  "channels": 1,
+  "wall_seconds": 207.8,
+  "model_load_seconds": 0.8,
+  "mlx_peak_memory_gb": 13.93,
+  "float_peak_before_clip": 0.016,
+  "file": "gallows_t1.wav"
+}

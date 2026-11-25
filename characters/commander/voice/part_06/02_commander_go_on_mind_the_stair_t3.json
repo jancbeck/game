@@ -1,0 +1,103 @@
+{
+  "file": "/Users/jan/workspace/projects/game/characters/commander/voice/part_06/02_commander_go_on_mind_the_stair_t3.wav",
+  "character": "commander",
+  "text": "[weary, almost kind] Go on. Mind the stair on your way down. The seventh step is a liar.",
+  "spoken_text": "Go on. Mind the stair on your way down. The seventh step is a liar.",
+  "tags": [
+    "weary, almost kind"
+  ],
+  "take": 3,
+  "reference": "voices/commander-reference-dry.wav",
+  "model": "drama3-small-IQ3_XXS.gguf",
+  "sampling": [
+    "temperature=0.7",
+    "top_p=0.7",
+    "top_k=30"
+  ],
+  "render_wall_s_all_takes": 133.9,
+  "speaker_similarity": 0.7661,
+  "duration_s": 7.2,
+  "expected_s": 6.27,
+  "silences": [],
+  "transcript": "Go on. Mind the stair on your way down. The seventh step is a liar.",
+  "words": [
+    {
+      "word": "Go",
+      "start": 0.16,
+      "end": 0.21
+    },
+    {
+      "word": "on.",
+      "start": 0.21,
+      "end": 0.75
+    },
+    {
+      "word": "Mind",
+      "start": 0.75,
+      "end": 0.84
+    },
+    {
+      "word": "the",
+      "start": 0.84,
+      "end": 1.51
+    },
+    {
+      "word": "stair",
+      "start": 1.81,
+      "end": 2.05
+    },
+    {
+      "word": "on",
+      "start": 2.05,
+      "end": 2.26
+    },
+    {
+      "word": "your",
+      "start": 2.26,
+      "end": 2.69
+    },
+    {
+      "word": "way",
+      "start": 2.69,
+      "end": 3.0
+    },
+    {
+      "word": "down.",
+      "start": 3.01,
+      "end": 3.81
+    },
+    {
+      "word": "The",
+      "start": 3.81,
+      "end": 3.94
+    },
+    {
+      "word": "seventh",
+      "start": 4.83,
+      "end": 5.11
+    },
+    {
+      "word": "step",
+      "start": 5.11,
+      "end": 5.63
+    },
+    {
+      "word": "is",
+      "start": 5.63,
+      "end": 5.7
+    },
+    {
+      "word": "a",
+      "start": 5.88,
+      "end": 6.01
+    },
+    {
+      "word": "liar.",
+      "start": 6.32,
+      "end": 6.93
+    }
+  ],
+  "missing_words": [],
+  "reasons": [],
+  "pass": true
+}

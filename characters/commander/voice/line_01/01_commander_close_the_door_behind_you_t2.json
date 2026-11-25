@@ -1,0 +1,158 @@
+{
+  "file": "/Users/jan/workspace/projects/game/characters/commander/voice/line_01/01_commander_close_the_door_behind_you_t2.wav",
+  "character": "commander",
+  "text": "[tired, courteous] Close the door behind you. The draught finds this room before it finds anyone else. People only climb my stair at night when they carry something.",
+  "spoken_text": "Close the door behind you. The draught finds this room before it finds anyone else. People only climb my stair at night when they carry something.",
+  "tags": [
+    "tired, courteous"
+  ],
+  "take": 2,
+  "reference": "voices/commander-reference-dry.wav",
+  "model": "drama3-small-IQ3_XXS.gguf",
+  "sampling": [
+    "temperature=0.7",
+    "top_p=0.7",
+    "top_k=30"
+  ],
+  "render_wall_s_all_takes": 77.3,
+  "speaker_similarity": 0.8529,
+  "duration_s": 9.33,
+  "expected_s": 10.5,
+  "silences": [],
+  "transcript": "Close the door behind you. The draft finds this room before it finds anyone else. People only climb my stair at night when they carry something.",
+  "words": [
+    {
+      "word": "Close",
+      "start": 0.01,
+      "end": 0.3
+    },
+    {
+      "word": "the",
+      "start": 0.3,
+      "end": 0.47
+    },
+    {
+      "word": "door",
+      "start": 0.48,
+      "end": 0.72
+    },
+    {
+      "word": "behind",
+      "start": 0.72,
+      "end": 1.08
+    },
+    {
+      "word": "you.",
+      "start": 1.08,
+      "end": 1.48
+    },
+    {
+      "word": "The",
+      "start": 2.14,
+      "end": 2.14
+    },
+    {
+      "word": "draft",
+      "start": 2.2,
+      "end": 2.28
+    },
+    {
+      "word": "finds",
+      "start": 2.28,
+      "end": 2.78
+    },
+    {
+      "word": "this",
+      "start": 2.78,
+      "end": 3.18
+    },
+    {
+      "word": "room",
+      "start": 3.18,
+      "end": 3.59
+    },
+    {
+      "word": "before",
+      "start": 3.59,
+      "end": 3.68
+    },
+    {
+      "word": "it",
+      "start": 4.03,
+      "end": 4.1
+    },
+    {
+      "word": "finds",
+      "start": 4.31,
+      "end": 4.42
+    },
+    {
+      "word": "anyone",
+      "start": 4.43,
+      "end": 4.64
+    },
+    {
+      "word": "else.",
+      "start": 4.85,
+      "end": 5.28
+    },
+    {
+      "word": "People",
+      "start": 5.56,
+      "end": 5.7
+    },
+    {
+      "word": "only",
+      "start": 5.7,
+      "end": 5.97
+    },
+    {
+      "word": "climb",
+      "start": 5.98,
+      "end": 6.3
+    },
+    {
+      "word": "my",
+      "start": 6.35,
+      "end": 6.47
+    },
+    {
+      "word": "stair",
+      "start": 6.47,
+      "end": 6.82
+    },
+    {
+      "word": "at",
+      "start": 6.82,
+      "end": 6.96
+    },
+    {
+      "word": "night",
+      "start": 6.96,
+      "end": 7.04
+    },
+    {
+      "word": "when",
+      "start": 7.46,
+      "end": 7.51
+    },
+    {
+      "word": "they",
+      "start": 7.67,
+      "end": 7.87
+    },
+    {
+      "word": "carry",
+      "start": 7.87,
+      "end": 8.22
+    },
+    {
+      "word": "something.",
+      "start": 8.22,
+      "end": 9.1
+    }
+  ],
+  "missing_words": [],
+  "reasons": [],
+  "pass": true
+}

@@ -1,0 +1,60 @@
+{
+ "_doc": "Runtime switches. data: the scene.json to load, relative to game/ (round-20 stand-in: assets_stub/r20/data/scene.json; Blender export: data/scene.json). sounds: the sounds.json (stand-in: assets_stub/r20/data/sounds.json; audio pass: data/sounds.json). start: the location a new game begins in; its scene.json is data, every other location <name> is read from locations/<name>/data/scene.json. audio: rain and fire are the loops of the open yard; an interior (scene.json \"rain\": false) plays the fire loop of its own light group (fire_group lists one id per location) and the room tone `room`, a loop that is made in code while the file is missing. archetypes: the builds a new game offers (data/archetypes.json). location_names: what the save lists call a location. Override data on the command line with: Godot --path game -- --data=data/scene.json",
+ "start": "courtyard",
+ "data": "data/scene.json",
+ "sounds": "data/sounds.json",
+ "story": "data/story/main.json",
+ "items": "data/items.json",
+ "skills": "data/skills.json",
+ "journal": "data/journal.json",
+ "chapters": "data/chapters.json",
+ "archetypes": "data/archetypes.json",
+ "location_names": {
+  "courtyard": "The courtyard",
+  "cookhouse": "The cookhouse"
+ },
+ "luts": "luts",
+ "audio": {
+  "rain": "assets/audio/rain_bed_t1_loop.wav",
+  "fire": "assets/audio/brazier_t1_loop.wav",
+  "fire_group": [
+   "fire_basket",
+   "cookhouse_hearth",
+   "tower_hearth"
+  ],
+  "room": "assets/audio/room_tone_loop.wav",
+  "menu_music": "assets/audio/menu_music.mp3",
+  "menu_music_db": -8.0,
+  "crows": [
+   "assets/audio/crows/crows_t1.wav",
+   "assets/audio/crows/crows_t2.wav"
+  ]
+ },
+ "camera": {
+  "intro": true,
+  "intro_zoom": 0.5,
+  "intro_s": 7.0,
+  "smooth_s": 0.9
+ },
+ "rain": {
+  "drops": 22000,
+  "fall_m_s": [
+   7.0,
+   9.0
+  ],
+  "wind_mean_m_s": 1.0,
+  "wind_gust_m_s": 3.4,
+  "gust_speed_m_s": 7.0,
+  "turbulence_m_s": 0.7,
+  "intensity": 1.0,
+  "splash_share": 0.6
+ },
+ "crows": {
+  "flee_radius_m": 3.0,
+  "solo_flight_s": [
+   18,
+   40
+  ],
+  "wing_spread_deg": 80
+ }
+}

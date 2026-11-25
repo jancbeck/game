@@ -1,0 +1,93 @@
+{
+  "file": "/Users/jan/workspace/projects/game/characters/narrator/voice/part_06/02_narrator_he_let_you_keep_it_t1.wav",
+  "character": "narrator",
+  "text": "[warm, soft, inner voice] He let you keep it. He also let you see him decide to.",
+  "spoken_text": "He let you keep it. He also let you see him decide to.",
+  "tags": [
+    "warm, soft, inner voice"
+  ],
+  "take": 1,
+  "reference": "voices/narrator-reference-dry.wav",
+  "model": "drama3-small-IQ3_XXS.gguf",
+  "sampling": [
+    "temperature=0.7",
+    "top_p=0.7",
+    "top_k=30"
+  ],
+  "render_wall_s_all_takes": 70.4,
+  "speaker_similarity": 0.7082,
+  "duration_s": 4.46,
+  "expected_s": 5.5,
+  "silences": [],
+  "transcript": "He let you keep it. He also let you see him decide to.",
+  "words": [
+    {
+      "word": "He",
+      "start": 0.05,
+      "end": 0.12
+    },
+    {
+      "word": "let",
+      "start": 0.12,
+      "end": 0.3
+    },
+    {
+      "word": "you",
+      "start": 0.3,
+      "end": 0.48
+    },
+    {
+      "word": "keep",
+      "start": 0.48,
+      "end": 0.72
+    },
+    {
+      "word": "it.",
+      "start": 0.72,
+      "end": 0.96
+    },
+    {
+      "word": "He",
+      "start": 1.96,
+      "end": 1.96
+    },
+    {
+      "word": "also",
+      "start": 1.96,
+      "end": 1.96
+    },
+    {
+      "word": "let",
+      "start": 2.01,
+      "end": 2.04
+    },
+    {
+      "word": "you",
+      "start": 2.04,
+      "end": 2.37
+    },
+    {
+      "word": "see",
+      "start": 2.37,
+      "end": 2.7
+    },
+    {
+      "word": "him",
+      "start": 2.7,
+      "end": 2.92
+    },
+    {
+      "word": "decide",
+      "start": 2.92,
+      "end": 3.05
+    },
+    {
+      "word": "to.",
+      "start": 3.92,
+      "end": 4.31
+    }
+  ],
+  "missing_words": [],
+  "reasons": [],
+  "pass": true
+}

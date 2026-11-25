@@ -1,0 +1,11 @@
+{
+ "_doc": "Recipe for scripts/character.py. Sergeant Marl: cloned voice Leonard (galley-v2), portrait-2. line_01-05 in lines.txt, line_06-11 (quest) in lines2.txt.",
+ "name": "Sergeant Marl",
+ "voice": "leonard",
+ "lines": ["lines.txt", "lines2.txt"],
+ "portrait": "final/portrait_768.jpg",
+ "clip_prompt": "A weathered old sergeant of a medieval garrison talks in a dry, tired voice, small natural head movement, cold rain light and warm firelight",
+ "idle_prompt": "A weathered old sergeant listens to someone speaking, mouth closed, small nods, blinks, breathing, head still",
+ "face_crop": "crop=340:340:142:40",
+ "distance": 2.5
+}

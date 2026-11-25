@@ -1,0 +1,123 @@
+{
+  "file": "/Users/jan/workspace/projects/game/characters/narrator/voice/part_06/01_narrator_he_has_not_stood_up_t3.wav",
+  "character": "narrator",
+  "text": "[clipped, proud, inner voice] He has not stood up. A sergeant who stays seated is telling you exactly what he thinks of you.",
+  "spoken_text": "He has not stood up. A sergeant who stays seated is telling you exactly what he thinks of you.",
+  "tags": [
+    "clipped, proud, inner voice"
+  ],
+  "take": 3,
+  "reference": "voices/narrator-reference-dry.wav",
+  "model": "drama3-small-IQ3_XXS.gguf",
+  "sampling": [
+    "temperature=0.7",
+    "top_p=0.7",
+    "top_k=30"
+  ],
+  "render_wall_s_all_takes": 70.4,
+  "speaker_similarity": 0.6434,
+  "duration_s": 5.34,
+  "expected_s": 7.81,
+  "silences": [],
+  "transcript": "He has not stood up. A sergeant who stays seated is telling you exactly what he thinks of you.",
+  "words": [
+    {
+      "word": "He",
+      "start": 0.05,
+      "end": 0.13
+    },
+    {
+      "word": "has",
+      "start": 0.13,
+      "end": 0.28
+    },
+    {
+      "word": "not",
+      "start": 0.34,
+      "end": 0.53
+    },
+    {
+      "word": "stood",
+      "start": 0.53,
+      "end": 0.86
+    },
+    {
+      "word": "up.",
+      "start": 0.86,
+      "end": 1.1
+    },
+    {
+      "word": "A",
+      "start": 1.84,
+      "end": 1.84
+    },
+    {
+      "word": "sergeant",
+      "start": 1.84,
+      "end": 1.97
+    },
+    {
+      "word": "who",
+      "start": 1.97,
+      "end": 2.22
+    },
+    {
+      "word": "stays",
+      "start": 2.22,
+      "end": 2.56
+    },
+    {
+      "word": "seated",
+      "start": 2.67,
+      "end": 2.94
+    },
+    {
+      "word": "is",
+      "start": 3.28,
+      "end": 3.28
+    },
+    {
+      "word": "telling",
+      "start": 3.64,
+      "end": 3.64
+    },
+    {
+      "word": "you",
+      "start": 3.7,
+      "end": 3.8
+    },
+    {
+      "word": "exactly",
+      "start": 3.88,
+      "end": 4.15
+    },
+    {
+      "word": "what",
+      "start": 4.15,
+      "end": 4.35
+    },
+    {
+      "word": "he",
+      "start": 4.35,
+      "end": 4.37
+    },
+    {
+      "word": "thinks",
+      "start": 4.51,
+      "end": 4.7
+    },
+    {
+      "word": "of",
+      "start": 4.8,
+      "end": 4.85
+    },
+    {
+      "word": "you.",
+      "start": 4.85,
+      "end": 5.17
+    }
+  ],
+  "missing_words": [],
+  "reasons": [],
+  "pass": true
+}

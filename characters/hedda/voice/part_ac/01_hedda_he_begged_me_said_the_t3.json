@@ -1,0 +1,223 @@
+{
+  "file": "characters/hedda/voice/part_ac/01_hedda_he_begged_me_said_the_t3.wav",
+  "character": "hedda",
+  "text": "[low, conspiratorial] He begged me. Said the letter's for the commander's eyes, and if the bell rang, Marl would have it open before the boy got his boots off. So I tied it. One knot. I've tied worse on worse men.",
+  "spoken_text": "He begged me. Said the letter's for the commander's eyes, and if the bell rang, Marl would have it open before the boy got his boots off. So I tied it. One knot. I've tied worse on worse men.",
+  "tags": [
+    "low, conspiratorial"
+  ],
+  "take": 3,
+  "reference": "voices/hedda-reference-dry.wav",
+  "model": "drama3-small-IQ3_XXS.gguf",
+  "sampling": [
+    "temperature=0.7",
+    "top_p=0.7",
+    "top_k=30"
+  ],
+  "render_wall_s_all_takes": 173.6,
+  "speaker_similarity": 0.851,
+  "duration_s": 15.46,
+  "expected_s": 15.5,
+  "silences": [],
+  "transcript": "He begged me, said the letters for the commander's eyes, and if the bell rang, Marl would have it open before the boy got his boots off. So I tied it, one knot. I've tied worse on worse men.",
+  "words": [
+    {
+      "word": "He",
+      "start": 0.1,
+      "end": 0.19
+    },
+    {
+      "word": "begged",
+      "start": 0.38,
+      "end": 0.89
+    },
+    {
+      "word": "me,",
+      "start": 0.89,
+      "end": 1.2
+    },
+    {
+      "word": "said",
+      "start": 1.33,
+      "end": 1.44
+    },
+    {
+      "word": "the",
+      "start": 1.44,
+      "end": 1.62
+    },
+    {
+      "word": "letters",
+      "start": 1.62,
+      "end": 2.03
+    },
+    {
+      "word": "for",
+      "start": 2.03,
+      "end": 2.12
+    },
+    {
+      "word": "the",
+      "start": 2.23,
+      "end": 2.39
+    },
+    {
+      "word": "commander's",
+      "start": 2.46,
+      "end": 3.11
+    },
+    {
+      "word": "eyes,",
+      "start": 3.12,
+      "end": 4.12
+    },
+    {
+      "word": "and",
+      "start": 4.22,
+      "end": 4.31
+    },
+    {
+      "word": "if",
+      "start": 4.5,
+      "end": 4.6
+    },
+    {
+      "word": "the",
+      "start": 4.6,
+      "end": 4.89
+    },
+    {
+      "word": "bell",
+      "start": 4.89,
+      "end": 5.16
+    },
+    {
+      "word": "rang,",
+      "start": 5.45,
+      "end": 5.88
+    },
+    {
+      "word": "Marl",
+      "start": 5.88,
+      "end": 6.15
+    },
+    {
+      "word": "would",
+      "start": 6.15,
+      "end": 6.51
+    },
+    {
+      "word": "have",
+      "start": 6.58,
+      "end": 6.83
+    },
+    {
+      "word": "it",
+      "start": 6.83,
+      "end": 7.0
+    },
+    {
+      "word": "open",
+      "start": 7.0,
+      "end": 7.44
+    },
+    {
+      "word": "before",
+      "start": 7.54,
+      "end": 7.84
+    },
+    {
+      "word": "the",
+      "start": 7.84,
+      "end": 8.04
+    },
+    {
+      "word": "boy",
+      "start": 8.04,
+      "end": 8.24
+    },
+    {
+      "word": "got",
+      "start": 8.24,
+      "end": 8.44
+    },
+    {
+      "word": "his",
+      "start": 8.44,
+      "end": 8.49
+    },
+    {
+      "word": "boots",
+      "start": 8.77,
+      "end": 8.98
+    },
+    {
+      "word": "off.",
+      "start": 8.98,
+      "end": 9.42
+    },
+    {
+      "word": "So",
+      "start": 9.52,
+      "end": 9.61
+    },
+    {
+      "word": "I",
+      "start": 9.8,
+      "end": 9.94
+    },
+    {
+      "word": "tied",
+      "start": 9.94,
+      "end": 10.45
+    },
+    {
+      "word": "it,",
+      "start": 10.75,
+      "end": 11.35
+    },
+    {
+      "word": "one",
+      "start": 11.35,
+      "end": 11.81
+    },
+    {
+      "word": "knot.",
+      "start": 11.88,
+      "end": 13.03
+    },
+    {
+      "word": "I've",
+      "start": 13.26,
+      "end": 13.55
+    },
+    {
+      "word": "tied",
+      "start": 13.55,
+      "end": 13.94
+    },
+    {
+      "word": "worse",
+      "start": 13.94,
+      "end": 14.19
+    },
+    {
+      "word": "on",
+      "start": 14.49,
+      "end": 14.63
+    },
+    {
+      "word": "worse",
+      "start": 14.69,
+      "end": 15.12
+    },
+    {
+      "word": "men.",
+      "start": 15.12,
+      "end": 15.46
+    }
+  ],
+  "missing_words": [],
+  "reasons": [],
+  "pass": true
+}

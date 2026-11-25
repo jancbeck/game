@@ -1,0 +1,128 @@
+{
+  "file": "/Users/jan/workspace/projects/game/characters/narrator/voice/part_14/01_narrator_the_milk_is_fresh_she_t2.wav",
+  "character": "narrator",
+  "text": "[warm, soft, inner voice] The milk is fresh. She feeds the cat before she feeds eleven men, and she would deny it under oath.",
+  "spoken_text": "The milk is fresh. She feeds the cat before she feeds eleven men, and she would deny it under oath.",
+  "tags": [
+    "warm, soft, inner voice"
+  ],
+  "take": 2,
+  "reference": "voices/narrator-reference-dry.wav",
+  "model": "drama3-small-IQ3_XXS.gguf",
+  "sampling": [
+    "temperature=0.7",
+    "top_p=0.7",
+    "top_k=30"
+  ],
+  "render_wall_s_all_takes": 59.8,
+  "speaker_similarity": 0.7384,
+  "duration_s": 7.06,
+  "expected_s": 8.19,
+  "silences": [],
+  "transcript": "The milk is fresh. She feeds the cat before she feeds eleven men, and she would deny it under oath.",
+  "words": [
+    {
+      "word": "The",
+      "start": 0.05,
+      "end": 0.39
+    },
+    {
+      "word": "milk",
+      "start": 0.39,
+      "end": 0.91
+    },
+    {
+      "word": "is",
+      "start": 0.91,
+      "end": 1.11
+    },
+    {
+      "word": "fresh.",
+      "start": 1.11,
+      "end": 2.24
+    },
+    {
+      "word": "She",
+      "start": 2.29,
+      "end": 2.47
+    },
+    {
+      "word": "feeds",
+      "start": 2.47,
+      "end": 2.86
+    },
+    {
+      "word": "the",
+      "start": 2.86,
+      "end": 2.99
+    },
+    {
+      "word": "cat",
+      "start": 3.11,
+      "end": 3.32
+    },
+    {
+      "word": "before",
+      "start": 3.32,
+      "end": 3.56
+    },
+    {
+      "word": "she",
+      "start": 3.56,
+      "end": 4.02
+    },
+    {
+      "word": "feeds",
+      "start": 4.37,
+      "end": 4.41
+    },
+    {
+      "word": "eleven",
+      "start": 4.42,
+      "end": 4.88
+    },
+    {
+      "word": "men,",
+      "start": 4.88,
+      "end": 5.34
+    },
+    {
+      "word": "and",
+      "start": 5.34,
+      "end": 5.51
+    },
+    {
+      "word": "she",
+      "start": 5.51,
+      "end": 5.68
+    },
+    {
+      "word": "would",
+      "start": 5.68,
+      "end": 5.94
+    },
+    {
+      "word": "deny",
+      "start": 6.05,
+      "end": 6.2
+    },
+    {
+      "word": "it",
+      "start": 6.2,
+      "end": 6.27
+    },
+    {
+      "word": "under",
+      "start": 6.31,
+      "end": 6.6
+    },
+    {
+      "word": "oath.",
+      "start": 6.6,
+      "end": 7.06
+    }
+  ],
+  "missing_words": [],
+  "reasons": [],
+  "pass": true
+}

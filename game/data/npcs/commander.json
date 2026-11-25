@@ -1,0 +1,21 @@
+{
+ "_doc": "Captain Orrin Vael, the commander, seated in the chair behind the desk in his chamber in the tower on the cliff (location tower, scene.json people): position is the floor under the middle of the seat (plan x -0.3, y 1.1; prop tower_chair, seat top 0.50 m), face is the guest's stand point. Fields as in marl.json. Source material: characters/commander/.",
+ "id": "commander",
+ "name": "Captain Vael",
+ "location": "tower",
+ "model": "commander",
+ "idle_clip": "sit",
+ "talk_clip": "sit_talk",
+ "position": [-0.3, 0.0, -1.1],
+ "face": [-0.2, 0.0, 0.65],
+ "stand": [-0.2, 0.0, 0.65],
+ "palette": {
+  "wool": [0.16, 0.18, 0.22],
+  "hood": [0.16, 0.18, 0.22],
+  "jerkin": [0.18, 0.2, 0.25],
+  "skin": [0.58, 0.44, 0.37]
+ },
+ "assets": "assets/npcs/commander",
+ "portrait": "assets/npcs/commander/portrait.jpg",
+ "fps": 25
+}

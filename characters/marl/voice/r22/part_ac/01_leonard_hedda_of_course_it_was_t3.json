@@ -1,0 +1,134 @@
+{
+  "file": "characters/marl/voice6/part_ac/01_leonard_hedda_of_course_it_was_t3.wav",
+  "character": "leonard",
+  "text": "[resigned, almost amused] Hedda. Of course it was Hedda. I'll have words with her. Short ones. She'll have longer ones for me.",
+  "spoken_text": "Hedda. Of course it was Hedda. I'll have words with her. Short ones. She'll have longer ones for me.",
+  "tags": [
+    "resigned, almost amused"
+  ],
+  "take": 3,
+  "reference": "voices/leonard-reference-dry.wav",
+  "model": "drama3-small-IQ3_XXS.gguf",
+  "sampling": [
+    "temperature=0.7",
+    "top_p=0.7",
+    "top_k=30"
+  ],
+  "render_wall_s_all_takes": 129.0,
+  "speaker_similarity": 0.766,
+  "duration_s": 10.45,
+  "expected_s": 7.81,
+  "silences": [
+    [
+      0.45,
+      2.13
+    ],
+    [
+      3.1,
+      4.99
+    ]
+  ],
+  "transcript": "Heda. Of course it was Heda. I'll have words with her. Short ones. She'll have longer ones for me.",
+  "words": [
+    {
+      "word": "Heda.",
+      "start": 0.08,
+      "end": 1.26
+    },
+    {
+      "word": "Of",
+      "start": 1.26,
+      "end": 1.42
+    },
+    {
+      "word": "course",
+      "start": 1.43,
+      "end": 1.95
+    },
+    {
+      "word": "it",
+      "start": 2.12,
+      "end": 2.12
+    },
+    {
+      "word": "was",
+      "start": 2.13,
+      "end": 2.38
+    },
+    {
+      "word": "Heda.",
+      "start": 2.38,
+      "end": 3.0
+    },
+    {
+      "word": "I'll",
+      "start": 3.0,
+      "end": 3.13
+    },
+    {
+      "word": "have",
+      "start": 3.52,
+      "end": 4.05
+    },
+    {
+      "word": "words",
+      "start": 4.06,
+      "end": 4.72
+    },
+    {
+      "word": "with",
+      "start": 4.99,
+      "end": 5.25
+    },
+    {
+      "word": "her.",
+      "start": 5.25,
+      "end": 6.07
+    },
+    {
+      "word": "Short",
+      "start": 6.07,
+      "end": 7.35
+    },
+    {
+      "word": "ones.",
+      "start": 7.38,
+      "end": 7.66
+    },
+    {
+      "word": "She'll",
+      "start": 7.66,
+      "end": 8.66
+    },
+    {
+      "word": "have",
+      "start": 8.98,
+      "end": 9.31
+    },
+    {
+      "word": "longer",
+      "start": 9.32,
+      "end": 9.64
+    },
+    {
+      "word": "ones",
+      "start": 9.64,
+      "end": 9.91
+    },
+    {
+      "word": "for",
+      "start": 9.91,
+      "end": 10.07
+    },
+    {
+      "word": "me.",
+      "start": 10.07,
+      "end": 10.31
+    }
+  ],
+  "missing_words": [],
+  "reasons": [
+    "silence of 1.5 s or more at [[0.45, 2.13], [3.1, 4.99]]"
+  ],
+  "pass": false
+}

@@ -1,0 +1,143 @@
+{
+  "file": "/Users/jan/workspace/projects/game/characters/marl/voice/part_06/01_leonard_that_is_kitchen_linen_and_t3.wav",
+  "character": "leonard",
+  "text": "[turning it over, suspicious] That is kitchen linen, and greasy with it. There's only one woman on this rock who wipes her hands on everything she owns.",
+  "spoken_text": "That is kitchen linen, and greasy with it. There's only one woman on this rock who wipes her hands on everything she owns.",
+  "tags": [
+    "turning it over, suspicious"
+  ],
+  "take": 3,
+  "reference": "voices/leonard-reference-dry.wav",
+  "model": "drama3-small-IQ3_XXS.gguf",
+  "sampling": [
+    "temperature=0.7",
+    "top_p=0.7",
+    "top_k=30"
+  ],
+  "render_wall_s_all_takes": 63.3,
+  "speaker_similarity": 0.8097,
+  "duration_s": 6.73,
+  "expected_s": 9.35,
+  "silences": [],
+  "transcript": "That is kitchen linen and greasy with it. There's only one woman on this rock who wipes her hands on everything she owns.",
+  "words": [
+    {
+      "word": "That",
+      "start": 0.04,
+      "end": 0.34
+    },
+    {
+      "word": "is",
+      "start": 0.36,
+      "end": 0.55
+    },
+    {
+      "word": "kitchen",
+      "start": 0.55,
+      "end": 1.21
+    },
+    {
+      "word": "linen",
+      "start": 1.21,
+      "end": 1.26
+    },
+    {
+      "word": "and",
+      "start": 1.78,
+      "end": 1.87
+    },
+    {
+      "word": "greasy",
+      "start": 1.87,
+      "end": 2.21
+    },
+    {
+      "word": "with",
+      "start": 2.21,
+      "end": 2.43
+    },
+    {
+      "word": "it.",
+      "start": 2.43,
+      "end": 2.65
+    },
+    {
+      "word": "There's",
+      "start": 2.87,
+      "end": 3.14
+    },
+    {
+      "word": "only",
+      "start": 3.14,
+      "end": 3.37
+    },
+    {
+      "word": "one",
+      "start": 3.37,
+      "end": 3.53
+    },
+    {
+      "word": "woman",
+      "start": 3.54,
+      "end": 3.83
+    },
+    {
+      "word": "on",
+      "start": 3.83,
+      "end": 3.94
+    },
+    {
+      "word": "this",
+      "start": 3.94,
+      "end": 4.05
+    },
+    {
+      "word": "rock",
+      "start": 4.17,
+      "end": 4.44
+    },
+    {
+      "word": "who",
+      "start": 4.6,
+      "end": 4.6
+    },
+    {
+      "word": "wipes",
+      "start": 4.61,
+      "end": 4.87
+    },
+    {
+      "word": "her",
+      "start": 4.87,
+      "end": 5.03
+    },
+    {
+      "word": "hands",
+      "start": 5.03,
+      "end": 5.3
+    },
+    {
+      "word": "on",
+      "start": 5.3,
+      "end": 5.4
+    },
+    {
+      "word": "everything",
+      "start": 5.4,
+      "end": 5.94
+    },
+    {
+      "word": "she",
+      "start": 5.94,
+      "end": 6.1
+    },
+    {
+      "word": "owns.",
+      "start": 6.1,
+      "end": 6.5
+    }
+  ],
+  "missing_words": [],
+  "reasons": [],
+  "pass": true
+}

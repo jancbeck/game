@@ -1,0 +1,8 @@
+# Hedda, the garrison cook, in the cookhouse. Voice: hedda (designed, characters/hedda/design_voice.py).
+hedda: [sharp, without looking up] Shut that door, you're letting the rain into my bread. Who let you in? No, don't tell me. Marl. Marl lets anything in.
+hedda: [dry, savouring it] Hedda. I cook. I've cooked for three commanders and buried two of them, and the third one won't eat his greens.
+hedda: [too innocent] Rider? What rider. I've been up to my elbows in pease since vespers. Did you see a rider? No. Then there wasn't one.
+hedda: [heavy sigh, caught out] That's my linen. Fine. It was Tam, my sister's boy. He rides for the king's post, and he wouldn't let go of his letter, not even to eat.
+hedda: [low, conspiratorial] He begged me. Said the letter's for the commander's eyes, and if the bell rang, Marl would have it open before the boy got his boots off. So I tied it. One knot. I've tied worse on worse men.
+hedda: [warning, with a dark chuckle] Up the tower stair, in the watch hood, asleep with the satchel under his head like a pillow. Wake him, and I'll salt your soup till midsummer.
+hedda: [dismissive, amused] Go on, then. And wipe your feet. This floor has seen more blood than you have, and it's still cleaner.

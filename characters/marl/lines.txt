@@ -1,0 +1,6 @@
+# Sergeant Marl, on watch under the gate shelter by the fire basket. Voice: leonard.
+leonard: [dry, tired] Another one through the gate after dark. Either you're lost, or somebody sent you to count our spears.
+leonard: [dry] Sergeant Marl. Thirty-one winters on this rock, and the rock is winning.
+leonard: [matter-of-fact] A gate, a wall, and eleven men who argue about the soup. We watch the road north. The road has done nothing interesting since the old king died.
+leonard: [wry] The last man who kept that bell in the rain let it rust silent. Ring it once for a rider, twice for trouble. Three times, and I'll want to know who taught you to count.
+leonard: [dry] Mind the cart on your way out, and the cook as well. Mostly the cook.

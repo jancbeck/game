@@ -1,0 +1,11 @@
+Minimal ambient neoclassical chamber music, melancholic and introspective. Instrumental only, no vocals.
+Create a 2 minute 30 second instrumental track at a slow tempo around 56 BPM, in D minor, rubato.
+Instruments: solo cello holding long low drones, a muted upright piano playing sparse single notes
+and open fifths, a high viola harmonic. Nothing else.
+Production: close-miked, intimate, small dry room, the felt of the piano hammers audible.
+
+[0:00 - 0:20] Intro: cello drone alone. Intensity: 1/10 (Very low)
+[0:20 - 0:50] Piano enters with a few isolated notes and long silences between them. Intensity: 2/10 (Low)
+[0:50 - 1:40] A slow four-note piano figure, repeated with small variations; the viola harmonic appears above it. Intensity: 3/10 (Low)
+[1:40 - 2:10] Thins out to the cello and a single repeated piano note. Intensity: 2/10 (Low)
+[2:10 - 2:30] Outro: cello drone alone, as at the start. Intensity: 1/10 (Very low)

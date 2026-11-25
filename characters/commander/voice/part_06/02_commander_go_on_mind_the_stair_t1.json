@@ -1,0 +1,114 @@
+{
+  "file": "/Users/jan/workspace/projects/game/characters/commander/voice/part_06/02_commander_go_on_mind_the_stair_t1.wav",
+  "character": "commander",
+  "text": "[weary, almost kind] Go on. Mind the stair on your way down. The seventh step is a liar.",
+  "spoken_text": "Go on. Mind the stair on your way down. The seventh step is a liar.",
+  "tags": [
+    "weary, almost kind"
+  ],
+  "take": 1,
+  "reference": "voices/commander-reference-dry.wav",
+  "model": "drama3-small-IQ3_XXS.gguf",
+  "sampling": [
+    "temperature=0.7",
+    "top_p=0.7",
+    "top_k=30"
+  ],
+  "render_wall_s_all_takes": 133.9,
+  "speaker_similarity": 0.7411,
+  "duration_s": 11.94,
+  "expected_s": 6.27,
+  "silences": [
+    [
+      0.79,
+      3.07
+    ],
+    [
+      5.21,
+      9.96
+    ]
+  ],
+  "transcript": "Go on. Mind the stair on your way down. The seventh step is a liar.",
+  "words": [
+    {
+      "word": "Go",
+      "start": 0.06,
+      "end": 0.24
+    },
+    {
+      "word": "on.",
+      "start": 0.24,
+      "end": 0.73
+    },
+    {
+      "word": "Mind",
+      "start": 3.04,
+      "end": 3.04
+    },
+    {
+      "word": "the",
+      "start": 3.04,
+      "end": 3.04
+    },
+    {
+      "word": "stair",
+      "start": 3.04,
+      "end": 3.04
+    },
+    {
+      "word": "on",
+      "start": 3.1,
+      "end": 3.28
+    },
+    {
+      "word": "your",
+      "start": 3.28,
+      "end": 3.76
+    },
+    {
+      "word": "way",
+      "start": 3.76,
+      "end": 4.0
+    },
+    {
+      "word": "down.",
+      "start": 4.0,
+      "end": 5.28
+    },
+    {
+      "word": "The",
+      "start": 9.92,
+      "end": 9.92
+    },
+    {
+      "word": "seventh",
+      "start": 9.92,
+      "end": 9.92
+    },
+    {
+      "word": "step",
+      "start": 9.92,
+      "end": 9.92
+    },
+    {
+      "word": "is",
+      "start": 9.98,
+      "end": 10.32
+    },
+    {
+      "word": "a",
+      "start": 10.32,
+      "end": 10.63
+    },
+    {
+      "word": "liar.",
+      "start": 10.63,
+      "end": 11.92
+    }
+  ],
+  "missing_words": [],
+  "reasons": [
+    "silence of 1.5 s or more at [[0.79, 3.07], [5.21, 9.96]]"
+  ],
+  "pass": false
+}

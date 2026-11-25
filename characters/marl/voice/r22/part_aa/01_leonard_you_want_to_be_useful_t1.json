@@ -1,0 +1,193 @@
+{
+  "file": "characters/marl/voice6/part_aa/01_leonard_you_want_to_be_useful_t1.wav",
+  "character": "leonard",
+  "text": "[low, irritated] You want to be useful? There's a grey mare in my stable that I never let in. Saddle still steaming. And nobody rang that bell. Find out who came through my gate tonight.",
+  "spoken_text": "You want to be useful? There's a grey mare in my stable that I never let in. Saddle still steaming. And nobody rang that bell. Find out who came through my gate tonight.",
+  "tags": [
+    "low, irritated"
+  ],
+  "take": 1,
+  "reference": "voices/leonard-reference-dry.wav",
+  "model": "drama3-small-IQ3_XXS.gguf",
+  "sampling": [
+    "temperature=0.7",
+    "top_p=0.7",
+    "top_k=30"
+  ],
+  "render_wall_s_all_takes": 140.7,
+  "speaker_similarity": 0.7989,
+  "duration_s": 10.68,
+  "expected_s": 13.19,
+  "silences": [],
+  "transcript": "You want to be useful. There's a gray mare in my stable that I never let in, saddle still steaming, and nobody rang that bell. Find out who came through my gate tonight.",
+  "words": [
+    {
+      "word": "You",
+      "start": 0.05,
+      "end": 0.17
+    },
+    {
+      "word": "want",
+      "start": 0.17,
+      "end": 0.39
+    },
+    {
+      "word": "to",
+      "start": 0.4,
+      "end": 0.51
+    },
+    {
+      "word": "be",
+      "start": 0.51,
+      "end": 0.62
+    },
+    {
+      "word": "useful.",
+      "start": 0.62,
+      "end": 1.05
+    },
+    {
+      "word": "There's",
+      "start": 2.19,
+      "end": 2.53
+    },
+    {
+      "word": "a",
+      "start": 2.54,
+      "end": 2.59
+    },
+    {
+      "word": "gray",
+      "start": 2.59,
+      "end": 2.82
+    },
+    {
+      "word": "mare",
+      "start": 2.82,
+      "end": 2.95
+    },
+    {
+      "word": "in",
+      "start": 3.04,
+      "end": 3.16
+    },
+    {
+      "word": "my",
+      "start": 3.16,
+      "end": 3.17
+    },
+    {
+      "word": "stable",
+      "start": 3.31,
+      "end": 3.65
+    },
+    {
+      "word": "that",
+      "start": 3.65,
+      "end": 4.01
+    },
+    {
+      "word": "I",
+      "start": 4.02,
+      "end": 4.11
+    },
+    {
+      "word": "never",
+      "start": 4.31,
+      "end": 4.56
+    },
+    {
+      "word": "let",
+      "start": 4.56,
+      "end": 4.83
+    },
+    {
+      "word": "in,",
+      "start": 4.83,
+      "end": 5.04
+    },
+    {
+      "word": "saddle",
+      "start": 5.09,
+      "end": 5.43
+    },
+    {
+      "word": "still",
+      "start": 5.43,
+      "end": 5.75
+    },
+    {
+      "word": "steaming,",
+      "start": 5.75,
+      "end": 6.42
+    },
+    {
+      "word": "and",
+      "start": 6.42,
+      "end": 6.7
+    },
+    {
+      "word": "nobody",
+      "start": 7.2,
+      "end": 7.26
+    },
+    {
+      "word": "rang",
+      "start": 7.26,
+      "end": 7.64
+    },
+    {
+      "word": "that",
+      "start": 7.64,
+      "end": 8.02
+    },
+    {
+      "word": "bell.",
+      "start": 8.02,
+      "end": 8.7
+    },
+    {
+      "word": "Find",
+      "start": 8.75,
+      "end": 8.93
+    },
+    {
+      "word": "out",
+      "start": 8.93,
+      "end": 9.09
+    },
+    {
+      "word": "who",
+      "start": 9.1,
+      "end": 9.27
+    },
+    {
+      "word": "came",
+      "start": 9.27,
+      "end": 9.47
+    },
+    {
+      "word": "through",
+      "start": 9.47,
+      "end": 9.73
+    },
+    {
+      "word": "my",
+      "start": 9.89,
+      "end": 10.01
+    },
+    {
+      "word": "gate",
+      "start": 10.01,
+      "end": 10.24
+    },
+    {
+      "word": "tonight.",
+      "start": 10.24,
+      "end": 10.68
+    }
+  ],
+  "missing_words": [],
+  "reasons": [],
+  "pass": true
+}

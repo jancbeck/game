@@ -1,0 +1,12 @@
+{
+  "prompt": "a person in leather boots walking at a slow steady pace on wet cobblestones and splashing through puddles, dry close-miked film sound effect, no reverb",
+  "negative_prompt": "reverb, echo, hall, music, speech, voices, singing, loud, running",
+  "seed": 1001,
+  "seconds": 15.0,
+  "dit": "medium",
+  "decoder": "same-l",
+  "cfg": 3.0,
+  "steps": 8,
+  "wall_seconds": 7.76,
+  "file": "footsteps_t2.wav"
+}

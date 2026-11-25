@@ -1,0 +1,107 @@
+{
+  "_doc": "Tables of the commander's chamber that are not geometry (plan.json), camera (trace.json) or look (layout*.json). Positions are plan metres: X east, Y north, Z up.",
+  "views": {
+    "_doc": "Check views of build_scene.py --view. plan: orthographic, straight down. eye: perspective at a person's eye height, from the sill toward the desk. door: from the stair door toward the window. window: from the desk toward the window and the drop.",
+    "centre": [0.0, 0.3],
+    "plan": {"location": [0.0, 0.3, 60], "ortho_scale": 8.0},
+    "eye": {"location": [1.3, -1.9, 1.65], "target": [-0.6, 1.8, 1.2], "lens": 22},
+    "door": {"location": [2.45, -1.2, 1.65], "target": [-1.5, 1.4, 1.1], "lens": 22},
+    "window": {"location": [-0.9, 0.4, 1.6], "target": [-2.0, 3.0, 1.8], "lens": 24}
+  },
+  "light_groups": {
+    "_doc": "Light-group ids for anim.py's flickering sources, by \"<plan key>/<index of the source within its prop>\".",
+    "tower_hearth/0": "tower_hearth",
+    "tower_desk/0": "tower_candles",
+    "tower_shrine/0": "tower_lamp"
+  },
+  "perch_names": [],
+  "people": {
+    "_doc": "Where a person is in the room, plan metres (x, y), and what they face. commander: seated in the chair behind the desk (prop tower_chair, seat top 0.50 m), position on the floor under the middle of the seat, facing the guest; stand: where the player stands to talk to him, on the other side of the desk. The export writes them to scene.json `people` in Godot axes, in the fields of data/npcs/<id>.json.",
+    "commander": {"position": [-0.3, 1.1], "face": [-0.2, -0.65], "stand": [-0.2, -0.65]}
+  },
+  "exits": {
+    "_doc": "Doors to other locations: id, pos [x, y] just inside the doorway, label, target (a location name). The stair door at the east end of the back wall leads down the spiral to the tower's door and back to the yard. In the courtyard the way in is the exit `tower` at the gap in the south parapet, near the south-west corner.",
+    "list": [
+      {"id": "courtyard", "pos": [2.3, 1.8], "label": "Stairs down", "target": "courtyard"}
+    ]
+  },
+  "fires": {
+    "_doc": "Mantaflow fire simulations of scene/game_fire.py, by light-group id; the keys are those of the courtyard's table (the game-export skill). A small wall hearth: a bed of coals with three logs, the flames rise under the hood.",
+    "tower_hearth": {
+      "pad": [0.1, 0.1, 0.12, 0.12],
+      "below": 0.04,
+      "height": 0.7,
+      "voxel": 0.01,
+      "wind": 0.0,
+      "fuel": 2.0,
+      "burn": 0.42,
+      "beta": 3.0,
+      "vort": 0.2,
+      "flame_vort": 1.2,
+      "noise": 0.2,
+      "smoke": 0.4,
+      "peak": 1.1,
+      "emit_from": null
+    }
+  },
+  "_hotspots_doc": "Interactable objects, in hotspots.json order (the ids masks number them from 1). anchor: plan key of the prop, or obj:<object name>. stand: where the figure stands to interact (plan x, y). volume: click box; without it the box is the prop's own bounds. text: the look text.",
+  "hotspots": [
+    {
+      "id": "desk",
+      "name": "Commander's desk",
+      "anchor": "tower_desk",
+      "stand": [0.0, -0.65],
+      "text": "Oak, black with forty winters of ink and elbows, and heavy enough that nobody has ever moved it twice. Three candles on an iron stand, a sand-shaker, a jug and a cup that have not been washed since morning. Whatever the commander does at night, he does here, on his feet."
+    },
+    {
+      "id": "ledgers",
+      "name": "Ledgers",
+      "anchor": "obj:desk_ledgers",
+      "stand": [-0.8, -0.65],
+      "volume": {"center": [-0.64, 0.2, 0.96], "size": [0.82, 0.42, 0.22], "rot": 0},
+      "text": "The muster roll and the stores book, side by side. The roll has forty lines ruled in it, and eleven have a name. The stores book is thinner and the corners are soft from turning. Under a river stone beside them lies a letter with a crown seal, a month old and unanswered."
+    },
+    {
+      "id": "map",
+      "name": "Map of the march",
+      "anchor": "tower_map",
+      "stand": [-0.7, -0.65],
+      "text": "The march painted on a board: the north road as one red line, the river as a blue one, the garrison a black tower where they nearly cross. Pin holes run along the road, one for every rider that came through. There are not many. The board is rubbed pale in the south, where the capital is."
+    },
+    {
+      "id": "window",
+      "name": "Paired window",
+      "anchor": "tower_window",
+      "stand": [-1.3, 1.4],
+      "text": "A paired window, deep enough to sit in, a shutter folded back on each side. Outside there is nothing: the rock falls away ten metres into a valley full of mist and rain. The garrison needs no wall on this side. The sill is wet and nobody has wiped it."
+    },
+    {
+      "id": "bed",
+      "name": "Narrow bed",
+      "anchor": "tower_bed",
+      "stand": [-1.45, -0.3],
+      "text": "A narrow bed with a grey wool blanket pulled tight, as soldiers make them, and a curtain on a rod that is drawn on cold nights and ignored on the others. The pillow has a dent in it. The boots stand side by side under the edge, toes out."
+    },
+    {
+      "id": "weapon_rack",
+      "name": "Weapon rack",
+      "anchor": "tower_rack",
+      "stand": [1.55, -0.65],
+      "text": "A sword on two pegs, a pair of boar spears, a shield with the paint worn off the boss. The mail shirt on its stand is oiled against rust and mended at the left shoulder. Nobody has worn it since the old king died."
+    },
+    {
+      "id": "shrine",
+      "name": "Wall niche",
+      "anchor": "tower_shrine",
+      "stand": [1.4, 0.85],
+      "text": "A niche no bigger than a loaf, a carved saint in it and an oil lamp that is never let go out. The saint's face is rubbed smooth by thumbs. Whose saint it is, the garrison argues about; the commander says nothing."
+    },
+    {
+      "id": "stair_door",
+      "name": "Stair door",
+      "anchor": "tower_stair_door",
+      "stand": [2.3, 1.75],
+      "text": "A low door studded with iron, left ajar. The spiral behind it goes down in the dark, past the guard room, to the door on the yard. Thirty-odd steps, worn hollow in the middle; the garrison has counted them in every kind of mood."
+    }
+  ]
+}

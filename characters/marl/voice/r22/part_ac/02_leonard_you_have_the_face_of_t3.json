@@ -1,0 +1,144 @@
+{
+  "file": "characters/marl/voice6/part_ac/02_leonard_you_have_the_face_of_t3.wav",
+  "character": "leonard",
+  "text": "[slow, measuring] You have the face of someone carrying more than they came in with. I'll not ask tonight. But I will ask.",
+  "spoken_text": "You have the face of someone carrying more than they came in with. I'll not ask tonight. But I will ask.",
+  "tags": [
+    "slow, measuring"
+  ],
+  "take": 3,
+  "reference": "voices/leonard-reference-dry.wav",
+  "model": "drama3-small-IQ3_XXS.gguf",
+  "sampling": [
+    "temperature=0.7",
+    "top_p=0.7",
+    "top_k=30"
+  ],
+  "render_wall_s_all_takes": 129.0,
+  "speaker_similarity": 0.7766,
+  "duration_s": 8.73,
+  "expected_s": 8.58,
+  "silences": [
+    [
+      3.3,
+      4.84
+    ],
+    [
+      5.93,
+      7.69
+    ]
+  ],
+  "transcript": "You have the face of someone carrying more than they came in with. I'll not ask tonight, but I will ask.",
+  "words": [
+    {
+      "word": "You",
+      "start": 0.06,
+      "end": 0.2
+    },
+    {
+      "word": "have",
+      "start": 0.2,
+      "end": 0.43
+    },
+    {
+      "word": "the",
+      "start": 0.45,
+      "end": 0.57
+    },
+    {
+      "word": "face",
+      "start": 0.71,
+      "end": 0.89
+    },
+    {
+      "word": "of",
+      "start": 0.91,
+      "end": 1.05
+    },
+    {
+      "word": "someone",
+      "start": 1.05,
+      "end": 1.54
+    },
+    {
+      "word": "carrying",
+      "start": 1.54,
+      "end": 1.96
+    },
+    {
+      "word": "more",
+      "start": 1.96,
+      "end": 2.31
+    },
+    {
+      "word": "than",
+      "start": 2.32,
+      "end": 2.52
+    },
+    {
+      "word": "they",
+      "start": 2.52,
+      "end": 2.63
+    },
+    {
+      "word": "came",
+      "start": 2.75,
+      "end": 2.92
+    },
+    {
+      "word": "in",
+      "start": 2.92,
+      "end": 3.02
+    },
+    {
+      "word": "with.",
+      "start": 3.02,
+      "end": 3.29
+    },
+    {
+      "word": "I'll",
+      "start": 4.38,
+      "end": 4.38
+    },
+    {
+      "word": "not",
+      "start": 4.38,
+      "end": 4.38
+    },
+    {
+      "word": "ask",
+      "start": 4.44,
+      "end": 4.68
+    },
+    {
+      "word": "tonight,",
+      "start": 4.68,
+      "end": 5.88
+    },
+    {
+      "word": "but",
+      "start": 5.88,
+      "end": 6.46
+    },
+    {
+      "word": "I",
+      "start": 6.46,
+      "end": 6.65
+    },
+    {
+      "word": "will",
+      "start": 6.65,
+      "end": 7.42
+    },
+    {
+      "word": "ask.",
+      "start": 7.42,
+      "end": 8.6
+    }
+  ],
+  "missing_words": [],
+  "reasons": [
+    "silence of 1.5 s or more at [[3.3, 4.84], [5.93, 7.69]]"
+  ],
+  "pass": false
+}

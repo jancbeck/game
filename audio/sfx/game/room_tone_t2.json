@@ -1,0 +1,12 @@
+{
+  "prompt": "quiet room tone of a small stone kitchen at night, a low wood fire breathing softly in a hearth, an occasional faint crackle, a pot simmering gently, rain faintly audible on a roof outside, wide stereo field recording, dry, no reverb",
+  "negative_prompt": "reverb, echo, hall, music, speech, voices, loud, wind howling",
+  "seed": 2101530949,
+  "seconds": 30.0,
+  "dit": "medium",
+  "decoder": "same-l",
+  "cfg": 2.0,
+  "steps": 8,
+  "wall_seconds": 12.38,
+  "file": "room_tone_t2.wav"
+}

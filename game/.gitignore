@@ -1,0 +1,7 @@
+.godot/
+build/
+shots/
+assets/
+assets_stub/
+logs/
+release/

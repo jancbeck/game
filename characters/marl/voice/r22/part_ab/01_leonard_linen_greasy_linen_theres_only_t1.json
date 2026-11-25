@@ -1,0 +1,119 @@
+{
+  "file": "characters/marl/voice6/part_ab/01_leonard_linen_greasy_linen_theres_only_t1.wav",
+  "character": "leonard",
+  "text": "[turning it over, suspicious] Linen. Greasy linen. There's only one woman on this rock who wipes her hands on everything she owns.",
+  "spoken_text": "Linen. Greasy linen. There's only one woman on this rock who wipes her hands on everything she owns.",
+  "tags": [
+    "turning it over, suspicious"
+  ],
+  "take": 1,
+  "reference": "voices/leonard-reference-dry.wav",
+  "model": "drama3-small-IQ3_XXS.gguf",
+  "sampling": [
+    "temperature=0.7",
+    "top_p=0.7",
+    "top_k=30"
+  ],
+  "render_wall_s_all_takes": 174.9,
+  "speaker_similarity": 0.8177,
+  "duration_s": 10.91,
+  "expected_s": 7.42,
+  "silences": [
+    [
+      0.51,
+      6.89
+    ]
+  ],
+  "transcript": "Linen. There's only one woman on this rock who wipes her hands on everything she owns.",
+  "words": [
+    {
+      "word": "Linen.",
+      "start": 0.05,
+      "end": 1.0
+    },
+    {
+      "word": "There's",
+      "start": 6.84,
+      "end": 6.84
+    },
+    {
+      "word": "only",
+      "start": 6.84,
+      "end": 6.84
+    },
+    {
+      "word": "one",
+      "start": 6.84,
+      "end": 6.84
+    },
+    {
+      "word": "woman",
+      "start": 6.87,
+      "end": 7.32
+    },
+    {
+      "word": "on",
+      "start": 7.9,
+      "end": 8.03
+    },
+    {
+      "word": "this",
+      "start": 8.04,
+      "end": 8.31
+    },
+    {
+      "word": "rock",
+      "start": 8.31,
+      "end": 8.59
+    },
+    {
+      "word": "who",
+      "start": 8.6,
+      "end": 8.71
+    },
+    {
+      "word": "wipes",
+      "start": 8.72,
+      "end": 9.04
+    },
+    {
+      "word": "her",
+      "start": 9.04,
+      "end": 9.14
+    },
+    {
+      "word": "hands",
+      "start": 9.14,
+      "end": 9.52
+    },
+    {
+      "word": "on",
+      "start": 9.52,
+      "end": 9.68
+    },
+    {
+      "word": "everything",
+      "start": 9.68,
+      "end": 10.12
+    },
+    {
+      "word": "she",
+      "start": 10.12,
+      "end": 10.32
+    },
+    {
+      "word": "owns.",
+      "start": 10.32,
+      "end": 10.92
+    }
+  ],
+  "missing_words": [
+    "linen",
+    "greasy"
+  ],
+  "reasons": [
+    "silence of 1.5 s or more at [[0.51, 6.89]]",
+    "missing words: linen greasy"
+  ],
+  "pass": false
+}

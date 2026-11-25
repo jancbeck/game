@@ -1,0 +1,168 @@
+{
+  "file": "/Users/jan/workspace/projects/game/characters/marl/voice/03_leonard_a_gate_a_wall_and_t2.wav",
+  "character": "leonard",
+  "text": "[matter-of-fact] A gate, a wall, and eleven men who argue about the soup. We watch the road north. The road has done nothing interesting since the old king died.",
+  "spoken_text": "A gate, a wall, and eleven men who argue about the soup. We watch the road north. The road has done nothing interesting since the old king died.",
+  "tags": [
+    "matter-of-fact"
+  ],
+  "take": 2,
+  "reference": "voices/leonard-reference-dry.wav",
+  "model": "drama3-small-IQ3_XXS.gguf",
+  "sampling": [
+    "temperature=0.7",
+    "top_p=0.7",
+    "top_k=30"
+  ],
+  "render_wall_s_all_takes": 270.9,
+  "speaker_similarity": 0.7858,
+  "duration_s": 10.5,
+  "expected_s": 11.27,
+  "silences": [],
+  "transcript": "A gate, a wall, and eleven men who argue about the soup. We watch the road north. The road has done nothing interesting since the old king died.",
+  "words": [
+    {
+      "word": "A",
+      "start": 0.08,
+      "end": 0.1
+    },
+    {
+      "word": "gate,",
+      "start": 0.1,
+      "end": 0.59
+    },
+    {
+      "word": "a",
+      "start": 0.9,
+      "end": 1.13
+    },
+    {
+      "word": "wall,",
+      "start": 1.49,
+      "end": 2.01
+    },
+    {
+      "word": "and",
+      "start": 2.25,
+      "end": 2.62
+    },
+    {
+      "word": "eleven",
+      "start": 3.01,
+      "end": 3.37
+    },
+    {
+      "word": "men",
+      "start": 3.37,
+      "end": 3.76
+    },
+    {
+      "word": "who",
+      "start": 3.76,
+      "end": 3.95
+    },
+    {
+      "word": "argue",
+      "start": 3.95,
+      "end": 4.27
+    },
+    {
+      "word": "about",
+      "start": 4.27,
+      "end": 4.53
+    },
+    {
+      "word": "the",
+      "start": 4.63,
+      "end": 4.78
+    },
+    {
+      "word": "soup.",
+      "start": 4.78,
+      "end": 5.06
+    },
+    {
+      "word": "We",
+      "start": 6.18,
+      "end": 6.18
+    },
+    {
+      "word": "watch",
+      "start": 6.18,
+      "end": 6.18
+    },
+    {
+      "word": "the",
+      "start": 6.18,
+      "end": 6.18
+    },
+    {
+      "word": "road",
+      "start": 6.26,
+      "end": 6.56
+    },
+    {
+      "word": "north.",
+      "start": 6.56,
+      "end": 7.44
+    },
+    {
+      "word": "The",
+      "start": 7.6,
+      "end": 7.6
+    },
+    {
+      "word": "road",
+      "start": 7.64,
+      "end": 7.81
+    },
+    {
+      "word": "has",
+      "start": 7.81,
+      "end": 7.96
+    },
+    {
+      "word": "done",
+      "start": 7.96,
+      "end": 7.97
+    },
+    {
+      "word": "nothing",
+      "start": 8.03,
+      "end": 8.55
+    },
+    {
+      "word": "interesting",
+      "start": 9.02,
+      "end": 9.13
+    },
+    {
+      "word": "since",
+      "start": 9.13,
+      "end": 9.39
+    },
+    {
+      "word": "the",
+      "start": 9.39,
+      "end": 9.5
+    },
+    {
+      "word": "old",
+      "start": 9.5,
+      "end": 9.55
+    },
+    {
+      "word": "king",
+      "start": 9.71,
+      "end": 9.92
+    },
+    {
+      "word": "died.",
+      "start": 9.92,
+      "end": 10.31
+    }
+  ],
+  "missing_words": [],
+  "reasons": [],
+  "pass": true
+}

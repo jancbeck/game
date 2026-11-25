@@ -1,0 +1,158 @@
+{
+  "file": "/Users/jan/workspace/projects/game/characters/commander/voice/part_02/01_commander_so_they_recall_me_after_t3.wav",
+  "character": "commander",
+  "text": "[reading, very quiet] So they recall me, after nineteen years. And six men left to hold a gate built for forty. Somebody in the capital has learned to count.",
+  "spoken_text": "So they recall me, after nineteen years. And six men left to hold a gate built for forty. Somebody in the capital has learned to count.",
+  "tags": [
+    "reading, very quiet"
+  ],
+  "take": 3,
+  "reference": "voices/commander-reference-dry.wav",
+  "model": "drama3-small-IQ3_XXS.gguf",
+  "sampling": [
+    "temperature=0.7",
+    "top_p=0.7",
+    "top_k=30"
+  ],
+  "render_wall_s_all_takes": 94.1,
+  "speaker_similarity": 0.8433,
+  "duration_s": 10.22,
+  "expected_s": 10.5,
+  "silences": [],
+  "transcript": "So they recall me, after nineteen years, and six men left to hold a gate built for forty. Somebody in the capital has learned to count.",
+  "words": [
+    {
+      "word": "So",
+      "start": 0.09,
+      "end": 0.21
+    },
+    {
+      "word": "they",
+      "start": 0.21,
+      "end": 0.63
+    },
+    {
+      "word": "recall",
+      "start": 0.63,
+      "end": 1.27
+    },
+    {
+      "word": "me,",
+      "start": 1.27,
+      "end": 1.54
+    },
+    {
+      "word": "after",
+      "start": 2.05,
+      "end": 2.45
+    },
+    {
+      "word": "nineteen",
+      "start": 2.45,
+      "end": 3.53
+    },
+    {
+      "word": "years,",
+      "start": 3.53,
+      "end": 4.42
+    },
+    {
+      "word": "and",
+      "start": 4.42,
+      "end": 4.7
+    },
+    {
+      "word": "six",
+      "start": 4.7,
+      "end": 4.94
+    },
+    {
+      "word": "men",
+      "start": 5.0,
+      "end": 5.28
+    },
+    {
+      "word": "left",
+      "start": 5.28,
+      "end": 5.55
+    },
+    {
+      "word": "to",
+      "start": 5.71,
+      "end": 5.71
+    },
+    {
+      "word": "hold",
+      "start": 5.74,
+      "end": 6.0
+    },
+    {
+      "word": "a",
+      "start": 6.0,
+      "end": 6.07
+    },
+    {
+      "word": "gate",
+      "start": 6.07,
+      "end": 6.36
+    },
+    {
+      "word": "built",
+      "start": 6.36,
+      "end": 6.53
+    },
+    {
+      "word": "for",
+      "start": 6.75,
+      "end": 6.9
+    },
+    {
+      "word": "forty.",
+      "start": 6.95,
+      "end": 7.56
+    },
+    {
+      "word": "Somebody",
+      "start": 7.68,
+      "end": 8.05
+    },
+    {
+      "word": "in",
+      "start": 8.05,
+      "end": 8.17
+    },
+    {
+      "word": "the",
+      "start": 8.17,
+      "end": 8.35
+    },
+    {
+      "word": "capital",
+      "start": 8.35,
+      "end": 8.78
+    },
+    {
+      "word": "has",
+      "start": 8.78,
+      "end": 8.96
+    },
+    {
+      "word": "learned",
+      "start": 8.96,
+      "end": 9.09
+    },
+    {
+      "word": "to",
+      "start": 9.51,
+      "end": 9.51
+    },
+    {
+      "word": "count.",
+      "start": 9.61,
+      "end": 10.02
+    }
+  ],
+  "missing_words": [],
+  "reasons": [],
+  "pass": true
+}

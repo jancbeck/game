@@ -1,9 +1,0 @@
-# Normalize EOL for all files Git considers text; binaries are auto-detected.
-* text=auto eol=lf
-
-# No Git LFS. This project is text-authored with only a few MB of generated
-# assets (PNG backdrops/sprites, MP3/WAV audio) committed directly. The
-# previous LFS config anticipated heavy 3D models (.fbx/.blend/…) that the
-# procedural, no-imported-models pipeline never produces. Committing the
-# small assets as plain blobs avoids the LFS-pointer mismatch that appears
-# when the repo is cloned somewhere LFS is installed.

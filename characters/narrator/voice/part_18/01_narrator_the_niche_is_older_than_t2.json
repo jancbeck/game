@@ -1,0 +1,133 @@
+{
+  "file": "/Users/jan/workspace/projects/game/characters/narrator/voice/part_18/01_narrator_the_niche_is_older_than_t2.wav",
+  "character": "narrator",
+  "text": "[slow, ancient, low, inner voice] The niche is older than the tower. Somebody built a soldier's house around a prayer, and the stone has kept it.",
+  "spoken_text": "The niche is older than the tower. Somebody built a soldier's house around a prayer, and the stone has kept it.",
+  "tags": [
+    "slow, ancient, low, inner voice"
+  ],
+  "take": 2,
+  "reference": "voices/narrator-reference-dry.wav",
+  "model": "drama3-small-IQ3_XXS.gguf",
+  "sampling": [
+    "temperature=0.7",
+    "top_p=0.7",
+    "top_k=30"
+  ],
+  "render_wall_s_all_takes": 104.4,
+  "speaker_similarity": 0.7592,
+  "duration_s": 6.97,
+  "expected_s": 8.58,
+  "silences": [],
+  "transcript": "The niche is older than the tower. Somebody built a soldier's house around a prayer, and the stone has kept it.",
+  "words": [
+    {
+      "word": "The",
+      "start": 0.06,
+      "end": 0.21
+    },
+    {
+      "word": "niche",
+      "start": 0.21,
+      "end": 0.49
+    },
+    {
+      "word": "is",
+      "start": 0.49,
+      "end": 0.68
+    },
+    {
+      "word": "older",
+      "start": 0.76,
+      "end": 1.05
+    },
+    {
+      "word": "than",
+      "start": 1.05,
+      "end": 1.33
+    },
+    {
+      "word": "the",
+      "start": 1.33,
+      "end": 1.54
+    },
+    {
+      "word": "tower.",
+      "start": 1.54,
+      "end": 2.16
+    },
+    {
+      "word": "Somebody",
+      "start": 2.56,
+      "end": 2.72
+    },
+    {
+      "word": "built",
+      "start": 2.72,
+      "end": 2.99
+    },
+    {
+      "word": "a",
+      "start": 2.99,
+      "end": 3.14
+    },
+    {
+      "word": "soldier's",
+      "start": 3.16,
+      "end": 3.77
+    },
+    {
+      "word": "house",
+      "start": 3.77,
+      "end": 4.14
+    },
+    {
+      "word": "around",
+      "start": 4.14,
+      "end": 4.54
+    },
+    {
+      "word": "a",
+      "start": 4.54,
+      "end": 4.6
+    },
+    {
+      "word": "prayer,",
+      "start": 4.6,
+      "end": 5.16
+    },
+    {
+      "word": "and",
+      "start": 5.16,
+      "end": 5.37
+    },
+    {
+      "word": "the",
+      "start": 5.37,
+      "end": 5.58
+    },
+    {
+      "word": "stone",
+      "start": 5.58,
+      "end": 5.93
+    },
+    {
+      "word": "has",
+      "start": 5.93,
+      "end": 6.09
+    },
+    {
+      "word": "kept",
+      "start": 6.14,
+      "end": 6.42
+    },
+    {
+      "word": "it.",
+      "start": 6.42,
+      "end": 6.82
+    }
+  ],
+  "missing_words": [],
+  "reasons": [],
+  "pass": true
+}

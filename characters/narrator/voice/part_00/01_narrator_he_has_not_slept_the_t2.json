@@ -1,0 +1,118 @@
+{
+  "file": "/Users/jan/workspace/projects/game/characters/narrator/voice/part_00/01_narrator_he_has_not_slept_the_t2.wav",
+  "character": "narrator",
+  "text": "[quick, precise, close, inner voice] He has not slept. The candle has been trimmed three times; the wax on the desk says so.",
+  "spoken_text": "He has not slept. The candle has been trimmed three times; the wax on the desk says so.",
+  "tags": [
+    "quick, precise, close, inner voice"
+  ],
+  "take": 2,
+  "reference": "voices/narrator-reference-dry.wav",
+  "model": "drama3-small-IQ3_XXS.gguf",
+  "sampling": [
+    "temperature=0.7",
+    "top_p=0.7",
+    "top_k=30"
+  ],
+  "render_wall_s_all_takes": 95.9,
+  "speaker_similarity": 0.5832,
+  "duration_s": 6.78,
+  "expected_s": 7.42,
+  "silences": [],
+  "transcript": "He has not slept. The candle has been trimmed three times. The wax on the desk says so.",
+  "words": [
+    {
+      "word": "He",
+      "start": 0.07,
+      "end": 0.16
+    },
+    {
+      "word": "has",
+      "start": 0.16,
+      "end": 0.35
+    },
+    {
+      "word": "not",
+      "start": 0.41,
+      "end": 0.64
+    },
+    {
+      "word": "slept.",
+      "start": 0.64,
+      "end": 1.26
+    },
+    {
+      "word": "The",
+      "start": 2.22,
+      "end": 2.22
+    },
+    {
+      "word": "candle",
+      "start": 2.22,
+      "end": 2.22
+    },
+    {
+      "word": "has",
+      "start": 2.29,
+      "end": 2.41
+    },
+    {
+      "word": "been",
+      "start": 2.41,
+      "end": 2.79
+    },
+    {
+      "word": "trimmed",
+      "start": 2.79,
+      "end": 3.39
+    },
+    {
+      "word": "three",
+      "start": 3.48,
+      "end": 3.62
+    },
+    {
+      "word": "times.",
+      "start": 3.62,
+      "end": 4.36
+    },
+    {
+      "word": "The",
+      "start": 4.96,
+      "end": 4.96
+    },
+    {
+      "word": "wax",
+      "start": 4.96,
+      "end": 4.96
+    },
+    {
+      "word": "on",
+      "start": 5.03,
+      "end": 5.1
+    },
+    {
+      "word": "the",
+      "start": 5.1,
+      "end": 5.31
+    },
+    {
+      "word": "desk",
+      "start": 5.37,
+      "end": 5.74
+    },
+    {
+      "word": "says",
+      "start": 5.74,
+      "end": 6.12
+    },
+    {
+      "word": "so.",
+      "start": 6.12,
+      "end": 6.37
+    }
+  ],
+  "missing_words": [],
+  "reasons": [],
+  "pass": true
+}

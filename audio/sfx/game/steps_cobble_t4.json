@@ -1,0 +1,12 @@
+{
+  "prompt": "footsteps of one person in heavy leather boots walking slowly on wet cobblestones with a short pause after each step, hard heel knock then sole with a light wet slap, dry close-miked film sound effect, no reverb",
+  "negative_prompt": "reverb, echo, hall, music, speech, voices, singing, rain, running, jogging, multiple people, sneakers, high heels",
+  "seed": 2001,
+  "seconds": 12.0,
+  "dit": "medium",
+  "decoder": "same-l",
+  "cfg": 2.0,
+  "steps": 8,
+  "wall_seconds": 11.81,
+  "file": "steps_cobble_t4.wav"
+}

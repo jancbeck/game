@@ -1,0 +1,178 @@
+{
+  "file": "/Users/jan/workspace/projects/game/characters/tam/voice/part_00/02_tam_it_was_broken_at_the_t2.wav",
+  "character": "tam",
+  "text": "[fast, ashamed] It was broken at the ford. A man in a grey ferryman's cloak held my satchel while I watered the horse. When he gave it back, the wax was split.",
+  "spoken_text": "It was broken at the ford. A man in a grey ferryman's cloak held my satchel while I watered the horse. When he gave it back, the wax was split.",
+  "tags": [
+    "fast, ashamed"
+  ],
+  "take": 2,
+  "reference": "voices/tam-reference-dry.wav",
+  "model": "drama3-small-IQ3_XXS.gguf",
+  "sampling": [
+    "temperature=0.7",
+    "top_p=0.7",
+    "top_k=30"
+  ],
+  "render_wall_s_all_takes": 121.7,
+  "speaker_similarity": 0.7305,
+  "duration_s": 8.17,
+  "expected_s": 12.04,
+  "silences": [],
+  "transcript": "It was broken at the Ford. A man in a gray ferryman's cloak held my satchel while I watered the horse. When he gave it back, the wax was split.",
+  "words": [
+    {
+      "word": "It",
+      "start": 0.04,
+      "end": 0.1
+    },
+    {
+      "word": "was",
+      "start": 0.1,
+      "end": 0.25
+    },
+    {
+      "word": "broken",
+      "start": 0.36,
+      "end": 0.54
+    },
+    {
+      "word": "at",
+      "start": 0.56,
+      "end": 0.65
+    },
+    {
+      "word": "the",
+      "start": 0.65,
+      "end": 0.79
+    },
+    {
+      "word": "Ford.",
+      "start": 0.92,
+      "end": 1.17
+    },
+    {
+      "word": "A",
+      "start": 1.86,
+      "end": 1.86
+    },
+    {
+      "word": "man",
+      "start": 1.86,
+      "end": 1.86
+    },
+    {
+      "word": "in",
+      "start": 1.86,
+      "end": 1.86
+    },
+    {
+      "word": "a",
+      "start": 1.86,
+      "end": 1.86
+    },
+    {
+      "word": "gray",
+      "start": 1.9,
+      "end": 2.1
+    },
+    {
+      "word": "ferryman's",
+      "start": 2.22,
+      "end": 3.07
+    },
+    {
+      "word": "cloak",
+      "start": 3.07,
+      "end": 3.11
+    },
+    {
+      "word": "held",
+      "start": 3.73,
+      "end": 3.86
+    },
+    {
+      "word": "my",
+      "start": 3.86,
+      "end": 4.02
+    },
+    {
+      "word": "satchel",
+      "start": 4.02,
+      "end": 4.41
+    },
+    {
+      "word": "while",
+      "start": 4.41,
+      "end": 4.6
+    },
+    {
+      "word": "I",
+      "start": 4.68,
+      "end": 4.68
+    },
+    {
+      "word": "watered",
+      "start": 4.72,
+      "end": 4.99
+    },
+    {
+      "word": "the",
+      "start": 4.99,
+      "end": 5.08
+    },
+    {
+      "word": "horse.",
+      "start": 5.26,
+      "end": 5.39
+    },
+    {
+      "word": "When",
+      "start": 5.76,
+      "end": 5.8
+    },
+    {
+      "word": "he",
+      "start": 5.8,
+      "end": 5.94
+    },
+    {
+      "word": "gave",
+      "start": 5.94,
+      "end": 6.21
+    },
+    {
+      "word": "it",
+      "start": 6.25,
+      "end": 6.36
+    },
+    {
+      "word": "back,",
+      "start": 6.36,
+      "end": 6.78
+    },
+    {
+      "word": "the",
+      "start": 6.78,
+      "end": 6.95
+    },
+    {
+      "word": "wax",
+      "start": 7.2,
+      "end": 7.2
+    },
+    {
+      "word": "was",
+      "start": 7.2,
+      "end": 7.4
+    },
+    {
+      "word": "split.",
+      "start": 7.59,
+      "end": 7.99
+    }
+  ],
+  "missing_words": [],
+  "reasons": [],
+  "pass": true
+}

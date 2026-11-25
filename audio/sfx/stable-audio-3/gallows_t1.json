@@ -1,0 +1,12 @@
+{
+  "prompt": "a hemp rope creaking slowly on a wooden beam in the wind, slow rhythmic strain and groan of fibers, dry close-miked film sound effect, no reverb",
+  "negative_prompt": "reverb, echo, hall, music, speech, voices, singing, loud, aggressive",
+  "seed": 1000,
+  "seconds": 15.0,
+  "dit": "medium",
+  "decoder": "same-l",
+  "cfg": 3.0,
+  "steps": 8,
+  "wall_seconds": 7.77,
+  "file": "gallows_t1.wav"
+}

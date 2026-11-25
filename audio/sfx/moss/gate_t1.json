@@ -1,0 +1,17 @@
+{
+  "prompt": "a heavy wooden castle gate creaking and thudding shut, then a heavy iron bar dropping into its brackets with a clank, dry close-miked film sound effect, no reverb",
+  "negative_prompt": "reverb, echo, hall, music, speech, voices, singing",
+  "seed": 1000,
+  "seconds": 12,
+  "steps": 50,
+  "cfg": 4.0,
+  "sigma_shift": 5.0,
+  "model": "mlx-community/MOSS-SoundEffect-v2.0-bf16",
+  "sample_rate": 48000,
+  "channels": 1,
+  "wall_seconds": 203.7,
+  "model_load_seconds": 0.6,
+  "mlx_peak_memory_gb": 13.92,
+  "float_peak_before_clip": 0.999,
+  "file": "gate_t1.wav"
+}

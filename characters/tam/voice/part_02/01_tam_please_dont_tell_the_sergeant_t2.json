@@ -1,0 +1,148 @@
+{
+  "file": "/Users/jan/workspace/projects/game/characters/tam/voice/part_02/01_tam_please_dont_tell_the_sergeant_t2.wav",
+  "character": "tam",
+  "text": "[pleading, close to tears] Please, don't tell the sergeant. Aunt Hedda tied the bell for me. If anyone hangs for it, let it be me and not her.",
+  "spoken_text": "Please, don't tell the sergeant. Aunt Hedda tied the bell for me. If anyone hangs for it, let it be me and not her.",
+  "tags": [
+    "pleading, close to tears"
+  ],
+  "take": 2,
+  "reference": "voices/tam-reference-dry.wav",
+  "model": "drama3-small-IQ3_XXS.gguf",
+  "sampling": [
+    "temperature=0.7",
+    "top_p=0.7",
+    "top_k=30"
+  ],
+  "render_wall_s_all_takes": 111.5,
+  "speaker_similarity": 0.7139,
+  "duration_s": 8.92,
+  "expected_s": 9.73,
+  "silences": [],
+  "transcript": "Please don't tell the sergeant, Aunt Heta tied the bell for me. If anyone hangs for it, let it be me and not her.",
+  "words": [
+    {
+      "word": "Please",
+      "start": 0.12,
+      "end": 0.49
+    },
+    {
+      "word": "don't",
+      "start": 0.49,
+      "end": 0.91
+    },
+    {
+      "word": "tell",
+      "start": 0.93,
+      "end": 1.13
+    },
+    {
+      "word": "the",
+      "start": 1.43,
+      "end": 1.49
+    },
+    {
+      "word": "sergeant,",
+      "start": 1.49,
+      "end": 2.33
+    },
+    {
+      "word": "Aunt",
+      "start": 2.63,
+      "end": 2.63
+    },
+    {
+      "word": "Heta",
+      "start": 2.7,
+      "end": 2.88
+    },
+    {
+      "word": "tied",
+      "start": 2.94,
+      "end": 3.22
+    },
+    {
+      "word": "the",
+      "start": 3.22,
+      "end": 3.26
+    },
+    {
+      "word": "bell",
+      "start": 3.5,
+      "end": 3.74
+    },
+    {
+      "word": "for",
+      "start": 3.74,
+      "end": 3.96
+    },
+    {
+      "word": "me.",
+      "start": 3.96,
+      "end": 4.4
+    },
+    {
+      "word": "If",
+      "start": 4.6,
+      "end": 4.6
+    },
+    {
+      "word": "anyone",
+      "start": 4.7,
+      "end": 5.09
+    },
+    {
+      "word": "hangs",
+      "start": 5.5,
+      "end": 5.71
+    },
+    {
+      "word": "for",
+      "start": 6.01,
+      "end": 6.1
+    },
+    {
+      "word": "it,",
+      "start": 6.1,
+      "end": 6.52
+    },
+    {
+      "word": "let",
+      "start": 6.52,
+      "end": 6.73
+    },
+    {
+      "word": "it",
+      "start": 7.05,
+      "end": 7.05
+    },
+    {
+      "word": "be",
+      "start": 7.26,
+      "end": 7.26
+    },
+    {
+      "word": "me",
+      "start": 7.31,
+      "end": 7.46
+    },
+    {
+      "word": "and",
+      "start": 7.52,
+      "end": 7.79
+    },
+    {
+      "word": "not",
+      "start": 7.79,
+      "end": 8.11
+    },
+    {
+      "word": "her.",
+      "start": 8.11,
+      "end": 8.78
+    }
+  ],
+  "missing_words": [],
+  "reasons": [],
+  "pass": true
+}

@@ -1,0 +1,158 @@
+{
+  "file": "/Users/jan/workspace/projects/game/characters/commander/voice/line_04/01_commander_this_seal_was_broken_before_t1.wav",
+  "character": "commander",
+  "text": "[sharp, cold] This seal was broken before it reached me. Three waves. The Wardens' mark, not the council's crown. Tell me where it happened, and tell me exactly.",
+  "spoken_text": "This seal was broken before it reached me. Three waves. The Wardens' mark, not the council's crown. Tell me where it happened, and tell me exactly.",
+  "tags": [
+    "sharp, cold"
+  ],
+  "take": 1,
+  "reference": "voices/commander-reference-dry.wav",
+  "model": "drama3-small-IQ3_XXS.gguf",
+  "sampling": [
+    "temperature=0.7",
+    "top_p=0.7",
+    "top_k=30"
+  ],
+  "render_wall_s_all_takes": 84.6,
+  "speaker_similarity": 0.8591,
+  "duration_s": 13.75,
+  "expected_s": 10.5,
+  "silences": [],
+  "transcript": "This seal was broken before it reached me. Three waves. The warden's mark, not the council's crown. Tell me where it happened, and tell me exactly.",
+  "words": [
+    {
+      "word": "This",
+      "start": 0.05,
+      "end": 0.32
+    },
+    {
+      "word": "seal",
+      "start": 0.32,
+      "end": 0.64
+    },
+    {
+      "word": "was",
+      "start": 0.64,
+      "end": 0.87
+    },
+    {
+      "word": "broken",
+      "start": 0.87,
+      "end": 1.36
+    },
+    {
+      "word": "before",
+      "start": 1.36,
+      "end": 1.7
+    },
+    {
+      "word": "it",
+      "start": 1.89,
+      "end": 2.0
+    },
+    {
+      "word": "reached",
+      "start": 2.0,
+      "end": 2.52
+    },
+    {
+      "word": "me.",
+      "start": 2.59,
+      "end": 2.99
+    },
+    {
+      "word": "Three",
+      "start": 3.7,
+      "end": 3.7
+    },
+    {
+      "word": "waves.",
+      "start": 3.75,
+      "end": 4.73
+    },
+    {
+      "word": "The",
+      "start": 6.1,
+      "end": 6.1
+    },
+    {
+      "word": "warden's",
+      "start": 6.1,
+      "end": 6.38
+    },
+    {
+      "word": "mark,",
+      "start": 6.38,
+      "end": 7.15
+    },
+    {
+      "word": "not",
+      "start": 7.33,
+      "end": 7.48
+    },
+    {
+      "word": "the",
+      "start": 7.56,
+      "end": 7.78
+    },
+    {
+      "word": "council's",
+      "start": 7.78,
+      "end": 8.61
+    },
+    {
+      "word": "crown.",
+      "start": 8.61,
+      "end": 9.12
+    },
+    {
+      "word": "Tell",
+      "start": 9.68,
+      "end": 9.68
+    },
+    {
+      "word": "me",
+      "start": 9.75,
+      "end": 9.83
+    },
+    {
+      "word": "where",
+      "start": 9.83,
+      "end": 10.19
+    },
+    {
+      "word": "it",
+      "start": 10.23,
+      "end": 10.35
+    },
+    {
+      "word": "happened,",
+      "start": 10.35,
+      "end": 11.06
+    },
+    {
+      "word": "and",
+      "start": 11.12,
+      "end": 11.39
+    },
+    {
+      "word": "tell",
+      "start": 11.57,
+      "end": 11.94
+    },
+    {
+      "word": "me",
+      "start": 11.99,
+      "end": 12.2
+    },
+    {
+      "word": "exactly.",
+      "start": 12.2,
+      "end": 13.45
+    }
+  ],
+  "missing_words": [],
+  "reasons": [],
+  "pass": true
+}

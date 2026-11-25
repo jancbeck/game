@@ -1,0 +1,111 @@
+{
+  "file": "characters/marl/voice6/part_ac/02_leonard_you_have_the_face_of_t1.wav",
+  "character": "leonard",
+  "text": "[slow, measuring] You have the face of someone carrying more than they came in with. I'll not ask tonight. But I will ask.",
+  "spoken_text": "You have the face of someone carrying more than they came in with. I'll not ask tonight. But I will ask.",
+  "tags": [
+    "slow, measuring"
+  ],
+  "take": 1,
+  "reference": "voices/leonard-reference-dry.wav",
+  "model": "drama3-small-IQ3_XXS.gguf",
+  "sampling": [
+    "temperature=0.7",
+    "top_p=0.7",
+    "top_k=30"
+  ],
+  "render_wall_s_all_takes": 129.0,
+  "speaker_similarity": 0.6116,
+  "duration_s": 22.48,
+  "expected_s": 8.58,
+  "silences": [
+    [
+      4.04,
+      22.48
+    ]
+  ],
+  "transcript": "You have the face of someone carrying more than they came in with.",
+  "words": [
+    {
+      "word": "You",
+      "start": 0.04,
+      "end": 0.25
+    },
+    {
+      "word": "have",
+      "start": 0.25,
+      "end": 0.53
+    },
+    {
+      "word": "the",
+      "start": 0.63,
+      "end": 0.7
+    },
+    {
+      "word": "face",
+      "start": 0.87,
+      "end": 1.13
+    },
+    {
+      "word": "of",
+      "start": 1.15,
+      "end": 1.32
+    },
+    {
+      "word": "someone",
+      "start": 1.32,
+      "end": 1.92
+    },
+    {
+      "word": "carrying",
+      "start": 1.92,
+      "end": 2.54
+    },
+    {
+      "word": "more",
+      "start": 2.54,
+      "end": 2.96
+    },
+    {
+      "word": "than",
+      "start": 2.96,
+      "end": 3.18
+    },
+    {
+      "word": "they",
+      "start": 3.18,
+      "end": 3.33
+    },
+    {
+      "word": "came",
+      "start": 3.47,
+      "end": 3.62
+    },
+    {
+      "word": "in",
+      "start": 3.62,
+      "end": 3.73
+    },
+    {
+      "word": "with.",
+      "start": 3.73,
+      "end": 4.03
+    }
+  ],
+  "missing_words": [
+    "i'll",
+    "not",
+    "ask",
+    "tonight",
+    "but",
+    "i",
+    "will",
+    "ask"
+  ],
+  "reasons": [
+    "too long: 22.48 s, expected about 8.6 s",
+    "silence of 1.5 s or more at [[4.04, 22.48]]",
+    "missing words: i'll not ask tonight but i will ask"
+  ],
+  "pass": false
+}

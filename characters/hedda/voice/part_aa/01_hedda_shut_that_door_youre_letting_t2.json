@@ -1,0 +1,143 @@
+{
+  "file": "characters/hedda/voice/part_aa/01_hedda_shut_that_door_youre_letting_t2.wav",
+  "character": "hedda",
+  "text": "[sharp, without looking up] Shut that door, you're letting the rain into my bread. Who let you in? No, don't tell me. Marl. Marl lets anything in.",
+  "spoken_text": "Shut that door, you're letting the rain into my bread. Who let you in? No, don't tell me. Marl. Marl lets anything in.",
+  "tags": [
+    "sharp, without looking up"
+  ],
+  "take": 2,
+  "reference": "voices/hedda-reference-dry.wav",
+  "model": "drama3-small-IQ3_XXS.gguf",
+  "sampling": [
+    "temperature=0.7",
+    "top_p=0.7",
+    "top_k=30"
+  ],
+  "render_wall_s_all_takes": 132.9,
+  "speaker_similarity": 0.8594,
+  "duration_s": 10.22,
+  "expected_s": 9.35,
+  "silences": [],
+  "transcript": "Shut that door. You're letting the rain into my bread. Who let you in? No, don't tell me. Marl. Marl lets anything in.",
+  "words": [
+    {
+      "word": "Shut",
+      "start": 0.06,
+      "end": 0.25
+    },
+    {
+      "word": "that",
+      "start": 0.25,
+      "end": 0.5
+    },
+    {
+      "word": "door.",
+      "start": 0.5,
+      "end": 0.93
+    },
+    {
+      "word": "You're",
+      "start": 0.93,
+      "end": 1.28
+    },
+    {
+      "word": "letting",
+      "start": 1.44,
+      "end": 1.72
+    },
+    {
+      "word": "the",
+      "start": 1.72,
+      "end": 1.9
+    },
+    {
+      "word": "rain",
+      "start": 1.9,
+      "end": 2.14
+    },
+    {
+      "word": "into",
+      "start": 2.14,
+      "end": 2.38
+    },
+    {
+      "word": "my",
+      "start": 2.38,
+      "end": 2.5
+    },
+    {
+      "word": "bread.",
+      "start": 2.5,
+      "end": 2.99
+    },
+    {
+      "word": "Who",
+      "start": 2.99,
+      "end": 3.04
+    },
+    {
+      "word": "let",
+      "start": 3.34,
+      "end": 3.66
+    },
+    {
+      "word": "you",
+      "start": 3.83,
+      "end": 3.99
+    },
+    {
+      "word": "in?",
+      "start": 3.99,
+      "end": 4.56
+    },
+    {
+      "word": "No,",
+      "start": 5.42,
+      "end": 5.42
+    },
+    {
+      "word": "don't",
+      "start": 5.47,
+      "end": 5.7
+    },
+    {
+      "word": "tell",
+      "start": 5.82,
+      "end": 6.35
+    },
+    {
+      "word": "me.",
+      "start": 6.35,
+      "end": 7.06
+    },
+    {
+      "word": "Marl.",
+      "start": 7.06,
+      "end": 7.8
+    },
+    {
+      "word": "Marl",
+      "start": 7.8,
+      "end": 8.22
+    },
+    {
+      "word": "lets",
+      "start": 8.22,
+      "end": 8.45
+    },
+    {
+      "word": "anything",
+      "start": 9.25,
+      "end": 9.49
+    },
+    {
+      "word": "in.",
+      "start": 9.49,
+      "end": 9.99
+    }
+  ],
+  "missing_words": [],
+  "reasons": [],
+  "pass": true
+}

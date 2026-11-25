@@ -1,0 +1,175 @@
+{
+  "file": "/Users/jan/workspace/projects/game/characters/hedda/voice/part_02/01_hedda_thats_my_linen_fine_it_t2.wav",
+  "character": "hedda",
+  "text": "[heavy sigh, caught out] That's my linen. Fine. It was Tam, my sister's boy. He rides for the king's post, and he wouldn't let go of his letter, not even to eat.",
+  "spoken_text": "That's my linen. Fine. It was Tam, my sister's boy. He rides for the king's post, and he wouldn't let go of his letter, not even to eat.",
+  "tags": [
+    "heavy sigh, caught out"
+  ],
+  "take": 2,
+  "reference": "voices/hedda-reference-dry.wav",
+  "model": "drama3-small-IQ3_XXS.gguf",
+  "sampling": [
+    "temperature=0.7",
+    "top_p=0.7",
+    "top_k=30"
+  ],
+  "render_wall_s_all_takes": 112.2,
+  "speaker_similarity": 0.8038,
+  "duration_s": 14.91,
+  "expected_s": 11.27,
+  "silences": [
+    [
+      3.29,
+      5.18
+    ]
+  ],
+  "transcript": "That's my linen. Fine. It was Tam, my sister's boy. He rides for the king's post, and he wouldn't let go of his letter, not even to eat.",
+  "words": [
+    {
+      "word": "That's",
+      "start": 0.38,
+      "end": 1.01
+    },
+    {
+      "word": "my",
+      "start": 1.01,
+      "end": 1.55
+    },
+    {
+      "word": "linen.",
+      "start": 2.39,
+      "end": 3.12
+    },
+    {
+      "word": "Fine.",
+      "start": 5.12,
+      "end": 5.64
+    },
+    {
+      "word": "It",
+      "start": 6.82,
+      "end": 6.82
+    },
+    {
+      "word": "was",
+      "start": 6.82,
+      "end": 6.82
+    },
+    {
+      "word": "Tam,",
+      "start": 7.2,
+      "end": 7.75
+    },
+    {
+      "word": "my",
+      "start": 7.75,
+      "end": 8.14
+    },
+    {
+      "word": "sister's",
+      "start": 8.14,
+      "end": 9.01
+    },
+    {
+      "word": "boy.",
+      "start": 9.21,
+      "end": 9.68
+    },
+    {
+      "word": "He",
+      "start": 9.9,
+      "end": 9.9
+    },
+    {
+      "word": "rides",
+      "start": 10.24,
+      "end": 10.24
+    },
+    {
+      "word": "for",
+      "start": 10.29,
+      "end": 10.48
+    },
+    {
+      "word": "the",
+      "start": 10.48,
+      "end": 10.72
+    },
+    {
+      "word": "king's",
+      "start": 10.72,
+      "end": 11.19
+    },
+    {
+      "word": "post,",
+      "start": 11.2,
+      "end": 11.65
+    },
+    {
+      "word": "and",
+      "start": 11.65,
+      "end": 11.82
+    },
+    {
+      "word": "he",
+      "start": 11.82,
+      "end": 11.93
+    },
+    {
+      "word": "wouldn't",
+      "start": 12.27,
+      "end": 12.38
+    },
+    {
+      "word": "let",
+      "start": 12.38,
+      "end": 12.42
+    },
+    {
+      "word": "go",
+      "start": 12.55,
+      "end": 12.66
+    },
+    {
+      "word": "of",
+      "start": 12.66,
+      "end": 12.77
+    },
+    {
+      "word": "his",
+      "start": 12.77,
+      "end": 12.94
+    },
+    {
+      "word": "letter,",
+      "start": 12.94,
+      "end": 13.41
+    },
+    {
+      "word": "not",
+      "start": 13.42,
+      "end": 13.7
+    },
+    {
+      "word": "even",
+      "start": 13.7,
+      "end": 14.05
+    },
+    {
+      "word": "to",
+      "start": 14.05,
+      "end": 14.21
+    },
+    {
+      "word": "eat.",
+      "start": 14.22,
+      "end": 14.77
+    }
+  ],
+  "missing_words": [],
+  "reasons": [
+    "silence of 1.5 s or more at [[3.29, 5.18]]"
+  ],
+  "pass": false
+}

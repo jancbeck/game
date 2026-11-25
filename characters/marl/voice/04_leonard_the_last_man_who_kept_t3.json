@@ -1,0 +1,203 @@
+{
+  "file": "/Users/jan/workspace/projects/game/characters/marl/voice/04_leonard_the_last_man_who_kept_t3.wav",
+  "character": "leonard",
+  "text": "[wry] The last man who kept that bell in the rain let it rust silent. Ring it once for a rider, twice for trouble. Three times, and I'll want to know who taught you to count.",
+  "spoken_text": "The last man who kept that bell in the rain let it rust silent. Ring it once for a rider, twice for trouble. Three times, and I'll want to know who taught you to count.",
+  "tags": [
+    "wry"
+  ],
+  "take": 3,
+  "reference": "voices/leonard-reference-dry.wav",
+  "model": "drama3-small-IQ3_XXS.gguf",
+  "sampling": [
+    "temperature=0.7",
+    "top_p=0.7",
+    "top_k=30"
+  ],
+  "render_wall_s_all_takes": 270.9,
+  "speaker_similarity": 0.7896,
+  "duration_s": 10.82,
+  "expected_s": 13.96,
+  "silences": [],
+  "transcript": "The last man who kept that bell in the rain let it rust silent. Ring it once for a rider, twice for trouble. Three times, and I'll want to know who taught you to count.",
+  "words": [
+    {
+      "word": "The",
+      "start": 0.05,
+      "end": 0.2
+    },
+    {
+      "word": "last",
+      "start": 0.2,
+      "end": 0.37
+    },
+    {
+      "word": "man",
+      "start": 0.52,
+      "end": 0.67
+    },
+    {
+      "word": "who",
+      "start": 0.67,
+      "end": 0.87
+    },
+    {
+      "word": "kept",
+      "start": 0.87,
+      "end": 1.14
+    },
+    {
+      "word": "that",
+      "start": 1.14,
+      "end": 1.41
+    },
+    {
+      "word": "bell",
+      "start": 1.41,
+      "end": 1.68
+    },
+    {
+      "word": "in",
+      "start": 1.68,
+      "end": 1.81
+    },
+    {
+      "word": "the",
+      "start": 1.81,
+      "end": 2.0
+    },
+    {
+      "word": "rain",
+      "start": 2.0,
+      "end": 2.34
+    },
+    {
+      "word": "let",
+      "start": 2.34,
+      "end": 2.55
+    },
+    {
+      "word": "it",
+      "start": 2.55,
+      "end": 2.63
+    },
+    {
+      "word": "rust",
+      "start": 2.73,
+      "end": 2.97
+    },
+    {
+      "word": "silent.",
+      "start": 2.97,
+      "end": 3.61
+    },
+    {
+      "word": "Ring",
+      "start": 4.78,
+      "end": 4.78
+    },
+    {
+      "word": "it",
+      "start": 4.78,
+      "end": 4.78
+    },
+    {
+      "word": "once",
+      "start": 4.78,
+      "end": 4.78
+    },
+    {
+      "word": "for",
+      "start": 4.83,
+      "end": 5.1
+    },
+    {
+      "word": "a",
+      "start": 5.1,
+      "end": 5.15
+    },
+    {
+      "word": "rider,",
+      "start": 5.3,
+      "end": 5.95
+    },
+    {
+      "word": "twice",
+      "start": 6.08,
+      "end": 6.42
+    },
+    {
+      "word": "for",
+      "start": 6.42,
+      "end": 6.66
+    },
+    {
+      "word": "trouble.",
+      "start": 6.66,
+      "end": 7.4
+    },
+    {
+      "word": "Three",
+      "start": 7.69,
+      "end": 7.78
+    },
+    {
+      "word": "times,",
+      "start": 7.78,
+      "end": 8.22
+    },
+    {
+      "word": "and",
+      "start": 8.22,
+      "end": 8.41
+    },
+    {
+      "word": "I'll",
+      "start": 8.41,
+      "end": 8.58
+    },
+    {
+      "word": "want",
+      "start": 8.68,
+      "end": 8.81
+    },
+    {
+      "word": "to",
+      "start": 8.94,
+      "end": 9.03
+    },
+    {
+      "word": "know",
+      "start": 9.03,
+      "end": 9.28
+    },
+    {
+      "word": "who",
+      "start": 9.28,
+      "end": 9.47
+    },
+    {
+      "word": "taught",
+      "start": 9.47,
+      "end": 9.85
+    },
+    {
+      "word": "you",
+      "start": 9.85,
+      "end": 10.04
+    },
+    {
+      "word": "to",
+      "start": 10.04,
+      "end": 10.16
+    },
+    {
+      "word": "count.",
+      "start": 10.16,
+      "end": 10.65
+    }
+  ],
+  "missing_words": [],
+  "reasons": [],
+  "pass": true
+}

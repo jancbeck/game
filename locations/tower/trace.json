@@ -1,0 +1,10 @@
+{
+  "_doc": "Orthographic camera of the commander's chamber: elevation 46 deg and yaw 5 deg like the cookhouse's. The frame is width_m wide; center_px is where the world origin lands in the 1536 x 1024 still (0.05 m right of the centre and 1.15 m below it). The back wall's kerb and the hearth's stack are at the top edge, the tower's thick walls and the courtyard wall at the sides, and 0.5 m of the lower storey's face under the sill at the bottom: nothing but masonry and rock around the room.",
+  "camera": {
+    "elevation_deg": 46.0,
+    "yaw_deg": 5.0,
+    "px_per_m": 100.0,
+    "center_px": [763, 627],
+    "width_m": 11.2
+  }
+}

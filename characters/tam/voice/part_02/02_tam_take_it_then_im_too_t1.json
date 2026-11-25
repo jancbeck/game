@@ -1,0 +1,153 @@
+{
+  "file": "/Users/jan/workspace/projects/game/characters/tam/voice/part_02/02_tam_take_it_then_im_too_t1.wav",
+  "character": "tam",
+  "text": "[exhausted, giving up] Take it, then. I'm too tired to fight you and too scared to sleep. Only give it to the commander, will you? Not to Marl.",
+  "spoken_text": "Take it, then. I'm too tired to fight you and too scared to sleep. Only give it to the commander, will you? Not to Marl.",
+  "tags": [
+    "exhausted, giving up"
+  ],
+  "take": 1,
+  "reference": "voices/tam-reference-dry.wav",
+  "model": "drama3-small-IQ3_XXS.gguf",
+  "sampling": [
+    "temperature=0.7",
+    "top_p=0.7",
+    "top_k=30"
+  ],
+  "render_wall_s_all_takes": 111.5,
+  "speaker_similarity": 0.7464,
+  "duration_s": 6.64,
+  "expected_s": 10.12,
+  "silences": [],
+  "transcript": "Take it, then. I'm too tired to fight you and too scared to sleep. Only give it to the commander, will you? Not tomorrow.",
+  "words": [
+    {
+      "word": "Take",
+      "start": 0.07,
+      "end": 0.16
+    },
+    {
+      "word": "it,",
+      "start": 0.16,
+      "end": 0.3
+    },
+    {
+      "word": "then.",
+      "start": 0.3,
+      "end": 0.6
+    },
+    {
+      "word": "I'm",
+      "start": 0.6,
+      "end": 0.67
+    },
+    {
+      "word": "too",
+      "start": 0.81,
+      "end": 1.0
+    },
+    {
+      "word": "tired",
+      "start": 1.14,
+      "end": 1.39
+    },
+    {
+      "word": "to",
+      "start": 1.39,
+      "end": 1.45
+    },
+    {
+      "word": "fight",
+      "start": 1.57,
+      "end": 1.88
+    },
+    {
+      "word": "you",
+      "start": 1.88,
+      "end": 2.11
+    },
+    {
+      "word": "and",
+      "start": 2.11,
+      "end": 2.33
+    },
+    {
+      "word": "too",
+      "start": 2.33,
+      "end": 2.55
+    },
+    {
+      "word": "scared",
+      "start": 2.55,
+      "end": 2.99
+    },
+    {
+      "word": "to",
+      "start": 2.99,
+      "end": 3.09
+    },
+    {
+      "word": "sleep.",
+      "start": 3.14,
+      "end": 3.72
+    },
+    {
+      "word": "Only",
+      "start": 3.96,
+      "end": 3.96
+    },
+    {
+      "word": "give",
+      "start": 3.97,
+      "end": 4.14
+    },
+    {
+      "word": "it",
+      "start": 4.14,
+      "end": 4.21
+    },
+    {
+      "word": "to",
+      "start": 4.3,
+      "end": 4.32
+    },
+    {
+      "word": "the",
+      "start": 4.32,
+      "end": 4.45
+    },
+    {
+      "word": "commander,",
+      "start": 4.45,
+      "end": 4.9
+    },
+    {
+      "word": "will",
+      "start": 5.04,
+      "end": 5.12
+    },
+    {
+      "word": "you?",
+      "start": 5.12,
+      "end": 5.35
+    },
+    {
+      "word": "Not",
+      "start": 5.47,
+      "end": 5.63
+    },
+    {
+      "word": "tomorrow.",
+      "start": 5.63,
+      "end": 6.43
+    }
+  ],
+  "missing_words": [
+    "to",
+    "marl"
+  ],
+  "reasons": [
+    "missing words: to marl"
+  ],
+  "pass": false
+}

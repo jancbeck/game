@@ -1,0 +1,12 @@
+{
+  "prompt": "a single small iron ring knocking once lightly on oak wood, one short soft wooden knock with a faint metallic clink, dry close-miked film sound effect, no reverb",
+  "negative_prompt": "reverb, echo, music, melody, speech, voices, beep, electronic, digital, synth, bell ringing",
+  "seed": 1002,
+  "seconds": 3.0,
+  "dit": "medium",
+  "decoder": "same-l",
+  "cfg": 3.0,
+  "steps": 8,
+  "wall_seconds": 9.04,
+  "file": "ui_interact_t3.wav"
+}

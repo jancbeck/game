@@ -1,0 +1,12 @@
+{
+  "prompt": "a small bronze hand bell on a bracket struck once by pulling its rope, single clear ring decaying naturally, dry close-miked film sound effect, no reverb",
+  "negative_prompt": "reverb, echo, hall, music, melody, speech, voices, singing, church organ, choir, rain",
+  "seed": 1001,
+  "seconds": 6.0,
+  "dit": "medium",
+  "decoder": "same-l",
+  "cfg": 2.0,
+  "steps": 8,
+  "wall_seconds": 11.35,
+  "file": "obj_bell_t2.wav"
+}
